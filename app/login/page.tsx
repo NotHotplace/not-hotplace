@@ -1,0 +1,7 @@
+import {getSiteUser,googleReady,chatGPTReady} from '@/lib/site-auth';
+import {chatGPTSignInPath,chatGPTSignOutPath} from '@/app/chatgpt-auth';
+export const dynamic='force-dynamic';
+export default async function Login({searchParams}:{searchParams:Promise<{notice?:string}>}){
+ const [user,params]=await Promise.all([getSiteUser(),searchParams]);const ready=googleReady(),chatGPT=chatGPTReady();
+ return <main className="account-page"><a className="brand" href="/">Not<span>_</span>Hotplace</a><span className="eyebrow">YOUR OWN QUIET CORNER</span><h1>{user?'다시 만나서 반가워요.':'나에게 맞는 쉼을 기록해요.'}</h1><p>마음에 드는 장소를 저장하고, 체크로 경험을 남겨요.</p>{params.notice==='failed'&&<p className="error" role="alert">로그인을 완료하지 못했어요. 다시 시도해 주세요.</p>}{user&&<p className="account-name">{user.displayName} · {user.provider==='google'?'Google':'ChatGPT'}</p>}{ready?<a className="google-login" href="/auth/google" target="_top">Google 계정으로 계속하기</a>:null}{chatGPT&&<a className="secondary" href={chatGPTSignInPath('/')} target="_top">ChatGPT로 계속하기</a>}{!ready&&!chatGPT&&<p>로그인을 준비하고 있어요. 지도는 바로 둘러볼 수 있어요.</p>}{user?.provider==='google'&&<form method="post" action="/auth/signout"><button className="text-button">Google 계정 로그아웃</button></form>}{user?.provider==='chatgpt'&&<a className="text-button" href={chatGPTSignOutPath('/login')} target="_top">ChatGPT 로그아웃</a>}<a className="text-button" href="/">지도로 돌아가기</a><div className="account-policy"><a href="/policies">이용 안내 · 개인정보</a></div></main>;
+}

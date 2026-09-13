@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1789083509797,
+      "tag": "0000_kind_wolfsbane",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789114019098,
+      "tag": "0001_quiet_sleepwalker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789115001072,
+      "tag": "0002_short_loa",
+      "breakpoints": true
+    }
+  ]
+}

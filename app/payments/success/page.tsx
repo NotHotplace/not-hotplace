@@ -1,0 +1,6 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+export default function PaymentSuccess(){const [message,setMessage]=useState('결제를 확인하고 있어요.'),[done,setDone]=useState(false),[failed,setFailed]=useState(false);const started=useRef(false);
+ async function confirm(){setFailed(false);try{const q=new URLSearchParams(location.search);const r=await fetch('/api/payments/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({orderId:q.get('orderId'),paymentKey:q.get('paymentKey'),amount:q.get('amount')})});const j=await r.json() as any;if(!r.ok)throw new Error(j.error);setDone(true);setMessage('Plus가 활성화됐어요. '+new Date(j.until).toLocaleDateString('ko-KR')+'까지 이용할 수 있어요.');history.replaceState(null,'','/payments/success');}catch(e){setFailed(true);setMessage(e instanceof Error?e.message:'결제를 확인하지 못했어요.');}}
+ useEffect(()=>{if(!started.current){started.current=true;void confirm();}},[]);
+ return <main className="account-page"><a className="brand" href="/">Not<span>_</span>Hotplace</a><h1>{done?'편안한 발견을 시작해요.':'결제 확인'}</h1><p role={failed?'alert':'status'}>{message}</p>{failed&&<button className="secondary" onClick={confirm}>결제 상태 다시 확인</button>}<a className="primary" href="/">지도로 돌아가기</a><a className="source" href="/policies">결제 문의</a></main>;}

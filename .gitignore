@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.wrangler/
+.next/
+.vinext/
+.env*
+.dev.vars*
+*.tsbuildinfo
+!.env.example

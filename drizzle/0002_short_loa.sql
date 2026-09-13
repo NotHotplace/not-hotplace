@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `idx_payment_orders_one_pending` ON `payment_orders` (`user_id`) WHERE "payment_orders"."status" = 'pending';

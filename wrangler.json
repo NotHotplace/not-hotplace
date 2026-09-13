@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "not-hotplace",
+  "main": "node_modules/vinext/dist/server/fetch-handler.js",
+  "compatibility_date": "2026-09-13",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "keep_vars": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "not-hotplace-db",
+      "database_id": "00000000-0000-4000-8000-000000000000",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "vars": {
+    "AUTH_MODE": "google",
+    "OWNER_GOOGLE_EMAIL": "mythdriveofficial@gmail.com",
+    "SUPPORT_EMAIL": "mythdriveofficial@gmail.com",
+    "PAYMENTS_LIVE_ENABLED": "false"
+  }
+}

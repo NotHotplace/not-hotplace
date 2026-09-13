@@ -1,0 +1,2 @@
+export function wilson(positive:number,total:number){if(!total)return 0;const z=1.96,p=positive/total;return (p+z*z/(2*total)-z*Math.sqrt((p*(1-p)+z*z/(4*total))/total))/(1+z*z/total);}
+export function ranked<T extends {id:string;count:number;positive:number;quiet:number;resting?:boolean}>(rows:T[]){return rows.filter(p=>!p.resting&&p.count>=3&&p.positive/p.count>=.7&&p.quiet/p.count>=.6).sort((a,b)=>wilson(b.positive,b.count)-wilson(a.positive,a.count)||b.count-a.count||a.id.localeCompare(b.id));}

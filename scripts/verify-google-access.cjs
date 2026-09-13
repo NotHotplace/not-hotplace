@@ -1,0 +1,15 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),ts=require('typescript');
+const root=path.resolve(__dirname,'..');
+let providerUser=null,providerError=null,headerReads=0;
+const env={AUTH_MODE:'google',SUPABASE_URL:'https://test.supabase.co',SUPABASE_PUBLISHABLE_KEY:'public-test'};
+const cache={};
+function load(file){file=path.resolve(file);if(cache[file])return cache[file].exports;const mod={exports:{}};cache[file]=mod;const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const req=name=>{if(name==='cloudflare:workers')return{env};if(name==='next/headers')return{cookies:async()=>({getAll:()=>[],set(){}})};if(name==='@supabase/ssr')return{createServerClient:()=>({auth:{getUser:async()=>({data:{user:providerUser},error:providerError})}})};if(name==='@/app/chatgpt-auth')return{getChatGPTUser:async()=>{headerReads++;return{userId:'spoofed-header',email:'mythdriveofficial@gmail.com',displayName:'Spoof'};}};if(name.startsWith('@/'))return load(path.join(root,name.slice(2)+'.ts'));if(name.startsWith('.'))return load(path.resolve(path.dirname(file),name)+'.ts');return require(name);};new Function('require','module','exports',code)(req,mod,mod.exports);return mod.exports;}
+(async()=>{const {getSiteUser}=load(path.join(root,'lib/site-auth.ts'));const makeUser=(email,identity={})=>({id:'google-account',email,email_confirmed_at:'2026-09-13',user_metadata:{name:'원재',email_verified:true,role:'admin'},identities:[{provider:'google',identity_data:{email,email_verified:true,...identity}}]});
+ providerUser=makeUser('mythdriveofficial@gmail.com');let user=await getSiteUser();assert.equal(user.email,'mythdriveofficial@gmail.com');assert.equal(user.googleEmailVerified,true);assert.equal(user.provider,'google');
+ providerUser=makeUser('mythdriveofficial@gmail.com',{email_verified:false});assert.equal(await getSiteUser(),null,'unverified Google identity rejected despite user-editable metadata');
+ providerUser={...makeUser('mythdriveofficial@gmail.com'),identities:[{provider:'email',identity_data:{email_verified:true}}]};assert.equal(await getSiteUser(),null,'password identity cannot impersonate Google');
+ providerUser=makeUser('mythdriveofficial@gmail.com',{email:'attacker@example.test'});assert.equal(await getSiteUser(),null,'Google identity must match account email');
+ providerUser=makeUser('mythdriveofficial@gmail.com');providerError=new Error('invalid auth');assert.equal(await getSiteUser(),null,'provider verification failure rejected');providerError=null;
+ delete env.SUPABASE_URL;assert.equal(await getSiteUser(),null,'missing Google configuration stays anonymous');assert.equal(headerReads,0,'external Google mode never trusts spoofed platform headers');
+ console.log('PASS: verified Google identity, metadata spoofing, mismatched identity, provider error and external header-spoof rejection.');
+})().catch(e=>{console.error(e);process.exitCode=1});
