@@ -83,12 +83,5 @@
         "description": "사이트에 공개되는 문의 이메일."
       }
     }
-  },"pnpm": {
-  "onlyBuiltDependencies": [
-    "esbuild",
-    "sharp",
-    "unrs-resolver",
-    "workerd"
-  ]
-}
+  }
 }

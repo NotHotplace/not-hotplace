@@ -1,0 +1,8 @@
+'use client';
+import {useState} from 'react';
+import {trips,tripThemes,tripSources} from '@/lib/trips';
+export default function TripBrowser(){
+ const [theme,setTheme]=useState('all');
+ const visible=trips.filter(trip=>theme==='all'||trip.theme===theme);
+ return <><div className="trip-filters" aria-label="여행 테마 선택">{Object.entries({all:'전체',...tripThemes}).map(([key,label])=><button key={key} aria-pressed={theme===key} onClick={()=>setTheme(key)}>{label}</button>)}</div><p className="rest-note" aria-live="polite">{visible.length}가지 일정 아이디어 · 실제 프로그램과 예약은 각 운영처에서 확인해 주세요.</p><div className="trip-grid">{visible.map(trip=><article key={trip.id} className={'trip-card trip-'+trip.theme}><div className="trip-card-top"><span>{tripThemes[trip.theme]}</span><span>{trip.duration}</span></div><h2>{trip.title}</h2><p>{trip.description}</p><details><summary>이렇게 쉬어보세요 <span>＋</span></summary><ol>{trip.steps.map(step=><li key={step}>{step}</li>)}</ol><p className="rest-note">{trip.tip}</p>{trip.theme!=='slow'&&<a className="trip-source" href={tripSources[trip.theme].url} target="_blank" rel="noopener noreferrer">{tripSources[trip.theme].name} ↗</a>}</details><a className="trip-map" href={'/?category='+trip.category+(trip.query?'&q='+encodeURIComponent(trip.query):'')}>함께 둘러볼 {trip.category==='cafe'?'카페':'드라이브 후보'} <span>→</span></a></article>)}</div><p className="rest-note trip-disclosure">NotHotplace가 제안하는 일정 아이디어입니다. 예약·결제는 제공하지 않으며 특정 프로그램의 운영, 빈자리, 조용함을 보장하지 않습니다. 공식 정보 확인: <a href={tripSources.temple.url} target="_blank" rel="noopener noreferrer">템플스테이</a> · <a href={tripSources.forest.url} target="_blank" rel="noopener noreferrer">숲나들e</a> (2026.09.14)</p></>;
+}

@@ -1,0 +1,10 @@
+/api/*
+  Cache-Control: private, no-store
+/auth/*
+  Cache-Control: private, no-store
+/stats
+  Cache-Control: private, no-store
+/sw.js
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Cache-Control: public, max-age=3600
