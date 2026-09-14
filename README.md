@@ -24,3 +24,18 @@ Node 24, pnpm 11.19.0. pnpm install --frozen-lockfile 후 pnpm run build. pnpm t
 mythdriveofficial@gmail.com
 
 서드파티 패키지와 장소 정보·지도 경계의 출처는 각각의 라이선스와 lib/catalog.ts, lib/korea-map.json 및 사이트의 출처 표시를 확인하세요.
+
+## 2026-09-14 업데이트
+- /install: Android·iPhone 웹 앱 설치 안내와 자체 생성 QR, 개인정보가 없는 오프라인 안내 캐시.
+- /trips: 세 테마의 아홉 가지 여행 일정 아이디어와 공식 예약처 링크.
+- /plus: 무료 기능·Plus 혜택·기간권 비교. 기존 가격을 유지하며 자동 갱신은 없습니다.
+- /stats: 운영자 전용 일별 페이지 열림 합계와 저장·후기·제안 수. 0003_daily_visits.sql을 적용한 뒤 새 방문부터 집계합니다. 고유 방문자 수가 아닙니다.
+- /sitemap.xml, /robots.txt: 공개 소개 페이지와 검색 메타데이터.
+- GitHub Actions는 PR와 main의 타입 검사·동작 검사·빌드를 실행합니다. 운영 배포는 기존 Cloudflare Workers Builds의 main 연결을 사용합니다.
+
+### Plus 판매 준비
+실결제는 계속 비활성화되어 있습니다. 현재 가격은 1개월 4,900원, 6개월 26,460원, 1년 41,160원(부가세 포함)이며 선택한 기간 전체를 한 번 결제합니다. 카드와 간편결제는 가맹점 계약에서 허용된 결제수단이 토스 통합결제창에 표시됩니다. 무료 체험에 카드를 등록하지 않으며 자동 결제로 전환하지 않습니다.
+
+사업자등록·PG 계약 후 토스의 API 개별 연동 운영키를 Cloudflare 환경에 설정합니다. TOSS_SECRET_KEY는 암호화된 Secret으로 저장하고 저장소에 넣지 않습니다. TOSS_CLIENT_KEY, BUSINESS_NAME, BUSINESS_NUMBER, BUSINESS_ADDRESS, SUPPORT_EMAIL과 실제 판매 조건을 확인하고 TERMS_CONFIRMED를 설정한 후, 승인된 출시 시점에 PAYMENTS_LIVE_ENABLED를 true로 변경합니다. 이 변경은 wrangler.json의 false 값도 함께 갱신해야 다음 배포에서 유지됩니다. 현재는 false를 유지합니다.
+
+토스 PAYMENT_STATUS_CHANGED 웹훅 수신 경로는 https://nothotplace.com/api/payments/webhook 입니다. 테스트 상점과 운영 상점을 분리하고, 테스트 주문을 운영 주문으로 옮기지 않습니다. 실제 카드 결제나 계약은 이번 업데이트에서 진행하지 않았습니다. 국외 처리 국가·제공업체 보관기간 등 개인정보 고지 미확정 항목은 운영자가 추가 확인해야 합니다.

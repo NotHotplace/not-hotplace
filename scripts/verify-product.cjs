@@ -69,5 +69,35 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {refreshQuality}=load(path.join(root,'lib/quality.ts'));await refreshQuality('seoul-san');result=await (await data.GET()).json();assert(result.places.find(p=>p.id==='seoul-san').resting);assert(!ranked(result.places).some(p=>p.id==='seoul-san'),'crowded places leave recommendation');
  sql.prepare('DELETE FROM reviews WHERE place_id=?').run('seoul-san');await refreshQuality('seoul-san');result=await (await data.GET()).json();assert(result.places.find(p=>p.id==='seoul-san').resting,'loss of evidence cannot unpause');
  assert.equal((await post('moderate',{placeId:'cj-daechung',mode:'paused'})).status,403,'moderation owner only');
+
+ const visit=load(path.join(root,'app/api/visit/route.ts')),stats=load(path.join(root,'app/api/stats/route.ts'));
+ const {koreaDay}=load(path.join(root,'lib/traffic.ts'));
+ assert.equal(koreaDay(Date.UTC(2026,8,14,14,59)),'2026-09-14');
+ assert.equal(koreaDay(Date.UTC(2026,8,14,15,0)),'2026-09-15','Korean calendar boundary');
+ const visitRequest=origin=>new Request('https://example.test/api/visit',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:'{}'});
+ assert.equal((await visit.POST(visitRequest('https://other.test'))).status,403);
+ assert.equal(sql.prepare('SELECT COUNT(*) n FROM daily_visits').get().n,0,'rejected visits not counted');
+ assert.equal((await visit.POST(visitRequest('https://example.test'))).status,204);
+ assert.equal((await visit.POST(visitRequest('https://example.test'))).status,204);
+ assert.deepEqual(sql.prepare('PRAGMA table_info(daily_visits)').all().map(c=>c.name),['day','views'],'only aggregate visit data stored');
+ user=null;assert.equal((await stats.GET()).status,403,'anonymous cannot view stats');
+ user={userId:'visitor',email:'visitor@example.test'};assert.equal((await stats.GET()).status,403,'ordinary user cannot view stats');
+ user={userId:'owner',email:'owner@example.test'};
+ const statResponse=await stats.GET();assert.equal(statResponse.headers.get('Cache-Control'),'private, no-store');
+ const report=await statResponse.json();assert.equal(report.traffic.today,2);assert.equal(report.traffic.week,2);assert.equal(report.traffic.month,2);assert.equal(report.days.length,1);
+ const sitemap=load(path.join(root,'app/sitemap.xml/route.ts'));
+ const xml=await sitemap.GET().text();assert(xml.includes('https://nothotplace.com/plus'));assert(xml.includes('https://nothotplace.com/trips'));assert(!xml.includes('/stats')&&!xml.includes('/login'));
+ const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert.equal(trips.length,9);assert.equal(new Set(trips.map(t=>t.id)).size,9);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length===3));
+ const manifest=JSON.parse(fs.readFileSync(path.join(root,'public/manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,'public',icon.src)));
+ // Payment replay must remain bound to the payment originally verified for this user.
+ user={userId:'trial-user',email:'trial@example.test'};
+ assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'different-payment-key',amount:26460})).status,400);
+ const {reconcilePayment}=load(path.join(root,'lib/payment-service.ts'));
+ const stored=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(order.orderId);
+ await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'CANCELED'});
+ assert(!(await (await data.GET()).json()).membership.active,'refunded pass stops access after trial expiry');
+ await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});
+ assert(!(await (await data.GET()).json()).membership.active,'stale completion cannot restore refunded access');
+ console.log('PASS: aggregate visits, Korean date boundary, stats permissions, sitemap, travel themes, install assets and payment replay/refund handling.');
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
 })().catch(e=>{console.error(e);process.exitCode=1;});
