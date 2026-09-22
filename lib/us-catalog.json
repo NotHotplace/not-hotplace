@@ -7,11 +7,39 @@
     "name": "Stumptown — Division",
     "area": "Portland",
     "address": "4525 SE Division St, Portland, OR 97206",
-    "description": "A neighborhood coffee stop on SE Division Street. Opening details are listed by the café; quietness is awaiting visitor reviews.",
-    "descriptionKo": "SE 디비전 스트리트의 동네 카페입니다. 운영 정보는 공식 페이지에서 확인할 수 있으며 조용함은 방문 후기를 기다리고 있습니다.",
-    "source": "https://www.stumptowncoffee.com/pages/locations",
+    "description": "The original Stumptown café, opened in 1999. Espresso, tea and pastries make this a neighborhood coffee stop on SE Division Street.",
+    "descriptionKo": "1999년에 문을 연 스텀프타운 첫 매장입니다. SE 디비전 스트리트에서 에스프레소와 차, 페이스트리를 즐길 수 있어요.",
+    "source": "https://www.stumptowncoffee.com/pages/portland-division-cafe",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Neighborhood café",
+      "Coffee & pastries"
+    ],
+    "descriptionEn": "The original Stumptown café, opened in 1999. Espresso, tea and pastries make this a neighborhood coffee stop on SE Division Street.",
+    "tagsKo": [
+      "동네 카페",
+      "커피와 페이스트리"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Weekdays 6:30am–5pm; weekends 7:30am–5pm, per the venue.",
+        "textKo": "공식 안내 기준 평일 06:30–17:00, 주말 07:30–17:00."
+      },
+      {
+        "labelEn": "On the menu",
+        "labelKo": "메뉴",
+        "textEn": "Espresso, drip coffee, cold brew, chai, tea and breakfast bites.",
+        "textKo": "에스프레소, 드립 커피, 콜드브루, 차이, 차와 아침 식사 메뉴."
+      }
+    ],
+    "image": "/places/us-stumptown-division.webp",
+    "imageCredit": "Another Believer",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Stumptown_Coffee_Roasters,_Southeast_Division_Street,_Portland,_Oregon,_2025.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "id": "us-stumptown-brooklyn",
@@ -21,11 +49,39 @@
     "name": "Stumptown — Brooklyn",
     "area": "Brooklyn",
     "address": "212B Pacific Street, Brooklyn, NY 11201",
-    "description": "A Pacific Street café for a coffee break in Brooklyn. Check current opening details before visiting.",
-    "descriptionKo": "브루클린 퍼시픽 스트리트의 카페입니다. 방문 전 최신 운영 정보를 확인하세요.",
-    "source": "https://www.stumptowncoffee.com/pages/locations",
+    "description": "A Cobble Hill coffee stop with rotating art, custom ceiling tiles and an artist-painted espresso machine. Pair a drink with a pastry or breakfast taco.",
+    "descriptionKo": "코블힐의 카페로, 순환 전시와 독특한 천장 타일, 작가가 그린 에스프레소 머신을 볼 수 있어요. 음료와 페이스트리 또는 아침 타코를 함께 즐길 수 있습니다.",
+    "source": "https://www.stumptowncoffee.com/pages/new-york-brooklyn-cafe",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Art & coffee",
+      "Neighborhood café"
+    ],
+    "descriptionEn": "A Cobble Hill coffee stop with rotating art, custom ceiling tiles and an artist-painted espresso machine. Pair a drink with a pastry or breakfast taco.",
+    "tagsKo": [
+      "예술과 커피",
+      "동네 카페"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Weekdays 6:30am–5pm; weekends 7am–5pm, per the venue.",
+        "textKo": "공식 안내 기준 평일 06:30–17:00, 주말 07:00–17:00."
+      },
+      {
+        "labelEn": "Setting",
+        "labelKo": "공간 특징",
+        "textEn": "Rotating artist exhibitions inside the Pacific Street café.",
+        "textKo": "퍼시픽 스트리트 매장 안에서 순환 전시를 진행합니다."
+      }
+    ],
+    "image": "/places/us-stumptown-brooklyn.webp",
+    "imageCredit": "Bex Walton",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Cortado_and_doughnut_at_Stumptown%27s_gorgeous_Cobble_Hill_cafe_in_Brooklyn.jpg",
+    "imageLicense": "CC BY 2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "id": "us-stumptown-pasadena",
@@ -35,11 +91,34 @@
     "name": "Stumptown — Pasadena",
     "area": "Pasadena",
     "address": "1982 Lincoln Ave, Pasadena, CA 91103",
-    "description": "A Lincoln Avenue café in Pasadena. A candidate for your next coffee break, with visitor reviews still to come.",
-    "descriptionKo": "패서디나 링컨 애비뉴의 카페입니다. 커피 한 잔의 여유를 위한 탐색 후보이며 방문 후기는 아직 없습니다.",
-    "source": "https://www.stumptowncoffee.com/pages/locations",
+    "description": "An indoor–outdoor café with an open roll-up door, abundant plants and an art wall. Single-origin pour-overs and tea offer alternatives to espresso.",
+    "descriptionKo": "열린 롤업 도어로 실내외가 이어지는 카페입니다. 식물과 아트 월이 있는 공간에서 싱글 오리진 핸드드립과 차도 즐길 수 있어요.",
+    "source": "https://www.stumptowncoffee.com/pages/pasadena-cafe",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Indoor–outdoor",
+      "Plants & coffee"
+    ],
+    "descriptionEn": "An indoor–outdoor café with an open roll-up door, abundant plants and an art wall. Single-origin pour-overs and tea offer alternatives to espresso.",
+    "tagsKo": [
+      "실내외 공간",
+      "식물과 커피"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Weekdays 6:30am–6pm; weekends 7am–6pm, per the venue.",
+        "textKo": "공식 안내 기준 평일 06:30–18:00, 주말 07:00–18:00."
+      },
+      {
+        "labelEn": "Setting",
+        "labelKo": "공간 특징",
+        "textEn": "The roll-up door stays open during service; this is not an enclosed quiet room.",
+        "textKo": "운영 중에는 롤업 도어를 열어 두는 공간입니다. 외부 소리와 분리된 공간은 아니에요."
+      }
+    ],
+    "photoGallery": "https://www.stumptowncoffee.com/pages/pasadena-cafe"
   },
   {
     "id": "us-flora-bakehouse",
@@ -49,11 +128,34 @@
     "name": "The Flora Bakehouse",
     "area": "Seattle",
     "address": "1511 S Lucile St, Seattle, WA 98108",
-    "description": "A Beacon Hill bakery serving pastries, sandwiches and coffee. Space and noise levels have not yet been rated here.",
-    "descriptionKo": "비컨힐에서 페이스트리, 샌드위치와 커피를 제공하는 베이커리입니다. 공간과 소음에 관한 후기는 아직 없습니다.",
-    "source": "https://florarestaurantgroup.com/",
+    "description": "A Beacon Hill bakery with sweet and savory pastries and a rooftop deck facing Mount Rainier. Choose indoor seating or a chair outside.",
+    "descriptionKo": "달콤하고 짭짤한 페이스트리와 레이니어산 방향의 루프톱 데크가 있는 비컨힐 베이커리입니다. 실내 또는 야외 좌석을 고를 수 있어요.",
+    "source": "https://florarestaurantgroup.com/restaurant/the-flora-bakehouse-seattle/",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Rooftop deck",
+      "Bakery"
+    ],
+    "descriptionEn": "A Beacon Hill bakery with sweet and savory pastries and a rooftop deck facing Mount Rainier. Choose indoor seating or a chair outside.",
+    "tagsKo": [
+      "루프톱 데크",
+      "베이커리"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Daily 7am–5pm, per the venue.",
+        "textKo": "공식 안내 기준 매일 07:00–17:00."
+      },
+      {
+        "labelEn": "Seating",
+        "labelKo": "좌석",
+        "textEn": "The rooftop has shaded and sunny areas. Private events can use the indoor room and deck.",
+        "textKo": "루프톱에는 그늘과 햇볕이 드는 자리가 있습니다. 실내와 데크에서 대관 행사가 열릴 수 있어요."
+      }
+    ],
+    "photoGallery": "https://florarestaurantgroup.com/restaurant/the-flora-bakehouse-seattle/"
   },
   {
     "id": "us-cafe-flora",
@@ -63,11 +165,39 @@
     "name": "Cafe Flora",
     "area": "Seattle",
     "address": "2901 E Madison St, Seattle, WA 98112",
-    "description": "Vegetarian dining in Madison Valley with a dining room and patio. Check reservations and current service details.",
-    "descriptionKo": "매디슨 밸리의 채식 레스토랑으로 실내와 파티오 공간이 있습니다. 예약 및 운영 정보를 확인하세요.",
-    "source": "https://florarestaurantgroup.com/",
+    "description": "Vegetarian dining in a light-filled atrium or covered patio in Madison Valley. The seasonal menu includes vegan and gluten-free choices.",
+    "descriptionKo": "매디슨 밸리의 채식 레스토랑입니다. 빛이 들어오는 아트리움과 지붕 있는 파티오가 있으며 비건·글루텐 프리 메뉴도 안내합니다.",
+    "source": "https://florarestaurantgroup.com/restaurant/cafe-flora-seattle/",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Covered patio",
+      "Vegetarian"
+    ],
+    "descriptionEn": "Vegetarian dining in a light-filled atrium or covered patio in Madison Valley. The seasonal menu includes vegan and gluten-free choices.",
+    "tagsKo": [
+      "지붕 있는 파티오",
+      "채식 메뉴"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "The venue lists free street parking in the surrounding neighborhood.",
+        "textKo": "공식 안내에 따르면 인근 동네에서 무료 노상 주차가 가능합니다."
+      },
+      {
+        "labelEn": "Reservations",
+        "labelKo": "예약",
+        "textEn": "Dinner reservations are available. The venue notes that weekend brunch can fill quickly.",
+        "textKo": "저녁 예약이 가능합니다. 매장에서는 주말 브런치가 빠르게 붐빌 수 있다고 안내합니다."
+      }
+    ],
+    "image": "/places/us-cafe-flora.webp",
+    "imageCredit": "Joe Mabel",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Seattle_-_Cafe_Flora_01.jpg",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   },
   {
     "id": "us-boulder-teahouse",
@@ -77,11 +207,39 @@
     "name": "Boulder Dushanbe Teahouse",
     "area": "Boulder",
     "address": "1770 13th Street, Boulder, CO",
-    "description": "Tea and meals in downtown Boulder. Private events can affect opening hours; check the official site first.",
-    "descriptionKo": "볼더 중심부에서 차와 식사를 즐길 수 있는 티하우스입니다. 대관 행사에 따라 운영 시간이 달라질 수 있으니 공식 사이트를 확인하세요.",
+    "description": "Stop for a cup of tea, a meal or an afternoon tea service in downtown Boulder. Bar seating and a self-service north patio offer different ways to visit.",
+    "descriptionKo": "볼더 중심부에서 차 한 잔, 식사 또는 애프터눈 티를 즐길 수 있어요. 바 좌석과 북쪽 셀프서비스 파티오도 이용 방식의 선택지입니다.",
     "source": "https://www.boulderteahouse.com/faq",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Tea & meals",
+      "Patio"
+    ],
+    "descriptionEn": "Stop for a cup of tea, a meal or an afternoon tea service in downtown Boulder. Bar seating and a self-service north patio offer different ways to visit.",
+    "tagsKo": [
+      "차와 식사",
+      "파티오"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Reservations",
+        "labelKo": "예약",
+        "textEn": "Afternoon tea requires advance booking. A simple cup of tea can be ordered without the full tea service.",
+        "textKo": "애프터눈 티는 사전 예약이 필요합니다. 정식 티 서비스 없이 차 한 잔만 주문할 수도 있어요."
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Metered street parking and a garage near 14th Street/Canyon Boulevard. The rear lot has weekday permit restrictions.",
+        "textKo": "유료 노상 주차와 14번가·캐니언 대로 근처 주차장이 있습니다. 뒤편 주차장은 평일 허가 차량 제한이 있어요."
+      }
+    ],
+    "image": "/places/us-boulder-teahouse.webp",
+    "imageCredit": "Mark Gallagher from Colorado Springs, USA",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Boulder_Dushanbe_teahouse_ceiling.jpg",
+    "imageLicense": "CC BY 2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "id": "us-point-reyes",
@@ -91,13 +249,35 @@
     "name": "Point Reyes National Seashore",
     "area": "Point Reyes Station",
     "address": "1 Bear Valley Road, Point Reyes Station, CA 94956 — visitor center",
-    "description": "Coastal scenery, beaches and walking routes. Start at a visitor center and check trail and road conditions.",
-    "descriptionKo": "해안 풍경과 해변, 산책로를 둘러볼 수 있습니다. 방문자 센터에서 시작하고 탐방로와 도로 상황을 확인하세요.",
-    "source": "https://www.nps.gov/pore/index.htm",
+    "description": "Coastal trails, beaches and the historic Cypress Tree Tunnel offer several ways to slow down outdoors. Pick a specific stop rather than treating the whole park as one short walk.",
+    "descriptionKo": "해안 산책로와 해변, 역사적인 사이프러스 나무 터널을 둘러볼 수 있어요. 공원 전체를 짧은 산책 코스로 보기보다 방문할 지점을 먼저 골라보세요.",
+    "source": "https://www.nps.gov/pore/planyourvisit/index.htm",
     "checked": "2026-09-22",
-    "tags": [],
+    "tags": [
+      "Coastal walks",
+      "Tree tunnel"
+    ],
     "image": "/places/us-point-reyes.jpeg",
-    "imageCredit": "NPS / A. Kopshever"
+    "imageCredit": "NPS / A. Kopshever",
+    "descriptionEn": "Coastal trails, beaches and the historic Cypress Tree Tunnel offer several ways to slow down outdoors. Pick a specific stop rather than treating the whole park as one short walk.",
+    "tagsKo": [
+      "해안 산책",
+      "나무 터널"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Start here",
+        "labelKo": "방문 시작점",
+        "textEn": "Bear Valley Visitor Center helps visitors choose a route.",
+        "textKo": "베어 밸리 방문자 센터에서 동선 안내를 받을 수 있습니다."
+      },
+      {
+        "labelEn": "Plan your route",
+        "labelKo": "경로 선택",
+        "textEn": "Trail distances vary widely. Alamere Falls requires at least a 13-mile round trip.",
+        "textKo": "코스별 거리가 크게 다릅니다. 알라미어 폭포는 최소 왕복 약 21km의 긴 코스입니다."
+      }
+    ]
   },
   {
     "id": "us-cabrillo",
@@ -107,11 +287,39 @@
     "name": "Cabrillo National Monument",
     "area": "San Diego",
     "address": "1800 Cabrillo Memorial Drive, San Diego, CA 92106",
-    "description": "Coastal trails and views around Point Loma. Check access, opening hours and current park conditions.",
-    "descriptionKo": "포인트 로마 주변 해안길과 전망을 둘러볼 수 있습니다. 출입 조건, 운영 시간과 공원 상황을 확인하세요.",
-    "source": "https://www.nps.gov/cabr/index.htm",
+    "description": "Coastal views, historic exhibits and walking trails at the tip of Point Loma. Start at the visitor center to choose the part of the park that fits your day.",
+    "descriptionKo": "포인트 로마 끝자락에서 해안 전망, 역사 전시와 산책로를 함께 둘러볼 수 있어요. 방문자 센터에서 오늘 일정에 맞는 구역을 골라보세요.",
+    "source": "https://www.nps.gov/cabr/planyourvisit/index.htm",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Coastal views",
+      "Walking trails"
+    ],
+    "descriptionEn": "Coastal views, historic exhibits and walking trails at the tip of Point Loma. Start at the visitor center to choose the part of the park that fits your day.",
+    "tagsKo": [
+      "해안 전망",
+      "산책로"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Access",
+        "labelKo": "방문 정보",
+        "textEn": "The official visitor guide links current entrance fees, opening hours and parking information.",
+        "textKo": "공식 방문 안내에서 최신 입장료·운영 시간·주차 정보를 확인할 수 있습니다."
+      },
+      {
+        "labelEn": "Getting around",
+        "labelKo": "이동 안내",
+        "textEn": "The park publishes accessibility and transport guidance for planning your stop.",
+        "textKo": "공원에서 접근성 및 교통 안내를 제공하므로 방문 동선을 미리 살펴보세요."
+      }
+    ],
+    "image": "/places/us-cabrillo.webp",
+    "imageCredit": "Visitor7",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Cabrillo_National_Monument_View.jpg",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   },
   {
     "id": "us-sleeping-bear",
@@ -121,11 +329,38 @@
     "name": "Sleeping Bear Dunes National Lakeshore",
     "area": "Empire",
     "address": "Empire, Michigan — see official park directions",
-    "description": "Lake Michigan scenery and scenic routes. Check official directions, weather and seasonal access before your trip.",
-    "descriptionKo": "미시간호 풍경과 경관 도로를 둘러볼 수 있습니다. 공식 경로, 날씨와 계절별 출입 조건을 확인하세요.",
-    "source": "https://www.nps.gov/slbe/index.htm",
+    "description": "Lake Michigan beaches, dunes and wooded trails. NPS suggests earlier or later visits to several popular stops, with lesser-known trails as alternatives.",
+    "descriptionKo": "미시간호 해변과 모래언덕, 숲길을 둘러볼 수 있습니다. NPS는 인기 지점의 이른 시간·늦은 시간 방문과 덜 알려진 탐방로를 대안으로 안내합니다.",
+    "source": "https://www.nps.gov/slbe/planyourvisit/index.htm",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Lake views",
+      "Woodland trails"
+    ],
+    "descriptionEn": "Lake Michigan beaches, dunes and wooded trails. NPS suggests earlier or later visits to several popular stops, with lesser-known trails as alternatives.",
+    "tagsKo": [
+      "호수 전망",
+      "숲길"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Visiting time",
+        "labelKo": "방문 시간 참고",
+        "textEn": "NPS suggests before 10am or after 4pm at listed popular stops to avoid peak crowds. This is official guidance, not a live crowd reading.",
+        "textKo": "NPS는 주요 인기 지점에서 오전 10시 이전 또는 오후 4시 이후를 권합니다. 공식 방문 조언이며 실시간 혼잡도는 아닙니다."
+      },
+      {
+        "labelEn": "Entry",
+        "labelKo": "입장",
+        "textEn": "An entrance pass is required. Check current closures and download the NPS map before visiting.",
+        "textKo": "입장 패스가 필요합니다. 폐쇄 구간을 확인하고 NPS 지도를 미리 내려받으세요."
+      }
+    ],
+    "image": "/places/us-sleeping-bear.webp",
+    "imageCredit": "National Park Service employee",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sleeping_Bear_Dune_Aerial_View.jpg",
+    "imageLicense": "Public domain",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped."
   },
   {
     "id": "us-rock-creek",
@@ -135,11 +370,38 @@
     "name": "Rock Creek Park",
     "area": "Washington, D.C.",
     "address": "Washington, D.C. — see official park directions",
-    "description": "Woodland routes and historic sites within Washington, D.C. Check trail and road closures before visiting.",
-    "descriptionKo": "워싱턴 D.C. 안의 숲길과 역사 장소입니다. 방문 전 탐방로와 도로 폐쇄 정보를 확인하세요.",
+    "description": "Woodland routes and historic sites within Washington, D.C. Choose a park area or a visit to Peirce Mill for an outdoor break in the city.",
+    "descriptionKo": "워싱턴 D.C. 안에서 숲길과 역사 장소를 찾을 수 있어요. 공원 구역이나 피어스 밀 방문을 골라 도시 안에서 야외 휴식을 계획해 보세요.",
     "source": "https://www.nps.gov/rocr/planyourvisit/basicinfo.htm",
     "checked": "2026-09-22",
-    "tags": []
+    "tags": [
+      "Urban nature",
+      "Free entry"
+    ],
+    "descriptionEn": "Woodland routes and historic sites within Washington, D.C. Choose a park area or a visit to Peirce Mill for an outdoor break in the city.",
+    "tagsKo": [
+      "도심 자연",
+      "무료 입장"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Entry",
+        "labelKo": "입장",
+        "textEn": "Park entry is free. Some activities and services have separate charges.",
+        "textKo": "공원 입장은 무료이며 일부 활동과 서비스에는 별도 요금이 있습니다."
+      },
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Park areas are open during daylight. Nature Center and Peirce Mill hours are listed separately.",
+        "textKo": "공원은 낮 시간에 개방합니다. 네이처 센터와 피어스 밀 운영 시간은 별도 안내를 확인하세요."
+      }
+    ],
+    "image": "/places/us-rock-creek.webp",
+    "imageCredit": "National Park Service",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Rock-Creek-Park.jpg",
+    "imageLicense": "Public domain",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped."
   },
   {
     "id": "us-blue-ridge",
@@ -149,15 +411,43 @@
     "name": "Blue Ridge Parkway",
     "area": "North Carolina · Virginia",
     "address": "Blue Ridge Parkway, NC / VA — choose an access point on the official map",
-    "description": "A scenic drive through North Carolina and Virginia. Check current closures and choose an open section before setting out.",
-    "descriptionKo": "노스캐롤라이나와 버지니아를 지나는 경관 도로입니다. 최신 폐쇄 구간을 확인하고 이용 가능한 구간을 선택하세요.",
+    "description": "A scenic road through North Carolina and Virginia. Choose an access point and a manageable section for a drive with landscape stops.",
+    "descriptionKo": "노스캐롤라이나와 버지니아를 잇는 경관 도로입니다. 진입 지점과 이동 구간을 정해 풍경을 보며 쉬어가는 드라이브를 계획해 보세요.",
     "source": "https://www.nps.gov/blri/planyourvisit/basicinfo.htm",
     "checked": "2026-09-22",
-    "tags": [],
+    "tags": [
+      "Scenic drive",
+      "Two-state route"
+    ],
     "states": [
       "North Carolina",
       "Virginia"
-    ]
+    ],
+    "descriptionEn": "A scenic road through North Carolina and Virginia. Choose an access point and a manageable section for a drive with landscape stops.",
+    "tagsKo": [
+      "경관 드라이브",
+      "두 개 주 연결"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Route planning",
+        "labelKo": "경로 계획",
+        "textEn": "This listing covers a long route, not a single destination. Use the official park information to choose your stops.",
+        "textKo": "하나의 지점이 아닌 긴 경로입니다. 공식 공원 정보를 참고해 방문 지점을 정하세요."
+      },
+      {
+        "labelEn": "Before leaving",
+        "labelKo": "출발 전",
+        "textEn": "Check operating seasons and the current park notices for the section you plan to use.",
+        "textKo": "이용할 구간의 계절별 운영 여부와 최신 공원 공지를 확인하세요."
+      }
+    ],
+    "image": "/places/us-blue-ridge.webp",
+    "imageCredit": "Maria newengland",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Blue_Ridge_Parkway_NC.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped.",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "id": "us-natchez-trace",
@@ -167,15 +457,42 @@
     "name": "Natchez Trace Parkway",
     "area": "Mississippi · Alabama · Tennessee",
     "address": "Natchez Trace Parkway, MS / AL / TN — see official map",
-    "description": "A scenic parkway through three states, with stops for walks and local history. Check closures before setting out.",
-    "descriptionKo": "세 개 주를 지나며 산책과 역사 탐방을 함께 할 수 있는 경관 도로입니다. 출발 전 폐쇄 정보를 확인하세요.",
+    "description": "A 444-mile scenic route through Mississippi, Alabama and Tennessee, with historic stops and walking opportunities along the way. Plan a section that suits your day.",
+    "descriptionKo": "미시시피·앨라배마·테네시를 지나는 약 715km의 경관 도로입니다. 역사 장소와 산책 지점 중 하루 일정에 맞는 구간을 골라보세요.",
     "source": "https://www.nps.gov/natr/index.htm",
     "checked": "2026-09-22",
-    "tags": [],
+    "tags": [
+      "Scenic drive",
+      "Historic stops"
+    ],
     "states": [
       "Mississippi",
       "Alabama",
       "Tennessee"
-    ]
+    ],
+    "descriptionEn": "A 444-mile scenic route through Mississippi, Alabama and Tennessee, with historic stops and walking opportunities along the way. Plan a section that suits your day.",
+    "tagsKo": [
+      "경관 드라이브",
+      "역사 탐방"
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Route planning",
+        "labelKo": "경로 계획",
+        "textEn": "The official maps show access points and stops across the three states.",
+        "textKo": "공식 지도에서 세 개 주의 진입 지점과 방문 장소를 확인할 수 있습니다."
+      },
+      {
+        "labelEn": "Road conditions",
+        "labelKo": "도로 상황",
+        "textEn": "Read the current-conditions page for detours and closures before choosing a section.",
+        "textKo": "방문 구간을 정하기 전에 공식 현재 상황 안내에서 우회로와 폐쇄 정보를 확인하세요."
+      }
+    ],
+    "image": "/places/us-natchez-trace.webp",
+    "imageCredit": "Carol M. Highsmith (1946–)",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Natchez-Trace-Parkway-Highsmith.jpeg",
+    "imageLicense": "Public domain",
+    "imageNote": "Resized and converted to WebP; thumbnails may be cropped."
   }
 ]

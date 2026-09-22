@@ -21,7 +21,7 @@ function localize(node:ReactNode,lang:Language):ReactNode{
  const props=node.props as Record<string,any>;
  if(props['data-original-language'])return node;
  const next:Record<string,any>={};
- for(const attr of ['title','placeholder','aria-label','alt'])if(typeof props[attr]==='string')next[attr]=translate(props[attr],lang);
+ for(const attr of ['title','placeholder','aria-label','alt'])if(typeof props[attr]==='string'&&!(attr==='aria-label'&&props['data-original-label']))next[attr]=translate(props[attr],lang);
  if('children' in props)next.children=localize(props.children,lang);
  return cloneElement(node,next);
 }

@@ -9,6 +9,7 @@ import "./quiet.css";
 import "./atlas.css";
 import "./update.css";
 import "./world.css";
+import "./visit.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {

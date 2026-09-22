@@ -396,5 +396,9 @@
   "로그인·무료 체험 안내": "Sign-in and trial details",
   "유료 판매는 준비 중이에요. 무료 체험은 로그인 후 이용할 수 있어요.": "Paid passes are being prepared. Sign in to use the free trial.",
   "이용권 상태를 불러오지 못했어요. 다시 시도해 주세요.": "We couldn't load your pass. Please try again.",
-  "이용권 상태 확인 중…": "Checking your pass…"
+  "이용권 상태 확인 중…": "Checking your pass…",
+  "소개상 조용함 언급": "The source describes a quiet atmosphere; visitor verification is pending",
+  "조용함 후기 대기": "Quietness not rated yet",
+  "필터 초기화": "Reset filters",
+  "최근 90일 방문 후기": "Visitor reviews from the last 90 days"
 }
