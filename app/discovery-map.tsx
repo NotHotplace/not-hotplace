@@ -1,4 +1,5 @@
 'use client';
+import {useLocale} from './locale';
 
 import {useEffect,useRef,useState,type CSSProperties,type MouseEvent} from 'react';
 import {ArrowLeft,ArrowUpRight,Maximize2,MapPin,X,Coffee,Utensils,Car} from 'lucide-react';
@@ -24,6 +25,7 @@ type Props={
 };
 
 export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResults}:Props){
+ const {ui}=useLocale();
  const [open,setOpen]=useState(false),[hover,setHover]=useState(''),[revealed,setRevealed]=useState(false);
  const [motion,setMotion]=useState<CSSProperties>({});
  const trigger=useRef<HTMLButtonElement>(null),closeAction=useRef<'preview'|'results'|'place'>('preview');
@@ -74,7 +76,7 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
   </svg>;
  }
 
- return <Dialog open={open} onOpenChange={v=>{if(v)closeAction.current='preview';setOpen(v);}}>
+ return ui(<Dialog open={open} onOpenChange={v=>{if(v)closeAction.current='preview';setOpen(v);}}>
   <section className={'atlas-preview-wrap '+(compact?'is-compact ':'')+(active?'has-region':'')} aria-label="확대 가능한 전국 지도">
    <DialogTrigger asChild><button ref={trigger} className="atlas-preview" onClick={prepare} aria-label={`${city} 지도를 화면 가득 크게 보기`}>
     <span className="atlas-preview-head"><span><MapPin size={16}/>{city==='전국'?'전국에서 찾기':city}</span><span className="atlas-expand-icon"><Maximize2 size={17}/></span></span>
@@ -98,5 +100,5 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
     {active&&previews.length>0&&<div className="atlas-peeks">{previews.map(p=><button className="atlas-peek" key={p.id} onClick={()=>showPlace(p)} aria-label={`${p.name} 상세 정보 보기`}><span className="atlas-peek-image">{p.image?<img src={p.image} alt=""/>:categoryIcon(p.category)}</span><span className="atlas-peek-copy"><span>{labels[p.category]}{p.resting?' · 최근 혼잡':''}</span><strong>{p.name}</strong><span>{p.count?`${Math.round(p.positive/p.count*100)}% 만족 · ${p.count}명`:'아직 후기가 없어요'}</span></span><ArrowUpRight size={16}/></button>)}</div>}
    </div>
   </DialogContent>
- </Dialog>;
+ </Dialog>);
 }

@@ -18,7 +18,8 @@
     "lat": 37.5573847249,
     "lon": 126.9228860966,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/45/4106845_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2946087",
@@ -39,7 +40,8 @@
     "lat": 37.5420012115,
     "lon": 127.0709024736,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/16/2947416_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3082222",
@@ -59,7 +61,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5063179137,
-    "lon": 127.1005667997
+    "lon": 127.1005667997,
+    "descriptionEn": "A café or teahouse candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2991392",
@@ -78,7 +81,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.54679915283829,
-    "lon": 127.04073117160479
+    "lon": 127.04073117160479,
+    "descriptionEn": "A café or teahouse candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2914917",
@@ -97,7 +101,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5408782499,
-    "lon": 126.9489732553
+    "lon": 126.9489732553,
+    "descriptionEn": "A dining spot candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3551159",
@@ -116,7 +121,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5266090791381,
-    "lon": 127.03542198409549
+    "lon": 127.03542198409549,
+    "descriptionEn": "A dining spot candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2932405",
@@ -135,7 +141,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5368840388822,
-    "lon": 126.98771861435
+    "lon": 126.98771861435,
+    "descriptionEn": "A dining spot candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-679683",
@@ -154,7 +161,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.639522239968095,
-    "lon": 127.07431116134673
+    "lon": 127.07431116134673,
+    "descriptionEn": "A dining spot candidate in Seoul. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-250166",
@@ -175,7 +183,8 @@
     "lat": 37.5660513299,
     "lon": 126.8122361958,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/95/3566295_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Seoul. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4084686",
@@ -196,7 +205,8 @@
     "lat": 35.2098485123,
     "lon": 129.0770147852,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/41/4083741_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3550346",
@@ -216,7 +226,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.022702137712514,
-    "lon": 128.81815077317844
+    "lon": 128.81815077317844,
+    "descriptionEn": "A café or teahouse candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2903812",
@@ -235,7 +246,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1634030606309,
-    "lon": 129.16570016174
+    "lon": 129.16570016174,
+    "descriptionEn": "A dining spot candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2911171",
@@ -254,7 +266,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.27634894410929,
-    "lon": 129.17882643433083
+    "lon": 129.17882643433083,
+    "descriptionEn": "A dining spot candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4002891",
@@ -273,7 +286,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1045577312644,
-    "lon": 128.930254831352
+    "lon": 128.930254831352,
+    "descriptionEn": "A dining spot candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2861291",
@@ -292,7 +306,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1551411828,
-    "lon": 129.1453481989
+    "lon": 129.1453481989,
+    "descriptionEn": "A dining spot candidate in Busan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-126674",
@@ -314,7 +329,8 @@
     "lat": 35.1576790506242,
     "lon": 129.182540419138,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/48/3412848_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Busan. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2748838",
@@ -333,7 +349,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.23,
-    "lon": 128.9924
+    "lon": 128.9924,
+    "descriptionEn": "A scenic stop candidate in Busan. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2866375",
@@ -352,7 +369,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8420336934,
-    "lon": 128.5614933904
+    "lon": 128.5614933904,
+    "descriptionEn": "A café or teahouse candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2840694",
@@ -371,7 +389,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8999918688,
-    "lon": 128.6247718974
+    "lon": 128.6247718974,
+    "descriptionEn": "A café or teahouse candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1939809",
@@ -390,7 +409,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8687840005,
-    "lon": 128.5996251508
+    "lon": 128.5996251508,
+    "descriptionEn": "A café or teahouse candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2766515",
@@ -411,7 +431,8 @@
     "lat": 35.8299113219,
     "lon": 128.62517939,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/64/4091664_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2850437",
@@ -430,7 +451,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8629189414,
-    "lon": 128.6459639772
+    "lon": 128.6459639772,
+    "descriptionEn": "A dining spot candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1963756",
@@ -449,7 +471,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8707199777,
-    "lon": 128.6047912754
+    "lon": 128.6047912754,
+    "descriptionEn": "A dining spot candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1829044",
@@ -468,7 +491,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.9115186035,
-    "lon": 128.6423310255
+    "lon": 128.6423310255,
+    "descriptionEn": "A dining spot candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2850574",
@@ -487,7 +511,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8629631618,
-    "lon": 128.5709980917
+    "lon": 128.5709980917,
+    "descriptionEn": "A dining spot candidate in Daegu. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2746373",
@@ -509,7 +534,8 @@
     "lat": 35.7995979733,
     "lon": 128.6098983496,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/42/4103942_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Daegu. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-127601",
@@ -528,7 +554,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.762794,
-    "lon": 128.599199
+    "lon": 128.599199,
+    "descriptionEn": "A scenic stop candidate in Daegu. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2778409",
@@ -547,7 +574,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.4156006736,
-    "lon": 126.7292313031
+    "lon": 126.7292313031,
+    "descriptionEn": "A café or teahouse candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2872884",
@@ -566,7 +594,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.6352603102,
-    "lon": 126.5194304598
+    "lon": 126.5194304598,
+    "descriptionEn": "A café or teahouse candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2906224",
@@ -585,7 +614,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.3948699118,
-    "lon": 126.646396633
+    "lon": 126.646396633,
+    "descriptionEn": "A dining spot candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3524321",
@@ -605,7 +635,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.7439263403582,
-    "lon": 126.4844289638983
+    "lon": 126.4844289638983,
+    "descriptionEn": "A dining spot candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2891616",
@@ -624,7 +655,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.7243497076,
-    "lon": 126.5070291097
+    "lon": 126.5070291097,
+    "descriptionEn": "A dining spot candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2853930",
@@ -643,7 +675,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.4191600322,
-    "lon": 126.6534075598
+    "lon": 126.6534075598,
+    "descriptionEn": "A dining spot candidate in Incheon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2767445",
@@ -664,7 +697,8 @@
     "lat": 37.5727649,
     "lon": 126.7474747,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/29/4082429_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Incheon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2768207",
@@ -683,7 +717,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.4221140221,
-    "lon": 126.4254255008
+    "lon": 126.4254255008,
+    "descriptionEn": "A scenic stop candidate in Incheon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4040783",
@@ -704,7 +739,8 @@
     "lat": 36.3368015242082,
     "lon": 127.436706435144,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/90/4040790_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2912621",
@@ -723,7 +759,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3514933233,
-    "lon": 127.3693822601
+    "lon": 127.3693822601,
+    "descriptionEn": "A café or teahouse candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1925337",
@@ -742,7 +779,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3987120967,
-    "lon": 127.4043066667
+    "lon": 127.4043066667,
+    "descriptionEn": "A café or teahouse candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2812230",
@@ -761,7 +799,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3463099322,
-    "lon": 127.3664485809
+    "lon": 127.3664485809,
+    "descriptionEn": "A café or teahouse candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1924258",
@@ -780,7 +819,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3675398732,
-    "lon": 127.3193775102
+    "lon": 127.3193775102,
+    "descriptionEn": "A dining spot candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2913144",
@@ -799,7 +839,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.359021828629004,
-    "lon": 127.34422781935517
+    "lon": 127.34422781935517,
+    "descriptionEn": "A dining spot candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2735323",
@@ -818,7 +859,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.38612280363245,
-    "lon": 127.48410120128796
+    "lon": 127.48410120128796,
+    "descriptionEn": "A dining spot candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2580741",
@@ -837,7 +879,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3674098021,
-    "lon": 127.3228842373
+    "lon": 127.3228842373,
+    "descriptionEn": "A dining spot candidate in Daejeon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-127663",
@@ -859,7 +902,8 @@
     "lat": 36.4744348881,
     "lon": 127.4815381382,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource_photo/65/3403365_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Daejeon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2911885",
@@ -879,7 +923,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3812776529,
-    "lon": 127.4787615831
+    "lon": 127.4787615831,
+    "descriptionEn": "A scenic stop candidate in Daejeon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4040770",
@@ -901,7 +946,8 @@
     "lat": 35.6158021558462,
     "lon": 129.060426696861,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/75/4040775_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2852582",
@@ -921,7 +967,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5170480647,
-    "lon": 129.3078489895
+    "lon": 129.3078489895,
+    "descriptionEn": "A café or teahouse candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2848947",
@@ -940,7 +987,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5110353597,
-    "lon": 129.1868236087
+    "lon": 129.1868236087,
+    "descriptionEn": "A café or teahouse candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3546420",
@@ -961,7 +1009,8 @@
     "lat": 35.5644623275,
     "lon": 129.097464608,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/10/4100610_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4101201",
@@ -982,7 +1031,8 @@
     "lat": 35.5272045323,
     "lon": 129.0814597478,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/02/4101202_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A dining spot candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2903881",
@@ -1001,7 +1051,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5498461653,
-    "lon": 129.2927590854
+    "lon": 129.2927590854,
+    "descriptionEn": "A dining spot candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-686252",
@@ -1020,7 +1071,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.713997016,
-    "lon": 129.1992509179
+    "lon": 129.1992509179,
+    "descriptionEn": "A dining spot candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2903860",
@@ -1039,7 +1091,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5337515557,
-    "lon": 129.3365787026
+    "lon": 129.3365787026,
+    "descriptionEn": "A dining spot candidate in Ulsan. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3016047",
@@ -1058,7 +1111,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.515636,
-    "lon": 129.291791
+    "lon": 129.291791,
+    "descriptionEn": "A scenic stop candidate in Ulsan. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-3057069",
@@ -1079,7 +1133,8 @@
     "lat": 35.6328,
     "lon": 129.1269,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/09/3549309_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Ulsan. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2758049",
@@ -1099,7 +1154,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.6371289998,
-    "lon": 127.380919072
+    "lon": 127.380919072,
+    "descriptionEn": "A café or teahouse candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4079286",
@@ -1120,7 +1176,8 @@
     "lat": 37.6786851969,
     "lon": 127.4889091094,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/02/4079202_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2905951",
@@ -1139,7 +1196,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5032583843,
-    "lon": 126.7613818839
+    "lon": 126.7613818839,
+    "descriptionEn": "A café or teahouse candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2833705",
@@ -1160,7 +1218,8 @@
     "lat": 38.1305294122,
     "lon": 127.0444606895,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/12/4076912_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2911152",
@@ -1179,7 +1238,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.3843402234,
-    "lon": 127.1336134448
+    "lon": 127.1336134448,
+    "descriptionEn": "A dining spot candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2902635",
@@ -1198,7 +1258,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.3697925722,
-    "lon": 127.0988456201
+    "lon": 127.0988456201,
+    "descriptionEn": "A dining spot candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4070182",
@@ -1217,7 +1278,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.5010334583833,
-    "lon": 126.777979427529
+    "lon": 126.777979427529,
+    "descriptionEn": "A dining spot candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2903917",
@@ -1236,7 +1298,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.662665413266915,
-    "lon": 126.79999467420029
+    "lon": 126.79999467420029,
+    "descriptionEn": "A dining spot candidate in Gyeonggi. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3013790",
@@ -1255,7 +1318,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.541,
-    "lon": 127.2534
+    "lon": 127.2534,
+    "descriptionEn": "A scenic stop candidate in Gyeonggi. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2783361",
@@ -1274,7 +1338,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.7183,
-    "lon": 127.4106
+    "lon": 127.4106,
+    "descriptionEn": "A scenic stop candidate in Gyeonggi. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4086897",
@@ -1295,7 +1360,8 @@
     "lat": 36.9869005949,
     "lon": 128.3702720731,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/18/4085718_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3391733",
@@ -1316,7 +1382,8 @@
     "lat": 36.1556324048,
     "lon": 127.7874687209,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/50/4085950_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4060255",
@@ -1337,7 +1404,8 @@
     "lat": 37.1067342306996,
     "lon": 127.944090500581,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/05/4060105_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4055326",
@@ -1358,7 +1426,8 @@
     "lat": 36.6454447658897,
     "lon": 127.477458316595,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/07/4055007_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3572781",
@@ -1379,7 +1448,8 @@
     "lat": 36.70977074607934,
     "lon": 127.5605466889256,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/34/3571934_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A dining spot candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-132960",
@@ -1398,7 +1468,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.6570329825046,
-    "lon": 127.48333156635
+    "lon": 127.48333156635,
+    "descriptionEn": "A dining spot candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2608169",
@@ -1417,7 +1488,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.8134565651,
-    "lon": 127.5178378226
+    "lon": 127.5178378226,
+    "descriptionEn": "A dining spot candidate in Chungbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4107264",
@@ -1436,7 +1508,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.8227467101,
-    "lon": 127.5026553522
+    "lon": 127.5026553522,
+    "descriptionEn": "A scenic stop candidate in Chungbuk. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2758220",
@@ -1457,7 +1530,8 @@
     "lat": 36.5289988497,
     "lon": 127.6612986234,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/48/4102248_image2_1.JPG",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Chungbuk. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2877148",
@@ -1477,7 +1551,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.554270416,
-    "lon": 127.0205427882
+    "lon": 127.0205427882,
+    "descriptionEn": "A café or teahouse candidate in Chungnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4102223",
@@ -1498,7 +1573,8 @@
     "lat": 36.1568849517,
     "lon": 126.6909096975,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/03/4100303_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Chungnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2714230",
@@ -1517,7 +1593,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.3140348693,
-    "lon": 126.657986954
+    "lon": 126.657986954,
+    "descriptionEn": "A café or teahouse candidate in Chungnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2876355",
@@ -1536,7 +1613,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.6815609238,
-    "lon": 126.7510549312
+    "lon": 126.7510549312,
+    "descriptionEn": "A café or teahouse candidate in Chungnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-134197",
@@ -1555,7 +1633,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.1755232187,
-    "lon": 127.1541933666
+    "lon": 127.1541933666,
+    "descriptionEn": "A dining spot candidate in Chungnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3065226",
@@ -1576,7 +1655,8 @@
     "lat": 36.5442795995,
     "lon": 126.4655990288,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/09/3449009_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Chungnam. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4067033",
@@ -1598,7 +1678,8 @@
     "lat": 36.544362,
     "lon": 126.465737,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/71/4066071_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Chungnam. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4105377",
@@ -1619,7 +1700,8 @@
     "lat": 36.1159942454,
     "lon": 128.3372565072,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/82/4104382_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4096621",
@@ -1641,7 +1723,8 @@
     "lat": 36.1186624601,
     "lon": 128.1177567552,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/17/4096117_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4070472",
@@ -1660,7 +1743,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.4188199792,
-    "lon": 129.4316516228
+    "lon": 129.4316516228,
+    "descriptionEn": "A café or teahouse candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3101705",
@@ -1682,7 +1766,8 @@
     "lat": 35.8234779162,
     "lon": 129.1856454551,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/45/3095945_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3473605",
@@ -1701,7 +1786,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.981366856446364,
-    "lon": 128.55682010093483
+    "lon": 128.55682010093483,
+    "descriptionEn": "A dining spot candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1829273",
@@ -1720,7 +1806,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.8263110237806,
-    "lon": 128.734869151423
+    "lon": 128.734869151423,
+    "descriptionEn": "A dining spot candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-134141",
@@ -1739,7 +1826,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.4434689287225,
-    "lon": 129.074197031926
+    "lon": 129.074197031926,
+    "descriptionEn": "A dining spot candidate in Gyeongbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3060357",
@@ -1758,7 +1846,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.728536,
-    "lon": 128.566526
+    "lon": 128.566526,
+    "descriptionEn": "A scenic stop candidate in Gyeongbuk. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4090470",
@@ -1780,7 +1869,8 @@
     "lat": 35.3794211735,
     "lon": 128.0100365531,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/51/4090451_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2917229",
@@ -1799,7 +1889,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 34.9804844006,
-    "lon": 128.6461175101
+    "lon": 128.6461175101,
+    "descriptionEn": "A café or teahouse candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2914868",
@@ -1818,7 +1909,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 34.7152551461,
-    "lon": 128.5848177457
+    "lon": 128.5848177457,
+    "descriptionEn": "A dining spot candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2914996",
@@ -1837,7 +1929,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 34.8651209846,
-    "lon": 128.6896887797
+    "lon": 128.6896887797,
+    "descriptionEn": "A dining spot candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2926997",
@@ -1856,7 +1949,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.547808611101416,
-    "lon": 128.08512529543003
+    "lon": 128.08512529543003,
+    "descriptionEn": "A dining spot candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2930065",
@@ -1875,7 +1969,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 34.8782756718041,
-    "lon": 128.421366225454
+    "lon": 128.421366225454,
+    "descriptionEn": "A dining spot candidate in Gyeongnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2652460",
@@ -1896,7 +1991,8 @@
     "lat": 35.3890696247,
     "lon": 127.9747701372,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/87/4104287_image2_1.JPG",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Gyeongnam. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-129493",
@@ -1915,7 +2011,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 34.8393268322,
-    "lon": 128.0756328909
+    "lon": 128.0756328909,
+    "descriptionEn": "A scenic stop candidate in Gyeongnam. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2899746",
@@ -1934,7 +2031,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.2464159216,
-    "lon": 126.5871089772
+    "lon": 126.5871089772,
+    "descriptionEn": "A café or teahouse candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2904549",
@@ -1953,7 +2051,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.5118171806,
-    "lon": 126.5238629435
+    "lon": 126.5238629435,
+    "descriptionEn": "A café or teahouse candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2904395",
@@ -1972,7 +2071,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.25335636079722,
-    "lon": 126.56294952658268
+    "lon": 126.56294952658268,
+    "descriptionEn": "A café or teahouse candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2906163",
@@ -1991,7 +2091,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.5236266977927,
-    "lon": 126.853951432481
+    "lon": 126.853951432481,
+    "descriptionEn": "A café or teahouse candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1881664",
@@ -2010,7 +2111,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.4018839855,
-    "lon": 126.2516129948
+    "lon": 126.2516129948,
+    "descriptionEn": "A dining spot candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2833409",
@@ -2029,7 +2131,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.5381469339,
-    "lon": 126.6399665376
+    "lon": 126.6399665376,
+    "descriptionEn": "A dining spot candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3066880",
@@ -2048,7 +2151,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.4958816395,
-    "lon": 126.898766602
+    "lon": 126.898766602,
+    "descriptionEn": "A dining spot candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3030178",
@@ -2067,7 +2171,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 33.27511663280418,
-    "lon": 126.70926191840505
+    "lon": 126.70926191840505,
+    "descriptionEn": "A dining spot candidate in Jeju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2800664",
@@ -2088,7 +2193,8 @@
     "lat": 33.4725172154,
     "lon": 126.9299066818,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/00/3550600_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Jeju. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2791501",
@@ -2110,7 +2216,8 @@
     "lat": 33.4825,
     "lon": 126.3754,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/43/4073543_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Jeju. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-3069499",
@@ -2129,7 +2236,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.7520677787,
-    "lon": 128.8832016157
+    "lon": 128.8832016157,
+    "descriptionEn": "A café or teahouse candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2927413",
@@ -2148,7 +2256,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 38.0143079858,
-    "lon": 128.5479219759
+    "lon": 128.5479219759,
+    "descriptionEn": "A café or teahouse candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2916386",
@@ -2170,7 +2279,8 @@
     "lat": 37.8195055246,
     "lon": 127.7614349627,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/76/3499076_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2927425",
@@ -2189,7 +2299,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.3853371821,
-    "lon": 127.8598728434
+    "lon": 127.8598728434,
+    "descriptionEn": "A café or teahouse candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-135923",
@@ -2208,7 +2319,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.2820613934,
-    "lon": 128.0845691746
+    "lon": 128.0845691746,
+    "descriptionEn": "A dining spot candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2503786",
@@ -2227,7 +2339,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.2456761146329,
-    "lon": 128.395115792824
+    "lon": 128.395115792824,
+    "descriptionEn": "A dining spot candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2046961",
@@ -2246,7 +2359,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 38.1525589025191,
-    "lon": 128.604467696622
+    "lon": 128.604467696622,
+    "descriptionEn": "A dining spot candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2877990",
@@ -2265,7 +2379,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 37.2387834881,
-    "lon": 129.0457135082
+    "lon": 129.0457135082,
+    "descriptionEn": "A dining spot candidate in Gangwon. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3046002",
@@ -2286,7 +2401,8 @@
     "lat": 37.8860453238,
     "lon": 127.7138924918,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/37/4105037_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Gangwon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-3072040",
@@ -2306,7 +2422,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 38.189406938944174,
-    "lon": 127.79939504242793
+    "lon": 127.79939504242793,
+    "descriptionEn": "A scenic stop candidate in Gangwon. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2905150",
@@ -2325,7 +2442,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.9231015636,
-    "lon": 127.7590796025
+    "lon": 127.7590796025,
+    "descriptionEn": "A café or teahouse candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2837982",
@@ -2344,7 +2462,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5951553918,
-    "lon": 127.1213170753
+    "lon": 127.1213170753,
+    "descriptionEn": "A café or teahouse candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2899927",
@@ -2363,7 +2482,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.7834268973,
-    "lon": 127.031420188
+    "lon": 127.031420188,
+    "descriptionEn": "A café or teahouse candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2437652",
@@ -2382,7 +2502,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5903262395808,
-    "lon": 126.613209939195
+    "lon": 126.613209939195,
+    "descriptionEn": "A dining spot candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2844088",
@@ -2401,7 +2522,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.7758669246,
-    "lon": 127.3672683028
+    "lon": 127.3672683028,
+    "descriptionEn": "A dining spot candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2867007",
@@ -2420,7 +2542,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.9632288097,
-    "lon": 126.718315685
+    "lon": 126.718315685,
+    "descriptionEn": "A dining spot candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2904282",
@@ -2439,7 +2562,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.5425296954,
-    "lon": 126.566287205
+    "lon": 126.566287205,
+    "descriptionEn": "A dining spot candidate in Jeonbuk. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1580917",
@@ -2460,7 +2584,8 @@
     "lat": 35.9575,
     "lon": 127.6946,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/99/3559999_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Jeonbuk. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-4054732",
@@ -2481,7 +2606,8 @@
     "lat": 35.77442,
     "lon": 126.814027,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/06/4053506_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Jeonbuk. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-2870044",
@@ -2500,7 +2626,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.5051451569,
-    "lon": 127.2300221568
+    "lon": 127.2300221568,
+    "descriptionEn": "A café or teahouse candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4095424",
@@ -2521,7 +2648,8 @@
     "lat": 36.6011321816,
     "lon": 127.302834856,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/52/4094952_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3533979",
@@ -2542,7 +2670,8 @@
     "lat": 36.64693230901995,
     "lon": 127.2675,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/80/4067180_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2871496",
@@ -2561,7 +2690,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.6358284208,
-    "lon": 127.2884911212
+    "lon": 127.2884911212,
+    "descriptionEn": "A dining spot candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1999506",
@@ -2580,7 +2710,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.4789991367,
-    "lon": 127.3442387397
+    "lon": 127.3442387397,
+    "descriptionEn": "A dining spot candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2905753",
@@ -2599,7 +2730,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.4992862319,
-    "lon": 127.2251551705
+    "lon": 127.2251551705,
+    "descriptionEn": "A dining spot candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2905577",
@@ -2618,7 +2750,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 36.5834273178,
-    "lon": 127.2933935256
+    "lon": 127.2933935256,
+    "descriptionEn": "A dining spot candidate in Sejong. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2873737",
@@ -2637,7 +2770,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1300411957,
-    "lon": 126.9490886098
+    "lon": 126.9490886098,
+    "descriptionEn": "A café or teahouse candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3456289",
@@ -2658,7 +2792,8 @@
     "lat": 35.1460861028,
     "lon": 126.9192936186,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/41/3454441_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3029467",
@@ -2678,7 +2813,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.090552080498476,
-    "lon": 126.95240671664186
+    "lon": 126.95240671664186,
+    "descriptionEn": "A café or teahouse candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2873678",
@@ -2697,7 +2833,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.146975307,
-    "lon": 126.943858092
+    "lon": 126.943858092,
+    "descriptionEn": "A café or teahouse candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2873718",
@@ -2716,7 +2853,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1313991603,
-    "lon": 126.9431170054
+    "lon": 126.9431170054,
+    "descriptionEn": "A dining spot candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2664950",
@@ -2735,7 +2873,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1485733193,
-    "lon": 126.9427898385
+    "lon": 126.9427898385,
+    "descriptionEn": "A dining spot candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2859166",
@@ -2754,7 +2893,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1529604109,
-    "lon": 126.9242763393
+    "lon": 126.9242763393,
+    "descriptionEn": "A dining spot candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2837737",
@@ -2773,7 +2913,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.1470732173,
-    "lon": 126.9263608753
+    "lon": 126.9263608753,
+    "descriptionEn": "A dining spot candidate in Gwangju. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4020623",
@@ -2795,7 +2936,8 @@
     "lat": 35.3240789284855,
     "lon": 126.980081336988,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/28/4020628_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-3378796",
@@ -2814,7 +2956,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.3205845182,
-    "lon": 126.9821759337
+    "lon": 126.9821759337,
+    "descriptionEn": "A café or teahouse candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2778411",
@@ -2833,7 +2976,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.3232532884,
-    "lon": 126.984650881
+    "lon": 126.984650881,
+    "descriptionEn": "A café or teahouse candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-4086917",
@@ -2854,7 +2998,8 @@
     "lat": 35.3179452013,
     "lon": 126.9833369719,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/27/4086027_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A café or teahouse candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2841784",
@@ -2873,7 +3018,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.3100303311,
-    "lon": 126.9788759949
+    "lon": 126.9788759949,
+    "descriptionEn": "A dining spot candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2659687",
@@ -2892,7 +3038,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.3100047909,
-    "lon": 126.9804321746
+    "lon": 126.9804321746,
+    "descriptionEn": "A dining spot candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-1038058",
@@ -2913,7 +3060,8 @@
     "lat": 35.3336572623,
     "lon": 126.9645552982,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/76/3461876_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A dining spot candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-2867862",
@@ -2932,7 +3080,8 @@
     "image": "",
     "imageCredit": "",
     "lat": 35.2314752068,
-    "lon": 127.0093112898
+    "lon": 127.0093112898,
+    "descriptionEn": "A dining spot candidate in Jeonnam. Visitor reviews help confirm quietness and satisfaction with the visit."
   },
   {
     "id": "tour-126323",
@@ -2953,7 +3102,8 @@
     "lat": 19.69442748,
     "lon": 117.9925662504,
     "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/39/3562539_image2_1.jpg",
-    "imageLicense": "Type1"
+    "imageLicense": "Type1",
+    "descriptionEn": "A scenic stop candidate in Jeonnam. The detailed route and stopping points still need to be confirmed."
   },
   {
     "id": "tour-3445436",

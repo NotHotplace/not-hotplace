@@ -4,13 +4,17 @@ const root=path.resolve(__dirname,'..');const sql=new DatabaseSync(':memory:');f
 let user=null;const secret='test-owner-setup-secret-at-least-32-characters';
 const env={OWNER_SETUP_HASH:createHash('sha256').update(secret).digest('hex'),DB:{prepare(query){let params=[];const stmt=sql.prepare(query);return{bind(...x){params=x;return this;},async first(){return stmt.get(...params)||null;},async all(){return{results:stmt.all(...params)};},async run(){const r=stmt.run(...params);return {success:true,meta:{changes:r.changes}};}};}}};
 const cache={};function load(file){file=path.resolve(file);if(file.endsWith('.json'))return JSON.parse(fs.readFileSync(file,'utf8'));if(cache[file])return cache[file].exports;const mod={exports:{}};cache[file]=mod;const source=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const req=name=>{if(name==='cloudflare:workers')return {env};if(name==='@/lib/site-auth'||name==='./site-auth')return {getSiteUser:async()=>user,googleReady:()=>false,launchEnv:()=>env,siteOrigin:()=>"https://example.test"};if(name==='@/app/chatgpt-auth')return{getChatGPTUser:async()=>user};if(name.startsWith('@/'))return load(path.join(root,name.slice(2)+(name.endsWith('.json')?'':'.ts')));if(name.startsWith('.'))return load(path.resolve(path.dirname(file),name)+(name.endsWith('.json')?'':'.ts'));return require(name);};new Function('require','module','exports',source)(req,mod,mod.exports);return mod.exports;}
-const api=load(path.join(root,'app/api/action/route.ts')),data=load(path.join(root,'app/api/data/route.ts')),admin=load(path.join(root,'app/api/admin/route.ts'));
+const api=load(path.join(root,'app/api/action/route.ts')),dataRoute=load(path.join(root,'app/api/data/route.ts')),admin=load(path.join(root,'app/api/admin/route.ts'));
+const data={GET:(request=new Request('https://example.test/api/data'))=>dataRoute.GET(request)};
 async function post(action,payload,origin='https://example.test'){return api.POST(new Request('https://example.test/api/action',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:JSON.stringify({action,payload})}));}
 const proposal={city:'서울',category:'cafe',name:'검증용 카페',address:'서울 검증용 주소',source:'https://example.test/cafe',note:'테스트',notChildTarget:true,ack:true};
 const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유로움',comfort:'편함',day:'평일',time:'오후',tags:['작은 음악']};
 (async()=>{
  const {catalog}=load(path.join(root,'lib/catalog.ts'));const {regionKeys,inRegion}=load(path.join(root,'lib/regions.ts'));
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
+ const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();
+ assert.equal(usData.places.length,12,'US starter collection');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ const krData=await (await data.GET()).json();assert(krData.places.length>=324,'existing production Korea catalog preserved');assert(krData.places.every(p=>p.country==='KR'),'Korea response excludes US');
  assert.equal((await post('suggest',proposal)).status,401,'anonymous cannot write');
  env.OWNER_GOOGLE_EMAIL='mythdriveofficial@gmail.com';
  user={userId:'supabase:owner-google',email:'mythdriveofficial@gmail.com',provider:'google',googleEmailVerified:true};

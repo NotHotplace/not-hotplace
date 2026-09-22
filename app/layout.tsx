@@ -8,16 +8,18 @@ import "./launch.css";
 import "./quiet.css";
 import "./atlas.css";
 import "./update.css";
+import "./world.css";
+import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "NotHotplace | 조용한 카페·음식점·드라이브",
+  title: "NotHotplace | Find your room to breathe",
   description: SITE_DESCRIPTION,
   applicationName: 'NotHotplace',
   manifest: '/manifest.webmanifest',
   appleWebApp: {capable: true, title: 'NotHotplace', statusBarStyle: 'black-translucent'},
-  openGraph: {type: 'website', locale: 'ko_KR', siteName: 'NotHotplace', title: 'NotHotplace — 우리는 휴식을 원한다', description: SITE_DESCRIPTION, images: [{url:'/og.png',width:1200,height:630}]},
-  twitter: {card:'summary_large_image',title:'NotHotplace — 우리는 휴식을 원한다',description:SITE_DESCRIPTION,images:['/og.png']},
+  openGraph: {type: 'website', locale: 'en_US', alternateLocale: ['ko_KR'], siteName: 'NotHotplace', title: 'NotHotplace — Find your room to breathe', description: SITE_DESCRIPTION, images: [{url:'/og.png',width:1200,height:630}]},
+  twitter: {card:'summary_large_image',title:'NotHotplace — Find your room to breathe',description:SITE_DESCRIPTION,images:['/og.png']},
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -32,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="dark">
-      <body className="antialiased"><AppRuntime/>{children}</body>
+    <html lang="en" className="dark">
+      <body className="antialiased"><LanguageProvider><AppRuntime/>{children}</LanguageProvider></body>
     </html>
   );
 }
