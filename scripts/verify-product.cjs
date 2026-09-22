@@ -14,6 +14,15 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
  const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();
  assert.equal(usData.places.length,12,'US starter collection');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ const {matchesExploreFilters,emptyFilters}=load(path.join(root,'lib/explore-filters.ts'));
+ const sample={image:'/test.webp',count:5,quiet:4,resting:false};
+ assert(matchesExploreFilters(sample,{photos:true,reviewed:true,quiet:true}),'filters combine correctly');
+ assert(!matchesExploreFilters({...sample,image:undefined},{...emptyFilters,photos:true}),'photo filter excludes missing images');
+ assert(!matchesExploreFilters({...sample,count:0},{...emptyFilters,reviewed:true}),'review filter excludes unreviewed places');
+ assert(!matchesExploreFilters({...sample,count:2,quiet:2},{...emptyFilters,quiet:true}),'quiet filter requires three reviews');
+ assert(!matchesExploreFilters({...sample,resting:true},{...emptyFilters,quiet:true}),'paused places stay excluded from quiet results');
+ assert(usData.places.every(p=>p.visitDetails.length>=2),'US places include official visit details');
+ for(const p of usData.places.filter(p=>p.image))assert(fs.existsSync(path.join(root,'public',p.image)),'listed photo exists: '+p.id);
  const krData=await (await data.GET()).json();assert(krData.places.length>=324,'existing production Korea catalog preserved');assert(krData.places.every(p=>p.country==='KR'),'Korea response excludes US');
  assert.equal((await post('suggest',proposal)).status,401,'anonymous cannot write');
  env.OWNER_GOOGLE_EMAIL='mythdriveofficial@gmail.com';
