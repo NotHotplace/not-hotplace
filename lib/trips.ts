@@ -1,7 +1,9 @@
-export type Trip={id:string;theme:'temple'|'forest'|'slow';title:string;duration:string;description:string;steps:string[];tip:string;category:'cafe'|'drive';query?:string};
+export type Trip={id:string;theme:'temple'|'forest'|'slow';title:string;duration:string;description:string;steps:string[];tip:string;category:'cafe'|'drive';query?:string;placeId?:string};
 export const tripThemes={temple:'템플스테이',forest:'숲에서 쉬기',slow:'느린 하루'};
 // Editorial itinerary ideas. These are not bookable products or claims about a specific venue.
 export const trips:Trip[]=[
+ {id:'slow-teastone',theme:'slow',title:'차 한 잔에 담긴 제주',duration:'80분 티코스',description:'오설록 티스톤에서 차밭과 숲을 곁에 두고, 제주 이야기를 차로 만나보세요.',steps:['공식 페이지에서 날짜와 참가 요금 확인하기','예약한 시간에 티뮤지엄으로 이동하기','가든 투어와 티코스로 천천히 쉬어가기'],tip:'기상에 따라 야외 순서가 달라져요. 티코스 예약이 단독 룸 이용을 뜻하지는 않아요.',category:'cafe',placeId:'kr-osulloc-tea-stone'},
+ {id:'forest-sayuwon',theme:'forest',title:'정원과 건축 사이, 사유원',duration:'반나절 아이디어',description:'군위의 사유원에서 나무와 건축물을 따라 걸으며, 한 곳에 오래 머무는 하루를 계획해보세요.',steps:['공식 관람 예약에서 방문일과 프로그램 확인하기','추천 코스와 날씨에 맞춰 산책 구간 고르기','개방된 탐방로를 따라 내 속도로 걷기'],tip:'운영 시간·요금·개방 구간은 방문일의 공식 안내를 확인하세요.',category:'drive',placeId:'kr-sayuwon'},
  {id:'temple-rest',theme:'temple',title:'일정을 비우는 하룻밤',duration:'1박 2일 아이디어',description:'휴식형 템플스테이를 찾아, 아무것도 하지 않는 시간을 남겨보세요.',steps:['공식 사이트에서 지역과 휴식형 프로그램 살펴보기','입실 시간과 사찰 생활 안내 확인하기','자유 시간에는 산책이나 조용한 휴식'],tip:'사찰별 일정과 참여 조건이 달라요. 예약 전 공식 안내를 확인하세요.',category:'cafe'},
  {id:'temple-day',theme:'temple',title:'가볍게 만나는 사찰의 하루',duration:'당일 아이디어',description:'숙박이 부담스럽다면 당일 프로그램부터 살펴보세요.',steps:['당일 체험이 있는 운영사찰 찾아보기','제공되는 프로그램과 소요 시간 확인하기','체험 뒤 가까운 카페에서 하루 정리하기'],tip:'차담·명상 등의 제공 여부는 프로그램마다 달라요.',category:'cafe'},
  {id:'temple-alone',theme:'temple',title:'혼자 떠나는 쉼',duration:'1박 2일 아이디어',description:'내 속도대로 머물 수 있는 일정을 계획해보세요.',steps:['혼자 참가할 수 있는 프로그램 확인하기','방 배정과 준비물 확인하기','돌아오는 길에 여유 시간 남기기'],tip:'1인 참가와 1인 객실은 서로 다른 조건이에요. 객실 기준을 확인하세요.',category:'drive'},

@@ -8,9 +8,23 @@ export type PrivateExperience = {
   bookingKo: string;
   bookingEn: string;
   maxGuests?: number;
+  minimumSpendKo?: string;
+  minimumSpendEn?: string;
   source: string;
   checked: string;
 };
+
+export function privateBookingFacts(experience: PrivateExperience, language: 'ko' | 'en') {
+  const ko = language === 'ko';
+  return [
+    {label: ko ? '이용 인원' : 'Party size', value: experience.maxGuests
+      ? (ko ? `최대 ${experience.maxGuests}명` : `Up to ${experience.maxGuests} guests`)
+      : (ko ? '룸별 정원 문의 필요' : 'Confirm capacity for your room')},
+    {label: ko ? '최소 이용금액' : 'Minimum spend', value: (ko ? experience.minimumSpendKo : experience.minimumSpendEn)
+      || (ko ? '공개 금액 없음 · 예약 시 문의' : 'Not published · ask when booking')},
+    {label: ko ? '예약 조건' : 'Booking conditions', value: ko ? experience.bookingKo : experience.bookingEn},
+  ];
+}
 
 export const placeThemes = [
   {id:'all', en:'All spaces', ko:'모든 공간'},

@@ -2,6 +2,7 @@ import national from './national-catalog.json';
 import american from './us-catalog.json';
 import guides from './kr-place-guides.json';
 import privateCatalog from './private-catalog.json';
+import restCatalog from './rest-catalog.json';
 import type {PrivateExperience} from './place-themes';
 export type VisitDetail={labelEn:string;labelKo:string;textEn:string;textKo:string};
 export type PlacePhoto={src:string;altKo:string;altEn:string;credit:string;source:string;original:string;licenseUrl:string;width:number;height:number};
@@ -25,4 +26,4 @@ const seen=new Set(original.map(p=>p.name.replace(/\s/g,'')));
 const korean:Place[]=[...original,...(national as Place[]).filter(p=>!seen.has(p.name.replace(/\s/g,'')))];
 
 const guideById=new Map(guides.map(p=>[p.id,p]));
-export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[])];
+export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[]),...(restCatalog as Place[])];
