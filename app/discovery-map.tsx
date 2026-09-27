@@ -58,8 +58,9 @@ export default function DiscoveryMap({places,city,compact,onEnter,onResults}:Pro
  useLayoutEffect(()=>{if(closingToResults){measurePreview();setOpen(false);setClosingToResults(false);}},[closingToResults]);
  function choose(name:string,expanded=true){
   setHover('');onEnter(name);
-  if(name==='전국'){navigation.focus();return;}
-  if(!expanded)return;
+  if(name==='전국')navigation.focus();
+  if(!expanded){onResults();return;}
+  if(name==='전국')return;
   closeAction.current='results';setClosingToResults(true);
  }
  function showResults(){closeAction.current='results';setClosingToResults(true);}
