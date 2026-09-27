@@ -23,6 +23,7 @@
 .quiet-filterbar .quiet-tabs{display:flex!important;flex-wrap:wrap;width:auto;justify-content:flex-start;gap:5px!important}
 .quiet-filterbar .quiet-tab{flex:none;font-size:14px!important;min-height:44px;padding:9px 13px!important}
 .quiet-picks{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.quiet-mobile-install{display:none}
 
 /* Space themes supplement, rather than replace, venue categories. */
 .explorer-space-themes{padding:1px 0 17px}
@@ -135,6 +136,13 @@
  .quiet-app .quiet-place-meta,.us-workspace .quiet-place-meta{font-size:13px}
  .quiet-place-description,.us-workspace .quiet-place-description{font-size:16px}
  .quiet-header-actions .quiet-extra-nav,.quiet-header-actions .quiet-saved-nav{font-size:13px}
+ .quiet-header-actions{width:100%;flex-wrap:nowrap!important;justify-content:space-between}
+ .quiet-header-actions .country-nav{flex:1;min-width:0;white-space:normal}
+ .quiet-header-actions .quiet-extra-nav{display:none}
+ .quiet-header-actions .quiet-saved-nav{font-size:0;gap:0;width:40px;height:40px;justify-content:center;flex:none}
+ .quiet-header-actions .quiet-saved-nav>span{font-size:11px}
+ .quiet-header-actions .quiet-menu-trigger{flex:none}
+ .quiet-mobile-install{display:flex}
  .quiet-filterbar .quiet-tab{padding:9px 10px!important;font-size:13px!important}
  .quiet-filterbar{gap:6px}.quiet-save{width:32px;min-width:32px}.quiet-place{padding-inline:3px}
  .space-themes{gap:7px}.space-themes button{font-size:13px;padding:8px 12px}
