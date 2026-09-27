@@ -55,9 +55,8 @@
 .atlas-overview{display:flex;align-items:center;gap:8px;padding:9px 16px;font-size:14px;box-shadow:0 4px 18px #0004}
 .atlas-zoom-controls{display:flex;align-items:center;overflow:hidden;box-shadow:0 4px 18px #0004}
 .atlas-zoom-controls button{display:grid;place-items:center;width:44px;border:0;border-radius:0;background:transparent;flex:none}
-.atlas-zoom-controls output{min-width:54px;text-align:center;font-size:13px;font-variant-numeric:tabular-nums}
 .atlas-navigation button:hover:not(:disabled){background:#34402b;color:#d1ff73}
 .atlas-navigation button:disabled{opacity:.4;cursor:default}
 .atlas-caption>span{max-width:none;line-height:1.5;color:#c5cec0}
-@media(max-width:640px){.atlas-navigation{left:12px;right:12px;top:12px;gap:8px}.atlas-overview{font-size:13px;padding-inline:12px}.atlas-zoom-controls output{min-width:43px}.atlas-zoom-controls button{width:40px}.atlas-stage>.atlas-svg{padding:60px 0 42px}.atlas-caption>span{max-width:240px;font-size:11px}}
+@media(max-width:640px){.atlas-navigation{left:12px;right:12px;top:12px;gap:8px}.atlas-overview{font-size:13px;padding-inline:12px}.atlas-zoom-controls button{width:40px}.atlas-stage>.atlas-svg{padding:60px 0 42px}.atlas-caption>span{max-width:240px;font-size:11px}}
 @media(max-height:540px){.atlas-stage>.atlas-svg{padding:48px 0 25px}.atlas-navigation{top:8px}.atlas-caption>span{font-size:11px}}

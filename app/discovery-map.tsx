@@ -99,7 +99,7 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
    <div className={'atlas-stage '+(active?'has-region':'')}>
     <div className="atlas-navigation" role="group" aria-label={text('Map controls','지도 조작')}>
      <button className="atlas-overview" onClick={()=>choose('전국')}><Scan size={18}/>{text('All Korea','전국 보기')}</button>
-     <div className="atlas-zoom-controls"><button onClick={()=>navigation.zoom(1/1.35)} disabled={navigation.camera.scale<=MIN_MAP_ZOOM} aria-label={text('Zoom out map','지도 축소')}><Minus size={20}/></button><output aria-label={text('Map zoom','지도 확대 비율')}>{Math.round(navigation.camera.scale*100)}%</output><button onClick={()=>navigation.zoom(1.35)} disabled={navigation.camera.scale>=MAX_MAP_ZOOM} aria-label={text('Zoom in map','지도 확대')}><Plus size={20}/></button></div>
+     <div className="atlas-zoom-controls"><button onClick={()=>navigation.zoom(1/1.35)} disabled={navigation.camera.scale<=MIN_MAP_ZOOM} aria-label={text('Zoom out map','지도 축소')}><Minus size={20}/></button><button onClick={()=>navigation.zoom(1.35)} disabled={navigation.camera.scale>=MAX_MAP_ZOOM} aria-label={text('Zoom in map','지도 확대')}><Plus size={20}/></button></div>
     </div>
     {map(true)}
     <div className="atlas-caption"><span aria-live="polite">{hover?`${hover} · ${counts[hover]||0}곳`:text('Drag to move · Scroll / pinch to zoom','드래그로 이동 · 휠 / 두 손가락으로 확대·축소')}</span><a href={mapSource} target="_blank" rel="noopener noreferrer">지도 출처</a></div>
