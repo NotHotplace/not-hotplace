@@ -139,7 +139,8 @@
  .quiet-header-actions{width:100%;flex-wrap:nowrap!important;justify-content:space-between}
  .quiet-header-actions .country-nav{flex:1;min-width:0;white-space:normal}
  .quiet-header-actions .quiet-extra-nav{display:none}
- .quiet-header-actions .quiet-saved-nav{font-size:0;gap:0;width:40px;height:40px;justify-content:center;flex:none}
+ .quiet-header-actions .quiet-saved-nav{font-size:0!important;gap:0;width:40px;height:40px;justify-content:center;flex:none}
+ .quiet-header-actions .quiet-saved-nav svg{flex:none;width:18px;height:18px}
  .quiet-header-actions .quiet-saved-nav>span{font-size:11px}
  .quiet-header-actions .quiet-menu-trigger{flex:none}
  .quiet-mobile-install{display:flex}
