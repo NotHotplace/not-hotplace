@@ -9,6 +9,7 @@ export default function PrivateExperiences({experiences, language}: {experiences
     {experiences.map(experience => <article key={experience.kind + experience.nameEn}>
       <span className="private-kind">{privacyLabel(experience.kind, language)}</span>
       <h3>{ko ? experience.nameKo : experience.nameEn}</h3>
+      {(ko ? experience.scopeKo : experience.scopeEn) && <p>{ko ? experience.scopeKo : experience.scopeEn}</p>}
       <dl className="private-booking-facts">{privateBookingFacts(experience, language).map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
       <a href={experience.source} target="_blank" rel="noopener noreferrer">{ko ? '공식 이용 안내' : 'Official space information'} ↗</a>
       <small>{ko ? '자료 확인 ' : 'Source checked '}<time dateTime={experience.checked}>{experience.checked}</time></small>

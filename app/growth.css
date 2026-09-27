@@ -1,0 +1,19 @@
+.comparison-action{margin-left:auto;min-height:40px;padding:8px 12px;border:1px solid #516044;border-radius:8px;font-size:13px;color:#d4e4c5;background:#192016;white-space:nowrap}
+.comparison-action[aria-pressed=true]{border-color:#d1ff73;color:#d1ff73}
+.quiet-results-heading{gap:12px;flex-wrap:wrap}
+.quiet-results-heading h2{outline:none}
+.quiet-place:has(.comparison-choice){position:relative;padding-left:37px}
+.comparison-choice{position:absolute;left:4px;top:23px;width:26px;height:26px;accent-color:#d1ff73;cursor:pointer}
+.comparison-choice:disabled{opacity:.35;cursor:default}
+.comparison-bar{display:flex;align-items:center;gap:12px;justify-content:space-between;position:sticky;bottom:0;z-index:12;padding:13px 16px;background:#1e2c19;border:1px solid #4c6438;border-radius:10px;color:#e3eed8;box-shadow:0 -5px 25px #0004;font-size:14px}
+.comparison-bar button{min-height:42px;padding:9px 14px;border-radius:7px;background:#d1ff73;color:#18210d;font-weight:600}
+.comparison-bar button:disabled{opacity:.5;cursor:default}
+.comparison-dialog{max-width:1000px!important;width:calc(100vw - 32px)!important}
+.comparison-scroll{overflow-x:auto;margin-top:18px;overscroll-behavior:contain}
+.comparison-table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.8;color:#d7e2ce}
+.comparison-table th,.comparison-table td{border-bottom:1px solid #3a4930;padding:18px 15px;text-align:left;vertical-align:top;min-width:220px;white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere}
+.comparison-table th:first-child{min-width:110px;width:110px;color:#afc19e;font-weight:500}
+.comparison-table thead th{font-size:18px;color:#eff6e9}
+.comparison-table a{color:#d1ff73;text-underline-offset:4px}
+.comparison-table thead th:first-child{font-size:14px}
+@media(max-width:600px){.comparison-table th,.comparison-table td{min-width:200px;padding:15px 12px}.comparison-table th:first-child{min-width:92px}.comparison-bar{font-size:13px;padding:10px}.comparison-action{margin-left:0}.quiet-results-heading>span{margin-left:auto}}

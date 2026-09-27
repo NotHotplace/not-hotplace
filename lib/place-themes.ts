@@ -10,6 +10,8 @@ export type PrivateExperience = {
   maxGuests?: number;
   minimumSpendKo?: string;
   minimumSpendEn?: string;
+  scopeKo?: string;
+  scopeEn?: string;
   source: string;
   checked: string;
 };
