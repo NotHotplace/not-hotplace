@@ -100,6 +100,22 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const report=await statResponse.json();assert.equal(report.traffic.today,2);assert.equal(report.traffic.week,2);assert.equal(report.traffic.month,2);assert.equal(report.days.length,1);
  const sitemap=load(path.join(root,'app/sitemap.xml/route.ts'));
  const xml=await sitemap.GET().text();assert(xml.includes('https://nothotplace.com/plus'));assert(xml.includes('https://nothotplace.com/trips'));assert(!xml.includes('/stats')&&!xml.includes('/login'));
+ const pages=load(path.join(root,'lib/place-pages.ts'));
+ const usPlace=catalog.find(p=>p.country==='US'),krPlace=catalog.find(p=>p.country==='KR');
+ assert.equal((xml.match(/<url>/g)||[]).length,6+catalog.length*2,'every published catalog place has both language URLs');
+ for(const place of catalog)for(const language of ['en','ko']){
+  const url='https://nothotplace.com'+pages.placePath(place.id,language);
+  assert(xml.includes('<loc>'+url+'</loc>'),'place listed in sitemap: '+place.id+' '+language);
+  assert(xml.includes('hreflang="'+language+'" href="'+url+'"'),'reciprocal locale link');
+ }
+ assert.equal(pages.findCatalogPlace(submitted.id),undefined,'DB suggestions are not claimed as catalog pages');
+ assert(pages.sharePlacePath({...krPlace,id:submitted.id},'ko').startsWith('/kr?'),'approved suggestions retain live explorer share links');
+ assert.equal(pages.sharePlacePath(usPlace,'en'),pages.placePath(usPlace.id,'en'),'catalog sharing opens its independent page');
+ assert.equal(new URL(pages.explorerPath(usPlace,'en'),'https://example.test').searchParams.get('place'),usPlace.id,'review return path retains selected place');
+ assert(!pages.isPlaceLanguage('fr'),'unsupported languages rejected');
+ assert(!pages.findCatalogPlace('not-a-real-place'),'missing places stay missing');
+ assert(pages.relatedPlaces(usPlace).every(p=>p.id!==usPlace.id&&p.country===usPlace.country&&p.city===usPlace.city),'related links stay regional');
+ console.log('PASS: bilingual place paths, reciprocal sitemap links, community suggestion sharing and review return paths.');
  const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert.equal(trips.length,9);assert.equal(new Set(trips.map(t=>t.id)).size,9);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length===3));
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'public/manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,'public',icon.src)));
  // Payment replay must remain bound to the payment originally verified for this user.

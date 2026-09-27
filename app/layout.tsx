@@ -10,6 +10,7 @@ import "./atlas.css";
 import "./update.css";
 import "./world.css";
 import "./visit.css";
+import "./place-page.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
