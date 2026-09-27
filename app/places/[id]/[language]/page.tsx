@@ -5,6 +5,7 @@ import {SITE_URL} from '@/lib/seo';
 import {findCatalogPlace, isPlaceLanguage, mapPath, placeDescription, placePath, relatedPlaces} from '@/lib/place-pages';
 import PlaceInteractions from '../../place-interactions';
 import PlaceGallery from '../../place-gallery';
+import PrivateExperiences from '../../../private-experiences';
 
 type Props = {params: Promise<{id: string; language: string}>};
 
@@ -36,7 +37,7 @@ export default async function PlacePage({params}: Props) {
   const label = (en: string, kr: string) => ko ? kr : en;
   const country = place.country === 'US' ? 'us' : 'kr';
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
-    : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : label('SCENIC STOP', '풍경 · 드라이브');
+    : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
   const photoSource = place.imageSource || place.imageRemote || place.source;
   const license = place.imageLicense === 'Type1' ? label('KOGL Type 1', '공공누리 제1유형') : place.imageLicense;
@@ -77,6 +78,7 @@ export default async function PlacePage({params}: Props) {
           <p>{placeDescription(place, language)}</p>
           <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country === 'US' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
         </section>
+        <PrivateExperiences experiences={place.experiences} language={language}/>
         {!!place.visitDetails?.length && <section className="place-facts"><h2>{label('Before you go', '방문을 준비해요')}</h2>
           <dl>{place.visitDetails.map(detail => <div key={detail.labelEn}><dt>{label(detail.labelEn, detail.labelKo)}</dt><dd>{label(detail.textEn, detail.textKo)}</dd></div>)}</dl>
         </section>}

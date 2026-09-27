@@ -18,11 +18,7 @@ export function sharePlacePath(place: Place, language: PlaceLanguage) {
   // Approved community suggestions are served by the live explorer, not the source catalog.
   return findCatalogPlace(place.id) ? placePath(place.id, language) : explorerPath(place, language);
 }
-export function placeDescription(place: Place, language: PlaceLanguage) {
-  if (language === 'ko') return place.descriptionKo || place.description;
-  return place.descriptionEn || (place.country === 'US' ? place.description :
-    'Explore this place in South Korea. See the source for visitor information and check recent visitor reviews before planning your pause.');
-}
+export {placeDescription} from './place-copy';
 export function mapPath(place: Place) {
   return place.country === 'US'
     ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.name + ' ' + place.address)
