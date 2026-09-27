@@ -46,7 +46,7 @@
 @media(prefers-reduced-motion:reduce){.quiet-thumb img,.atlas-geography{transition:none!important}.quiet-place-main:hover img{transform:none}}
 
 /* Keep viewport navigation independent of the selected region. */
-.atlas-stage>.atlas-svg{touch-action:none;cursor:grab;user-select:none;padding:48px 12px 36px}
+.atlas-stage>.atlas-svg{touch-action:none;cursor:grab;user-select:none;outline:none;padding:48px 12px 36px}
 .atlas-stage>.atlas-svg[data-dragging=true],.atlas-stage>.atlas-svg[data-dragging=true] *{cursor:grabbing}
 .atlas-stage>.atlas-svg[data-animated=false] .atlas-geography{transition:none}
 .atlas-stage>.atlas-svg:focus-visible{outline:2px solid #d1ff73;outline-offset:-5px}
