@@ -12,6 +12,7 @@ import "./world.css";
 import "./visit.css";
 import "./place-page.css";
 import "./comfort.css";
+import "./places-first.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {

@@ -186,7 +186,16 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  user={userId:'owner',email:'owner@example.test'};const engagementReport=await (await stats.GET()).json();assert.equal(engagementReport.engagement[0].total,2);
  console.log('PASS: direct place review/save privacy, review freshness, 30 bilingual guides / 90 licensed assets and aggregate engagement boundaries.');
  console.log('PASS: bilingual place paths, reciprocal sitemap links, community suggestion sharing and review return paths.');
- const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert.equal(trips.length,9);assert.equal(new Set(trips.map(t=>t.id)).size,9);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length===3));
+ const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert(trips.length>=9);assert.equal(new Set(trips.map(t=>t.id)).size,trips.length);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length>=3));
+ for(const trip of trips.filter(t=>t.placeId)){const place=catalog.find(p=>p.id===trip.placeId);assert(place&&place.country==='KR'&&place.category===trip.category,'curated itinerary links to a matching published venue');}
+ const {privateBookingFacts}=load(path.join(root,'lib/place-themes.ts'));
+ const yuYuan=catalog.find(p=>p.id==='kr-yu-yuan').experiences[0];
+ assert(privateBookingFacts(yuYuan,'ko')[0].value.includes('문의'),'unknown room capacity remains unknown');
+ assert(privateBookingFacts(yuYuan,'en')[1].value.includes('room type'),'verified minimum-spend conditions remain visible');
+ const atomix=catalog.find(p=>p.id==='us-atomix').experiences[0];
+ assert(privateBookingFacts(atomix,'en')[0].value.includes('15'),'confirmed capacity is presented');
+ assert(privateBookingFacts(atomix,'ko')[1].value.includes('공개 금액 없음'),'unpublished minimum spend never implies zero');
+ for(const id of ['kr-osulloc-tea-stone','kr-sayuwon'])assert(!matchesPlaceTheme(catalog.find(p=>p.id===id),'private-room'),'a restful setting is not evidence of an exclusive room');
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'public/manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,'public',icon.src)));
  // Payment replay must remain bound to the payment originally verified for this user.
  user={userId:'trial-user',email:'trial@example.test'};
