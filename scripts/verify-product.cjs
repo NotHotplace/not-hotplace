@@ -13,7 +13,27 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {catalog}=load(path.join(root,'lib/catalog.ts'));const {regionKeys,inRegion}=load(path.join(root,'lib/regions.ts'));
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
  const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();
- assert.equal(usData.places.length,12,'US starter collection');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ assert.equal(usData.places.length,14,'US starter collection plus verified private spaces');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ const {matchesPlaceTheme,isPlaceTheme}=load(path.join(root,'lib/place-themes.ts'));
+ const {placeDescription,placeVisitHint}=load(path.join(root,'lib/place-copy.ts'));
+ const spacePlaces=catalog.filter(p=>p.experiences?.length);
+ assert.equal(spacePlaces.length,4,'four source-verified venues introduce the space themes');
+ assert.equal(catalog.filter(p=>matchesPlaceTheme(p,'private-room')).length,3);
+ assert.equal(catalog.filter(p=>matchesPlaceTheme(p,'premium-spa')).length,2);
+ assert.equal(catalog.filter(p=>matchesPlaceTheme(p,'exclusive-hire')).length,1);
+ assert(matchesPlaceTheme(catalog.find(p=>p.id==='kr-yu-yuan'),'private-room'),'restaurant category and room privacy are independent');
+ assert(!matchesPlaceTheme(catalog.find(p=>p.id==='us-atomix'),'private-room'),'exclusive hire and semi-private bar must not imply a room');
+ assert(!matchesPlaceTheme({experiences:[{kind:'semi-private'}]},'private-room'),'a semi-private venue alone does not qualify');
+ assert(!matchesPlaceTheme({themes:['premium-spa']},'private-room'),'premium price or spa theme does not establish privacy');
+ assert(!matchesPlaceTheme({name:'Private room cafe'},'private-room'),'names are not privacy evidence');
+ assert(!isPlaceTheme('semi-private')&&!isPlaceTheme(null)&&isPlaceTheme('private-room'),'URL themes are validated');
+ for(const place of spacePlaces){
+  assert(placeDescription(place,'ko')&&placeDescription(place,'en'));
+  assert(placeVisitHint(place,'ko')&&placeVisitHint(place,'en'));
+  for(const experience of place.experiences){assert(experience.source.startsWith('https://'));assert.equal(experience.checked,'2026-09-27');assert(experience.bookingEn&&experience.bookingKo);}
+ }
+ assert(usData.places.find(p=>p.id==='us-atomix').experiences.some(e=>e.kind==='semi-private'),'API preserves space types and booking evidence');
+ assert(catalog.every(p=>placeDescription(p,'ko')&&placeDescription(p,'en')&&placeVisitHint(p,'ko')&&placeVisitHint(p,'en')),'every catalog card has a bilingual summary and visit hint');
  const {matchesExploreFilters,emptyFilters}=load(path.join(root,'lib/explore-filters.ts'));
  const sample={image:'/test.webp',count:5,quiet:4,resting:false};
  assert(matchesExploreFilters(sample,{photos:true,reviewed:true,quiet:true}),'filters combine correctly');

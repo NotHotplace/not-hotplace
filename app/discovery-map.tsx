@@ -2,7 +2,7 @@
 import {useLocale} from './locale';
 
 import {useEffect,useRef,useState,type CSSProperties,type MouseEvent} from 'react';
-import {ArrowLeft,ArrowUpRight,Maximize2,MapPin,X,Coffee,Utensils,Car} from 'lucide-react';
+import {ArrowLeft,ArrowUpRight,Maximize2,MapPin,X,Coffee,Utensils,Car,Sparkles} from 'lucide-react';
 import {Dialog,DialogTrigger,DialogContent,DialogTitle,DialogDescription,DialogClose} from '@/components/ui/dialog';
 import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from '@/components/ui/select';
 import geometry from '@/lib/korea-map.json';
@@ -17,7 +17,7 @@ const callouts:Record<string,[number,number]>={
 };
 const majorLabels=new Set(['서울','강원','충남','전북','전남','경북','경남','제주']);
 const mapSource='https://github.com/southkorea/southkorea-maps';
-const categoryIcon=(type:string)=>type==='cafe'?<Coffee size={19}/>:type==='food'?<Utensils size={19}/>:<Car size={19}/>;
+const categoryIcon=(type:string)=>type==='cafe'?<Coffee size={19}/>:type==='food'?<Utensils size={19}/>:type==='spa'?<Sparkles size={19}/>:<Car size={19}/>;
 
 type Props={
  places:MapPlace[];city:string;compact:boolean;
