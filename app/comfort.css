@@ -113,7 +113,7 @@
 @media(max-width:900px){
  .quiet-workspace,.quiet-workspace.us-workspace{display:grid;grid-template-columns:1fr;gap:18px;min-height:0}
  .quiet-workspace .quiet-results{grid-row:1;max-height:none;min-height:200px}
- .quiet-results-scroll,.us-workspace .quiet-results-scroll{max-height:680px}
+ .quiet-results-scroll,.us-workspace .quiet-results-scroll{max-height:680px;overflow-y:auto}
  .quiet-workspace .atlas-preview-wrap,.quiet-workspace .us-map-panel{grid-row:2}
  .quiet-thumb,.us-workspace .quiet-thumb{width:96px;height:110px}
 }
