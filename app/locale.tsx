@@ -27,8 +27,8 @@ function localize(node:ReactNode,lang:Language):ReactNode{
 }
 function LocalizedFragment({node,lang}:{node:ReactNode;lang:Language}){return <>{localize(node,lang)}</>;}
 const Context=createContext({lang:'en' as Language,setLang:(_lang:Language)=>{}});
-export function LanguageProvider({children}:{children:ReactNode}){
- const [lang,setLanguage]=useState<Language>('en');
+export function LanguageProvider({children,initialLanguage}:{children:ReactNode;initialLanguage?:Language}){
+ const [lang,setLanguage]=useState<Language>(initialLanguage||'en');
  useEffect(()=>{let saved:string|null=null;try{saved=localStorage.getItem('nhp-language');}catch{}const query=new URLSearchParams(location.search).get('lang');const pathLanguage=location.pathname.match(/^\/places\/[^/]+\/(ko|en)\/?$/)?.[1];const selected=pathLanguage==='ko'||pathLanguage==='en'?pathLanguage:query==='ko'||query==='en'?query:saved==='ko'||saved==='en'?saved:navigator.language.startsWith('ko')?'ko':'en';setLanguage(selected);try{localStorage.setItem('nhp-language',selected);}catch{}},[]);
  useEffect(()=>{document.documentElement.lang=lang;},[lang]);
  function setLang(value:Language){setLanguage(value);try{localStorage.setItem('nhp-language',value);}catch{}const u=new URL(location.href);u.searchParams.set('lang',value);history.replaceState(null,'',u.pathname+u.search+u.hash);}

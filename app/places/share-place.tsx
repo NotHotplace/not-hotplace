@@ -1,9 +1,10 @@
 'use client';
 import {useState} from 'react';
+import {trackEngagement} from '@/lib/engagement-client';
 import {Share2, Check} from 'lucide-react';
 import type {PlaceLanguage} from '@/lib/place-pages';
 
-export default function SharePlace({name, path, language}: {name: string; path: string; language: PlaceLanguage}) {
+export default function SharePlace({name, path, language, country}: {name: string; path: string; language: PlaceLanguage; country?: 'KR'|'US'}) {
   const [state, setState] = useState<'idle' | 'copied' | 'fallback'>('idle');
   const [url, setUrl] = useState('');
   const ko = language === 'ko';
@@ -11,8 +12,8 @@ export default function SharePlace({name, path, language}: {name: string; path: 
     const absolute = new URL(path, window.location.origin).href;
     setUrl(absolute);
     try {
-      if (navigator.share) {await navigator.share({title: `${name} · NotHotplace`, url: absolute}); return;}
-      if (navigator.clipboard) {await navigator.clipboard.writeText(absolute); setState('copied'); return;}
+      if (navigator.share) {await navigator.share({title: `${name} · NotHotplace`, url: absolute}); if(country)trackEngagement('share',country); return;}
+      if (navigator.clipboard) {await navigator.clipboard.writeText(absolute); setState('copied'); if(country)trackEngagement('share',country); return;}
     } catch (error) {if (error instanceof Error && error.name === 'AbortError') return;}
     setState('fallback');
   }

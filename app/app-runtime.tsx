@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useRef} from 'react';
+import {rememberSource} from '@/lib/engagement-client';
 
 export default function AppRuntime(){
   const counted=useRef(false);
@@ -8,6 +9,7 @@ export default function AppRuntime(){
     if(counted.current || location.hostname!=='nothotplace.com') return;
     counted.current=true;
     if(navigator.doNotTrack==='1' || (navigator as Navigator & {globalPrivacyControl?:boolean}).globalPrivacyControl) return;
+    rememberSource();
     // Only a total page-open count is sent. No URL, cookie or user identifier.
     fetch('/api/visit',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:'{}',keepalive:true}).catch(()=>{});
   },[]);
