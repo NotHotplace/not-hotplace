@@ -50,7 +50,28 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
   for(const experience of place.experiences){assert(experience.source.startsWith('https://'));assert.equal(experience.checked,'2026-09-27');assert(experience.bookingEn&&experience.bookingKo);}
  }
  assert(usData.places.find(p=>p.id==='us-atomix').experiences.some(e=>e.kind==='semi-private'),'API preserves space types and booking evidence');
- assert(catalog.every(p=>placeDescription(p,'ko')&&placeDescription(p,'en')&&placeVisitHint(p,'ko')&&placeVisitHint(p,'en')),'every catalog card has a bilingual summary and visit hint');
+ assert(catalog.every(p=>placeDescription(p,'ko')&&placeDescription(p,'en')),'every catalog card has a bilingual summary');
+ assert.equal(placeVisitHint({visitDetails:[{labelEn:'Parking',labelKo:'주차',textKo:'관광정보 안내: 불가능',textEn:'Tourism listing: parking unavailable'}]},'ko'),'','raw metadata does not become a visitor hint');
+ assert.equal(placeVisitHint({},'ko'),'','cards without specific advice omit the repeated footer');
+ assert(placeVisitHint({visitDetails:[{labelEn:'Solo visit',labelKo:'1인 이용',textKo:'정식은 2인 이상 주문입니다.',textEn:'Set meals require two diners.'}]},'ko').includes('2인'),'meaningful booking constraints remain visible');
+ const {readBrowseState,writeBrowseState}=load(path.join(root,'lib/browse-state.ts'));
+ const browsing={city:'서울',category:'food',theme:'private-room',term:'유유안',view:'explore',filters:{photos:true,reviewed:false,quiet:false}};
+ const shared=writeBrowseState(new URL('https://example.test/kr?utm_source=instagram&resume=1'),browsing,'ko');
+ assert.deepEqual(readBrowseState(shared.searchParams,regionKeys),browsing,'shared URL restores region, theme, search and filters');
+ assert.equal(shared.searchParams.get('utm_source'),'instagram');assert(!shared.searchParams.has('resume'));
+ assert(!shared.searchParams.has('lat')&&!shared.searchParams.has('saved'),'private device state is never serialized');
+ const invalid=readBrowseState(new URLSearchParams('region=oops&theme=semi-private&category=bad&view=admin&photos=true'),regionKeys);
+ assert.equal(invalid.city,'전국');assert.equal(invalid.theme,'all');assert.equal(invalid.view,'explore');assert.equal(invalid.filters.photos,false);
+ const cleared=writeBrowseState(shared,{...browsing,city:'전국',category:'all',theme:'all',term:'',filters:{photos:false,reviewed:false,quiet:false}},'en');
+ assert.equal(cleared.search,'?utm_source=instagram&lang=en','clearing state removes stale URL choices');
+ const {toggleComparison,comparisonFacts}=load(path.join(root,'lib/place-comparison.ts'));
+ assert.deepEqual(toggleComparison(['a','b','c'],'d'),['a','b','c'],'at most three comparison columns');
+ assert.deepEqual(toggleComparison(['a','b'],'a'),['b'],'selection toggles off');
+ const emptyComparison=comparisonFacts({...catalog[0],experiences:[],visitDetails:[],count:0,quiet:0,positive:0},'ko');
+ assert(emptyComparison.some(f=>f.value.includes('조용함 확인 전')),'zero reviews never implies a quietness score');
+ assert(emptyComparison.some(f=>f.value==='공식 안내에서 확인 필요'),'unknown costs are explicit');
+ const atomixComparison=comparisonFacts({...catalog.find(p=>p.id==='us-atomix'),count:0,quiet:0,positive:0},'en');
+ assert(atomixComparison.some(f=>f.value.includes('Semi-private')),'comparison keeps venue-specific privacy types');
  const {matchesExploreFilters,emptyFilters}=load(path.join(root,'lib/explore-filters.ts'));
  const sample={image:'/test.webp',count:5,quiet:4,resting:false};
  assert(matchesExploreFilters(sample,{photos:true,reviewed:true,quiet:true}),'filters combine correctly');

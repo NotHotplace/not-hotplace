@@ -1,48 +1,221 @@
 [
   {
-    "id":"kr-sulwhasoo-dosan-spa","country":"KR","city":"서울","category":"spa",
-    "name":"설화수 도산 스파","area":"강남구 · 도산공원","address":"서울 강남구 도산대로45길 18 설화수 도산 플래그십 스토어",
-    "description":"VIP룸과 커플룸을 갖춘 도산공원 인근의 스파. 트리트먼트와 원하는 룸 타입을 함께 확인할 수 있어요.",
-    "descriptionEn":"A spa near Dosan Park with VIP and couples rooms. Ask about your preferred room alongside the treatment you choose.",
-    "source":"https://sulwhasoo.com/spa/introduction/introduction.html","checked":"2026-09-27",
-    "tags":["VIP룸 · 커플룸","룸 지정 예약"],"tagsEn":["VIP & couples rooms","Request a room"],
-    "themes":["premium-spa"],"photoGallery":"https://sulwhasoo.com/spa/introduction/introduction.html",
-    "experiences":[{"kind":"private-room","nameKo":"VIP룸 · 커플룸","nameEn":"VIP and couples rooms","bookingKo":"룸별 단독 이용 조건·인원·추가요금을 예약할 때 확인하세요.","bookingEn":"Confirm exclusive use, party size and any room surcharge when booking.","source":"https://sulwhasoo.com/spa/introduction/introduction.html","checked":"2026-09-27"}],
-    "visitDetails":[{"labelEn":"Room selection","labelKo":"룸 선택","textEn":"The official introduction lists VIP and couples rooms. Request the specific room when booking.","textKo":"공식 소개에 VIP룸과 커플룸이 안내돼 있어요. 예약할 때 원하는 룸을 지정해 주세요."},{"labelEn":"Before booking","labelKo":"예약 전 확인","textEn":"Room capacity, exclusive-use conditions and fees need confirmation. A room listing does not establish soundproofing.","textKo":"룸 정원·단독 이용 조건·요금은 별도 확인이 필요해요. 룸이 있다는 것만으로 방음 여부까지 확인된 것은 아니에요."}]
+    "id": "kr-sulwhasoo-dosan-spa",
+    "country": "KR",
+    "city": "서울",
+    "category": "spa",
+    "name": "설화수 도산 스파",
+    "area": "강남구 · 도산공원",
+    "address": "서울 강남구 도산대로45길 18 설화수 도산 플래그십 스토어",
+    "description": "VIP룸과 커플룸을 갖춘 도산공원 인근의 스파. 트리트먼트와 원하는 룸 타입을 함께 확인할 수 있어요.",
+    "descriptionEn": "A spa near Dosan Park with VIP and couples rooms. Ask about your preferred room alongside the treatment you choose.",
+    "source": "https://sulwhasoo.com/spa/introduction/introduction.html",
+    "checked": "2026-09-27",
+    "tags": [
+      "VIP룸 · 커플룸",
+      "룸 지정 예약"
+    ],
+    "tagsEn": [
+      "VIP & couples rooms",
+      "Request a room"
+    ],
+    "themes": [
+      "premium-spa"
+    ],
+    "photoGallery": "https://sulwhasoo.com/spa/introduction/introduction.html",
+    "experiences": [
+      {
+        "kind": "private-room",
+        "nameKo": "VIP룸 · 커플룸",
+        "nameEn": "VIP and couples rooms",
+        "bookingKo": "룸별 단독 이용 조건·인원·추가요금을 예약할 때 확인하세요.",
+        "bookingEn": "Confirm exclusive use, party size and any room surcharge when booking.",
+        "source": "https://sulwhasoo.com/spa/introduction/introduction.html",
+        "checked": "2026-09-27",
+        "scopeKo": "예약한 VIP룸 또는 커플룸의 이용 범위입니다. 룸 지정과 단독 이용 여부를 함께 확인하세요.",
+        "scopeEn": "Applies to the VIP or couples room you book. Confirm the room allocation and exclusive use."
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Room selection",
+        "labelKo": "룸 선택",
+        "textEn": "The official introduction lists VIP and couples rooms. Request the specific room when booking.",
+        "textKo": "공식 소개에 VIP룸과 커플룸이 안내돼 있어요. 예약할 때 원하는 룸을 지정해 주세요."
+      },
+      {
+        "labelEn": "Before booking",
+        "labelKo": "예약 전 확인",
+        "textEn": "Room capacity, exclusive-use conditions and fees need confirmation. A room listing does not establish soundproofing.",
+        "textKo": "룸 정원·단독 이용 조건·요금은 별도 확인이 필요해요. 룸이 있다는 것만으로 방음 여부까지 확인된 것은 아니에요."
+      }
+    ]
   },
   {
-    "id":"kr-yu-yuan","country":"KR","city":"서울","category":"food",
-    "name":"유유안","area":"종로구 · 광화문","address":"서울 종로구 새문안로 97 포시즌스 호텔 서울",
-    "description":"포시즌스 호텔 서울의 광둥요리 레스토랑. 일행과 함께 식사할 수 있는 프라이빗 다이닝룸을 운영해요.",
-    "descriptionEn":"A Cantonese restaurant at Four Seasons Hotel Seoul with private dining rooms for meals with your own party.",
-    "source":"https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/","checked":"2026-09-27",
-    "tags":["프라이빗 다이닝룸","최소 이용금액 확인"],"tagsEn":["Private dining","Minimum spend applies"],
-    "photoGallery":"https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
-    "experiences":[{"kind":"private-room","nameKo":"프라이빗 다이닝룸","nameEn":"Private dining room","minimumSpendKo":"룸별로 적용 · 금액은 예약 시 문의","minimumSpendEn":"Applies by room type · confirm the amount when booking","bookingKo":"일반 홀과 구분해 룸을 지정하고, 룸별 최소 이용금액을 확인하세요.","bookingEn":"Request a private room rather than a regular table and confirm its minimum spend.","source":"https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/","checked":"2026-09-27"}],
-    "visitDetails":[{"labelEn":"Reservations","labelKo":"예약","textEn":"Private-room conditions depend on the room type. Confirm availability, party size and minimum spend with the restaurant.","textKo":"룸 종류별 이용 조건이 달라요. 이용 가능한 룸·인원·최소 이용금액을 매장에 확인하세요."},{"labelEn":"Setting","labelKo":"공간 구분","textEn":"The private-room listing applies to the booked room. Visitor reports are still needed to assess noise and crowds.","textKo":"프라이빗 안내는 예약한 룸에 해당해요. 실제 소음과 혼잡도는 방문 후기로 별도 확인합니다."}]
+    "id": "kr-yu-yuan",
+    "country": "KR",
+    "city": "서울",
+    "category": "food",
+    "name": "유유안",
+    "area": "종로구 · 광화문",
+    "address": "서울 종로구 새문안로 97 포시즌스 호텔 서울",
+    "description": "포시즌스 호텔 서울의 광둥요리 레스토랑. 일행과 함께 식사할 수 있는 프라이빗 다이닝룸을 운영해요.",
+    "descriptionEn": "A Cantonese restaurant at Four Seasons Hotel Seoul with private dining rooms for meals with your own party.",
+    "source": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
+    "checked": "2026-09-27",
+    "tags": [
+      "프라이빗 다이닝룸",
+      "최소 이용금액 확인"
+    ],
+    "tagsEn": [
+      "Private dining",
+      "Minimum spend applies"
+    ],
+    "photoGallery": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
+    "experiences": [
+      {
+        "kind": "private-room",
+        "nameKo": "프라이빗 다이닝룸",
+        "nameEn": "Private dining room",
+        "minimumSpendKo": "룸별로 적용 · 금액은 예약 시 문의",
+        "minimumSpendEn": "Applies by room type · confirm the amount when booking",
+        "bookingKo": "일반 홀과 구분해 룸을 지정하고, 룸별 최소 이용금액을 확인하세요.",
+        "bookingEn": "Request a private room rather than a regular table and confirm its minimum spend.",
+        "source": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
+        "checked": "2026-09-27",
+        "scopeKo": "프라이빗 다이닝룸에 해당합니다. 일반 홀 예약과 구분해 문의하세요.",
+        "scopeEn": "Applies to a private dining room. Request this separately from a standard dining reservation."
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Reservations",
+        "labelKo": "예약",
+        "textEn": "Private-room conditions depend on the room type. Confirm availability, party size and minimum spend with the restaurant.",
+        "textKo": "룸 종류별 이용 조건이 달라요. 이용 가능한 룸·인원·최소 이용금액을 매장에 확인하세요."
+      },
+      {
+        "labelEn": "Setting",
+        "labelKo": "공간 구분",
+        "textEn": "The private-room listing applies to the booked room. Visitor reports are still needed to assess noise and crowds.",
+        "textKo": "프라이빗 안내는 예약한 룸에 해당해요. 실제 소음과 혼잡도는 방문 후기로 별도 확인합니다."
+      }
+    ]
   },
   {
-    "id":"us-peninsula-spa","country":"US","city":"New York","category":"spa",
-    "name":"The Peninsula Spa","area":"Manhattan","address":"700 Fifth Avenue at 55th Street, New York, NY",
-    "description":"A spa on the 21st floor in Manhattan, with a Private Spa Suite among its 11 treatment rooms. Ask about the suite and treatment together.",
-    "descriptionEn":"A spa on the 21st floor in Manhattan, with a Private Spa Suite among its 11 treatment rooms. Ask about the suite and treatment together.",
-    "descriptionKo":"맨해튼 21층에서 쉬어가는 스파. 11개 트리트먼트룸 중 Private Spa Suite를 운영하며, 룸과 프로그램을 함께 문의할 수 있어요.",
-    "source":"https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa","checked":"2026-09-27",
-    "tags":["Private Spa Suite","Shared facilities separate"],"tagsKo":["프라이빗 스위트","공용 시설 별도"],"themes":["premium-spa"],
-    "photoGallery":"https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa",
-    "experiences":[{"kind":"private-suite","nameKo":"Private Spa Suite","nameEn":"Private Spa Suite","bookingKo":"스위트 지정과 이용 프로그램, 공용 시설 범위를 문의하세요.","bookingEn":"Confirm suite availability, the treatment and which facilities remain shared.","source":"https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa","checked":"2026-09-27"}],
-    "visitDetails":[{"labelEn":"Reservations","labelKo":"예약","textEn":"Request the Private Spa Suite specifically. Suite availability and program pricing require confirmation.","textKo":"Private Spa Suite를 지정해 문의하세요. 이용 가능 여부와 프로그램 요금은 별도 확인이 필요해요."},{"labelEn":"Shared facilities","labelKo":"공용 시설","textEn":"The spa also has relaxation lounges and thermal facilities. These are separate from the suite's private-use scope.","textKo":"스파의 라운지와 열시설은 스위트 전용 이용 범위와 구분해 확인해 주세요."}]
+    "id": "us-peninsula-spa",
+    "country": "US",
+    "city": "New York",
+    "category": "spa",
+    "name": "The Peninsula Spa",
+    "area": "Manhattan",
+    "address": "700 Fifth Avenue at 55th Street, New York, NY",
+    "description": "A spa on the 21st floor in Manhattan, with a Private Spa Suite among its 11 treatment rooms. Ask about the suite and treatment together.",
+    "descriptionEn": "A spa on the 21st floor in Manhattan, with a Private Spa Suite among its 11 treatment rooms. Ask about the suite and treatment together.",
+    "descriptionKo": "맨해튼 21층에서 쉬어가는 스파. 11개 트리트먼트룸 중 Private Spa Suite를 운영하며, 룸과 프로그램을 함께 문의할 수 있어요.",
+    "source": "https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa",
+    "checked": "2026-09-27",
+    "tags": [
+      "Private Spa Suite",
+      "Shared facilities separate"
+    ],
+    "tagsKo": [
+      "프라이빗 스위트",
+      "공용 시설 별도"
+    ],
+    "themes": [
+      "premium-spa"
+    ],
+    "photoGallery": "https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa",
+    "experiences": [
+      {
+        "kind": "private-suite",
+        "nameKo": "Private Spa Suite",
+        "nameEn": "Private Spa Suite",
+        "bookingKo": "스위트 지정과 이용 프로그램, 공용 시설 범위를 문의하세요.",
+        "bookingEn": "Confirm suite availability, the treatment and which facilities remain shared.",
+        "source": "https://www.peninsula.com/en/new-york/wellness/the-peninsula-spa",
+        "checked": "2026-09-27",
+        "scopeKo": "예약한 Private Spa Suite에 해당합니다. 라운지와 열시설은 공용 시설로 구분해 확인하세요.",
+        "scopeEn": "Applies to the booked Private Spa Suite. Confirm which lounges and thermal facilities remain shared."
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Reservations",
+        "labelKo": "예약",
+        "textEn": "Request the Private Spa Suite specifically. Suite availability and program pricing require confirmation.",
+        "textKo": "Private Spa Suite를 지정해 문의하세요. 이용 가능 여부와 프로그램 요금은 별도 확인이 필요해요."
+      },
+      {
+        "labelEn": "Shared facilities",
+        "labelKo": "공용 시설",
+        "textEn": "The spa also has relaxation lounges and thermal facilities. These are separate from the suite's private-use scope.",
+        "textKo": "스파의 라운지와 열시설은 스위트 전용 이용 범위와 구분해 확인해 주세요."
+      }
+    ]
   },
   {
-    "id":"us-atomix","country":"US","city":"New York","category":"food",
-    "name":"Atomix","area":"Manhattan","address":"104 E. 30th St., New York, NY 10016",
-    "description":"The chef's counter can be hired exclusively for up to 15 guests. The upstairs bar offers a separate semi-private event option for up to six.",
-    "descriptionEn":"The chef's counter can be hired exclusively for up to 15 guests. The upstairs bar offers a separate semi-private event option for up to six.",
-    "descriptionKo":"최대 15명까지 셰프 카운터를 전용으로 대관할 수 있어요. 상층 바의 최대 6인 행사는 별도의 반독립 공간으로 운영돼요.",
-    "source":"https://www.atomixnyc.com/private-events","checked":"2026-09-27",
-    "tags":["Exclusive counter hire","Semi-private bar"],"tagsKo":["카운터 전용 대관","상층 바는 반독립"],
-    "photoGallery":"https://www.atomixnyc.com/private-events",
-    "experiences":[{"kind":"exclusive-hire","nameKo":"셰프 카운터 전체 대관","nameEn":"Chef's counter buyout","maxGuests":15,"bookingKo":"전용 대관은 최대 2개월 전 문의를 요청해요. 가능일과 최종 조건을 확인하세요.","bookingEn":"The venue requests up to two months’ notice for a buyout. Confirm availability and final terms.","source":"https://www.atomixnyc.com/private-events","checked":"2026-09-27"},{"kind":"semi-private","nameKo":"상층 바 행사","nameEn":"Upstairs bar event","maxGuests":6,"bookingKo":"반독립 공간으로, 완전히 분리된 룸이 아닙니다.","bookingEn":"A semi-private setting, not a fully enclosed private room.","source":"https://www.atomixnyc.com/private-events","checked":"2026-09-27"}],
-    "visitDetails":[{"labelEn":"Reservations","labelKo":"예약","textEn":"The venue requests buyout inquiries up to two months in advance. An inquiry does not guarantee availability.","textKo":"공식 안내는 최대 2개월 전 대관 문의를 요청해요. 문의만으로 예약이 확정되지는 않아요."},{"labelEn":"Space types","labelKo":"공간 유형","textEn":"Exclusive chef's counter hire and the semi-private upstairs bar are different experiences; neither should be listed as an individual private room.","textKo":"카운터 전용 대관과 상층 바 반독립 행사를 구분해요. 개별 프라이빗 룸으로 분류하지 않습니다."}]
+    "id": "us-atomix",
+    "country": "US",
+    "city": "New York",
+    "category": "food",
+    "name": "Atomix",
+    "area": "Manhattan",
+    "address": "104 E. 30th St., New York, NY 10016",
+    "description": "The chef's counter can be hired exclusively for up to 15 guests. The upstairs bar offers a separate semi-private event option for up to six.",
+    "descriptionEn": "The chef's counter can be hired exclusively for up to 15 guests. The upstairs bar offers a separate semi-private event option for up to six.",
+    "descriptionKo": "최대 15명까지 셰프 카운터를 전용으로 대관할 수 있어요. 상층 바의 최대 6인 행사는 별도의 반독립 공간으로 운영돼요.",
+    "source": "https://www.atomixnyc.com/private-events",
+    "checked": "2026-09-27",
+    "tags": [
+      "Exclusive counter hire",
+      "Semi-private bar"
+    ],
+    "tagsKo": [
+      "카운터 전용 대관",
+      "상층 바는 반독립"
+    ],
+    "photoGallery": "https://www.atomixnyc.com/private-events",
+    "experiences": [
+      {
+        "kind": "exclusive-hire",
+        "nameKo": "셰프 카운터 전체 대관",
+        "nameEn": "Chef's counter buyout",
+        "maxGuests": 15,
+        "bookingKo": "전용 대관은 최대 2개월 전 문의를 요청해요. 가능일과 최종 조건을 확인하세요.",
+        "bookingEn": "The venue requests up to two months’ notice for a buyout. Confirm availability and final terms.",
+        "source": "https://www.atomixnyc.com/private-events",
+        "checked": "2026-09-27",
+        "scopeKo": "셰프 카운터 전체 대관입니다. 상층 바 행사는 별도 공간·조건입니다.",
+        "scopeEn": "Exclusive hire of the chef’s counter. Upstairs bar events have separate space and conditions."
+      },
+      {
+        "kind": "semi-private",
+        "nameKo": "상층 바 행사",
+        "nameEn": "Upstairs bar event",
+        "maxGuests": 6,
+        "bookingKo": "반독립 공간으로, 완전히 분리된 룸이 아닙니다.",
+        "bookingEn": "A semi-private setting, not a fully enclosed private room.",
+        "source": "https://www.atomixnyc.com/private-events",
+        "checked": "2026-09-27",
+        "scopeKo": "상층 바의 반독립 행사 공간입니다. 완전히 분리된 프라이빗 룸은 아닙니다.",
+        "scopeEn": "A semi-private upstairs bar event, not a fully enclosed room."
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelEn": "Reservations",
+        "labelKo": "예약",
+        "textEn": "The venue requests buyout inquiries up to two months in advance. An inquiry does not guarantee availability.",
+        "textKo": "공식 안내는 최대 2개월 전 대관 문의를 요청해요. 문의만으로 예약이 확정되지는 않아요."
+      },
+      {
+        "labelEn": "Space types",
+        "labelKo": "공간 유형",
+        "textEn": "Exclusive chef's counter hire and the semi-private upstairs bar are different experiences; neither should be listed as an individual private room.",
+        "textKo": "카운터 전용 대관과 상층 바 반독립 행사를 구분해요. 개별 프라이빗 룸으로 분류하지 않습니다."
+      }
+    ]
   }
 ]
