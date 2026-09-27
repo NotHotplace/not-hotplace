@@ -66,9 +66,10 @@ export default function GlobeHome() {
             <div className="globe-halo" aria-hidden="true"/><div className="globe-orbit" aria-hidden="true"/><div className="globe-orbit globe-orbit-second" aria-hidden="true"/>
             <div className="globe-stars" aria-hidden="true">{Array.from({length:7}, (_, index) => <i key={index}/>)}</div>
             <svg viewBox="0 0 600 600" role="group" aria-label={text('World globe. Drag to rotate.', '세계 지구본. 드래그하여 회전하세요.')}
-              onPointerDown={event => {drag.current = {x:event.clientX, rotation:motion.rotation, moved:false}; motion.dragging.current = true; event.currentTarget.setPointerCapture(event.pointerId);}}
-              onPointerMove={event => {if (drag.current) {const dx = event.clientX - drag.current.x; if (Math.abs(dx) > 4) drag.current.moved = true; motion.turnTo(drag.current.rotation + dx * .45, true);}}}
+              onPointerDown={event => {drag.current = {x:event.clientX, rotation:motion.rotation, moved:false}; motion.dragging.current = true;}}
+              onPointerMove={event => {if (drag.current) {const dx = event.clientX - drag.current.x; if (Math.abs(dx) > 4) {drag.current.moved = true; event.currentTarget.setPointerCapture(event.pointerId);} if (drag.current.moved) motion.turnTo(drag.current.rotation + dx * .45, true);}}}
               onPointerUp={event => {if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); motion.dragging.current = false; setTimeout(() => {drag.current = null;}, 0);}}
+              onPointerLeave={() => {if (drag.current && !drag.current.moved) {drag.current = null; motion.dragging.current = false;}}}
               onPointerCancel={() => {drag.current = null; motion.dragging.current = false;}}>
               <defs><radialGradient id="ocean" cx="30%" cy="23%" r="85%"><stop stopColor="#264542"/><stop offset=".6" stopColor="#142c2c"/><stop offset="1" stopColor="#080f13"/></radialGradient>
                 <radialGradient id="shade" cx="26%" cy="24%" r="79%"><stop offset=".5" stopColor="#001008" stopOpacity="0"/><stop offset="1" stopColor="#020907" stopOpacity=".8"/></radialGradient></defs>
