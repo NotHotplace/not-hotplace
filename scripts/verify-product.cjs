@@ -10,6 +10,23 @@ async function post(action,payload,origin='https://example.test'){return api.POS
 const proposal={city:'서울',category:'cafe',name:'검증용 카페',address:'서울 검증용 주소',source:'https://example.test/cafe',note:'테스트',notChildTarget:true,ack:true};
 const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유로움',comfort:'편함',day:'평일',time:'오후',tags:['작은 음악']};
 (async()=>{
+ const {regionCamera,fullMapCamera,panCamera,zoomCamera,gestureCamera,constrainCamera,MAX_MAP_ZOOM}=load(path.join(root,'lib/atlas-camera.ts'));
+ const mapGeometry=load(path.join(root,'lib/korea-map.json'));
+ const jeju=mapGeometry.regions.find(r=>r.name==='제주'),seoul=mapGeometry.regions.find(r=>r.name==='서울');
+ let camera=regionCamera(jeju);
+ assert(camera.scale>1,'Jeju selection focuses the island');
+ const dragged=panCamera(camera,100,150);assert.equal(dragged.x,camera.x+100);assert.equal(dragged.y,camera.y+150,'focused map remains draggable');
+ const anchor={x:300,y:350},zoomed=zoomCamera(camera,1.1,anchor);
+ assert(Math.abs((anchor.x-camera.x)/camera.scale-(anchor.x-zoomed.x)/zoomed.scale)<1e-8,'wheel zoom keeps the pointer over the same longitude');
+ assert(Math.abs((anchor.y-camera.y)/camera.scale-(anchor.y-zoomed.y)/zoomed.scale)<1e-8,'wheel zoom keeps the pointer over the same latitude');
+ for(let i=0;i<12;i++)camera=zoomCamera(camera,1/1.35);
+ assert.deepEqual(camera,fullMapCamera(),'zooming out of Jeju always recovers the complete national map');
+ assert(seoul.center[0]>=20&&seoul.center[0]<=700&&seoul.center[1]>=0&&seoul.center[1]<=710,'Seoul is reachable again in national view');
+ const seoulCamera=regionCamera(seoul);assert(Math.abs(seoulCamera.x+seoul.center[0]*seoulCamera.scale-360)<1e-8,'next region selection centres Seoul');
+ const pinched=gestureCamera(fullMapCamera(),[{x:260,y:355},{x:460,y:355}],[{x:260,y:405},{x:660,y:405}]);
+ assert.equal(pinched.scale,2);assert.equal(pinched.x+360*pinched.scale,460);assert.equal(pinched.y+355*pinched.scale,405,'pinch combines scaling and midpoint movement');
+ assert.equal(zoomCamera(pinched,100).scale,MAX_MAP_ZOOM,'zoom is bounded');
+ const bounded=constrainCamera({x:1e6,y:-1e6,scale:3});assert((360-bounded.x)/3>=20&&(360-bounded.x)/3<=700&&(355-bounded.y)/3>=0&&(355-bounded.y)/3<=710,'long drags cannot lose the map');
  const {catalog}=load(path.join(root,'lib/catalog.ts'));const {regionKeys,inRegion}=load(path.join(root,'lib/regions.ts'));
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
  const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();

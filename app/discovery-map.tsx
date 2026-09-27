@@ -2,10 +2,12 @@
 import {useLocale} from './locale';
 
 import {useEffect,useRef,useState,type CSSProperties,type MouseEvent} from 'react';
-import {ArrowLeft,ArrowUpRight,Maximize2,MapPin,X,Coffee,Utensils,Car,Sparkles} from 'lucide-react';
+import {Plus,Minus,Scan,ArrowUpRight,Maximize2,MapPin,X,Coffee,Utensils,Car,Sparkles} from 'lucide-react';
 import {Dialog,DialogTrigger,DialogContent,DialogTitle,DialogDescription,DialogClose} from '@/components/ui/dialog';
 import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from '@/components/ui/select';
 import geometry from '@/lib/korea-map.json';
+import {useAtlasCamera} from '@/hooks/use-atlas-camera';
+import {cameraTransform,regionCamera,fullMapCamera,MIN_MAP_ZOOM,MAX_MAP_ZOOM} from '@/lib/atlas-camera';
 import {regionKeys,inRegion,regionOf} from '@/lib/regions';
 import {ranked} from '@/lib/ranking';
 import {labels,type Place} from '@/lib/catalog';
@@ -25,7 +27,7 @@ type Props={
 };
 
 export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResults}:Props){
- const {ui}=useLocale();
+ const {ui,text,lang}=useLocale();
  const [open,setOpen]=useState(false),[hover,setHover]=useState(''),[revealed,setRevealed]=useState(false);
  const [motion,setMotion]=useState<CSSProperties>({});
  const trigger=useRef<HTMLButtonElement>(null),closeAction=useRef<'preview'|'results'|'place'>('preview');
@@ -34,8 +36,8 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
  const matches=places.filter(p=>inRegion(p,city));
  const ranking=ranked(matches),order=new Map(ranking.map((p,i)=>[p.id,i]));
  const previews=[...matches].sort((a,b)=>(order.get(a.id)??1e6)-(order.get(b.id)??1e6)||Number(!!a.resting)-Number(!!b.resting)||Number(!!b.image)-Number(!!a.image)).slice(0,2);
- const scale=active?Math.min(4.5,Math.max(1.5,Math.min(520/(active.bounds[1][0]-active.bounds[0][0]),470/(active.bounds[1][1]-active.bounds[0][1])))):1;
- const zoom=active?`translate(360 350) scale(${scale}) translate(${-active.center[0]} ${-active.center[1]})`:'translate(0 0) scale(1)';
+ const navigation=useAtlasCamera(active,open,revealed);
+ const previewTransform=cameraTransform(regionCamera(active));
 
  useEffect(()=>{
   if(!open){setRevealed(false);return;}
@@ -55,22 +57,27 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
   const region=(event.target as Element).closest('[data-region]')?.getAttribute('data-region');
   if(region&&regionKeys.some(r=>r===region))onEnter(region);
  }
- function choose(name:string){setHover('');onEnter(name);}
+ function choose(name:string){setHover('');navigation.focus(geometry.regions.find(r=>r.name===regionOf(name)));onEnter(name);}
  function showResults(){onEnter(city);closeAction.current='results';setOpen(false);}
  function showPlace(place:MapPlace){closeAction.current='place';setOpen(false);onOpen(place);}
 
  function map(interactive:boolean){
   const enlarged=interactive&&revealed;
-  return <svg viewBox="20 0 680 710" className="atlas-svg" role={interactive?'group':undefined} aria-label={interactive?'대한민국 지역 선택 지도':undefined} aria-hidden={!interactive}>
-   {interactive&&<><title>대한민국 지역 선택 지도</title><desc>지역을 누르면 확대됩니다. 아래 장소를 바로 열거나 장소 목록으로 이동할 수 있습니다.</desc></>}
-   <g className="atlas-geography" transform={interactive?(enlarged?zoom:'translate(0 0) scale(1)'):zoom}>
+  const showLabels=interactive?navigation.camera.scale<=1.65:!active;
+  return <svg viewBox="20 0 680 710" className="atlas-svg" role={interactive?'group':undefined} aria-label={interactive?'대한민국 지역 선택 지도':undefined} aria-hidden={!interactive}
+    {...(interactive?{ref:navigation.svgRef,tabIndex:0,'data-animated':navigation.animated,'data-dragging':navigation.dragging,
+      onPointerDown:navigation.pointerDown,onPointerMove:navigation.pointerMove,
+      onPointerUp:(event:React.PointerEvent<SVGSVGElement>)=>{const name=navigation.pointerEnd(event);if(name)choose(name);},
+      onPointerCancel:(event:React.PointerEvent<SVGSVGElement>)=>navigation.pointerEnd(event,true),onKeyDown:navigation.keyDown}:{})}>
+   {interactive&&<><title>대한민국 지역 선택 지도</title><desc>{text('Drag to move. Scroll or pinch to zoom. Use arrow keys, plus, minus, or Home for the full map.','드래그로 이동하고 휠 또는 두 손가락으로 확대·축소하세요. 방향키, +, -, Home 키로도 조작할 수 있어요.')}</desc></>}
+   <g className="atlas-geography" transform={interactive?cameraTransform(enlarged?navigation.camera:fullMapCamera()):previewTransform}>
     {geometry.regions.map(r=><path key={r.code} data-region={r.name} d={r.path}
       className={'atlas-province '+(active?.name===r.name?'is-selected ':'')+(hover===r.name?'is-hovered':'')}
-      {...(interactive?{tabIndex:active?(active.name===r.name?0:-1):0,role:'button','aria-pressed':active?.name===r.name,'aria-label':`${r.name}, ${counts[r.name]||0}곳`,onMouseEnter:()=>setHover(r.name),onMouseLeave:()=>setHover(''),onFocus:()=>setHover(r.name),onBlur:()=>setHover(''),onClick:()=>choose(r.name),onKeyDown:(e:React.KeyboardEvent<SVGPathElement>)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(r.name);}}}:{})}
+      {...(interactive?{tabIndex:showLabels||active?.name===r.name?0:-1,role:'button','aria-pressed':active?.name===r.name,'aria-label':`${r.name}, ${counts[r.name]||0}곳`,onMouseEnter:()=>setHover(r.name),onMouseLeave:()=>setHover(''),onFocus:()=>setHover(r.name),onBlur:()=>setHover(''),onClick:(e:React.MouseEvent)=>{if(e.detail===0)choose(r.name);},onKeyDown:(e:React.KeyboardEvent<SVGPathElement>)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(r.name);}}}:{})}
     />)}
-    {geometry.regions.map(r=>{const anchor=callouts[r.name]||r.center;return <g key={r.name} className={'atlas-label '+(majorLabels.has(r.name)?'major':'')} aria-hidden="true" style={active?{opacity:0,pointerEvents:'none'}:undefined}>
+    {geometry.regions.map(r=>{const anchor=callouts[r.name]||r.center;return <g key={r.name} className={'atlas-label '+(majorLabels.has(r.name)?'major':'')} aria-hidden="true" style={!showLabels?{opacity:0,pointerEvents:'none'}:undefined}>
       {callouts[r.name]&&<path d={`M${r.center[0]},${r.center[1]} L${anchor[0]},${anchor[1]}`} className="atlas-leader"/>}
-      <text data-region={r.name} x={anchor[0]} y={anchor[1]} textAnchor="middle" dominantBaseline="central" onClick={interactive?()=>choose(r.name):undefined}>{r.name}</text>
+      <text data-region={r.name} x={anchor[0]} y={anchor[1]} textAnchor="middle" dominantBaseline="central" onClick={interactive?(e)=>{if(e.detail===0)choose(r.name);}:undefined}>{r.name}</text>
      </g>;})}
    </g>
   </svg>;
@@ -86,14 +93,16 @@ export default function DiscoveryMap({places,city,compact,onEnter,onOpen,onResul
   </section>
   <DialogContent className="atlas-dialog" showCloseButton={false} style={motion}
    onCloseAutoFocus={e=>{if(closeAction.current==='results'){e.preventDefault();onResults();}else if(closeAction.current==='place'){e.preventDefault();}}}>
-   <header className="atlas-header"><div className="atlas-heading"><span className="atlas-wordmark">Not<span>_</span>Hotplace</span><DialogTitle>어디에서 쉴까요?</DialogTitle><DialogDescription className="sr-only">지역을 선택해 음식점, 카페, 드라이브 장소를 둘러보세요.</DialogDescription></div>
+   <header className="atlas-header"><div className="atlas-heading"><a className="atlas-wordmark" href={'/?lang='+lang} aria-label={text('NotHotplace home','NotHotplace 첫 화면')}>Not<span>_</span>Hotplace</a><DialogTitle>어디에서 쉴까요?</DialogTitle><DialogDescription className="sr-only">지역을 선택해 음식점, 카페, 드라이브 장소를 둘러보세요.</DialogDescription></div>
     <div className="atlas-header-actions"><Select value={city} onValueChange={choose}><SelectTrigger className="atlas-region-picker" aria-label="큰 지도 지역 선택"><SelectValue/></SelectTrigger><SelectContent position="popper">{['전국','청주',...regionKeys].map(r=><SelectItem key={r} value={r}>{r}</SelectItem>)}</SelectContent></Select><DialogClose asChild><button className="atlas-close" aria-label="큰 지도 닫기"><X size={21}/></button></DialogClose></div>
    </header>
    <div className={'atlas-stage '+(active?'has-region':'')}>
-    {active&&<button className="atlas-back" onClick={()=>choose('전국')}><ArrowLeft size={16}/>전국</button>}
+    <div className="atlas-navigation" role="group" aria-label={text('Map controls','지도 조작')}>
+     <button className="atlas-overview" onClick={()=>choose('전국')}><Scan size={18}/>{text('All Korea','전국 보기')}</button>
+     <div className="atlas-zoom-controls"><button onClick={()=>navigation.zoom(1/1.35)} disabled={navigation.camera.scale<=MIN_MAP_ZOOM} aria-label={text('Zoom out map','지도 축소')}><Minus size={20}/></button><output aria-label={text('Map zoom','지도 확대 비율')}>{Math.round(navigation.camera.scale*100)}%</output><button onClick={()=>navigation.zoom(1.35)} disabled={navigation.camera.scale>=MAX_MAP_ZOOM} aria-label={text('Zoom in map','지도 확대')}><Plus size={20}/></button></div>
+    </div>
     {map(true)}
-    {active&&<div className="atlas-focus" key={city}><span>지금, 이곳에서</span><strong>{city}</strong></div>}
-    <div className="atlas-caption"><span aria-live="polite">{hover?`${hover} · ${counts[hover]||0}곳`:active?'선택한 지역의 장소를 살펴보세요':'마음이 가는 지역을 눌러보세요'}</span><a href={mapSource} target="_blank" rel="noopener noreferrer">지도 출처</a></div>
+    <div className="atlas-caption"><span aria-live="polite">{hover?`${hover} · ${counts[hover]||0}곳`:text('Drag to move · Scroll / pinch to zoom','드래그로 이동 · 휠 / 두 손가락으로 확대·축소')}</span><a href={mapSource} target="_blank" rel="noopener noreferrer">지도 출처</a></div>
    </div>
    <div className={'atlas-dock '+(active?'with-places':'')}>
     <div className="atlas-dock-heading"><div><strong>{city==='전국'?'전국의 쉼터':city+'의 쉼터'}</strong><span>{matches.length}곳{matches.length===0?' · 검색 조건을 확인해 주세요':''}</span></div><button className="atlas-results-link" onClick={showResults}>{active?'장소 모두 보기':'목록으로 보기'}<ArrowUpRight size={17}/></button></div>
