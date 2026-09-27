@@ -74,6 +74,7 @@ export default function Explorer({signedIn,signInPath,country='KR'}:{signedIn:bo
  useEffect(()=>{if(!browseReady||loading)return;const next=writeBrowseState(new URL(location.href),{city,category,theme,term,view,filters},lang);next.searchParams.delete('place');if(next.href!==location.href)history.replaceState(history.state,'',next);},[browseReady,loading,city,category,theme,term,view,filters,lang]);
  useEffect(()=>{if(view!=='saved'){setComparing(false);setComparisonIds([]);setComparisonOpen(false);}},[view]);
  useEffect(()=>{setComparisonIds(ids=>ids.filter(id=>data.saved.includes(id)));},[data.saved]);
+ useEffect(()=>{if(!loading&&!data.membership?.active&&filters.quiet)setFilters(value=>({...value,quiet:false}));},[loading,data.membership?.active,filters.quiet]);
  const comparisonPlaces=comparisonIds.map(id=>data.places.find(place=>place.id===id)).filter((place):place is Row=>!!place);
 
  async function act(action:string,payload:unknown){const res=await fetch('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,payload})});const j=await res.json() as {error?:string; suggestions:Suggestion[]};if(!res.ok)throw new Error(j.error||'다시 시도해 주세요.');return j;}
