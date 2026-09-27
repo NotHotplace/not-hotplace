@@ -115,6 +115,39 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert(!pages.isPlaceLanguage('fr'),'unsupported languages rejected');
  assert(!pages.findCatalogPlace('not-a-real-place'),'missing places stay missing');
  assert(pages.relatedPlaces(usPlace).every(p=>p.id!==usPlace.id&&p.country===usPlace.country&&p.city===usPlace.city),'related links stay regional');
+
+ // Detail API keeps personal state private and applies the same quality window as discovery.
+ const detail=load(path.join(root,'app/api/places/[id]/route.ts'));
+ const detailGet=id=>detail.GET(new Request('https://example.test/api/places/'+id),{params:Promise.resolve({id})});
+ user=null;
+ assert.equal((await detailGet('missing-place')).status,404);
+ let detailResponse=await detailGet('cj-daechung');assert.equal(detailResponse.headers.get('Cache-Control'),'private, no-store');
+ let detailData=await detailResponse.json();assert.equal(detailData.signedIn,false);assert.equal(detailData.saved,false);assert.equal(detailData.review,null);assert.deepEqual(detailData.insights,[]);
+ user={userId:'detail-owner',email:'detail@example.test'};
+ await post('save',{placeId:'cj-daechung',saved:true});await post('review',{...review,noise:'조용함',crowd:'여유로움'});
+ detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.saved,true);assert.equal(detailData.review.noise,'조용함');assert.equal(detailData.summary.count,1,'expired reviews excluded');assert.equal(detailData.summary.quiet,1);assert.equal(detailData.summary.relaxed,1);assert(!('user_id' in detailData.review));
+ user={userId:'detail-other',email:'other-detail@example.test'};
+ detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.review,null);assert.equal(detailData.saved,false);assert.equal(detailData.summary.count,1,'aggregate remains public');
+ user={userId:'detail-owner',email:'detail@example.test'};await post('deleteReview',{placeId:'cj-daechung'});detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.summary.count,0);
+ const guides=catalog.filter(p=>p.featured);assert.equal(guides.length,30);assert.equal(catalog.filter(p=>p.country==='KR'&&p.image).length,43);
+ for(const p of guides){assert.equal(p.photos.length,3);assert(p.descriptionEn&&p.visitDetails.length>=4);assert.equal(new Set(p.photos.map(x=>x.original)).size,3);for(const photo of p.photos){assert(photo.original.startsWith('https://tong.visitkorea.or.kr/'));assert(photo.source===p.source);assert(fs.existsSync(path.join(root,'public',photo.src)));assert(photo.width>0&&photo.height>0);}}
+ const engagement=load(path.join(root,'app/api/engagement/route.ts'));
+ const engagementRequest=(body,headers={})=>new Request('https://example.test/api/engagement',{method:'POST',headers:{origin:'https://example.test','Content-Type':'application/json',...headers},body:typeof body==='string'?body:JSON.stringify(body)});
+ const event={event:'place_view',country:'KR',source:'instagram'};
+ assert.equal((await engagement.POST(engagementRequest(event,{origin:'https://other.test'}))).status,403);
+ assert.equal((await engagement.POST(engagementRequest({...event,userId:'should-never-store'}))).status,400);
+ assert.equal((await engagement.POST(engagementRequest({...event,source:'https://private.example/query'}))).status,400);
+ assert.equal((await engagement.POST(engagementRequest({...event,event:'unknown'}))).status,400);
+ assert.equal((await engagement.POST(engagementRequest('bad json'))).status,400);
+ assert.equal((await engagement.POST(engagementRequest('x'.repeat(201)))).status,413);
+ assert.equal((await engagement.POST(engagementRequest(event,{dnt:'1'}))).status,204);
+ assert.equal((await engagement.POST(engagementRequest(event,{'sec-gpc':'1'}))).status,204);
+ assert.equal(sql.prepare('SELECT COUNT(*) n FROM engagement_totals').get().n,0,'privacy signals and invalid events do not count');
+ await engagement.POST(engagementRequest(event));await engagement.POST(engagementRequest(event));
+ assert.equal(sql.prepare('SELECT total FROM engagement_totals').get().total,2);
+ assert.deepEqual(sql.prepare('PRAGMA table_info(engagement_totals)').all().map(c=>c.name),['day','event','country','source','total'],'only finite aggregate dimensions are stored');
+ user={userId:'owner',email:'owner@example.test'};const engagementReport=await (await stats.GET()).json();assert.equal(engagementReport.engagement[0].total,2);
+ console.log('PASS: direct place review/save privacy, review freshness, 30 bilingual guides / 90 licensed assets and aggregate engagement boundaries.');
  console.log('PASS: bilingual place paths, reciprocal sitemap links, community suggestion sharing and review return paths.');
  const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert.equal(trips.length,9);assert.equal(new Set(trips.map(t=>t.id)).size,9);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length===3));
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'public/manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,'public',icon.src)));
