@@ -1,12 +1,14 @@
 import national from './national-catalog.json';
 import american from './us-catalog.json';
+import japan from './jp-catalog.json';
+import type {CountryCode} from './countries';
 import guides from './kr-place-guides.json';
 import privateCatalog from './private-catalog.json';
 import restCatalog from './rest-catalog.json';
 import type {PrivateExperience} from './place-themes';
 export type VisitDetail={labelEn:string;labelKo:string;textEn:string;textKo:string};
 export type PlacePhoto={src:string;altKo:string;altEn:string;credit:string;source:string;original:string;licenseUrl:string;width:number;height:number};
-export type Place = {themes?:'premium-spa'[];experiences?:PrivateExperience[];photos?:PlacePhoto[];featured?:boolean;tagsEn?:string[];visitDetails?:VisitDetail[];tagsKo?:string[];photoGallery?:string;imageSource?:string;imageLicense?:string;imageLicenseUrl?:string;imageNote?:string;country?:'KR'|'US';states?:string[];descriptionKo?:string;descriptionEn?:string;id:string;city:string;category:string;name:string;area:string;address:string;description:string;source:string;checked:string;tags:string[];image?:string;imageCredit?:string;imageRemote?:string;lat?:number|null;lon?:number|null;sourceHint?:string};
+export type Place = {themes?:'premium-spa'[];experiences?:PrivateExperience[];photos?:PlacePhoto[];featured?:boolean;tagsEn?:string[];visitDetails?:VisitDetail[];tagsKo?:string[];photoGallery?:string;imageSource?:string;imageLicense?:string;imageLicenseUrl?:string;imageNote?:string;country?:CountryCode;states?:string[];descriptionKo?:string;descriptionEn?:string;id:string;city:string;category:string;name:string;area:string;address:string;description:string;source:string;checked:string;tags:string[];image?:string;imageCredit?:string;imageRemote?:string;lat?:number|null;lon?:number|null;sourceHint?:string};
 const original:Place[]=[
 {id:'cj-daechung',descriptionEn:"A caf\u00e9 candidate in Munui-myeon to explore alongside a lakeside outing.",city:'청주',category:'cafe',name:'더 대청호',area:'상당구 · 문의면',address:'충북 청주시 상당구 문의면 대청호반로 786-25',description:'문의면의 카페 후보. 호반 나들이와 함께 살펴볼 수 있는 곳입니다.',source:'https://www.instagram.com/reel/DKyctYryvl0/',checked:'2026-09-10',tags:['문의면','카페']},
 {id:'cj-majung',descriptionEn:"A Korean set-menu restaurant near Daecheong Lake. We are collecting reports on noise by time of day and solo dining.",city:'청주',category:'food',name:'마중가는길',area:'상당구 · 문의면',address:'충북 청주시 상당구 문의면 대청호반로 845-5',description:'대청호 근처의 한정식 식당. 시간대별 소음과 혼자 이용 경험을 모으고 있습니다.',source:'https://app.catchtable.co.kr/ct/shop/majung',checked:'2026-09-10',tags:['한정식','문의면']},
@@ -20,10 +22,10 @@ const original:Place[]=[
 {id:'seoul-jaha',descriptionEn:"A dumpling restaurant candidate in Buam-dong. Mealtime crowds and comfort are recorded separately.",city:'서울',category:'food',name:'자하손만두',area:'종로구 · 부암동',address:'서울 종로구 백석동길 12',description:'부암동의 만두 식당 후보. 식사 시간대의 혼잡도와 편안함을 따로 기록합니다.',source:'https://www.instagram.com/reel/DRjaBBbErJM/',checked:'2026-09-10',tags:['만두','부암동']},
 {id:'seoul-bugak',descriptionEn:"A drive candidate around Bugak Palgakjeong. Traffic and parking congestion vary by time.",city:'서울',category:'drive',name:'북악스카이웨이',area:'종로구 · 북악산로',address:'서울 종로구 북악산로 267 · 북악팔각정 기준',description:'북악팔각정 주변의 드라이브 후보. 교통·주차 혼잡은 시간대에 따라 달라집니다.',source:'https://www.instagram.com/reel/DWNmnjICZuE/',checked:'2026-09-10',tags:['드라이브','전망']},
 ];
-export const labels:Record<string,string>={all:'전체',cafe:'카페',food:'음식점',drive:'드라이브',spa:'스파'};
+export const labels:Record<string,string>={all:'전체',cafe:'카페',food:'음식점',drive:'드라이브',walk:'산책·정원',spa:'스파'};
 
 const seen=new Set(original.map(p=>p.name.replace(/\s/g,'')));
 const korean:Place[]=[...original,...(national as Place[]).filter(p=>!seen.has(p.name.replace(/\s/g,'')))];
 
 const guideById=new Map(guides.map(p=>[p.id,p]));
-export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[]),...(restCatalog as Place[])];
+export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[]),...(restCatalog as Place[]),...(japan as Place[])];

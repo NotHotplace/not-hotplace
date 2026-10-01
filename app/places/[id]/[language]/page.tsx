@@ -1,3 +1,4 @@
+import {countries} from '@/lib/countries';
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {ArrowLeft, ArrowUpRight, MapPin, Leaf} from 'lucide-react';
@@ -13,7 +14,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {id, language} = await params;
   const place = findCatalogPlace(id);
   if (!place || !isPlaceLanguage(language)) return {title: 'Place not found | NotHotplace', robots: {index: false}};
-  const title = `${place.name} | NotHotplace`;
+  const title = `${place.name} · ${place.area} | NotHotplace`;
   const description = placeDescription(place, language);
   const url = SITE_URL + placePath(id, language);
   return {
@@ -35,7 +36,7 @@ export default async function PlacePage({params}: Props) {
   if (!place || !isPlaceLanguage(language)) notFound();
   const ko = language === 'ko';
   const label = (en: string, kr: string) => ko ? kr : en;
-  const country = place.country === 'US' ? 'us' : 'kr';
+  const country = countries[place.country||'KR'].slug;
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
     : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
@@ -76,7 +77,7 @@ export default async function PlacePage({params}: Props) {
       <article className="place-story"><section className="place-overview"><span className="place-eyebrow">{label('THE SETTING', '어떤 공간인가요')}</span>
           <h2>{label('Make room for a slower day.', '조금 느린 하루를 위한 공간.')}</h2>
           <p>{placeDescription(place, language)}</p>
-          <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country === 'US' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
+          <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country !== 'KR' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
         </section>
         <PrivateExperiences experiences={place.experiences} language={language}/>
         {!!place.visitDetails?.length && <section className="place-facts"><h2>{label('Before you go', '방문을 준비해요')}</h2>

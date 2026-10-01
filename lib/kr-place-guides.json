@@ -2722,5 +2722,1653 @@
         "textEn": "Confirm solo-dining rules and seating with the venue."
       }
     ]
+  },
+  {
+    "id": "tour-3101705",
+    "description": "경주 서악동의 한옥 북카페입니다. 마당과 그림책이 놓인 실내를 둘러보고 책과 차를 함께 즐길 수 있어요.",
+    "descriptionEn": "A book café in a converted hanok in Seoak, Gyeongju, with a courtyard and picture books inside.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/3101705",
+    "image": "/places/tour-3101705-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/3101705",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/45/3095945_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3101705-guide-1.webp",
+        "altKo": "소소밀밀 서악점 공간 사진 1",
+        "altEn": "소소밀밀 서악점 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3101705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/45/3095945_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3101705-guide-2.webp",
+        "altKo": "소소밀밀 서악점 공간 사진 2",
+        "altEn": "소소밀밀 서악점 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3101705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/86/3095386_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3101705-guide-3.webp",
+        "altKo": "소소밀밀 서악점 공간 사진 3",
+        "altEn": "소소밀밀 서악점 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3101705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/56/3095556_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 528
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "방문 전 운영 시간 확인 필요",
+        "textEn": "Check the source listing and confirm current hours before visiting."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 확인 필요",
+        "textEn": "Parking location, capacity and fees need confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-3533979",
+    "description": "세종 전동면의 카페로 아치형 외관과 레트로풍 실내가 특징입니다. 로투스 크림라떼 등 매장의 음료를 살펴보세요.",
+    "descriptionEn": "A café in Jeondong, Sejong, with an arched façade and retro interior. The menu includes a Lotus cream latte.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/3533979",
+    "image": "/places/tour-3533979-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/3533979",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/80/4067180_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3533979-guide-1.webp",
+        "altKo": "세컨드세컨드 공간 사진 1",
+        "altEn": "세컨드세컨드 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3533979",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/80/4067180_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3533979-guide-2.webp",
+        "altKo": "세컨드세컨드 공간 사진 2",
+        "altEn": "세컨드세컨드 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3533979",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/73/4067173_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3533979-guide-3.webp",
+        "altKo": "세컨드세컨드 공간 사진 3",
+        "altEn": "세컨드세컨드 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3533979",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/74/4067174_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "10:00~21:00 (마지막 주문 20:30)",
+        "textEn": "10:00~21:00 (last order 20:30)"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-4086917",
+    "description": "담양읍의 로스터리 카페입니다. 직접 볶는 원두와 오늘의 커피를 살펴볼 수 있으며, 매장 주차는 제공되지 않는다고 안내되어 있어요.",
+    "descriptionEn": "A roastery café in Damyang offering house-roasted beans and a daily coffee selection. The listing says venue parking is unavailable.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/4086917",
+    "image": "/places/tour-4086917-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/4086917",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/27/4086027_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-4086917-guide-1.webp",
+        "altKo": "디프커피 공간 사진 1",
+        "altEn": "디프커피 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4086917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/27/4086027_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-4086917-guide-2.webp",
+        "altKo": "디프커피 공간 사진 2",
+        "altEn": "디프커피 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4086917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/28/4086028_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-4086917-guide-3.webp",
+        "altKo": "디프커피 공간 사진 3",
+        "altEn": "디프커피 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4086917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/29/4086029_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "08:30~18:00 (마지막 주문 17:30)",
+        "textEn": "08:30~18:00 (last order 17:30)"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "매주 화요일",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 불가능",
+        "textEn": "The tourism listing says venue parking is unavailable."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-3546420",
+    "description": "울산 울주군의 베이커리 카페입니다. 하우스웨딩과 대관도 진행하므로 방문일의 임시 휴무 공지를 먼저 확인해 주세요.",
+    "descriptionEn": "A bakery café in Ulju, Ulsan, that also hosts weddings and rentals. Check temporary closure notices for your date.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/3546420",
+    "image": "/places/tour-3546420-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/3546420",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/10/4100610_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3546420-guide-1.webp",
+        "altKo": "시하온 공간 사진 1",
+        "altEn": "시하온 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3546420",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/10/4100610_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3546420-guide-2.webp",
+        "altKo": "시하온 공간 사진 2",
+        "altEn": "시하온 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3546420",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/04/4100604_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-3546420-guide-3.webp",
+        "altKo": "시하온 공간 사진 3",
+        "altEn": "시하온 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3546420",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/05/4100605_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 648
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "- 평일 11:00~20:00 (마지막 주문 19:30)- 주말 10:00~20:00 (마지막 주문 19:30)",
+        "textEn": "- weekdays 11:00~20:00 (last order 19:30)- weekends 10:00~20:00 (last order 19:30)"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "매주 화요일 ※ 단, 하우스웨딩 및 대관 진행시 임시휴무로 지정되며, 네이버 및 인스타그램으로 공지 참조",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-3445436",
+    "description": "음성읍의 카페로 큰 창에서 주변 풍경을 바라볼 수 있습니다. 에이드와 크림라떼 등 음료를 제공하며 마감 시각은 매장에 확인해 주세요.",
+    "descriptionEn": "A café in Eumseong with views through large windows and a menu of ades and cream lattes. Confirm the closing time with the venue.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/3445436",
+    "image": "/places/tour-3445436-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/3445436",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/05/3445405_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3445436-guide-1.webp",
+        "altKo": "유리원 공간 사진 1",
+        "altEn": "유리원 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3445436",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/05/3445405_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-3445436-guide-2.webp",
+        "altKo": "유리원 공간 사진 2",
+        "altEn": "유리원 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3445436",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/06/3445406_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-3445436-guide-3.webp",
+        "altKo": "유리원 공간 사진 3",
+        "altEn": "유리원 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3445436",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/07/3445407_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "10:30 개점 안내 · 원자료의 마감 표기가 모호하여 매장에 확인 필요",
+        "textEn": "Opens at 10:30 according to the listing; the closing-time notation is ambiguous. Confirm with the venue."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 확인 필요",
+        "textEn": "Parking location, capacity and fees need confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-1038058",
+    "description": "담양의 대통밥 식당입니다. 대나무 통에 담은 밥과 한식 반찬을 함께 먹는 식사를 계획할 수 있어요. 최소 주문 인원은 매장에 확인해 주세요.",
+    "descriptionEn": "A bamboo-rice restaurant in Damyang serving rice in bamboo with Korean side dishes. Confirm minimum party size before a solo meal.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/1038058",
+    "image": "/places/tour-1038058-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/1038058",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/76/3461876_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-1038058-guide-1.webp",
+        "altKo": "한상근대통밥집 공간 사진 1",
+        "altEn": "한상근대통밥집 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/1038058",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/76/3461876_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-1038058-guide-2.webp",
+        "altKo": "한상근대통밥집 공간 사진 2",
+        "altEn": "한상근대통밥집 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/1038058",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/77/3461877_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-1038058-guide-3.webp",
+        "altKo": "한상근대통밥집 공간 사진 3",
+        "altEn": "한상근대통밥집 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/1038058",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/78/3461878_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "매일 10:00 - 21:00",
+        "textEn": "daily 10:00 - 21:00"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 주차 가능",
+        "textEn": "Parking location, capacity and fees need confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-3394748",
+    "description": "김해 대동면의 차 전문 공간입니다. 차밭 풍경과 장군차 녹차, 말차라떼와 차에 곁들이는 디저트를 살펴보세요.",
+    "descriptionEn": "A tea venue in Daedong, Gimhae, with tea-field scenery, green tea, matcha latte and accompanying desserts.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/3394748",
+    "image": "/places/tour-3394748-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/3394748",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/80/3517180_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3394748-guide-1.webp",
+        "altKo": "장군차 산들 공간 사진 1",
+        "altEn": "장군차 산들 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3394748",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/80/3517180_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 706
+      },
+      {
+        "src": "/places/tour-3394748-guide-2.webp",
+        "altKo": "장군차 산들 공간 사진 2",
+        "altEn": "장군차 산들 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3394748",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/79/3517179_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 706
+      },
+      {
+        "src": "/places/tour-3394748-guide-3.webp",
+        "altKo": "장군차 산들 공간 사진 3",
+        "altEn": "장군차 산들 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/3394748",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/82/3517182_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "- 평일 11:00~17:00- 주말 11:00~19:00",
+        "textEn": "- weekdays 11:00~17:00- weekends 11:00~19:00"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "매주 월요일",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-4076760",
+    "description": "밀양 진장 청년거리 안의 카페입니다. 주문 공간과 별채로 동선이 나뉘며 구황작물빵과 차·커피를 제공합니다. 매장 주차는 미제공 안내입니다.",
+    "descriptionEn": "A café in Miryang’s Jinjang youth street, with an ordering space and a separate annex. It serves root-vegetable bread, tea and coffee; venue parking is unavailable.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/4076760",
+    "image": "/places/tour-4076760-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/4076760",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/71/4076571_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-4076760-guide-1.webp",
+        "altKo": "진장올래 공간 사진 1",
+        "altEn": "진장올래 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4076760",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/71/4076571_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-4076760-guide-2.webp",
+        "altKo": "진장올래 공간 사진 2",
+        "altEn": "진장올래 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4076760",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/66/4076566_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-4076760-guide-3.webp",
+        "altKo": "진장올래 공간 사진 3",
+        "altEn": "진장올래 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4076760",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/67/4076567_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "11:00~19:00",
+        "textEn": "11:00~19:00"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "매주 수요일",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 불가능",
+        "textEn": "The tourism listing says venue parking is unavailable."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-4055439",
+    "description": "제주 애월읍의 목조 카페입니다. 삼각 지붕의 건물과 밭·돌담 풍경을 보고 드립 커피와 한라봉 에이드를 즐길 수 있어요.",
+    "descriptionEn": "A wooden café in Aewol, Jeju, with a triangular roof among fields and stone walls. Drinks include drip coffee and hallabong ade.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/food/4055439",
+    "image": "/places/tour-4055439-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/food/4055439",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/85/4055085_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-4055439-guide-1.webp",
+        "altKo": "카페 어림비 공간 사진 1",
+        "altEn": "카페 어림비 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4055439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/85/4055085_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-4055439-guide-2.webp",
+        "altKo": "카페 어림비 공간 사진 2",
+        "altEn": "카페 어림비 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4055439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/81/4055081_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      },
+      {
+        "src": "/places/tour-4055439-guide-3.webp",
+        "altKo": "카페 어림비 공간 사진 3",
+        "altEn": "카페 어림비 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/food/4055439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/82/4055082_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 705
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "10:00~19:30 (마지막 주문 18:00)",
+        "textEn": "10:00~19:30 (last order 18:00)"
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "1인 이용·최소 주문 인원은 매장에 확인해 주세요.",
+        "textEn": "Confirm solo access and minimum order or party-size requirements."
+      }
+    ]
+  },
+  {
+    "id": "tour-3057069",
+    "description": "울산 울주군의 마을로 봄 벚꽃을 보는 방문 후보입니다. 생활 공간이므로 주민의 이동을 막지 않고 주차 가능한 곳을 확인해 주세요.",
+    "descriptionEn": "A village in Ulju, Ulsan, visited for spring cherry blossoms. Respect residents’ access and use permitted parking.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/3057069",
+    "image": "/places/tour-3057069-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/3057069",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/09/3549309_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-3057069-guide-1.webp",
+        "altKo": "차리마을 공간 사진 1",
+        "altEn": "차리마을 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/3057069",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/09/3549309_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-3057069-guide-2.webp",
+        "altKo": "차리마을 공간 사진 2",
+        "altEn": "차리마을 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/3057069",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/10/3549310_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-3057069-guide-3.webp",
+        "altKo": "차리마을 공간 사진 3",
+        "altEn": "차리마을 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/3057069",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/11/3549311_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-1580917",
+    "description": "무주 적상산으로 오르는 길에 있는 천연 폭포입니다. 비와 계절에 따라 물의 양과 접근 조건이 달라질 수 있어요.",
+    "descriptionEn": "A natural waterfall along the road toward Jeoksangsan in Muju. Water flow and access can change with rain and the season.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/1580917",
+    "image": "/places/tour-1580917-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/1580917",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/99/3559999_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-1580917-guide-1.webp",
+        "altKo": "천일폭포 공간 사진 1",
+        "altEn": "천일폭포 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1580917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/99/3559999_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-1580917-guide-2.webp",
+        "altKo": "천일폭포 공간 사진 2",
+        "altEn": "천일폭포 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1580917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/97/3559997_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-1580917-guide-3.webp",
+        "altKo": "천일폭포 공간 사진 3",
+        "altEn": "천일폭포 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1580917",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/98/3559998_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방※ 자세한 사항은 전화문의 요망",
+        "textEn": "Check the source listing and confirm current hours before visiting."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-126323",
+    "description": "담양의 호수로 주변 산과 물가 풍경을 살펴볼 수 있습니다. 산책을 계획할 때는 실제 보행 가능한 구간과 주차 위치를 먼저 확인해요.",
+    "descriptionEn": "A lake in Damyang with mountain and waterside scenery. Check walkable sections and parking locations before planning a stroll.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/126323",
+    "image": "/places/tour-126323-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/126323",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/39/3562539_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-126323-guide-1.webp",
+        "altKo": "담양호 공간 사진 1",
+        "altEn": "담양호 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/126323",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/39/3562539_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-126323-guide-2.webp",
+        "altKo": "담양호 공간 사진 2",
+        "altEn": "담양호 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/126323",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/40/3562540_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-126323-guide-3.webp",
+        "altKo": "담양호 공간 사진 3",
+        "altEn": "담양호 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/126323",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/41/3562541_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "09:00~18:00",
+        "textEn": "09:00~18:00"
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2743326",
+    "description": "부안 변산의 해안을 따라 명소를 이어보는 도로입니다. 고사포해수욕장과 하섬 전망, 격포 주변 중 머물 곳을 골라보세요.",
+    "descriptionEn": "A coastal road in Byeonsan, Buan, connecting stops around Gosapo Beach, Haseom views and Gyeokpo.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2743326",
+    "image": "/places/tour-2743326-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2743326",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/65/3370565_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2743326-guide-1.webp",
+        "altKo": "변산해안도로 (부안변산해안도로) 공간 사진 1",
+        "altEn": "변산해안도로 (부안변산해안도로) — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2743326",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/65/3370565_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2743326-guide-2.webp",
+        "altKo": "변산해안도로 (부안변산해안도로) 공간 사진 2",
+        "altEn": "변산해안도로 (부안변산해안도로) — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2743326",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/63/3370563_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 400,
+        "height": 940
+      },
+      {
+        "src": "/places/tour-2743326-guide-3.webp",
+        "altKo": "변산해안도로 (부안변산해안도로) 공간 사진 3",
+        "altEn": "변산해안도로 (부안변산해안도로) — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2743326",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/64/3370564_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2663439",
+    "description": "사천 용현면에서 대포동 주변을 잇는 해안 드라이브 후보입니다. 색색의 경계석과 바다 풍경을 볼 수 있고, 정차는 허용된 곳에서만 해요.",
+    "descriptionEn": "A coastal drive around Yonghyeon and Daepo in Sacheon, with colorful roadside blocks and sea views. Stop only where permitted.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2663439",
+    "image": "/places/tour-2663439-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2663439",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/39/3515539_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2663439-guide-1.webp",
+        "altKo": "무지갯빛 해안도로 공간 사진 1",
+        "altEn": "무지갯빛 해안도로 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2663439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/39/3515539_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2663439-guide-2.webp",
+        "altKo": "무지갯빛 해안도로 공간 사진 2",
+        "altEn": "무지갯빛 해안도로 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2663439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/40/3515540_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2663439-guide-3.webp",
+        "altKo": "무지갯빛 해안도로 공간 사진 3",
+        "altEn": "무지갯빛 해안도로 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2663439",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/41/3515541_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2652447",
+    "description": "거제 남단의 여차와 홍포 사이를 잇는 해안 도로입니다. 굽은 길과 전망 구간을 살펴보고 도로·날씨 상태를 확인해 주세요.",
+    "descriptionEn": "A coastal road between Yeocha and Hongpo in southern Geoje. Check weather and road conditions around curves and viewpoints.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2652447",
+    "image": "/places/tour-2652447-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2652447",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/63/3017963_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2652447-guide-1.webp",
+        "altKo": "여차,홍포간 해안도로 공간 사진 1",
+        "altEn": "여차,홍포간 해안도로 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2652447",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/63/3017963_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 627
+      },
+      {
+        "src": "/places/tour-2652447-guide-2.webp",
+        "altKo": "여차,홍포간 해안도로 공간 사진 2",
+        "altEn": "여차,홍포간 해안도로 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2652447",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/54/3017954_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 349
+      },
+      {
+        "src": "/places/tour-2652447-guide-3.webp",
+        "altKo": "여차,홍포간 해안도로 공간 사진 3",
+        "altEn": "여차,홍포간 해안도로 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2652447",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/55/3017955_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 283
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중 무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 확인 필요",
+        "textEn": "Parking location, capacity and fees need confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2755455",
+    "description": "강화도 동쪽 갑곶돈대와 초지진을 잇는 해안 도로 후보입니다. 계절 꽃과 물가 풍경을 보고, 내려서 쉴 곳은 주차·보행 조건을 확인해요.",
+    "descriptionEn": "An east-coast road on Ganghwa connecting Gapgot and Chojijin, with seasonal flowers and waterside views. Check parking and walking access for any stop.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2755455",
+    "image": "/places/tour-2755455-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2755455",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/92/3522592_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2755455-guide-1.webp",
+        "altKo": "강화도동부해안도로 공간 사진 1",
+        "altEn": "강화도동부해안도로 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2755455",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/92/3522592_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 703
+      },
+      {
+        "src": "/places/tour-2755455-guide-2.webp",
+        "altKo": "강화도동부해안도로 공간 사진 2",
+        "altEn": "강화도동부해안도로 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2755455",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/93/3522593_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2755455-guide-3.webp",
+        "altKo": "강화도동부해안도로 공간 사진 3",
+        "altEn": "강화도동부해안도로 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2755455",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/94/3522594_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-1993734",
+    "description": "제주 가시리의 녹산로는 봄 유채꽃과 벚꽃을 보는 도로 후보입니다. 꽃철에는 차량과 보행자가 늘 수 있으므로 현장 통제를 확인해요.",
+    "descriptionEn": "Noksan-ro in Gasi-ri, Jeju, is a road visited for spring canola and cherry blossoms. Check traffic controls during flower season.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/1993734",
+    "image": "/places/tour-1993734-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/1993734",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/69/3588469_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-1993734-guide-1.webp",
+        "altKo": "서귀포 가시리마을 (녹산로 유채꽃도로) 공간 사진 1",
+        "altEn": "서귀포 가시리마을 (녹산로 유채꽃도로) — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1993734",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/69/3588469_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-1993734-guide-2.webp",
+        "altKo": "서귀포 가시리마을 (녹산로 유채꽃도로) 공간 사진 2",
+        "altEn": "서귀포 가시리마을 (녹산로 유채꽃도로) — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1993734",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/70/3588470_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-1993734-guide-3.webp",
+        "altKo": "서귀포 가시리마을 (녹산로 유채꽃도로) 공간 사진 3",
+        "altEn": "서귀포 가시리마을 (녹산로 유채꽃도로) — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/1993734",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/71/3588471_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 불가능",
+        "textEn": "The tourism listing says venue parking is unavailable."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2779522",
+    "description": "제주 서쪽 차귀도항에서 신도리·일과리 방향을 잇는 해안 도로입니다. 일몰 풍경을 보고 싶다면 날씨와 안전한 정차 지점을 확인해요.",
+    "descriptionEn": "A west-coast road in Jeju from Chagwido Port toward Sindo and Ilgwa. Check weather and permitted stopping places for sunset views.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2779522",
+    "image": "/places/tour-2779522-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2779522",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/27/3551727_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2779522-guide-1.webp",
+        "altKo": "고산일과해안도로 (일과리해안도로) 공간 사진 1",
+        "altEn": "고산일과해안도로 (일과리해안도로) — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2779522",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/27/3551727_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 704
+      },
+      {
+        "src": "/places/tour-2779522-guide-2.webp",
+        "altKo": "고산일과해안도로 (일과리해안도로) 공간 사진 2",
+        "altEn": "고산일과해안도로 (일과리해안도로) — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2779522",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/28/3551728_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2779522-guide-3.webp",
+        "altKo": "고산일과해안도로 (일과리해안도로) 공간 사진 3",
+        "altEn": "고산일과해안도로 (일과리해안도로) — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2779522",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/29/3551729_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 불가능",
+        "textEn": "The tourism listing says venue parking is unavailable."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2738705",
+    "description": "제주 용두암에서 도두봉 방향으로 이어지는 해안 도로 후보입니다. 차량 통행과 산책 동선을 구분하고 카페·전망 거점을 살펴보세요.",
+    "descriptionEn": "A coastal road from Yongduam toward Dodubong in Jeju. Separate driving and walking plans when choosing cafés and viewpoints.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2738705",
+    "image": "/places/tour-2738705-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2738705",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/29/3556229_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2738705-guide-1.webp",
+        "altKo": "용담해안도로 공간 사진 1",
+        "altEn": "용담해안도로 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/29/3556229_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2738705-guide-2.webp",
+        "altKo": "용담해안도로 공간 사진 2",
+        "altEn": "용담해안도로 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/30/3556230_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2738705-guide-3.webp",
+        "altKo": "용담해안도로 공간 사진 3",
+        "altEn": "용담해안도로 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738705",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/31/3556231_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
+  },
+  {
+    "id": "tour-2738701",
+    "description": "제주 월정리 해변 주변의 해안 도로 후보입니다. 바다와 풍차 풍경을 살펴보고 주변 카페나 산책 구간의 운영·주차 조건을 확인해요.",
+    "descriptionEn": "A coastal road around Woljeong-ri Beach in Jeju, with sea and wind-turbine views. Check access and parking at nearby cafés and walking sections.",
+    "checked": "2026-10-01",
+    "featured": true,
+    "sourceHint": "관광정보 자료 확인 · 방문 검증 아님",
+    "source": "https://www.ktriptips.com/kor/tourspot/2738701",
+    "image": "/places/tour-2738701-guide-1.webp",
+    "imageCredit": "한국관광공사",
+    "imageSource": "https://www.ktriptips.com/kor/tourspot/2738701",
+    "imageRemote": "https://tong.visitkorea.or.kr/cms/resource/02/3553602_image2_1.jpg",
+    "imageLicense": "Type1",
+    "imageLicenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+    "imageNote": "Resized and converted to WebP; display may crop the image.",
+    "photos": [
+      {
+        "src": "/places/tour-2738701-guide-1.webp",
+        "altKo": "월정리해안도로 공간 사진 1",
+        "altEn": "월정리해안도로 — place view 1",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738701",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/02/3553602_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      },
+      {
+        "src": "/places/tour-2738701-guide-2.webp",
+        "altKo": "월정리해안도로 공간 사진 2",
+        "altEn": "월정리해안도로 — place view 2",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738701",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/01/3553601_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 704
+      },
+      {
+        "src": "/places/tour-2738701-guide-3.webp",
+        "altKo": "월정리해안도로 공간 사진 3",
+        "altEn": "월정리해안도로 — place view 3",
+        "credit": "한국관광공사",
+        "source": "https://www.ktriptips.com/kor/tourspot/2738701",
+        "original": "https://tong.visitkorea.or.kr/cms/resource/03/3553603_image2_1.jpg",
+        "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+        "width": 940,
+        "height": 626
+      }
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "상시 개방",
+        "textEn": "Listed as always open; access may change with weather or temporary controls."
+      },
+      {
+        "labelKo": "휴무",
+        "labelEn": "Closures",
+        "textKo": "연중무휴",
+        "textEn": "Check the source listing for regular and temporary closures."
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광자료 안내: 가능",
+        "textEn": "Parking listed as available; capacity and fees require confirmation."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "매장 메뉴·입장료·예약 조건은 방문 전 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current menu prices, admission and reservations in the official venue information."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "허용된 주차·보행 구간을 확인해 주세요.",
+        "textEn": "Check permitted parking and walking access."
+      }
+    ]
   }
 ]

@@ -1,10 +1,11 @@
+import {countryCodes} from '@/lib/countries';
 import {z} from 'zod';
 import {db} from '@/lib/store';
 import {siteOrigin} from '@/lib/site-auth';
 import {koreaDay} from '@/lib/traffic';
 import {engagementEvents, engagementSources} from '@/lib/engagement';
 import {campaignCodes} from '@/lib/campaigns';
-const payload = z.object({event: z.enum(engagementEvents), country: z.enum(['KR', 'US']), source: z.enum(engagementSources),campaign:z.enum(campaignCodes).default('none')}).strict();
+const payload = z.object({event: z.enum(engagementEvents), country: z.enum(countryCodes), source: z.enum(engagementSources),campaign:z.enum(campaignCodes).default('none')}).strict();
 const reply = (status: number) => new Response(null, {status, headers: {'Cache-Control': 'no-store'}});
 export async function POST(request: Request) {
   try {

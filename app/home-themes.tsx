@@ -1,4 +1,6 @@
 'use client';
+import {countries,countryCodes,type CountryCode} from '@/lib/countries';
+import {catalog} from '@/lib/catalog';
 import {useState} from 'react';
 import {ArrowUpRight} from 'lucide-react';
 import privateCatalog from '@/lib/private-catalog.json';
@@ -8,17 +10,17 @@ import {useLocale} from './locale';
 import ThemePicker from './theme-picker';
 import PlaceSummary from './place-summary';
 
-export default function HomeThemes({country, onCountryChange}: {country: 'KR' | 'US'; onCountryChange: (country: 'KR' | 'US') => void}) {
+export default function HomeThemes({country, onCountryChange}: {country: CountryCode; onCountryChange: (country: CountryCode) => void}) {
   const {lang, text} = useLocale();
   const [theme, setTheme] = useState<PlaceTheme>('all');
-  const places = (privateCatalog as Place[]).filter(place => place.country === country && matchesPlaceTheme(place, theme));
+  const places = (country==='JP'?catalog:privateCatalog as Place[]).filter(place => place.country === country && matchesPlaceTheme(place, theme));
   const explore = '/' + country.toLowerCase() + '?' + new URLSearchParams({lang, ...(theme === 'all' ? {} : {theme})});
   return <section className="home-themes" aria-labelledby="home-themes-heading">
     <div className="home-themes-heading"><div><span className="world-kicker">ROOM TO YOURSELF.</span><h2 id="home-themes-heading">{text('A little space of your own.', '오늘은, 이런 쉼.')}</h2></div>
-      <div className="home-country-picker" role="group" aria-label={text('Preview country', '미리 볼 국가')}>{(['KR', 'US'] as const).map(value => <button key={value} type="button" aria-pressed={country === value} onClick={() => onCountryChange(value)}>{value === 'KR' ? text('South Korea', '대한민국') : text('United States', '미국')}</button>)}</div>
+      <div className="home-country-picker" role="group" aria-label={text('Preview country', '미리 볼 국가')}>{countryCodes.map(value => <button key={value} type="button" aria-pressed={country === value} onClick={() => onCountryChange(value)}>{text(countries[value].nameEn,countries[value].nameKo)}</button>)}</div>
     </div>
     <ThemePicker value={theme} onChange={setTheme} language={lang}/>
-    <div className="home-space-grid" aria-live="polite">{places.map(place => <article className="home-space-card" key={place.id}>
+    <div className="home-space-grid" aria-live="polite">{places.slice(0,4).map(place => <article className="home-space-card" key={place.id}>
       <span className="home-space-meta">{country === 'KR' ? text('Seoul', place.area) : place.area}</span>
       <h3><a href={'/places/' + encodeURIComponent(place.id) + '/' + lang}>{place.name}<ArrowUpRight size={20}/></a></h3>
       <PlaceSummary place={place} language={lang}/>

@@ -1,10 +1,13 @@
 'use client';
+import type {CountryCode} from '@/lib/countries';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {Bookmark, Check, MapPin, MessageCircle, ArrowUpRight} from 'lucide-react';
 import {Dialog, DialogContent, DialogTitle, DialogDescription} from '@/components/ui/dialog';
 import type {PlaceExperience} from '@/lib/place-experience';
 import type {PlaceLanguage} from '@/lib/place-pages';
 import {trackEngagement} from '@/lib/engagement-client';
+import QuickFeedback from '../quick-feedback';
+import {recordPause} from '@/lib/rest-journal';
 import SharePlace from './share-place';
 import {visitingTimeLabel} from '@/lib/rest-finder';
 
@@ -19,7 +22,7 @@ const questions = [
 ] as const;
 
 export default function PlaceInteractions({id, name, language, country, path, mapUrl}: {
-  id: string; name: string; language: PlaceLanguage; country: 'KR'|'US'; path: string; mapUrl: string;
+  id: string; name: string; language: PlaceLanguage; country: CountryCode; path: string; mapUrl: string;
 }) {
   const ko = language === 'ko', label = (en: string, kr: string) => ko ? kr : en;
   const [data, setData] = useState<PlaceExperience | null>(null);
@@ -44,7 +47,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
     const mine = data?.review;
     let tags: string[] = []; try {tags = mine ? JSON.parse(mine.tags) : [];} catch {}
     setReview(mine ? {day: mine.day, time: mine.time, noise: mine.noise, crowd: mine.crowd, comfort: mine.comfort, satisfaction: mine.satisfied ? '만족' : '아쉬움', tags} : {...emptyReview, tags: []});
-    setFormError(''); setOpen(true);
+    setFormError(''); setOpen(true); trackEngagement('review_start',country);
   }
   async function mutate(action: 'save'|'review'|'deleteReview', payload: Record<string, unknown>) {
     setBusy(true); setNotice(''); setFormError('');
@@ -55,7 +58,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
         throw new Error(label('Unable to save. Please try again.', '저장하지 못했어요. 잠시 후 다시 시도해 주세요.'));
       }
       if (action === 'save' && payload.saved) trackEngagement('save', country);
-      if (action === 'review') trackEngagement('review', country);
+      if (action === 'review') {trackEngagement('review', country);recordPause({placeId:id,state:'visited',at:Date.now(),noise:review.noise as '조용함'|'보통'|'시끄러움',day:review.day,time:review.time});}
       if (action === 'save') setData(current => current ? {...current, saved: !!payload.saved} : current);
       if (action !== 'save') setOpen(false);
       setNotice(action === 'deleteReview' ? label('Your review was deleted.', '내 후기를 삭제했어요.') : action === 'save' && !payload.saved ? label('Removed from saved places.', '저장을 취소했어요.') : label('Saved.', '저장했어요.'));
@@ -67,6 +70,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
   return <aside className="place-action-card place-interactions" id="reviews">
     <span className="place-eyebrow">{label('VISITOR EXPERIENCES', '방문자들이 기록한 쉼')}</span>
     <h2>{label('How did it feel?', '잘 쉬어갈 수 있을까요?')}</h2>
+    <QuickFeedback id={id} country={country} language={language}/>
     {loading && <p role="status">{label('Loading recent reviews…', '최근 후기를 불러오는 중…')}</p>}
     {error && <div className="place-feedback" role="alert"><p>{error}</p><button className="place-secondary" disabled={busy} onClick={() => {setLoading(true);load().catch(() => {}).finally(() => setLoading(false));}}>{label('Reload reviews', '후기 다시 불러오기')}</button></div>}
     {!error && summary && <>
@@ -80,8 +84,8 @@ export default function PlaceInteractions({id, name, language, country, path, ma
     </>}
     {data?.bestTime&&<p className="place-best-time">{label('A time to consider: ','참고할 방문 시간: ')}<strong>{visitingTimeLabel(data.bestTime,language)}</strong><br/>{label(`${data.bestTime.n} responses · ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% quiet · last 90 days`,`${data.bestTime.n}명 후기 · 조용했다 ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% · 최근 90일`)}</p>}
     {data?.signedIn ? <><button className="place-primary" disabled={busy || !!error} aria-pressed={data.saved} onClick={() => void mutate('save',{saved: !data.saved})}>{data.saved ? <Check size={18}/> : <Bookmark size={18}/>} {data.saved ? label('Saved · tap to remove', '저장됨 · 누르면 취소') : label('Save this place', '이 장소 저장')}</button>
-      <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a quick review', '체크로 후기 남기기')}</button></> : !loading && <a className="place-primary" href={login}><Bookmark size={18}/>{label('Sign in to save or review', '로그인하고 저장·후기 남기기')}</a>}
-    <a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEngagement('map_open',country)}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a>
+      <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a quick review', '체크로 후기 남기기')}</button></> : !loading && <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}><Bookmark size={18}/>{label('Sign in to save or review', '로그인하고 저장·후기 남기기')}</a>}
+    <a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => {trackEngagement('map_open',country);recordPause({placeId:id,state:'planned',at:Date.now()});}}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a>
     <SharePlace name={name} path={path} language={language} country={country}/>
     <p className="place-feedback" role="status" aria-live="polite">{notice}</p>
     <p className="place-review-context">{label('Visitor reports are not live crowd measurements. Each person’s latest review counts once.', '실시간 혼잡도가 아닌 방문 후기입니다. 한 사람의 최신 후기 1건만 집계해요.')}</p>
@@ -92,7 +96,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
       <form onSubmit={event => {event.preventDefault();void mutate('review',{...review,satisfied:review.satisfaction === '만족' ? 1:0});}}>
         {questions.map(question => <fieldset key={question.key}><legend>{ko ? question.ko : question.en}</legend><div className="place-review-options">{question.options.map(([value,en]) => <label key={value}><input type="radio" required name={question.key} value={value} checked={review[question.key] === value} onChange={() => setReview(current => ({...current,[question.key]:value}))}/><span>{ko ? value : en}</span></label>)}</div></fieldset>)}
         {formError && <p className="place-feedback" role="alert">{formError}</p>}
-        {data?.signedIn ? <div className="place-review-submit"><button className="place-primary" disabled={busy}>{busy ? label('Saving…','저장 중…') : label('Save my review','후기 저장하기')}</button>{data.review && <button className="place-secondary" type="button" disabled={busy} onClick={() => void mutate('deleteReview',{})}>{label('Delete my review','내 후기 삭제')}</button>}</div> : <a className="place-primary" href={login}>{label('Sign in again','다시 로그인하기')}</a>}
+        {data?.signedIn ? <div className="place-review-submit"><button className="place-primary" disabled={busy}>{busy ? label('Saving…','저장 중…') : label('Save my review','후기 저장하기')}</button>{data.review && <button className="place-secondary" type="button" disabled={busy} onClick={() => void mutate('deleteReview',{})}>{label('Delete my review','내 후기 삭제')}</button>}</div> : <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}>{label('Sign in again','다시 로그인하기')}</a>}
       </form>
     </DialogContent></Dialog>
   </aside>;

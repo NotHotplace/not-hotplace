@@ -34,7 +34,7 @@ export function restMatches(places:FinderPlace[],preferences:RestPreferences,lim
     if(place.resting) return false;
     if(preferences.purpose==='private-room'||preferences.purpose==='premium-spa') {
       if(!matchesPlaceTheme(place,preferences.purpose)) return false;
-    } else if(preferences.purpose!=='all'&&place.category!==preferences.purpose) return false;
+    } else if(preferences.purpose==='drive'?!['drive','walk'].includes(place.category):preferences.purpose!=='all'&&place.category!==preferences.purpose) return false;
     if(preferences.party==='solo'&&/2인\s*이상|최소\s*2명|at least two diners/i.test([place.description,place.descriptionEn,...(place.visitDetails||[]).map(item=>item.textKo+' '+item.textEn)].join(' '))) return false;
     if(preferences.position) {
       if(typeof place.lat!=='number'||typeof place.lon!=='number'||!Number.isFinite(place.lat)||!Number.isFinite(place.lon)) return false;

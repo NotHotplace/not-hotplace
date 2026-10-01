@@ -1,0 +1,9 @@
+import {catalog} from './catalog';
+export type RestRecord={placeId:string;state:'planned'|'visited';at:number;noise?:'조용함'|'보통'|'시끄러움';day?:string;time?:string};
+const key='nhp-rest-journal-v1';
+export const journalEvent='nhp-journal-change';
+export function parseJournal(raw:string|null):RestRecord[]{try{const records:unknown=JSON.parse(raw||'[]');if(!Array.isArray(records))return [];const seen=new Set<string>();return records.filter((r):r is RestRecord=>{if(!r||typeof r!=='object')return false;const value=r as RestRecord;if(!catalog.some(p=>p.id===value.placeId)||seen.has(value.placeId)||!['planned','visited'].includes(value.state)||!Number.isFinite(value.at)||value.at<0||value.at>Date.now()+60000)return false;if(value.noise&&!['조용함','보통','시끄러움'].includes(value.noise))return false;seen.add(value.placeId);return true;}).slice(0,200).map(r=>({placeId:r.placeId,state:r.state,at:r.at,...(r.noise?{noise:r.noise}:{}),...(['평일','주말·공휴일'].includes(r.day||'')?{day:r.day}:{}),...(['오전','오후','저녁'].includes(r.time||'')?{time:r.time}:{})}));}catch{return [];}}
+export function readJournal(){try{return parseJournal(localStorage.getItem(key));}catch{return [];}}
+export function writeJournal(records:RestRecord[]){try{localStorage.setItem(key,JSON.stringify(records.slice(0,200)));window.dispatchEvent(new Event(journalEvent));return true;}catch{return false;}}
+export function recordPause(record:RestRecord){const records=readJournal(),previous=records.find(r=>r.placeId===record.placeId);if(previous?.state==='visited'&&record.state==='planned')return true;return writeJournal([record,...records.filter(r=>r.placeId!==record.placeId)]);}
+export function removePause(placeId:string){return writeJournal(readJournal().filter(r=>r.placeId!==placeId));}

@@ -2,12 +2,12 @@ import type {Place} from './catalog';
 
 export function placeDescription(place: Place, language: 'en' | 'ko') {
   if (language === 'ko') return place.descriptionKo || place.description;
-  return place.descriptionEn || (place.country === 'US' ? place.description :
+  return place.descriptionEn || (place.country !== 'KR' ? place.description :
     'Explore this place in South Korea. See the source for visitor information and check recent visitor reviews before planning your pause.');
 }
 
 export function placeTags(place: Place, language: 'en' | 'ko') {
-  return language === 'ko' ? place.tagsKo || place.tags : place.tagsEn || (place.country === 'US' ? place.tags : []);
+  return language === 'ko' ? place.tagsKo || place.tags : place.tagsEn || (place.country !== 'KR' ? place.tags : []);
 }
 
 export function placeVisitHint(place: Place, language: 'en' | 'ko') {

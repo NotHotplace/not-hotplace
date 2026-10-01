@@ -11,7 +11,7 @@ export function readBrowseState(query: URLSearchParams, regions: readonly string
   const region = query.get('region'), category = query.get('category'), theme = query.get('theme');
   return {
     city: region && regions.includes(region) ? region : '전국',
-    category: category && ['cafe', 'food', 'drive', 'spa'].includes(category) ? category : 'all',
+    category: category && ['cafe', 'food', 'drive', 'walk', 'spa'].includes(category) ? category : 'all',
     theme: isPlaceTheme(theme) ? theme : 'all',
     term: (query.get('q') || '').slice(0, 180),
     view: ['saved', 'trips'].includes(query.get('view') || '') ? query.get('view')! : 'explore',

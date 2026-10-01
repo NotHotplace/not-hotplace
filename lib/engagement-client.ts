@@ -1,4 +1,5 @@
 'use client';
+import type {CountryCode} from './countries';
 import {engagementSources, sourceCategory, type EngagementEvent, type EngagementSource} from './engagement';
 import {campaignCategory,type CampaignCode} from './campaigns';
 
@@ -23,7 +24,7 @@ export function rememberSource(): EngagementSource {
   } catch { /* Storage may be unavailable; counting never blocks an action. */ }
   return source;
 }
-export function trackEngagement(event: EngagementEvent, country: 'KR' | 'US') {
+export function trackEngagement(event: EngagementEvent, country: CountryCode) {
   if (typeof window === 'undefined' || location.hostname !== 'nothotplace.com') return;
   if (navigator.doNotTrack === '1' || (navigator as Navigator & {globalPrivacyControl?: boolean}).globalPrivacyControl) return;
   const source = rememberSource();

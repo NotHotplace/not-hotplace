@@ -494,5 +494,1327 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Natchez-Trace-Parkway-Highsmith.jpeg",
     "imageLicense": "Public domain",
     "imageNote": "Resized and converted to WebP; thumbnails may be cropped."
+  },
+  {
+    "id": "us-pdx-crystal-springs-rhododendron-garden",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Crystal Springs Rhododendron Garden",
+    "area": "Portland",
+    "address": "5801 SE 28th Avenue Portland, OR 97202",
+    "description": "A garden around a lake with rhododendrons. Check tickets and current opening hours.",
+    "descriptionKo": "호수와 철쭉을 둘러보는 정원입니다. 유료 입장과 운영 시간을 공식 안내에서 확인해요.",
+    "descriptionEn": "A garden around a lake with rhododendrons. Check tickets and current opening hours.",
+    "source": "https://www.portland.gov/parks/crystal-springs-rhododendron-garden",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "호수와 철쭉을 둘러보는 정원입니다. 유료 입장과 운영 시간을 공식 안내에서 확인해요.",
+        "textEn": "A garden around a lake with rhododendrons. Check tickets and current opening hours."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "Thursday through Tuesday: 10am to 5:30pm Wednesday: 1 to 5:30pm Guests are welcome to enjoy the garden until 5:30pm when gates for the garden and parking lot will lock. Contact Crystal Springs Rhododendron Garden email Info@CrystalSpringsGardenPDX.or"
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.478655,
+    "lon": -122.636127,
+    "image": "/places/us-pdx-crystal-springs-rhododendron-garden.webp",
+    "imageCredit": "Adumbvoget",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Crystal_Springs_Rhododendron_Garden_Panorama.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Crystal_Springs_Rhododendron_Garden_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "Public domain",
+    "imageLicenseUrl": "https://commons.wikimedia.org/wiki/Commons:Copyright_tags#Public_domain",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "us-pdx-leach-botanical-garden",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Leach Botanical Garden",
+    "area": "Portland",
+    "address": "6704 SE 122nd Avenue Portland, OR 97236",
+    "description": "A botanical garden by a creek with an aerial tree walk and seasonal plants. Check admission and reservations.",
+    "descriptionKo": "개울 주변의 식물원으로 수목 위 산책 구간과 계절 식물을 볼 수 있습니다. 입장·예약 조건을 확인해요.",
+    "descriptionEn": "A botanical garden by a creek with an aerial tree walk and seasonal plants. Check admission and reservations.",
+    "source": "https://www.portland.gov/parks/leach-botanical-garden",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "개울 주변의 식물원으로 수목 위 산책 구간과 계절 식물을 볼 수 있습니다. 입장·예약 조건을 확인해요.",
+        "textEn": "A botanical garden by a creek with an aerial tree walk and seasonal plants. Check admission and reservations."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "Leach Botanical Garden hours change seasonally. For current hours, v isit the official Leach Botanical Garden website . LeachBotanicalGarden @leachbotanicalgarden "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.474365,
+    "lon": -122.534957,
+    "image": "/places/us-pdx-leach-botanical-garden.webp",
+    "imageCredit": "Emilia12345",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Leach_Botan3.JPG",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/2/20/Leach_Botan3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "Public domain",
+    "imageLicenseUrl": "https://commons.wikimedia.org/wiki/Commons:Copyright_tags#Public_domain",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "us-pdx-peninsula-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Peninsula Park",
+    "area": "Portland",
+    "address": "700 N Rosa Parks Way Portland, OR 97217",
+    "description": "A neighborhood park with a rose garden and historic fountain. Check community-facility hours separately.",
+    "descriptionKo": "장미 정원과 역사적인 분수가 있는 동네 공원입니다. 공원과 커뮤니티 시설의 운영 시간을 구분해요.",
+    "descriptionEn": "A neighborhood park with a rose garden and historic fountain. Check community-facility hours separately.",
+    "source": "https://www.portland.gov/parks/peninsula-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "장미 정원과 역사적인 분수가 있는 동네 공원입니다. 공원과 커뮤니티 시설의 운영 시간을 구분해요.",
+        "textEn": "A neighborhood park with a rose garden and historic fountain. Check community-facility hours separately."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00am-midnight. Tennis court lights are turned off at 10:00 PM. "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.568153,
+    "lon": -122.673649
+  },
+  {
+    "id": "us-pdx-laurelhurst-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Laurelhurst Park",
+    "area": "Portland",
+    "address": "NW Corner of SE César E. Chávez Blvd. and Stark Street Portland, OR 97214",
+    "description": "A park with a pond, trees and walking paths. Check notices about events, construction and pond conditions.",
+    "descriptionKo": "연못과 나무, 산책길을 둘러보는 공원입니다. 공사·행사와 연못 상태의 공지를 확인해 주세요.",
+    "descriptionEn": "A park with a pond, trees and walking paths. Check notices about events, construction and pond conditions.",
+    "source": "https://www.portland.gov/parks/laurelhurst-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "연못과 나무, 산책길을 둘러보는 공원입니다. 공사·행사와 연못 상태의 공지를 확인해 주세요.",
+        "textEn": "A park with a pond, trees and walking paths. Check notices about events, construction and pond conditions."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00am-10:30pm "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.51929,
+    "lon": -122.62305
+  },
+  {
+    "id": "us-pdx-hoyt-arboretum",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Hoyt Arboretum",
+    "area": "Portland",
+    "address": "4000 SW Fairview Blvd Portland, OR 97221",
+    "description": "An arboretum with collections of living trees. Choose a route after checking slopes, surfaces and construction notices.",
+    "descriptionKo": "다양한 수목을 보는 수목원입니다. 여러 산책로의 경사·노면과 공사 안내를 확인하고 길을 골라요.",
+    "descriptionEn": "An arboretum with collections of living trees. Choose a route after checking slopes, surfaces and construction notices.",
+    "source": "https://www.portland.gov/parks/hoyt-arboretum",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "다양한 수목을 보는 수목원입니다. 여러 산책로의 경사·노면과 공사 안내를 확인하고 길을 골라요.",
+        "textEn": "An arboretum with collections of living trees. Choose a route after checking slopes, surfaces and construction notices."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00am-9:30pm. The parking lot and access roads are closed at 9:30pm. "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.515982,
+    "lon": -122.716911
+  },
+  {
+    "id": "us-pdx-forest-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Forest Park",
+    "area": "Portland",
+    "address": "Forest Park, Portland, Oregon",
+    "description": "A large forest park in Portland. Choose a trailhead for your available time and check trail closures.",
+    "descriptionKo": "포틀랜드의 넓은 숲 공원입니다. 여러 출입구 중 산책 시간을 고려해 시작점을 정하고 폐쇄 구간을 확인해요.",
+    "descriptionEn": "A large forest park in Portland. Choose a trailhead for your available time and check trail closures.",
+    "source": "https://www.portland.gov/parks/forest-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "포틀랜드의 넓은 숲 공원입니다. 여러 출입구 중 산책 시간을 고려해 시작점을 정하고 폐쇄 구간을 확인해요.",
+        "textEn": "A large forest park in Portland. Choose a trailhead for your available time and check trail closures."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00 am-10:00 pm Permitted activities include pedestrian use on all trails; cycling and equestrian use on designated trails. Motorized mobility devices allowed for people with disabilities. Dogs on-leash only. Prohibited activities include off-leash "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ]
+  },
+  {
+    "id": "us-pdx-washington-park-international-rose-test-garden",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Washington Park - International Rose Test Garden",
+    "area": "Portland",
+    "address": "400 SW Kingston Avenue Portland, OR 97210",
+    "description": "A rose garden in Washington Park. Check the flower season and access or parking conditions.",
+    "descriptionKo": "워싱턴 공원의 장미 정원입니다. 개화 시기와 정원·주변 주차의 이용 조건을 살펴보세요.",
+    "descriptionEn": "A rose garden in Washington Park. Check the flower season and access or parking conditions.",
+    "source": "https://www.portland.gov/parks/washington-park-international-rose-test-garden",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "워싱턴 공원의 장미 정원입니다. 개화 시기와 정원·주변 주차의 이용 조건을 살펴보세요.",
+        "textEn": "A rose garden in Washington Park. Check the flower season and access or parking conditions."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to 10pm Closed from 5am to 10am every other Wednesday May through August Rose Garden Store rosefestival.org/buy/rose-garden-store Explore Washington Park Maps and Information explorewashingtonpark.org "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.519255,
+    "lon": -122.705416
+  },
+  {
+    "id": "us-pdx-director-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Director Park",
+    "area": "Portland",
+    "address": "815 SW Park Avenue Portland, OR 97205",
+    "description": "A downtown plaza park. Consider event schedules and surrounding city noise when planning a seated pause.",
+    "descriptionKo": "도심의 광장형 공원입니다. 앉아서 쉬는 방문을 계획할 때 행사와 주변 도심 소음을 함께 고려해요.",
+    "descriptionEn": "A downtown plaza park. Consider event schedules and surrounding city noise when planning a seated pause.",
+    "source": "https://www.portland.gov/parks/director-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "도심의 광장형 공원입니다. 앉아서 쉬는 방문을 계획할 때 행사와 주변 도심 소음을 함께 고려해요.",
+        "textEn": "A downtown plaza park. Consider event schedules and surrounding city noise when planning a seated pause."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00am-midnight Contact Emily Halvorson email ehalvorson@portlandalliance.com phone number 503-369-3220 "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.51868,
+    "lon": -122.681461
+  },
+  {
+    "id": "us-pdx-jamison-square",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Jamison Square",
+    "area": "Portland",
+    "address": "810 NW 11th Avenue Portland, OR 97209",
+    "description": "A fountain square in the Pearl District. Water play and plaza use can affect the visiting atmosphere.",
+    "descriptionKo": "펄 디스트릭트의 분수 광장입니다. 물놀이와 광장 이용자가 함께 찾는 곳으로 방문 시간의 분위기를 확인해요.",
+    "descriptionEn": "A fountain square in the Pearl District. Water play and plaza use can affect the visiting atmosphere.",
+    "source": "https://www.portland.gov/parks/jamison-square",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "펄 디스트릭트의 분수 광장입니다. 물놀이와 광장 이용자가 함께 찾는 곳으로 방문 시간의 분위기를 확인해요.",
+        "textEn": "A fountain square in the Pearl District. Water play and plaza use can affect the visiting atmosphere."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to 10pm "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.529029,
+    "lon": -122.681894
+  },
+  {
+    "id": "us-pdx-tanner-springs-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Tanner Springs Park",
+    "area": "Portland",
+    "address": "NW 10th Avenue and Marshall Street Portland, OR 97209",
+    "description": "An urban waterscape in the Pearl District. Follow the walking routes and park rules.",
+    "descriptionKo": "펄 디스트릭트의 도시 물가 공원입니다. 보행 구간과 공원의 이용 수칙을 확인해 주세요.",
+    "descriptionEn": "An urban waterscape in the Pearl District. Follow the walking routes and park rules.",
+    "source": "https://www.portland.gov/parks/tanner-springs-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "펄 디스트릭트의 도시 물가 공원입니다. 보행 구간과 공원의 이용 수칙을 확인해 주세요.",
+        "textEn": "An urban waterscape in the Pearl District. Follow the walking routes and park rules."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to 10pm "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.531161,
+    "lon": -122.681973
+  },
+  {
+    "id": "us-pdx-sellwood-riverfront-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Sellwood Riverfront Park",
+    "area": "Portland",
+    "address": "SE Spokane Street and Oaks Parkway Portland, OR 97202",
+    "description": "A riverfront park with walking routes and water views. Check dog areas and general walking access.",
+    "descriptionKo": "강변 풍경과 보행 구간이 있는 공원입니다. 반려견 구역과 일반 산책 동선을 살펴보세요.",
+    "descriptionEn": "A riverfront park with walking routes and water views. Check dog areas and general walking access.",
+    "source": "https://www.portland.gov/parks/sellwood-riverfront-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "강변 풍경과 보행 구간이 있는 공원입니다. 반려견 구역과 일반 산책 동선을 살펴보세요.",
+        "textEn": "A riverfront park with walking routes and water views. Check dog areas and general walking access."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5:00am-midnight. "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.466609,
+    "lon": -122.663528
+  },
+  {
+    "id": "us-pdx-eastbank-esplanade",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Eastbank Esplanade",
+    "area": "Portland",
+    "address": "SE Hawthorne Ave and SE Water St Portland, OR 97204",
+    "description": "A walking and cycling route on the east bank of the Willamette. Check notices for the shared routes and riverfront sections.",
+    "descriptionKo": "윌라멧강 동쪽의 산책·자전거 동선입니다. 공유 보행로와 강변 구간의 통제 안내를 확인해요.",
+    "descriptionEn": "A walking and cycling route on the east bank of the Willamette. Check notices for the shared routes and riverfront sections.",
+    "source": "https://www.portland.gov/parks/eastbank-esplanade",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "윌라멧강 동쪽의 산책·자전거 동선입니다. 공유 보행로와 강변 구간의 통제 안내를 확인해요.",
+        "textEn": "A walking and cycling route on the east bank of the Willamette. Check notices for the shared routes and riverfront sections."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "Confirm current park and facility opening hours."
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.514399,
+    "lon": -122.668215
+  },
+  {
+    "id": "us-pdx-pier-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Pier Park",
+    "area": "Portland",
+    "address": "N Lombard Street and Bruce Avenue Portland, OR 97203",
+    "description": "A park with trees, walking paths and sports facilities. Events and construction can change the atmosphere.",
+    "descriptionKo": "나무와 보행 구간, 운동 시설이 있는 공원입니다. 경기·행사와 공사 일정이 분위기를 바꿀 수 있어요.",
+    "descriptionEn": "A park with trees, walking paths and sports facilities. Events and construction can change the atmosphere.",
+    "source": "https://www.portland.gov/parks/pier-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "나무와 보행 구간, 운동 시설이 있는 공원입니다. 경기·행사와 공사 일정이 분위기를 바꿀 수 있어요.",
+        "textEn": "A park with trees, walking paths and sports facilities. Events and construction can change the atmosphere."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to midnight "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.602585,
+    "lon": -122.755658
+  },
+  {
+    "id": "us-pdx-cathedral-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Cathedral Park",
+    "area": "Portland",
+    "address": "N Edison Street and Pittsburg Avenue Portland, OR 97203",
+    "description": "A riverfront park below the St. Johns Bridge. Check events and riverside access conditions.",
+    "descriptionKo": "세인트존스 다리 아래의 강변 공원입니다. 공연·행사와 강변 접근 조건을 확인해 주세요.",
+    "descriptionEn": "A riverfront park below the St. Johns Bridge. Check events and riverside access conditions.",
+    "source": "https://www.portland.gov/parks/cathedral-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "세인트존스 다리 아래의 강변 공원입니다. 공연·행사와 강변 접근 조건을 확인해 주세요.",
+        "textEn": "A riverfront park below the St. Johns Bridge. Check events and riverside access conditions."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to midnight "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.587447,
+    "lon": -122.761295
+  },
+  {
+    "id": "us-pdx-powell-butte-nature-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Powell Butte Nature Park",
+    "area": "Portland",
+    "address": "16160 SE Powell Blvd Portland, OR 97236",
+    "description": "A nature park with viewpoints and trails. Seasonal road and parking hours differ from general park hours.",
+    "descriptionKo": "전망과 여러 산책로가 있는 자연 공원입니다. 주차장·도로의 계절별 개방 시간이 공원 전체와 다를 수 있어요.",
+    "descriptionEn": "A nature park with viewpoints and trails. Seasonal road and parking hours differ from general park hours.",
+    "source": "https://www.portland.gov/parks/powell-butte-nature-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "전망과 여러 산책로가 있는 자연 공원입니다. 주차장·도로의 계절별 개방 시간이 공원 전체와 다를 수 있어요.",
+        "textEn": "A nature park with viewpoints and trails. Seasonal road and parking hours differ from general park hours."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to 10pm Road and parking lot access hours Fall: 7am to 8pm (Labor Day until switch to Pacific Standard Time) Winter: 7am to 6pm (until switch to Daylight Savings Time) Spring: 7am to 8pm (until Memorial Day) Summer: 7am to 10pm (Memorial Day to L"
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.486214,
+    "lon": -122.504932
+  },
+  {
+    "id": "us-pdx-gabriel-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Gabriel Park",
+    "area": "Portland",
+    "address": "SW 45th Avenue and Vermont Street Portland, OR 97219",
+    "description": "A neighborhood park with walking paths and sports facilities. Check routes and parking hours for your visit.",
+    "descriptionKo": "산책길과 운동 시설이 있는 동네 공원입니다. 산책 목적에 맞는 구간과 주차장 시간을 확인해요.",
+    "descriptionEn": "A neighborhood park with walking paths and sports facilities. Check routes and parking hours for your visit.",
+    "source": "https://www.portland.gov/parks/gabriel-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "산책길과 운동 시설이 있는 동네 공원입니다. 산책 목적에 맞는 구간과 주차장 시간을 확인해요.",
+        "textEn": "A neighborhood park with walking paths and sports facilities. Check routes and parking hours for your visit."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to midnight Parking lot off SW Canby closed at 10pm "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.473034,
+    "lon": -122.719862
+  },
+  {
+    "id": "us-pdx-grant-park",
+    "country": "US",
+    "city": "Oregon",
+    "category": "walk",
+    "name": "Grant Park",
+    "area": "Portland",
+    "address": "NE 33rd Avenue and US Grant Place Portland, OR 97212",
+    "description": "A park with walking routes and multiple sports facilities. Consider games, events and facility hours when choosing a stop.",
+    "descriptionKo": "보행 구간과 여러 운동 시설이 있는 공원입니다. 쉬는 장소를 고를 때 경기·행사와 이용 시간을 살펴보세요.",
+    "descriptionEn": "A park with walking routes and multiple sports facilities. Consider games, events and facility hours when choosing a stop.",
+    "source": "https://www.portland.gov/parks/grant-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "보행 구간과 여러 운동 시설이 있는 공원입니다. 쉬는 장소를 고를 때 경기·행사와 이용 시간을 살펴보세요.",
+        "textEn": "A park with walking routes and multiple sports facilities. Consider games, events and facility hours when choosing a stop."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원과 정원·시설의 최신 개방 시간을 확인해 주세요.",
+        "textEn": "5am to midnight "
+      },
+      {
+        "labelKo": "입장·주차",
+        "labelEn": "Admission & parking",
+        "textKo": "유료 정원·주차 요금·예약·보행 조건을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check tickets, parking charges, reservations and walking access in the official information."
+      }
+    ],
+    "lat": 45.539721,
+    "lon": -122.628959
+  },
+  {
+    "id": "us-nyc-fort-tryon-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Fort Tryon Park",
+    "area": "Manhattan",
+    "address": "Fort Tryon Park, Manhattan, New York City, NY",
+    "description": "A northern Manhattan park with walking paths and the Heather Garden. Check event and garden notices.",
+    "descriptionKo": "산책길과 헤더 정원을 둘러볼 수 있는 맨해튼 북쪽의 공원입니다. 행사와 정원 이용 공지를 확인해요.",
+    "descriptionEn": "A northern Manhattan park with walking paths and the Heather Garden. Check event and garden notices.",
+    "source": "https://nycgovparks.org/parks/fort-tryon-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "산책길과 헤더 정원을 둘러볼 수 있는 맨해튼 북쪽의 공원입니다. 행사와 정원 이용 공지를 확인해요.",
+        "textEn": "A northern Manhattan park with walking paths and the Heather Garden. Check event and garden notices."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-inwood-hill-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Inwood Hill Park",
+    "area": "Manhattan",
+    "address": "Inwood Hill Park, Manhattan, New York City, NY",
+    "description": "A northern Manhattan park with woodland and riverbank nature. Check trail surfaces and access.",
+    "descriptionKo": "숲과 강변 자연을 둘러볼 수 있는 맨해튼 북쪽의 공원입니다. 산책로의 노면과 개방 상태를 확인해요.",
+    "descriptionEn": "A northern Manhattan park with woodland and riverbank nature. Check trail surfaces and access.",
+    "source": "https://nycgovparks.org/parks/inwoodhillpark",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "숲과 강변 자연을 둘러볼 수 있는 맨해튼 북쪽의 공원입니다. 산책로의 노면과 개방 상태를 확인해요.",
+        "textEn": "A northern Manhattan park with woodland and riverbank nature. Check trail surfaces and access."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-carl-schurz-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Carl Schurz Park",
+    "area": "Manhattan",
+    "address": "Carl Schurz Park, Manhattan, New York City, NY",
+    "description": "A park with a promenade overlooking the East River. Check dog areas and general walking routes.",
+    "descriptionKo": "이스트강을 바라보는 산책로가 있는 공원입니다. 반려견 구역과 일반 산책 구간의 동선을 살펴보세요.",
+    "descriptionEn": "A park with a promenade overlooking the East River. Check dog areas and general walking routes.",
+    "source": "https://nycgovparks.org/parks/carl-schurz-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "이스트강을 바라보는 산책로가 있는 공원입니다. 반려견 구역과 일반 산책 구간의 동선을 살펴보세요.",
+        "textEn": "A park with a promenade overlooking the East River. Check dog areas and general walking routes."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-riverside-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Riverside Park",
+    "area": "Manhattan",
+    "address": "Riverside Park, Manhattan, New York City, NY",
+    "description": "A park stretching along the Hudson. Choose a start and finish for your available time and check closures.",
+    "descriptionKo": "허드슨강을 따라 길게 이어지는 공원입니다. 방문 시간을 고려해 시작점과 끝점을 고르고 통제 공지를 확인해요.",
+    "descriptionEn": "A park stretching along the Hudson. Choose a start and finish for your available time and check closures.",
+    "source": "https://nycgovparks.org/parks/riverside-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "허드슨강을 따라 길게 이어지는 공원입니다. 방문 시간을 고려해 시작점과 끝점을 고르고 통제 공지를 확인해요.",
+        "textEn": "A park stretching along the Hudson. Choose a start and finish for your available time and check closures."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-st-nicholas-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "St. Nicholas Park",
+    "area": "Manhattan",
+    "address": "St. Nicholas Park, Manhattan, New York City, NY",
+    "description": "A park around Harlem and Hamilton Heights. Check steps, slopes and construction when choosing a walk.",
+    "descriptionKo": "할렘과 해밀턴하이츠 주변의 공원입니다. 계단·경사와 공사 중인 구간을 확인하고 산책 동선을 정해요.",
+    "descriptionEn": "A park around Harlem and Hamilton Heights. Check steps, slopes and construction when choosing a walk.",
+    "source": "https://nycgovparks.org/parks/stnicholaspark",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "할렘과 해밀턴하이츠 주변의 공원입니다. 계단·경사와 공사 중인 구간을 확인하고 산책 동선을 정해요.",
+        "textEn": "A park around Harlem and Hamilton Heights. Check steps, slopes and construction when choosing a walk."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-morningside-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Morningside Park",
+    "area": "Manhattan",
+    "address": "Morningside Park, Manhattan, New York City, NY",
+    "description": "A park shaped around the cliff between Harlem and Morningside Heights. Consider slopes and steps.",
+    "descriptionKo": "할렘과 모닝사이드하이츠 사이의 절벽 지형을 활용한 공원입니다. 경사와 계단을 고려해 이동해 주세요.",
+    "descriptionEn": "A park shaped around the cliff between Harlem and Morningside Heights. Consider slopes and steps.",
+    "source": "https://www.morningsidepark.org/discover",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "할렘과 모닝사이드하이츠 사이의 절벽 지형을 활용한 공원입니다. 경사와 계단을 고려해 이동해 주세요.",
+        "textEn": "A park shaped around the cliff between Harlem and Morningside Heights. Consider slopes and steps."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-highbridge-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Highbridge Park",
+    "area": "Manhattan",
+    "address": "Highbridge Park, Manhattan, New York City, NY",
+    "description": "A stop around the High Bridge connecting Manhattan and the Bronx. The bridge and its access routes have their own opening hours.",
+    "descriptionKo": "맨해튼과 브롱크스를 잇는 하이브리지의 방문 후보입니다. 다리와 접근 동선의 개방 시간이 별도로 정해져 있어요.",
+    "descriptionEn": "A stop around the High Bridge connecting Manhattan and the Bronx. The bridge and its access routes have their own opening hours.",
+    "source": "https://nycgovparks.org/park-features/highbridge-park/planyc",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "맨해튼과 브롱크스를 잇는 하이브리지의 방문 후보입니다. 다리와 접근 동선의 개방 시간이 별도로 정해져 있어요.",
+        "textEn": "A stop around the High Bridge connecting Manhattan and the Bronx. The bridge and its access routes have their own opening hours."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-washington-square-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Washington Square Park",
+    "area": "Manhattan",
+    "address": "Washington Square Park, Manhattan, New York City, NY",
+    "description": "An urban park with an arch and fountain. Performances and gatherings can change the noise at your visiting time.",
+    "descriptionKo": "아치와 분수를 볼 수 있는 도심 공원입니다. 공연과 모임이 잦은 광장이므로 실제 조용함은 방문 시간에 따라 달라요.",
+    "descriptionEn": "An urban park with an arch and fountain. Performances and gatherings can change the noise at your visiting time.",
+    "source": "https://nycgovparks.org/parks/washingtonsquarepark",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "아치와 분수를 볼 수 있는 도심 공원입니다. 공연과 모임이 잦은 광장이므로 실제 조용함은 방문 시간에 따라 달라요.",
+        "textEn": "An urban park with an arch and fountain. Performances and gatherings can change the noise at your visiting time."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-union-square-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Union Square Park",
+    "area": "Manhattan",
+    "address": "Union Square Park, Manhattan, New York City, NY",
+    "description": "A park associated with markets and city gatherings. Consider market and event activity when choosing a pause.",
+    "descriptionKo": "시장과 도심 모임 공간으로 알려진 공원입니다. 시장·행사 날의 분위기를 확인하고 잠깐 머물 곳을 골라요.",
+    "descriptionEn": "A park associated with markets and city gatherings. Consider market and event activity when choosing a pause.",
+    "source": "https://nycgovparks.org/sub_your_park/historical_signs/hs_historical_sign.php?id=6533",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "시장과 도심 모임 공간으로 알려진 공원입니다. 시장·행사 날의 분위기를 확인하고 잠깐 머물 곳을 골라요.",
+        "textEn": "A park associated with markets and city gatherings. Consider market and event activity when choosing a pause."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-prospect-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Prospect Park",
+    "area": "Brooklyn",
+    "address": "Prospect Park, Brooklyn, New York City, NY",
+    "description": "A large Brooklyn park. Choose an entrance and route for your plans and check construction or event notices.",
+    "descriptionKo": "브루클린의 넓은 공원입니다. 산책을 계획할 때 목적에 맞는 입구와 구간, 공사·행사 공지를 확인해요.",
+    "descriptionEn": "A large Brooklyn park. Choose an entrance and route for your plans and check construction or event notices.",
+    "source": "https://nycgovparks.org/parks/prospect-park",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "브루클린의 넓은 공원입니다. 산책을 계획할 때 목적에 맞는 입구와 구간, 공사·행사 공지를 확인해요.",
+        "textEn": "A large Brooklyn park. Choose an entrance and route for your plans and check construction or event notices."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-sakura-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Sakura Park",
+    "area": "Manhattan",
+    "address": "Sakura Park, Manhattan, New York City, NY",
+    "description": "A small park in Morningside Heights. Check access and seasonal conditions when combining it with nearby parks.",
+    "descriptionKo": "모닝사이드하이츠의 작은 공원입니다. 계절 꽃과 주변 공원 동선을 함께 살펴보고 개방 상태를 확인해요.",
+    "descriptionEn": "A small park in Morningside Heights. Check access and seasonal conditions when combining it with nearby parks.",
+    "source": "https://riversideparknyc.org/parks/sakura-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "모닝사이드하이츠의 작은 공원입니다. 계절 꽃과 주변 공원 동선을 함께 살펴보고 개방 상태를 확인해요.",
+        "textEn": "A small park in Morningside Heights. Check access and seasonal conditions when combining it with nearby parks."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
+  },
+  {
+    "id": "us-nyc-isham-park",
+    "country": "US",
+    "city": "New York",
+    "category": "walk",
+    "name": "Isham Park",
+    "area": "Manhattan",
+    "address": "Isham Park, Manhattan, New York City, NY",
+    "description": "A hillside park in Inwood. Consider steps and slopes and check current access or construction notices.",
+    "descriptionKo": "인우드 지역의 언덕 공원입니다. 계단과 경사를 고려해 산책 동선을 고르고 최신 개방·공사 공지를 확인해요.",
+    "descriptionEn": "A hillside park in Inwood. Consider steps and slopes and check current access or construction notices.",
+    "source": "https://www.nycgovparks.org/sub_your_park/vt_north_manhattan_parks/master_plan_pdfs/june2012/Inwood_and_Isham_Parks.pdf",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "인우드 지역의 언덕 공원입니다. 계단과 경사를 고려해 산책 동선을 고르고 최신 개방·공사 공지를 확인해요.",
+        "textEn": "A hillside park in Inwood. Consider steps and slopes and check current access or construction notices."
+      },
+      {
+        "labelKo": "운영·접근",
+        "labelEn": "Hours & access",
+        "textKo": "공원과 산책로·다리 등 별도 시설의 개방·통제 공지를 확인해 주세요.",
+        "textEn": "Check current park access and separate notices for trails, bridges and facilities."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "행사·날씨·공사와 실제 방문 시간의 소음·혼잡을 확인해요.",
+        "textEn": "Consider events, weather, construction and crowds at your visiting time."
+      }
+    ]
   }
 ]

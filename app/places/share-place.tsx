@@ -1,10 +1,11 @@
 'use client';
+import type {CountryCode} from '@/lib/countries';
 import {useState} from 'react';
 import {trackEngagement} from '@/lib/engagement-client';
 import {Share2, Check} from 'lucide-react';
 import type {PlaceLanguage} from '@/lib/place-pages';
 
-export default function SharePlace({name, path, language, country}: {name: string; path: string; language: PlaceLanguage; country?: 'KR'|'US'}) {
+export default function SharePlace({name, path, language, country}: {name: string; path: string; language: PlaceLanguage; country?: CountryCode}) {
   const [state, setState] = useState<'idle' | 'copied' | 'fallback'>('idle');
   const [url, setUrl] = useState('');
   const ko = language === 'ko';

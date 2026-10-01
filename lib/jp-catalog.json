@@ -1,0 +1,1450 @@
+[
+  {
+    "id": "jp-tokyo-20",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Hama-rikyu Gardens · 하마리큐 정원",
+    "area": "Tokyo",
+    "address": "1-1 Hamarikyu-teien, Chuo City, Tokyo",
+    "description": "A garden with a tidal pond and a teahouse over the water. Check garden admission and teahouse service separately.",
+    "descriptionKo": "바다와 연결된 연못과 수면 위 찻집을 볼 수 있는 정원입니다. 입장과 찻집 이용 조건을 각각 확인해 주세요.",
+    "descriptionEn": "A garden with a tidal pond and a teahouse over the water. Check garden admission and teahouse service separately.",
+    "source": "https://www.gotokyo.org/en/spot/20/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "바다와 연결된 연못과 수면 위 찻집을 볼 수 있는 정원입니다. 입장과 찻집 이용 조건을 각각 확인해 주세요.",
+        "textEn": "A garden with a tidal pond and a teahouse over the water. Check garden admission and teahouse service separately."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 300엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥300. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ],
+    "image": "/places/jp-tokyo-20.webp",
+    "imageCredit": "Guilhem Vellut from Annecy, France",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Hama-Rikyu_Gardens_(11324238493).jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hama-Rikyu_Gardens_%2811324238493%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-tokyo-24",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Koishikawa Korakuen Gardens · 고이시카와 고라쿠엔",
+    "area": "Tokyo",
+    "address": "1-6-6 Koraku, Bunkyo City, Tokyo",
+    "description": "A traditional landscape garden with a circular route around a pond. Flower and autumn-leaf seasons can be crowded.",
+    "descriptionKo": "연못 주변의 순환 산책로에서 다른 풍경을 보는 전통 정원입니다. 계절 꽃과 단풍철에는 혼잡할 수 있어요.",
+    "descriptionEn": "A traditional landscape garden with a circular route around a pond. Flower and autumn-leaf seasons can be crowded.",
+    "source": "https://www.gotokyo.org/en/spot/24/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "연못 주변의 순환 산책로에서 다른 풍경을 보는 전통 정원입니다. 계절 꽃과 단풍철에는 혼잡할 수 있어요.",
+        "textEn": "A traditional landscape garden with a circular route around a pond. Flower and autumn-leaf seasons can be crowded."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 300엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥300. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-22",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Rikugien Gardens · 리쿠기엔",
+    "area": "Tokyo",
+    "address": "6 Hon-Komagome, Bunkyo City, Tokyo",
+    "description": "A pond garden in Bunkyo with a small hill and seasonal plants. Confirm any special evening opening in the official notice.",
+    "descriptionKo": "분쿄구의 연못 정원으로 언덕과 계절 식물을 볼 수 있습니다. 특별 야간 개장은 당일 공식 안내를 확인해요.",
+    "descriptionEn": "A pond garden in Bunkyo with a small hill and seasonal plants. Confirm any special evening opening in the official notice.",
+    "source": "https://www.gotokyo.org/en/spot/22/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "분쿄구의 연못 정원으로 언덕과 계절 식물을 볼 수 있습니다. 특별 야간 개장은 당일 공식 안내를 확인해요.",
+        "textEn": "A pond garden in Bunkyo with a small hill and seasonal plants. Confirm any special evening opening in the official notice."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 300엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥300. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ],
+    "image": "/places/jp-tokyo-22.webp",
+    "imageCredit": "Dale Cruse from San Francisco, CA, USA",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Rikugien_Gardens_-_Flickr_-_dalecruse.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/43/Rikugien_Gardens_-_Flickr_-_dalecruse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-tokyo-25",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Kiyosumi Gardens · 기요스미 정원",
+    "area": "Tokyo",
+    "address": "3-3-9 Kiyosumi, Koto City, Tokyo",
+    "description": "A strolling garden with a large pond and landscape stones. Take care on the stepping-stone sections near the water.",
+    "descriptionKo": "큰 연못과 정원석을 보며 걷는 회유식 정원입니다. 연못 가까운 징검돌 구간은 발밑을 살펴주세요.",
+    "descriptionEn": "A strolling garden with a large pond and landscape stones. Take care on the stepping-stone sections near the water.",
+    "source": "https://www.gotokyo.org/en/spot/25/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "큰 연못과 정원석을 보며 걷는 회유식 정원입니다. 연못 가까운 징검돌 구간은 발밑을 살펴주세요.",
+        "textEn": "A strolling garden with a large pond and landscape stones. Take care on the stepping-stone sections near the water."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 150엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥150. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ],
+    "image": "/places/jp-tokyo-25.webp",
+    "imageCredit": "Irina Gelbukh",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kiyosumi-1.JPG",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/98/Kiyosumi-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-tokyo-421",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Kyu-Furukawa Gardens · 구 후루카와 정원",
+    "area": "Tokyo",
+    "address": "1 Nishigahara, Kita City, Tokyo",
+    "description": "A garden combining a Western mansion, rose beds and a Japanese garden. Check mansion access separately from garden admission.",
+    "descriptionKo": "언덕 위 서양식 저택과 장미 정원, 일본 정원을 비교할 수 있는 공간입니다. 저택 관람 조건은 정원 입장과 별도로 확인해요.",
+    "descriptionEn": "A garden combining a Western mansion, rose beds and a Japanese garden. Check mansion access separately from garden admission.",
+    "source": "https://www.gotokyo.org/en/spot/421/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "언덕 위 서양식 저택과 장미 정원, 일본 정원을 비교할 수 있는 공간입니다. 저택 관람 조건은 정원 입장과 별도로 확인해요.",
+        "textEn": "A garden combining a Western mansion, rose beds and a Japanese garden. Check mansion access separately from garden admission."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 150엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥150. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ],
+    "image": "/places/jp-tokyo-421.webp",
+    "imageCredit": "Guilhem Vellut from Annecy, France",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kyu-Furukawa_Garden_@_Nishigahara_(11029178266).jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/86/Kyu-Furukawa_Garden_%40_Nishigahara_%2811029178266%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-tokyo-19",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Kyu-Shiba-rikyu Gardens · 구 시바리큐 정원",
+    "area": "Tokyo",
+    "address": "1 Kaigan, Minato City, Tokyo",
+    "description": "A pond-and-stone-path garden near Hamamatsucho. Check last entry when planning a short walk.",
+    "descriptionKo": "하마마쓰초 주변에서 연못과 돌길을 둘러볼 수 있는 정원입니다. 짧은 산책을 계획할 때 입장 마감 시간을 먼저 확인해요.",
+    "descriptionEn": "A pond-and-stone-path garden near Hamamatsucho. Check last entry when planning a short walk.",
+    "source": "https://www.gotokyo.org/en/spot/19/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "하마마쓰초 주변에서 연못과 돌길을 둘러볼 수 있는 정원입니다. 짧은 산책을 계획할 때 입장 마감 시간을 먼저 확인해요.",
+        "textEn": "A pond-and-stone-path garden near Hamamatsucho. Check last entry when planning a short walk."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 150엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥150. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-26",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Hibiya Park · 히비야 공원",
+    "area": "Tokyo",
+    "address": "Hibiya Park, Chiyoda City, Tokyo",
+    "description": "An urban park with trees, lawns and flower beds. Construction or events may change which areas are accessible.",
+    "descriptionKo": "도심의 나무와 잔디, 화단을 둘러볼 수 있는 공원입니다. 공사나 행사로 이용 구역이 달라질 수 있어요.",
+    "descriptionEn": "An urban park with trees, lawns and flower beds. Construction or events may change which areas are accessible.",
+    "source": "https://www.gotokyo.org/en/spot/26/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "도심의 나무와 잔디, 화단을 둘러볼 수 있는 공원입니다. 공사나 행사로 이용 구역이 달라질 수 있어요.",
+        "textEn": "An urban park with trees, lawns and flower beds. Construction or events may change which areas are accessible."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·시설별 최신 개방 시간을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current park and facility hours in the official information."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "시설·정원별 요금과 유료 구역을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check official admission information and any ticketed areas."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-75",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Shinjuku Gyoen National Garden · 신주쿠 교엔",
+    "area": "Tokyo",
+    "address": "11 Naitomachi, Shinjuku City, Tokyo",
+    "description": "A national garden with multiple garden styles in central Tokyo. Check seasonal hours and closing days.",
+    "descriptionKo": "도심에서 여러 정원 양식을 볼 수 있는 국립 정원입니다. 계절별 개방 시간과 휴원일을 확인하고 방문해요.",
+    "descriptionEn": "A national garden with multiple garden styles in central Tokyo. Check seasonal hours and closing days.",
+    "source": "https://www.gotokyo.org/en/spot/75/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "도심에서 여러 정원 양식을 볼 수 있는 국립 정원입니다. 계절별 개방 시간과 휴원일을 확인하고 방문해요.",
+        "textEn": "A national garden with multiple garden styles in central Tokyo. Check seasonal hours and closing days."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-16:30 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-16:30. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 500엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥500. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-624",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Inokashira Park · 이노카시라 공원",
+    "area": "Tokyo",
+    "address": "1-18-31 Gotenyama, Musashino City, Tokyo",
+    "description": "A park near Kichijoji with walks around a pond. Weekends and blossom season can attract more visitors.",
+    "descriptionKo": "기치조지 근처에서 연못 주변을 걸을 수 있는 공원입니다. 주말과 꽃철에는 방문객이 늘 수 있어요.",
+    "descriptionEn": "A park near Kichijoji with walks around a pond. Weekends and blossom season can attract more visitors.",
+    "source": "https://www.gotokyo.org/en/spot/624/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "기치조지 근처에서 연못 주변을 걸을 수 있는 공원입니다. 주말과 꽃철에는 방문객이 늘 수 있어요.",
+        "textEn": "A park near Kichijoji with walks around a pond. Weekends and blossom season can attract more visitors."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·시설별 최신 개방 시간을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current park and facility hours in the official information."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "시설·정원별 요금과 유료 구역을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check official admission information and any ticketed areas."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-424",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Tonogayato Gardens · 도노가야토 정원",
+    "area": "Tokyo",
+    "address": "2 Minami-cho, Kokubunji City, Tokyo",
+    "description": "A garden in Kokubunji shaped around the local terrain. Consider slopes and steps when planning your walk.",
+    "descriptionKo": "고쿠분지의 지형을 활용한 정원입니다. 경사와 계단을 고려해 산책 시간을 계획해 주세요.",
+    "descriptionEn": "A garden in Kokubunji shaped around the local terrain. Consider slopes and steps when planning your walk.",
+    "source": "https://www.gotokyo.org/en/spot/424/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "고쿠분지의 지형을 활용한 정원입니다. 경사와 계단을 고려해 산책 시간을 계획해 주세요.",
+        "textEn": "A garden in Kokubunji shaped around the local terrain. Consider slopes and steps when planning your walk."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "관광국 안내 9:00-17:00 · 휴원·시즌 변경 확인 필요",
+        "textEn": "Tourism listing: 9:00-17:00. Check closing days and seasonal changes."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 150엔 안내 · 감면·특별 개장·변동 확인 필요",
+        "textEn": "Listed general admission: ¥150. Confirm concessions, special openings and changes."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-707",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Futakotamagawa Park · 후타코타마가와 공원",
+    "area": "Tokyo",
+    "address": "1-16-1 Tamagawa, Setagaya City, Tokyo",
+    "description": "A park near the residential and commercial area of Futakotamagawa. Check access conditions for the walking and garden areas.",
+    "descriptionKo": "도심 주거·상업 공간 근처의 공원입니다. 산책과 정원 구역의 운영 조건을 살펴보고 머물 곳을 골라요.",
+    "descriptionEn": "A park near the residential and commercial area of Futakotamagawa. Check access conditions for the walking and garden areas.",
+    "source": "https://www.gotokyo.org/en/spot/707/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "도심 주거·상업 공간 근처의 공원입니다. 산책과 정원 구역의 운영 조건을 살펴보고 머물 곳을 골라요.",
+        "textEn": "A park near the residential and commercial area of Futakotamagawa. Check access conditions for the walking and garden areas."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·시설별 최신 개방 시간을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current park and facility hours in the official information."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "시설·정원별 요금과 유료 구역을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check official admission information and any ticketed areas."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-tokyo-1083",
+    "country": "JP",
+    "city": "Tokyo",
+    "category": "walk",
+    "name": "Nogawa Park · 노가와 공원",
+    "area": "Tokyo",
+    "address": "2, 3, and 6 chome, Osawa, Mitaka-shi / 1 chome Higashi-cho Koganei-shi / 1 and 2 chome, Nomizu, Chofu-shi,Tokyo,",
+    "description": "A park around the Nogawa River. Check access to the nature-observation area separately from the general park.",
+    "descriptionKo": "노가와 주변의 자연을 둘러보는 공원입니다. 자연 관찰 구역과 일반 공원의 개방 조건을 구분해서 확인해요.",
+    "descriptionEn": "A park around the Nogawa River. Check access to the nature-observation area separately from the general park.",
+    "source": "https://www.gotokyo.org/en/spot/1083/index.html",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "노가와 주변의 자연을 둘러보는 공원입니다. 자연 관찰 구역과 일반 공원의 개방 조건을 구분해서 확인해요.",
+        "textEn": "A park around the Nogawa River. Check access to the nature-observation area separately from the general park."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·시설별 최신 개방 시간을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm current park and facility hours in the official information."
+      },
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "시설·정원별 요금과 유료 구역을 공식 안내에서 확인해 주세요.",
+        "textEn": "Check official admission information and any ticketed areas."
+      },
+      {
+        "labelKo": "방문 준비",
+        "labelEn": "Before you go",
+        "textKo": "마지막 입장·휴원일·혼잡한 계절의 공지를 확인해 주세요.",
+        "textEn": "Check last entry, closing days and busy-season notices."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-murinan",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Murin-an · 무린안",
+    "area": "Kyoto",
+    "address": "31 Nanzenji Kusakawa-cho, Sakyo-ku, Kyoto City, Kyoto Prefecture 606-8437",
+    "description": "A villa and garden with a tearoom. Check booked tea ceremonies and tours separately from general admission.",
+    "descriptionKo": "정원과 별장, 찻집을 둘러보는 공간입니다. 다도·투어 등 예약 프로그램은 일반 관람과 따로 확인해요.",
+    "descriptionEn": "A villa and garden with a tearoom. Check booked tea ceremonies and tours separately from general admission.",
+    "source": "https://kyoto.travel/en/destinations/murinan/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "정원과 별장, 찻집을 둘러보는 공간입니다. 다도·투어 등 예약 프로그램은 일반 관람과 따로 확인해요.",
+        "textEn": "A villa and garden with a tearoom. Check booked tea ceremonies and tours separately from general admission."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ],
+    "image": "/places/jp-kyoto-murinan.webp",
+    "imageCredit": "Piet Parkiet",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Murin-an.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Murin-an.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-kyoto-shoseien-garden-higashihonganji-temple",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Shosei-en · 쇼세이엔",
+    "area": "Kyoto",
+    "address": "Shomen-dori Ainomachi Higashi-iru, Shimogyō-ku, Kyoto 600-8190",
+    "description": "A garden associated with Higashi-Hongan-ji, with seasonal flowers and pond scenery. Confirm opening and admission conditions.",
+    "descriptionKo": "히가시혼간지의 정원으로 계절 꽃과 연못 풍경을 볼 수 있습니다. 관람 시간과 입장 조건을 먼저 확인해요.",
+    "descriptionEn": "A garden associated with Higashi-Hongan-ji, with seasonal flowers and pond scenery. Confirm opening and admission conditions.",
+    "source": "https://kyoto.travel/en/destinations/shoseien-garden-higashihonganji-temple/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "히가시혼간지의 정원으로 계절 꽃과 연못 풍경을 볼 수 있습니다. 관람 시간과 입장 조건을 먼저 확인해요.",
+        "textEn": "A garden associated with Higashi-Hongan-ji, with seasonal flowers and pond scenery. Confirm opening and admission conditions."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ],
+    "image": "/places/jp-kyoto-shoseien-garden-higashihonganji-temple.webp",
+    "imageCredit": "Hyppolyte de Saint-Rambert",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sh%C5%8Dsei-en_(Shimogyo_Kyoto)_hdsrGarden_S5_304.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Sh%C5%8Dsei-en_%28Shimogyo_Kyoto%29_hdsrGarden_S5_304.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-kyoto-nanzenji-temple",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Nanzen-ji · 난젠지",
+    "area": "Kyoto",
+    "address": "Fukuji-cho Nanzenji Sakyo-ku, Kyoto",
+    "description": "A temple in eastern Kyoto with several buildings and gardens. Check separate ticketed areas and visiting conditions.",
+    "descriptionKo": "교토 동쪽의 사찰로 여러 건물과 정원을 둘러볼 수 있습니다. 각 정원·건물의 유료 관람 조건을 구분해 주세요.",
+    "descriptionEn": "A temple in eastern Kyoto with several buildings and gardens. Check separate ticketed areas and visiting conditions.",
+    "source": "https://kyoto.travel/en/destinations/nanzenji-temple/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "교토 동쪽의 사찰로 여러 건물과 정원을 둘러볼 수 있습니다. 각 정원·건물의 유료 관람 조건을 구분해 주세요.",
+        "textEn": "A temple in eastern Kyoto with several buildings and gardens. Check separate ticketed areas and visiting conditions."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-ryoanji-temple",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Ryoan-ji · 료안지",
+    "area": "Kyoto",
+    "address": "13 Ryoanji-Goryo-no-Sita-cho, Ukyo-ku, Kyoto City",
+    "description": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit.",
+    "descriptionKo": "돌과 모래로 구성된 정원으로 알려진 사찰입니다. 관람 동선과 입장 조건을 확인하고 방문해요.",
+    "descriptionEn": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit.",
+    "source": "https://kyoto.travel/en/destinations/ryoanji-temple/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "돌과 모래로 구성된 정원으로 알려진 사찰입니다. 관람 동선과 입장 조건을 확인하고 방문해요.",
+        "textEn": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-ninnaji-temple",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Ninna-ji · 닌나지",
+    "area": "Kyoto",
+    "address": "33 Omuro-dairi, Ukyo-ku, Kyoto City",
+    "description": "A temple with pond and dry-landscape gardens. Check special admission and crowds in the late cherry-blossom season.",
+    "descriptionKo": "연못 정원과 마른 정원, 사찰 건물을 볼 수 있는 공간입니다. 늦게 피는 벚꽃철의 혼잡과 특별 입장 조건을 확인해요.",
+    "descriptionEn": "A temple with pond and dry-landscape gardens. Check special admission and crowds in the late cherry-blossom season.",
+    "source": "https://kyoto.travel/en/destinations/ninnaji-temple/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "연못 정원과 마른 정원, 사찰 건물을 볼 수 있는 공간입니다. 늦게 피는 벚꽃철의 혼잡과 특별 입장 조건을 확인해요.",
+        "textEn": "A temple with pond and dry-landscape gardens. Check special admission and crowds in the late cherry-blossom season."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-heianjingu-shrine",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Heian-jingu · 헤이안 신궁",
+    "area": "Kyoto",
+    "address": "97 Nishi Ten-no-cho, Okazaki Sakyo-ku, Kyoto City, 606-8341",
+    "description": "A shrine with vermilion buildings and gardens on four sides. Garden access may have different conditions from the shrine grounds.",
+    "descriptionKo": "붉은 건물과 사방의 정원을 살펴보는 신사입니다. 정원 관람은 신사 경내 방문과 조건이 다를 수 있어요.",
+    "descriptionEn": "A shrine with vermilion buildings and gardens on four sides. Garden access may have different conditions from the shrine grounds.",
+    "source": "https://kyoto.travel/en/destinations/heianjingu-shrine/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "붉은 건물과 사방의 정원을 살펴보는 신사입니다. 정원 관람은 신사 경내 방문과 조건이 다를 수 있어요.",
+        "textEn": "A shrine with vermilion buildings and gardens on four sides. Garden access may have different conditions from the shrine grounds."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-shimogamojinja-shrine",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Shimogamo-jinja · 시모가모 신사",
+    "area": "Kyoto",
+    "address": "59 Izumigawa-cho, Shimogamo, Sakyo-ku, Kyoto City",
+    "description": "A historic shrine in northern Kyoto. Follow site guidance and respect religious events when walking nearby.",
+    "descriptionKo": "교토 북쪽의 오래된 신사입니다. 주변을 걸을 때는 종교 공간의 안내와 행사 일정을 존중해 주세요.",
+    "descriptionEn": "A historic shrine in northern Kyoto. Follow site guidance and respect religious events when walking nearby.",
+    "source": "https://kyoto.travel/en/destinations/shimogamojinja-shrine/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "교토 북쪽의 오래된 신사입니다. 주변을 걸을 때는 종교 공간의 안내와 행사 일정을 존중해 주세요.",
+        "textEn": "A historic shrine in northern Kyoto. Follow site guidance and respect religious events when walking nearby."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-philosophers-path-tetsugakunomichi",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Philosopher’s Path · 철학의 길",
+    "area": "Kyoto",
+    "address": "Sakyo-ku, Kyoto City",
+    "description": "A walking path along a canal below Kyoto’s eastern hills. Consider blossom-season crowds when planning a visit.",
+    "descriptionKo": "동쪽 산기슭의 운하를 따라 걷는 산책로입니다. 벚꽃철에는 방문객이 많을 수 있으니 계절 분위기를 고려해요.",
+    "descriptionEn": "A walking path along a canal below Kyoto’s eastern hills. Consider blossom-season crowds when planning a visit.",
+    "source": "https://kyoto.travel/en/destinations/philosophers-path-tetsugakunomichi/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "동쪽 산기슭의 운하를 따라 걷는 산책로입니다. 벚꽃철에는 방문객이 많을 수 있으니 계절 분위기를 고려해요.",
+        "textEn": "A walking path along a canal below Kyoto’s eastern hills. Consider blossom-season crowds when planning a visit."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-running-course-takaragaike-pond",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Takaragaike Pond · 다카라가이케",
+    "area": "Kyoto",
+    "address": "Takaragaike Pond, Kyoto, Japan",
+    "description": "A roughly 1.5 km route around the pond, with woodland and water views. Runners and walkers share the route.",
+    "descriptionKo": "연못을 둘러싼 약 1.5km 코스에서 숲과 물가를 볼 수 있습니다. 러닝과 산책 이용자가 함께 이용해요.",
+    "descriptionEn": "A roughly 1.5 km route around the pond, with woodland and water views. Runners and walkers share the route.",
+    "source": "https://kyoto.travel/en/destinations/running-course-takaragaike-pond/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "연못을 둘러싼 약 1.5km 코스에서 숲과 물가를 볼 수 있습니다. 러닝과 산책 이용자가 함께 이용해요.",
+        "textEn": "A roughly 1.5 km route around the pond, with woodland and water views. Runners and walkers share the route."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-kyoto-kyoto-gyoen-national-garden",
+    "country": "JP",
+    "city": "Kyoto",
+    "category": "walk",
+    "name": "Kyoto Gyoen · 교토 교엔",
+    "area": "Kyoto",
+    "address": "Kyoto Gyoen, Kyoto, Japan",
+    "description": "A large garden in central Kyoto. Exhibition halls and individual facilities have separate opening and admission conditions.",
+    "descriptionKo": "교토 중심부의 넓은 정원입니다. 전시관과 별도 시설은 정원 전체와 개방·요금 조건이 다를 수 있어요.",
+    "descriptionEn": "A large garden in central Kyoto. Exhibition halls and individual facilities have separate opening and admission conditions.",
+    "source": "https://kyoto.travel/en/destinations/kyoto-gyoen-national-garden/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "교토 중심부의 넓은 정원입니다. 전시관과 별도 시설은 정원 전체와 개방·요금 조건이 다를 수 있어요.",
+        "textEn": "A large garden in central Kyoto. Exhibition halls and individual facilities have separate opening and admission conditions."
+      },
+      {
+        "labelKo": "운영·관람",
+        "labelEn": "Hours & access",
+        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm opening hours and closures for each garden, building or program."
+      },
+      {
+        "labelKo": "가격·예약",
+        "labelEn": "Price & booking",
+        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
+        "textEn": "Check separate ticketed areas and booked experiences."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-keitakuen-garden",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Keitakuen Garden · 게이타쿠엔",
+    "area": "Osaka",
+    "address": "1-108 Chausuyamacho, Tennoji-ku, Osaka (Tennoji Park)",
+    "description": "A pond garden inside Tennoji Park. Check garden hours and admission before exploring stone paths and bridges.",
+    "descriptionKo": "덴노지 공원 안의 연못 정원입니다. 돌길과 다리, 정원 관람의 시간·입장 조건을 확인해 주세요.",
+    "descriptionEn": "A pond garden inside Tennoji Park. Check garden hours and admission before exploring stone paths and bridges.",
+    "source": "https://osaka-info.jp/en/spot/keitakuen-garden/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "덴노지 공원 안의 연못 정원입니다. 돌길과 다리, 정원 관람의 시간·입장 조건을 확인해 주세요.",
+        "textEn": "A pond garden inside Tennoji Park. Check garden hours and admission before exploring stone paths and bridges."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ],
+    "image": "/places/jp-osaka-keitakuen-garden.webp",
+    "imageCredit": "Sakai Yayoi",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Keitakuen_Garden_and_Abeno_Harukas.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/68/Keitakuen_Garden_and_Abeno_Harukas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-osaka-nakanoshima-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Nakanoshima Park · 나카노시마",
+    "area": "Osaka",
+    "address": "〒 530-0005 1 Nakanoshima, Kita-ku, Osaka",
+    "description": "A park between two rivers, with rose gardens and nearby historic architecture. Flower seasons and events can be busy.",
+    "descriptionKo": "두 강 사이의 공원으로 장미 정원과 주변 근대 건축을 볼 수 있습니다. 꽃철과 행사에는 사람이 늘 수 있어요.",
+    "descriptionEn": "A park between two rivers, with rose gardens and nearby historic architecture. Flower seasons and events can be busy.",
+    "source": "https://osaka-info.jp/en/spot/nakanoshima-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "두 강 사이의 공원으로 장미 정원과 주변 근대 건축을 볼 수 있습니다. 꽃철과 행사에는 사람이 늘 수 있어요.",
+        "textEn": "A park between two rivers, with rose gardens and nearby historic architecture. Flower seasons and events can be busy."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ],
+    "image": "/places/jp-osaka-nakanoshima-park.webp",
+    "imageCredit": "KimonBerlin",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Nakanoshima_island_(5236389413).jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Nakanoshima_island_%285236389413%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageNote": "Resized and converted to WebP; thumbnails may crop the image."
+  },
+  {
+    "id": "jp-osaka-utsubo-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Utsubo Park · 우쓰보",
+    "area": "Osaka",
+    "address": "2-1-4 Hommachi-ku, Osaka 550-0004",
+    "description": "A park with rose gardens, zelkova trees and tennis facilities. Compare walking areas with sports and event spaces.",
+    "descriptionKo": "장미 정원과 느티나무 길, 테니스 시설이 있는 공원입니다. 운동·행사와 산책 구역의 분위기를 나눠 살펴보세요.",
+    "descriptionEn": "A park with rose gardens, zelkova trees and tennis facilities. Compare walking areas with sports and event spaces.",
+    "source": "https://osaka-info.jp/en/spot/utsubo-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "장미 정원과 느티나무 길, 테니스 시설이 있는 공원입니다. 운동·행사와 산책 구역의 분위기를 나눠 살펴보세요.",
+        "textEn": "A park with rose gardens, zelkova trees and tennis facilities. Compare walking areas with sports and event spaces."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-nagai-botanical-garden",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Nagai Botanical Garden · 나가이 식물원",
+    "area": "Osaka",
+    "address": "1-23 Nagai Park, Higashisumiyoshi Ward, Osaka City, Osaka Prefecture",
+    "description": "A botanical garden with seasonal flowers and a large pond. Check seasonal opening and last-entry times.",
+    "descriptionKo": "계절 꽃과 연못을 둘러보는 식물원입니다. 여름·겨울 관람 시간과 마지막 입장 시간을 구분해 확인해요.",
+    "descriptionEn": "A botanical garden with seasonal flowers and a large pond. Check seasonal opening and last-entry times.",
+    "source": "https://osaka-info.jp/en/spot/nagai-botanical-garden/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "계절 꽃과 연못을 둘러보는 식물원입니다. 여름·겨울 관람 시간과 마지막 입장 시간을 구분해 확인해요.",
+        "textEn": "A botanical garden with seasonal flowers and a large pond. Check seasonal opening and last-entry times."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "3–10월 09:30–17:00(16:30 입장 마감), 11–2월 09:30–16:30(16:00 입장 마감) 안내. 월요일·연말연시 휴원 확인.",
+        "textEn": "Listed hours: Mar–Oct 09:30–17:00, last entry 16:30; Nov–Feb 09:30–16:30, last entry 16:00. Check Monday and New Year closures."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-kema-sakuranomiya-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Kema Sakuranomiya Park · 게마 사쿠라노미야",
+    "area": "Osaka",
+    "address": "1-chome Nakano-cho, Miyakojima-ku, Osaka City, 530-0025, and other locations",
+    "description": "A riverside park with walking paths and cherry trees. Spring blossom season can attract substantial crowds.",
+    "descriptionKo": "강변 산책로와 벚나무가 있는 공원입니다. 봄 꽃철에는 많은 사람이 찾을 수 있어요.",
+    "descriptionEn": "A riverside park with walking paths and cherry trees. Spring blossom season can attract substantial crowds.",
+    "source": "https://osaka-info.jp/en/spot/kema-sakuranomiya-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "강변 산책로와 벚나무가 있는 공원입니다. 봄 꽃철에는 많은 사람이 찾을 수 있어요.",
+        "textEn": "A riverside park with walking paths and cherry trees. Spring blossom season can attract substantial crowds."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-sumiyoshi-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Sumiyoshi Park · 스미요시",
+    "area": "Osaka",
+    "address": "1-1-13 Hamaguchi Higashi, Suminoe Ward, Osaka City, 559-0002",
+    "description": "A historic park near Sumiyoshi Taisha. Check access around festivals and New Year shrine visits.",
+    "descriptionKo": "스미요시타이샤 근처의 오래된 공원입니다. 축제와 새해 참배 시기에는 주변 동선을 확인해 주세요.",
+    "descriptionEn": "A historic park near Sumiyoshi Taisha. Check access around festivals and New Year shrine visits.",
+    "source": "https://osaka-info.jp/en/spot/sumiyoshi-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "스미요시타이샤 근처의 오래된 공원입니다. 축제와 새해 참배 시기에는 주변 동선을 확인해 주세요.",
+        "textEn": "A historic park near Sumiyoshi Taisha. Check access around festivals and New Year shrine visits."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-shirokita-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Shirokita Park · 시로키타",
+    "area": "Osaka",
+    "address": "3-29-1 Namae, Asahi-ku, Osaka 535-0004",
+    "description": "A park near the Yodo River with seasonal flowers. Check opening conditions for the iris garden separately.",
+    "descriptionKo": "요도가와 근처의 공원으로 계절 꽃과 자연을 볼 수 있습니다. 붓꽃 정원의 개방 조건은 별도로 확인해요.",
+    "descriptionEn": "A park near the Yodo River with seasonal flowers. Check opening conditions for the iris garden separately.",
+    "source": "https://osaka-info.jp/en/spot/shirokita-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "요도가와 근처의 공원으로 계절 꽃과 자연을 볼 수 있습니다. 붓꽃 정원의 개방 조건은 별도로 확인해요.",
+        "textEn": "A park near the Yodo River with seasonal flowers. Check opening conditions for the iris garden separately."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  },
+  {
+    "id": "jp-osaka-mandaike-park",
+    "country": "JP",
+    "city": "Osaka",
+    "category": "walk",
+    "name": "Bandaiike Park · 반다이이케",
+    "area": "Osaka",
+    "address": "3-chome, Bandai, Sumiyoshi-ku, Osaka City, 558-0055",
+    "description": "A park around a pond with birds and seasonal trees. Use visitor feedback to assess the atmosphere in blossom season.",
+    "descriptionKo": "연못을 둘러보며 새와 계절 나무를 살펴볼 수 있는 공원입니다. 벚꽃철의 이용 분위기는 실제 방문 후기로 확인해요.",
+    "descriptionEn": "A park around a pond with birds and seasonal trees. Use visitor feedback to assess the atmosphere in blossom season.",
+    "source": "https://osaka-info.jp/en/spot/mandaike-park/",
+    "checked": "2026-10-01",
+    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "tags": [
+      "Garden / walk"
+    ],
+    "tagsKo": [
+      "정원·산책"
+    ],
+    "tagsEn": [
+      "Garden / walk"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "공간 특징",
+        "labelEn": "Setting",
+        "textKo": "연못을 둘러보며 새와 계절 나무를 살펴볼 수 있는 공원입니다. 벚꽃철의 이용 분위기는 실제 방문 후기로 확인해요.",
+        "textEn": "A park around a pond with birds and seasonal trees. Use visitor feedback to assess the atmosphere in blossom season."
+      },
+      {
+        "labelKo": "운영 시간",
+        "labelEn": "Hours",
+        "textKo": "공원·정원별 개방 시간과 마지막 입장을 공식 안내에서 확인해 주세요.",
+        "textEn": "Confirm park or garden opening and last-entry times in the official information."
+      },
+      {
+        "labelKo": "입장·예약",
+        "labelEn": "Admission & booking",
+        "textKo": "일반 공원과 유료 정원·체험의 조건은 다를 수 있어요.",
+        "textEn": "Public parks, ticketed gardens and booked experiences have different conditions."
+      }
+    ]
+  }
+]

@@ -1,4 +1,5 @@
 'use client';
+import {countries as countryConfig,countryCodes,type CountryCode} from '@/lib/countries';
 import {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
 import {loadGeo} from '@/lib/geo-client';
@@ -11,8 +12,8 @@ export default function GlobeHome() {
   const {lang, text} = useLocale();
   const [geo, setGeo] = useState<any>(null), [data, setData] = useState<any>(null);
   const [failed, setFailed] = useState(false), [visible, setVisible] = useState(true);
-  const [country, setCountry] = useState<'KR' | 'US'>('KR');
-  const [lastCountry,setLastCountry]=useState<'KR'|'US'|null>(null);
+  const [country, setCountry] = useState<CountryCode>('KR');
+  const [lastCountry,setLastCountry]=useState<CountryCode|null>(null);
   const panel = useRef<HTMLElement>(null);
   const drag = useRef<{x: number; rotation: number; moved: boolean} | null>(null);
   const motion = useGlobeMotion(!!geo && !!data, visible);
@@ -22,7 +23,7 @@ export default function GlobeHome() {
     if (query.has('place') || query.has('category') || query.has('q') || location.hash.startsWith('#setup=')) {
       location.replace('/kr' + location.search + location.hash); return;
     }
-    try {const last=localStorage.getItem('nhp-last-country');if(last==='KR'||last==='US'){setLastCountry(last);setCountry(last);}}catch{}
+    try {const last=localStorage.getItem('nhp-last-country');if(countryCodes.includes(last as CountryCode)){setLastCountry(last as CountryCode);setCountry(last as CountryCode);}}catch{}
     let live = true;
     Promise.all([loadGeo(), fetch('/maps/world.json').then(response => {
       if (!response.ok) throw Error('Globe unavailable'); return response.json();
@@ -39,15 +40,16 @@ export default function GlobeHome() {
     return () => observer.disconnect();
   }, []);
 
-  function chooseCountry(value: 'KR' | 'US') {
+  function chooseCountry(value: CountryCode) {
     setCountry(value);
-    motion.turnTo(value === 'KR' ? -127 : 100);
+    motion.turnTo(value === 'US' ? 100 : value==='JP'?-137:-127);
   }
   const projection = geo?.geoOrthographic().scale(246).translate([300, 300]).rotate([motion.rotation, -22]);
   const path = geo?.geoPath(projection);
   const countries = [
     {code:'KOR', slug:'kr', country:'KR' as const, name:text('South Korea', '대한민국'), center:[127.7, 36.2]},
     {code:'USA', slug:'us', country:'US' as const, name:text('United States', '미국'), center:[-98, 38]},
+    {code:'JPN', slug:'jp', country:'JP' as const, name:text('Japan','일본'),center:[137,37]},
   ];
 
   return <div className="world-app" data-motion={motion.enabled ? 'on' : 'off'}>
@@ -64,7 +66,7 @@ export default function GlobeHome() {
           <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
           <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose a country to find your kind of space.', '나만의 속도로 쉬어갈 공간을 찾아보세요.')}</p>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href={'/'+country.toLowerCase()+'?lang='+lang+'&nearby=1'}>{text('Find a pause nearby','내 주변에서 쉬기')}</a><a href={'/guides?lang='+lang}>{text('Find my kind of pause','목적별로 찾기')}</a></nav>
-          {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+(lastCountry==='KR'?'Korea':'the U.S.'),(lastCountry==='KR'?'한국':'미국')+'에서 이어서 찾기')}</a>}
+          {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
         <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
           <div className="globe-display">

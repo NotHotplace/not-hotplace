@@ -1,3 +1,4 @@
+import {countryCode} from '@/lib/countries';
 import {getSiteUser,googleReady} from '@/lib/site-auth';
 import {db,allPlaces,isOwner} from '@/lib/store';
 import {membershipFor,paymentConfig} from '@/lib/membership';
@@ -5,7 +6,7 @@ import {qualityState} from '@/lib/discovery';
 import {bestQuietTime} from '@/lib/rest-finder';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){try{
- const country=new URL(request.url).searchParams.get('country')==='US'?'US':'KR';
+ const country=countryCode(new URL(request.url).searchParams.get('country'));
  const user=await getSiteUser(),d=db(),cutoff=Date.now()-90*86400000;
  const membership=user?await membershipFor(user.userId):{active:false,trialUsed:false,until:null,kind:'free'};
  const [places,stats,recent,paused,held,own,saves,proposals,admin,buckets]=await Promise.all([

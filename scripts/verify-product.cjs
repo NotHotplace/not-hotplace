@@ -30,7 +30,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {catalog}=load(path.join(root,'lib/catalog.ts'));const {regionKeys,inRegion}=load(path.join(root,'lib/regions.ts'));
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
  const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();
- assert.equal(usData.places.length,14,'US starter collection plus verified private spaces');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ assert.equal(usData.places.length,43,'US collection concentrates new places in Portland and New York');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
  const {matchesPlaceTheme,isPlaceTheme}=load(path.join(root,'lib/place-themes.ts'));
  const {placeDescription,placeVisitHint}=load(path.join(root,'lib/place-copy.ts'));
  const spacePlaces=catalog.filter(p=>p.experiences?.length);
@@ -161,7 +161,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const pages=load(path.join(root,'lib/place-pages.ts'));
  const usPlace=catalog.find(p=>p.country==='US'),krPlace=catalog.find(p=>p.country==='KR');
  const sitemapGuides=load(path.join(root,'lib/guides.ts')).guides;
- assert.equal((xml.match(/<url>/g)||[]).length,7+catalog.length*2+sitemapGuides.length*2,'place and guide pages have both language URLs');
+ assert.equal((xml.match(/<url>/g)||[]).length,9+catalog.length*2+sitemapGuides.length*2+load(path.join(root,'lib/regional-guides.ts')).regionalGuides.length*2,'place and guide pages have both language URLs');
  for(const guide of sitemapGuides)for(const language of ['ko','en'])assert(xml.includes('<loc>https://nothotplace.com/guides/'+guide.slug+'/'+language+'</loc>'));
  for(const place of catalog)for(const language of ['en','ko']){
   const url='https://nothotplace.com'+pages.placePath(place.id,language);
@@ -189,7 +189,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  user={userId:'detail-other',email:'other-detail@example.test'};
  detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.review,null);assert.equal(detailData.saved,false);assert.equal(detailData.summary.count,1,'aggregate remains public');
  user={userId:'detail-owner',email:'detail@example.test'};await post('deleteReview',{placeId:'cj-daechung'});detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.summary.count,0);
- const guides=catalog.filter(p=>p.featured);assert.equal(guides.length,30);assert.equal(catalog.filter(p=>p.country==='KR'&&p.image).length,43);
+ const guides=catalog.filter(p=>p.country==='KR'&&p.featured);assert.equal(guides.length,50);assert(catalog.filter(p=>p.country==='KR'&&p.image).length>=50);
  for(const p of guides){assert.equal(p.photos.length,3);assert(p.descriptionEn&&p.visitDetails.length>=4);assert.equal(new Set(p.photos.map(x=>x.original)).size,3);for(const photo of p.photos){assert(photo.original.startsWith('https://tong.visitkorea.or.kr/'));assert(photo.source===p.source);assert(fs.existsSync(path.join(root,'public',photo.src)));assert(photo.width>0&&photo.height>0);}}
  const engagement=load(path.join(root,'app/api/engagement/route.ts'));
  const engagementRequest=(body,headers={})=>new Request('https://example.test/api/engagement',{method:'POST',headers:{origin:'https://example.test','Content-Type':'application/json',...headers},body:typeof body==='string'?body:JSON.stringify(body)});
@@ -220,7 +220,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal(bestQuietTime([timeEvidence],{day:'주말·공휴일',time:'오후'}),null,'weekday feedback does not imply a weekend match');
  const rankedMatch=restMatches([{...finderFixture,insights:[timeEvidence]}],{...defaultRestPreferences,day:'평일',time:'오후'})[0];assert.equal(rankedMatch.time.day,'평일');assert.equal(rankedMatch.reviewed,false,'published information never fabricates satisfaction');
  const guideModule=load(path.join(root,'lib/guides.ts'));
- assert.equal(guideModule.guidePlaces(guideModule.findGuide('photo-guides'),catalog).length,30,'the 30-photo guide has 30 real catalog records');
+ assert.equal(guideModule.guidePlaces(guideModule.findGuide('photo-guides'),catalog).length,50,'the 50-photo guide has 50 real catalog records');
  assert(guideModule.guidePlaces(guideModule.findGuide('seoul-private'),catalog).every(place=>place.experiences?.some(room=>['private-room','private-suite'].includes(room.kind))),'a semi-private area cannot appear as a private room');
  for(const guide of guideModule.guides){if(guide.kind!=='temple')assert(guideModule.guidePlaces(guide,catalog).length>0,'guide has real results: '+guide.slug);}
  const campaignEvent={event:'guide_view',country:'KR',source:'instagram',campaign:'seoul_solo'};
@@ -228,7 +228,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal((await engagement.POST(engagementRequest(campaignEvent))).status,204);assert.equal(sql.prepare('SELECT total FROM campaign_totals WHERE campaign=? AND event=?').get('seoul_solo','guide_view').total,1);
  assert(!sql.prepare('PRAGMA table_info(campaign_totals)').all().some(column=>/user|ip|url|place_id/.test(column.name)),'campaign totals have no identifying dimensions');
  console.log('PASS: rest matches, unknown-cost/location exclusions, evidence-only time suggestions, real guide contents and finite campaign attribution.');
- console.log('PASS: direct place review/save privacy, review freshness, 30 bilingual guides / 90 licensed assets and aggregate engagement boundaries.');
+ console.log('PASS: direct place review/save privacy, review freshness, 50 bilingual guides / 150 licensed Korea assets and aggregate engagement boundaries.');
  console.log('PASS: bilingual place paths, reciprocal sitemap links, community suggestion sharing and review return paths.');
  const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert(trips.length>=9);assert.equal(new Set(trips.map(t=>t.id)).size,trips.length);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length>=3));
  for(const trip of trips.filter(t=>t.placeId)){const place=catalog.find(p=>p.id===trip.placeId);assert(place&&place.country==='KR'&&place.category===trip.category,'curated itinerary links to a matching published venue');}
@@ -251,5 +251,43 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});
  assert(!(await (await data.GET()).json()).membership.active,'stale completion cannot restore refunded access');
  console.log('PASS: aggregate visits, Korean date boundary, stats permissions, sitemap, travel themes, install assets and payment replay/refund handling.');
+
+ // Anonymous feedback remains a separate, bounded channel; account review rules stay intact.
+ user=null;
+ const quick=load(path.join(root,'app/api/quick-feedback/route.ts'));
+ function quickRequest(body,cookie='',origin='https://example.test',method='POST',extra={}){return new Request('https://example.test/api/quick-feedback',{method,headers:{origin,'Content-Type':'application/json',...(cookie?{cookie}:{}),...extra},body:typeof body==='string'?body:JSON.stringify(body)});}
+ const answer={placeId:'cj-daechung',noise:'조용함'};
+ assert.equal((await quick.POST(quickRequest(answer,'','https://evil.test'))).status,403);
+ assert.equal((await quick.POST(quickRequest({...answer,day:'unknown'}))).status,400);
+ assert.equal((await quick.POST(quickRequest({...answer,placeId:'missing'}))).status,404);
+ assert.equal((await quick.POST(quickRequest({...answer,userId:'spoof'}))).status,400);
+ assert.equal((await quick.POST(quickRequest('x'.repeat(501)))).status,413);
+ assert.equal((await quick.POST(quickRequest('bad-json'))).status,400);
+ let quickResponse=await quick.POST(quickRequest(answer));assert.equal(quickResponse.status,200);
+ const cookie=quickResponse.headers.get('set-cookie').split(';')[0];assert(quickResponse.headers.get('set-cookie').includes('HttpOnly; Secure; SameSite=Strict'));
+ let quickSummary=await (await quick.GET(new Request('https://example.test/api/quick-feedback?place=cj-daechung',{headers:{cookie}}))).json();
+ assert.equal(quickSummary.summary.count,1);assert.equal(quickSummary.mine.day,null);assert.equal(quickSummary.mine.time,null,'unknown visit times stay unknown');assert(!('actor' in quickSummary.mine));
+ assert.equal((await post('review',review)).status,401,'one-tap permission never grants account-review permission');
+ assert.equal((await quick.POST(quickRequest({...answer,noise:'シズカ'},cookie))).status,400);
+ assert.equal((await quick.POST(quickRequest({...answer,noise:'시끄러움',day:'평일'},cookie))).status,200);
+ quickSummary=await (await quick.GET(new Request('https://example.test/api/quick-feedback?place=cj-daechung',{headers:{cookie}}))).json();assert.equal(quickSummary.summary.count,1,'same browser updates, not duplicate votes');assert.equal(quickSummary.summary.loud,1);assert.equal(quickSummary.mine.time,null);
+ detailData=await (await detailGet('cj-daechung')).json();assert.equal(detailData.summary.count,0,'guest reactions cannot inflate account statistics');assert.equal(detailData.bestTime,null,'guest reactions cannot manufacture time recommendations');
+ const otherQuick=await quick.POST(quickRequest(answer)),otherCookie=otherQuick.headers.get('set-cookie').split(';')[0];
+ await quick.DELETE(quickRequest({placeId:'cj-daechung'},cookie,'https://example.test','DELETE'));quickSummary=await (await quick.GET(new Request('https://example.test/api/quick-feedback?place=cj-daechung'))).json();assert.equal(quickSummary.summary.count,1,'browser can only delete its own response');
+ for(let i=0;i<11;i++)assert.equal((await quick.POST(quickRequest(answer,otherCookie))).status,200);
+ assert.equal((await quick.POST(quickRequest(answer,otherCookie))).status,429,'daily per-browser cap enforced');
+ sql.prepare('UPDATE quick_feedback SET updated_at=?').run(Date.now()-91*86400000);quickSummary=await (await quick.GET(new Request('https://example.test/api/quick-feedback?place=cj-daechung'))).json();assert.equal(quickSummary.summary.count,0,'expired responses are not public');
+ sql.prepare('INSERT INTO quick_feedback_limits(day,actor,total) VALUES(?,?,1)').run('2020-01-01','expired-limit');
+ assert.equal((await quick.POST(quickRequest(answer,'','https://example.test','POST',{'cf-connecting-ip':'192.0.2.1'}))).status,200);
+ assert.equal(sql.prepare('SELECT COUNT(*) n FROM quick_feedback_limits WHERE day=?').get('2020-01-01').n,0,'old limit hashes removed');assert(!sql.prepare('SELECT actor FROM quick_feedback_limits').all().some(r=>r.actor.includes('192.0.2.1')),'raw IP not persisted');
+ const {parseJournal}=load(path.join(root,'lib/rest-journal.ts'));assert.deepEqual(parseJournal('corrupt'),[]);assert.deepEqual(parseJournal(JSON.stringify([{placeId:'unknown',state:'visited',at:Date.now()}])),[]);assert.equal(parseJournal(JSON.stringify([{placeId:'cj-daechung',state:'planned',at:Date.now()},{placeId:'cj-daechung',state:'visited',at:Date.now()}])).length,1,'journal normalizes duplicates');assert(!('userId' in parseJournal(JSON.stringify([{placeId:'cj-daechung',state:'planned',at:Date.now(),userId:'ignored'}]))[0]));
+ const jpData=await (await data.GET(new Request('https://example.test/api/data?country=JP'))).json();assert.equal(jpData.places.length,30);assert(jpData.places.every(p=>p.country==='JP'&&p.category==='walk'&&p.visitDetails.length>=3));
+ const {mapPath,explorerPath}=load(path.join(root,'lib/place-pages.ts'));assert(mapPath(jpData.places[0]).startsWith('https://www.google.com/maps'));assert(explorerPath(jpData.places[0],'ko').startsWith('/jp?'));
+ const {regionalGuides,regionalPlaces}=load(path.join(root,'lib/regional-guides.ts'));assert.equal(regionalGuides.length,23);assert(regionalGuides.every(g=>regionalPlaces(g,catalog).length>0),'every regional landing has real catalog content');
+ assert(regionalPlaces(regionalGuides.find(g=>g.slug==='new-york'),catalog).length>=15);assert(regionalPlaces(regionalGuides.find(g=>g.slug==='portland'),catalog).length>=15);
+ assert(restMatches(jpData.places,{...defaultRestPreferences,purpose:'drive'}).length>0,'scenery purpose includes walking gardens');
+ assert.equal((await engagement.POST(engagementRequest({event:'quick_review',country:'JP',source:'direct'}))).status,204,'new actions and country allowed by migrated aggregate schema');
+ const regionalSitemap=load(path.join(root,'app/sitemap.xml/route.ts')).GET();const regionalSitemapText=await regionalSitemap.text();assert(regionalSitemapText.includes('/jp</loc>'));assert(regionalSitemapText.includes('/regions/tokyo/ko'));assert(regionalSitemapText.includes('/places/jp-tokyo-20/en'));assert(!regionalSitemapText.includes('/journal'));
+ console.log('PASS: anonymous input limits, cookie isolation, expiry, guest/account separation, local journal validation, 30 Japan venues, 23 populated regional guides and new-country sitemap.');
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
 })().catch(e=>{console.error(e);process.exitCode=1;});
