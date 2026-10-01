@@ -1,0 +1,7 @@
+import {externalReviewLinks} from '@/lib/external-reviews';
+import type {Place} from '@/lib/catalog';
+export default function ExternalReviewMemo({place,language}:{place:Place;language:'ko'|'en'}){
+ const ko=language==='ko',memo=place.externalMemo;return <section className="external-review-memo" id={'external-reviews-'+place.id}><h3>{ko?'외부 후기에서 살펴본 쉼':'A pause, through external reviews'}</h3>{memo?<><p>{ko?memo.summaryKo:memo.summaryEn}</p><p className="external-caution"><strong>{ko?'미리 살펴볼 조건':'Before visiting'}</strong> {ko?memo.cautionKo:memo.cautionEn}</p><small>{ko?'자료 확인: ':'Sources checked: '}{memo.checked} · {ko?memo.periodKo:memo.periodEn}</small><div className="external-sources">{memo.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer nofollow">{s.provider} {ko?'원문':'source'} ↗</a>)}</div><p className="external-note">{ko?'공개 후기에서 읽은 참고 메모입니다. 현재 운영 조건이나 실시간 소음을 보장하지 않으며, 우리 사이트의 방문 후기 집계와 별도로 표시합니다.':'A short note based on publicly readable reviews. It does not establish current operating rules or live noise. Site review totals are separate.'}</p></>:<p>{ko?'좌석·음악·혼자 주문·주차 경험은 아래 지도 후기에서 살펴볼 수 있어요. 같은 이름의 다른 지점인지 주소를 확인하세요.':'Check seating, music, solo ordering and parking experiences in the map reviews below. Verify the address and branch.'}</p>}
+ <nav aria-label={ko?'외부 지도 후기 검색':'External map review searches'}>{externalReviewLinks(place).map(s=><a href={s.url} key={s.name} target="_blank" rel="noopener noreferrer">{s.name} {ko?'찾아보기':'search'} ↗</a>)}</nav>
+ </section>;
+}

@@ -4,7 +4,7 @@ import {placePath} from '@/lib/place-pages';
 import {regionalGuides} from '@/lib/regional-guides';
 import {guides} from '@/lib/guides';
 export function GET(){
- const pages=['','/kr','/us','/jp','/regions','/trips','/install','/plus','/guides'];
+ const pages=['','/kr','/us','/jp','/regions','/trips','/install','/plus','/guides','/contributors'];
  const guidePages=guides.flatMap(guide=>(['en','ko'] as const).map(language=>`<url><loc>${SITE_URL}/guides/${guide.slug}/${language}</loc>${(['en','ko'] as const).map(lang=>`<xhtml:link rel="alternate" hreflang="${lang}" href="${SITE_URL}/guides/${guide.slug}/${lang}"/>`).join('')}</url>`)).join('');
  const placePages=catalog.flatMap(place=>(['en','ko'] as const).map(language=>{
   const alternates=(['en','ko'] as const).map(lang=>`<xhtml:link rel="alternate" hreflang="${lang}" href="${SITE_URL}${placePath(place.id,lang)}"/>`).join('');

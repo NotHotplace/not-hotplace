@@ -3,6 +3,7 @@ const {DatabaseSync}=require('node:sqlite');const {createHash}=require('node:cry
 const root=path.resolve(__dirname,'..');const sql=new DatabaseSync(':memory:');for(const file of fs.readdirSync(path.join(root,'drizzle')).filter(x=>x.endsWith('.sql')).sort())sql.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
 let user=null;const secret='test-owner-setup-secret-at-least-32-characters';
 const env={OWNER_SETUP_HASH:createHash('sha256').update(secret).digest('hex'),DB:{prepare(query){let params=[];const stmt=sql.prepare(query);return{bind(...x){params=x;return this;},async first(){return stmt.get(...params)||null;},async all(){return{results:stmt.all(...params)};},async run(){const r=stmt.run(...params);return {success:true,meta:{changes:r.changes}};}};}}};
+env.DB.batch=async statements=>{sql.exec('BEGIN');try{const results=[];for(const statement of statements)results.push(await statement.run());sql.exec('COMMIT');return results;}catch(error){sql.exec('ROLLBACK');throw error;}};
 const cache={};function load(file){file=path.resolve(file);if(file.endsWith('.json'))return JSON.parse(fs.readFileSync(file,'utf8'));if(cache[file])return cache[file].exports;const mod={exports:{}};cache[file]=mod;const source=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const req=name=>{if(name==='cloudflare:workers')return {env};if(name==='@/lib/site-auth'||name==='./site-auth')return {getSiteUser:async()=>user,googleReady:()=>false,launchEnv:()=>env,siteOrigin:()=>"https://example.test"};if(name==='@/app/chatgpt-auth')return{getChatGPTUser:async()=>user};if(name.startsWith('@/'))return load(path.join(root,name.slice(2)+(name.endsWith('.json')?'':'.ts')));if(name.startsWith('.'))return load(path.resolve(path.dirname(file),name)+(name.endsWith('.json')?'':'.ts'));return require(name);};new Function('require','module','exports',source)(req,mod,mod.exports);return mod.exports;}
 const api=load(path.join(root,'app/api/action/route.ts')),dataRoute=load(path.join(root,'app/api/data/route.ts')),admin=load(path.join(root,'app/api/admin/route.ts'));
 const data={GET:(request=new Request('https://example.test/api/data'))=>dataRoute.GET(request)};
@@ -55,7 +56,8 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal(placeVisitHint({},'ko'),'','cards without specific advice omit the repeated footer');
  assert(placeVisitHint({visitDetails:[{labelEn:'Solo visit',labelKo:'1인 이용',textKo:'정식은 2인 이상 주문입니다.',textEn:'Set meals require two diners.'}]},'ko').includes('2인'),'meaningful booking constraints remain visible');
  const {readBrowseState,writeBrowseState}=load(path.join(root,'lib/browse-state.ts'));
- const browsing={city:'서울',category:'food',theme:'private-room',term:'유유안',view:'explore',filters:{photos:true,reviewed:false,quiet:false}};
+ const {emptyFilters:defaultBrowseFilters}=load(path.join(root,'lib/explore-filters.ts'));
+ const browsing={city:'서울',category:'food',theme:'private-room',term:'유유안',view:'explore',filters:{...defaultBrowseFilters,photos:true,reviewed:false,quiet:false}};
  const shared=writeBrowseState(new URL('https://example.test/kr?utm_source=instagram&resume=1'),browsing,'ko');
  assert.deepEqual(readBrowseState(shared.searchParams,regionKeys),browsing,'shared URL restores region, theme, search and filters');
  assert.equal(shared.searchParams.get('utm_source'),'instagram');assert(!shared.searchParams.has('resume'));
@@ -161,7 +163,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const pages=load(path.join(root,'lib/place-pages.ts'));
  const usPlace=catalog.find(p=>p.country==='US'),krPlace=catalog.find(p=>p.country==='KR');
  const sitemapGuides=load(path.join(root,'lib/guides.ts')).guides;
- assert.equal((xml.match(/<url>/g)||[]).length,9+catalog.length*2+sitemapGuides.length*2+load(path.join(root,'lib/regional-guides.ts')).regionalGuides.length*2,'place and guide pages have both language URLs');
+ assert.equal((xml.match(/<url>/g)||[]).length,10+catalog.length*2+sitemapGuides.length*2+load(path.join(root,'lib/regional-guides.ts')).regionalGuides.length*2,'place and guide pages have both language URLs');
  for(const guide of sitemapGuides)for(const language of ['ko','en'])assert(xml.includes('<loc>https://nothotplace.com/guides/'+guide.slug+'/'+language+'</loc>'));
  for(const place of catalog)for(const language of ['en','ko']){
   const url='https://nothotplace.com'+pages.placePath(place.id,language);
@@ -289,5 +291,92 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal((await engagement.POST(engagementRequest({event:'quick_review',country:'JP',source:'direct'}))).status,204,'new actions and country allowed by migrated aggregate schema');
  const regionalSitemap=load(path.join(root,'app/sitemap.xml/route.ts')).GET();const regionalSitemapText=await regionalSitemap.text();assert(regionalSitemapText.includes('/jp</loc>'));assert(regionalSitemapText.includes('/regions/tokyo/ko'));assert(regionalSitemapText.includes('/places/jp-tokyo-20/en'));assert(!regionalSitemapText.includes('/journal'));
  console.log('PASS: anonymous input limits, cookie isolation, expiry, guest/account separation, local journal validation, 30 Japan venues, 23 populated regional guides and new-country sitemap.');
+
+ {
+ // Published facts and external notes never manufacture first-party review evidence.
+ const {conditionKeys,matchesCondition,conditionEvidence}=load(path.join(root,'lib/rest-conditions.ts'));
+ assert(!matchesCondition({name:'Quiet private book cafe'},'books'),'place names do not establish a condition');
+ assert(!matchesCondition({restFeedback:{quietMusic:2}},'quietMusic'),'two reports do not qualify');
+ assert(matchesCondition({restFeedback:{quietMusic:3}},'quietMusic'));
+ assert(!matchesCondition({restFeedback:{quietMusic:3},resting:true},'quietMusic'),'held venues cannot qualify through stale positive feedback');
+ assert.equal(conditionEvidence({restFeedback:{quietMusic:3}},'quietMusic','ko').source,'','account feedback is not a published source');
+ assert(conditionKeys.every(key=>typeof emptyFilters[key]==='boolean'),'every condition has a validated URL filter');
+ const conditionUrl=writeBrowseState(new URL('https://example.test/kr'),{...browsing,filters:{...emptyFilters,books:true,soloOrder:true,quiet:true}},'ko');
+ assert.equal(readBrowseState(conditionUrl.searchParams,regionKeys).filters.soloOrder,true);
+ assert(!readBrowseState(new URLSearchParams('books=yes&quietMusic=1&actor=private'),regionKeys).filters.books);
+ const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,4);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
+ const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,19);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
+ const {externalReviewLinks}=load(path.join(root,'lib/external-reviews.ts'));
+ assert.equal(externalReviewLinks(catalog.find(p=>p.id==='cj-daechung')).length,3);
+ assert(externalReviewLinks(catalog.find(p=>p.id==='us-stumptown-division')).some(s=>s.name==='Yelp'));
+ assert.equal(catalog.filter(p=>p.locationInfo?.kind==='reference').length,20,'tourism map reference points are labelled, not presented as entrances');
+ assert(guideModule.guidePlaces(guideModule.findGuide('cheongju-parking-cafes'),catalog).length>=2,'parking guide has real sourced candidates');
+ assert(guideModule.guides.filter(g=>g.kind==='intent').every(g=>guideModule.guidePlaces(g,catalog).length>0),'new intent guides are populated');
+ const {storySelection,storyCaption}=load(path.join(root,'lib/story-card.ts'));
+ const storyRecords=catalog.slice(0,4).map((p,i)=>({placeId:p.id,state:i?'visited':'planned',noise:'조용함',at:Date.now()}));
+ assert.equal(storySelection(storyRecords,[storyRecords[0].placeId,storyRecords[0].placeId,'unknown',storyRecords[1].placeId],catalog).length,2);
+ assert.equal(storySelection(storyRecords,storyRecords.map(r=>r.placeId),catalog).length,3);
+ assert(!storyCaption(storyRecords[0],'ko',true).includes('조용함'),'a planned visit cannot imply observed noise');
+ assert(!storyCaption(storyRecords[1],'ko',false).includes('조용함'),'noise remains optional');
+ assert(storyCaption(storyRecords[1],'en',true).includes('Quiet'));
+ for(let i=0;i<3;i++){user={userId:'condition-user-'+i,email:'condition-'+i+'@example.test'};assert.equal((await post('review',{...review,placeId:'seoul-suyeon',tags:['칸막이 좌석','혼자 주문','셀프 주문','칸막이 좌석']})).status,200);}
+ user=null;let conditionData=await (await detailGet('seoul-suyeon')).json();assert.equal(conditionData.restFeedback.partitions,3,'duplicate tags cannot inflate the number of reviewers');assert.equal(conditionData.restFeedback.selfOrder,3);assert(!conditionData.plus);
+ result=await (await data.GET()).json();assert(matchesExploreFilters(result.places.find(p=>p.id==='seoul-suyeon'),{...emptyFilters,partitions:true,quiet:true}),'free API exposes supported condition and quiet evidence');
+ sql.prepare('UPDATE reviews SET updated_at=? WHERE user_id=?').run(Date.now()-91*86400000,'condition-user-0');conditionData=await (await detailGet('seoul-suyeon')).json();assert.equal(conditionData.restFeedback.partitions,2);assert(!matchesCondition(conditionData,'partitions'),'expired reviewer evidence stops qualifying');
+
+ // Anonymous information reports are isolated, bounded, private and manually moderated.
+ const reports=load(path.join(root,'app/api/place-reports/route.ts'));
+ const report={placeId:'cj-daechung',kind:'parking',note:'검증용 주차 정보 확인 요청'};
+ assert.equal((await reports.POST(quickRequest(report,'','https://evil.test'))).status,403);
+ assert.equal((await reports.POST(quickRequest({...report,placeId:'missing'}))).status,404);
+ assert.equal((await reports.POST(quickRequest({...report,actor:'spoof'}))).status,400);
+ assert.equal((await reports.POST(quickRequest({...report,note:'x'.repeat(401)}))).status,400);
+ let reportResponse=await reports.POST(quickRequest(report,'','https://example.test','POST',{'cf-connecting-ip':'192.0.2.8'}));assert.equal(reportResponse.status,200);
+ const reportCookie=reportResponse.headers.get('set-cookie').split(';')[0];assert(reportResponse.headers.get('set-cookie').includes('HttpOnly; Secure; SameSite=Strict'));
+ assert.equal((await reports.POST(quickRequest({...report,note:'갱신된 제보'},reportCookie))).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_reports').get().n,1,'same browser and issue updates the existing report');
+ const secondReport=await reports.POST(quickRequest(report)),secondReportCookie=secondReport.headers.get('set-cookie').split(';')[0];
+ assert.equal((await reports.DELETE(quickRequest({},reportCookie,'https://evil.test','DELETE'))).status,403);
+ await reports.DELETE(quickRequest({},reportCookie,'https://example.test','DELETE'));assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_reports').get().n,1,'only this browser’s reports are deleted');
+ for(let i=0;i<4;i++)assert.equal((await reports.POST(quickRequest(report,secondReportCookie))).status,200);
+ assert.equal((await reports.POST(quickRequest(report,secondReportCookie))).status,429,'report cap is separate from noise votes');
+ assert(sql.prepare('SELECT actor FROM place_reports').all().every(r=>/^[a-f0-9]{64}$/.test(r.actor)),'reports store keyed pseudonyms');
+ assert(!sql.prepare('SELECT actor FROM quick_feedback_limits').all().some(r=>r.actor.includes('192.0.2.8')),'raw report IP is not retained');
+
+ // Public identity is opt-in; approval, withdrawal and deletion enforce the same rule.
+ const community=load(path.join(root,'app/api/community/route.ts')),communityAdmin=load(path.join(root,'app/api/community/admin/route.ts'));
+ const communityRequest=(payload,origin='https://example.test')=>new Request('https://example.test/api/community',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:JSON.stringify(payload)});
+ const profile={action:'profile',name:'서울 쉼 발견자',country:'KR',region:'서울',link:'https://example.test/public',bio:'지역의 쉬어갈 장소를 모아요.',consent:true};
+ assert.equal((await community.POST(communityRequest(profile))).status,401);assert.equal((await communityAdmin.GET()).status,403);
+ user={userId:'visitor',email:'visitor@example.test'};
+ assert.equal((await community.POST(communityRequest(profile,'https://evil.test'))).status,403);
+ assert.equal((await community.POST(communityRequest({...profile,consent:false}))).status,400);
+ assert.equal((await community.POST(communityRequest({...profile,link:'javascript:alert(1)'}))).status,400);
+ assert.equal((await community.POST(communityRequest({...profile,link:'https://name:password@example.test/'}))).status,400);
+ assert.equal((await community.POST(communityRequest({...profile,region:'missing'}))).status,400);
+ assert.equal((await community.POST(communityRequest(profile))).status,200);
+ let communityData=await (await community.GET()).json();const profileId=communityData.profile.id;assert.equal(communityData.profiles.length,0);assert.equal(communityData.profile.status,'pending');assert(!('user_id' in communityData.profile));
+ const collection={action:'collection',title:'서울에서 쉬어갈 두 곳',country:'KR',region:'서울',placeIds:['seoul-suyeon','seoul-sueno'],note:'좌석과 음악을 비교하고 방문일 영업 정보를 확인해 보세요.'};
+ assert.equal((await community.POST(communityRequest({...collection,placeIds:['seoul-suyeon','us-stumptown-division']}))).status,400);
+ assert.equal((await community.POST(communityRequest({...collection,placeIds:['seoul-suyeon','seoul-suyeon']}))).status,400);
+ assert.equal((await community.POST(communityRequest(collection))).status,200);communityData=await (await community.GET()).json();const collectionId=communityData.ownCollections[0].id;assert.equal(communityData.collections.length,0);
+ assert.equal((await communityAdmin.POST(communityRequest({action:'profile',id:profileId,status:'approved',reason:''}))).status,403);
+ user={userId:'unrelated',email:'unrelated@example.test'};await community.POST(communityRequest({action:'cancel',id:collectionId}));assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_collections WHERE id=?').get(collectionId).n,1,'foreign collection cannot be removed');await community.POST(communityRequest({action:'deleteProfile'}));assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_profiles WHERE id=?').get(profileId).n,1);
+ user={userId:'owner',email:'owner@example.test'};
+ assert.equal((await communityAdmin.POST(communityRequest({action:'collection',id:collectionId,status:'approved',reason:''}))).status,400,'collection approval requires approved consenting profile');
+ assert.equal((await communityAdmin.POST(communityRequest({action:'profile',id:profileId,status:'approved',reason:''}))).status,200);
+ assert.equal((await communityAdmin.POST(communityRequest({action:'profile',id:profileId,status:'approved',reason:''}))).status,409,'duplicate decisions are rejected');
+ assert.equal((await communityAdmin.POST(communityRequest({action:'collection',id:collectionId,status:'approved',reason:''}))).status,200);
+ let moderation=await (await communityAdmin.GET()).json();assert(moderation.reports.every(r=>!('actor' in r)));const reportId=moderation.reports[0].id;
+ assert.equal((await communityAdmin.POST(communityRequest({action:'report',id:reportId,status:'resolved'}))).status,200);assert.equal(sql.prepare('SELECT status FROM place_reports WHERE id=?').get(reportId).status,'resolved');
+ user=null;communityData=await (await community.GET()).json();assert.equal(communityData.profiles.length,1);assert.equal(communityData.collections.length,1);assert.equal(communityData.profile,null);assert.equal(communityData.ownCollections.length,0);assert(communityData.collections.every(p=>!('user_id' in p)));assert(!JSON.stringify(communityData).includes('visitor@example.test'),'account email is never public');
+ result=await (await data.GET()).json();assert.equal(result.places.find(p=>p.id===submitted.id).contributor.name,profile.name,'approved listing credits only consenting public identity');
+ user={userId:'visitor',email:'visitor@example.test'};assert.equal((await community.POST(communityRequest({...profile,name:'서울 쉼 발견자 수정'}))).status,200);assert.equal((await (await community.GET()).json()).profile.id,profileId,'profile edit preserves public ID');user=null;assert.equal((await (await community.GET()).json()).collections.length,0,'profile edits hide published collections until review');
+ user={userId:'owner',email:'owner@example.test'};assert.equal((await communityAdmin.POST(communityRequest({action:'profile',id:profileId,status:'approved',reason:''}))).status,200);
+ user={userId:'visitor',email:'visitor@example.test'};await community.POST(communityRequest({action:'withdraw'}));user=null;communityData=await (await community.GET()).json();assert.equal(communityData.collections.length,0);assert.equal(communityData.profiles.length,0);result=await (await data.GET()).json();assert(!result.places.find(p=>p.id===submitted.id).contributor,'withdrawing hides listing credit too');
+ user={userId:'owner',email:'owner@example.test'};assert.equal((await communityAdmin.POST(communityRequest({action:'profile',id:profileId,status:'approved',reason:''}))).status,409,'withdrawn consent cannot be overridden');
+ user={userId:'visitor',email:'visitor@example.test'};assert.equal((await community.POST(communityRequest({action:'deleteProfile'}))).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_profiles WHERE id=?').get(profileId).n,0);assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_collections WHERE id=?').get(collectionId).n,0,'profile and collections delete together');
+ sql.prepare('UPDATE place_reports SET updated_at=?').run(Date.now()-91*86400000);user={userId:'owner',email:'owner@example.test'};await communityAdmin.GET();assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_reports').get().n,0,'expired reports are purged');
+ console.log('PASS: sourced conditions, unique recent reviewer evidence, story selection/privacy, bounded private reports, opt-in contributor identity, moderation permissions, withdrawal and atomic deletion.');
+ }
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

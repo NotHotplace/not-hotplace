@@ -10,7 +10,7 @@ import {supportedCities,regionOf} from '@/lib/regions';
 export const dynamic='force-dynamic';
 const err=(error:string,status=400)=>Response.json({error},{status});
 const text=z.string().trim().min(1).max(180);
-const review=z.object({placeId:text,satisfied:z.number().int().min(0).max(1),noise:z.enum(['조용함','보통','시끄러움']),crowd:z.enum(['여유로움','보통','붐빔']),comfort:z.enum(['편함','보통','불편함','해당 없음']),day:z.enum(['평일','주말·공휴일']),time:z.enum(['오전','오후','저녁']),tags:z.array(z.enum(['작은 음악','좌석 간격','1인석','주문 방식','풍경','정차 공간','짧은 산책'])).max(7)});
+const review=z.object({placeId:text,satisfied:z.number().int().min(0).max(1),noise:z.enum(['조용함','보통','시끄러움']),crowd:z.enum(['여유로움','보통','붐빔']),comfort:z.enum(['편함','보통','불편함','해당 없음']),day:z.enum(['평일','주말·공휴일']),time:z.enum(['오전','오후','저녁']),tags:z.array(z.enum(['작은 음악','좌석 간격','1인석','주문 방식','풍경','정차 공간','짧은 산책','칸막이 좌석','혼자 주문','셀프 주문'])).max(10)});
 const proposal=z.object({city:z.enum([...supportedCities,...usRegions,...japanRegions]),category:z.enum(['food','cafe','drive','walk','spa']),name:text,address:text,source:z.string().trim().url().max(600).refine(s=>/^https?:\/\//.test(s)),note:z.string().trim().max(400),notChildTarget:z.literal(true),ack:z.literal(true)});
 const normalize=(s:string)=>s.normalize('NFKC').toLowerCase().replace(/\s/g,'');
 export async function POST(request:Request){

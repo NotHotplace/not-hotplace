@@ -5,7 +5,7 @@ export type BrowseState = {
   city: string; category: string; theme: PlaceTheme; term: string;
   view: string; filters: ExploreFilters;
 };
-const keys = ['region', 'category', 'theme', 'q', 'view', 'photos', 'reviewed', 'quiet', 'resume'];
+const keys = ['region', 'category', 'theme', 'q', 'view', ...Object.keys(emptyFilters), 'resume'];
 
 export function readBrowseState(query: URLSearchParams, regions: readonly string[]): BrowseState {
   const region = query.get('region'), category = query.get('category'), theme = query.get('theme');
@@ -15,7 +15,7 @@ export function readBrowseState(query: URLSearchParams, regions: readonly string
     theme: isPlaceTheme(theme) ? theme : 'all',
     term: (query.get('q') || '').slice(0, 180),
     view: ['saved', 'trips'].includes(query.get('view') || '') ? query.get('view')! : 'explore',
-    filters: {photos: query.get('photos') === '1', reviewed: query.get('reviewed') === '1', quiet: query.get('quiet') === '1'},
+    filters: Object.fromEntries(Object.keys(emptyFilters).map(key=>[key,query.get(key)==='1'])) as ExploreFilters,
   };
 }
 

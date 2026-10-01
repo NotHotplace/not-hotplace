@@ -199,7 +199,7 @@
   "확대 가능한 전국 지도": "Expandable South Korea map",
   "나에게 맞는 쉼을 더 가까이.": "More insight into your kind of rest.",
   "지도·주변 찾기·후기·저장·공유는 계속 무료예요.": "Maps, nearby search, reviews, saves and sharing stay free.",
-  "시간대별 조용함과 여유로움 확인": "Quietness and space by time of day",
+  "시간대별 조용함과 여유로움 확인": "Compare quietness and available space by time of day",
   "후기 3명 이상 · 조용함 80% 필터": "80% quiet filter · at least 3 reviewers",
   "후기가 부족한 시간대는 ‘후기 부족’으로 표시해요.": "Time slots with too few reviews are marked Not enough reviews.",
   "무료 체험 중": "Free trial active",
@@ -387,7 +387,7 @@
   "평일·주말, 오전·오후·저녁별 조용함과 여유로움": "Quietness and crowd ratings by weekday/weekend and time of day",
   "후기 3명 이상, 조용함 80% 이상인 장소 필터": "Filter places with at least 3 reviews and 80% quiet ratings",
   "이용기간이 끝나면 무료 기능으로 계속 이용": "Keep using free features after your pass expires",
-  "시간대별 평가는 해당 시간대 후기 3건 이상일 때 표시합니다. 후기가 없는 장소에는 혼잡도나 추천 시간을 만들어 표시하지 않아요. 무료 체험으로 필요한 지역의 후기 현황을 먼저 확인해 주세요.": "Time-of-day summaries require at least 3 reviews for that period. We do not invent crowd levels or suggested times when reviews are missing. Use the free trial to check coverage in your area.",
+  "시간대별 평가는 해당 시간대 후기 3건 이상일 때 표시합니다. 후기가 없는 장소에는 혼잡도나 추천 시간을 만들어 표시하지 않아요. 무료 체험으로 필요한 지역의 후기 현황을 먼저 확인해 주세요.": "Time-of-day ratings require at least three account reviews in that time slot. Places without feedback have no crowd estimate or recommended time. Use the free trial to check feedback for your region.",
   "부가세 포함 · 선택한 기간의 총액을 한 번 결제 · 자동 갱신 없음": "VAT included · One payment for the selected term · No automatic renewal",
   "유료 판매가 열리면 토스페이먼츠 결제창에서 사용 가능한 카드·간편결제 수단을 선택할 수 있어요.": "When sales open, eligible cards and wallet methods will appear in Toss Payments checkout.",
   "지도에서 먼저 둘러보기": "Explore the map first",
@@ -419,5 +419,8 @@
   "개방된 탐방로를 따라 내 속도로 걷기": "Walk at your own pace along open visitor paths",
   "운영 시간·요금·개방 구간은 방문일의 공식 안내를 확인하세요.": "Check official hours, pricing and open routes for your visit.",
   "산책·정원": "Walks & gardens",
-  "내 쉼 기록": "My rest journal"
+  "내 쉼 기록": "My rest journal",
+  "지도·주변 찾기·후기·저장·공유·조용함 필터는 무료예요.": "Maps, nearby search, reviews, saves, sharing and the quiet filter are free.",
+  "휴식 조건 검색·쉼 기록·공유 카드": "Rest-condition filters, a local journal and share cards",
+  "방문 후기가 쌓이면 더 유용해지는 시간대별 비교.": "Time-of-day comparisons become more useful as visitor feedback grows."
 }

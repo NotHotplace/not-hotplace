@@ -6,6 +6,7 @@ import {loadGeo} from '@/lib/geo-client';
 import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
 import HomeThemes from './home-themes';
+import HomeFinder from './home-finder';
 import GuideLinks from './guide-links';
 
 export default function GlobeHome() {
@@ -40,10 +41,10 @@ export default function GlobeHome() {
     return () => observer.disconnect();
   }, []);
 
-  function chooseCountry(value: CountryCode) {
-    setCountry(value);
+  function orientCountry(value: CountryCode) {
     motion.turnTo(value === 'US' ? 100 : value==='JP'?-137:-127);
   }
+  function chooseCountry(value: CountryCode) {setCountry(value);orientCountry(value);}
   const projection = geo?.geoOrthographic().scale(246).translate([300, 300]).rotate([motion.rotation, -22]);
   const path = geo?.geoPath(projection);
   const countries = [
@@ -61,9 +62,10 @@ export default function GlobeHome() {
       </button><LanguageToggle/></div>
     </header>
     <main>
+      <HomeFinder country={country} onCountryChange={chooseCountry}/>
       <div className="world-main">
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
-          <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
+          <h2>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h2>
           <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose a country to find your kind of space.', '나만의 속도로 쉬어갈 공간을 찾아보세요.')}</p>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href={'/'+country.toLowerCase()+'?lang='+lang+'&nearby=1'}>{text('Find a pause nearby','내 주변에서 쉬기')}</a><a href={'/guides?lang='+lang}>{text('Find my kind of pause','목적별로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
@@ -110,13 +112,13 @@ export default function GlobeHome() {
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
         </section>
         <nav className="country-choices" aria-label={text('Available countries', '선택 가능한 국가')}>{countries.map(value =>
-          <a key={value.code} href={'/' + value.slug + '?lang=' + lang} onMouseEnter={() => chooseCountry(value.country)} onFocus={() => chooseCountry(value.country)}>
+          <a key={value.code} href={'/' + value.slug + '?lang=' + lang} onMouseEnter={() => orientCountry(value.country)} onFocus={() => orientCountry(value.country)}>
             <span className="country-code">{value.country}</span><span><strong>{value.name}</strong><small>{text('Open country map', '국가 지도 열기')}</small></span><ArrowUpRight/>
           </a>)}</nav>
       </div>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
       <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>
-    <footer className="world-footer"><span><Globe2 size={15}/>{text('Korea + the U.S. · More places, at your pace.', '한국과 미국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
+    <footer className="world-footer"><span><Globe2 size={15}/>{text('Korea, the U.S. + Japan · More places, at your pace.', '한국·미국·일본 · 나만의 속도로 찾는 쉼.')}</span><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
   </div>;
 }

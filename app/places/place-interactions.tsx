@@ -7,6 +7,8 @@ import type {PlaceExperience} from '@/lib/place-experience';
 import type {PlaceLanguage} from '@/lib/place-pages';
 import {trackEngagement} from '@/lib/engagement-client';
 import QuickFeedback from '../quick-feedback';
+import RestEvidence from '../rest-evidence';
+import {findCatalogPlace} from '@/lib/place-pages';
 import {recordPause} from '@/lib/rest-journal';
 import SharePlace from './share-place';
 import {visitingTimeLabel} from '@/lib/rest-finder';
@@ -82,6 +84,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
       </p>
       {data?.resting && <p className="place-feedback">{label('Recent crowding or noise reports have paused this place in recommendations.', '최근 혼잡·소음 등으로 추천을 잠시 쉬고 있어요.')}</p>}
     </>}
+    {Object.values(data?.restFeedback||{}).some(n=>n>=3)&&findCatalogPlace(id)&&<RestEvidence place={{...findCatalogPlace(id)!,restFeedback:data?.restFeedback,resting:data?.resting}} language={language}/>}
     {data?.bestTime&&<p className="place-best-time">{label('A time to consider: ','참고할 방문 시간: ')}<strong>{visitingTimeLabel(data.bestTime,language)}</strong><br/>{label(`${data.bestTime.n} responses · ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% quiet · last 90 days`,`${data.bestTime.n}명 후기 · 조용했다 ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% · 최근 90일`)}</p>}
     {data?.signedIn ? <><button className="place-primary" disabled={busy || !!error} aria-pressed={data.saved} onClick={() => void mutate('save',{saved: !data.saved})}>{data.saved ? <Check size={18}/> : <Bookmark size={18}/>} {data.saved ? label('Saved · tap to remove', '저장됨 · 누르면 취소') : label('Save this place', '이 장소 저장')}</button>
       <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a quick review', '체크로 후기 남기기')}</button></> : !loading && <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}><Bookmark size={18}/>{label('Sign in to save or review', '로그인하고 저장·후기 남기기')}</a>}
@@ -95,6 +98,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
       <DialogDescription>{name} · {label('Check your answers. Updating replaces your previous review.', '글 없이 체크만. 다시 평가하면 이전 후기를 갱신해요.')}</DialogDescription>
       <form onSubmit={event => {event.preventDefault();void mutate('review',{...review,satisfied:review.satisfaction === '만족' ? 1:0});}}>
         {questions.map(question => <fieldset key={question.key}><legend>{ko ? question.ko : question.en}</legend><div className="place-review-options">{question.options.map(([value,en]) => <label key={value}><input type="radio" required name={question.key} value={value} checked={review[question.key] === value} onChange={() => setReview(current => ({...current,[question.key]:value}))}/><span>{ko ? value : en}</span></label>)}</div></fieldset>)}
+        <fieldset><legend>{label('Helpful conditions · optional','좋았던 휴식 조건 · 선택')}</legend><div className="place-review-options">{[['작은 음악','Low music'],['1인석','Individual seats'],['칸막이 좌석','Partitioned seats'],['혼자 주문','Solo ordering'],['셀프 주문','Self ordering']].map(([tag,en])=><label key={tag}><input type="checkbox" checked={review.tags.includes(tag)} onChange={e=>setReview(current=>({...current,tags:e.target.checked?[...current.tags,tag]:current.tags.filter(t=>t!==tag)}))}/><span>{ko?tag:en}</span></label>)}</div></fieldset>
         {formError && <p className="place-feedback" role="alert">{formError}</p>}
         {data?.signedIn ? <div className="place-review-submit"><button className="place-primary" disabled={busy}>{busy ? label('Saving…','저장 중…') : label('Save my review','후기 저장하기')}</button>{data.review && <button className="place-secondary" type="button" disabled={busy} onClick={() => void mutate('deleteReview',{})}>{label('Delete my review','내 후기 삭제')}</button>}</div> : <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}>{label('Sign in again','다시 로그인하기')}</a>}
       </form>

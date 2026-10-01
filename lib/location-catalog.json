@@ -1,0 +1,182 @@
+{
+  "jp-tokyo-20": {
+    "lat": 35.6597374,
+    "lon": 139.7634925,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/20/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-24": {
+    "lat": 35.7048642,
+    "lon": 139.7476488,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/24/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-22": {
+    "lat": 35.7330164,
+    "lon": 139.7465884,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/22/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-25": {
+    "lat": 35.6806762,
+    "lon": 139.7978044,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/25/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-421": {
+    "lat": 35.7431021,
+    "lon": 139.7466984,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/421/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-19": {
+    "lat": 35.6557991,
+    "lon": 139.758046,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/19/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-26": {
+    "lat": 35.6718388,
+    "lon": 139.7551457,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/26/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-75": {
+    "lat": 35.6851763,
+    "lon": 139.7100517,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/75/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-624": {
+    "lat": 35.6997435,
+    "lon": 139.5731906,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/624/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-424": {
+    "lat": 35.6987167,
+    "lon": 139.4820151,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/424/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-707": {
+    "lat": 35.6084674,
+    "lon": 139.6319393,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/707/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-tokyo-1083": {
+    "lat": 35.6833398,
+    "lon": 139.5254455,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://www.gotokyo.org/en/spot/1083/index.html",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-keitakuen-garden": {
+    "lat": 34.64968,
+    "lon": 135.511552,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/keitakuen-garden/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-nakanoshima-park": {
+    "lat": 34.69221,
+    "lon": 135.50845,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/nakanoshima-park/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-utsubo-park": {
+    "lat": 34.68535,
+    "lon": 135.494191,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/utsubo-park/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-nagai-botanical-garden": {
+    "lat": 34.61075,
+    "lon": 135.52202,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/nagai-botanical-garden/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-kema-sakuranomiya-park": {
+    "lat": 34.70097,
+    "lon": 135.52017,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/kema-sakuranomiya-park/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-sumiyoshi-park": {
+    "lat": 34.61169,
+    "lon": 135.48946,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/sumiyoshi-park/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-shirokita-park": {
+    "lat": 34.72955,
+    "lon": 135.53859,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/shirokita-park/",
+      "checked": "2026-10-01"
+    }
+  },
+  "jp-osaka-mandaike-park": {
+    "lat": 34.620207,
+    "lon": 135.503388,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://osaka-info.jp/en/spot/mandaike-park/",
+      "checked": "2026-10-01"
+    }
+  }
+}

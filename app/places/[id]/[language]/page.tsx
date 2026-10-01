@@ -1,3 +1,7 @@
+import ExternalReviewMemo from '../../../external-review-memo';
+import VisitReadiness from '../../../visit-readiness';
+import RestEvidence from '../../../rest-evidence';
+import ReportPlace from '../../../report-place';
 import {countries} from '@/lib/countries';
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
@@ -79,7 +83,7 @@ export default async function PlacePage({params}: Props) {
           <p>{placeDescription(place, language)}</p>
           <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country !== 'KR' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
         </section>
-        <PrivateExperiences experiences={place.experiences} language={language}/>
+        <ExternalReviewMemo place={place} language={language}/><VisitReadiness place={place} language={language}/><RestEvidence place={place} language={language}/><ReportPlace id={place.id} language={language}/><PrivateExperiences experiences={place.experiences} language={language}/>
         {!!place.visitDetails?.length && <section className="place-facts"><h2>{label('Before you go', '방문을 준비해요')}</h2>
           <dl>{place.visitDetails.map(detail => <div key={detail.labelEn}><dt>{label(detail.labelEn, detail.labelKo)}</dt><dd>{label(detail.textEn, detail.textKo)}</dd></div>)}</dl>
         </section>}

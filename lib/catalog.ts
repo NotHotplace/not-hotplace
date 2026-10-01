@@ -6,9 +6,14 @@ import guides from './kr-place-guides.json';
 import privateCatalog from './private-catalog.json';
 import restCatalog from './rest-catalog.json';
 import type {PrivateExperience} from './place-themes';
+import type {ConditionFact,RestCondition} from './rest-conditions';
+import conditionCatalog from './rest-conditions.json';
+import locations from './location-catalog.json';
+import externalMemos from './external-review-memos.json';
+import type {ExternalMemo} from './external-reviews';
 export type VisitDetail={labelEn:string;labelKo:string;textEn:string;textKo:string};
 export type PlacePhoto={src:string;altKo:string;altEn:string;credit:string;source:string;original:string;licenseUrl:string;width:number;height:number};
-export type Place = {themes?:'premium-spa'[];experiences?:PrivateExperience[];photos?:PlacePhoto[];featured?:boolean;tagsEn?:string[];visitDetails?:VisitDetail[];tagsKo?:string[];photoGallery?:string;imageSource?:string;imageLicense?:string;imageLicenseUrl?:string;imageNote?:string;country?:CountryCode;states?:string[];descriptionKo?:string;descriptionEn?:string;id:string;city:string;category:string;name:string;area:string;address:string;description:string;source:string;checked:string;tags:string[];image?:string;imageCredit?:string;imageRemote?:string;lat?:number|null;lon?:number|null;sourceHint?:string};
+export type Place = {externalMemo?:ExternalMemo;contributor?:{id:string;name:string;link:string};conditions?:ConditionFact[];restFeedback?:Partial<Record<RestCondition,number>>;locationInfo?:{source:string;checked:string;kind:'reference'|'entrance'};themes?:'premium-spa'[];experiences?:PrivateExperience[];photos?:PlacePhoto[];featured?:boolean;tagsEn?:string[];visitDetails?:VisitDetail[];tagsKo?:string[];photoGallery?:string;imageSource?:string;imageLicense?:string;imageLicenseUrl?:string;imageNote?:string;country?:CountryCode;states?:string[];descriptionKo?:string;descriptionEn?:string;id:string;city:string;category:string;name:string;area:string;address:string;description:string;source:string;checked:string;tags:string[];image?:string;imageCredit?:string;imageRemote?:string;lat?:number|null;lon?:number|null;sourceHint?:string};
 const original:Place[]=[
 {id:'cj-daechung',descriptionEn:"A caf\u00e9 candidate in Munui-myeon to explore alongside a lakeside outing.",city:'청주',category:'cafe',name:'더 대청호',area:'상당구 · 문의면',address:'충북 청주시 상당구 문의면 대청호반로 786-25',description:'문의면의 카페 후보. 호반 나들이와 함께 살펴볼 수 있는 곳입니다.',source:'https://www.instagram.com/reel/DKyctYryvl0/',checked:'2026-09-10',tags:['문의면','카페']},
 {id:'cj-majung',descriptionEn:"A Korean set-menu restaurant near Daecheong Lake. We are collecting reports on noise by time of day and solo dining.",city:'청주',category:'food',name:'마중가는길',area:'상당구 · 문의면',address:'충북 청주시 상당구 문의면 대청호반로 845-5',description:'대청호 근처의 한정식 식당. 시간대별 소음과 혼자 이용 경험을 모으고 있습니다.',source:'https://app.catchtable.co.kr/ct/shop/majung',checked:'2026-09-10',tags:['한정식','문의면']},
@@ -28,4 +33,4 @@ const seen=new Set(original.map(p=>p.name.replace(/\s/g,'')));
 const korean:Place[]=[...original,...(national as Place[]).filter(p=>!seen.has(p.name.replace(/\s/g,'')))];
 
 const guideById=new Map(guides.map(p=>[p.id,p]));
-export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[]),...(restCatalog as Place[]),...(japan as Place[])];
+export const catalog:Place[]=[...korean.map(p=>({...p,...guideById.get(p.id),country:'KR' as const})),...(american as Place[]),...(privateCatalog as Place[]),...(restCatalog as Place[]),...(japan as Place[])].map(p=>({...p,externalMemo:(externalMemos as Record<string,ExternalMemo>)[p.id],...(locations as Record<string,Pick<Place,'lat'|'lon'|'locationInfo'>>)[p.id],conditions:(conditionCatalog as Record<string,ConditionFact[]>)[p.id]||[]}));

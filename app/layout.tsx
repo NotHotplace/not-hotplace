@@ -15,6 +15,7 @@ import "./comfort.css";
 import "./places-first.css";
 import "./growth.css";
 import "./refinement.css";
+import "./community.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
