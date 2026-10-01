@@ -6,5 +6,6 @@ export async function trafficSummary(){
  const days=await db().prepare('SELECT day,views FROM daily_visits WHERE day>=? ORDER BY day DESC').bind(month).all<{day:string;views:number}>();
  const activity=await db().prepare("SELECT (SELECT COUNT(*) FROM reviews) reviews, (SELECT COUNT(*) FROM saved) saves, (SELECT COUNT(*) FROM suggestions WHERE status='pending') pending").first<{reviews:number;saves:number;pending:number}>();
  const engagement=await db().prepare('SELECT event,country,source,SUM(total) total FROM engagement_totals WHERE day>=? GROUP BY event,country,source ORDER BY country,source,event').bind(month).all<{event:string;country:string;source:string;total:number}>();
- return {traffic:traffic||{since:null,today:0,week:0,month:0},days:days.results,activity:activity||{reviews:0,saves:0,pending:0},engagement:engagement.results};
+ const campaigns=await db().prepare('SELECT campaign,event,country,source,SUM(total) total FROM campaign_totals WHERE day>=? GROUP BY campaign,event,country,source ORDER BY campaign,country,event').bind(month).all<{campaign:string;event:string;country:string;source:string;total:number}>();
+ return {traffic:traffic||{since:null,today:0,week:0,month:0},days:days.results,activity:activity||{reviews:0,saves:0,pending:0},engagement:engagement.results,campaigns:campaigns.results};
 }

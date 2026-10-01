@@ -160,7 +160,9 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const xml=await sitemap.GET().text();assert(xml.includes('https://nothotplace.com/plus'));assert(xml.includes('https://nothotplace.com/trips'));assert(!xml.includes('/stats')&&!xml.includes('/login'));
  const pages=load(path.join(root,'lib/place-pages.ts'));
  const usPlace=catalog.find(p=>p.country==='US'),krPlace=catalog.find(p=>p.country==='KR');
- assert.equal((xml.match(/<url>/g)||[]).length,6+catalog.length*2,'every published catalog place has both language URLs');
+ const sitemapGuides=load(path.join(root,'lib/guides.ts')).guides;
+ assert.equal((xml.match(/<url>/g)||[]).length,7+catalog.length*2+sitemapGuides.length*2,'place and guide pages have both language URLs');
+ for(const guide of sitemapGuides)for(const language of ['ko','en'])assert(xml.includes('<loc>https://nothotplace.com/guides/'+guide.slug+'/'+language+'</loc>'));
  for(const place of catalog)for(const language of ['en','ko']){
   const url='https://nothotplace.com'+pages.placePath(place.id,language);
   assert(xml.includes('<loc>'+url+'</loc>'),'place listed in sitemap: '+place.id+' '+language);
@@ -205,6 +207,27 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal(sql.prepare('SELECT total FROM engagement_totals').get().total,2);
  assert.deepEqual(sql.prepare('PRAGMA table_info(engagement_totals)').all().map(c=>c.name),['day','event','country','source','total'],'only finite aggregate dimensions are stored');
  user={userId:'owner',email:'owner@example.test'};const engagementReport=await (await stats.GET()).json();assert.equal(engagementReport.engagement[0].total,2);
+
+ const {restMatches,defaultRestPreferences,bestQuietTime}=load(path.join(root,'lib/rest-finder.ts'));
+ const finderFixture={...catalog[0],id:'finder-open',category:'drive',visitDetails:[{labelEn:'Admission',labelKo:'입장료',textEn:'Free',textKo:'무료'}],lat:37.5,lon:127,count:0,quiet:0,positive:0};
+ const blockedFixture={...finderFixture,id:'finder-paused',resting:true,count:20,quiet:20,positive:20};
+ const unknownFee={...finderFixture,id:'finder-unknown-fee',visitDetails:[]};
+ assert.deepEqual(restMatches([blockedFixture,finderFixture,unknownFee],{...defaultRestPreferences,budget:0}).map(match=>match.place.id),['finder-open'],'paused venues and unknown fees never pass a free-admission filter');
+ assert.equal(restMatches([{...finderFixture,description:'2인 이상 주문 조건',category:'food'}],{...defaultRestPreferences,party:'solo'}).length,0,'published minimum party sizes are respected');
+ assert.equal(restMatches([{...finderFixture,lat:null}],{...defaultRestPreferences,position:{lat:37.5,lon:127}}).length,0,'unknown coordinates never pass nearby filtering');
+ assert.equal(bestQuietTime([{day:'평일',time:'오후',n:2,quiet:2,relaxed:2}]),null,'a tiny sample does not suggest a visiting time');
+ const timeEvidence={day:'평일',time:'오후',n:5,quiet:5,relaxed:5};
+ assert.equal(bestQuietTime([timeEvidence],{day:'주말·공휴일',time:'오후'}),null,'weekday feedback does not imply a weekend match');
+ const rankedMatch=restMatches([{...finderFixture,insights:[timeEvidence]}],{...defaultRestPreferences,day:'평일',time:'오후'})[0];assert.equal(rankedMatch.time.day,'평일');assert.equal(rankedMatch.reviewed,false,'published information never fabricates satisfaction');
+ const guideModule=load(path.join(root,'lib/guides.ts'));
+ assert.equal(guideModule.guidePlaces(guideModule.findGuide('photo-guides'),catalog).length,30,'the 30-photo guide has 30 real catalog records');
+ assert(guideModule.guidePlaces(guideModule.findGuide('seoul-private'),catalog).every(place=>place.experiences?.some(room=>['private-room','private-suite'].includes(room.kind))),'a semi-private area cannot appear as a private room');
+ for(const guide of guideModule.guides){if(guide.kind!=='temple')assert(guideModule.guidePlaces(guide,catalog).length>0,'guide has real results: '+guide.slug);}
+ const campaignEvent={event:'guide_view',country:'KR',source:'instagram',campaign:'seoul_solo'};
+ assert.equal((await engagement.POST(engagementRequest({...campaignEvent,campaign:'someone@example.test'}))).status,400,'arbitrary campaign text is rejected');
+ assert.equal((await engagement.POST(engagementRequest(campaignEvent))).status,204);assert.equal(sql.prepare('SELECT total FROM campaign_totals WHERE campaign=? AND event=?').get('seoul_solo','guide_view').total,1);
+ assert(!sql.prepare('PRAGMA table_info(campaign_totals)').all().some(column=>/user|ip|url|place_id/.test(column.name)),'campaign totals have no identifying dimensions');
+ console.log('PASS: rest matches, unknown-cost/location exclusions, evidence-only time suggestions, real guide contents and finite campaign attribution.');
  console.log('PASS: direct place review/save privacy, review freshness, 30 bilingual guides / 90 licensed assets and aggregate engagement boundaries.');
  console.log('PASS: bilingual place paths, reciprocal sitemap links, community suggestion sharing and review return paths.');
  const {trips,tripThemes}=load(path.join(root,'lib/trips.ts'));assert(trips.length>=9);assert.equal(new Set(trips.map(t=>t.id)).size,trips.length);assert(Object.keys(tripThemes).every(t=>trips.filter(p=>p.theme===t).length>=3));

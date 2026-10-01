@@ -2,6 +2,7 @@ import {db, hasPlace} from './store';
 import {qualityState} from './discovery';
 import {getSiteUser} from './site-auth';
 import {membershipFor} from './membership';
+import {bestQuietTime} from './rest-finder';
 export async function placeExperience(id: string) {
   if (!await hasPlace(id)) return null;
   const user = await getSiteUser(), d = db(), now = Date.now(), cutoff = now - 90 * 86400000;
@@ -12,8 +13,9 @@ export async function placeExperience(id: string) {
     d.prepare("SELECT place_id FROM place_moderation WHERE place_id=? AND mode='paused' UNION SELECT place_id FROM place_quality WHERE place_id=? AND paused=1").bind(id, id).first(),
     user ? d.prepare('SELECT place_id FROM saved WHERE user_id=? AND place_id=?').bind(user.userId, id).first() : null,
     user ? d.prepare('SELECT satisfied,noise,crowd,comfort,day,time,tags,updated_at FROM reviews WHERE user_id=? AND place_id=?').bind(user.userId, id).first<any>() : null,
-    plus ? d.prepare("SELECT day,time,COUNT(*) n,SUM(CASE WHEN noise='조용함' THEN 1 ELSE 0 END) quiet,SUM(CASE WHEN crowd='여유로움' THEN 1 ELSE 0 END) relaxed FROM reviews WHERE place_id=? AND updated_at>=? GROUP BY day,time").bind(id, cutoff).all<any>() : null,
+    d.prepare("SELECT day,time,COUNT(*) n,SUM(CASE WHEN noise='조용함' THEN 1 ELSE 0 END) quiet,SUM(CASE WHEN crowd='여유로움' THEN 1 ELSE 0 END) relaxed FROM reviews WHERE place_id=? AND updated_at>=? GROUP BY day,time").bind(id, cutoff).all<any>(),
   ]);
-  return {summary, resting: !!stopped || qualityState(recent, now) === 'resting', signedIn: !!user, saved: !!saved, review, plus, insights: buckets?.results || []};
+  const resting=!!stopped || qualityState(recent, now)==='resting';
+  return {summary, resting, signedIn: !!user, saved: !!saved, review, plus, bestTime:resting?null:bestQuietTime(buckets.results), insights: plus?buckets.results:[]};
 }
 export type PlaceExperience = NonNullable<Awaited<ReturnType<typeof placeExperience>>>;

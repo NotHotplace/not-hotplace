@@ -1,4 +1,4 @@
-export const engagementEvents = ['place_view', 'map_open', 'save', 'review', 'share'] as const;
+export const engagementEvents = ['place_view', 'map_open', 'save', 'review', 'share','guide_view','recommendation_open'] as const;
 export const engagementSources = ['direct', 'instagram', 'google', 'other'] as const;
 export type EngagementEvent = typeof engagementEvents[number];
 export type EngagementSource = typeof engagementSources[number];

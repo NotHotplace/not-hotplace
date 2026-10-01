@@ -5,12 +5,14 @@ import {loadGeo} from '@/lib/geo-client';
 import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
 import HomeThemes from './home-themes';
+import GuideLinks from './guide-links';
 
 export default function GlobeHome() {
   const {lang, text} = useLocale();
   const [geo, setGeo] = useState<any>(null), [data, setData] = useState<any>(null);
   const [failed, setFailed] = useState(false), [visible, setVisible] = useState(true);
   const [country, setCountry] = useState<'KR' | 'US'>('KR');
+  const [lastCountry,setLastCountry]=useState<'KR'|'US'|null>(null);
   const panel = useRef<HTMLElement>(null);
   const drag = useRef<{x: number; rotation: number; moved: boolean} | null>(null);
   const motion = useGlobeMotion(!!geo && !!data, visible);
@@ -20,6 +22,7 @@ export default function GlobeHome() {
     if (query.has('place') || query.has('category') || query.has('q') || location.hash.startsWith('#setup=')) {
       location.replace('/kr' + location.search + location.hash); return;
     }
+    try {const last=localStorage.getItem('nhp-last-country');if(last==='KR'||last==='US'){setLastCountry(last);setCountry(last);}}catch{}
     let live = true;
     Promise.all([loadGeo(), fetch('/maps/world.json').then(response => {
       if (!response.ok) throw Error('Globe unavailable'); return response.json();
@@ -60,6 +63,8 @@ export default function GlobeHome() {
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
           <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
           <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose a country to find your kind of space.', '나만의 속도로 쉬어갈 공간을 찾아보세요.')}</p>
+          <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href={'/'+country.toLowerCase()+'?lang='+lang+'&nearby=1'}>{text('Find a pause nearby','내 주변에서 쉬기')}</a><a href={'/guides?lang='+lang}>{text('Find my kind of pause','목적별로 찾기')}</a></nav>
+          {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+(lastCountry==='KR'?'Korea':'the U.S.'),(lastCountry==='KR'?'한국':'미국')+'에서 이어서 찾기')}</a>}
         </section>
         <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
           <div className="globe-display">
@@ -108,6 +113,7 @@ export default function GlobeHome() {
           </a>)}</nav>
       </div>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
+      <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>
     <footer className="world-footer"><span><Globe2 size={15}/>{text('Korea + the U.S. · More places, at your pace.', '한국과 미국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
   </div>;

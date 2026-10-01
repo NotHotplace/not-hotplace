@@ -6,6 +6,7 @@ import type {PlaceExperience} from '@/lib/place-experience';
 import type {PlaceLanguage} from '@/lib/place-pages';
 import {trackEngagement} from '@/lib/engagement-client';
 import SharePlace from './share-place';
+import {visitingTimeLabel} from '@/lib/rest-finder';
 
 const emptyReview = {day: '', time: '', noise: '', crowd: '', comfort: '', satisfaction: '', tags: [] as string[]};
 const questions = [
@@ -77,6 +78,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
       </p>
       {data?.resting && <p className="place-feedback">{label('Recent crowding or noise reports have paused this place in recommendations.', '최근 혼잡·소음 등으로 추천을 잠시 쉬고 있어요.')}</p>}
     </>}
+    {data?.bestTime&&<p className="place-best-time">{label('A time to consider: ','참고할 방문 시간: ')}<strong>{visitingTimeLabel(data.bestTime,language)}</strong><br/>{label(`${data.bestTime.n} responses · ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% quiet · last 90 days`,`${data.bestTime.n}명 후기 · 조용했다 ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% · 최근 90일`)}</p>}
     {data?.signedIn ? <><button className="place-primary" disabled={busy || !!error} aria-pressed={data.saved} onClick={() => void mutate('save',{saved: !data.saved})}>{data.saved ? <Check size={18}/> : <Bookmark size={18}/>} {data.saved ? label('Saved · tap to remove', '저장됨 · 누르면 취소') : label('Save this place', '이 장소 저장')}</button>
       <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a quick review', '체크로 후기 남기기')}</button></> : !loading && <a className="place-primary" href={login}><Bookmark size={18}/>{label('Sign in to save or review', '로그인하고 저장·후기 남기기')}</a>}
     <a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEngagement('map_open',country)}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a>

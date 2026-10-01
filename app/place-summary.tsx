@@ -1,16 +1,18 @@
 import type {Place} from '@/lib/catalog';
-import {placePreviewDescription, placeTags, placeVisitHint} from '@/lib/place-copy';
+import {placePreviewDescription, placeTags, placeVisitHint,placeDecisionFacts} from '@/lib/place-copy';
 import {privacyLabel} from '@/lib/place-themes';
 
 export default function PlaceSummary({place, language}: {place: Place; language: 'ko' | 'en'}) {
   const tags = placeTags(place, language).slice(0, 2);
   const hint = placeVisitHint(place, language);
+  const facts=placeDecisionFacts(place,language);
   const kinds = [...new Set(place.experiences?.map(experience => experience.kind) || [])];
   return <span className="place-preview" data-original-language>
     <span className="quiet-place-description">{placePreviewDescription(place, language)}</span>
     {(tags.length > 0 || kinds.length > 0) && <span className="place-tags">
       {(kinds.length ? kinds.map(kind => privacyLabel(kind, language)) : tags).map(tag => <span key={tag}>{tag}</span>)}
     </span>}
+    {facts.length>0&&<span className="place-fact-chips">{facts.map(fact=><span key={fact}>{fact}</span>)}</span>}
     {hint && <span className="place-preview-note"><span>{language === 'ko' ? '방문 전' : 'Before you go'}</span>{hint}</span>}
   </span>;
 }

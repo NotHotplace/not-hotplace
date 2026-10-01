@@ -6,7 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
+    "dev": "vite",
     "build": "vinext build",
     "deploy": "pnpm exec wrangler d1 migrations apply DB --remote --config wrangler.json && pnpm exec wrangler deploy",
     "test": "node scripts/verify-google-access.cjs && node scripts/verify-product.cjs",

@@ -1,0 +1,62 @@
+/* Charcoal, bright reading surfaces and lime for actions. */
+.world-heading p,.world-footer,.space-theme-note,.place-review-context{color:#ccd6c7;line-height:1.75}
+.quiet-place-description,.place-story p,.place-fact dd{color:#e0e7db;line-height:1.8}
+.place-tags>span,.quiet-score,.quiet-score>span{font-size:.875rem!important;line-height:1.6}
+.quiet-place-copy>strong{letter-spacing:0;font-weight:650}
+.quiet-save{min-width:44px;min-height:44px}
+.world-quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;max-width:470px}
+.world-quick-actions a{display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:12px 18px;border:1px solid #596b48;border-radius:9px;background:#172116;color:#e5efd9;font-size:1rem;line-height:1.5}
+.world-quick-actions a:first-child{background:#d1ff73;border-color:#d1ff73;color:#172109;font-weight:650}
+.world-continue{display:block;font-size:.875rem;color:#ccd6c7;margin-top:14px}
+.rest-finder{margin:20px 0 25px;border:1px solid #4c5c40;border-radius:18px;background:linear-gradient(130deg,#1a2517,#131813);padding:24px}
+.finder-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:19px}
+.finder-heading h2{font-size:1.5rem;line-height:1.5;color:#eff5e8;letter-spacing:-.02em;margin:8px 0 0}
+.finder-heading button{min-height:44px;background:#d1ff73;border:0;border-radius:8px;color:#172109;padding:10px 15px;font-size:.875rem;font-weight:650}
+.finder-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:10px 0 22px}
+.finder-field{display:flex;flex-direction:column;gap:9px;font-size:.875rem;color:#dbe6d1}
+.finder-field [data-slot=select-trigger]{min-height:44px;width:100%;font-size:.875rem;background:#151c13;border-color:#536347;color:#f0f5e9}
+.finder-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.finder-shortlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.finder-shortlist>a{display:flex;align-items:center;gap:10px;min-width:0;min-height:44px;padding:10px;border:1px solid #445537;border-radius:8px;color:#f0f6e8;font-size:1rem;line-height:1.6;overflow-wrap:anywhere}
+.finder-shortlist>a>span{color:#d1ff73;font-size:.875rem;flex:none}
+.quiet-main>.guide-links{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}
+.quiet-main>.guide-links>a{flex:none;white-space:nowrap}
+.finder-result{min-width:0;position:relative;padding:16px;border:1px solid #414f36;border-radius:12px;background:#11180f}
+.finder-number{display:block;color:#d1ff73;font-size:.875rem;margin-bottom:9px}
+.finder-result img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px;margin-bottom:12px}
+.finder-area{display:block;font-size:.875rem;color:#c2cdb9;line-height:1.6}
+.finder-result h3{font-size:1.15rem;line-height:1.6;margin:8px 0;color:#f3f7ee}
+.finder-result h3 a:hover,.guide-card h2 a:hover{color:#d1ff73;text-decoration:underline}
+.finder-result p{font-size:1rem;line-height:1.75;color:#d3decb;margin:8px 0 12px;word-break:keep-all;overflow-wrap:anywhere}
+.finder-reason{display:block;color:#d1ff73;font-size:.875rem;line-height:1.7}
+.finder-note{display:block;color:#c8d3c0;font-size:.875rem;line-height:1.7;margin:9px 0 0}
+.finder-empty{grid-column:1/-1;font-size:1rem;line-height:1.8}
+.place-fact-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px}
+.place-fact-chips>span{display:inline-block;color:#d6e1cd;background:#202d19;border:1px solid #49593a;padding:5px 8px;border-radius:5px;font-size:.875rem;line-height:1.6}
+.guide-links{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 22px}
+.guide-links>a{border:1px solid #4e5f40;border-radius:8px;padding:10px 14px;min-height:44px;line-height:1.65;color:#d8e6cb;font-size:.875rem;background:#161f13}
+.guide-links>a:hover{border-color:#d1ff73;color:#d1ff73}
+.guide-page{max-width:1200px;margin:auto;padding:24px clamp(18px,5vw,60px) 55px;color:#e9efdf}
+.guide-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px;border-bottom:1px solid #34422c}
+.guide-nav>a:last-child{padding:10px;border:1px solid #4d5b40;border-radius:6px;min-height:44px;font-size:.875rem}
+.guide-breadcrumb{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0;color:#bdcbb0;font-size:.875rem;line-height:1.8}
+.guide-heading{max-width:800px;margin:32px 0}
+.guide-heading h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.45;margin:14px 0;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere}
+.guide-heading p,.guide-card p{font-size:1rem;line-height:1.85;color:#d0dcc5;word-break:keep-all;overflow-wrap:anywhere}
+.guide-heading .place-primary{display:inline-flex;margin-top:15px}
+.guide-checks{border-block:1px solid #405232;padding:20px 0;margin-bottom:30px}
+.guide-checks h2,.guide-related h2{font-size:1.2rem;line-height:1.7}
+.guide-checks ol{display:flex;flex-wrap:wrap;gap:13px 36px;padding-left:22px;color:#d2e0c5;font-size:1rem;line-height:1.8}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.guide-card{min-width:0;border:1px solid #455437;border-radius:15px;padding:23px;background:#121b10}
+.guide-card>a>img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px;margin-bottom:18px}
+.guide-card h2{font-size:1.3rem;line-height:1.55;margin:12px 0}
+.guide-card .place-secondary{margin:20px 0 0}
+.guide-card ol{padding-left:22px;font-size:1rem;line-height:1.8;color:#cdddbe}
+.guide-source{font-size:.875rem!important;line-height:1.8;color:#c3d0b7;margin-top:18px}
+.guide-source a{text-decoration:underline}
+.guide-related{margin-top:45px;padding-top:20px;border-top:1px solid #3b4a30}
+.place-best-time{padding:14px;border:1px solid #4b5e39;border-radius:8px;background:#1a2913;margin:16px 0;color:#dceace;font-size:.875rem;line-height:1.8}
+@media(max-width:900px){.finder-results{grid-template-columns:1fr}.finder-result{display:flex;align-items:flex-start;gap:13px;flex-wrap:wrap}.finder-result>img{width:86px;height:100px;aspect-ratio:auto;flex:none;margin:0}.finder-result>div{flex:1;min-width:160px}.finder-number{width:100%;margin:0}.finder-result p{font-size:1rem}.rest-finder{padding:18px}.guide-grid{grid-template-columns:1fr}.world-quick-actions{margin-top:20px}.guide-checks ol{display:block}.guide-checks li{margin-block:8px}}
+@media(prefers-reduced-motion:reduce){.world-quick-actions a,.rest-finder,.guide-card{transition:none;animation:none}}
+@media(max-width:600px){.finder-shortlist{grid-template-columns:1fr}.finder-heading h2{font-size:1.25rem}.finder-fields{grid-template-columns:1fr 1fr}.finder-field{min-width:0}}

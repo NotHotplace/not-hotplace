@@ -30,3 +30,14 @@ export function placePreviewDescription(place: Place, language: 'en' | 'ko') {
   // Keep complete sentences; full visitor detail stays on the place page.
   return sentences.slice(0, 2).join(' ').replace(/\s+/g, ' ').trim();
 }
+
+export function placeDecisionFacts(place:Place,language:'ko'|'en') {
+  const ko=language==='ko',facts:string[]=[];
+  const experience=place.experiences?.[0];
+  if(experience?.maxGuests) facts.push(ko?`최대 ${experience.maxGuests}명`:`Up to ${experience.maxGuests} guests`);
+  const parking=place.visitDetails?.find(detail=>/parking/i.test(detail.labelEn));
+  if(parking) facts.push((ko?parking.labelKo:parking.labelEn)+' · '+(ko?parking.textKo:parking.textEn));
+  const price=place.visitDetails?.find(detail=>/price|admission/i.test(detail.labelEn));
+  if(price && !/최신 가격은 매장|no verified price/i.test(ko?price.textKo:price.textEn)) facts.push((ko?price.labelKo:price.labelEn)+' · '+(ko?price.textKo:price.textEn));
+  return facts.slice(0,2);
+}
