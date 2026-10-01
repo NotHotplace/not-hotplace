@@ -38,7 +38,7 @@ export default async function PlacePage({params}: Props) {
   const label = (en: string, kr: string) => ko ? kr : en;
   const country = countries[place.country||'KR'].slug;
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
-    : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : label('SCENIC STOP', '풍경 · 드라이브');
+    : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : place.category === 'walk' ? label('WALKS & GARDENS', '산책 · 정원') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
   const photoSource = place.imageSource || place.imageRemote || place.source;
   const license = place.imageLicense === 'Type1' ? label('KOGL Type 1', '공공누리 제1유형') : place.imageLicense;
