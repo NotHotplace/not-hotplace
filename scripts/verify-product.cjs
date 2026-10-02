@@ -31,7 +31,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {catalog}=load(path.join(root,'lib/catalog.ts'));const {regionKeys,inRegion}=load(path.join(root,'lib/regions.ts'));
  assert(catalog.length>=150,'nationwide catalog included');assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length,'unique place IDs');assert(regionKeys.every(r=>catalog.some(p=>inRegion(p,r))),'all regions have places');assert(inRegion({city:'충북',address:'충청북도 청주시 상당구'},'청주'),'Cheongju includes new provincial records');
  const usData=await (await data.GET(new Request('https://example.test/api/data?country=US'))).json();
- assert.equal(usData.places.length,43,'US collection concentrates new places in Portland and New York');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
+ assert(usData.places.length>=543,'existing US places and 500 official NYC park records are available');assert(usData.places.every(p=>p.country==='US'),'US response is country scoped');
  const {matchesPlaceTheme,isPlaceTheme}=load(path.join(root,'lib/place-themes.ts'));
  const {placeDescription,placeVisitHint}=load(path.join(root,'lib/place-copy.ts'));
  const spacePlaces=catalog.filter(p=>p.experiences?.length);
@@ -163,9 +163,9 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const pages=load(path.join(root,'lib/place-pages.ts'));
  const usPlace=catalog.find(p=>p.country==='US'),krPlace=catalog.find(p=>p.country==='KR');
  const sitemapGuides=load(path.join(root,'lib/guides.ts')).guides;
- assert.equal((xml.match(/<url>/g)||[]).length,10+catalog.length*2+sitemapGuides.length*2+load(path.join(root,'lib/regional-guides.ts')).regionalGuides.length*2,'place and guide pages have both language URLs');
+ assert.equal((xml.match(/<url>/g)||[]).length,(7+load(path.join(root,'lib/countries.ts')).countryCodes.length)+catalog.filter(p=>p.detailLevel!=='basic').length*2+sitemapGuides.length*2+load(path.join(root,'lib/regional-guides.ts')).regionalGuides.length*2,'place and guide pages have both language URLs');
  for(const guide of sitemapGuides)for(const language of ['ko','en'])assert(xml.includes('<loc>https://nothotplace.com/guides/'+guide.slug+'/'+language+'</loc>'));
- for(const place of catalog)for(const language of ['en','ko']){
+ for(const place of catalog.filter(p=>p.detailLevel!=='basic'))for(const language of ['en','ko']){
   const url='https://nothotplace.com'+pages.placePath(place.id,language);
   assert(xml.includes('<loc>'+url+'</loc>'),'place listed in sitemap: '+place.id+' '+language);
   assert(xml.includes('hreflang="'+language+'" href="'+url+'"'),'reciprocal locale link');

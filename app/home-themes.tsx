@@ -13,14 +13,14 @@ import PlaceSummary from './place-summary';
 export default function HomeThemes({country, onCountryChange}: {country: CountryCode; onCountryChange: (country: CountryCode) => void}) {
   const {lang, text} = useLocale();
   const [theme, setTheme] = useState<PlaceTheme>('all');
-  const places = (country==='JP'?catalog:privateCatalog as Place[]).filter(place => place.country === country && matchesPlaceTheme(place, theme));
+  const places = catalog.filter(place => place.country === country && matchesPlaceTheme(place, theme));
   const explore = '/' + country.toLowerCase() + '?' + new URLSearchParams({lang, ...(theme === 'all' ? {} : {theme})});
   return <section className="home-themes" aria-labelledby="home-themes-heading">
     <div className="home-themes-heading"><div><span className="world-kicker">ROOM TO YOURSELF.</span><h2 id="home-themes-heading">{text('A little space of your own.', '오늘은, 이런 쉼.')}</h2></div>
-      <div className="home-country-picker" role="group" aria-label={text('Preview country', '미리 볼 국가')}>{countryCodes.map(value => <button key={value} type="button" aria-pressed={country === value} onClick={() => onCountryChange(value)}>{text(countries[value].nameEn,countries[value].nameKo)}</button>)}</div>
+      <label className="home-country-select">{text('Country','나라')}<select value={country} onChange={e=>onCountryChange(e.target.value as CountryCode)}>{countryCodes.map(c=><option key={c} value={c}>{text(countries[c].nameEn,countries[c].nameKo)}</option>)}</select></label>
     </div>
     <ThemePicker value={theme} onChange={setTheme} language={lang}/>
-    <div className="home-space-grid" aria-live="polite">{places.slice(0,4).map(place => <article className="home-space-card" key={place.id}>
+    <div className="home-space-grid" aria-live="polite">{places.slice(0,4).map(place => <article className="home-space-card" key={place.id}>{place.image&&<a href={'/places/'+encodeURIComponent(place.id)+'/'+lang} className="home-space-image"><img src={place.image} alt="" loading="lazy"/></a>}
       <span className="home-space-meta">{country === 'KR' ? text('Seoul', place.area) : place.area}</span>
       <h3><a href={'/places/' + encodeURIComponent(place.id) + '/' + lang}>{place.name}<ArrowUpRight size={20}/></a></h3>
       <PlaceSummary place={place} language={lang}/>

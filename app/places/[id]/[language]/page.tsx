@@ -1,3 +1,6 @@
+import PlaceSave from '../../place-save';
+import PlaceContribution from '../../../place-contribution';
+import VisitPictograms from '../../../visit-pictograms';
 import ExternalReviewMemo from '../../../external-review-memo';
 import VisitReadiness from '../../../visit-readiness';
 import RestEvidence from '../../../rest-evidence';
@@ -23,6 +26,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const url = SITE_URL + placePath(id, language);
   return {
     title, description,
+    ...(place.detailLevel==='basic'?{robots:{index:false,follow:true}}:{}),
     alternates: {canonical: url, languages: {
       en: SITE_URL + placePath(id, 'en'), ko: SITE_URL + placePath(id, 'ko'),
       'x-default': SITE_URL + placePath(id, 'en'),
@@ -67,6 +71,7 @@ export default async function PlacePage({params}: Props) {
     <div className="place-heading"><span className="place-eyebrow">{category} <span> / {place.area}</span></span>
       <h1>{place.name}</h1><p><MapPin size={16}/>{place.address}</p>
     </div>
+    <nav className="place-section-nav" aria-label={label('Place information sections','장소 정보 바로가기')}><a href="#visit-info">{label('Visit info','방문 정보')}</a><a href={'#external-reviews-'+place.id}>{label('External reviews','외부 후기')}</a><a href="#reviews">{label('Quick response','간단 후기')}</a><a href="#place-source">{label('Sources','출처')}</a></nav>
     <div className="place-layout">
       <div className="place-photo-section">
         {place.photos?.length ? <PlaceGallery photos={place.photos} name={place.name} language={language}/> : place.image ? <figure className="place-cover">
@@ -83,12 +88,12 @@ export default async function PlacePage({params}: Props) {
           <p>{placeDescription(place, language)}</p>
           <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country !== 'KR' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
         </section>
-        <ExternalReviewMemo place={place} language={language}/><VisitReadiness place={place} language={language}/><RestEvidence place={place} language={language}/><ReportPlace id={place.id} language={language}/><PrivateExperiences experiences={place.experiences} language={language}/>
-        {!!place.visitDetails?.length && <section className="place-facts"><h2>{label('Before you go', '방문을 준비해요')}</h2>
-          <dl>{place.visitDetails.map(detail => <div key={detail.labelEn}><dt>{label(detail.labelEn, detail.labelKo)}</dt><dd>{label(detail.textEn, detail.textKo)}</dd></div>)}</dl>
+        <VisitPictograms place={place} language={language}/><ExternalReviewMemo place={place} language={language}/><VisitReadiness place={place} language={language}/><RestEvidence place={place} language={language}/><ReportPlace id={place.id} language={language}/><PlaceContribution id={place.id} language={language}/><PrivateExperiences experiences={place.experiences} language={language}/>
+        {!!place.visitDetails?.length && <section className="place-facts" id="visit-info"><h2>{label('Before you go', '방문을 준비해요')}</h2>
+          <dl>{place.visitDetails.map(detail => <div key={detail.labelEn}><dt>{label(detail.labelEn, detail.labelKo)}</dt><dd>{label(detail.textEn, detail.textKo)}{detail.source&&<small><a href={detail.source} target="_blank" rel="noopener noreferrer">{label('Source','출처')}</a> · {detail.checked||place.checked}</small>}</dd></div>)}</dl>
         </section>}
         {place.photoGallery && <a className="place-gallery" href={place.photoGallery} target="_blank" rel="noopener noreferrer">{label('More photos on the venue’s website', '공식 홈페이지에서 공간 사진 더 보기')}<ArrowUpRight size={18}/></a>}
-        <section className="place-source"><h2>{label('Know before you visit', '방문 전 확인해 주세요')}</h2>
+        <section className="place-source" id="place-source"><h2>{label('Know before you visit', '방문 전 확인해 주세요')}</h2>
           <p>{label('Source checked: ', '자료 확인일: ')}<time dateTime={place.checked}>{place.checked}</time></p>
           <p>{label('Opening hours, prices and access can change. Check the source before setting out.', '운영 시간·가격·이용 조건은 바뀔 수 있어요. 출발 전 정보 출처에서 최신 안내를 확인해 주세요.')}</p>
           <a href={place.source} target="_blank" rel="noopener noreferrer">{label('View the information source', '장소 정보 출처 보기')}<ArrowUpRight size={16}/></a>
@@ -103,5 +108,6 @@ export default async function PlacePage({params}: Props) {
       </a>)}</div>
     </section>}
     <footer className="place-footer"><span>WE WANT REST.</span><a href={`/privacy?lang=${language}`}>{label('Privacy', '개인정보처리방침')}</a></footer>
+    <div className="place-sticky-actions"><PlaceSave id={place.id} language={language} compact/><a href={mapPath(place)} target="_blank" rel="noopener noreferrer">{label('Directions','길 찾기')}</a></div>
   </main>;
 }

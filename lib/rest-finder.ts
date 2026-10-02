@@ -1,3 +1,4 @@
+import {visitFacts} from './visit-facts';
 import type {Place} from './catalog';
 import {distanceKm} from './discovery';
 import {matchesPlaceTheme} from './place-themes';
@@ -19,6 +20,8 @@ export const defaultRestPreferences:RestPreferences = {purpose:'all',party:'any'
 // A published admission fee is not the total cost of a visit. Unknown menu prices
 // and room minimum spends must never pass a numeric budget filter.
 export function publishedCost(place:Place) {
+  const price=visitFacts(place).price;
+  if(price?.basis==='admission'&&price.amount===0)return {amount:0,basis:'admission' as const};
   const detail=place.visitDetails?.find(item=>/^admission$/i.test(item.labelEn));
   if(detail && /^(무료|free)\.?$/i.test(detail.textKo.trim())) return {amount:0,basis:'admission' as const};
   return null;

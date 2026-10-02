@@ -287,5 +287,50 @@
         "url": "https://www.tripadvisor.com/Attraction_Review-g52024-d6881862-Reviews-Tanner_Springs_Park-Portland_Oregon.html"
       }
     ]
+  },
+  "world-sg-singapore-botanic-gardens": {
+    "checked": "2026-10-02",
+    "periodKo": "공개 후기 요약 화면의 일부 · Google·Tripadvisor 원문 전체는 미열람",
+    "periodEn": "Part of a public review-summary page; full Google and Tripadvisor reviews were not accessed",
+    "summaryKo": "공개 후기 요약에는 녹지·호수 사이 산책과 식물 관찰을 좋게 본 내용이 있어요. 공간이 넓어 구역별 동선을 골라 쉬는 방식으로 살펴볼 수 있습니다.",
+    "summaryEn": "The public review summary highlights green walks, lakes and plant watching. Choose a manageable area of the large garden for your pause.",
+    "cautionKo": "더위·습도와 긴 도보 이동을 고려하세요. 일반 정원과 유료 난초원의 조건은 운영기관 안내에서 구분해 확인합니다.",
+    "cautionEn": "Plan for heat, humidity and extensive walking. Use the operator’s information to distinguish the general garden from ticketed orchid areas.",
+    "sources": [
+      {
+        "provider": "후기 요약 · Wanderlog (Google·Tripadvisor 표기)",
+        "url": "https://wanderlog.com/place/details/19194/singapore-botanic-gardens"
+      }
+    ]
+  },
+  "world-kz-almaty-botanical-garden": {
+    "checked": "2026-10-02",
+    "periodKo": "공개 후기 요약 화면의 일부 · Google·Tripadvisor 원문 전체는 미열람",
+    "periodEn": "Part of a public review-summary page; full Google and Tripadvisor reviews were not accessed",
+    "summaryKo": "공개 후기 요약에는 산을 배경으로 걷는 풍경과 녹지에 대한 긍정적 언급이 있어요. 표지 안내와 연못 관리에는 의견이 나뉘어 있습니다.",
+    "summaryEn": "The public review summary mentions mountain views and greenery, with mixed feedback about plant labels and pond upkeep.",
+    "cautionKo": "입구별 접근과 입장 요금을 방문일에 확인하세요. 이 메모로 현재 가격이나 조용함을 확정하지 않습니다.",
+    "cautionEn": "Confirm the entrance and admission for your visit. This note does not establish current prices or quietness.",
+    "sources": [
+      {
+        "provider": "후기 요약 · Wanderlog (Google·Tripadvisor 표기)",
+        "url": "https://wanderlog.com/place/details/555358/almaty-botanical-gardens"
+      }
+    ]
+  },
+  "world-za-kirstenbosch-national-botanical-garden": {
+    "checked": "2026-10-02",
+    "periodKo": "공개 후기 요약 화면의 일부 · Google·Tripadvisor 원문 전체는 미열람",
+    "periodEn": "Part of a public review-summary page; full Google and Tripadvisor reviews were not accessed",
+    "summaryKo": "공개 후기 요약에는 산을 배경으로 한 식물·꽃과 캐노피 산책로에 대한 긍정적 언급이 있어요. 넓은 공간을 걷는 데 시간을 쓰는 방문 방식이 소개됩니다.",
+    "summaryEn": "The public review summary highlights plants, mountain scenery and the canopy walkway, with visitors spending time walking through the grounds.",
+    "cautionKo": "오르내리는 산책 구간이 있어 보행 편의를 고려하세요. 무료 입장·요금·운영 시간은 후기 요약으로 판단하지 않고 운영기관 안내를 확인합니다.",
+    "cautionEn": "Consider the uphill and downhill walking. Check the operator for free-entry eligibility, fees and hours rather than relying on a review summary.",
+    "sources": [
+      {
+        "provider": "후기 요약 · Wanderlog (Google·Tripadvisor 표기)",
+        "url": "https://wanderlog.com/place/details/3312/kirstenbosch-national-botanical-garden"
+      }
+    ]
   }
 }

@@ -1,9 +1,10 @@
+import {countryCodes} from '@/lib/countries';
 import {z} from 'zod';
 import {getSiteUser} from '@/lib/site-auth';
 import {db,allPlaces} from '@/lib/store';
 import {validSiteOrigin,allowedAnonymous} from '@/lib/anonymous-actor';
 import {publicLink,publicProfile,publicCollection,supportedRegion,validCollection} from '@/lib/community';
-const country=z.enum(['KR','US','JP']),region=z.string().trim().min(1).max(40);
+const country=z.enum(countryCodes),region=z.string().trim().min(1).max(40);
 const schema=z.discriminatedUnion('action',[
  z.object({action:z.literal('profile'),name:z.string().trim().min(2).max(30),country,region,link:publicLink,bio:z.string().trim().max(160),consent:z.literal(true)}).strict(),
  z.object({action:z.literal('withdraw')}).strict(),

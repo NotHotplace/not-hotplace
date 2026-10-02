@@ -1,3 +1,4 @@
+import PlaceSave from './place-save';
 'use client';
 import type {CountryCode} from '@/lib/countries';
 import {useCallback, useEffect, useRef, useState} from 'react';
@@ -72,7 +73,7 @@ export default function PlaceInteractions({id, name, language, country, path, ma
   return <aside className="place-action-card place-interactions" id="reviews">
     <span className="place-eyebrow">{label('VISITOR EXPERIENCES', '방문자들이 기록한 쉼')}</span>
     <h2>{label('How did it feel?', '잘 쉬어갈 수 있을까요?')}</h2>
-    <QuickFeedback id={id} country={country} language={language}/>
+    <PlaceSave id={id} language={language}/><QuickFeedback id={id} country={country} language={language}/>
     {loading && <p role="status">{label('Loading recent reviews…', '최근 후기를 불러오는 중…')}</p>}
     {error && <div className="place-feedback" role="alert"><p>{error}</p><button className="place-secondary" disabled={busy} onClick={() => {setLoading(true);load().catch(() => {}).finally(() => setLoading(false));}}>{label('Reload reviews', '후기 다시 불러오기')}</button></div>}
     {!error && summary && <>

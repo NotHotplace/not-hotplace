@@ -8,6 +8,7 @@ import {LanguageToggle, useLocale} from './locale';
 import HomeThemes from './home-themes';
 import HomeFinder from './home-finder';
 import GuideLinks from './guide-links';
+import CountryDirectory from './country-directory';
 
 export default function GlobeHome() {
   const {lang, text} = useLocale();
@@ -42,16 +43,12 @@ export default function GlobeHome() {
   }, []);
 
   function orientCountry(value: CountryCode) {
-    motion.turnTo(value === 'US' ? 100 : value==='JP'?-137:-127);
+    motion.turnTo(-countryConfig[value].center[0]);
   }
   function chooseCountry(value: CountryCode) {setCountry(value);orientCountry(value);}
   const projection = geo?.geoOrthographic().scale(246).translate([300, 300]).rotate([motion.rotation, -22]);
   const path = geo?.geoPath(projection);
-  const countries = [
-    {code:'KOR', slug:'kr', country:'KR' as const, name:text('South Korea', '대한민국'), center:[127.7, 36.2]},
-    {code:'USA', slug:'us', country:'US' as const, name:text('United States', '미국'), center:[-98, 38]},
-    {code:'JPN', slug:'jp', country:'JP' as const, name:text('Japan','일본'),center:[137,37]},
-  ];
+  const countries = countryCodes.map(code=>({code:countryConfig[code].iso3,slug:countryConfig[code].slug,country:code,name:lang==='ko'?countryConfig[code].nameKo:countryConfig[code].nameEn,center:[...countryConfig[code].center]}));
 
   return <div className="world-app" data-motion={motion.enabled ? 'on' : 'off'}>
     <header className="world-header"><a className="brand" href={'/?lang=' + lang}>Not<span>_</span>Hotplace</a>
@@ -94,7 +91,7 @@ export default function GlobeHome() {
                   </path>;
                 })}
                 <circle cx="300" cy="300" r="246" fill="url(#shade)" pointerEvents="none"/>
-                {countries.map(value => {
+                {countries.filter(value=>value.country===country).map(value => {
                   if (geo.geoDistance(value.center, projection.invert([300,300])) > Math.PI / 2) return null;
                   const [x, y] = projection(value.center);
                   return <g key={value.code} className="globe-pin" role="link" tabIndex={0} aria-label={value.name}
@@ -111,14 +108,12 @@ export default function GlobeHome() {
           <div className="globe-rotation"><button type="button" onClick={() => motion.turnTo(motion.rotation + 60)} aria-label={text('Rotate west', '서쪽으로 회전')}><ChevronLeft size={20}/></button>
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
         </section>
-        <nav className="country-choices" aria-label={text('Available countries', '선택 가능한 국가')}>{countries.map(value =>
-          <a key={value.code} href={'/' + value.slug + '?lang=' + lang} onMouseEnter={() => orientCountry(value.country)} onFocus={() => orientCountry(value.country)}>
-            <span className="country-code">{value.country}</span><span><strong>{value.name}</strong><small>{text('Open country map', '국가 지도 열기')}</small></span><ArrowUpRight/>
-          </a>)}</nav>
+
       </div>
+      <CountryDirectory onSelect={chooseCountry}/>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
       <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>
-    <footer className="world-footer"><span><Globe2 size={15}/>{text('Korea, the U.S. + Japan · More places, at your pace.', '한국·미국·일본 · 나만의 속도로 찾는 쉼.')}</span><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
+    <footer className="world-footer"><span><Globe2 size={15}/>{text(countryCodes.length+' countries · A pause, at your pace.',countryCodes.length+'개국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
   </div>;
 }

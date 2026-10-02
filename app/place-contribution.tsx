@@ -1,0 +1,17 @@
+'use client';
+import {useState} from 'react';
+export default function PlaceContribution({id,language}:{id:string;language:'ko'|'en'}){
+ const ko=language==='ko',t=(kr:string,en:string)=>ko?kr:en;
+ const [note,setNote]=useState(''),[source,setSource]=useState(''),[photo,setPhoto]=useState(''),[rights,setRights]=useState(false),[busy,setBusy]=useState(false),[notice,setNotice]=useState('');
+ async function submit(e:React.FormEvent){e.preventDefault();setBusy(true);setNotice('');try{
+  const r=await fetch('/api/place-contributions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({placeId:id,note,sourceUrl:source,photoUrl:photo,rightsConsent:rights})});
+  if(!r.ok)throw Error(String(r.status));setNotice(t('보내주신 정보는 운영자가 확인한 뒤 반영합니다.','The operator will verify your contribution before adding it.'));setNote('');setSource('');setPhoto('');setRights(false);
+ }catch(e){setNotice((e as Error).message==='429'?t('오늘은 5건까지 제보할 수 있어요.','You can submit five contributions per day.'):t('보내지 못했어요. 공개 HTTPS 링크와 사진 동의를 확인해 주세요.','Unable to submit. Check public HTTPS links and photo consent.'));}finally{setBusy(false);}}
+ async function remove(){setBusy(true);try{const r=await fetch('/api/place-contributions',{method:'DELETE',headers:{'Content-Type':'application/json'},body:'{}'});if(!r.ok)throw Error();setNotice(t('이 브라우저에서 보낸 정보·사진 제보를 삭제했어요.','Deleted information and photo contributions from this browser.'));}catch{setNotice(t('삭제하지 못했어요. 다시 시도해 주세요.','Unable to delete. Please try again.'));}finally{setBusy(false);}}
+ return <details className="place-contribution" id="contribute"><summary>{t('좌석·가격·사진 한 가지 알려주기','Share one useful detail or photo')}</summary><p>{t('로그인 없이 짧게 알려주세요. 연락처·개인정보는 적지 말아주세요. 공개 안내에 반영하기 전 운영자가 출처를 확인합니다.','A short contribution needs no sign-in. Leave out personal or contact information. The operator checks the source before updating the listing.')}</p>
+ <form onSubmit={submit}><label>{t('알려주고 싶은 내용','What would you like to share?')}<textarea required minLength={3} maxLength={600} rows={3} value={note} onChange={e=>setNote(e.target.value)} placeholder={t('예: 1인석과 4인 테이블이 있어요.','Example: individual seats and four-seat tables are available.')}/></label>
+ <label>{t('공식 안내 링크 · 선택','Official information link · optional')}<input type="url" maxLength={600} value={source} onChange={e=>setSource(e.target.value)} placeholder="https://"/></label>
+ <details><summary>{t('내 사진 링크도 보내기 · 선택','Add your photo link · optional')}</summary><label>{t('내 사진의 공개 HTTPS 링크','Public HTTPS link to my photo')}<input type="url" maxLength={600} value={photo} onChange={e=>setPhoto(e.target.value)} placeholder="https://"/></label>{photo&&<label><input type="checkbox" required checked={rights} onChange={e=>setRights(e.target.checked)}/>{t('직접 찍었거나 공개 사용 권한이 있는 사진입니다. 사이트에 게시하는 데 동의하며, 식별 가능한 사람의 동의도 확인했습니다.','I took this photo or have permission for public use. I consent to publication on this site and have permission from any identifiable people.')}</label>}</details>
+ <div className="contribution-submit"><button className="place-secondary" disabled={busy}>{busy?t('보내는 중…','Sending…'):t('한 가지 알려주기','Send this detail')}</button><button type="button" className="text-button" disabled={busy} onClick={()=>void remove()}>{t('이 브라우저의 제보 삭제','Delete this browser’s contributions')}</button></div></form><p role="status" aria-live="polite">{notice}</p>
+ </details>;
+}
