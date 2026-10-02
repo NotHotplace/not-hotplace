@@ -119,7 +119,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Kensington_Palace_from_across_Long_Water.JPG",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kensington_Palace_from_across_Long_Water.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -127,7 +127,7 @@
         "credit": "Iridescenti",
         "source": "https://commons.wikimedia.org/wiki/File:Kensington_Palace_from_across_Long_Water.JPG",
         "original": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kensington_Palace_from_across_Long_Water.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 625,
         "height": 800,
         "altKo": "Kensington Gardens 공간 사진",
@@ -189,7 +189,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Regent%27s_Park_bandstand.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/59/Regent%27s_Park_bandstand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -197,7 +197,7 @@
         "credit": "ed g2s • talk",
         "source": "https://commons.wikimedia.org/wiki/File:Regent%27s_Park_bandstand.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/5/59/Regent%27s_Park_bandstand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 1000,
         "height": 750,
         "altKo": "The Regent's Park 공간 사진",
@@ -424,26 +424,7 @@
       "checked": "2026-10-02",
       "kind": "reference"
     },
-    "image": "/places/world-gb-holland-park.webp",
-    "imageCredit": "Sdrawkcab",
-    "imageSource": "https://commons.wikimedia.org/wiki/File:Embassy_of_Ukraine_in_London_1.jpg",
-    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Embassy_of_Ukraine_in_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-    "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "imageNote": "Resized and converted to WebP; the card view may crop the image.",
-    "photos": [
-      {
-        "src": "/places/world-gb-holland-park.webp",
-        "credit": "Sdrawkcab",
-        "source": "https://commons.wikimedia.org/wiki/File:Embassy_of_Ukraine_in_London_1.jpg",
-        "original": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Embassy_of_Ukraine_in_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-        "width": 600,
-        "height": 800,
-        "altKo": "Holland Park 공간 사진",
-        "altEn": "Holland Park — place view"
-      }
-    ]
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Embassy_of_Ukraine_in_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
     "id": "world-gb-royal-botanic-gardens-kew",
@@ -2189,7 +2170,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Wien_01_Burggarten_n.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wien_01_Burggarten_n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC0",
-    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -2197,7 +2178,7 @@
         "credit": "Gugerell",
         "source": "https://commons.wikimedia.org/wiki/File:Wien_01_Burggarten_n.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wien_01_Burggarten_n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "width": 1000,
         "height": 563,
         "altKo": "Burggarten 공간 사진",
@@ -2259,7 +2240,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Praha,_Letn%C3%A1,_sad.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Praha%2C_Letn%C3%A1%2C_sad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -2267,7 +2248,7 @@
         "credit": "User:Aktron",
         "source": "https://commons.wikimedia.org/wiki/File:Praha,_Letn%C3%A1,_sad.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Praha%2C_Letn%C3%A1%2C_sad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 1000,
         "height": 666,
         "altKo": "Letná Park 공간 사진",
@@ -2329,7 +2310,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Praha,_Bubene%C4%8D,_pohled_na_jez%C3%ADrko_ve_Stromovce.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/54/Praha%2C_Bubene%C4%8D%2C_pohled_na_jez%C3%ADrko_ve_Stromovce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -2337,7 +2318,7 @@
         "credit": "I would appreciate being notified if you use my work outside Wikimedia.\nMore of my work can be found in my personal gallery.",
         "source": "https://commons.wikimedia.org/wiki/File:Praha,_Bubene%C4%8D,_pohled_na_jez%C3%ADrko_ve_Stromovce.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/5/54/Praha%2C_Bubene%C4%8D%2C_pohled_na_jez%C3%ADrko_ve_Stromovce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 1000,
         "height": 750,
         "altKo": "Stromovka 공간 사진",
@@ -2399,7 +2380,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Petrin_Praha.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Petrin_Praha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -2407,7 +2388,7 @@
         "credit": "Ludek",
         "source": "https://commons.wikimedia.org/wiki/File:Petrin_Praha.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Petrin_Praha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 1000,
         "height": 750,
         "altKo": "Petřín 공간 사진",
@@ -3564,7 +3545,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Taipei_Botanical_Garden_Greenhouse.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Taipei_Botanical_Garden_Greenhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC0",
-    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -3572,7 +3553,7 @@
         "credit": "Meiguoren",
         "source": "https://commons.wikimedia.org/wiki/File:Taipei_Botanical_Garden_Greenhouse.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Taipei_Botanical_Garden_Greenhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "width": 1000,
         "height": 666,
         "altKo": "Taipei Botanical Garden 공간 사진",
@@ -3839,7 +3820,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Pg_botanic_gardens_trees.JPG",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Pg_botanic_gardens_trees.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC0",
-    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -3847,7 +3828,7 @@
         "credit": "Dr htgoon",
         "source": "https://commons.wikimedia.org/wiki/File:Pg_botanic_gardens_trees.JPG",
         "original": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Pg_botanic_gardens_trees.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "width": 1000,
         "height": 750,
         "altKo": "Penang Botanic Gardens 공간 사진",
@@ -5336,7 +5317,7 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Emirgan_04325.jpg",
     "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Emirgan_04325.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "imageLicense": "CC BY-SA 3.0",
-    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "imageNote": "Resized and converted to WebP; the card view may crop the image.",
     "photos": [
       {
@@ -5344,7 +5325,7 @@
         "credit": "Nevit Dilmen",
         "source": "https://commons.wikimedia.org/wiki/File:Emirgan_04325.jpg",
         "original": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Emirgan_04325.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "width": 1000,
         "height": 758,
         "altKo": "Emirgan Park 공간 사진",

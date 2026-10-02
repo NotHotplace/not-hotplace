@@ -59,12 +59,11 @@ export default function GlobeHome() {
       </button><LanguageToggle/></div>
     </header>
     <main>
-      <HomeFinder country={country} onCountryChange={chooseCountry}/>
       <div className="world-main">
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
-          <h2>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h2>
+          <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
           <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose a country to find your kind of space.', '나만의 속도로 쉬어갈 공간을 찾아보세요.')}</p>
-          <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href={'/'+country.toLowerCase()+'?lang='+lang+'&nearby=1'}>{text('Find a pause nearby','내 주변에서 쉬기')}</a><a href={'/guides?lang='+lang}>{text('Find my kind of pause','목적별로 찾기')}</a></nav>
+          <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#countries">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
         <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
@@ -110,6 +109,7 @@ export default function GlobeHome() {
         </section>
 
       </div>
+      <HomeFinder country={country} onCountryChange={chooseCountry}/>
       <CountryDirectory onSelect={chooseCountry}/>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
       <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>

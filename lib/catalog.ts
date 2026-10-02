@@ -46,6 +46,7 @@ for(const place of catalog){
   const fresh=extra.visitDetails||[],labels=new Set(fresh.map(d=>d.labelEn));
   place.visitDetails=[...fresh,...original.filter(d=>!labels.has(d.labelEn))];
   place.visitFacts={...place.visitFacts,...extra.visitFacts};
+  place.checked=fresh.map(d=>d.checked||place.checked).concat(place.checked).sort().at(-1)!;
   const kinds=new Set((extra.conditions||[]).map(d=>d.kind));
   place.conditions=[...(extra.conditions||[]),...(place.conditions||[]).filter(d=>!kinds.has(d.kind)&&!(d.kind==='parking'&&extra.visitFacts?.parking?.status==='unavailable'))];
  }else place.visitDetails=original;

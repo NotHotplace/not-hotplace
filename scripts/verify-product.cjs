@@ -305,11 +305,11 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal(readBrowseState(conditionUrl.searchParams,regionKeys).filters.soloOrder,true);
  assert(!readBrowseState(new URLSearchParams('books=yes&quietMusic=1&actor=private'),regionKeys).filters.books);
  const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,4);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
- const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,19);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
+ const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,22);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
  const {externalReviewLinks}=load(path.join(root,'lib/external-reviews.ts'));
  assert.equal(externalReviewLinks(catalog.find(p=>p.id==='cj-daechung')).length,3);
  assert(externalReviewLinks(catalog.find(p=>p.id==='us-stumptown-division')).some(s=>s.name==='Yelp'));
- assert.equal(catalog.filter(p=>p.locationInfo?.kind==='reference').length,20,'tourism map reference points are labelled, not presented as entrances');
+ assert(Object.keys(load(path.join(root,'lib/location-catalog.json'))).every(id=>catalog.find(p=>p.id===id)?.locationInfo?.kind==='reference'),'existing tourism map reference points are retained and never presented as entrances');
  assert(guideModule.guidePlaces(guideModule.findGuide('cheongju-parking-cafes'),catalog).length>=2,'parking guide has real sourced candidates');
  assert(guideModule.guides.filter(g=>g.kind==='intent').every(g=>guideModule.guidePlaces(g,catalog).length>0),'new intent guides are populated');
  const {storySelection,storyCaption}=load(path.join(root,'lib/story-card.ts'));
@@ -377,6 +377,73 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  user={userId:'visitor',email:'visitor@example.test'};assert.equal((await community.POST(communityRequest({action:'deleteProfile'}))).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_profiles WHERE id=?').get(profileId).n,0);assert.equal(sql.prepare('SELECT COUNT(*) n FROM contributor_collections WHERE id=?').get(collectionId).n,0,'profile and collections delete together');
  sql.prepare('UPDATE place_reports SET updated_at=?').run(Date.now()-91*86400000);user={userId:'owner',email:'owner@example.test'};await communityAdmin.GET();assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_reports').get().n,0,'expired reports are purged');
  console.log('PASS: sourced conditions, unique recent reviewer evidence, story selection/privacy, bounded private reports, opt-in contributor identity, moderation permissions, withdrawal and atomic deletion.');
+ }
+ {
+ const {countryCodes,countries}=load(path.join(root,'lib/countries.ts'));
+ const expanded=load(path.join(root,'lib/expanded-catalog.json'));
+ const manifest=load(path.join(root,'lib/catalog-source-manifest.json'));
+ assert.equal(countryCodes.length,30);assert.equal(catalog.length,1006);assert.equal(expanded.length,605);
+ assert.equal(new Set(manifest.map(p=>p.id)).size,605);
+ assert(expanded.every(p=>manifest.some(m=>m.id===p.id&&m.country===p.country)),'every new record has source provenance');
+ for(const country of countryCodes){const response=await (await data.GET(new Request('https://example.test/api/data?country='+country))).json();assert(response.places.length>0);assert(response.places.every(p=>p.country===country),'all 30 API views are country scoped');assert(countries[country].regions.includes(countries[country].defaultRegion));}
+ for(const p of expanded){assert(p.visitDetails.length>=1&&p.source.startsWith('https://'),'source information exists even when access facts remain unknown');if(p.lat!=null)assert(Number.isFinite(p.lat)&&Math.abs(p.lat)<=90&&Number.isFinite(p.lon)&&Math.abs(p.lon)<=180&&p.locationInfo.kind==='reference','new coordinates are bounded reference points, not verified entrances');}
+ const {visitFacts}=load(path.join(root,'lib/visit-facts.ts'));
+ const fixture={...catalog[0],visitFacts:undefined,conditions:[],visitDetails:[]};
+ assert.equal(visitFacts(fixture).parking,undefined,'unknown parking must not imply unavailable');
+ assert.equal(visitFacts({...fixture,visitDetails:[{labelEn:'Parking',textKo:'주차 불가능',textEn:'Parking unavailable'}]}).parking.status,'unavailable');
+ assert.equal(visitFacts({...fixture,visitDetails:[{labelEn:'Parking',textKo:'인근 공영 주차',textEn:'Nearby public parking'}]}).parking.status,'nearby');
+ const seats=visitFacts({...fixture,visitDetails:[{labelEn:'Seating',textKo:'1인석과 4인석',textEn:'Individual seats and 4-seat tables'}]}).seating;
+ assert.equal(seats.solo,true);assert.equal(seats.group,true);assert.deepEqual(seats.groupSizes,[4]);
+ assert.equal(visitFacts({...fixture,visitDetails:[{labelEn:'Seating',textKo:'1인석 없음',textEn:'No individual seats'}]}).seating,undefined);
+ const {publishedCost}=load(path.join(root,'lib/rest-finder.ts'));
+ const price={source:fixture.source,checked:fixture.checked,amount:0,currency:'KRW',textKo:'무료',textEn:'Free'};
+ assert.equal(publishedCost({...fixture,visitFacts:{price:{...price,basis:'menu'}}}),null,'a free menu item never implies free admission');
+ assert.equal(publishedCost({...fixture,visitFacts:{price:{...price,basis:'experience'}}}),null);
+ assert.equal(publishedCost({...fixture,visitFacts:{price:{...price,basis:'admission'}}}).amount,0);
+
+ const contribution=load(path.join(root,'app/api/place-contributions/route.ts'));
+ const moderation=load(path.join(root,'app/api/community/admin/route.ts'));
+ const req=(body,cookie='',extra={},method='POST')=>new Request('https://example.test/api/place-contributions',{method,headers:{origin:'https://example.test','Content-Type':'application/json',...(cookie?{cookie}:{}),...extra},body:typeof body==='string'?body:JSON.stringify(body)});
+ const input={placeId:'world-gb-hyde-park',note:'Seats along the walking path',sourceUrl:'https://www.royalparks.org.uk/visit/parks/hyde-park',photoUrl:'',rightsConsent:false};
+ user=null;
+ assert.equal((await contribution.POST(req(input,'',{origin:'https://other.test'}))).status,403);
+ assert.equal((await contribution.POST(req(input,'',{'sec-fetch-site':'cross-site'}))).status,403);
+ assert.equal((await contribution.POST(req(input,'',{'Content-Type':'text/plain'}))).status,415);
+ assert.equal((await contribution.POST(req({...input,placeId:'missing'}))).status,404);
+ assert.equal((await contribution.POST(req({...input,actor:'spoof'}))).status,400);
+ assert.equal((await contribution.POST(req('broken json'))).status,400);
+ assert.equal((await contribution.POST(req('x'.repeat(3501)))).status,413);
+ for(const url of ['http://example.test','https://name:password@example.test','https://localhost','https://127.0.0.1','https://10.0.0.1','https://[::1]','https://2130706433','https://169.254.169.254'])assert.equal((await contribution.POST(req({...input,sourceUrl:url}))).status,400,'unsafe contribution URL: '+url);
+ assert.equal((await contribution.POST(req({...input,photoUrl:'https://example.test/my-photo.webp'}))).status,400,'photo publication requires explicit rights consent');
+ const submittedPhoto=await contribution.POST(req({...input,photoUrl:'https://example.test/my-photo.webp',rightsConsent:true},'',{'cf-connecting-ip':'192.0.2.33'}));assert.equal(submittedPhoto.status,200);
+ const photoCookie=submittedPhoto.headers.get('set-cookie').split(';')[0];assert(submittedPhoto.headers.get('set-cookie').includes('HttpOnly; Secure; SameSite=Strict'));
+ const row=sql.prepare('SELECT * FROM place_contributions').get();assert.equal(row.status,'pending');assert(/^[a-f0-9]{64}$/.test(row.actor));assert.equal(row.rights_consent,1);
+ assert(!sql.prepare('SELECT actor FROM quick_feedback_limits').all().some(p=>p.actor.includes('192.0.2.33')),'contribution IPs are keyed pseudonyms');
+ assert.equal((await moderation.GET()).status,403,'anonymous users cannot read private contribution notes');
+ const publicData=JSON.stringify(await (await data.GET(new Request('https://example.test/api/data?country=GB'))).json());assert(!publicData.includes(input.note)&&!publicData.includes('my-photo.webp'),'pending notes and photos never enter public listings');
+ const other=await contribution.POST(req(input)),otherCookie=other.headers.get('set-cookie').split(';')[0];
+ assert.equal((await contribution.DELETE(req({},photoCookie,{origin:'https://evil.test'},'DELETE'))).status,403);
+ await contribution.DELETE(req({},photoCookie,{},'DELETE'));assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_contributions').get().n,1,'withdrawal only deletes this browser’s contributions');
+ for(let i=0;i<4;i++)assert.equal((await contribution.POST(req(input,otherCookie))).status,200);
+ assert.equal((await contribution.POST(req(input,otherCookie))).status,429,'five contributions per browser/day');
+ user={userId:'owner',email:'owner@example.test'};
+ const queue=await (await moderation.GET()).json();assert.equal(queue.contributions.length,5);assert(queue.contributions.every(p=>!('actor' in p)));
+ const decision={action:'contribution',id:queue.contributions[0].id,status:'reviewed'};
+ assert.equal((await moderation.POST(req(decision))).status,200);assert.equal((await moderation.POST(req(decision))).status,409);
+ assert(!JSON.stringify(await (await data.GET(new Request('https://example.test/api/data?country=GB'))).json()).includes(input.note),'a reviewed decision does not auto-publish source claims');
+ sql.prepare('UPDATE place_contributions SET updated_at=?').run(Date.now()-91*86400000);await moderation.GET();assert.equal(sql.prepare('SELECT COUNT(*) n FROM place_contributions').get().n,0,'expired contributions are removed after 90 days');
+ user=null;
+ for(let i=0;i<30;i++)assert.equal((await contribution.POST(req(input,'',{'cf-connecting-ip':'192.0.2.34'}))).status,200);
+ assert.equal((await contribution.POST(req(input,'',{'cf-connecting-ip':'192.0.2.34'}))).status,429,'rotating browser cookies cannot bypass the IP daily cap');
+ assert.throws(()=>sql.prepare("INSERT INTO place_contributions VALUES('test','test','test','test','','https://example.test/p.webp',0,'pending',0,0)").run(),/CHECK/,'photo rights are also enforced in the database');
+ const legacy=new DatabaseSync(':memory:');const migrations=fs.readdirSync(path.join(root,'drizzle')).filter(x=>x.endsWith('.sql')).sort();
+ for(const file of migrations.filter(x=>x<'0008'))legacy.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
+ legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-01','save','KR','instagram',9); INSERT INTO campaign_totals VALUES('2026-10-01','guide_view','US','instagram','us_slow',7); INSERT INTO contributor_profiles VALUES('legacy-user','legacy-id','Legacy','서울','KR','','',1,'approved','',1); INSERT INTO contributor_collections VALUES('legacy-list','legacy-user','Legacy list','KR','서울','[]','','approved','',1,1);");
+ const tables=['engagement_totals','campaign_totals','contributor_profiles','contributor_collections'];const snapshots=tables.map(t=>legacy.prepare('SELECT * FROM '+t).all());
+ for(const file of migrations.filter(x=>x>='0008'))legacy.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
+ tables.forEach((table,i)=>assert.deepEqual(legacy.prepare('SELECT * FROM '+table).all(),snapshots[i],'world migration retains '+table));
+ legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','SG','direct',1)");assert.throws(()=>legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','sg','direct',1)"),/CHECK/);legacy.close();
+ console.log('PASS: 30 country scopes, 1,006 unique places, source/reference integrity, unknown parking, seat sizes, admission semantics, private consent-based contributions, actor/IP limits, withdrawal, moderation, expiry and migration data preservation.');
  }
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
 })().catch(e=>{console.error(e);process.exitCode=1;});
