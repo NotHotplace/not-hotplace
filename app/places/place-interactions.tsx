@@ -1,5 +1,5 @@
-import PlaceSave from './place-save';
 'use client';
+import PlaceSave from './place-save';
 import type {CountryCode} from '@/lib/countries';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {Bookmark, Check, MapPin, MessageCircle, ArrowUpRight} from 'lucide-react';
