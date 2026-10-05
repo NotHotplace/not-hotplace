@@ -33,19 +33,25 @@ export default function PlaceInteractions({id, name, category, conditions, langu
   const [loading, setLoading] = useState(true), [error, setError] = useState(''), [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false), [open, setOpen] = useState(false), [formError, setFormError] = useState('');
   const [review, setReview] = useState({...emptyReview});
-  const counted = useRef(false);
+  const counted = useRef<string|null>(null);
+  const lifecycle=useRef({id,alive:true,read:0,operation:0,controller:null as AbortController|null});
+  if(lifecycle.current.id!==id){lifecycle.current.controller?.abort();lifecycle.current.id=id;lifecycle.current.read++;lifecycle.current.operation++;}
+  function invalidateRead(){lifecycle.current.read++;lifecycle.current.controller?.abort();}
+  function currentOperation(operation:number){return lifecycle.current.alive&&lifecycle.current.id===id&&lifecycle.current.operation===operation;}
   const login = `/login?lang=${language}&next=${encodeURIComponent(path + '#reviews')}`;
   const load = useCallback(async () => {
-    const response = await fetch(`/api/places/${encodeURIComponent(id)}`, {cache: 'no-store'});
+    const state=lifecycle.current,version=++state.read,operation=state.operation,controller=new AbortController();state.controller?.abort();state.controller=controller;
+    const response = await fetch(`/api/places/${encodeURIComponent(id)}`, {cache: 'no-store',signal:controller.signal});
     if (!response.ok) throw new Error('load');
     const next = await response.json() as PlaceExperience;
-    setData(next); setError(''); return next;
+    if(!controller.signal.aborted&&state.alive&&state.id===id&&version===state.read&&operation===state.operation){setData(next);setError('');}return next;
   }, [id]);
+  async function reloadReviews(){const operation=lifecycle.current.operation;setLoading(true);try{await load();}catch{if(currentOperation(operation))setError(label('Unable to load visitor reviews.','후기를 불러오지 못했어요.'));}finally{if(currentOperation(operation))setLoading(false);}}
   useEffect(() => {
-    let live = true;
-    load().catch(() => {if (live) setError(ko ? '후기를 불러오지 못했어요.' : 'Unable to load visitor reviews.');}).finally(() => {if (live) setLoading(false);});
-    if (!counted.current) {counted.current = true; trackEngagement('place_view', country);}
-    return () => {live = false;};
+    lifecycle.current.alive=true;setData(null);setLoading(true);setError('');setNotice('');setBusy(false);setOpen(false);setFormError('');setReview({...emptyReview,tags:[]});
+    void reloadReviews();
+    if (counted.current!==id) {counted.current=id;trackEngagement('place_view',country);}
+    return () => {lifecycle.current.alive=false;invalidateRead();lifecycle.current.operation++;};
   }, [load, ko, country]);
   function editReview() {
     const mine = data?.review;
@@ -54,9 +60,10 @@ export default function PlaceInteractions({id, name, category, conditions, langu
     setFormError(''); setOpen(true); trackEngagement('review_start',country);
   }
   async function mutate(action: 'save'|'review'|'deleteReview', payload: Record<string, unknown>) {
-    setBusy(true); setNotice(''); setFormError('');
+    const operation=++lifecycle.current.operation;invalidateRead();setBusy(true); setNotice(''); setFormError('');
     try {
       const response = await fetch('/api/action', {method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({action, payload: {placeId: id, ...payload}})});
+      if(!currentOperation(operation))return;
       if (!response.ok) {
         if (response.status === 401) {setData(current => current ? {...current, signedIn: false} : current); throw new Error(label('Please sign in again. Your choices are still here.', '로그인이 만료됐어요. 선택 내용은 유지됩니다. 다시 로그인해 주세요.'));}
         throw new Error(label('Unable to save. Please try again.', '저장하지 못했어요. 잠시 후 다시 시도해 주세요.'));
@@ -66,17 +73,17 @@ export default function PlaceInteractions({id, name, category, conditions, langu
       if (action === 'save') setData(current => current ? {...current, saved: !!payload.saved} : current);
       if (action !== 'save') setOpen(false);
       setNotice(action === 'deleteReview' ? label('Your review was deleted.', '내 후기를 삭제했어요.') : action === 'save' && !payload.saved ? label('Removed from saved places.', '저장을 취소했어요.') : label('Saved.', '저장했어요.'));
-      try {await load();} catch {setError(label('Saved, but the latest summary could not load. Try reloading.', '저장은 완료됐지만 최신 요약을 불러오지 못했어요. 다시 불러와 주세요.'));}
-    } catch (e) {const message = e instanceof Error ? e.message : label('Please try again.', '다시 시도해 주세요.'); setFormError(message); setNotice(message);}
-    finally {setBusy(false);}
+      try {await load();} catch {if(currentOperation(operation))setError(label('Saved, but the latest summary could not load. Try reloading.', '저장은 완료됐지만 최신 요약을 불러오지 못했어요. 다시 불러와 주세요.'));}
+    } catch (e) {if(!currentOperation(operation))return;const message = e instanceof Error ? e.message : label('Please try again.', '다시 시도해 주세요.'); setFormError(message); setNotice(message);}
+    finally {if(currentOperation(operation))setBusy(false);}
   }
   const summary = data?.summary;
   return <aside className="place-action-card place-interactions" id="reviews">
     <span className="place-eyebrow">{label('YOUR NEXT PAUSE', '다음 쉼을 담아두세요')}</span>
     <h2>{label('Save it for later.', '다음에 다시 찾아요.')}</h2>
-    <PlaceSave id={id} country={country} language={language}/><a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => {trackEngagement('map_open',country);recordPause({placeId:id,state:'planned',at:Date.now()});}}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a><SharePlace name={name} path={path} language={language} country={country}/><details className="place-disclosure visitor-disclosure"><summary>{label('Visitor feedback and your experience','방문 후기·내 경험 남기기')}{summary&&<> · {summary.count}</>}</summary><div className="place-disclosure-body"><QuickFeedback id={id} country={country} language={language}/>
+    <PlaceSave id={id} country={country} language={language}/><a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => {trackEngagement('map_open',country);recordPause({placeId:id,state:'planned',at:Date.now()});}}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a><SharePlace name={name} path={path} language={language} country={country}/><details className="place-disclosure visitor-disclosure" data-anchor-disclosure><summary>{label('Visitor feedback and your experience','방문 후기·내 경험 남기기')}{summary&&<> · {summary.count}</>}</summary><div className="place-disclosure-body"><QuickFeedback id={id} country={country} language={language}/>
     {loading && <p role="status">{label('Loading recent reviews…', '최근 후기를 불러오는 중…')}</p>}
-    {error && <div className="place-feedback" role="alert"><p>{error}</p><button className="place-secondary" disabled={busy} onClick={() => {setLoading(true);load().catch(() => {}).finally(() => setLoading(false));}}>{label('Reload reviews', '후기 다시 불러오기')}</button></div>}
+    {error && <div className="place-feedback" role="alert"><p>{error}</p><button className="place-secondary" disabled={busy} onClick={() => void reloadReviews()}>{label('Reload reviews', '후기 다시 불러오기')}</button></div>}
     {!error && summary && <>
       {summary.count ? <div className="place-review-metrics">{[
         [label('Quiet', '조용했다'), summary.quiet], [label('Uncrowded', '여유로웠다'), summary.relaxed], [label('Satisfied', '만족했다'), summary.positive],
