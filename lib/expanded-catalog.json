@@ -73,30 +73,57 @@
     "name": "Kensington Gardens",
     "area": "London",
     "address": "Kensington Gardens · London area, GB (street address not verified)",
-    "description": "London에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "London에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in London. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Kensington_Gardens",
-    "checked": "2026-10-02",
+    "description": "런던의 나무길과 화단을 따라 걷는 정원입니다. 매일 해 질 때 문을 닫으므로 계절별 출입 시간을 확인하세요.",
+    "descriptionKo": "런던의 나무길과 화단을 따라 걷는 정원입니다. 매일 해 질 때 문을 닫으므로 계절별 출입 시간을 확인하세요.",
+    "descriptionEn": "A London garden with tree-lined paths and flower walks. Gates close at dusk, so check seasonal access times.",
+    "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens",
+    "checked": "2026-10-05",
     "tags": [
-      "정원·녹지 공간"
+      "정원 산책",
+      "계절별 출입 시간"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "정원 산책",
+      "계절별 출입 시간"
     ],
     "tagsEn": [
-      "garden setting"
+      "Garden walk",
+      "Seasonal gate hours"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "공식 운영 안내 확인 · 현장 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Kensington_Gardens",
-        "checked": "2026-10-02"
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Opens at 06:00; closes at dusk. Closing time changes seasonally; check the official page for your visit.",
+        "textKo": "06:00 개장, 해 질 때 폐장. 폐장 시간은 계절별로 달라 공식 안내를 확인하세요.",
+        "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens/faqs",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Getting there",
+        "labelKo": "대중교통",
+        "textEn": "Nearby Underground stations: Lancaster Gate, Queensway and Bayswater.",
+        "textKo": "인근 지하철역은 Lancaster Gate, Queensway, Bayswater입니다.",
+        "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens/faqs",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Paid spaces on West Carriage Drive. Blue Badge parking is free, with a four-hour limit. Check signs and vehicle-gate times.",
+        "textKo": "West Carriage Drive에 유료 주차 공간이 있어요. Blue Badge 소지자는 4시간 한도로 무료이며 표지판과 차량 출입 시간을 확인하세요.",
+        "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens/faqs",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Seasonal notices",
+        "labelKo": "방문 전 확인",
+        "textEn": "Check official notices for events and temporary road or cycle-route closures.",
+        "textKo": "행사와 임시 도로·자전거길 통제는 공식 공지를 확인하세요.",
+        "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens",
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Location reference",
@@ -133,7 +160,16 @@
         "altKo": "Kensington Gardens 공간 사진",
         "altEn": "Kensington Gardens — place view"
       }
-    ]
+    ],
+    "visitFacts": {
+      "parking": {
+        "source": "https://www.royalparks.org.uk/visit/parks/kensington-gardens/faqs",
+        "checked": "2026-10-05",
+        "status": "available",
+        "textEn": "Paid parking on West Carriage Drive; spaces are not guaranteed.",
+        "textKo": "West Carriage Drive 유료 주차. 빈자리는 보장되지 않아요."
+      }
+    }
   },
   {
     "id": "world-gb-the-regent-s-park",
@@ -4860,31 +4896,82 @@
     "category": "walk",
     "name": "VanDusen Botanical Garden",
     "area": "Vancouver",
-    "address": "VanDusen Botanical Garden · Vancouver area, CA (street address not verified)",
-    "description": "Vancouver에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "Vancouver에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in Vancouver. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/VanDusen_Botanical_Garden",
-    "checked": "2026-10-02",
+    "address": "5251 Oak Street, Vancouver, BC V6M 4H1, Canada",
+    "description": "밴쿠버의 유료 식물원입니다. 계절별 개장 시간과 입장료, 이동 경로를 확인하고 정원 산책을 준비하세요.",
+    "descriptionKo": "밴쿠버의 유료 식물원입니다. 계절별 개장 시간과 입장료, 이동 경로를 확인하고 정원 산책을 준비하세요.",
+    "descriptionEn": "A ticketed botanical garden in Vancouver. Plan your walk around seasonal opening hours, admission and accessible routes.",
+    "source": "https://vandusengarden.org/plan-your-visit/hours-admission/",
+    "checked": "2026-10-05",
     "tags": [
-      "정원·녹지 공간"
+      "식물원",
+      "계절별 운영"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "식물원",
+      "계절별 운영"
     ],
     "tagsEn": [
-      "garden setting"
+      "Botanical garden",
+      "Seasonal hours"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "공식 운영 안내 확인 · 현장 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/VanDusen_Botanical_Garden",
-        "checked": "2026-10-02"
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "September 8–October 31: 09:00–17:00. November–December: 10:00–14:00, closed December 25. Last entry 30 minutes before closing.",
+        "textKo": "9월 8일~10월 31일 09:00~17:00. 11~12월 10:00~14:00, 12월 25일 휴원. 입장 마감은 폐장 30분 전입니다.",
+        "source": "https://vandusengarden.org/plan-your-visit/hours-admission/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "Listed adult rate (19–64), April–October: CAD 15.81 before GST. Adult online tickets save CAD 1. Special events are separate; confirm the checkout total.",
+        "textKo": "4~10월 성인(19~64세) 공시요금은 GST 별도 CAD 15.81. 성인 온라인 예매는 CAD 1 할인. 특별행사는 별도이며 결제 총액을 확인하세요.",
+        "source": "https://vandusengarden.org/plan-your-visit/hours-admission/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Free parking on West 37th Avenue off Oak Street, including accessible spaces. An accessible drop-off loop is at the front entrance.",
+        "textKo": "Oak Street에서 진입하는 West 37th Avenue 무료 주차장에 장애인 주차 공간이 있어요. 정문에 접근성 지원 승하차 구역이 있습니다.",
+        "source": "https://vandusengarden.org/plan-your-visit/accessibility/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "접근성",
+        "textEn": "Most paved paths support wheelchairs and walkers, but surfaces can be uneven and some steps lack handrails.",
+        "textKo": "대부분의 포장길은 휠체어·보행보조기 이용이 가능하지만 노면이 고르지 않거나 난간 없는 계단이 있을 수 있어요.",
+        "source": "https://vandusengarden.org/plan-your-visit/accessibility/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Cafe seating",
+        "labelKo": "카페 좌석",
+        "textEn": "The Garden Cafe lists capacity for 58 indoors and 40 on the heated patio. Seat availability is not guaranteed.",
+        "textKo": "Garden Cafe 공시 수용 인원은 실내 58명, 난방 테라스 40명입니다. 빈자리는 보장되지 않아요.",
+        "source": "https://vandusengarden.org/plan-your-visit/snacks-services/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Sound conditions",
+        "labelKo": "소리 환경",
+        "textEn": "Maintenance machinery can be audible. Ask admissions about borrowing a sensory support kit.",
+        "textKo": "정비 장비 소리가 들릴 수 있어요. 감각 지원 키트 대여는 입장 안내 직원에게 문의하세요.",
+        "source": "https://vandusengarden.org/plan-your-visit/accessibility/",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Address",
+        "labelKo": "주소",
+        "textEn": "5251 Oak Street, Vancouver, BC V6M 4H1.",
+        "textKo": "5251 Oak Street, Vancouver, BC V6M 4H1.",
+        "source": "https://vandusengarden.org/plan-your-visit/contact-us/",
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Location reference",
@@ -4901,6 +4988,15 @@
       "source": "https://en.wikipedia.org/wiki/VanDusen_Botanical_Garden",
       "checked": "2026-10-02",
       "kind": "reference"
+    },
+    "visitFacts": {
+      "parking": {
+        "source": "https://vandusengarden.org/plan-your-visit/accessibility/",
+        "checked": "2026-10-05",
+        "status": "available",
+        "textEn": "Free parking at the West 37th Avenue lot; accessible spaces available.",
+        "textKo": "West 37th Avenue 주차장 무료. 장애인 주차 공간이 있어요."
+      }
     }
   },
   {
@@ -33207,5 +33303,86 @@
       "checked": "2026-10-02",
       "kind": "reference"
     }
+  },
+  {
+    "id": "world-gb-aire-ancient-baths-london",
+    "country": "GB",
+    "city": "London",
+    "category": "spa",
+    "name": "AIRE Ancient Baths London",
+    "area": "Westminster · Covent Garden",
+    "address": "2–3 Robert Street, London WC2N 6BH, United Kingdom",
+    "description": "런던 중심부의 온도별 공용 배스와 스파입니다. 만 18세 이상 이용 가능하며 침묵·휴대전화 제한 정책이 있어요. 단독 이용 공간은 아닙니다.",
+    "descriptionKo": "런던 중심부의 온도별 공용 배스와 스파입니다. 만 18세 이상 이용 가능하며 침묵·휴대전화 제한 정책이 있어요. 단독 이용 공간은 아닙니다.",
+    "descriptionEn": "Shared thermal baths and spa in central London, for guests aged 18+. A silence and phone-free policy applies; this is not an exclusive-use space.",
+    "source": "https://beaire.com/en/aire-ancient-baths-london",
+    "checked": "2026-10-05",
+    "tags": [
+      "스파",
+      "침묵 정책",
+      "만 18세 이상"
+    ],
+    "tagsKo": [
+      "스파",
+      "침묵 정책",
+      "만 18세 이상"
+    ],
+    "tagsEn": [
+      "Spa",
+      "Silence policy",
+      "Adults 18+"
+    ],
+    "detailLevel": "enriched",
+    "sourceHint": "공식 운영 안내 확인 · 현장 방문 검증 아님",
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Official venue hours: Mon–Thu 08:00–22:00; Fri 09:00–23:00; Sat–Sun 08:00–23:00. Confirm holiday changes when booking.",
+        "textKo": "공식 안내: 월~목 08:00~22:00, 금 09:00~23:00, 토·일 08:00~23:00. 공휴일 변경은 예약 시 확인하세요.",
+        "source": "https://beaire.com/en/aire-ancient-baths-london",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Age and shared bathing",
+        "labelKo": "이용 연령·공용 배스",
+        "textEn": "18+ only. Baths are shared and co-ed; swimwear is required.",
+        "textKo": "만 18세 이상. 남녀 공용 배스이며 수영복 착용이 필수입니다.",
+        "source": "https://beaire.com/en/terms-london",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Sound and phones",
+        "labelKo": "소리·휴대전화",
+        "textEn": "Silence is required; phones and photography are restricted to reception. Water and other guests may still be audible.",
+        "textKo": "침묵을 지켜야 하며 휴대전화·사진 촬영은 리셉션에서만 가능해요. 물소리나 다른 이용객 소리는 들릴 수 있습니다.",
+        "source": "https://beaire.com/en/terms-london",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Booking",
+        "labelKo": "예약",
+        "textEn": "Book ahead through official channels; session capacity is limited. Check the chosen experience for current pricing.",
+        "textKo": "회차별 인원이 제한돼 공식 채널 사전예약을 권해요. 최신 요금은 선택한 프로그램에서 확인하세요.",
+        "source": "https://beaire.com/en/terms-london",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "접근성",
+        "textEn": "The historic building has access limitations. Contact the venue before booking to check your route and support needs.",
+        "textKo": "역사 건물의 구조상 접근에 제한이 있어요. 예약 전 이동 경로와 필요한 지원을 매장에 확인하세요.",
+        "source": "https://beaire.com/en/terms-london",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelEn": "Location",
+        "labelKo": "위치",
+        "textEn": "The venue lists 2–3 Robert Street, WC2N 6BH. Use its linked map to plan arrival; entrance coordinates are not surveyed.",
+        "textKo": "공식 주소는 2–3 Robert Street, WC2N 6BH입니다. 공식 페이지의 지도에서 이동 경로를 확인하세요. 입구 좌표는 현장 검증 전입니다.",
+        "source": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2360434441684!2d-0.12527692352999717!3d51.508885371813555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605491d59a18d:0x34aacb93a25151c7!2sAIRE+Ancient+Baths+London!5e0!3m2!1ses!2ses!4v1781619600413!5m2!1ses!2ses",
+        "checked": "2026-10-05"
+      }
+    ]
   }
 ]
