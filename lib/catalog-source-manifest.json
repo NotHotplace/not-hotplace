@@ -23,7 +23,13 @@
     "level": "reference",
     "officialCandidate": "https://www.royalparks.org.uk/visit/parks/kensington-gardens",
     "originalImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kensington_Palace_from_across_Long_Water.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "detailLevel": "basic"
+    "detailLevel": "enriched",
+    "enrichmentChecked": "2026-10-05",
+    "enrichmentSources": [
+      "https://www.royalparks.org.uk/visit/parks/kensington-gardens/faqs",
+      "https://www.royalparks.org.uk/visit/parks/kensington-gardens",
+      "https://en.wikipedia.org/wiki/Kensington_Gardens"
+    ]
   },
   {
     "id": "world-gb-the-regent-s-park",
@@ -1003,7 +1009,15 @@
     "level": "reference",
     "officialCandidate": "https://vandusengarden.org/",
     "originalImage": "https://upload.wikimedia.org/wikipedia/commons/3/3d/VanDusen_Botanical_Garden_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "detailLevel": "basic"
+    "detailLevel": "enriched",
+    "enrichmentChecked": "2026-10-05",
+    "enrichmentSources": [
+      "https://vandusengarden.org/plan-your-visit/hours-admission/",
+      "https://vandusengarden.org/plan-your-visit/accessibility/",
+      "https://vandusengarden.org/plan-your-visit/snacks-services/",
+      "https://vandusengarden.org/plan-your-visit/contact-us/",
+      "https://en.wikipedia.org/wiki/VanDusen_Botanical_Garden"
+    ]
   },
   {
     "id": "world-ca-high-park",
@@ -6169,5 +6183,21 @@
     "level": "agency-property",
     "coordinateKind": "geometry reference, not entrance",
     "detailLevel": "basic"
+  },
+  {
+    "id": "world-gb-aire-ancient-baths-london",
+    "country": "GB",
+    "provider": "Official venue website",
+    "source": "https://beaire.com/en/aire-ancient-baths-london",
+    "checked": "2026-10-05",
+    "level": "official",
+    "officialCandidate": "https://beaire.com/en/aire-ancient-baths-london",
+    "detailLevel": "enriched",
+    "visitSources": [
+      "https://beaire.com/en/aire-ancient-baths-london",
+      "https://beaire.com/en/terms-london",
+      "https://maps.apple.com/place?place-id=I7B743DD636045308",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2360434441684!2d-0.12527692352999717!3d51.508885371813555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605491d59a18d:0x34aacb93a25151c7!2sAIRE+Ancient+Baths+London!5e0!3m2!1ses!2ses!4v1781619600413!5m2!1ses!2ses"
+    ]
   }
 ]

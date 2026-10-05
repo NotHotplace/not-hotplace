@@ -1,4 +1,5 @@
 import PlaceSave from '../../place-save';
+import TrackedMapLink from '../../tracked-map-link';
 import PlaceContribution from '../../../place-contribution';
 import VisitPictograms from '../../../visit-pictograms';
 import ExternalReviewMemo from '../../../external-review-memo';
@@ -108,6 +109,6 @@ export default async function PlacePage({params}: Props) {
       </a>)}</div>
     </section>}
     <footer className="place-footer"><span>WE WANT REST.</span><a href={`/privacy?lang=${language}`}>{label('Privacy', '개인정보처리방침')}</a></footer>
-    <div className="place-sticky-actions"><PlaceSave id={place.id} language={language} compact/><a href={mapPath(place)} target="_blank" rel="noopener noreferrer">{label('Directions','길 찾기')}</a></div>
+    <div className="place-sticky-actions"><PlaceSave id={place.id} country={place.country||'KR'} language={language} compact/><TrackedMapLink id={place.id} country={place.country||'KR'} href={mapPath(place)}>{label('Directions','길 찾기')}</TrackedMapLink></div>
   </main>;
 }
