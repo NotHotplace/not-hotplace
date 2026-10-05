@@ -5,9 +5,10 @@ import {membershipFor,paymentConfig} from '@/lib/membership';
 import {qualityState} from '@/lib/discovery';
 import {restFeedbackCounts} from '@/lib/rest-conditions';
 import {bestQuietTime} from '@/lib/rest-finder';
+import {finderMatches,collectionPlace} from '@/lib/catalog-views';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){try{
- const country=countryCode(new URL(request.url).searchParams.get('country'));
+ const params=new URL(request.url).searchParams,country=countryCode(params.get('country'));
  const user=await getSiteUser(),d=db(),cutoff=Date.now()-90*86400000;
  const membership=user?await membershipFor(user.userId):{active:false,trialUsed:false,until:null,kind:'free'};
  const [places,stats,recent,paused,held,own,saves,proposals,admin,buckets,conditionRows]=await Promise.all([
@@ -22,6 +23,10 @@ export async function GET(request:Request){try{
   d.prepare("SELECT r.place_id,j.value tag,COUNT(DISTINCT r.user_id) n FROM reviews r JOIN json_each(r.tags) j WHERE r.updated_at>=? GROUP BY r.place_id,j.value").bind(cutoff).all<any>(),
  ]);
  const map=new Map(stats.results.map(p=>[p.place_id,p])),recentMap=new Map(recent.results.map(p=>[p.place_id,p]));const stopped=new Set([...paused.results,...held.results].map(p=>p.place_id));
- return Response.json({places:places.filter(p=>(p.country||'KR')===country).map(p=>{const quality=stopped.has(p.id)?'resting':qualityState(recentMap.get(p.id)||{n:0,bad:0,days:0,first:null,last:null});return {...p,restFeedback:restFeedbackCounts(conditionRows.results.filter(r=>r.place_id===p.id)),count:0,positive:0,quiet:0,latest:null,...map.get(p.id),quality,resting:quality==='resting',bestTime:quality==='resting'?null:bestQuietTime(buckets.results.filter(b=>b.place_id===p.id)),...(membership.active?{insights:buckets?.results.filter(b=>b.place_id===p.id).map(({place_id,...b})=>b)||[]}:{} )};}),reviews:own?.results||[],saved:saves?.results.filter(s=>places.some(p=>p.id===s.place_id&&(p.country||'KR')===country)).map(p=>p.place_id)||[],suggestions:proposals?.results||[],signedIn:!!user,isOwner:admin,membership,auth:{googleReady:googleReady(),provider:user?.provider||''},paymentsReady:paymentConfig().ready,paymentsTest:paymentConfig().test},{headers:{'Cache-Control':'private, no-store'}});
+ const scopedPlaces=places.filter(p=>(p.country||'KR')===country).map(p=>{const quality=stopped.has(p.id)?'resting':qualityState(recentMap.get(p.id)||{n:0,bad:0,days:0,first:null,last:null});return {...p,restFeedback:restFeedbackCounts(conditionRows.results.filter(r=>r.place_id===p.id)),count:0,positive:0,quiet:0,latest:null,...map.get(p.id),quality,resting:quality==='resting',bestTime:quality==='resting'?null:bestQuietTime(buckets.results.filter(b=>b.place_id===p.id)),...(membership.active?{insights:buckets?.results.filter(b=>b.place_id===p.id).map(({place_id,...b})=>b)||[]}:{} )};});
+ const headers={'Cache-Control':'private, no-store'};
+ if(params.get('view')==='finder'){try{return Response.json({matches:finderMatches(scopedPlaces,params,country)},{headers});}catch{return Response.json({error:'Invalid finder filters'},{status:400,headers});}}
+ if(params.get('view')==='collection')return Response.json({places:scopedPlaces.map(collectionPlace)},{headers});
+ return Response.json({places:scopedPlaces,reviews:own?.results||[],saved:saves?.results.filter(s=>places.some(p=>p.id===s.place_id&&(p.country||'KR')===country)).map(p=>p.place_id)||[],suggestions:proposals?.results||[],signedIn:!!user,isOwner:admin,membership,auth:{googleReady:googleReady(),provider:user?.provider||''},paymentsReady:paymentConfig().ready,paymentsTest:paymentConfig().test},{headers:{'Cache-Control':'private, no-store'}});
  }catch(e){console.error('data load failed',e);return Response.json({error:'정보를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.'},{status:503});}
 }

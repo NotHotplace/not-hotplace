@@ -1,4 +1,5 @@
 import {visitFacts} from './visit-facts';
+import {informationScore} from './place-presentation';
 import type {Place} from './catalog';
 import {distanceKm} from './discovery';
 import {matchesPlaceTheme} from './place-themes';
@@ -36,7 +37,7 @@ export function restMatches(places:FinderPlace[],preferences:RestPreferences,lim
   const matched=places.filter(place=>{
     if(place.resting) return false;
     if(preferences.purpose==='private-room'||preferences.purpose==='premium-spa') {
-      if(!matchesPlaceTheme(place,preferences.purpose)) return false;
+      if(!(preferences.purpose==='premium-spa'&&place.category==='spa')&&!matchesPlaceTheme(place,preferences.purpose)) return false;
     } else if(preferences.purpose==='drive'?!['drive','walk'].includes(place.category):preferences.purpose!=='all'&&place.category!==preferences.purpose) return false;
     if(preferences.party==='solo'&&/2인\s*이상|최소\s*2명|at least two diners/i.test([place.description,place.descriptionEn,...(place.visitDetails||[]).map(item=>item.textKo+' '+item.textEn)].join(' '))) return false;
     if(preferences.position) {
@@ -50,7 +51,7 @@ export function restMatches(places:FinderPlace[],preferences:RestPreferences,lim
     const reviewed=count>=3&&quiet/count>=.6&&positive/count>=.7;
     const time=bestQuietTime(place.insights||(place.bestTime?[place.bestTime]:[]),preferences);
     const distance=preferences.position?distanceKm(preferences.position,{lat:place.lat!,lon:place.lon!}):null;
-    const completeness=Number(!!place.image)*3+Math.min(place.visitDetails?.length||0,4)+Number(!!place.experiences?.length)*2;
+    const completeness=informationScore(place);
     const score=Number(!!time)*30+Number(reviewed)*20+(reviewed?wilson(quiet,count)*5:0)+completeness-(distance===null?0:distance/10);
     return {place,reviewed,time,distance,score};
   });

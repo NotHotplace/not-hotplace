@@ -1,16 +1,19 @@
 'use client';
 import {useEffect,useState} from 'react';
-import {catalog,type Place} from '@/lib/catalog';
+import type {CollectionPlace} from '@/lib/catalog-views';
 import {countries,type CountryCode} from '@/lib/countries';
 import {inRegion} from '@/lib/regions';
 export default function CommunityEditor({language}:{language:'ko'|'en'}){
- const ko=language==='ko',text=(kr:string,en:string)=>ko?kr:en,[data,setData]=useState<any>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[notice,setNotice]=useState(''),[places,setPlaces]=useState<Place[]>(catalog);
+ const ko=language==='ko',text=(kr:string,en:string)=>ko?kr:en,[data,setData]=useState<any>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[notice,setNotice]=useState(''),[places,setPlaces]=useState<CollectionPlace[]>([]);
  const [profile,setProfile]=useState({name:'',country:'KR' as CountryCode,region:'청주',link:'',bio:'',consent:false});
  const [collection,setCollection]=useState({title:'',country:'KR' as CountryCode,region:'청주',placeIds:[] as string[],note:''});
  const status=(s:string)=>ko?({pending:'운영자 검토 중',approved:'공개됨',rejected:'다시 확인이 필요해요'} as Record<string,string>)[s]||s:s;
  async function load(){const r=await fetch('/api/community',{cache:'no-store'});if(!r.ok)throw Error();const d=await r.json() as any;setData(d);setProfile(d.profile?{name:d.profile.name,country:d.profile.country,region:d.profile.region,link:d.profile.link,bio:d.profile.bio,consent:false}:{name:'',country:'KR',region:'청주',link:'',bio:'',consent:false});setError('');}
  useEffect(()=>{void load().catch(()=>setError(text('신청 정보를 불러오지 못했어요.','Unable to load your application.')));},[]);
- useEffect(()=>{let live=true;fetch('/api/data?country='+collection.country,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json() as Promise<any>;}).then(d=>{if(live)setPlaces(d.places);}).catch(()=>{if(live)setPlaces(catalog);});return()=>{live=false;};},[collection.country]);
+ useEffect(()=>{let live=true;const controller=new AbortController(),query=new URLSearchParams({country:collection.country,view:'collection'});setPlaces([]);
+  async function loadPlaces(){try{let response;try{response=await fetch('/api/data?'+query,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error();}catch{if(!live)return;response=await fetch('/api/catalog?'+query,{credentials:'omit',signal:controller.signal});if(!response.ok)throw Error();}const result=await response.json() as {places:CollectionPlace[]};if(live)setPlaces(result.places);}catch{if(live)setNotice(text('장소를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.','Unable to load places. Please try again.'));}}
+  void loadPlaces();return()=>{live=false;controller.abort();};
+ },[collection.country]);
  async function send(payload:object){setBusy(true);setNotice('');try{const r=await fetch('/api/community',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!r.ok)throw Error(String(r.status));await load();setNotice(text('저장했어요. 신청·모음은 검토 후 공개됩니다. 공개 철회는 즉시 반영됩니다.','Saved. Applications and collections are reviewed before publishing. Withdrawal hides your profile immediately.'));return true;}catch(e){setNotice((e as Error).message==='401'?text('다시 로그인해 주세요.','Please sign in again.'):(e as Error).message==='429'?text('오늘의 신청 한도에 도달했어요. 모음은 하루 3개까지 제안할 수 있습니다.','Daily limit reached. You can propose up to three collections a day.'):text('입력과 장소 선택을 확인한 뒤 다시 시도해 주세요.','Check your entries and place selection, then try again.'));return false;}finally{setBusy(false);}}
  const options=(country:CountryCode)=>(countries[country].regions as readonly string[]);
  const candidates=places.filter(p=>(p.country||'KR')===collection.country&&inRegion(p,collection.region));

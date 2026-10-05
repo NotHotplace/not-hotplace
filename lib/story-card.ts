@@ -1,6 +1,6 @@
 import type {Place} from './catalog';
 import type {RestRecord} from './rest-journal';
-export function storySelection(records:RestRecord[],selected:string[],places:Place[]){
+export function storySelection<T extends Pick<Place,'id'>>(records:RestRecord[],selected:string[],places:T[]){
  return [...new Set(selected)].slice(0,3).flatMap(id=>{const record=records.find(r=>r.placeId===id),place=places.find(p=>p.id===id);return record&&place?[{record,place}]:[];});
 }
 export function storyCaption(record:RestRecord,language:'ko'|'en',includeNoise:boolean){

@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {catalog} from '@/lib/catalog';
 import {getSiteUser} from '@/lib/site-auth';
 import {db,isOwner,allPlaces} from '@/lib/store';
 import {validSiteOrigin} from '@/lib/anonymous-actor';
@@ -20,7 +21,11 @@ export async function GET(){try{
   d.prepare("SELECT c.id,c.title,c.country,c.region,c.place_ids,c.note,c.status,p.name author,p.status profile_status,p.consent FROM contributor_collections c JOIN contributor_profiles p ON p.user_id=c.user_id WHERE c.status='pending' ORDER BY c.created_at LIMIT 100").all(),
   d.prepare("SELECT id,place_id,kind,note,status,updated_at FROM place_reports WHERE status='pending' ORDER BY updated_at LIMIT 100").all(),
    d.prepare("SELECT id,place_id,note,source_url,photo_url,rights_consent,status,updated_at FROM place_contributions WHERE status='pending' ORDER BY updated_at LIMIT 100").all(),
- ]);return reply({profiles:profiles.results,collections:collections.results,reports:reports.results,contributions:contributions.results});
+ ]);
+ const ids=new Set<string>([...reports.results,...contributions.results].map(p=>String(p.place_id)));
+ for(const collection of collections.results){try{for(const id of JSON.parse(String(collection.place_ids)))if(typeof id==='string')ids.add(id);}catch{}}
+ const places=catalog.filter(p=>ids.has(p.id)).map(({id,name,source})=>({id,name,source}));
+ return reply({profiles:profiles.results,collections:collections.results,reports:reports.results,contributions:contributions.results,places});
 }catch{return reply({error:'Unable to load moderation'},503);}}
 export async function POST(request:Request){try{
  if(!validSiteOrigin(request))return reply({error:'Forbidden'},403);
