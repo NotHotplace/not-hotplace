@@ -4,7 +4,7 @@ The full 1,007-place source catalog is now server-side. Client code uses compact
 
 ## Measurement
 
-Production build snapshot on 2026-10-05, after the integrated presentation and payload/privacy changes. Byte counts are exact file sizes; gzip uses level 9 independently for each file. Component graphs include the named entry and its static imports, not all route requests. They exclude runtime-fetched data, photos, maps and lazy imports. These are build measurements, not measured mobile load times.
+Production build snapshot for PR #12 (main d0d33197c3701bf1075f1377f17adbacb3de6e79) on 2026-10-05, after the integrated presentation and payload/privacy changes. Later defect fixes may change exact bytes; rerun the measurement script for the current build. Byte counts are exact file sizes; gzip uses level 9 independently for each file. Component graphs include the named entry and its static imports, not all route requests. They exclude runtime-fetched data, photos, maps and lazy imports. These are build measurements, not measured mobile load times.
 
 | Scope | Before raw bytes | After raw bytes | Before gzip bytes | After gzip bytes |
 | --- | ---: | ---: | ---: | ---: |

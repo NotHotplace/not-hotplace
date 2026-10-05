@@ -68,10 +68,16 @@
       {
         "labelEn": "Hours",
         "labelKo": "운영 시간",
-        "textKo": "12:00~23:00",
-        "textEn": "12:00~23:00",
+        "textKo": "관광정보는 12:00~23:00, 방문 플랫폼은 12:00~22:00로 안내해요. 현재 마감·마지막 주문 시간은 매장(02-462-4015)에 확인하세요.",
+        "textEn": "Published hours conflict: the tourism listing says 12:00–23:00, while Diningcode says 12:00–22:00. Confirm closing and last orders with the cafe at +82 2-462-4015.",
         "source": "https://www.ktriptips.com/kor/food/2946087",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05",
+        "additionalSources": [
+          {
+            "label": "Diningcode",
+            "url": "https://www.diningcode.com/profile.php?rid=zi2p2bV7WHVk"
+          }
+        ]
       },
       {
         "labelEn": "Closures",
@@ -123,17 +129,17 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~22:00- 마지막 주문 21:30",
-        "textEn": "- 10:00~22:00- 마지막 주문 21:30",
+        "textEn": "10:00–22:00; last order 21:30.",
         "source": "https://www.ktriptips.com/kor/food/3082222",
         "checked": "2026-10-02"
       },
       {
         "labelEn": "Closures",
         "labelKo": "휴무",
-        "textKo": "0507-1361-7167",
-        "textEn": "0507-1361-7167",
+        "textKo": "휴무일 안내에 전화번호가 기재되어 있어 휴무 일정을 확인할 수 없어요. 방문 전 매장에 확인하세요.",
+        "textEn": "The source lists a phone number in the closure field, so the closure schedule is unclear. Confirm with the venue before visiting.",
         "source": "https://www.ktriptips.com/kor/food/3082222",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Signature menu",
@@ -177,7 +183,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~20:00 (마지막 주문 19:00)",
-        "textEn": "11:00~20:00 (마지막 주문 19:00)",
+        "textEn": "11:00–20:00 (Last orders 19:00)",
         "source": "https://www.ktriptips.com/kor/food/2991392",
         "checked": "2026-10-02"
       },
@@ -347,7 +353,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:30- 준비시간 15:30~17:00- 마지막 주문 20:30",
-        "textEn": "- 11:30~21:30- 준비시간 15:30~17:00- 마지막 주문 20:30",
+        "textEn": "11:30–21:30; Break 15:30–17:00; Last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/679683",
         "checked": "2026-10-02"
       },
@@ -379,7 +385,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (1,000원)",
-        "textEn": "Available요금 (1,000원)",
+        "textEn": "Parking available; listed fee KRW 1,000. Confirm the charging basis with the venue.",
         "source": "https://www.ktriptips.com/kor/food/679683",
         "checked": "2026-10-02"
       }
@@ -390,14 +396,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (1,000원)",
-        "textEn": "Available요금 (1,000원)"
+        "textEn": "Parking available; listed fee KRW 1,000. Confirm the charging basis with the venue."
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (1,000원)",
-        "textEn": "Available요금 (1,000원)",
+        "textEn": "Parking available; listed fee KRW 1,000. Confirm the charging basis with the venue.",
         "source": "https://www.ktriptips.com/kor/food/679683",
         "checked": "2026-10-02"
       }
@@ -409,7 +415,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/250166",
         "checked": "2026-10-02"
       },
@@ -485,7 +491,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~21:00 (마지막 주문 20:00)",
-        "textEn": "10:30~21:00 (마지막 주문 20:00)",
+        "textEn": "10:30–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/3550346",
         "checked": "2026-10-02"
       },
@@ -601,7 +607,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~21:00 (마지막 주문 20:00)",
-        "textEn": "10:30~21:00 (마지막 주문 20:00)",
+        "textEn": "10:30–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2911171",
         "checked": "2026-10-02"
       },
@@ -663,7 +669,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:00)",
-        "textEn": "11:00~21:00 (마지막 주문 20:00)",
+        "textEn": "11:00–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/4002891",
         "checked": "2026-10-02"
       },
@@ -779,7 +785,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/126674",
         "checked": "2026-10-02"
       },
@@ -842,7 +848,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2748838",
         "checked": "2026-10-02"
       },
@@ -905,7 +911,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~22:00- 마지막 주문 21:30",
-        "textEn": "- 11:00~22:00- 마지막 주문 21:30",
+        "textEn": "11:00–22:00; Last orders 21:30",
         "source": "https://www.ktriptips.com/kor/food/2866375",
         "checked": "2026-10-02"
       },
@@ -999,7 +1005,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking listed; confirm use conditions with the venue.",
         "source": "https://www.ktriptips.com/kor/food/2840694",
         "checked": "2026-10-02"
       },
@@ -1018,14 +1024,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking listed; confirm use conditions with the venue."
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking listed; confirm use conditions with the venue.",
         "source": "https://www.ktriptips.com/kor/food/2840694",
         "checked": "2026-10-02"
       }
@@ -1091,7 +1097,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 09:00~22:00- 마지막 주문 21:00",
-        "textEn": "- 09:00~22:00- 마지막 주문 21:00",
+        "textEn": "09:00–22:00; Last orders 21:00",
         "source": "https://www.ktriptips.com/kor/food/2766515",
         "checked": "2026-10-02"
       },
@@ -1153,7 +1159,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~21:30 (15:00~17:00 브레이크타임)",
-        "textEn": "11:30~21:30 (15:00~17:00 브레이크타임)",
+        "textEn": "11:30–21:30 (15:00–17:00 Break)",
         "source": "https://www.ktriptips.com/kor/food/2850437",
         "checked": "2026-10-02"
       },
@@ -1255,7 +1261,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/1963756",
         "checked": "2026-10-02"
       }
@@ -1266,14 +1272,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/1963756",
         "checked": "2026-10-02"
       }
@@ -1285,7 +1291,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:50~22:00 (마지막 주문 21:50)",
-        "textEn": "10:50~22:00 (마지막 주문 21:50)",
+        "textEn": "10:50–22:00 (Last orders 21:50)",
         "source": "https://www.ktriptips.com/kor/food/1829044",
         "checked": "2026-10-02"
       },
@@ -1339,7 +1345,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "07:00~22:00 (마지막 주문 21:30)",
-        "textEn": "07:00~22:00 (마지막 주문 21:30)",
+        "textEn": "07:00–22:00 (Last orders 21:30)",
         "source": "https://www.ktriptips.com/kor/food/2850574",
         "checked": "2026-10-02"
       },
@@ -1401,7 +1407,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2746373",
         "checked": "2026-10-02"
       },
@@ -1439,7 +1445,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/127601",
         "checked": "2026-10-02"
       },
@@ -1634,7 +1640,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~20:00- 퍙일 준비시간 14:00~15:00- 마지막 주문 19:00※ 주말에는 준비시간 없이 운영",
-        "textEn": "- 10:00~20:00- 퍙일 준비시간 14:00~15:00- 마지막 주문 19:00※ 주말에는 준비시간 없이 운영",
+        "textEn": "10:00–20:00; Weekday break 14:00–15:00; Last orders 19:00. No break on weekends.",
         "source": "https://www.ktriptips.com/kor/food/2906224",
         "checked": "2026-10-02"
       },
@@ -1696,7 +1702,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:30~15:30- 마지막 주문 15:00[주말]- 11:00~19:30- 준비시간 15:30~17:00- 마지막 주문 19:00",
-        "textEn": "[평일]- 11:30~15:30- 마지막 주문 15:00[주말]- 11:00~19:30- 준비시간 15:30~17:00- 마지막 주문 19:00",
+        "textEn": "Weekdays: 11:30–15:30; Last orders 15:00; Weekends: 11:00–19:30; Break 15:30–17:00; Last orders 19:00",
         "source": "https://www.ktriptips.com/kor/food/3524321",
         "checked": "2026-10-02"
       },
@@ -1758,7 +1764,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[화요일~토요일] - 11:00~19:30 - 준비시간 15:00~17:00 - 마지막 주문 14:10, 18:40 [일요일] - 11:00~15:10 - 마지막 주문 14:20",
-        "textEn": "[Tuesday~Saturday] - 11:00~19:30 - 준비시간 15:00~17:00 - 마지막 주문 14:10, 18:40 [Sunday] - 11:00~15:10 - 마지막 주문 14:20",
+        "textEn": "Tuesday–Saturday: 11:00–19:30; Break 15:00–17:00; Last orders 14:10, 18:40; Sunday: 11:00–15:10; Last orders 14:20",
         "source": "https://www.ktriptips.com/kor/food/2891616",
         "checked": "2026-10-02"
       },
@@ -1820,7 +1826,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~22:00 (주중 브레이크타임 15:00~17:00 / 라스트오더 21:00)",
-        "textEn": "11:30~22:00 (주중 브레이크타임 15:00~17:00 / 라스트오더 21:00)",
+        "textEn": "11:30–22:00 (Weekday break 15:00–17:00 / Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/2853930",
         "checked": "2026-10-02"
       },
@@ -1852,7 +1858,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2853930",
         "checked": "2026-10-02"
       },
@@ -1871,14 +1877,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2853930",
         "checked": "2026-10-02"
       }
@@ -1890,7 +1896,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2767445",
         "checked": "2026-10-02"
       },
@@ -1953,7 +1959,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2768207",
         "checked": "2026-10-02"
       },
@@ -1969,7 +1975,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능(간이주차)",
-        "textEn": "Available(간이주차)",
+        "textEn": "Parking available (informal parking area)",
         "source": "https://www.ktriptips.com/kor/tourspot/2768207",
         "checked": "2026-10-02"
       }
@@ -1980,14 +1986,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능(간이주차)",
-        "textEn": "Available(간이주차)"
+        "textEn": "Parking available (informal parking area)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능(간이주차)",
-        "textEn": "Available(간이주차)",
+        "textEn": "Parking available (informal parking area)",
         "source": "https://www.ktriptips.com/kor/tourspot/2768207",
         "checked": "2026-10-02"
       }
@@ -1999,7 +2005,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 12:30~18:00 (마지막 주문 16:30)- 주말 12:40~19:00 (마지막 주문 17:30)",
-        "textEn": "- 평일 12:30~18:00 (마지막 주문 16:30)- 주말 12:40~19:00 (마지막 주문 17:30)",
+        "textEn": "Weekdays 12:30–18:00 (Last orders 16:30); Weekends 12:40–19:00 (Last orders 17:30)",
         "source": "https://www.ktriptips.com/kor/food/4040783",
         "checked": "2026-10-02"
       },
@@ -2053,7 +2059,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~22:00 (마지막 주문 21:00)",
-        "textEn": "12:00~22:00 (마지막 주문 21:00)",
+        "textEn": "12:00–22:00 (Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/2912621",
         "checked": "2026-10-02"
       },
@@ -2061,7 +2067,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "설·추석 당일",
-        "textEn": "설·추석 당일",
+        "textEn": "Closed on Lunar New Year’s Day and Chuseok day",
         "source": "https://www.ktriptips.com/kor/food/2912621",
         "checked": "2026-10-02"
       },
@@ -2115,7 +2121,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~22:00- 점심 마지막 주문 14:30- 준비시간 15:00~18:00- 저녁 마지막 주문 21:30",
-        "textEn": "- 11:00~22:00- 점심 마지막 주문 14:30- 준비시간 15:00~18:00- 저녁 마지막 주문 21:30",
+        "textEn": "11:00–22:00; Lunch last orders 14:30; Break 15:00–18:00; Dinner last orders 21:30",
         "source": "https://www.ktriptips.com/kor/food/1925337",
         "checked": "2026-10-02"
       },
@@ -2183,7 +2189,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:30~22:00- 주말 11:00~22:00",
-        "textEn": "- 평일 11:30~22:00- 주말 11:00~22:00",
+        "textEn": "Weekdays 11:30–22:00; Weekends 11:00–22:00",
         "source": "https://www.ktriptips.com/kor/food/1924258",
         "checked": "2026-10-02"
       },
@@ -2307,7 +2313,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~20:30- 준비시간 15:00~17:00",
-        "textEn": "- 11:30~20:30- 준비시간 15:00~17:00",
+        "textEn": "11:30–20:30; Break 15:00–17:00",
         "source": "https://www.ktriptips.com/kor/food/2735323",
         "checked": "2026-10-02"
       },
@@ -2361,7 +2367,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일 - 11:30~22:00 - 준비시간 14:00~17:00 [주말] - 11:30~22:00 - 준비시간 15:00~17:00",
-        "textEn": "[평일 - 11:30~22:00 - 준비시간 14:00~17:00 [주말] - 11:30~22:00 - 준비시간 15:00~17:00",
+        "textEn": "Weekdays: 11:30–22:00; break 14:00–17:00. Weekends: 11:30–22:00; break 15:00–17:00.",
         "source": "https://www.ktriptips.com/kor/food/2580741",
         "checked": "2026-10-02"
       },
@@ -2369,7 +2375,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/food/2580741",
         "checked": "2026-10-02"
       },
@@ -2393,7 +2399,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2580741",
         "checked": "2026-10-02"
       },
@@ -2412,14 +2418,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2580741",
         "checked": "2026-10-02"
       }
@@ -2431,7 +2437,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/127663",
         "checked": "2026-10-02"
       },
@@ -2494,7 +2500,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2911885",
         "checked": "2026-10-02"
       },
@@ -2602,7 +2608,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:30~22:00 - 마지막 주문 21:00",
-        "textEn": "- 10:30~22:00 - 마지막 주문 21:00",
+        "textEn": "10:30–22:00; Last orders 21:00",
         "source": "https://www.ktriptips.com/kor/food/2852582",
         "checked": "2026-10-02"
       },
@@ -2664,7 +2670,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~21:00 20:30 라스트오더",
-        "textEn": "10:30~21:00 20:30 라스트오더",
+        "textEn": "10:30–21:00; last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2848947",
         "checked": "2026-10-02"
       },
@@ -2734,7 +2740,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:00~20:00 (마지막 주문 19:30)- 주말 10:00~20:00 (마지막 주문 19:30)",
-        "textEn": "- 평일 11:00~20:00 (마지막 주문 19:30)- 주말 10:00~20:00 (마지막 주문 19:30)",
+        "textEn": "Weekdays 11:00–20:00 (Last orders 19:30); Weekends 10:00–20:00 (Last orders 19:30)",
         "source": "https://www.ktriptips.com/kor/food/3546420",
         "checked": "2026-10-02"
       },
@@ -2742,7 +2748,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 화요일 ※ 단, 하우스웨딩 및 대관 진행시 임시휴무로 지정되며, 네이버 및 인스타그램으로 공지 참조",
-        "textEn": "Every  Tuesday ※ 단, 하우스웨딩 및 대관 진행시 임시휴무로 지정되며, 네이버 및 인스타그램으로 공지 참조",
+        "textEn": "Closed every Tuesday. Temporary closures also apply for house weddings and private rentals; see notices on Naver and Instagram.",
         "source": "https://www.ktriptips.com/kor/food/3546420",
         "checked": "2026-10-02"
       },
@@ -2796,7 +2802,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:00~20:00 (마지막 주문 14:30/19:30)- 준비시간 15:00~17:00[주말]- 11:00~20:00 (마지막 주문 19:30)",
-        "textEn": "[평일]- 11:00~20:00 (마지막 주문 14:30/19:30)- 준비시간 15:00~17:00[주말]- 11:00~20:00 (마지막 주문 19:30)",
+        "textEn": "Weekdays: 11:00–20:00 (Last orders 14:30/19:30); Break 15:00–17:00; Weekends: 11:00–20:00 (Last orders 19:30)",
         "source": "https://www.ktriptips.com/kor/food/4101201",
         "checked": "2026-10-02"
       },
@@ -2858,7 +2864,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~21:00- 준비시간 15:30~17:00- 마지막 주문 20:00※ 재료 소진 시 조기 마감",
-        "textEn": "- 10:00~21:00- 준비시간 15:30~17:00- 마지막 주문 20:00※ 재료 소진 시 조기 마감",
+        "textEn": "10:00–21:00; Break 15:30–17:00; Last orders 20:00. May close early if ingredients run out.",
         "source": "https://www.ktriptips.com/kor/food/2903881",
         "checked": "2026-10-02"
       },
@@ -2890,7 +2896,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2903881",
         "checked": "2026-10-02"
       }
@@ -2901,14 +2907,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2903881",
         "checked": "2026-10-02"
       }
@@ -2928,7 +2934,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 세번째 월요일",
-        "textEn": "매월 세번째 Monday",
+        "textEn": "Closed on the third Monday of each month",
         "source": "https://www.ktriptips.com/kor/food/686252",
         "checked": "2026-10-02"
       },
@@ -2982,7 +2988,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 08:30~20:00- 준비시간 16:00~17:00- 마지막 주문 19:30",
-        "textEn": "- 08:30~20:00- 준비시간 16:00~17:00- 마지막 주문 19:30",
+        "textEn": "08:30–20:00; Break 16:00–17:00; Last orders 19:30",
         "source": "https://www.ktriptips.com/kor/food/2903860",
         "checked": "2026-10-02"
       },
@@ -3036,7 +3042,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3016047",
         "checked": "2026-10-02"
       },
@@ -3099,7 +3105,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3057069",
         "checked": "2026-10-02"
       },
@@ -3162,7 +3168,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[정원카페] - 10:00~19:00 [레스토랑] - 11:00~19:00 - 준비시간 15:00~17:00",
-        "textEn": "[정원카페] - 10:00~19:00 [레스토랑] - 11:00~19:00 - 준비시간 15:00~17:00",
+        "textEn": "Garden cafe: 10:00–19:00; Restaurant: 11:00–19:00; Break 15:00–17:00",
         "source": "https://www.ktriptips.com/kor/food/2758049",
         "checked": "2026-10-02"
       },
@@ -3170,7 +3176,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "[정원카페] - 연중무휴[레스토랑]- 매주 목요일",
-        "textEn": "[정원카페] - Open year-round[레스토랑]- Every  Thursday",
+        "textEn": "Garden cafe: open year-round. Restaurant: closed every Thursday.",
         "source": "https://www.ktriptips.com/kor/food/2758049",
         "checked": "2026-10-02"
       },
@@ -3410,7 +3416,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:30~21:50- 마지막 주문 21:10 [주말]- 11:30~21:30- 마지막 주문 20:50",
-        "textEn": "[평일]- 11:30~21:50- 마지막 주문 21:10 [주말]- 11:30~21:30- 마지막 주문 20:50",
+        "textEn": "Weekdays: 11:30–21:50; Last orders 21:10; Weekends: 11:30–21:30; Last orders 20:50",
         "source": "https://www.ktriptips.com/kor/food/2911152",
         "checked": "2026-10-02"
       },
@@ -3472,7 +3478,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~20:00 (마지막 주문 19:30)",
-        "textEn": "10:00~20:00 (마지막 주문 19:30)",
+        "textEn": "10:00–20:00 (Last orders 19:30)",
         "source": "https://www.ktriptips.com/kor/food/2902635",
         "checked": "2026-10-02"
       },
@@ -3534,7 +3540,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:00- 준비시간 15:00~17:00- 점심 마지막 주문 14:30 / 저녁 마지막 주문 20:00",
-        "textEn": "- 11:30~21:00- 준비시간 15:00~17:00- 점심 마지막 주문 14:30 / 저녁 마지막 주문 20:00",
+        "textEn": "11:30–21:00; Break 15:00–17:00; Lunch last orders 14:30 / Dinner last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/4070182",
         "checked": "2026-10-02"
       },
@@ -3588,7 +3594,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:20~21:40 (마지막 주문 20:50)",
-        "textEn": "11:20~21:40 (마지막 주문 20:50)",
+        "textEn": "11:20–21:40 (Last orders 20:50)",
         "source": "https://www.ktriptips.com/kor/food/2903917",
         "checked": "2026-10-02"
       },
@@ -3658,7 +3664,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3013790",
         "checked": "2026-10-02"
       },
@@ -3721,7 +3727,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2783361",
         "checked": "2026-10-02"
       },
@@ -3776,7 +3782,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 화요일~토요일 10:00~21:00 (마지막 주문 20:30)- 일요일 10:00~19:00 (마지막 주문 18:30)",
-        "textEn": "- Tuesday~Saturday 10:00~21:00 (마지막 주문 20:30)- Sunday 10:00~19:00 (마지막 주문 18:30)",
+        "textEn": "Tuesday–Saturday 10:00–21:00 (Last orders 20:30); Sunday 10:00–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/4086897",
         "checked": "2026-10-02"
       },
@@ -3884,7 +3890,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~19:00 (마지막 주문 18:30)",
-        "textEn": "11:30~19:00 (마지막 주문 18:30)",
+        "textEn": "11:30–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/4060255",
         "checked": "2026-10-02"
       },
@@ -3930,7 +3936,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 09:00~21:00[주말]- 10:00~21:00",
-        "textEn": "[평일]- 09:00~21:00[주말]- 10:00~21:00",
+        "textEn": "Weekdays: 09:00–21:00; Weekends: 10:00–21:00",
         "source": "https://www.ktriptips.com/kor/food/4055326",
         "checked": "2026-10-02"
       },
@@ -4046,7 +4052,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 첫째, 셋째 화요일",
-        "textEn": "매월 첫째, 셋째 Tuesday",
+        "textEn": "Closed on the first and third Tuesday of each month",
         "source": "https://www.ktriptips.com/kor/food/132960",
         "checked": "2026-10-02"
       },
@@ -4078,7 +4084,7 @@
         "labelEn": "Payment",
         "labelKo": "결제 안내",
         "textKo": "모든 카드 사용 가능",
-        "textEn": "모든 카드 사용 Available",
+        "textEn": "All cards accepted",
         "source": "https://www.ktriptips.com/kor/food/132960",
         "checked": "2026-10-02"
       }
@@ -4140,7 +4146,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (약 40대)",
-        "textEn": "Available (약 40대)",
+        "textEn": "Parking available (approximately 40 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/2608169",
         "checked": "2026-10-02"
       },
@@ -4159,14 +4165,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (약 40대)",
-        "textEn": "Available (약 40대)"
+        "textEn": "Parking available (approximately 40 vehicles)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (약 40대)",
-        "textEn": "Available (약 40대)",
+        "textEn": "Parking available (approximately 40 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/2608169",
         "checked": "2026-10-02"
       }
@@ -4178,7 +4184,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/4107264",
         "checked": "2026-10-02"
       },
@@ -4241,7 +4247,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2758220",
         "checked": "2026-10-02"
       },
@@ -4304,7 +4310,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:00~17:00 - 주말 10:00~18:00",
-        "textEn": "- 평일 11:00~17:00 - 주말 10:00~18:00",
+        "textEn": "Weekdays 11:00–17:00; Weekends 10:00–18:00",
         "source": "https://www.ktriptips.com/kor/food/2877148",
         "checked": "2026-10-02"
       },
@@ -4336,7 +4342,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2877148",
         "checked": "2026-10-02"
       },
@@ -4355,14 +4361,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2877148",
         "checked": "2026-10-02"
       }
@@ -4374,7 +4380,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[화요일~토요일]- 10:30~20:30 (마지막 주문 20:00)[일요일]- 10:30~17:30 (마지막 주문 17:00)",
-        "textEn": "[Tuesday~Saturday]- 10:30~20:30 (마지막 주문 20:00)[Sunday]- 10:30~17:30 (마지막 주문 17:00)",
+        "textEn": "Tuesday–Saturday: 10:30–20:30 (Last orders 20:00); Sunday: 10:30–17:30 (Last orders 17:00)",
         "source": "https://www.ktriptips.com/kor/food/4102223",
         "checked": "2026-10-02"
       },
@@ -4436,7 +4442,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "매일 09:30~18:00",
-        "textEn": "매일 09:30~18:00",
+        "textEn": "Daily 09:30–18:00",
         "source": "https://www.ktriptips.com/kor/food/2714230",
         "checked": "2026-10-02"
       },
@@ -4638,7 +4644,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3065226",
         "checked": "2026-10-02"
       },
@@ -4701,7 +4707,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/4067033",
         "checked": "2026-10-02"
       },
@@ -4872,7 +4878,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~18:00- 마지막 주문 17:30",
-        "textEn": "- 10:00~18:00- 마지막 주문 17:30",
+        "textEn": "10:00–18:00; Last orders 17:30",
         "source": "https://www.ktriptips.com/kor/food/4070472",
         "checked": "2026-10-02"
       },
@@ -4948,7 +4954,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:30~21:00-  마지막 주문 20:10- 주말 11:30~20:30-마지막 주문 19:40",
-        "textEn": "- 평일 11:30~21:00-  마지막 주문 20:10- 주말 11:30~20:30-마지막 주문 19:40",
+        "textEn": "Weekdays 11:30–21:00; Last orders 20:10; Weekends 11:30–20:30; Last orders 19:40",
         "source": "https://www.ktriptips.com/kor/food/3473605",
         "checked": "2026-10-02"
       },
@@ -5112,7 +5118,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (약 50대)",
-        "textEn": "Available (약 50대)",
+        "textEn": "Parking available (approximately 50 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/134141",
         "checked": "2026-10-02"
       },
@@ -5131,14 +5137,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (약 50대)",
-        "textEn": "Available (약 50대)"
+        "textEn": "Parking available (approximately 50 vehicles)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (약 50대)",
-        "textEn": "Available (약 50대)",
+        "textEn": "Parking available (approximately 50 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/134141",
         "checked": "2026-10-02"
       }
@@ -5150,7 +5156,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3060357",
         "checked": "2026-10-02"
       },
@@ -5205,7 +5211,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~18:00 (마지막 주문 17:30)",
-        "textEn": "10:30~18:00 (마지막 주문 17:30)",
+        "textEn": "10:30–18:00 (Last orders 17:30)",
         "source": "https://www.ktriptips.com/kor/food/4090470",
         "checked": "2026-10-02"
       },
@@ -5259,7 +5265,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:00)",
-        "textEn": "11:00~21:00 (마지막 주문 20:00)",
+        "textEn": "11:00–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2917229",
         "checked": "2026-10-02"
       },
@@ -5267,7 +5273,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매달 둘째 주, 넷째 주 수요일",
-        "textEn": "매달 둘째 주, 넷째 주 Wednesday",
+        "textEn": "Closed on the second and fourth Wednesday of each month",
         "source": "https://www.ktriptips.com/kor/food/2917229",
         "checked": "2026-10-02"
       },
@@ -5321,7 +5327,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 12:00~20:30- 준비시간 15:00~17:00- 마지막 주문 19:00",
-        "textEn": "- 12:00~20:30- 준비시간 15:00~17:00- 마지막 주문 19:00",
+        "textEn": "12:00–20:30; Break 15:00–17:00; Last orders 19:00",
         "source": "https://www.ktriptips.com/kor/food/2914868",
         "checked": "2026-10-02"
       },
@@ -5353,7 +5359,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2914868",
         "checked": "2026-10-02"
       }
@@ -5364,14 +5370,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2914868",
         "checked": "2026-10-02"
       }
@@ -5383,7 +5389,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~22:00 (준비시간 14:00~18:00)",
-        "textEn": "12:00~22:00 (준비시간 14:00~18:00)",
+        "textEn": "12:00–22:00 (Break 14:00–18:00)",
         "source": "https://www.ktriptips.com/kor/food/2914996",
         "checked": "2026-10-02"
       },
@@ -5391,7 +5397,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 일요일※ 설·추석에는 전화 문의 요망",
-        "textEn": "Every  Sunday※ 설·추석에는 전화 문의 요망",
+        "textEn": "Closed every Sunday. Call to check the Lunar New Year and Chuseok schedules.",
         "source": "https://www.ktriptips.com/kor/food/2914996",
         "checked": "2026-10-02"
       },
@@ -5437,7 +5443,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:00)",
-        "textEn": "11:00~21:00 (마지막 주문 20:00)",
+        "textEn": "11:00–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2926997",
         "checked": "2026-10-02"
       },
@@ -5445,7 +5451,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "설·추석 연휴※ 자세한 사항은 전화문의 요망",
-        "textEn": "설·추석 연휴※ 자세한 사항은 전화문의 요망",
+        "textEn": "Closed during the Lunar New Year and Chuseok holidays; call for details.",
         "source": "https://www.ktriptips.com/kor/food/2926997",
         "checked": "2026-10-02"
       },
@@ -5561,7 +5567,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652460",
         "checked": "2026-10-02"
       },
@@ -5569,7 +5575,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/tourspot/2652460",
         "checked": "2026-10-02"
       }
@@ -5583,7 +5589,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/129493",
         "checked": "2026-10-02"
       },
@@ -5708,7 +5714,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 일요일※ 변동 될 수 있으므로 홈페이지 참조 및 전화 문의 요망",
-        "textEn": "Every  Sunday※ 변동 될 수 있으므로 홈페이지 참조 및 전화 문의 요망",
+        "textEn": "Closed every Sunday. This may change; check the website and call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/2904549",
         "checked": "2026-10-02"
       },
@@ -5854,7 +5860,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[월요일~토요일]- 09:00~21:00- 마지막 주문 19:40[일요일]- 09:00~21:00- 준비시간 15:00~17:00- 마지막 주문 19:40※ 월요일~토요일에는 준비시간 없이 영업함",
-        "textEn": "[Monday~Saturday]- 09:00~21:00- 마지막 주문 19:40[Sunday]- 09:00~21:00- 준비시간 15:00~17:00- 마지막 주문 19:40※ Monday~Saturday에는 준비시간 없이 영업함",
+        "textEn": "Monday–Saturday: 09:00–21:00; Last orders 19:40; Sunday: 09:00–21:00; Break 15:00–17:00; Last orders 19:40. No break Monday–Saturday.",
         "source": "https://www.ktriptips.com/kor/food/1881664",
         "checked": "2026-10-02"
       },
@@ -5886,7 +5892,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/1881664",
         "checked": "2026-10-02"
       }
@@ -5897,14 +5903,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/1881664",
         "checked": "2026-10-02"
       }
@@ -5916,7 +5922,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "08:30~21:00※ 재료 소진 시 일시 마감되므로 전화 문의 후 방문 요망",
-        "textEn": "08:30~21:00※ 재료 소진 시 일시 마감되므로 전화 문의 후 방문 요망",
+        "textEn": "08:30–21:00. May temporarily close if ingredients run out; call before visiting.",
         "source": "https://www.ktriptips.com/kor/food/2833409",
         "checked": "2026-10-02"
       },
@@ -5970,7 +5976,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~21:00- 준비시간 15:00~17:30- 마지막 주문 20:00",
-        "textEn": "- 11:00~21:00- 준비시간 15:00~17:30- 마지막 주문 20:00",
+        "textEn": "11:00–21:00; Break 15:00–17:30; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/3066880",
         "checked": "2026-10-02"
       },
@@ -6032,7 +6038,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~23:00 (마지막 주문 22:30)",
-        "textEn": "10:00~23:00 (마지막 주문 22:30)",
+        "textEn": "10:00–23:00 (Last orders 22:30)",
         "source": "https://www.ktriptips.com/kor/food/3030178",
         "checked": "2026-10-02"
       },
@@ -6064,7 +6070,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3030178",
         "checked": "2026-10-02"
       }
@@ -6075,14 +6081,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3030178",
         "checked": "2026-10-02"
       }
@@ -6094,7 +6100,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~22:00※ 여객선 이용 시 배 운항시간 확인 요망",
-        "textEn": "12:00~22:00※ 여객선 이용 시 배 운항시간 확인 요망",
+        "textEn": "12:00–22:00. Check sailing times if arriving by ferry.",
         "source": "https://www.ktriptips.com/kor/tourspot/2800664",
         "checked": "2026-10-02"
       },
@@ -6110,7 +6116,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (최초 30분 무료 / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)",
-        "textEn": "Available요금 (최초 30분 Free / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)",
+        "textEn": "Parking available. First 30 minutes free; 60 minutes: KRW 1,500; 120 minutes: KRW 3,500; 240 minutes: KRW 7,500.",
         "source": "https://www.ktriptips.com/kor/tourspot/2800664",
         "checked": "2026-10-02"
       },
@@ -6118,7 +6124,7 @@
         "labelEn": "Admission",
         "labelKo": "입장료",
         "textKo": "무료 ※ 여객선 이용 시 별도 요금 발생",
-        "textEn": "Free ※ 여객선 이용 시 별도 요금 발생",
+        "textEn": "Free admission; ferry fares are charged separately if using the ferry.",
         "source": "https://www.ktriptips.com/kor/tourspot/2800664",
         "checked": "2026-10-02"
       }
@@ -6129,7 +6135,7 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (최초 30분 무료 / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)",
-        "textEn": "Available요금 (최초 30분 Free / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)"
+        "textEn": "Parking available. First 30 minutes free; 60 minutes: KRW 1,500; 120 minutes: KRW 3,500; 240 minutes: KRW 7,500."
       },
       "price": {
         "source": "https://www.ktriptips.com/kor/tourspot/2800664",
@@ -6137,14 +6143,14 @@
         "currency": "KRW",
         "basis": "admission",
         "textKo": "입장·이용: 무료 ※ 여객선 이용 시 별도 요금 발생",
-        "textEn": "Admission / use: Free ※ 여객선 이용 시 별도 요금 발생"
+        "textEn": "Free admission; ferry fares are charged separately if using the ferry."
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (최초 30분 무료 / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)",
-        "textEn": "Available요금 (최초 30분 Free / 60분 1,500원 / 120분 3,500원 / 240분 7,500원)",
+        "textEn": "Parking available. First 30 minutes free; 60 minutes: KRW 1,500; 120 minutes: KRW 3,500; 240 minutes: KRW 7,500.",
         "source": "https://www.ktriptips.com/kor/tourspot/2800664",
         "checked": "2026-10-02"
       }
@@ -6156,7 +6162,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2791501",
         "checked": "2026-10-02"
       },
@@ -6281,7 +6287,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:00~18:00[주말]- 10:00~19:00",
-        "textEn": "[평일]- 11:00~18:00[주말]- 10:00~19:00",
+        "textEn": "Weekdays: 11:00–18:00; Weekends: 10:00–19:00",
         "source": "https://www.ktriptips.com/kor/food/2927413",
         "checked": "2026-10-02"
       },
@@ -6343,7 +6349,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:30)",
-        "textEn": "11:00~21:00 (마지막 주문 20:30)",
+        "textEn": "11:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2916386",
         "checked": "2026-10-02"
       },
@@ -6475,7 +6481,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 수요일 (단, 수요일이 공휴일인 경우 정상영업)",
-        "textEn": "Every  Wednesday (단, Wednesday이 공휴일인 경우 정상영업)",
+        "textEn": "Closed every Wednesday, except when Wednesday is a public holiday.",
         "source": "https://www.ktriptips.com/kor/food/135923",
         "checked": "2026-10-02"
       },
@@ -6499,7 +6505,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (10대)",
-        "textEn": "Available (10대)",
+        "textEn": "Parking available (10 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/135923",
         "checked": "2026-10-02"
       }
@@ -6510,14 +6516,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (10대)",
-        "textEn": "Available (10대)"
+        "textEn": "Parking available (10 vehicles)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (10대)",
-        "textEn": "Available (10대)",
+        "textEn": "Parking available (10 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/135923",
         "checked": "2026-10-02"
       }
@@ -6607,7 +6613,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2046961",
         "checked": "2026-10-02"
       }
@@ -6618,14 +6624,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2046961",
         "checked": "2026-10-02"
       }
@@ -6699,7 +6705,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 경관조명 일몰 후~23:00- 분수 일몰 후~22:40 ※ 5월~8월 일몰 20:00 / 9월~10월 일몰 19:00",
-        "textEn": "- 경관조명 일몰 후~23:00- 분수 일몰 후~22:40 ※ 5월~8월 일몰 20:00 / 9월~10월 일몰 19:00",
+        "textEn": "Landscape lighting: after sunset–23:00. Fountain: after sunset–22:40. Listed sunset times: May–August 20:00; September–October 19:00.",
         "source": "https://www.ktriptips.com/kor/tourspot/3046002",
         "checked": "2026-10-02"
       },
@@ -6754,7 +6760,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3072040",
         "checked": "2026-10-02"
       },
@@ -6792,7 +6798,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일] 10:00~19:00 [주말] 09:00~20:00",
-        "textEn": "[평일] 10:00~19:00 [주말] 09:00~20:00",
+        "textEn": "Weekdays: 10:00–19:00; Weekends: 09:00–20:00",
         "source": "https://www.ktriptips.com/kor/food/2905150",
         "checked": "2026-10-02"
       },
@@ -6862,7 +6868,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 월요일 (월요일이 공휴일일 경우 영업함)",
-        "textEn": "Every  Monday (Monday이 공휴일일 경우 영업함)",
+        "textEn": "Closed every Monday, except when Monday is a public holiday.",
         "source": "https://www.ktriptips.com/kor/food/2837982",
         "checked": "2026-10-02"
       },
@@ -6886,7 +6892,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2837982",
         "checked": "2026-10-02"
       },
@@ -6905,14 +6911,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2837982",
         "checked": "2026-10-02"
       }
@@ -7034,7 +7040,7 @@
         "labelEn": "Payment",
         "labelKo": "결제 안내",
         "textKo": "모든 카드 사용 가능",
-        "textEn": "모든 카드 사용 Available",
+        "textEn": "All cards accepted",
         "source": "https://www.ktriptips.com/kor/food/2437652",
         "checked": "2026-10-02"
       }
@@ -7072,7 +7078,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/food/2844088",
         "checked": "2026-10-02"
       },
@@ -7204,7 +7210,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 19:00)※ 재료소진 시 마감",
-        "textEn": "11:00~21:00 (마지막 주문 19:00)※ 재료소진 시 마감",
+        "textEn": "11:00–21:00 (Last orders 19:00). Closes when ingredients run out.",
         "source": "https://www.ktriptips.com/kor/food/2904282",
         "checked": "2026-10-02"
       },
@@ -7236,7 +7242,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2904282",
         "checked": "2026-10-02"
       }
@@ -7247,14 +7253,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2904282",
         "checked": "2026-10-02"
       }
@@ -7266,7 +7272,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방※ 자세한 사항은 전화문의 요망",
-        "textEn": "상시 개방※ 자세한 사항은 전화문의 요망",
+        "textEn": "Open at all times; call for details.",
         "source": "https://www.ktriptips.com/kor/tourspot/1580917",
         "checked": "2026-10-02"
       },
@@ -7329,7 +7335,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/4054732",
         "checked": "2026-10-02"
       },
@@ -7454,7 +7460,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~20:00 (마지막 주문 확인 필요)",
-        "textEn": "11:00~20:00 (마지막 주문 확인 필요)",
+        "textEn": "11:00–20:00 (confirm last-order time)",
         "source": "https://www.ktriptips.com/kor/food/4095424",
         "checked": "2026-10-02"
       },
@@ -7516,7 +7522,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:30)",
-        "textEn": "10:00~21:00 (마지막 주문 20:30)",
+        "textEn": "10:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/3533979",
         "checked": "2026-10-02"
       },
@@ -7640,7 +7646,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:50~14:00※ 예약제로 운영되므로 전화 문의 후 방문 요망",
-        "textEn": "11:50~14:00※ 예약제로 운영되므로 전화 문의 후 방문 요망",
+        "textEn": "11:50–14:00. Operates by reservation; call before visiting.",
         "source": "https://www.ktriptips.com/kor/food/1999506",
         "checked": "2026-10-02"
       },
@@ -7680,7 +7686,7 @@
         "labelEn": "Payment",
         "labelKo": "결제 안내",
         "textKo": "모든 카드 사용 가능",
-        "textEn": "모든 카드 사용 Available",
+        "textEn": "All cards accepted",
         "source": "https://www.ktriptips.com/kor/food/1999506",
         "checked": "2026-10-02"
       }
@@ -7858,7 +7864,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)",
-        "textEn": "Available (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)",
+        "textEn": "Parking available: go approximately 30m farther past the cafe building, directly behind the small grey-roofed house.",
         "source": "https://www.ktriptips.com/kor/food/2873737",
         "checked": "2026-10-02"
       },
@@ -7877,14 +7883,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)",
-        "textEn": "Available (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)"
+        "textEn": "Parking available: go approximately 30m farther past the cafe building, directly behind the small grey-roofed house."
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)",
-        "textEn": "Available (카페 건물에서 약 30m 더 들어오면 작은 회색지붕집 바로 뒤)",
+        "textEn": "Parking available: go approximately 30m farther past the cafe building, directly behind the small grey-roofed house.",
         "source": "https://www.ktriptips.com/kor/food/2873737",
         "checked": "2026-10-02"
       }
@@ -7896,7 +7902,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "매일 10:00 - 20:00",
-        "textEn": "매일 10:00 - 20:00",
+        "textEn": "Daily 10:00–20:00",
         "source": "https://www.ktriptips.com/kor/food/3456289",
         "checked": "2026-10-02"
       },
@@ -7904,7 +7910,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 화요일 정기휴무  (여름에 매주 월요일 휴무)",
-        "textEn": "Every  Tuesday 정기휴무  (여름에 Every  Monday 휴무)",
+        "textEn": "Regular closure: every Tuesday (every Monday in summer).",
         "source": "https://www.ktriptips.com/kor/food/3456289",
         "checked": "2026-10-02"
       },
@@ -8020,7 +8026,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:00~18:00 - 주말 11:00~21:00",
-        "textEn": "- 평일 11:00~18:00 - 주말 11:00~21:00",
+        "textEn": "Weekdays 11:00–18:00; Weekends 11:00–21:00",
         "source": "https://www.ktriptips.com/kor/food/2873678",
         "checked": "2026-10-02"
       },
@@ -8052,7 +8058,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873678",
         "checked": "2026-10-02"
       },
@@ -8071,14 +8077,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873678",
         "checked": "2026-10-02"
       }
@@ -8090,7 +8096,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~20:30- 준비시간 15:00~17:00- 마지막 주문 20:00",
-        "textEn": "- 11:00~20:30- 준비시간 15:00~17:00- 마지막 주문 20:00",
+        "textEn": "11:00–20:30; Break 15:00–17:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2873718",
         "checked": "2026-10-02"
       },
@@ -8122,7 +8128,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873718",
         "checked": "2026-10-02"
       }
@@ -8133,14 +8139,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873718",
         "checked": "2026-10-02"
       }
@@ -8152,7 +8158,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~22:00 (마지막 주문 20:30)",
-        "textEn": "11:30~22:00 (마지막 주문 20:30)",
+        "textEn": "11:30–22:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2664950",
         "checked": "2026-10-02"
       },
@@ -8160,7 +8166,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "설·추석 전날, 당일 / 여름 휴가※ 전화 문의",
-        "textEn": "설·추석 전날, 당일 / 여름 휴가※ 전화 문의",
+        "textEn": "Closed on the day before and the day of Lunar New Year and Chuseok, and for a summer holiday. Call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/2664950",
         "checked": "2026-10-02"
       },
@@ -8184,7 +8190,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (50대)",
-        "textEn": "Available (50대)",
+        "textEn": "Parking available (50 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/2664950",
         "checked": "2026-10-02"
       },
@@ -8203,14 +8209,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (50대)",
-        "textEn": "Available (50대)"
+        "textEn": "Parking available (50 vehicles)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (50대)",
-        "textEn": "Available (50대)",
+        "textEn": "Parking available (50 vehicles)",
         "source": "https://www.ktriptips.com/kor/food/2664950",
         "checked": "2026-10-02"
       }
@@ -8222,7 +8228,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "월~토 10:30 ~ 20:30",
-        "textEn": "월~토 10:30 ~ 20:30",
+        "textEn": "Monday–Saturday 10:30 – 20:30",
         "source": "https://www.ktriptips.com/kor/food/2859166",
         "checked": "2026-10-02"
       },
@@ -8230,7 +8236,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 일요일 정기휴무",
-        "textEn": "Every  Sunday 정기휴무",
+        "textEn": "Closed every Sunday",
         "source": "https://www.ktriptips.com/kor/food/2859166",
         "checked": "2026-10-02"
       },
@@ -8284,7 +8290,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:30 - 준비시간 15:00~17:00- 점심 마지막 주문 14:00 - 저녁 마지막 주문 20:30",
-        "textEn": "- 11:30~21:30 - 준비시간 15:00~17:00- 점심 마지막 주문 14:00 - 저녁 마지막 주문 20:30",
+        "textEn": "11:30–21:30; Break 15:00–17:00; Lunch last orders 14:00; Dinner last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2837737",
         "checked": "2026-10-02"
       },
@@ -8354,7 +8360,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~19:00 (마지막 주문 18:00)",
-        "textEn": "11:00~19:00 (마지막 주문 18:00)",
+        "textEn": "11:00–19:00 (Last orders 18:00)",
         "source": "https://www.ktriptips.com/kor/food/4020623",
         "checked": "2026-10-02"
       },
@@ -8448,7 +8454,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3378796",
         "checked": "2026-10-02"
       }
@@ -8459,14 +8465,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3378796",
         "checked": "2026-10-02"
       }
@@ -8532,7 +8538,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "08:30~18:00 (마지막 주문 17:30)",
-        "textEn": "08:30~18:00 (마지막 주문 17:30)",
+        "textEn": "08:30–18:00 (Last orders 17:30)",
         "source": "https://www.ktriptips.com/kor/food/4086917",
         "checked": "2026-10-02"
       },
@@ -8586,7 +8592,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:00~21:00- 준비시간 14:30~17:00- 마지막 주문 20:00[주말]- 11:00~21:00- 준비시간 15:30~17:00- 마지막 주문 20:00",
-        "textEn": "[평일]- 11:00~21:00- 준비시간 14:30~17:00- 마지막 주문 20:00[주말]- 11:00~21:00- 준비시간 15:30~17:00- 마지막 주문 20:00",
+        "textEn": "Weekdays: 11:00–21:00; Break 14:30–17:00; Last orders 20:00; Weekends: 11:00–21:00; Break 15:30–17:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2841784",
         "checked": "2026-10-02"
       },
@@ -8618,7 +8624,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2841784",
         "checked": "2026-10-02"
       }
@@ -8629,14 +8635,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2841784",
         "checked": "2026-10-02"
       }
@@ -8718,7 +8724,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "매일 10:00 - 21:00",
-        "textEn": "매일 10:00 - 21:00",
+        "textEn": "Daily 10:00–21:00",
         "source": "https://www.ktriptips.com/kor/food/1038058",
         "checked": "2026-10-02"
       },
@@ -8750,7 +8756,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "주차 가능",
-        "textEn": "주차 Available",
+        "textEn": "Parking available",
         "source": "https://www.ktriptips.com/kor/food/1038058",
         "checked": "2026-10-02"
       },
@@ -8758,7 +8764,7 @@
         "labelEn": "Payment",
         "labelKo": "결제 안내",
         "textKo": "모든 카드 사용 가능",
-        "textEn": "모든 카드 사용 Available",
+        "textEn": "All cards accepted",
         "source": "https://www.ktriptips.com/kor/food/1038058",
         "checked": "2026-10-02"
       }
@@ -8769,14 +8775,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "주차 가능",
-        "textEn": "주차 Available"
+        "textEn": "Parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "주차 가능",
-        "textEn": "주차 Available",
+        "textEn": "Parking available",
         "source": "https://www.ktriptips.com/kor/food/1038058",
         "checked": "2026-10-02"
       }
@@ -8788,7 +8794,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~19:40 - 준비 시간 15:00~17:00",
-        "textEn": "10:30~19:40 - 준비 시간 15:00~17:00",
+        "textEn": "10:30–19:40; Break 15:00–17:00",
         "source": "https://www.ktriptips.com/kor/food/2867862",
         "checked": "2026-10-02"
       },
@@ -8895,10 +8901,10 @@
       {
         "labelEn": "Hours",
         "labelKo": "운영 시간",
-        "textKo": "매일 10:30 - 9:00 (8:30 라스트오더)",
-        "textEn": "매일 10:30 - 9:00 (8:30 라스트오더)",
+        "textKo": "관광정보에 매일 10:30~9:00, 마지막 주문 8:30으로 기재되어 있으나 오전·오후 구분이 불명확해요. 마감·마지막 주문 시간은 매장에 확인하세요.",
+        "textEn": "The tourism listing gives daily hours as 10:30–9:00 and last orders as 8:30, without clear AM/PM notation. Confirm closing and last orders with the cafe.",
         "source": "https://www.ktriptips.com/kor/food/3445436",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Closures",
@@ -8934,7 +8940,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2743326",
         "checked": "2026-10-02"
       },
@@ -8980,7 +8986,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652449",
         "checked": "2026-10-02"
       },
@@ -9035,7 +9041,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2663439",
         "checked": "2026-10-02"
       },
@@ -9098,7 +9104,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652455",
         "checked": "2026-10-02"
       },
@@ -9106,7 +9112,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/tourspot/2652455",
         "checked": "2026-10-02"
       }
@@ -9120,7 +9126,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652453",
         "checked": "2026-10-02"
       },
@@ -9128,7 +9134,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/tourspot/2652453",
         "checked": "2026-10-02"
       },
@@ -9166,7 +9172,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652451",
         "checked": "2026-10-02"
       },
@@ -9174,7 +9180,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/tourspot/2652451",
         "checked": "2026-10-02"
       },
@@ -9212,7 +9218,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2652447",
         "checked": "2026-10-02"
       },
@@ -9220,7 +9226,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중 무휴",
-        "textEn": "연중 무휴",
+        "textEn": "Open year-round",
         "source": "https://www.ktriptips.com/kor/tourspot/2652447",
         "checked": "2026-10-02"
       }
@@ -9234,7 +9240,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일] - 10:30~16:30 - 마지막 주문 15:30 [주말] - 10:30~18:00 - 마지막 주문 17:00",
-        "textEn": "[평일] - 10:30~16:30 - 마지막 주문 15:30 [주말] - 10:30~18:00 - 마지막 주문 17:00",
+        "textEn": "Weekdays: 10:30–16:30; Last orders 15:30; Weekends: 10:30–18:00; Last orders 17:00",
         "source": "https://www.ktriptips.com/kor/food/2841819",
         "checked": "2026-10-02"
       },
@@ -9296,7 +9302,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~17:00 (마지막 주문 16:30)",
-        "textEn": "11:00~17:00 (마지막 주문 16:30)",
+        "textEn": "11:00–17:00 (Last orders 16:30)",
         "source": "https://www.ktriptips.com/kor/food/2915795",
         "checked": "2026-10-02"
       },
@@ -9358,7 +9364,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 11:00~17:00- 주말 11:00~19:00",
-        "textEn": "- 평일 11:00~17:00- 주말 11:00~19:00",
+        "textEn": "Weekdays 11:00–17:00; Weekends 11:00–19:00",
         "source": "https://www.ktriptips.com/kor/food/3394748",
         "checked": "2026-10-02"
       },
@@ -9474,7 +9480,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[월요일~토요일]- 12:00~18:00- 마지막 주문 17:30[일요일]- 12:30~18:00- 마지막 주문 17:30",
-        "textEn": "[Monday~Saturday]- 12:00~18:00- 마지막 주문 17:30[Sunday]- 12:30~18:00- 마지막 주문 17:30",
+        "textEn": "Monday–Saturday: 12:00–18:00; Last orders 17:30; Sunday: 12:30–18:00; Last orders 17:30",
         "source": "https://www.ktriptips.com/kor/food/2910488",
         "checked": "2026-10-02"
       },
@@ -9536,7 +9542,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~19:00 (마지막 주문 18:00)",
-        "textEn": "10:00~19:00 (마지막 주문 18:00)",
+        "textEn": "10:00–19:00 (Last orders 18:00)",
         "source": "https://www.ktriptips.com/kor/food/2723094",
         "checked": "2026-10-02"
       },
@@ -9606,7 +9612,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~19:00 (마지막 주문 18:30)",
-        "textEn": "10:00~19:00 (마지막 주문 18:30)",
+        "textEn": "10:00–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/3060359",
         "checked": "2026-10-02"
       },
@@ -9638,7 +9644,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3060359",
         "checked": "2026-10-02"
       }
@@ -9649,14 +9655,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3060359",
         "checked": "2026-10-02"
       }
@@ -9668,7 +9674,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:30)",
-        "textEn": "10:00~21:00 (마지막 주문 20:30)",
+        "textEn": "10:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/3585663",
         "checked": "2026-10-02"
       },
@@ -9730,7 +9736,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~18:00 (마지막 주문 17:00)※ 변동될 수 있으므로 온라인 공지 참고 및 전화 문의 요망",
-        "textEn": "10:30~18:00 (마지막 주문 17:00)※ 변동될 수 있으므로 온라인 공지 참고 및 전화 문의 요망",
+        "textEn": "10:30–18:00 (Last orders 17:00). This may change; check online notices and call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/3555803",
         "checked": "2026-10-02"
       },
@@ -9738,7 +9744,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 화요일~목요일※ 변동될 수 있으므로 온라인 공지 참고 및 전화 문의 요망",
-        "textEn": "Every  Tuesday~Thursday※ 변동될 수 있으므로 온라인 공지 참고 및 전화 문의 요망",
+        "textEn": "Closed every Tuesday–Thursday. This may change; check online notices and call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/3555803",
         "checked": "2026-10-02"
       },
@@ -9792,7 +9798,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~19:30 (마지막 주문 19:00)",
-        "textEn": "11:00~19:30 (마지막 주문 19:00)",
+        "textEn": "11:00–19:30 (Last orders 19:00)",
         "source": "https://www.ktriptips.com/kor/food/2778022",
         "checked": "2026-10-02"
       },
@@ -9800,7 +9806,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 수요일※ 비정기적 휴무가 있으므로 전화 문의 후 방문 요망",
-        "textEn": "Every  Wednesday※ 비정기적 휴무가 있으므로 전화 문의 후 방문 요망",
+        "textEn": "Closed every Wednesday, with additional irregular closures; call before visiting.",
         "source": "https://www.ktriptips.com/kor/food/2778022",
         "checked": "2026-10-02"
       },
@@ -9854,7 +9860,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "추석 당일만 휴무",
-        "textEn": "추석 당일만 휴무",
+        "textEn": "Closed only on Chuseok day",
         "source": "https://www.ktriptips.com/kor/food/2891656",
         "checked": "2026-10-02"
       },
@@ -9916,7 +9922,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:00 - 준비시간 15:00~17:00 - 마지막 주문 20:00",
-        "textEn": "- 11:30~21:00 - 준비시간 15:00~17:00 - 마지막 주문 20:00",
+        "textEn": "11:30–21:00; Break 15:00–17:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2783396",
         "checked": "2026-10-02"
       },
@@ -10040,7 +10046,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:40)",
-        "textEn": "10:00~21:00 (마지막 주문 20:40)",
+        "textEn": "10:00–21:00 (Last orders 20:40)",
         "source": "https://www.ktriptips.com/kor/food/2862714",
         "checked": "2026-10-02"
       },
@@ -10102,7 +10108,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~22:00 (마지막 주문 21:30)",
-        "textEn": "11:00~22:00 (마지막 주문 21:30)",
+        "textEn": "11:00–22:00 (Last orders 21:30)",
         "source": "https://www.ktriptips.com/kor/food/2856830",
         "checked": "2026-10-02"
       },
@@ -10164,7 +10170,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~22:00 (마지막 주문 21:00)",
-        "textEn": "11:00~22:00 (마지막 주문 21:00)",
+        "textEn": "11:00–22:00 (Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/2844532",
         "checked": "2026-10-02"
       },
@@ -10288,7 +10294,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 하절기 10:00~22:00 - 동절기 10:00~21:30",
-        "textEn": "- 하절기 10:00~22:00 - 동절기 10:00~21:30",
+        "textEn": "Summer 10:00–22:00; Winter 10:00–21:30",
         "source": "https://www.ktriptips.com/kor/food/2833344",
         "checked": "2026-10-02"
       },
@@ -10350,7 +10356,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2610236",
         "checked": "2026-10-02"
       },
@@ -10413,7 +10419,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2714824",
         "checked": "2026-10-02"
       },
@@ -10459,7 +10465,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2714833",
         "checked": "2026-10-02"
       },
@@ -10497,7 +10503,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:30)",
-        "textEn": "10:00~21:00 (마지막 주문 20:30)",
+        "textEn": "10:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/3007399",
         "checked": "2026-10-02"
       },
@@ -10559,7 +10565,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:30~20:30 (마지막 주문 20:00)",
-        "textEn": "10:30~20:30 (마지막 주문 20:00)",
+        "textEn": "10:30–20:30 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/3415216",
         "checked": "2026-10-02"
       },
@@ -10621,7 +10627,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 09:00~20:00- 주말 09:00~21:00",
-        "textEn": "- 평일 09:00~20:00- 주말 09:00~21:00",
+        "textEn": "Weekdays 09:00–20:00; Weekends 09:00–21:00",
         "source": "https://www.ktriptips.com/kor/food/3416157",
         "checked": "2026-10-02"
       },
@@ -10653,7 +10659,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3416157",
         "checked": "2026-10-02"
       }
@@ -10664,14 +10670,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3416157",
         "checked": "2026-10-02"
       }
@@ -10683,7 +10689,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:30)",
-        "textEn": "10:00~21:00 (마지막 주문 20:30)",
+        "textEn": "10:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/3318471",
         "checked": "2026-10-02"
       },
@@ -10745,7 +10751,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 10:00~22:00 (마지막 주문 21:30)- 주말 08:00~22:00 (마지막 주문 21:30)",
-        "textEn": "- 평일 10:00~22:00 (마지막 주문 21:30)- 주말 08:00~22:00 (마지막 주문 21:30)",
+        "textEn": "Weekdays 10:00–22:00 (Last orders 21:30); Weekends 08:00–22:00 (Last orders 21:30)",
         "source": "https://www.ktriptips.com/kor/food/2828356",
         "checked": "2026-10-02"
       },
@@ -10939,7 +10945,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:30 (마지막 주문 20:30)",
-        "textEn": "11:00~21:30 (마지막 주문 20:30)",
+        "textEn": "11:00–21:30 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/799503",
         "checked": "2026-10-02"
       },
@@ -10971,7 +10977,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/799503",
         "checked": "2026-10-02"
       }
@@ -10982,14 +10988,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/799503",
         "checked": "2026-10-02"
       }
@@ -11001,7 +11007,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~22:00 - 마지막 주문 20:50",
-        "textEn": "- 11:30~22:00 - 마지막 주문 20:50",
+        "textEn": "11:30–22:00; Last orders 20:50",
         "source": "https://www.ktriptips.com/kor/food/2865782",
         "checked": "2026-10-02"
       },
@@ -11009,7 +11015,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 다섯째 월요일",
-        "textEn": "매월 다섯째 Monday",
+        "textEn": "Closed on the fifth Monday of each month",
         "source": "https://www.ktriptips.com/kor/food/2865782",
         "checked": "2026-10-02"
       },
@@ -11063,7 +11069,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~22:00 - 마지막 주문 21:20",
-        "textEn": "- 10:00~22:00 - 마지막 주문 21:20",
+        "textEn": "10:00–22:00; Last orders 21:20",
         "source": "https://www.ktriptips.com/kor/food/2863211",
         "checked": "2026-10-02"
       },
@@ -11125,7 +11131,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 09:30~20:00 - 마지막 주문 19:30",
-        "textEn": "- 09:30~20:00 - 마지막 주문 19:30",
+        "textEn": "09:30–20:00; Last orders 19:30",
         "source": "https://www.ktriptips.com/kor/food/2828576",
         "checked": "2026-10-02"
       },
@@ -11187,7 +11193,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~23:00 - 마지막 주문 22:30",
-        "textEn": "- 10:00~23:00 - 마지막 주문 22:30",
+        "textEn": "10:00–23:00; Last orders 22:30",
         "source": "https://www.ktriptips.com/kor/food/2773713",
         "checked": "2026-10-02"
       },
@@ -11249,7 +11255,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~19:00 - 마지막 주문 18:30",
-        "textEn": "- 11:00~19:00 - 마지막 주문 18:30",
+        "textEn": "11:00–19:00; Last orders 18:30",
         "source": "https://www.ktriptips.com/kor/food/2853351",
         "checked": "2026-10-02"
       },
@@ -11257,7 +11263,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "평일",
-        "textEn": "평일",
+        "textEn": "Closed on weekdays",
         "source": "https://www.ktriptips.com/kor/food/2853351",
         "checked": "2026-10-02"
       },
@@ -11311,7 +11317,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 12:00~19:50 - 마지막 주문 19:20",
-        "textEn": "- 12:00~19:50 - 마지막 주문 19:20",
+        "textEn": "12:00–19:50; Last orders 19:20",
         "source": "https://www.ktriptips.com/kor/food/2893604",
         "checked": "2026-10-02"
       },
@@ -11343,7 +11349,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2893604",
         "checked": "2026-10-02"
       }
@@ -11354,14 +11360,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2893604",
         "checked": "2026-10-02"
       }
@@ -11373,7 +11379,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~21:00 - 준비시간(평일) 15:30~17:00 - 마지막 주문 20:00",
-        "textEn": "- 11:00~21:00 - 준비시간(평일) 15:30~17:00 - 마지막 주문 20:00",
+        "textEn": "11:00–21:00; Weekday break 15:30–17:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2772338",
         "checked": "2026-10-02"
       },
@@ -11435,7 +11441,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 월요일~토요일 09:00~21:30 (마지막 주문 21:00) - 일요일 09:00~21:00 (마지막 주문 20:30)",
-        "textEn": "- Monday~Saturday 09:00~21:30 (마지막 주문 21:00) - Sunday 09:00~21:00 (마지막 주문 20:30)",
+        "textEn": "Monday–Saturday 09:00–21:30 (Last orders 21:00); Sunday 09:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2765512",
         "checked": "2026-10-02"
       },
@@ -11497,7 +11503,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2755455",
         "checked": "2026-10-02"
       },
@@ -11543,7 +11549,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[하절기] - 10:00~19:00 - 마지막 주문 18:15 [동절기] - 10:30~18:00",
-        "textEn": "[하절기] - 10:00~19:00 - 마지막 주문 18:15 [동절기] - 10:30~18:00",
+        "textEn": "Summer: 10:00–19:00; Last orders 18:15; Winter: 10:30–18:00",
         "source": "https://www.ktriptips.com/kor/food/2859150",
         "checked": "2026-10-02"
       },
@@ -11683,7 +11689,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 09:00~17:00- 주말 10:00~18:00",
-        "textEn": "- 평일 09:00~17:00- 주말 10:00~18:00",
+        "textEn": "Weekdays 09:00–17:00; Weekends 10:00–18:00",
         "source": "https://www.ktriptips.com/kor/food/2909982",
         "checked": "2026-10-02"
       },
@@ -11745,7 +11751,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~19:30 (마지막 주문 18:00)",
-        "textEn": "10:00~19:30 (마지막 주문 18:00)",
+        "textEn": "10:00–19:30 (Last orders 18:00)",
         "source": "https://www.ktriptips.com/kor/food/4055439",
         "checked": "2026-10-02"
       },
@@ -11839,7 +11845,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3037925",
         "checked": "2026-10-02"
       }
@@ -11850,14 +11856,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금 (무료)",
-        "textEn": "Available요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/3037925",
         "checked": "2026-10-02"
       }
@@ -11869,7 +11875,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일]- 11:00~20:50- 준비시간 14:50~17:30- 마지막 주문 19:50[주말]- 11:00~20:50- 마지막 주문 19:50",
-        "textEn": "[평일]- 11:00~20:50- 준비시간 14:50~17:30- 마지막 주문 19:50[주말]- 11:00~20:50- 마지막 주문 19:50",
+        "textEn": "Weekdays: 11:00–20:50; Break 14:50–17:30; Last orders 19:50; Weekends: 11:00–20:50; Last orders 19:50",
         "source": "https://www.ktriptips.com/kor/food/4002932",
         "checked": "2026-10-02"
       },
@@ -12015,7 +12021,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "17:30~24:00 (마지막 주문 23:00)",
-        "textEn": "17:30~24:00 (마지막 주문 23:00)",
+        "textEn": "17:30–24:00 (Last orders 23:00)",
         "source": "https://www.ktriptips.com/kor/food/2871997",
         "checked": "2026-10-02"
       },
@@ -12185,7 +12191,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 20:00)",
-        "textEn": "10:00~21:00 (마지막 주문 20:00)",
+        "textEn": "10:00–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2870495",
         "checked": "2026-10-02"
       },
@@ -12247,7 +12253,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~15:00 ※ 변동될 수 있으므로 홈페이지 참조",
-        "textEn": "10:00~15:00 ※ 변동될 수 있으므로 홈페이지 참조",
+        "textEn": "10:00–15:00. This may change; check the website.",
         "source": "https://www.ktriptips.com/kor/food/2864429",
         "checked": "2026-10-02"
       },
@@ -12309,7 +12315,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~18:00 (마지막 주문 17:50)",
-        "textEn": "10:00~18:00 (마지막 주문 17:50)",
+        "textEn": "10:00–18:00 (Last orders 17:50)",
         "source": "https://www.ktriptips.com/kor/food/2863913",
         "checked": "2026-10-02"
       },
@@ -12317,7 +12323,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중무휴 ※ 변동될 수 있으므로 전화문의 요망",
-        "textEn": "Open year-round ※ 변동될 수 있으므로 전화문의 요망",
+        "textEn": "Open year-round; this may change, so call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/2863913",
         "checked": "2026-10-02"
       },
@@ -12379,7 +12385,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중무휴 ※ 휴무 시 홈페이지 공지",
-        "textEn": "Open year-round ※ 휴무 시 홈페이지 공지",
+        "textEn": "Open year-round; any closures are announced on the website.",
         "source": "https://www.ktriptips.com/kor/food/2862117",
         "checked": "2026-10-02"
       },
@@ -12503,7 +12509,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~16:30 (마지막 주문 16:00)",
-        "textEn": "11:00~16:30 (마지막 주문 16:00)",
+        "textEn": "11:00–16:30 (Last orders 16:00)",
         "source": "https://www.ktriptips.com/kor/food/2860705",
         "checked": "2026-10-02"
       },
@@ -12565,7 +12571,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "08:30~17:30 (마지막 주문 17:00)",
-        "textEn": "08:30~17:30 (마지막 주문 17:00)",
+        "textEn": "08:30–17:30 (Last orders 17:00)",
         "source": "https://www.ktriptips.com/kor/food/2858942",
         "checked": "2026-10-02"
       },
@@ -12627,7 +12633,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:30 (마지막 주문 21:00)",
-        "textEn": "11:00~21:30 (마지막 주문 21:00)",
+        "textEn": "11:00–21:30 (Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/4070900",
         "checked": "2026-10-02"
       },
@@ -12681,7 +12687,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 10:00~19:00 (마지막 주문 18:30)- 주말 09:00~19:00 (마지막 주문 18:30)",
-        "textEn": "- 평일 10:00~19:00 (마지막 주문 18:30)- 주말 09:00~19:00 (마지막 주문 18:30)",
+        "textEn": "Weekdays 10:00–19:00 (Last orders 18:30); Weekends 09:00–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/4058991",
         "checked": "2026-10-02"
       },
@@ -12735,7 +12741,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~18:00 (마지막 주문 17:00)",
-        "textEn": "11:00~18:00 (마지막 주문 17:00)",
+        "textEn": "11:00–18:00 (Last orders 17:00)",
         "source": "https://www.ktriptips.com/kor/food/4059119",
         "checked": "2026-10-02"
       },
@@ -12789,7 +12795,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~18:00- 마지막 주문 17:40",
-        "textEn": "- 10:00~18:00- 마지막 주문 17:40",
+        "textEn": "10:00–18:00; Last orders 17:40",
         "source": "https://www.ktriptips.com/kor/food/3560307",
         "checked": "2026-10-02"
       },
@@ -12797,7 +12803,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 토요일, 일요일 / 공휴일",
-        "textEn": "Every  Saturday, Sunday / 공휴일",
+        "textEn": "Closed every Saturday, Sunday and public holiday",
         "source": "https://www.ktriptips.com/kor/food/3560307",
         "checked": "2026-10-02"
       },
@@ -12821,7 +12827,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 (약 소형 4대)",
-        "textEn": "Available (약 소형 4대)",
+        "textEn": "Parking available (approximately 4 small vehicles)",
         "source": "https://www.ktriptips.com/kor/food/3560307",
         "checked": "2026-10-02"
       }
@@ -12832,14 +12838,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 (약 소형 4대)",
-        "textEn": "Available (약 소형 4대)"
+        "textEn": "Parking available (approximately 4 small vehicles)"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 (약 소형 4대)",
-        "textEn": "Available (약 소형 4대)",
+        "textEn": "Parking available (approximately 4 small vehicles)",
         "source": "https://www.ktriptips.com/kor/food/3560307",
         "checked": "2026-10-02"
       }
@@ -12851,7 +12857,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~19:00 (금, 토 10:30~21:00)",
-        "textEn": "12:00~19:00 (금, 토 10:30~21:00)",
+        "textEn": "12:00–19:00 (Friday, Saturday 10:30–21:00)",
         "source": "https://www.ktriptips.com/kor/food/2844119",
         "checked": "2026-10-02"
       },
@@ -12913,7 +12919,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~19:00 (라스트오더 18:30)",
-        "textEn": "10:00~19:00 (라스트오더 18:30)",
+        "textEn": "10:00–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/2892949",
         "checked": "2026-10-02"
       },
@@ -12945,7 +12951,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2892949",
         "checked": "2026-10-02"
       }
@@ -12956,14 +12962,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2892949",
         "checked": "2026-10-02"
       }
@@ -12975,7 +12981,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00 ~ 21:00 (라스트오더 20:00)",
-        "textEn": "11:00 ~ 21:00 (라스트오더 20:00)",
+        "textEn": "11:00 – 21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2774725",
         "checked": "2026-10-02"
       },
@@ -12983,7 +12989,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 넷째주 수요일",
-        "textEn": "매월 넷째주 Wednesday",
+        "textEn": "Closed on the fourth Wednesday of each month",
         "source": "https://www.ktriptips.com/kor/food/2774725",
         "checked": "2026-10-02"
       },
@@ -13029,7 +13035,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/3061701",
         "checked": "2026-10-02"
       },
@@ -13092,7 +13098,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/1993734",
         "checked": "2026-10-02"
       },
@@ -13130,7 +13136,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2779522",
         "checked": "2026-10-02"
       },
@@ -13168,7 +13174,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2738705",
         "checked": "2026-10-02"
       },
@@ -13214,7 +13220,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2738701",
         "checked": "2026-10-02"
       },
@@ -13260,7 +13266,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2791450",
         "checked": "2026-10-02"
       },
@@ -13306,7 +13312,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 10:00-22:00- 주말 09:00~22:00※ 마지막 주문 21:40",
-        "textEn": "- 평일 10:00-22:00- 주말 09:00~22:00※ 마지막 주문 21:40",
+        "textEn": "Weekdays 10:00–22:00; Weekends 09:00–22:00; Last orders 21:40",
         "source": "https://www.ktriptips.com/kor/food/2902322",
         "checked": "2026-10-02"
       },
@@ -13368,7 +13374,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~21:30 (마지막 주문 21:00)",
-        "textEn": "12:00~21:30 (마지막 주문 21:00)",
+        "textEn": "12:00–21:30 (Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/2852408",
         "checked": "2026-10-02"
       },
@@ -13438,7 +13444,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 10:00~18:00 - 주말 10:00~20:00",
-        "textEn": "- 평일 10:00~18:00 - 주말 10:00~20:00",
+        "textEn": "Weekdays 10:00–18:00; Weekends 10:00–20:00",
         "source": "https://www.ktriptips.com/kor/food/2891887",
         "checked": "2026-10-02"
       },
@@ -13500,7 +13506,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~21:00 - 마지막 주문 20:30",
-        "textEn": "- 11:00~21:00 - 마지막 주문 20:30",
+        "textEn": "11:00–21:00; Last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2847877",
         "checked": "2026-10-02"
       },
@@ -13562,7 +13568,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~21:30 (마지막 주문 20:30)",
-        "textEn": "11:30~21:30 (마지막 주문 20:30)",
+        "textEn": "11:30–21:30 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2860829",
         "checked": "2026-10-02"
       },
@@ -13632,7 +13638,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~22:00 (준비시간 15:00~16:30)",
-        "textEn": "11:30~22:00 (준비시간 15:00~16:30)",
+        "textEn": "11:30–22:00 (Break 15:00–16:30)",
         "source": "https://www.ktriptips.com/kor/food/2860755",
         "checked": "2026-10-02"
       },
@@ -13702,7 +13708,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:00)",
-        "textEn": "11:00~21:00 (마지막 주문 20:00)",
+        "textEn": "11:00–21:00 (Last orders 20:00)",
         "source": "https://www.ktriptips.com/kor/food/2853243",
         "checked": "2026-10-02"
       },
@@ -13772,7 +13778,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~21:00 (마지막 주문 19:45)",
-        "textEn": "10:00~21:00 (마지막 주문 19:45)",
+        "textEn": "10:00–21:00 (Last orders 19:45)",
         "source": "https://www.ktriptips.com/kor/food/2822838",
         "checked": "2026-10-02"
       },
@@ -13834,7 +13840,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~19:00 (라스트 오더 18:00)",
-        "textEn": "11:00~19:00 (라스트 오더 18:00)",
+        "textEn": "11:00–19:00 (Last orders 18:00)",
         "source": "https://www.ktriptips.com/kor/food/2852263",
         "checked": "2026-10-02"
       },
@@ -13904,7 +13910,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~21:00 (준비시간 14:50~17:30)",
-        "textEn": "11:30~21:00 (준비시간 14:50~17:30)",
+        "textEn": "11:30–21:00 (Break 14:50–17:30)",
         "source": "https://www.ktriptips.com/kor/food/2873498",
         "checked": "2026-10-02"
       },
@@ -13936,7 +13942,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능요금(무료)",
-        "textEn": "Available요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873498",
         "checked": "2026-10-02"
       }
@@ -13947,14 +13953,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능요금(무료)",
-        "textEn": "Available요금(Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능요금(무료)",
-        "textEn": "Available요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2873498",
         "checked": "2026-10-02"
       }
@@ -13966,7 +13972,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "09:30~21:40 (마지막 주문 21:30)",
-        "textEn": "09:30~21:40 (마지막 주문 21:30)",
+        "textEn": "09:30–21:40 (Last orders 21:30)",
         "source": "https://www.ktriptips.com/kor/food/2869585",
         "checked": "2026-10-02"
       },
@@ -14036,7 +14042,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 월요일 9:00~19:00 - 화~금 10:00~18:00 - 토요일 10:00~21:00 - 일요일 9:00~19:00",
-        "textEn": "- Monday 9:00~19:00 - 화~금 10:00~18:00 - Saturday 10:00~21:00 - Sunday 9:00~19:00",
+        "textEn": "Monday 9:00–19:00; Tuesday–Friday 10:00–18:00; Saturday 10:00–21:00; Sunday 9:00–19:00",
         "source": "https://www.ktriptips.com/kor/food/2781555",
         "checked": "2026-10-02"
       },
@@ -14098,17 +14104,17 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "월~일 10:00~22:00",
-        "textEn": "월~일 10:00~22:00",
+        "textEn": "Monday–Sunday 10:00–22:00",
         "source": "https://www.ktriptips.com/kor/food/3456352",
         "checked": "2026-10-02"
       },
       {
         "labelEn": "Closures",
         "labelKo": "휴무",
-        "textKo": "연중무",
-        "textEn": "연중무",
+        "textKo": "관광정보의 휴무 안내가 불완전하게 기재되어 있어요. 휴무일은 매장에 확인하세요.",
+        "textEn": "The tourism listing’s closure information is incomplete. Confirm closure days with the cafe.",
         "source": "https://www.ktriptips.com/kor/food/3456352",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Signature menu",
@@ -14168,7 +14174,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2610230",
         "checked": "2026-10-02"
       },
@@ -14190,7 +14196,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2616062",
         "checked": "2026-10-02"
       },
@@ -14212,7 +14218,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "상시 개방",
-        "textEn": "상시 개방",
+        "textEn": "Open at all times",
         "source": "https://www.ktriptips.com/kor/tourspot/2610502",
         "checked": "2026-10-02"
       },
@@ -14282,7 +14288,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2849725",
         "checked": "2026-10-02"
       },
@@ -14301,14 +14307,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2849725",
         "checked": "2026-10-02"
       }
@@ -14351,10 +14357,16 @@
       {
         "labelEn": "Parking",
         "labelKo": "주차",
-        "textKo": "가능",
-        "textEn": "Available",
+        "textKo": "관광정보는 인근 유료주차장 이용을 안내하며, 테이블링은 매장 주차 불가로 표시해요. 이용할 주차장과 요금을 방문 전 확인하세요.",
+        "textEn": "The tourism listing points to nearby paid parking; Tabling lists no venue parking. Check the car park and fees before visiting.",
         "source": "https://www.ktriptips.com/kor/food/2375858",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05",
+        "additionalSources": [
+          {
+            "label": "Tabling",
+            "url": "https://www.tabling.co.kr/place/677ccdc966de5f069881b6e3"
+          }
+        ]
       },
       {
         "labelEn": "Payment",
@@ -14368,21 +14380,13 @@
     "visitFacts": {
       "parking": {
         "source": "https://www.ktriptips.com/kor/food/2375858",
-        "checked": "2026-10-02",
-        "status": "available",
-        "textKo": "가능",
-        "textEn": "Available"
+        "checked": "2026-10-05",
+        "status": "nearby",
+        "textKo": "관광정보는 인근 유료주차장 이용을 안내하며, 테이블링은 매장 주차 불가로 표시해요. 이용할 주차장과 요금을 방문 전 확인하세요.",
+        "textEn": "The tourism listing points to nearby paid parking; Tabling lists no venue parking. Check the car park and fees before visiting."
       }
     },
-    "conditions": [
-      {
-        "kind": "parking",
-        "textKo": "가능",
-        "textEn": "Available",
-        "source": "https://www.ktriptips.com/kor/food/2375858",
-        "checked": "2026-10-02"
-      }
-    ]
+    "conditions": []
   },
   "tour-2779128": {
     "visitDetails": [
@@ -14390,7 +14394,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 12:00~21:30 - 준비시간 15:00~17:30 - 마지막 주문 20:30",
-        "textEn": "- 12:00~21:30 - 준비시간 15:00~17:30 - 마지막 주문 20:30",
+        "textEn": "12:00–21:30; Break 15:00–17:30; Last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2779128",
         "checked": "2026-10-02"
       },
@@ -14452,7 +14456,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 12:00~22:00 - 준비시간 15:00~18:00",
-        "textEn": "- 12:00~22:00 - 준비시간 15:00~18:00",
+        "textEn": "12:00–22:00; Break 15:00–18:00",
         "source": "https://www.ktriptips.com/kor/food/2899461",
         "checked": "2026-10-02"
       },
@@ -14482,7 +14486,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 평일 08:00~16:00 - 주말 12:00~18:00",
-        "textEn": "- 평일 08:00~16:00 - 주말 12:00~18:00",
+        "textEn": "Weekdays 08:00–16:00; Weekends 12:00–18:00",
         "source": "https://www.ktriptips.com/kor/food/2895210",
         "checked": "2026-10-02"
       },
@@ -14520,7 +14524,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~21:00 - 준비시간 15:00~17:00 - 마지막 주문 14:30, 20:30",
-        "textEn": "- 11:00~21:00 - 준비시간 15:00~17:00 - 마지막 주문 14:30, 20:30",
+        "textEn": "11:00–21:00; Break 15:00–17:00; Last orders 14:30, 20:30",
         "source": "https://www.ktriptips.com/kor/food/2895161",
         "checked": "2026-10-02"
       },
@@ -14570,7 +14574,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일] - 11:30~22:00 - 준비시간 15:00~17:00 [토요일] - 11:30~22:00 [일요일] - 11:30~21:00",
-        "textEn": "[평일] - 11:30~22:00 - 준비시간 15:00~17:00 [Saturday] - 11:30~22:00 [Sunday] - 11:30~21:00",
+        "textEn": "Weekdays: 11:30–22:00; Break 15:00–17:00; Saturday: 11:30–22:00; Sunday: 11:30–21:00",
         "source": "https://www.ktriptips.com/kor/food/2853988",
         "checked": "2026-10-02"
       },
@@ -14624,7 +14628,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~23:00 - 준비시간 14:30~17:30",
-        "textEn": "- 11:30~23:00 - 준비시간 14:30~17:30",
+        "textEn": "11:30–23:00; Break 14:30–17:30",
         "source": "https://www.ktriptips.com/kor/food/2853913",
         "checked": "2026-10-02"
       },
@@ -14748,7 +14752,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~21:00 - 마지막 주문 19:50",
-        "textEn": "- 11:00~21:00 - 마지막 주문 19:50",
+        "textEn": "11:00–21:00; Last orders 19:50",
         "source": "https://www.ktriptips.com/kor/food/2860400",
         "checked": "2026-10-02"
       },
@@ -14810,7 +14814,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "9:30-19:30 (19:15 라스트오더)",
-        "textEn": "9:30-19:30 (19:15 라스트오더)",
+        "textEn": "9:30–19:30 (last orders 19:15)",
         "source": "https://www.ktriptips.com/kor/food/3444607",
         "checked": "2026-10-02"
       },
@@ -14839,10 +14843,10 @@
         "checked": "2026-10-02"
       },
       {
-        "labelEn": "Payment",
-        "labelKo": "결제 안내",
+        "labelEn": "Credit cards",
+        "labelKo": "신용카드",
         "textKo": "신용카드 가능합니다.",
-        "textEn": "신용카드 Available합니다.",
+        "textEn": "Credit cards accepted.",
         "source": "https://www.ktriptips.com/kor/food/3444607",
         "checked": "2026-10-02"
       }
@@ -14856,7 +14860,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "화-일 : 12:00 - 21:00 / 20:30 라스트오더",
-        "textEn": "화-일 : 12:00 - 21:00 / 20:30 라스트오더",
+        "textEn": "Tuesday–Sunday: 12:00–21:00; last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/3445716",
         "checked": "2026-10-02"
       },
@@ -14864,7 +14868,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "정기휴무 (매주 월요일)",
-        "textEn": "정기휴무 (Every  Monday)",
+        "textEn": "Closed every Monday",
         "source": "https://www.ktriptips.com/kor/food/3445716",
         "checked": "2026-10-02"
       },
@@ -14994,7 +14998,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "홈페이지 확인",
-        "textEn": "홈페이지 확인",
+        "textEn": "Check the website for hours",
         "source": "https://www.ktriptips.com/kor/food/2781508",
         "checked": "2026-10-02"
       },
@@ -15002,7 +15006,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 화요일 (단, 공휴일인 경우 정상영업)",
-        "textEn": "Every  Tuesday (단, 공휴일인 경우 정상영업)",
+        "textEn": "Closed every Tuesday, except on public holidays.",
         "source": "https://www.ktriptips.com/kor/food/2781508",
         "checked": "2026-10-02"
       },
@@ -15126,7 +15130,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~22:00 (마지막 주문 21:00)",
-        "textEn": "11:00~22:00 (마지막 주문 21:00)",
+        "textEn": "11:00–22:00 (Last orders 21:00)",
         "source": "https://www.ktriptips.com/kor/food/2845238",
         "checked": "2026-10-02"
       },
@@ -15158,7 +15162,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (3,000원)",
-        "textEn": "Available 요금 (3,000원)",
+        "textEn": "Parking available; fee: KRW 3,000.",
         "source": "https://www.ktriptips.com/kor/food/2845238",
         "checked": "2026-10-02"
       },
@@ -15177,14 +15181,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (3,000원)",
-        "textEn": "Available 요금 (3,000원)"
+        "textEn": "Parking available; fee: KRW 3,000."
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (3,000원)",
-        "textEn": "Available 요금 (3,000원)",
+        "textEn": "Parking available; fee: KRW 3,000.",
         "source": "https://www.ktriptips.com/kor/food/2845238",
         "checked": "2026-10-02"
       }
@@ -15196,7 +15200,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "평일 09:00~18:00 주말 09:00~19:00",
-        "textEn": "평일 09:00~18:00 주말 09:00~19:00",
+        "textEn": "Weekdays 09:00–18:00; weekends 09:00–19:00",
         "source": "https://www.ktriptips.com/kor/food/2895070",
         "checked": "2026-10-02"
       },
@@ -15228,7 +15232,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "불가능 (뚝섬유원지 주차장 이용)",
-        "textEn": "Unavailable (뚝섬유원지 주차장 이용)",
+        "textEn": "No venue parking; use the Ttukseom Recreation Area car park.",
         "source": "https://www.ktriptips.com/kor/food/2895070",
         "checked": "2026-10-02"
       },
@@ -15247,7 +15251,7 @@
         "checked": "2026-10-02",
         "status": "unavailable",
         "textKo": "불가능 (뚝섬유원지 주차장 이용)",
-        "textEn": "Unavailable (뚝섬유원지 주차장 이용)"
+        "textEn": "No venue parking; use the Ttukseom Recreation Area car park."
       }
     },
     "conditions": []
@@ -15258,7 +15262,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "평일 14:00-21:00 주말 13:00-21:00",
-        "textEn": "평일 14:00-21:00 주말 13:00-21:00",
+        "textEn": "Weekdays 14:00–21:00; weekends 13:00–21:00",
         "source": "https://www.ktriptips.com/kor/food/3443228",
         "checked": "2026-10-02"
       },
@@ -15266,7 +15270,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 수요일 , 달마다 휴무일이 다르므로 네이버 공지 참고",
-        "textEn": "Every  Wednesday , 달마다 휴무일이 다르므로 네이버 공지 참고",
+        "textEn": "Closed every Wednesday; closure dates vary by month, so check Naver notices.",
         "source": "https://www.ktriptips.com/kor/food/3443228",
         "checked": "2026-10-02"
       },
@@ -15288,7 +15292,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "월요일~토요일 10:00~22:00(라스트오더 21:30) 일요일 10:00~21:00(라스트오더 20:30)",
-        "textEn": "Monday~Saturday 10:00~22:00(라스트오더 21:30) Sunday 10:00~21:00(라스트오더 20:30)",
+        "textEn": "Monday–Saturday 10:00–22:00 (last orders 21:30); Sunday 10:00–21:00 (last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2853976",
         "checked": "2026-10-02"
       },
@@ -15350,7 +15354,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:30 - 준비시간 15:00~17:00 - 마지막 주문 14:00",
-        "textEn": "- 11:30~21:30 - 준비시간 15:00~17:00 - 마지막 주문 14:00",
+        "textEn": "11:30–21:30; Break 15:00–17:00; Last orders 14:00",
         "source": "https://www.ktriptips.com/kor/food/2859524",
         "checked": "2026-10-02"
       },
@@ -15358,7 +15362,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "설·추석 당일",
-        "textEn": "설·추석 당일",
+        "textEn": "Closed on Lunar New Year’s Day and Chuseok day",
         "source": "https://www.ktriptips.com/kor/food/2859524",
         "checked": "2026-10-02"
       },
@@ -15412,7 +15416,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~22:00 - 마지막 주문 21:00",
-        "textEn": "- 10:00~22:00 - 마지막 주문 21:00",
+        "textEn": "10:00–22:00; Last orders 21:00",
         "source": "https://www.ktriptips.com/kor/food/2838324",
         "checked": "2026-10-02"
       },
@@ -15474,7 +15478,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:30~20:30 - 마지막 주문 20:00",
-        "textEn": "- 10:30~20:30 - 마지막 주문 20:00",
+        "textEn": "10:30–20:30; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2837499",
         "checked": "2026-10-02"
       },
@@ -15536,7 +15540,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일] - 10:00~19:00 - 마지막 주문 18:40 [주말] - 10:00~21:00 - 마지막 주문 20:40",
-        "textEn": "[평일] - 10:00~19:00 - 마지막 주문 18:40 [주말] - 10:00~21:00 - 마지막 주문 20:40",
+        "textEn": "Weekdays: 10:00–19:00; Last orders 18:40; Weekends: 10:00–21:00; Last orders 20:40",
         "source": "https://www.ktriptips.com/kor/food/2836469",
         "checked": "2026-10-02"
       },
@@ -15660,7 +15664,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~19:00 - 마지막 주문 18:30",
-        "textEn": "- 10:00~19:00 - 마지막 주문 18:30",
+        "textEn": "10:00–19:00; Last orders 18:30",
         "source": "https://www.ktriptips.com/kor/food/2746701",
         "checked": "2026-10-02"
       },
@@ -15722,7 +15726,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[평일] - 11:00~20:00 - 마지막 주문 19:30 [주말] - 10:00~21:00 - 마지막 주문 20:30",
-        "textEn": "[평일] - 11:00~20:00 - 마지막 주문 19:30 [주말] - 10:00~21:00 - 마지막 주문 20:30",
+        "textEn": "Weekdays: 11:00–20:00; Last orders 19:30; Weekends: 10:00–21:00; Last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2792660",
         "checked": "2026-10-02"
       },
@@ -15784,7 +15788,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~19:00 - 마지막 주문 18:30",
-        "textEn": "- 10:00~19:00 - 마지막 주문 18:30",
+        "textEn": "10:00–19:00; Last orders 18:30",
         "source": "https://www.ktriptips.com/kor/food/2831223",
         "checked": "2026-10-02"
       },
@@ -15846,7 +15850,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:00 - 준비시간(평일) 14:30~16:30 - 마지막 주문 20:00",
-        "textEn": "- 11:30~21:00 - 준비시간(평일) 14:30~16:30 - 마지막 주문 20:00",
+        "textEn": "11:30–21:00; Weekday break 14:30–16:30; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2853261",
         "checked": "2026-10-02"
       },
@@ -15908,7 +15912,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~22:00 - 마지막 주문 20:00",
-        "textEn": "- 11:30~22:00 - 마지막 주문 20:00",
+        "textEn": "11:30–22:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2835440",
         "checked": "2026-10-02"
       },
@@ -16024,7 +16028,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~22:00 - 준비시간(평일) 15:00~16:30 - 마지막 주문 20:40",
-        "textEn": "- 11:30~22:00 - 준비시간(평일) 15:00~16:30 - 마지막 주문 20:40",
+        "textEn": "11:30–22:00; Weekday break 15:00–16:30; Last orders 20:40",
         "source": "https://www.ktriptips.com/kor/food/2845653",
         "checked": "2026-10-02"
       },
@@ -16032,7 +16036,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "설·추석 연휴",
-        "textEn": "설·추석 연휴",
+        "textEn": "Closed during the Lunar New Year and Chuseok holidays",
         "source": "https://www.ktriptips.com/kor/food/2845653",
         "checked": "2026-10-02"
       },
@@ -16094,7 +16098,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~21:00 - 준비시간(평일) 15:30~17:00 - 준비시간(주말) 16:00~17:00 - 마지막 주문 20:00",
-        "textEn": "- 10:00~21:00 - 준비시간(평일) 15:30~17:00 - 준비시간(주말) 16:00~17:00 - 마지막 주문 20:00",
+        "textEn": "10:00–21:00; Weekday break 15:30–17:00; Weekend break 16:00–17:00; Last orders 20:00",
         "source": "https://www.ktriptips.com/kor/food/2845608",
         "checked": "2026-10-02"
       },
@@ -16164,7 +16168,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 10:00~22:00 - 마지막 주문 21:30",
-        "textEn": "- 10:00~22:00 - 마지막 주문 21:30",
+        "textEn": "10:00–22:00; Last orders 21:30",
         "source": "https://www.ktriptips.com/kor/food/2843076",
         "checked": "2026-10-02"
       },
@@ -16172,7 +16176,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 첫째 월요일",
-        "textEn": "매월 첫째 Monday",
+        "textEn": "Closed on the first Monday of each month",
         "source": "https://www.ktriptips.com/kor/food/2843076",
         "checked": "2026-10-02"
       },
@@ -16226,7 +16230,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~19:00 - 마지막 주문 18:00",
-        "textEn": "- 11:00~19:00 - 마지막 주문 18:00",
+        "textEn": "11:00–19:00; Last orders 18:00",
         "source": "https://www.ktriptips.com/kor/food/2855105",
         "checked": "2026-10-02"
       },
@@ -16288,7 +16292,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:00~19:00 - 마지막 주문 18:30",
-        "textEn": "- 11:00~19:00 - 마지막 주문 18:30",
+        "textEn": "11:00–19:00; Last orders 18:30",
         "source": "https://www.ktriptips.com/kor/food/2855010",
         "checked": "2026-10-02"
       },
@@ -16350,7 +16354,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "[월요일~목요일, 일요일] - 11:00~02:00 - 마지막 주문 01:30 [금요일~토요일] - 11:00~04:00 - 마지막 주문 03:30",
-        "textEn": "[Monday~Thursday, Sunday] - 11:00~02:00 - 마지막 주문 01:30 [Friday~Saturday] - 11:00~04:00 - 마지막 주문 03:30",
+        "textEn": "Monday–Thursday, Sunday: 11:00–02:00; Last orders 01:30; Friday–Saturday: 11:00–04:00; Last orders 03:30",
         "source": "https://www.ktriptips.com/kor/food/2876092",
         "checked": "2026-10-02"
       },
@@ -16420,7 +16424,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~22:00 - 준비시간 15:00~17:00 - 마지막 주문 20:50",
-        "textEn": "- 11:30~22:00 - 준비시간 15:00~17:00 - 마지막 주문 20:50",
+        "textEn": "11:30–22:00; Break 15:00–17:00; Last orders 20:50",
         "source": "https://www.ktriptips.com/kor/food/2873448",
         "checked": "2026-10-02"
       },
@@ -16466,7 +16470,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "- 11:30~21:00 - 준비시간 15:00~17:00 - 마지막 주문 20:30",
-        "textEn": "- 11:30~21:00 - 준비시간 15:00~17:00 - 마지막 주문 20:30",
+        "textEn": "11:30–21:00; Break 15:00–17:00; Last orders 20:30",
         "source": "https://www.ktriptips.com/kor/food/2865028",
         "checked": "2026-10-02"
       },
@@ -16544,7 +16548,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "인스타그램 및 네이버 공지",
-        "textEn": "인스타그램 및 네이버 공지",
+        "textEn": "See Instagram and Naver notices for closures",
         "source": "https://www.ktriptips.com/kor/food/2810005",
         "checked": "2026-10-02"
       },
@@ -16598,7 +16602,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~22:00 (라스트오더 21:30)",
-        "textEn": "10:00~22:00 (라스트오더 21:30)",
+        "textEn": "10:00–22:00 (Last orders 21:30)",
         "source": "https://www.ktriptips.com/kor/food/2854638",
         "checked": "2026-10-02"
       },
@@ -16630,7 +16634,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2854638",
         "checked": "2026-10-02"
       },
@@ -16649,14 +16653,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2854638",
         "checked": "2026-10-02"
       }
@@ -16700,7 +16704,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2893643",
         "checked": "2026-10-02"
       },
@@ -16719,14 +16723,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금(무료)",
-        "textEn": "Available 요금(Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2893643",
         "checked": "2026-10-02"
       }
@@ -16770,7 +16774,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2865872",
         "checked": "2026-10-02"
       },
@@ -16789,14 +16793,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2865872",
         "checked": "2026-10-02"
       }
@@ -16808,7 +16812,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~20:00 (라스트오더 19:30)",
-        "textEn": "10:00~20:00 (라스트오더 19:30)",
+        "textEn": "10:00–20:00 (Last orders 19:30)",
         "source": "https://www.ktriptips.com/kor/food/2857012",
         "checked": "2026-10-02"
       },
@@ -16840,7 +16844,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2857012",
         "checked": "2026-10-02"
       },
@@ -16859,14 +16863,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2857012",
         "checked": "2026-10-02"
       }
@@ -16878,7 +16882,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "매일 10:00 - 22:00",
-        "textEn": "매일 10:00 - 22:00",
+        "textEn": "Daily 10:00–22:00",
         "source": "https://www.ktriptips.com/kor/food/3459617",
         "checked": "2026-10-02"
       }
@@ -16892,7 +16896,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "12:00~22:00 (준비시간 16:00~17:00)",
-        "textEn": "12:00~22:00 (준비시간 16:00~17:00)",
+        "textEn": "12:00–22:00 (Break 16:00–17:00)",
         "source": "https://www.ktriptips.com/kor/food/2856999",
         "checked": "2026-10-02"
       },
@@ -16954,7 +16958,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~19:00 (마지막 주문 18:30)",
-        "textEn": "10:00~19:00 (마지막 주문 18:30)",
+        "textEn": "10:00–19:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/2854335",
         "checked": "2026-10-02"
       },
@@ -17024,7 +17028,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "09:00~20:00 (마지막 주문 18:30)",
-        "textEn": "09:00~20:00 (마지막 주문 18:30)",
+        "textEn": "09:00–20:00 (Last orders 18:30)",
         "source": "https://www.ktriptips.com/kor/food/2854069",
         "checked": "2026-10-02"
       },
@@ -17086,7 +17090,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~23:00 (마지막 주문 22:00)",
-        "textEn": "11:00~23:00 (마지막 주문 22:00)",
+        "textEn": "11:00–23:00 (Last orders 22:00)",
         "source": "https://www.ktriptips.com/kor/food/2853982",
         "checked": "2026-10-02"
       },
@@ -17140,7 +17144,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "09:00~17:30 (마지막 주문 17:10)",
-        "textEn": "09:00~17:30 (마지막 주문 17:10)",
+        "textEn": "09:00–17:30 (Last orders 17:10)",
         "source": "https://www.ktriptips.com/kor/food/2852155",
         "checked": "2026-10-02"
       },
@@ -17202,7 +17206,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "18:00~01:00 (마지막 주문 00:30)",
-        "textEn": "18:00~01:00 (마지막 주문 00:30)",
+        "textEn": "18:00–01:00 (Last orders 00:30)",
         "source": "https://www.ktriptips.com/kor/food/2851674",
         "checked": "2026-10-02"
       },
@@ -17264,7 +17268,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "10:00~18:00 (마지막 주문 17:30)",
-        "textEn": "10:00~18:00 (마지막 주문 17:30)",
+        "textEn": "10:00–18:00 (Last orders 17:30)",
         "source": "https://www.ktriptips.com/kor/food/2849994",
         "checked": "2026-10-02"
       },
@@ -17272,7 +17276,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매주 수요일 ※ 변동 가능성이 있으므로 전화문의 요망",
-        "textEn": "Every  Wednesday ※ 변동 Available성이 있으므로 전화문의 요망",
+        "textEn": "Closed every Wednesday; this may change, so call to confirm.",
         "source": "https://www.ktriptips.com/kor/food/2849994",
         "checked": "2026-10-02"
       },
@@ -17334,7 +17338,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:30~20:45 (마지막 주문 19:30)",
-        "textEn": "11:30~20:45 (마지막 주문 19:30)",
+        "textEn": "11:30–20:45 (Last orders 19:30)",
         "source": "https://www.ktriptips.com/kor/food/2845370",
         "checked": "2026-10-02"
       },
@@ -17466,7 +17470,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~15:30 (마지막 주문 15:00)",
-        "textEn": "11:00~15:30 (마지막 주문 15:00)",
+        "textEn": "11:00–15:30 (Last orders 15:00)",
         "source": "https://www.ktriptips.com/kor/food/2843982",
         "checked": "2026-10-02"
       },
@@ -17582,7 +17586,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00 ~20:30 ※ 자세한 사항은 전화문의 요망",
-        "textEn": "11:00 ~20:30 ※ 자세한 사항은 전화문의 요망",
+        "textEn": "11:00 –20:30. Call for details.",
         "source": "https://www.ktriptips.com/kor/food/2838100",
         "checked": "2026-10-02"
       },
@@ -17690,7 +17694,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~21:00 (마지막 주문 20:30)",
-        "textEn": "11:00~21:00 (마지막 주문 20:30)",
+        "textEn": "11:00–21:00 (Last orders 20:30)",
         "source": "https://www.ktriptips.com/kor/food/2837242",
         "checked": "2026-10-02"
       },
@@ -17751,10 +17755,10 @@
       {
         "labelEn": "Hours",
         "labelKo": "운영 시간",
-        "textKo": "8:00~21:00 (마지막 주문 21:30)",
-        "textEn": "8:00~21:00 (마지막 주문 21:30)",
+        "textKo": "관광정보는 8:00~21:00 운영, 마지막 주문 21:30으로 안내해 서로 맞지 않아요. 마감·마지막 주문 시간은 매장에 확인하세요.",
+        "textEn": "The tourism listing gives hours of 8:00–21:00 but last orders at 21:30, after closing. Confirm closing and last orders with the cafe.",
         "source": "https://www.ktriptips.com/kor/food/2833269",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05"
       },
       {
         "labelEn": "Closures",
@@ -17806,7 +17810,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "09:00~20:00 (준비시간 16:00~17:00)",
-        "textEn": "09:00~20:00 (준비시간 16:00~17:00)",
+        "textEn": "09:00–20:00 (Break 16:00–17:00)",
         "source": "https://www.ktriptips.com/kor/food/404158",
         "checked": "2026-10-02"
       },
@@ -17814,7 +17818,7 @@
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "매월 둘째, 넷째 수요일",
-        "textEn": "매월 둘째, 넷째 Wednesday",
+        "textEn": "Closed on the second and fourth Wednesday of each month",
         "source": "https://www.ktriptips.com/kor/food/404158",
         "checked": "2026-10-02"
       },
@@ -17908,7 +17912,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2785883",
         "checked": "2026-10-02"
       }
@@ -17919,14 +17923,14 @@
         "checked": "2026-10-02",
         "status": "available",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)"
+        "textEn": "Free parking available"
       }
     },
     "conditions": [
       {
         "kind": "parking",
         "textKo": "가능 요금 (무료)",
-        "textEn": "Available 요금 (Free)",
+        "textEn": "Free parking available",
         "source": "https://www.ktriptips.com/kor/food/2785883",
         "checked": "2026-10-02"
       }
@@ -18008,7 +18012,7 @@
         "labelEn": "Hours",
         "labelKo": "운영 시간",
         "textKo": "11:00~16:00 (라스트오더 15:30)",
-        "textEn": "11:00~16:00 (라스트오더 15:30)",
+        "textEn": "11:00–16:00 (Last orders 15:30)",
         "source": "https://www.ktriptips.com/kor/food/2847823",
         "checked": "2026-10-02"
       },
@@ -18094,7 +18098,7 @@
         "labelEn": "Parking",
         "labelKo": "주차",
         "textKo": "불가 (마을 공영주차장 이용 가능)",
-        "textEn": "불가 (마을 공영주차장 이용 Available)",
+        "textEn": "No venue parking; the village public car park is available.",
         "source": "https://www.ktriptips.com/kor/food/2763762",
         "checked": "2026-10-02"
       },
@@ -18113,9 +18117,27 @@
         "checked": "2026-10-02",
         "status": "unavailable",
         "textKo": "불가 (마을 공영주차장 이용 가능)",
-        "textEn": "불가 (마을 공영주차장 이용 Available)"
+        "textEn": "No venue parking; the village public car park is available."
       }
     },
     "conditions": []
+  },
+  "cj-soyeon": {
+    "visitDetails": [
+      {
+        "labelEn": "Address",
+        "labelKo": "방문 주소",
+        "textKo": "충북 청주시 서원구 청남로 1865-6",
+        "textEn": "1865-6 Cheongnam-ro, Seowon-gu, Cheongju, Chungcheongbuk-do",
+        "source": "https://polle.com/place/5yFbuE/소연재",
+        "additionalSources": [
+          {
+            "label": "Daangn",
+            "url": "https://www.daangn.com/kr/local-profile/소연재-uiqwgdfo5y9u/"
+          }
+        ],
+        "checked": "2026-10-05"
+      }
+    ]
   }
 }

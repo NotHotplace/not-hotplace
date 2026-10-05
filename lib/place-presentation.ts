@@ -14,7 +14,7 @@ export function placeIdentity(place:Place,language:'ko'|'en'){return conciseText
 export function candidateReasons(place:Place):RecommendationReason[]{
  const reasons:RecommendationReason[]=(place.recommendationReasons||[]).filter(sourced);
  const relevant=categoryConditions(place.category);
- for(const fact of place.conditions||[])if(relevant.includes(fact.kind)&&sourced(fact)&&!reasons.length)reasons.push({textKo:conditionLabels[fact.kind][0]+' 안내가 있어요.',textEn:'Published details cover '+conditionLabels[fact.kind][1].toLowerCase()+'.',source:fact.source,checked:fact.checked});
+ for(const fact of place.conditions||[])if(relevant.includes(fact.kind)&&sourced(fact)&&!reasons.length)reasons.push({textKo:conditionLabels[fact.kind][0].replace(/ 안내$/,'')+' 안내가 있어요.',textEn:'Published details cover '+conditionLabels[fact.kind][1].toLowerCase()+'.',source:fact.source,checked:fact.checked});
  if(!reasons.length){const detail=(place.visitDetails||[]).find(d=>/hours|admission|booking|reservation|access|location/i.test(d.labelEn)&&sourced(d));if(detail&&place.detailLevel!=='basic')reasons.push({textKo:'방문을 계획할 '+detail.labelKo+' 안내가 있어요.',textEn:'Published '+detail.labelEn.toLowerCase()+' details help plan a visit.',source:detail.source!,checked:detail.checked!});}
  return reasons.slice(0,2);
 }

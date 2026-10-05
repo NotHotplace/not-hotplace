@@ -1,0 +1,19 @@
+[
+  {
+    "id": "us-point-reyes",
+    "checked": "2026-10-05",
+    "reason": "Source/license provenance incomplete; display held pending verification.",
+    "preservedImageFields": {
+      "image": "/places/us-point-reyes.jpeg",
+      "imageCredit": "NPS / A. Kopshever"
+    }
+  },
+  {
+    "id": "world-gb-holland-park",
+    "checked": "2026-10-05",
+    "reason": "Image credit/license absent and landmark identity not established; display held pending verification.",
+    "preservedImageFields": {
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Embassy_of_Ukraine_in_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    }
+  }
+]

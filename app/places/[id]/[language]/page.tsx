@@ -1,4 +1,5 @@
 import PlaceSave from '../../place-save';
+import DisclosureNavigation from '../../disclosure-navigation';
 import PlaceReasons from '../../../place-reasons';
 import {placeIdentity,essentialDetails,conciseText} from '@/lib/place-presentation';
 import TrackedMapLink from '../../tracked-map-link';
@@ -60,7 +61,7 @@ export default async function PlacePage({params}: Props) {
     ...(typeof place.lat === 'number' && typeof place.lon === 'number'
       ? {geo: {'@type': 'GeoCoordinates', latitude: place.lat, longitude: place.lon}} : {}),
   };
-  return <main className="place-page" lang={language}>
+  return <main className="place-page" lang={language}><DisclosureNavigation/>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structured).replace(/</g, '\\u003c')}}/>
     <header className="place-topbar">
       <a className="brand" href={`/?lang=${language}`}>Not<span>_</span>Hotplace</a>
@@ -87,7 +88,7 @@ export default async function PlacePage({params}: Props) {
         </figure> : <div className="place-no-photo"><Leaf size={36}/><p>{label('A place to discover.', '다음 쉼을 발견하는 곳.')}</p><span>{label('A photo of this place has not been added yet.', '아직 등록된 장소 사진이 없어요.')}</span></div>}
         </div>
       <article className="place-story">
-        <details className="place-disclosure" id="visit-info"><summary>{label('Visit conditions and full information','이용 조건·방문 정보 자세히')}</summary><div className="place-disclosure-body"><p>{placeDescription(place,language)}</p><PrivateExperiences experiences={place.experiences} language={language}/>{!!place.visitDetails?.length&&<dl className="place-full-facts">{place.visitDetails.map(detail=><div key={detail.labelEn}><dt>{label(detail.labelEn,detail.labelKo)}</dt><dd>{label(detail.textEn,detail.textKo)}{detail.source&&<small><a href={detail.source} target="_blank" rel="noopener noreferrer">{label('Source','출처')}</a> · {detail.checked||place.checked}</small>}</dd></div>)}</dl>}{place.photoGallery&&<a href={place.photoGallery} target="_blank" rel="noopener noreferrer">{label('More photos from the venue','공식 공간 사진 더 보기')} ↗</a>}</div></details>
+        <details className="place-disclosure" id="visit-info"><summary>{label('Visit conditions and full information','이용 조건·방문 정보 자세히')}</summary><div className="place-disclosure-body"><p>{placeDescription(place,language)}</p><PrivateExperiences experiences={place.experiences} language={language}/>{!!place.visitDetails?.length&&<dl className="place-full-facts">{place.visitDetails.map(detail=><div key={detail.labelEn}><dt>{label(detail.labelEn,detail.labelKo)}</dt><dd>{label(detail.textEn,detail.textKo)}{detail.source&&<small><a href={detail.source} target="_blank" rel="noopener noreferrer">{label('Source','출처')}</a> · {detail.checked||place.checked}{detail.additionalSources?.map(source=><span key={source.url}> · <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></span>)}</small>}</dd></div>)}</dl>}{place.photoGallery&&<a href={place.photoGallery} target="_blank" rel="noopener noreferrer">{label('More photos from the venue','공식 공간 사진 더 보기')} ↗</a>}</div></details>
         <details className="place-disclosure"><summary>{label('Conditions and external review evidence','공간 조건·외부 후기 근거')}</summary><div className="place-disclosure-body"><RestEvidence place={place} language={language}/><ExternalReviewMemo place={place} language={language}/></div></details>
         <details className="place-disclosure" id="place-source"><summary>{label('Sources and information dates','출처·정보 확인일')}</summary><div className="place-disclosure-body"><p>{label('Source checked: ','자료 확인일: ')}<time dateTime={place.checked}>{place.checked}</time></p><p>{label('Hours, prices and access may change. Confirm with the venue before visiting.','운영 시간·가격·이용 조건은 달라질 수 있어요. 방문 전 운영기관의 최신 안내를 확인해 주세요.')}</p><a href={place.source} target="_blank" rel="noopener noreferrer">{label('Main information source','장소 정보 출처')} ↗</a>{place.locationInfo&&<p>{label('Map reference checked: ','지도 기준점 확인: ')}{place.locationInfo.checked} · <a href={place.locationInfo.source} target="_blank" rel="noopener noreferrer">{label('Location source','위치 출처')}</a><br/>{place.locationInfo.kind==='reference'?label('Reference point near the place; confirm the actual entrance.','장소 주변 기준점입니다. 실제 입구는 출처에서 확인하세요.'):label('Entrance identified by the source.','출처에 안내된 입구 기준입니다.')}</p>}</div></details>
         <details className="place-disclosure"><summary>{label('Suggest an update','정보 수정·제보')}</summary><div className="place-disclosure-body"><ReportPlace id={place.id} language={language}/><PlaceContribution id={place.id} language={language}/></div></details>

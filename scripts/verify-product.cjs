@@ -266,8 +266,13 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const stored=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(order.orderId);
  await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'CANCELED'});
  assert(!(await (await data.GET()).json()).membership.active,'refunded pass stops access after trial expiry');
- await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});
+ const staleRefundResult=await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});assert.equal(staleRefundResult.status,'CANCELED');assert.equal(staleRefundResult.orderStatus,'refunded');assert.equal(staleRefundResult.requiresReview,false);
  assert(!(await (await data.GET()).json()).membership.active,'stale completion cannot restore refunded access');
+ const lateId='nhp_expired_regression';sql.prepare("INSERT INTO payment_orders(id,user_id,customer_key,plan_id,amount,months,status,created_at,access_until) VALUES(?,?,?,?,?,?,'expired',?,?)").run(lateId,'late-user','late-customer','month',4900,1,Date.now()-3600000,Date.now()+86400000);
+ const lateOrder=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(lateId),lateProvider={orderId:lateId,totalAmount:4900,currency:'KRW',paymentKey:'late-mock-key',status:'DONE'};
+ const lateResult=await reconcilePayment(lateOrder,lateProvider);assert.equal(lateResult.status,'EXPIRED');assert.equal(lateResult.orderStatus,'expired');assert.equal(lateResult.requiresReview,true);assert.equal(sql.prepare('SELECT status FROM payment_orders WHERE id=?').get(lateId).status,'expired','late settlement does not silently grant access');
+ const webhook=load(path.join(root,'app/api/payments/webhook/route.ts'));global.fetch=async()=>Response.json(lateProvider);assert.equal((await webhook.POST(new Request('https://example.test/api/payments/webhook',{method:'POST',body:JSON.stringify({data:{orderId:lateId,paymentKey:'late-mock-key'}})}))).status,409,'verified settled/expired disagreement is not acknowledged as success');global.fetch=originalFetch;
+ console.log('PASS: persisted payment truth, late settlement manual-review boundary and refunded terminality (mock provider only).');
  console.log('PASS: aggregate visits, Korean date boundary, stats permissions, sitemap, travel themes, install assets and payment replay/refund handling.');
 
  // Anonymous feedback remains a separate, bounded channel; account review rules stay intact.
