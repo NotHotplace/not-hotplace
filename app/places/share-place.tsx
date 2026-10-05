@@ -3,7 +3,7 @@ import type {CountryCode} from '@/lib/countries';
 import {useState} from 'react';
 import {trackEngagement} from '@/lib/engagement-client';
 import {Share2, Check} from 'lucide-react';
-import type {PlaceLanguage} from '@/lib/place-pages';
+import type {PlaceLanguage} from '@/lib/place-links';
 
 export default function SharePlace({name, path, language, country}: {name: string; path: string; language: PlaceLanguage; country?: CountryCode}) {
   const [state, setState] = useState<'idle' | 'copied' | 'fallback'>('idle');

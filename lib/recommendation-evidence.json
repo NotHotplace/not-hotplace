@@ -1,0 +1,82 @@
+{
+  "tour-4108662": [
+    {
+      "textKo": "관광정보에 1인석과 서가가 안내돼 있어 혼자 책을 읽는 후보로 골랐어요.",
+      "textEn": "The tourism listing describes individual seats and bookshelves, making this a candidate for a solo reading break.",
+      "source": "https://www.ktriptips.com/kor/food/4108662",
+      "checked": "2026-10-05",
+      "sourceKind": "tourism-listing"
+    },
+    {
+      "textKo": "방문 후기에는 독서·작업 이용이 언급돼요. 좌석 간격이 좁다는 의견도 있어요.",
+      "textEn": "Visitor reports mention reading and working here; one also notes closely spaced tables.",
+      "source": "https://polle.com/place/125jaa/1984",
+      "checked": "2026-10-05",
+      "sourceKind": "visitor-impression"
+    }
+  ],
+  "kr-yu-yuan": [
+    {
+      "textKo": "공식 안내에 프라이빗 다이닝룸이 있어 일행끼리 식사할 공간을 찾을 때 골랐어요.",
+      "textEn": "Officially listed private dining rooms make this a candidate for a meal with your own party.",
+      "source": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    },
+    {
+      "textKo": "룸 종류에 따라 최소 이용금액이 적용돼요. 일반 좌석과 구분해 예약 조건을 확인하세요.",
+      "textEn": "A room-specific minimum spend applies. Confirm private-room terms separately from a standard table booking.",
+      "source": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    }
+  ],
+  "kr-sulwhasoo-dosan-spa": [
+    {
+      "textKo": "공식 소개에 VIP룸과 커플룸이 있어 원하는 트리트먼트 공간을 문의할 수 있어요.",
+      "textEn": "The official introduction lists VIP and couples rooms, giving you specific treatment spaces to ask about.",
+      "source": "https://sulwhasoo.com/spa/introduction/introduction.html",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    },
+    {
+      "textKo": "4층 밸런스 스파에는 자연 채광의 트리트먼트 룸과 도산공원 전망 룸이 안내돼요.",
+      "textEn": "The fourth-floor Balance Spa lists daylit treatment rooms and a room overlooking Dosan Park.",
+      "source": "https://int.sulwhasoo.com/pages/flagship-dosan",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    }
+  ],
+  "world-gb-aire-ancient-baths-london": [
+    {
+      "textKo": "공식 침묵 정책과 리셉션 밖 휴대전화·촬영 제한이 있어 디지털 기기를 내려놓는 휴식 후보로 골랐어요.",
+      "textEn": "A published silence policy and device restrictions outside reception make this a candidate for a screen-free break.",
+      "source": "https://beaire.com/en/aire-ancient-baths-london/spa-etiquette",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    },
+    {
+      "textKo": "회차별 이용 인원을 제한하지만 배스는 다른 손님과 함께 사용하는 남녀 공용 공간이에요.",
+      "textEn": "Guest numbers are limited per session, while the co-ed baths are shared with other visitors.",
+      "source": "https://beaire.com/en/aire-ancient-baths-london",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    }
+  ],
+  "world-ca-vandusen-botanical-garden": [
+    {
+      "textKo": "여러 식물 구역과 산책길이 있는 55에이커 정원이라 자신의 속도로 걷는 후보로 골랐어요.",
+      "textEn": "Its 55-acre garden and varied planting areas make this a candidate for an unhurried, self-paced walk.",
+      "source": "https://vancouver.ca/parks-recreation-culture/vandusen-botanical-garden.aspx",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    },
+    {
+      "textKo": "공식 방문 지도로 산책 동선과 접근 가능한 길을 미리 고를 수 있어요.",
+      "textEn": "The official visitor map helps you choose a walking route and identify accessible paths before visiting.",
+      "source": "https://vancouver.ca/files/cov/vandusen-botanical-gardens-visitor-map.pdf",
+      "checked": "2026-10-05",
+      "sourceKind": "official"
+    }
+  ]
+}

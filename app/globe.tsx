@@ -13,7 +13,7 @@ import CountryDirectory from './country-directory';
 export default function GlobeHome() {
   const {lang, text} = useLocale();
   const [geo, setGeo] = useState<any>(null), [data, setData] = useState<any>(null);
-  const [failed, setFailed] = useState(false), [visible, setVisible] = useState(true);
+  const [failed, setFailed] = useState(false), [visible, setVisible] = useState(true), [globeOpen,setGlobeOpen]=useState(false);
   const [country, setCountry] = useState<CountryCode>('KR');
   const [lastCountry,setLastCountry]=useState<CountryCode|null>(null);
   const panel = useRef<HTMLElement>(null);
@@ -26,6 +26,10 @@ export default function GlobeHome() {
       location.replace('/kr' + location.search + location.hash); return;
     }
     try {const last=localStorage.getItem('nhp-last-country');if(countryCodes.includes(last as CountryCode)){setLastCountry(last as CountryCode);setCountry(last as CountryCode);}}catch{}
+  }, []);
+
+  useEffect(() => {
+    if(!globeOpen)return;
     let live = true;
     Promise.all([loadGeo(), fetch('/maps/world.json').then(response => {
       if (!response.ok) throw Error('Globe unavailable'); return response.json();
@@ -33,7 +37,7 @@ export default function GlobeHome() {
       if (live) {setGeo(() => library); setData(world);}
     }).catch(() => {if (live) setFailed(true);});
     return () => {live = false;};
-  }, []);
+  }, [globeOpen]);
 
   useEffect(() => {
     if (!panel.current || !('IntersectionObserver' in window)) return;
@@ -62,11 +66,15 @@ export default function GlobeHome() {
       <div className="world-main">
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
           <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
-          <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose a country to find your kind of space.', '나만의 속도로 쉬어갈 공간을 찾아보세요.')}</p>
+          <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose your place and pause. We’ll start with three candidates.', '어디서, 어떻게 쉴지 고르면 세 곳부터 보여드려요.')}</p>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#countries">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
-        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
+
+
+      </div>
+      <HomeFinder country={country} onCountryChange={chooseCountry}/>
+      <details className="home-globe-disclosure" onToggle={event=>setGlobeOpen(event.currentTarget.open)}><summary>{text('Explore on the globe','세계 지도로 둘러보기')}</summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
           <div className="globe-display">
             <div className="globe-halo" aria-hidden="true"/><div className="globe-orbit" aria-hidden="true"/><div className="globe-orbit globe-orbit-second" aria-hidden="true"/>
             <div className="globe-stars" aria-hidden="true">{Array.from({length:7}, (_, index) => <i key={index}/>)}</div>
@@ -106,10 +114,7 @@ export default function GlobeHome() {
           </div>
           <div className="globe-rotation"><button type="button" onClick={() => motion.turnTo(motion.rotation + 60)} aria-label={text('Rotate west', '서쪽으로 회전')}><ChevronLeft size={20}/></button>
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
-        </section>
-
-      </div>
-      <HomeFinder country={country} onCountryChange={chooseCountry}/>
+        </section></details>
       <CountryDirectory onSelect={chooseCountry}/>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
       <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>

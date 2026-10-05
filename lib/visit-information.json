@@ -2,14 +2,6 @@
   "tour-4108662": {
     "visitDetails": [
       {
-        "labelEn": "Hours",
-        "labelKo": "운영 시간",
-        "textKo": "09:00~24:00",
-        "textEn": "09:00~24:00",
-        "source": "https://www.ktriptips.com/kor/food/4108662",
-        "checked": "2026-10-02"
-      },
-      {
         "labelEn": "Closures",
         "labelKo": "휴무",
         "textKo": "연중무휴",
@@ -34,22 +26,23 @@
         "checked": "2026-10-02"
       },
       {
-        "labelEn": "Parking",
-        "labelKo": "주차",
-        "textKo": "불가능",
-        "textEn": "Unavailable",
+        "labelKo": "운영·이용 시간",
+        "labelEn": "Hours",
+        "textKo": "자료별 영업시간이 달라 최신 시간은 매장(02-325-1984)에 확인해 주세요.",
+        "textEn": "Published hours differ across sources. Confirm current hours with the cafe at +82 2-325-1984.",
         "source": "https://www.ktriptips.com/kor/food/4108662",
-        "checked": "2026-10-02"
+        "checked": "2026-10-05"
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "관광정보와 방문 플랫폼의 주차 안내가 달라 매장에 확인이 필요해요.",
+        "textEn": "Tourism and visitor platforms disagree on parking; confirm directly with the cafe.",
+        "source": "https://polle.com/place/125jaa/1984",
+        "checked": "2026-10-05"
       }
     ],
     "visitFacts": {
-      "parking": {
-        "source": "https://www.ktriptips.com/kor/food/4108662",
-        "checked": "2026-10-02",
-        "status": "unavailable",
-        "textKo": "불가능",
-        "textEn": "Unavailable"
-      },
       "seating": {
         "source": "https://www.ktriptips.com/kor/food/4108662",
         "checked": "2026-10-02",

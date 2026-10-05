@@ -1,9 +1,9 @@
 import PlaceSave from '../../place-save';
+import PlaceReasons from '../../../place-reasons';
+import {placeIdentity,essentialDetails,conciseText} from '@/lib/place-presentation';
 import TrackedMapLink from '../../tracked-map-link';
 import PlaceContribution from '../../../place-contribution';
-import VisitPictograms from '../../../visit-pictograms';
 import ExternalReviewMemo from '../../../external-review-memo';
-import VisitReadiness from '../../../visit-readiness';
 import RestEvidence from '../../../rest-evidence';
 import ReportPlace from '../../../report-place';
 import {countries} from '@/lib/countries';
@@ -49,6 +49,7 @@ export default async function PlacePage({params}: Props) {
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
     : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : place.category === 'walk' ? label('WALKS & GARDENS', '산책 · 정원') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
+  const essentials=essentialDetails(place);
   const photoSource = place.imageSource || place.imageRemote || place.source;
   const license = place.imageLicense === 'Type1' ? label('KOGL Type 1', '공공누리 제1유형') : place.imageLicense;
   const structured = {
@@ -72,7 +73,8 @@ export default async function PlacePage({params}: Props) {
     <div className="place-heading"><span className="place-eyebrow">{category} <span> / {place.area}</span></span>
       <h1>{place.name}</h1><p><MapPin size={16}/>{place.address}</p>
     </div>
-    <nav className="place-section-nav" aria-label={label('Place information sections','장소 정보 바로가기')}><a href="#visit-info">{label('Visit info','방문 정보')}</a><a href={'#external-reviews-'+place.id}>{label('External reviews','외부 후기')}</a><a href="#reviews">{label('Quick response','간단 후기')}</a><a href="#place-source">{label('Sources','출처')}</a></nav>
+    <section className="place-first-look" aria-label={label('At a glance','한눈에 보기')}><p className="place-identity">{placeIdentity(place,language)}</p><PlaceReasons place={place} language={language}/><dl className="place-essential-facts">{essentials.map(fact=><div key={fact.labelEn}><dt>{ko?fact.labelKo:fact.labelEn}</dt><dd>{conciseText(ko?fact.textKo:fact.textEn,ko?100:180)}</dd></div>)}</dl><p className="place-summary-note">{label('A sourced candidate, not a guarantee of quietness. Full conditions below.','자료로 고른 후보예요. 조용함을 보장하지 않으며 자세한 이용 조건은 아래에서 확인하세요.')}</p></section>
+    <nav className="place-section-nav" aria-label={label('Place information sections','장소 정보 바로가기')}><a href="#visit-info">{label('Visit details','자세한 방문 정보')}</a><a href="#reviews">{label('Visitor feedback','방문 후기')}</a><a href="#place-source">{label('Sources','출처')}</a></nav>
     <div className="place-layout">
       <div className="place-photo-section">
         {place.photos?.length ? <PlaceGallery photos={place.photos} name={place.name} language={language}/> : place.image ? <figure className="place-cover">
@@ -84,23 +86,13 @@ export default async function PlacePage({params}: Props) {
           </figcaption>
         </figure> : <div className="place-no-photo"><Leaf size={36}/><p>{label('A place to discover.', '다음 쉼을 발견하는 곳.')}</p><span>{label('A photo of this place has not been added yet.', '아직 등록된 장소 사진이 없어요.')}</span></div>}
         </div>
-      <article className="place-story"><section className="place-overview"><span className="place-eyebrow">{label('THE SETTING', '어떤 공간인가요')}</span>
-          <h2>{label('Make room for a slower day.', '조금 느린 하루를 위한 공간.')}</h2>
-          <p>{placeDescription(place, language)}</p>
-          <div className="place-detail-tags">{(ko ? place.tagsKo || place.tags : place.tagsEn || (place.country !== 'KR' ? place.tags : [])).map(tag => <span key={tag}>{tag}</span>)}</div>
-        </section>
-        <VisitPictograms place={place} language={language}/><ExternalReviewMemo place={place} language={language}/><VisitReadiness place={place} language={language}/><RestEvidence place={place} language={language}/><ReportPlace id={place.id} language={language}/><PlaceContribution id={place.id} language={language}/><PrivateExperiences experiences={place.experiences} language={language}/>
-        {!!place.visitDetails?.length && <section className="place-facts" id="visit-info"><h2>{label('Before you go', '방문을 준비해요')}</h2>
-          <dl>{place.visitDetails.map(detail => <div key={detail.labelEn}><dt>{label(detail.labelEn, detail.labelKo)}</dt><dd>{label(detail.textEn, detail.textKo)}{detail.source&&<small><a href={detail.source} target="_blank" rel="noopener noreferrer">{label('Source','출처')}</a> · {detail.checked||place.checked}</small>}</dd></div>)}</dl>
-        </section>}
-        {place.photoGallery && <a className="place-gallery" href={place.photoGallery} target="_blank" rel="noopener noreferrer">{label('More photos on the venue’s website', '공식 홈페이지에서 공간 사진 더 보기')}<ArrowUpRight size={18}/></a>}
-        <section className="place-source" id="place-source"><h2>{label('Know before you visit', '방문 전 확인해 주세요')}</h2>
-          <p>{label('Source checked: ', '자료 확인일: ')}<time dateTime={place.checked}>{place.checked}</time></p>
-          <p>{label('Opening hours, prices and access can change. Check the source before setting out.', '운영 시간·가격·이용 조건은 바뀔 수 있어요. 출발 전 정보 출처에서 최신 안내를 확인해 주세요.')}</p>
-          <a href={place.source} target="_blank" rel="noopener noreferrer">{label('View the information source', '장소 정보 출처 보기')}<ArrowUpRight size={16}/></a>
-        </section>
+      <article className="place-story">
+        <details className="place-disclosure" id="visit-info"><summary>{label('Visit conditions and full information','이용 조건·방문 정보 자세히')}</summary><div className="place-disclosure-body"><p>{placeDescription(place,language)}</p><PrivateExperiences experiences={place.experiences} language={language}/>{!!place.visitDetails?.length&&<dl className="place-full-facts">{place.visitDetails.map(detail=><div key={detail.labelEn}><dt>{label(detail.labelEn,detail.labelKo)}</dt><dd>{label(detail.textEn,detail.textKo)}{detail.source&&<small><a href={detail.source} target="_blank" rel="noopener noreferrer">{label('Source','출처')}</a> · {detail.checked||place.checked}</small>}</dd></div>)}</dl>}{place.photoGallery&&<a href={place.photoGallery} target="_blank" rel="noopener noreferrer">{label('More photos from the venue','공식 공간 사진 더 보기')} ↗</a>}</div></details>
+        <details className="place-disclosure"><summary>{label('Conditions and external review evidence','공간 조건·외부 후기 근거')}</summary><div className="place-disclosure-body"><RestEvidence place={place} language={language}/><ExternalReviewMemo place={place} language={language}/></div></details>
+        <details className="place-disclosure" id="place-source"><summary>{label('Sources and information dates','출처·정보 확인일')}</summary><div className="place-disclosure-body"><p>{label('Source checked: ','자료 확인일: ')}<time dateTime={place.checked}>{place.checked}</time></p><p>{label('Hours, prices and access may change. Confirm with the venue before visiting.','운영 시간·가격·이용 조건은 달라질 수 있어요. 방문 전 운영기관의 최신 안내를 확인해 주세요.')}</p><a href={place.source} target="_blank" rel="noopener noreferrer">{label('Main information source','장소 정보 출처')} ↗</a>{place.locationInfo&&<p>{label('Map reference checked: ','지도 기준점 확인: ')}{place.locationInfo.checked} · <a href={place.locationInfo.source} target="_blank" rel="noopener noreferrer">{label('Location source','위치 출처')}</a><br/>{place.locationInfo.kind==='reference'?label('Reference point near the place; confirm the actual entrance.','장소 주변 기준점입니다. 실제 입구는 출처에서 확인하세요.'):label('Entrance identified by the source.','출처에 안내된 입구 기준입니다.')}</p>}</div></details>
+        <details className="place-disclosure"><summary>{label('Suggest an update','정보 수정·제보')}</summary><div className="place-disclosure-body"><ReportPlace id={place.id} language={language}/><PlaceContribution id={place.id} language={language}/></div></details>
       </article>
-      <PlaceInteractions id={place.id} name={place.name} language={language} country={place.country || 'KR'} path={placePath(id, language)} mapUrl={mapPath(place)}/>
+      <PlaceInteractions id={place.id} name={place.name} category={place.category} conditions={place.conditions} language={language} country={place.country || 'KR'} path={placePath(id, language)} mapUrl={mapPath(place)}/>
     </div>
     {nearby.length > 0 && <section className="place-related"><div><span className="place-eyebrow">{label('KEEP EXPLORING', '함께 둘러봐요')}</span><h2>{label('More places in the region', '같은 지역의 다른 장소')}</h2></div>
       <div className="place-related-grid">{nearby.map(other => <a key={other.id} href={placePath(other.id, language)}>

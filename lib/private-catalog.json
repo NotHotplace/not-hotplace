@@ -48,6 +48,22 @@
         "labelKo": "예약 전 확인",
         "textEn": "Room capacity, exclusive-use conditions and fees need confirmation. A room listing does not establish soundproofing.",
         "textKo": "룸 정원·단독 이용 조건·요금은 별도 확인이 필요해요. 룸이 있다는 것만으로 방음 여부까지 확인된 것은 아니에요."
+      },
+      {
+        "labelKo": "공간 구분",
+        "labelEn": "Spa locations",
+        "textKo": "지하 1층 설화수 스파와 4층 밸런스 스파는 별도 공간이에요. 원하는 층·룸·단독 이용 조건을 확인하세요.",
+        "textEn": "The B1 Sulwhasoo Spa and fourth-floor Balance Spa are separate spaces. Confirm the floor, room and exclusive-use terms.",
+        "source": "https://int.sulwhasoo.com/pages/flagship-dosan",
+        "checked": "2026-10-05"
+      },
+      {
+        "labelKo": "스파 운영 시간",
+        "labelEn": "Spa hours",
+        "textKo": "스파는 10:00~20:00, 매월 첫 월요일·1월 1일·설·추석 휴무로 안내돼요. 부티크와 휴무일이 다르므로 예약 전 확인하세요.",
+        "textEn": "Spa hours are listed as 10:00–20:00, closed the first Monday monthly, New Year’s Day, Seollal and Chuseok. Boutique closures differ; confirm when booking.",
+        "source": "https://int.sulwhasoo.com/pages/flagship-dosan",
+        "checked": "2026-10-05"
       }
     ]
   },
