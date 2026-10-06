@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+ <rect width="1200" height="630" fill="#F7F1E5"/>
+ <path d="M76 128H1124M76 548H1124" stroke="#C7CAB8" stroke-width="2"/>
+ <g font-family="Arial, sans-serif" fill="#302A23">
+  <text x="76" y="91" font-size="39" font-weight="700">Not<tspan fill="#B84A24">_</tspan>Hotplace</text>
+  <text x="78" y="188" font-size="17" font-weight="700" letter-spacing="4" fill="#5C6742">WE WANT REST.</text>
+  <text x="72" y="290" font-size="74" font-weight="700">Find your</text>
+  <text x="72" y="375" font-size="74" font-weight="700" fill="#5C6742">room to breathe.</text>
+  <text x="78" y="448" font-size="25" fill="#6B665B">A slower day starts somewhere.</text>
+  <text x="78" y="501" font-size="20" fill="#6B665B">Pick two things. Start with three places.</text>
+  <text x="78" y="589" font-size="20" fill="#5C6742">nothotplace.com</text>
+ </g>
+ <g transform="translate(890 207)">
+  <circle cx="115" cy="105" r="115" fill="#ECEEDF"/>
+  <path d="M23 194c32-72 68-130 151-175-7 88-41 151-122 181" fill="#78865A"/>
+  <path d="M39 197L142 64" stroke="#F7F1E5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M52 98h85v67a24 24 0 01-24 24H76a24 24 0 01-24-24z" fill="#FFFCF5" stroke="#302A23" stroke-width="4"/>
+  <path d="M137 112h11a20 20 0 010 40h-11" fill="none" stroke="#302A23" stroke-width="4"/>
+  <path d="M80 82c-15-17 12-21-1-38M106 82c-15-17 12-21-1-38" fill="none" stroke="#B84A24" stroke-width="4" stroke-linecap="round"/>
+ </g>
+</svg>
