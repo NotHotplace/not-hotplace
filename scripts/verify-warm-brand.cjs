@@ -26,6 +26,12 @@ assert(warm.includes('@media(prefers-reduced-motion:reduce)'));assert(globe.incl
 assert(globe.includes('globe-mobile-motion'),'mobile globe retains pause control');
 assert(/globe-mobile-motion.*?<button[^>]*aria-label=/.test(globe),'mobile pause control has an accessible name');
 assert(warm.includes('.globe-mobile-motion .world-motion-toggle span { display:inline; }'),'mobile pause control retains visible text');
+const ocean=globe.match(/<radialGradient id="ocean"[\s\S]*?<\/radialGradient>/)?.[0];assert(ocean,'globe ocean gradient remains defined');
+const oceanStops=[...ocean.matchAll(/stopColor="(#[a-f0-9]{6})"/gi)].map(match=>match[1]);assert.equal(oceanStops.length,3);
+for(const color of oceanStops){const [r,g,b]=color.slice(1).match(/../g).map(v=>parseInt(v,16));assert(b>g&&g>r,'all ocean stops remain naturally blue');}
+assert(globe.includes('stopColor="#102f48"'),'globe depth shading stays neutral blue');
+assert(globe.includes("? '#b84a24' : supported ? '#78865a' : '#bdc6a9'"),'warm selected country and legible green land remain unchanged');
+assert(globe.includes("stroke={supported ? '#fffaf0' : '#879578'}"),'supported countries retain a light outline against blue oceans');
 assert(globe.includes('width="480" height="600"'),'brand art has intrinsic dimensions');assert(fs.statSync(path.join(root,'public/assets/brand-tea-guide.webp')).size<40000,'brand art stays below 40 KB');
 for(const f of ['app/globe.tsx','app/country-map.tsx','app/us-map.tsx','app/journal/story-card.tsx'])assert(!/#d1ff73/i.test(read(f)),`${f} cannot retain neon inline colors`);
 // Exercise the real motion hook without a browser: reduced preference, pause,

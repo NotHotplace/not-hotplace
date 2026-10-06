@@ -83,11 +83,11 @@ export default function GlobeHome() {
               onPointerUp={event => {if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); motion.dragging.current = false; setTimeout(() => {drag.current = null;}, 0);}}
               onPointerLeave={() => {if (drag.current && !drag.current.moved) {drag.current = null; motion.dragging.current = false;}}}
               onPointerCancel={() => {drag.current = null; motion.dragging.current = false;}}>
-              <defs><radialGradient id="ocean" cx="30%" cy="23%" r="85%"><stop stopColor="#eff0df"/><stop offset=".6" stopColor="#d4dac3"/><stop offset="1" stopColor="#a8b59b"/></radialGradient>
-                <radialGradient id="shade" cx="26%" cy="24%" r="79%"><stop offset=".5" stopColor="#667050" stopOpacity="0"/><stop offset="1" stopColor="#667050" stopOpacity=".3"/></radialGradient></defs>
+              <defs><radialGradient id="ocean" cx="30%" cy="23%" r="85%"><stop stopColor="#83bfd6"/><stop offset=".6" stopColor="#2f7fa8"/><stop offset="1" stopColor="#17476f"/></radialGradient>
+                <radialGradient id="shade" cx="26%" cy="24%" r="79%"><stop offset=".5" stopColor="#102f48" stopOpacity="0"/><stop offset="1" stopColor="#102f48" stopOpacity=".3"/></radialGradient></defs>
               <circle cx="300" cy="300" r="257" fill="none" stroke="#7f8b68" strokeOpacity=".4"/><circle cx="300" cy="300" r="246" fill="url(#ocean)"/>
               {geo && data && <>
-                <path d={path(geo.geoGraticule10()) || ''} fill="none" stroke="#5c6742" strokeWidth=".6" opacity=".25"/>
+                <path d={path(geo.geoGraticule10()) || ''} fill="none" stroke="#c0deeb" strokeWidth=".6" opacity=".3"/>
                 {data.features.map((feature:any) => {
                   const supported = countries.find(value => value.code === feature.properties.code);
                   return <path key={feature.properties.code} d={path(feature) || ''} fill={supported?.country === country ? '#b84a24' : supported ? '#78865a' : '#bdc6a9'}
