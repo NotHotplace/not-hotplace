@@ -34,7 +34,7 @@ assert(globe.includes("? '#c66136' : supported ? '#929b65' : '#c5cc9b'"),'select
 assert(globe.includes("stroke={supported ? '#fff5e1' : '#6f7656'}"),'supported countries retain a light outline against blue oceans');
 assert(globe.includes('width="480" height="600"'),'brand art has intrinsic dimensions');assert(fs.statSync(path.join(root,'public/assets/brand-tea-guide.webp')).size<40000,'brand art stays below 40 KB');
 const guide=globe.match(/<figure className="world-guide">[\s\S]*?<\/figure>/)?.[0];assert(guide,'homepage introduces the character in a semantic figure');
-assert(guide.includes('쉬어갈 곳을 함께 찾는 여나온')&&guide.includes('Find your pause with Yeonaon.'),'both languages name the guide');
+assert(guide.includes('쉬어갈 곳을 함께 찾는 여나온')&&guide.includes('Yeonaon, your rest guide.'),'both languages name the guide');
 assert(guide.includes('<figcaption>')&&!/<(?:figure|figcaption)[^>]*aria-hidden/.test(guide),'the visible introduction remains accessible');
 assert(/<span className="world-pause-illustration" aria-hidden="true"><img[^>]*alt=""/.test(guide),'the reused decorative illustration does not repeat the caption');
 assert(!/\.world-pause-illustration\s*\{[^}]*display:none/.test(warm),'small screens must not hide the character');
