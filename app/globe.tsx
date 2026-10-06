@@ -92,11 +92,16 @@ export default function GlobeHome() {
       <div className="world-main">
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
           <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
-          <p>{text('Choose a region and a way to pause. Start with three places.', '지역과 쉬는 방식을 고르면, 세 곳부터 보여드려요.')}</p>
+          <figure className="world-guide">
+            <span className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async"/></span>
+            <figcaption>
+              <p className="world-guide-introduction">{text('Yeonaon, your guide to a little pause.', '쉬어갈 곳을 함께 찾는 여나온')}</p>
+              <p>{text('Choose a region and a way to pause. Start with three places.', '지역과 쉬는 방식을 고르면, 세 곳부터 보여드려요.')}</p>
+            </figcaption>
+          </figure>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#countries">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
-        <figure className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async"/></figure>
       </div>
       <HomeFinder country={country} onCountryChange={chooseCountry}/>
       <details className="home-globe-disclosure" onToggle={event=>setGlobeOpen(event.currentTarget.open)}><summary><Globe2 size={21} aria-hidden="true"/>{text('Explore on the globe','세계 지도로 둘러보기')}</summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>

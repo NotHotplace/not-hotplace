@@ -33,6 +33,14 @@ assert(globeArt.includes('stopOpacity=".13"'),'illustrated globe shading stays s
 assert(globe.includes("? '#c66136' : supported ? '#929b65' : '#c5cc9b'"),'selected country and olive land keep the approved illustration palette');
 assert(globe.includes("stroke={supported ? '#fff5e1' : '#6f7656'}"),'supported countries retain a light outline against blue oceans');
 assert(globe.includes('width="480" height="600"'),'brand art has intrinsic dimensions');assert(fs.statSync(path.join(root,'public/assets/brand-tea-guide.webp')).size<40000,'brand art stays below 40 KB');
+const guide=globe.match(/<figure className="world-guide">[\s\S]*?<\/figure>/)?.[0];assert(guide,'homepage introduces the character in a semantic figure');
+assert(guide.includes('쉬어갈 곳을 함께 찾는 여나온')&&guide.includes('Yeonaon, your guide to a little pause.'),'both languages name the guide');
+assert(guide.includes('<figcaption>')&&!/<(?:figure|figcaption)[^>]*aria-hidden/.test(guide),'the visible introduction remains accessible');
+assert(/<span className="world-pause-illustration" aria-hidden="true"><img[^>]*alt=""/.test(guide),'the reused decorative illustration does not repeat the caption');
+assert(!/\.world-pause-illustration\s*\{[^}]*display:none/.test(warm),'small screens must not hide the character');
+assert(warm.includes('.world-guide { display:flex; align-items:center; gap:12px; }'),'mobile guide shares a compact row with the existing introduction');
+assert(warm.includes('position:static; transform:none; flex:0 0 72px; width:72px; height:80px;'),'mobile character retains a compact visible portrait');
+assert(warm.includes('.world-guide figcaption { min-width:0; }'),'bilingual introduction can wrap without horizontal overflow');
 for(const f of ['app/globe.tsx','app/country-map.tsx','app/us-map.tsx','app/journal/story-card.tsx'])assert(!/#d1ff73/i.test(read(f)),`${f} cannot retain neon inline colors`);
 // Mobile card layout guards. These verify the responsive cascade contract, not
 // a rendered browser layout; device screenshots remain a separate QA step.
