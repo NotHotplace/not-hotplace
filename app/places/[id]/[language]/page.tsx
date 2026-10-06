@@ -83,7 +83,7 @@ export default async function PlacePage({params}: Props) {
           <figcaption>{place.imageCredit}{license && <> · {place.imageLicenseUrl
             ? <a href={place.imageLicenseUrl} target="_blank" rel="noopener noreferrer">{license}</a> : license}</>}
             {' · '}<a href={photoSource} target="_blank" rel="noopener noreferrer">{label('Photo source', '사진 출처')}</a>
-            {place.imageNote && <span>{label(place.imageNote, '크기 조정 및 형식 변환 · 화면에 따라 사진 일부가 잘릴 수 있습니다.')}</span>}
+            {place.imageNote && <span>{label(place.imageNote, place.imageNoteKo || '크기 조정 및 형식 변환 · 화면에 따라 사진 일부가 잘릴 수 있습니다.')}</span>}
           </figcaption>
         </figure> : <div className="place-no-photo"><Leaf size={36}/><p>{label('A place to discover.', '다음 쉼을 발견하는 곳.')}</p><span>{label('A photo of this place has not been added yet.', '아직 등록된 장소 사진이 없어요.')}</span></div>}
         </div>

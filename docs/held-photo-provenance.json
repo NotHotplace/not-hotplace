@@ -6,7 +6,31 @@
     "preservedImageFields": {
       "image": "/places/us-point-reyes.jpeg",
       "imageCredit": "NPS / A. Kopshever"
-    }
+    },
+    "status": "resolved",
+    "resolved": "2026-10-06",
+    "resolution": "The exact held photograph matches the Cypress Tree Tunnel image on the live Point Reyes NPS homepage, credited NPS Photo/A. Kopshever. Restored using the NPS official-work public-domain policy; this is a source-supported rights inference, not an asset-specific license certificate.",
+    "verifiedImageFields": {
+      "image": "/places/us-point-reyes.jpeg",
+      "imageSource": "https://www.nps.gov/pore/index.htm",
+      "imageRemote": "https://www.nps.gov/common/uploads/structured_data/8C577CF2-D1B5-93EB-53FDA20654103FEE.jpeg?maxHeight=800&maxWidth=1200&quality=90",
+      "imageCredit": "NPS Photo/A. Kopshever",
+      "imageLicense": "Public domain (NPS-produced U.S. Government work)",
+      "imageLicenseUrl": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "imageNote": "Cypress Tree Tunnel at Point Reyes National Seashore. Local resized JPEG; display may crop the image. No claim to original U.S. Government works. No NPS endorsement implied.",
+      "imageNoteKo": "포인트 레예스 국립해안의 사이프러스 나무 터널 사진입니다. 크기를 조정한 JPEG이며 화면에 따라 일부가 잘릴 수 있습니다. 미국 정부 원저작물에 대한 권리를 주장하지 않습니다. 미국 국립공원관리청의 보증·추천을 의미하지 않습니다."
+    },
+    "localAsset": {
+      "width": 900,
+      "height": 600,
+      "sha256": "75b75eb3a2b572417226a087f5d1557b33452c66f82ed1ee075433f3fe63897b"
+    },
+    "sourceAsset": {
+      "width": 1200,
+      "height": 800,
+      "sha256": "c6ec6ebbf370d396329bf125e387e1da8ea5cdf41e4ac3a4f6b362b21fce9a40"
+    },
+    "verification": "Visual identity checked against the source; resized JPEGs are not byte-identical. No asset bytes changed. The NPS policy excludes third-party material and protected marks; no third-party restriction was displayed for this photograph. This finding does not cover other NPS-hosted images."
   },
   {
     "id": "world-gb-holland-park",
