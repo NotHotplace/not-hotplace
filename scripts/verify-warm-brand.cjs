@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const css=read('app/globals.css'),warm=read('app/warm-brand.css'),layout=read('app/layout.tsx'),home=read('app/home-finder.tsx'),globe=read('app/globe.tsx');
+const css=read('app/globals.css'),warm=read('app/warm-brand.css'),layout=read('app/layout.tsx'),home=read('app/home-finder.tsx'),globe=read('app/globe.tsx'),globeArt=read('app/globe-decoration.tsx');
 function luminance(hex){const rgb=hex.replace('#','').match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];}
 function contrast(a,b){const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);}
 for(const [fg,bg,label] of [['#302A23','#F7F1E5','body'],['#6B665B','#F7F1E5','secondary text'],['#5C6742','#ECEEDF','olive on sage'],['#FFFFFF','#B84A24','primary action'],['#FFFFFF','#5C6742','selected language']])assert(contrast(fg,bg)>=4.5,`${label} must meet normal-text WCAG AA`);
@@ -22,16 +22,16 @@ assert(warm.includes('width:78px; min-width:0; height:88px;'),'compact images re
 assert(warm.includes('strong span { color:inherit; margin:0;'),'CTA arrows inherit white text without older badge spacing');
 assert(warm.includes('border-radius:6px; overflow:visible;'),'borderless cards cannot clip disclosure focus outlines');
 assert(warm.includes('.home-finder-grid .place-reasons details p { display:block; -webkit-line-clamp:unset; overflow:visible;'),'expanded source text stays unclamped');
-assert(warm.includes('@media(prefers-reduced-motion:reduce)'));assert(globe.includes('useGlobeMotion(globeOpen && !!geo && !!data, visible)'),'closed globe cannot animate');
+assert(warm.includes('@media(prefers-reduced-motion:reduce)'));assert(globe.includes('useGlobeMotion(globeOpen && !!geo && !!data, visible && !focusedCountry)'),'closed globe cannot animate');
 assert(globe.includes('globe-mobile-motion'),'mobile globe retains pause control');
 assert(/globe-mobile-motion.*?<button[^>]*aria-label=/.test(globe),'mobile pause control has an accessible name');
 assert(warm.includes('.globe-mobile-motion .world-motion-toggle span { display:inline; }'),'mobile pause control retains visible text');
-const ocean=globe.match(/<radialGradient id="ocean"[\s\S]*?<\/radialGradient>/)?.[0];assert(ocean,'globe ocean gradient remains defined');
+const ocean=globeArt.match(/<radialGradient id="ocean"[\s\S]*?<\/radialGradient>/)?.[0];assert(ocean,'globe ocean gradient remains defined');
 const oceanStops=[...ocean.matchAll(/stopColor="(#[a-f0-9]{6})"/gi)].map(match=>match[1]);assert.equal(oceanStops.length,3);
 for(const color of oceanStops){const [r,g,b]=color.slice(1).match(/../g).map(v=>parseInt(v,16));assert(b>g&&g>r,'all ocean stops remain naturally blue');}
-assert(globe.includes('stopColor="#102f48"'),'globe depth shading stays neutral blue');
-assert(globe.includes("? '#b84a24' : supported ? '#78865a' : '#bdc6a9'"),'warm selected country and legible green land remain unchanged');
-assert(globe.includes("stroke={supported ? '#fffaf0' : '#879578'}"),'supported countries retain a light outline against blue oceans');
+assert(globeArt.includes('stopOpacity=".13"'),'illustrated globe shading stays subtle');
+assert(globe.includes("? '#c66136' : supported ? '#929b65' : '#c5cc9b'"),'selected country and olive land keep the approved illustration palette');
+assert(globe.includes("stroke={supported ? '#fff5e1' : '#6f7656'}"),'supported countries retain a light outline against blue oceans');
 assert(globe.includes('width="480" height="600"'),'brand art has intrinsic dimensions');assert(fs.statSync(path.join(root,'public/assets/brand-tea-guide.webp')).size<40000,'brand art stays below 40 KB');
 for(const f of ['app/globe.tsx','app/country-map.tsx','app/us-map.tsx','app/journal/story-card.tsx'])assert(!/#d1ff73/i.test(read(f)),`${f} cannot retain neon inline colors`);
 // Mobile card layout guards. These verify the responsive cascade contract, not

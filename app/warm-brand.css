@@ -94,3 +94,18 @@
 
 /* Source details must never inherit a teaser clamp. */
 .home-finder-grid .place-reasons details p { display:block; -webkit-line-clamp:unset; overflow:visible; min-height:0; }
+
+/* SVG geography keeps its projection; illustration details sit outside it. */
+.home-globe-disclosure .globe-display>svg { display:block; width:100%; height:auto; max-height:none; user-select:none; }
+.globe-display .globe-pin { cursor:pointer; }
+.globe-display .globe-pin:focus, .globe-display .globe-pin:focus-visible { outline:none; filter:none; }
+.globe-focus-ring { display:none; fill:none; stroke:#302a23; stroke-width:2.5px; vector-effect:non-scaling-stroke; pointer-events:none; }
+.globe-pin:focus-visible .globe-focus-ring { display:block; }
+.globe-pin:hover .globe-label-background { stroke:#302a23; stroke-width:1.5px; }
+.globe-label-hint { margin:18px auto 22px; max-width:32rem; text-align:center; font-size:.8125rem; line-height:1.6; color:var(--muted-foreground); }
+.home-globe-disclosure .globe-rotation { margin-top:12px; }
+@media(max-width:700px) {
+ .home-globe-disclosure .globe-mobile-motion { margin:16px 0; }
+ .home-globe-disclosure .globe-rotation { gap:18px; font-size:.8125rem; }
+ .globe-label-hint { font-size:.75rem; }
+}
