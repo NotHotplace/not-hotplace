@@ -275,7 +275,15 @@
         "textEn": "Trail distances vary widely. Alamere Falls requires at least a 13-mile round trip.",
         "textKo": "코스별 거리가 크게 다릅니다. 알라미어 폭포는 최소 왕복 약 21km의 긴 코스입니다."
       }
-    ]
+    ],
+    "image": "/places/us-point-reyes.jpeg",
+    "imageSource": "https://www.nps.gov/pore/index.htm",
+    "imageRemote": "https://www.nps.gov/common/uploads/structured_data/8C577CF2-D1B5-93EB-53FDA20654103FEE.jpeg?maxHeight=800&maxWidth=1200&quality=90",
+    "imageCredit": "NPS Photo/A. Kopshever",
+    "imageLicense": "Public domain (NPS-produced U.S. Government work)",
+    "imageLicenseUrl": "https://www.nps.gov/aboutus/disclaimer.htm",
+    "imageNote": "Cypress Tree Tunnel at Point Reyes National Seashore. Local resized JPEG; display may crop the image. No claim to original U.S. Government works. No NPS endorsement implied.",
+    "imageNoteKo": "포인트 레예스 국립해안의 사이프러스 나무 터널 사진입니다. 크기를 조정한 JPEG이며 화면에 따라 일부가 잘릴 수 있습니다. 미국 정부 원저작물에 대한 권리를 주장하지 않습니다. 미국 국립공원관리청의 보증·추천을 의미하지 않습니다."
   },
   {
     "id": "us-cabrillo",

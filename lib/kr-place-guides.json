@@ -59,10 +59,18 @@
     ],
     "visitDetails": [
       {
-        "labelKo": "운영·이용 시간",
         "labelEn": "Hours",
-        "textKo": "[월요일~화요일 / 목요일~토요일]- 11:30~19:00[수요일]- 11:30~18:00",
-        "textEn": "Mon–Tue, Thu–Sat 11:30–19:00; Wed 11:30–18:00."
+        "labelKo": "운영 시간",
+        "textKo": "2025년 11월 안내상 저녁은 사전 예약이 필요해요. 현재 조건을 확인하세요. 관광자료 시간: 월·화·목~토 11:30~19:00, 수 11:30~18:00.",
+        "textEn": "KTO’s November 2025 guidance says to book dinner in advance; confirm current conditions. Tourism hours: Mon–Tue, Thu–Sat 11:30–19:00; Wed 11:30–18:00.",
+        "source": "https://www.ktriptips.com/kor/food/3572781",
+        "checked": "2026-10-06",
+        "additionalSources": [
+          {
+            "label": "한국관광공사 · KTO (2025-11)",
+            "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=58b8a41f-b750-450b-99c4-d644737d051f"
+          }
+        ]
       },
       {
         "labelKo": "휴무",
@@ -87,6 +95,20 @@
         "labelEn": "Solo visit",
         "textKo": "보리밥 정식은 2인 이상 주문 조건입니다.",
         "textEn": "The barley set meal requires at least two diners."
+      },
+      {
+        "labelEn": "Dinner booking",
+        "labelKo": "저녁 예약",
+        "textKo": "한국관광공사의 2025년 11월 안내에는 저녁 식사 전 예약이 필요하다고 되어 있어요. 현재 예약 조건은 매장(043-212-2232)에 확인하세요.",
+        "textEn": "KTO’s November 2025 guidance says dinner requires advance reservation. Confirm current booking requirements with the venue at +82 43-212-2232.",
+        "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=58b8a41f-b750-450b-99c4-d644737d051f",
+        "checked": "2026-10-06",
+        "additionalSources": [
+          {
+            "label": "KTripTips",
+            "url": "https://www.ktriptips.com/kor/food/3572781"
+          }
+        ]
       }
     ]
   },
@@ -1436,16 +1458,32 @@
         "textEn": "No regular closure listed"
       },
       {
-        "labelKo": "주차",
         "labelEn": "Parking",
-        "textKo": "관광정보 안내: 불가능",
-        "textEn": "Tourism listing: no parking listed; plan an alternative."
+        "labelKo": "주차",
+        "textKo": "관광자료에 주차 안내가 있지만, 정확한 주차 구역·요금은 확인되지 않았어요. 방문할 지점을 정한 뒤 확인하세요.",
+        "textEn": "Tourism records mention parking, but the exact parking area and fees are unconfirmed. Choose the intended stop and check before visiting.",
+        "source": "https://data.visitkorea.or.kr/page/2746373",
+        "checked": "2026-10-06",
+        "additionalSources": [
+          {
+            "label": "KTripTips",
+            "url": "https://www.ktriptips.com/kor/tourspot/2746373"
+          }
+        ]
       },
       {
-        "labelKo": "방문 계획",
         "labelEn": "Visit planning",
-        "textKo": "관광정보의 이용 안내입니다. 현장 통제와 날씨를 확인하고 허용된 주차·보행 구간을 이용해 주세요.",
-        "textEn": "Check local closures and weather, and use permitted parking and walking areas."
+        "labelKo": "방문 계획",
+        "textKo": "저장된 주소는 대구광역시 달성군 가창면 용계리지만, 관광자료는 경상북도 청도군 각북면 오산리로 안내해요. 산·저수지를 함께 다루는 자료여서 실제 방문·주차 지점은 확인되지 않았어요. 지도 위치를 입구로 보지 말고 방문할 지점을 먼저 확인하세요.",
+        "textEn": "The saved address is Yonggye-ri, Gachang-myeon, Dalseong-gun, Daegu; tourism records give Osan-ri, Gakbuk-myeon, Cheongdo-gun, Gyeongsangbuk-do. The listing covers both mountain and reservoir, so the visitor and parking locations remain unresolved. Confirm your intended stop; the map point is not a verified entrance.",
+        "source": "https://data.visitkorea.or.kr/page/2746373",
+        "checked": "2026-10-06",
+        "additionalSources": [
+          {
+            "label": "KTripTips",
+            "url": "https://www.ktriptips.com/kor/tourspot/2746373"
+          }
+        ]
       }
     ]
   },
@@ -3433,10 +3471,18 @@
     ],
     "visitDetails": [
       {
-        "labelKo": "운영·이용 시간",
         "labelEn": "Hours",
-        "textKo": "10:00~19:30 (마지막 주문 18:00)",
-        "textEn": "10:00~19:30 (last order 18:00)"
+        "labelKo": "운영 시간",
+        "textKo": "자료별 운영 시간이 달라요. 현재 영업·마지막 주문 시간은 매장(0507-1310-4314)에 확인하세요.",
+        "textEn": "Published hours conflict. Confirm current opening hours and last orders with the cafe at 0507-1310-4314.",
+        "source": "https://www.ktriptips.com/kor/food/4055439",
+        "checked": "2026-10-06",
+        "additionalSources": [
+          {
+            "label": "한국관광공사 · KTO (2026-03)",
+            "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=d82adba1-1b97-4f70-a74b-d436e37cef47"
+          }
+        ]
       },
       {
         "labelKo": "휴무",

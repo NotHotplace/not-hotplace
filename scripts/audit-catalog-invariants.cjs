@@ -14,7 +14,8 @@ for(const p of catalog){assert(countryCodes.includes(p.country));assert(['cafe',
 const p=catalog.find(p=>p.id==='tour-2375858');assert.equal(visitFacts(p).parking.status,'nearby');assert(!matchesCondition(p,'parking'),'nearby paid parking does not satisfy venue-parking condition');assert(p.visitDetails.find(d=>d.labelEn==='Parking').additionalSources.length);
 const mouse=catalog.find(p=>p.id==='tour-2946087').visitDetails.find(d=>d.labelEn==='Hours');assert(mouse.textEn.includes('conflict'));assert(mouse.additionalSources.length);
 assert.equal(catalog.find(p=>p.id==='cj-soyeon').address,'충북 청주시 서원구 청남로 1865-6');
-for(const id of ['us-point-reyes','world-gb-holland-park'])assert(!catalog.find(p=>p.id===id).image,'unverified photo remains hidden');
+const reyes=catalog.find(p=>p.id==='us-point-reyes');assert.equal(reyes.image,'/places/us-point-reyes.jpeg');for(const field of ['imageSource','imageRemote','imageLicenseUrl'])url(reyes[field],'verified Point Reyes photo');assert.equal(reyes.imageCredit,'NPS Photo/A. Kopshever');assert(reyes.imageLicense.includes('Public domain'));assert(reyes.imageNote&&reyes.imageNoteKo);
+const holland=catalog.find(p=>p.id==='world-gb-holland-park');assert(!holland.image&&!holland.imageRemote&&!holland.photos?.length,'unverified Holland Park photo remains hidden');
 for(const [id,label] of [['tour-3082222','Closures'],['tour-3445436','Hours'],['tour-3456352','Closures'],['tour-2833269','Hours']])assert(/confirm|unclear|incomplete/i.test(catalog.find(p=>p.id===id).visitDetails.find(d=>d.labelEn===label).textEn),'ambiguous source is disclosed');
 assert.equal(JSON.parse(fs.readFileSync(path.join(root,'wrangler.json'),'utf8')).vars.PAYMENTS_LIVE_ENABLED,'false');
 console.log(`PASS: ${catalog.length} catalog entries, ${dates} dated facts, ${urls} source URLs, ${photos} referenced local photos; ${operationalFlags} remaining operational Hangul flags (translation review, not venue re-verification).`);
