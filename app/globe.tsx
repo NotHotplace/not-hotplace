@@ -95,7 +95,7 @@ export default function GlobeHome() {
           <figure className="world-guide">
             <span className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async"/></span>
             <figcaption>
-              <p className="world-guide-introduction">{text('Yeonaon, your guide to a little pause.', '쉬어갈 곳을 함께 찾는 여나온')}</p>
+              <p className="world-guide-introduction">{text('Find your pause with Yeonaon.', '쉬어갈 곳을 함께 찾는 여나온')}</p>
               <p>{text('Choose a region and a way to pause. Start with three places.', '지역과 쉬는 방식을 고르면, 세 곳부터 보여드려요.')}</p>
             </figcaption>
           </figure>
