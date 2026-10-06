@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vinext build",
     "deploy": "pnpm exec wrangler d1 migrations apply DB --remote --config wrangler.json && pnpm exec wrangler deploy",
-    "test": "node scripts/verify-google-access.cjs && node scripts/verify-product.cjs && node scripts/verify-device-bookmarks.cjs && node scripts/verify-place-presentation.cjs && node scripts/catalog-client-index.cjs --check && node scripts/verify-client-payload.cjs && node scripts/verify-ui-regressions.cjs && node scripts/audit-catalog-invariants.cjs && node scripts/verify-source-corrections.cjs && node scripts/verify-warm-brand.cjs",
+    "test": "node scripts/verify-google-access.cjs && node scripts/verify-product.cjs && node scripts/verify-device-bookmarks.cjs && node scripts/verify-place-presentation.cjs && node scripts/catalog-client-index.cjs --check && node scripts/verify-client-payload.cjs && node scripts/verify-ui-regressions.cjs && node scripts/verify-explorer-selection.cjs && node scripts/audit-catalog-invariants.cjs && node scripts/verify-source-corrections.cjs && node scripts/verify-warm-brand.cjs",
     "check": "tsc --noEmit",
     "measure:client": "node scripts/measure-client-payload.cjs"
   },

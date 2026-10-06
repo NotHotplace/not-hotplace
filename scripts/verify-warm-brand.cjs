@@ -34,6 +34,24 @@ assert(globe.includes("? '#b84a24' : supported ? '#78865a' : '#bdc6a9'"),'warm s
 assert(globe.includes("stroke={supported ? '#fffaf0' : '#879578'}"),'supported countries retain a light outline against blue oceans');
 assert(globe.includes('width="480" height="600"'),'brand art has intrinsic dimensions');assert(fs.statSync(path.join(root,'public/assets/brand-tea-guide.webp')).size<40000,'brand art stays below 40 KB');
 for(const f of ['app/globe.tsx','app/country-map.tsx','app/us-map.tsx','app/journal/story-card.tsx'])assert(!/#d1ff73/i.test(read(f)),`${f} cannot retain neon inline colors`);
+// Mobile card layout guards. These verify the responsive cascade contract, not
+// a rendered browser layout; device screenshots remain a separate QA step.
+const upgrade=read('app/upgrade.css');
+const mobileCards=upgrade.match(/@media\(max-width:600px\)\{\.home-finder-grid>a[^\n]+/)?.[0];assert(mobileCards);
+assert(mobileCards.includes('.quiet-place>.quiet-place-main{width:100%;flex:0 0 100%}'),'mobile link must occupy its own flex row beside full-width evidence');
+assert(mobileCards.includes('.quiet-place-main>.quiet-thumb{float:none}'),'legacy small-screen thumbnail floats cannot squeeze mobile copy');
+assert(mobileCards.includes('.quiet-place>.comparison-choice{position:static;flex:0 0 26px;margin:14px}'),'comparison checkbox gets its own row rather than overlapping mobile cards');
+assert(upgrade.includes('.quiet-workspace.world-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}'),'international maps and results have an explicit desktop grid');
+assert(upgrade.includes('.world-workspace .quiet-results{position:static;inset:auto;width:auto;'),'international results cannot inherit the Korean atlas overlay');
+assert(upgrade.includes('.world-workspace .country-map-panel,.world-workspace .japan-map-panel{grid-column:1;grid-row:1}'),'Japan and other international maps keep their own mobile grid row');
+const evidence=read('app/growth.css');
+assert(evidence.includes('.quiet-place>.place-reasons,.quiet-place>.candidate-incomplete{flex-basis:100%;width:100%;'),'both sourced and basic cards retain full-width evidence');
+assert(read('app/explorer.tsx').includes('<PlaceReasons place={row} language={lang} compact/>'));
+const refinement=read('app/refinement.css');
+assert(refinement.includes('.finder-shortlist>a>span:first-child{flex:none}'),'only the shortlist number has a fixed flex size');
+assert(refinement.includes('.finder-shortlist>a>span:last-child{flex:1;min-width:0}'),'shortlist title/reason must shrink and wrap within the card');
+assert(refinement.includes('@media(min-width:901px){.quiet-app:has(.quiet-workspace){height:auto;min-height:100dvh}}'),'desktop explorer height follows its finder and map content without footer overlap');
+assert(/\.home-space-card h3>a\{[^}]*overflow-wrap:anywhere/.test(read('app/comfort.css')),'long place-name words can wrap beside the theme-card arrow');
 // Exercise the real motion hook without a browser: reduced preference, pause,
 // closed/hidden readiness, and cancellation must not leave animation scheduled.
 const ts=require('typescript'),states=[],refs=[],effects=[],pending=[],frames=new Map(),listeners=new Map();let si=0,ri=0,ei=0,nextFrame=0;

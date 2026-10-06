@@ -91,7 +91,7 @@
 .home-space-card{border:1px solid var(--border);background:var(--card);border-radius:16px;padding:25px;min-width:0}
 .home-space-meta{color:var(--muted-foreground);font-size:14px}
 .home-space-card h3{font-size:23px;font-weight:600;line-height:1.4;letter-spacing:-.5px;margin:13px 0 17px}
-.home-space-card h3>a{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;color:var(--foreground)}
+.home-space-card h3>a{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;color:var(--foreground);overflow-wrap:anywhere}
 .home-space-card h3 svg{flex:none;margin-top:4px;color:var(--brand-olive)}
 .home-space-card .place-preview{gap:17px}
 .home-space-card .place-preview-note{border-color:var(--border)}

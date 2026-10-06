@@ -115,7 +115,7 @@ export default function GlobeHome() {
           <div className="globe-rotation"><button type="button" onClick={() => motion.turnTo(motion.rotation + 60)} aria-label={text('Rotate west', '서쪽으로 회전')}><ChevronLeft size={20}/></button>
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
         </section></details>
-      <CountryDirectory onSelect={chooseCountry}/>
+      <CountryDirectory/>
       <HomeThemes country={country} onCountryChange={chooseCountry}/>
       <section className="home-themes"><h2>{text('Start with a guide.','어떤 쉼인지부터 골라보세요.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>

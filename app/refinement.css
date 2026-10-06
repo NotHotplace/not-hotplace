@@ -18,7 +18,7 @@
 .finder-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
 .finder-shortlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .finder-shortlist>a{display:flex;align-items:center;gap:10px;min-width:0;min-height:44px;padding:10px;border:1px solid var(--border);border-radius:8px;color:var(--foreground);font-size:1rem;line-height:1.6;overflow-wrap:anywhere}
-.finder-shortlist>a>span{color:var(--brand-olive);font-size:.875rem;flex:none}
+.finder-shortlist>a>span{color:var(--brand-olive);font-size:.875rem}.finder-shortlist>a>span:first-child{flex:none}.finder-shortlist>a>span:last-child{flex:1;min-width:0}
 .quiet-main>.guide-links{flex:none;min-width:0;max-width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;padding-bottom:6px;margin-bottom:12px;margin-left:0;scrollbar-width:thin}
 .quiet-main>.guide-links>a{flex:none;white-space:nowrap}
 .finder-result{min-width:0;position:relative;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
@@ -60,3 +60,6 @@
 @media(max-width:900px){.finder-results{grid-template-columns:1fr}.finder-result{display:flex;align-items:flex-start;gap:13px;flex-wrap:wrap}.finder-result>img{width:86px;height:100px;aspect-ratio:auto;flex:none;margin:0}.finder-result>div{flex:1;min-width:160px}.finder-number{width:100%;margin:0}.finder-result p{font-size:1rem}.rest-finder{padding:18px}.guide-grid{grid-template-columns:1fr}.world-quick-actions{margin-top:20px}.guide-checks ol{display:block}.guide-checks li{margin-block:8px}}
 @media(prefers-reduced-motion:reduce){.world-quick-actions a,.rest-finder,.guide-card{transition:none;animation:none}}
 @media(max-width:600px){.finder-shortlist{grid-template-columns:1fr}.finder-heading h2{font-size:1.25rem}.finder-fields{grid-template-columns:1fr 1fr}.finder-field{min-width:0}}
+
+/* Discovery now includes a finder above the map, so the page must grow with its content. */
+@media(min-width:901px){.quiet-app:has(.quiet-workspace){height:auto;min-height:100dvh}}
