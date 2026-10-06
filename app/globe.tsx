@@ -1,7 +1,7 @@
 'use client';
 import {countries as countryConfig,countryCodes,type CountryCode} from '@/lib/countries';
 import {useEffect, useRef, useState} from 'react';
-import {ArrowUpRight, ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
+import {ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
 import {loadGeo} from '@/lib/geo-client';
 import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
@@ -18,7 +18,7 @@ export default function GlobeHome() {
   const [lastCountry,setLastCountry]=useState<CountryCode|null>(null);
   const panel = useRef<HTMLElement>(null);
   const drag = useRef<{x: number; rotation: number; moved: boolean} | null>(null);
-  const motion = useGlobeMotion(!!geo && !!data, visible);
+  const motion = useGlobeMotion(globeOpen && !!geo && !!data, visible);
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
@@ -66,15 +66,14 @@ export default function GlobeHome() {
       <div className="world-main">
         <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
           <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
-          <p>{text('A slower day starts somewhere.', '여유로운 하루, 그 시작이 될 곳.')}<br/>{text('Choose your place and pause. We’ll start with three candidates.', '어디서, 어떻게 쉴지 고르면 세 곳부터 보여드려요.')}</p>
+          <p>{text('Choose a region and a way to pause. Start with three places.', '지역과 쉬는 방식을 고르면, 세 곳부터 보여드려요.')}</p>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#countries">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
-
-
+        <figure className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async"/></figure>
       </div>
       <HomeFinder country={country} onCountryChange={chooseCountry}/>
-      <details className="home-globe-disclosure" onToggle={event=>setGlobeOpen(event.currentTarget.open)}><summary>{text('Explore on the globe','세계 지도로 둘러보기')}</summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
+      <details className="home-globe-disclosure" onToggle={event=>setGlobeOpen(event.currentTarget.open)}><summary><Globe2 size={21} aria-hidden="true"/>{text('Explore on the globe','세계 지도로 둘러보기')}</summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
           <div className="globe-display">
             <div className="globe-halo" aria-hidden="true"/><div className="globe-orbit" aria-hidden="true"/><div className="globe-orbit globe-orbit-second" aria-hidden="true"/>
             <div className="globe-stars" aria-hidden="true">{Array.from({length:7}, (_, index) => <i key={index}/>)}</div>
@@ -84,15 +83,15 @@ export default function GlobeHome() {
               onPointerUp={event => {if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); motion.dragging.current = false; setTimeout(() => {drag.current = null;}, 0);}}
               onPointerLeave={() => {if (drag.current && !drag.current.moved) {drag.current = null; motion.dragging.current = false;}}}
               onPointerCancel={() => {drag.current = null; motion.dragging.current = false;}}>
-              <defs><radialGradient id="ocean" cx="30%" cy="23%" r="85%"><stop stopColor="#264542"/><stop offset=".6" stopColor="#142c2c"/><stop offset="1" stopColor="#080f13"/></radialGradient>
-                <radialGradient id="shade" cx="26%" cy="24%" r="79%"><stop offset=".5" stopColor="#001008" stopOpacity="0"/><stop offset="1" stopColor="#020907" stopOpacity=".8"/></radialGradient></defs>
-              <circle cx="300" cy="300" r="257" fill="none" stroke="#789b73" strokeOpacity=".4"/><circle cx="300" cy="300" r="246" fill="url(#ocean)"/>
+              <defs><radialGradient id="ocean" cx="30%" cy="23%" r="85%"><stop stopColor="#eff0df"/><stop offset=".6" stopColor="#d4dac3"/><stop offset="1" stopColor="#a8b59b"/></radialGradient>
+                <radialGradient id="shade" cx="26%" cy="24%" r="79%"><stop offset=".5" stopColor="#667050" stopOpacity="0"/><stop offset="1" stopColor="#667050" stopOpacity=".3"/></radialGradient></defs>
+              <circle cx="300" cy="300" r="257" fill="none" stroke="#7f8b68" strokeOpacity=".4"/><circle cx="300" cy="300" r="246" fill="url(#ocean)"/>
               {geo && data && <>
-                <path d={path(geo.geoGraticule10()) || ''} fill="none" stroke="#8cafa3" strokeWidth=".6" opacity=".25"/>
+                <path d={path(geo.geoGraticule10()) || ''} fill="none" stroke="#5c6742" strokeWidth=".6" opacity=".25"/>
                 {data.features.map((feature:any) => {
                   const supported = countries.find(value => value.code === feature.properties.code);
-                  return <path key={feature.properties.code} d={path(feature) || ''} fill={supported?.country === country ? '#d1ff73' : supported ? '#79945b' : '#355953'}
-                    stroke={supported ? '#eaffb4' : '#8caa91'} strokeOpacity={supported ? 1 : .45} strokeWidth={supported ? 1.2 : .6}
+                  return <path key={feature.properties.code} d={path(feature) || ''} fill={supported?.country === country ? '#b84a24' : supported ? '#78865a' : '#bdc6a9'}
+                    stroke={supported ? '#fffaf0' : '#879578'} strokeOpacity={supported ? 1 : .45} strokeWidth={supported ? 1.2 : .6}
                     onClick={() => {if (supported && !drag.current?.moved) location.href = '/' + supported.slug + '?lang=' + lang;}} className={supported ? 'globe-country' : ''}>
                     <title>{supported?.name || feature.properties.name}</title>
                   </path>;
@@ -104,14 +103,15 @@ export default function GlobeHome() {
                   return <g key={value.code} className="globe-pin" role="link" tabIndex={0} aria-label={value.name}
                     onClick={() => {if (!drag.current?.moved) location.href = '/' + value.slug + '?lang=' + lang;}}
                     onKeyDown={event => {if (event.key === 'Enter' || event.key === ' ') {event.preventDefault(); location.href = '/' + value.slug + '?lang=' + lang;}}}>
-                    <circle cx={x} cy={y} r="22" fill="transparent"/><circle className="globe-pin-pulse" cx={x} cy={y} r="16" fill="#d1ff73" opacity=".25"/>
-                    <circle cx={x} cy={y} r="4" fill="#f1ffd5"/><text x={x} y={y-23} fill="#f3ffde" fontSize="16" textAnchor="middle" paintOrder="stroke" stroke="#10201b" strokeWidth="5">{value.name}</text>
+                    <circle cx={x} cy={y} r="22" fill="transparent"/><circle className="globe-pin-pulse" cx={x} cy={y} r="16" fill="#b84a24" opacity=".25"/>
+                    <circle cx={x} cy={y} r="4" fill="#fffaf0"/><text x={x} y={y-23} fill="#302a23" fontSize="16" textAnchor="middle" paintOrder="stroke" stroke="#f7f1e5" strokeWidth="5">{value.name}</text>
                   </g>;
                 })}
               </>}
             </svg>
             {!data && <span className="globe-load">{failed ? text('Choose a country below.', '아래에서 나라를 선택하세요.') : text('Loading the globe…', '지구본을 불러오는 중…')}</span>}
           </div>
+          <div className="globe-mobile-motion"><button type="button" className="world-motion-toggle" onClick={motion.toggle} disabled={motion.reduced} aria-pressed={motion.enabled} aria-label={motion.reduced ? text('Reduced motion enabled', '모션 감소 설정 적용 중') : motion.enabled ? text('Pause animation', '애니메이션 멈추기') : text('Play animation', '애니메이션 재생하기')}>{motion.enabled ? <Pause size={16}/> : <Play size={16}/>}<span>{motion.reduced ? text('Reduced motion', '모션 감소') : motion.enabled ? text('Pause motion', '모션 끄기') : text('Play motion', '모션 켜기')}</span></button></div>
           <div className="globe-rotation"><button type="button" onClick={() => motion.turnTo(motion.rotation + 60)} aria-label={text('Rotate west', '서쪽으로 회전')}><ChevronLeft size={20}/></button>
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
         </section></details>

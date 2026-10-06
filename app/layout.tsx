@@ -17,6 +17,7 @@ import "./refinement.css";
 import "./community.css";
 import "./upgrade.css";
 import "./growth.css";
+import "./warm-brand.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   applicationName: 'NotHotplace',
   manifest: '/manifest.webmanifest',
-  appleWebApp: {capable: true, title: 'NotHotplace', statusBarStyle: 'black-translucent'},
+  appleWebApp: {capable: true, title: 'NotHotplace', statusBarStyle: 'default'},
   openGraph: {type: 'website', locale: 'en_US', alternateLocale: ['ko_KR'], siteName: 'NotHotplace', title: 'NotHotplace — Find your room to breathe', description: SITE_DESCRIPTION, images: [{url:'/og.png',width:1200,height:630}]},
   twitter: {card:'summary_large_image',title:'NotHotplace — Find your room to breathe',description:SITE_DESCRIPTION,images:['/og.png']},
   icons: {
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     apple: '/icons/apple-touch-icon.png',
   },
 };
-export const viewport: Viewport = {width:'device-width',initialScale:1,viewportFit:'cover',themeColor:'#0b0b0b'};
+export const viewport: Viewport = {width:'device-width',initialScale:1,viewportFit:'cover',themeColor:'#F7F1E5'};
 
 export default function RootLayout({
   children,
@@ -42,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="antialiased"><LanguageProvider><AppRuntime/>{children}</LanguageProvider></body>
     </html>
   );
