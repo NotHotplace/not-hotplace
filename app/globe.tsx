@@ -70,6 +70,13 @@ export default function GlobeHome() {
   const path = geo?.geoPath(projection);
   const countries = useMemo(() => countryCodes.map(code=>({code,iso3:countryConfig[code].iso3,slug:countryConfig[code].slug,name:lang==='ko'?countryConfig[code].nameKo:countryConfig[code].nameEn,center:countryConfig[code].center,selected:code===country})),[country,lang]);
   const labels = useMemo(() => projection ? layoutGlobeLabels(projectVisibleGlobePoints(countries,projection),globeWidth,{preferredCode:focusedCode.current??undefined}) : [],[projection,countries,globeWidth]);
+  useEffect(() => {
+    // Removing a focused SVG link (for example after a drag to the back) may
+    // skip blur. Do not leave animation permanently paused on a stale target.
+    if (focusedCountry && (!globeOpen || !labels.some(label => label.code === focusedCountry))) {
+      focusedCode.current = null;setFocusedCountry(null);
+    }
+  }, [focusedCountry,globeOpen,labels]);
   function finishDrag() {if(drag.current)suppressClick.current=drag.current.moved;drag.current=null;motion.dragging.current=false;}
 
 
@@ -138,13 +145,13 @@ export default function GlobeHome() {
                       <path d={`M${x} ${y}C${x-3} ${y-4} ${x-7} ${y-7} ${x-7} ${y-11}A7 7 0 1 1 ${x+7} ${y-11}C${x+7} ${y-7} ${x+3} ${y-4} ${x} ${y}Z`} fill={color} stroke="#fff9ed" strokeWidth="1.2"/>
                       <circle cx={x} cy={y-11} r="2.2" fill="#fff9ed"/>
                     </g>
-                    <rect {...pinHitRect} fill="transparent" className="globe-pin-hit"/>
+                    <rect {...pinHitRect} fill="#fff" fillOpacity="0" className="globe-pin-hit"/>
                     <rect {...labelRect} rx={labelRect.height/2} fill={value.selected?'#b84a24':'#fff9ed'} stroke={color} strokeWidth=".8" className="globe-label-background"/>
                     <text x={value.textX} y={value.textStartY} fill={value.selected?'#fff9ed':'#55603c'} fontSize={value.fontSize} fontFamily="sans-serif" fontWeight={value.selected?650:500} textAnchor="middle" pointerEvents="none" aria-hidden="true">
                       {value.lines.map((line,index)=><tspan key={index} x={value.textX} dy={index?value.lineHeight:0}>{line}</tspan>)}
                     </text>
-                    <rect {...labelRect} rx={labelRect.height/2} className="globe-focus-ring"/>
-                    <rect {...pinHitRect} rx="10" className="globe-focus-ring"/>
+                    <rect {...labelRect} rx={labelRect.height/2} className="globe-focus-ring" fill="none"/>
+                    <rect {...pinHitRect} rx="10" className="globe-focus-ring" fill="none"/>
                   </a>;
                 })}
               </>}

@@ -55,7 +55,11 @@ function harness(lang){
   svg.props.onPointerDown(h.pointer(100,100,{button:2}));assert.equal(h.dragging,false,'secondary mouse button cannot rotate');
   for(const code of countryCodes){h.select(code);const label=h.byClass('globe-pin').find(n=>n.props['data-country']===code);assert(label,`${lang} ${code}: chosen country has a visible label`);assert.equal(label.props['data-selected'],true);assert.equal(label.props.href,'/'+countries[code].slug+'?lang='+lang);}
   h.select('AE');const uae=h.byClass('globe-pin').find(n=>n.props['data-country']==='AE');assert.equal(uae.props['aria-label'],lang==='ko'?'아랍에미리트':'United Arab Emirates');h.rotate(180);assert(!h.byClass('globe-pin').some(n=>n.props['data-country']==='AE'),'backside selected country is not shown');
-  h.close();assert.equal(h.motion.ready,false,'closing stops motion readiness');
+  h.select('KR');const focused=h.byClass('globe-pin').find(n=>n.props['data-country']==='KR');focused.props.onFocus();h.render();assert.equal(h.motion.visible,false);
+  h.svg().props.onPointerDown(h.pointer(100));h.svg().props.onPointerMove(h.pointer(500));h.svg().props.onPointerUp(h.pointer(500));h.render();
+  assert(!h.byClass('globe-pin').some(n=>n.props['data-country']==='KR'));assert.equal(h.motion.visible,true,'removing the focused back-side label clears stale focus without relying on blur');
+  h.select('KR');h.byClass('globe-pin').find(n=>n.props['data-country']==='KR').props.onFocus();h.render();
+  h.close();assert.equal(h.motion.ready,false,'closing stops motion readiness');assert.equal(h.motion.visible,true,'closing clears stale SVG focus');
  }
  const css=fs.readFileSync(path.join(root,'app/warm-brand.css'),'utf8');assert(css.includes('.globe-pin:focus-visible .globe-focus-ring'));assert(css.includes('vector-effect:non-scaling-stroke'));
  console.log('PASS: actual KO/EN globe handlers, 30 country links, selected/backside labels, lazy load, focus pause, responsive focused target, drag/scroll/cancel suppression and deliberate tap/keyboard recovery.');
