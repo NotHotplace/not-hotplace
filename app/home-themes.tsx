@@ -1,5 +1,5 @@
 'use client';
-import {countries,countryCodes,type CountryCode} from '@/lib/countries';
+import {type CountryCode} from '@/lib/countries';
 import type {Place} from '@/lib/catalog';
 import {useEffect,useState} from 'react';
 import {ArrowUpRight} from 'lucide-react';
@@ -9,7 +9,7 @@ import ThemePicker from './theme-picker';
 import PlaceSummary from './place-summary';
 import PlaceReasons from './place-reasons';
 
-export default function HomeThemes({country, onCountryChange}: {country: CountryCode; onCountryChange: (country: CountryCode) => void}) {
+export default function HomeThemes({country}: {country: CountryCode}) {
   const {lang, text,t} = useLocale();
   const [theme, setTheme] = useState<PlaceTheme>('all');
   const [places,setPlaces]=useState<Place[]>([]),[state,setState]=useState('loading');
@@ -20,7 +20,6 @@ export default function HomeThemes({country, onCountryChange}: {country: Country
   const explore = '/' + country.toLowerCase() + '?' + new URLSearchParams({lang, ...(theme === 'all' ? {} : {theme})});
   return <section className="home-themes" aria-labelledby="home-themes-heading">
     <div className="home-themes-heading"><div><span className="world-kicker">ROOM TO YOURSELF.</span><h2 id="home-themes-heading">{text('A little space of your own.', '오늘은, 이런 쉼.')}</h2></div>
-      <label className="home-country-select">{text('Country','나라')}<select value={country} onChange={e=>onCountryChange(e.target.value as CountryCode)}>{countryCodes.map(c=><option key={c} value={c}>{text(countries[c].nameEn,countries[c].nameKo)}</option>)}</select></label>
     </div>
     <ThemePicker value={theme} onChange={setTheme} language={lang}/>
     {state==='loading'&&<p role="status">{text('Loading places…','장소를 불러오는 중…')}</p>}{state==='error'&&<p role="status">{text('Places could not load. Try exploring this country below.','장소를 불러오지 못했어요. 아래에서 이 나라를 둘러보세요.')}</p>}

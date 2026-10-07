@@ -4,63 +4,55 @@ function compile(file,imports){const module={exports:{}};new Function('require',
 function load(file){if(cache.has(file))return cache.get(file);const result=file.endsWith('.json')?JSON.parse(fs.readFileSync(path.join(root,file),'utf8')):compile(file,name=>name.startsWith('.')?load(path.join(path.dirname(file),name)+(name.endsWith('.json')?'':'.ts')):require(name));cache.set(file,result);return result;}
 function nodes(node,result=[]){if(Array.isArray(node))node.forEach(v=>nodes(v,result));else if(node&&typeof node==='object'){result.push(node);nodes(node.props?.children,result);}return result;}
 const geoContext={};vm.runInNewContext(fs.readFileSync(path.join(root,'public/vendor/d3.min.js'),'utf8'),geoContext);const geo=geoContext.d3;
-const {countries,countryCodes}=load('lib/countries.ts');
-const world=load('public/maps/world.json');
+const {countries,countryCodes}=load('lib/countries.ts'),world=load('public/maps/world.json');
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
-function harness(lang){
- let tree,si=0,ri=0,ei=0,mi=0,dirty=false,rotation=-127,width=650,paused=false,resize,readiness;
- const states=[],refs=[],effects=[],memos=[],pending=[],requests=[];
+function harness(lang,{reduced=false,failures=0,last=null}={}){
+ let tree,si=0,ri=0,ei=0,mi=0,dirty=false,rotation=-127,width=650,paused=false,resize,readiness,active=null,pauseFocus=0,summaryFocus=0;
+ const states=[],refs=[],effects=[],memos=[],pending=[],requests=[],turns=[];
  const dragging={current:false},captured=new Set();
- const surface={getBoundingClientRect:()=>({width}),contains:node=>node==='inside',setPointerCapture:id=>captured.add(id),hasPointerCapture:id=>captured.has(id),releasePointerCapture:id=>captured.delete(id)};
- global.location=new URL('https://nothotplace.com/?lang='+lang);
- global.localStorage={getItem:()=>null};
+ const surface={getBoundingClientRect:()=>({width}),contains:node=>node==='inside',setPointerCapture:id=>captured.add(id),hasPointerCapture:id=>captured.has(id),releasePointerCapture:id=>captured.delete(id),querySelector(selector){const code=selector.match(/data-country="([A-Z]+)"/)?.[1],pin=byClass('globe-pin').find(n=>n.props['data-country']===code);return pin?{focus(){active=code;pin.props.onFocus();}}:null;}};
+ global.location=new URL('https://nothotplace.com/?lang='+lang);global.localStorage={getItem:()=>last};
+ global.document={getElementById:id=>id==='home-pause-choice'?{focus(){pauseFocus++;active='pause';}}:null};
  global.window={addEventListener:(event,fn)=>{if(event==='resize')resize=fn;},removeEventListener:()=>{}};
- global.fetch=async url=>{requests.push(url);assert.equal(url,'/maps/world.json');return {ok:true,json:async()=>world};};
- const react={
-  useState(initial){const i=si++;if(!(i in states))states[i]=typeof initial==='function'?initial():initial;return[states[i],value=>{const next=typeof value==='function'?value(states[i]):value;if(!Object.is(next,states[i])){states[i]=next;dirty=true;}}];},
-  useRef(initial){const i=ri++;return refs[i]||(refs[i]={current:initial});},
-  useMemo(fn,deps){const i=mi++,old=memos[i];if(old&&deps.every((v,n)=>Object.is(v,old.deps[n])))return old.value;const value=fn();memos[i]={deps,value};return value;},
-  useEffect(fn,deps){const i=ei++,old=effects[i];if(!old||deps.some((v,n)=>!Object.is(v,old.deps[n])))pending.push(()=>{old?.cleanup?.();effects[i]={deps,cleanup:fn()};});},
- };
- const motion=(ready,visible)=>{readiness={ready,visible};return{rotation,dragging,enabled:!paused,reduced:false,turnTo:value=>{rotation=value;dirty=true;},toggle:()=>{paused=!paused;dirty=true;}};};
- const component=compile('app/globe.tsx',name=>name==='react'?react:name==='react/jsx-runtime'?require(name):name==='./locale'?{useLocale:()=>({lang,text:(en,ko)=>lang==='en'?en:ko}),LanguageToggle:'language-toggle'}:name==='@/hooks/use-globe-motion'?{useGlobeMotion:motion}:name==='@/lib/geo-client'?{loadGeo:async()=>geo}:name.startsWith('@/lib/')?load(name.slice(2)+'.ts'):new Proxy({},{get:(_,key)=>key==='__esModule'?true:'mock:'+String(key)})).default;
- function render(){let rounds=0;do{assert(++rounds<25);dirty=false;si=ri=ei=mi=0;tree=component();for(const node of nodes(tree))if(node.props?.ref)node.props.ref.current=node.type==='svg'?surface:{};while(pending.length)pending.shift()();}while(dirty);return tree;}
- const byClass=name=>nodes(tree).filter(n=>String(n.props?.className||'').split(' ').includes(name));
- const svg=()=>nodes(tree).find(n=>n.type==='svg');
+ global.fetch=async url=>{requests.push(url);assert.equal(url,'/maps/world.json');return {ok:requests.length>failures,json:async()=>world};};
+ const react={useState(initial){const i=si++;if(!(i in states))states[i]=typeof initial==='function'?initial():initial;return[states[i],value=>{const next=typeof value==='function'?value(states[i]):value;if(!Object.is(next,states[i])){states[i]=next;dirty=true;}}];},useRef(initial){const i=ri++;return refs[i]||(refs[i]={current:initial});},useMemo(fn,deps){const i=mi++,old=memos[i];if(old&&deps.every((v,n)=>Object.is(v,old.deps[n])))return old.value;const value=fn();memos[i]={deps,value};return value;},useEffect(fn,deps){const i=ei++,old=effects[i];if(!old||deps.some((v,n)=>!Object.is(v,old.deps[n])))pending.push(()=>{old?.cleanup?.();effects[i]={deps,cleanup:fn()};});}};
+ const motion=(ready,visible)=>{readiness={ready,visible};return{rotation,dragging,enabled:!paused&&!reduced,reduced,turnTo:(value,immediate)=>{turns.push({value,immediate});rotation=value;dirty=true;},toggle:()=>{paused=!paused;dirty=true;}};};
+ const component=compile('app/globe.tsx',name=>name==='react'?react:name==='react/jsx-runtime'?require(name):name==='./locale'?{useLocale:()=>({lang,text:(en,ko)=>lang==='en'?en:ko}),LanguageToggle:'language-toggle'}:name==='@/hooks/use-globe-motion'?{useGlobeMotion:motion}:name==='@/lib/geo-client'?{loadGeo:async()=>geo}:name.startsWith('@/lib/')?load(name.slice(2)+'.ts'):name==='./home-finder'?{__esModule:true,default:'home-finder'}:new Proxy({},{get:(_,key)=>key==='__esModule'?true:'mock:'+String(key)})).default;
+ function render(){let rounds=0;do{assert(++rounds<25);dirty=false;si=ri=ei=mi=0;tree=component();for(const node of nodes(tree))if(node.props?.ref)node.props.ref.current=node.type==='svg'?surface:{querySelector:()=>({focus(){summaryFocus++;active='summary';}})};while(pending.length)pending.shift()();}while(dirty);return tree;}
+ function byClass(name){return nodes(tree).filter(n=>String(n.props?.className||'').split(' ').includes(name));}
+ const svg=()=>nodes(tree).find(n=>n.type==='svg'),disclosure=()=>byClass('home-globe-disclosure')[0],pin=code=>byClass('globe-pin').find(n=>n.props['data-country']===code);
  const pointer=(x,y=100,extra={})=>({clientX:x,clientY:y,button:0,isPrimary:true,pointerId:1,currentTarget:surface,...extra});
- function click(link,detail=1){let prevented=false,stopped=false;svg().props.onClickCapture({detail,preventDefault:()=>prevented=true,stopPropagation:()=>stopped=true});if(!prevented)global.location=new URL(link.props.href,global.location);return {prevented,stopped};}
- render();
- return {render,byClass,svg,pointer,click,requests,get motion(){return readiness;},get rotation(){return rotation;},get dragging(){return dragging.current;},surface,
-  async open(){nodes(tree).find(n=>n.type==='details').props.onToggle({currentTarget:{open:true}});render();await flush();render();},
-  close(){nodes(tree).find(n=>n.type==='details').props.onToggle({currentTarget:{open:false}});render();},
-  resize(value){width=value;resize?.();render();},
-  select(code){nodes(tree).find(n=>n.props?.onCountryChange).props.onCountryChange(code);render();},
-  rotate(delta){rotation+=delta;render();},
- };
+ function click(target,detail=1){let prevented=false,stopped=false;svg().props.onClickCapture({detail,preventDefault:()=>prevented=true,stopPropagation:()=>stopped=true});if(!prevented)target.props.onClick?.();render();return {prevented,stopped};}
+ function key(value,target=svg()){let prevented=false,stopped=false;target.props.onKeyDown({key:value,preventDefault:()=>prevented=true,stopPropagation:()=>stopped=true});render();return {prevented,stopped};}
+ const nav=direction=>{const buttons=nodes(byClass('globe-country-navigation')[0]).filter(n=>n.type==='button');buttons[direction>0?1:0].props.onClick();render();};
+ render();return {render,byClass,svg,pin,pointer,click,key,nav,requests,turns,get motion(){return readiness;},get rotation(){return rotation;},get dragging(){return dragging.current;},get country(){return nodes(tree).find(n=>n.type==='home-finder').props.country;},get active(){return active;},get pauseFocus(){return pauseFocus;},get summaryFocus(){return summaryFocus;},get openState(){return disclosure().props.open;},get paused(){return paused;},surface,
+  async open(){disclosure().props.onToggle({currentTarget:{open:true}});render();await flush();render();},close(){disclosure().props.onToggle({currentTarget:{open:false}});render();},resize(value){width=value;resize?.();render();},rotate(delta){rotation+=delta;render();},toggleMotion(){byClass('world-motion-toggle')[0].props.onClick();render();},retry(){nodes(byClass('globe-load')[0]).find(n=>n.type==='button').props.onClick();render();},settle:async()=>{await flush();render();}};
 }
 (async()=>{
  for(const lang of ['ko','en']){
-  const h=harness(lang);assert.equal(h.requests.length,0,'closed globe is lazy');assert.equal(h.motion.ready,false);await h.open();assert.equal(h.motion.ready,true);assert.equal(h.requests.length,1);
-  let pins=h.byClass('globe-pin');assert(pins.length>1,'multiple countries get labels');assert(pins.some(n=>n.props['data-country']==='KR'));
-  for(const pin of pins){const code=pin.props['data-country'];assert.equal(pin.type,'a');assert.equal(pin.props.tabIndex,0);assert.equal(pin.props.href,'/'+countries[code].slug+'?lang='+lang);assert.equal(pin.props['aria-label'],lang==='ko'?countries[code].nameKo:countries[code].nameEn);}
-  const korea=pins.find(n=>n.props['data-country']==='KR');
-  const before=JSON.stringify(korea.props.children[2].props);korea.props.onFocus();h.render();assert.equal(h.motion.visible,false,'focus pauses motion');assert.equal(JSON.stringify(h.byClass('globe-pin').find(n=>n.props['data-country']==='KR').props.children[2].props),before,'focus alone does not move the label');
-  h.resize(320);assert(h.byClass('globe-pin').some(n=>n.props['data-country']==='KR'),'focused country survives responsive layout');
+  for(const width of [280,320,375,650]){
+   const h=harness(lang);assert.equal(h.requests.length,0,'closed globe is lazy');assert.equal(h.motion.ready,false);await h.open();h.resize(width);assert.equal(h.motion.ready,true);assert.equal(h.requests.length,1);
+   const seen=new Set();for(let i=0;i<countryCodes.length;i++){const code=countryCodes[i],p=h.pin(code);assert(p,`${lang}/${width}/${code}: actual country traversal exposes a pin`);seen.add(code);assert.equal(p.type,'g');assert.equal(p.props.role,'button');assert.equal(p.props.tabIndex,0);assert.equal(p.props.href,undefined);assert.equal(p.props['aria-label'],lang==='ko'?countries[code].nameKo+' 선택':'Select '+countries[code].nameEn);assert.equal(h.country,'KR','browsing does not commit');assert.equal(h.openState,true);h.nav(1);assert.equal(h.turns.at(-1).immediate,true,'focused traversal turns without animation');}
+   assert.equal(seen.size,30);assert.equal(h.active,'KR','next wraps around');h.nav(-1);assert.equal(h.active,'ZA','previous wraps around');assert.equal(h.country,'KR');
+   h.key('Home');assert.equal(h.active,'KR');h.key('End');assert.equal(h.active,'ZA');h.key('ArrowRight');assert.equal(h.active,'KR');h.key('ArrowLeft');assert.equal(h.active,'ZA');
+   const beforeFocus=h.pauseFocus;h.key('Enter',h.pin('ZA'));assert.equal(h.country,'ZA');assert.equal(h.openState,false);assert.equal(h.pauseFocus,beforeFocus+1);assert.equal(h.active,'pause');assert.equal(global.location.pathname,'/','selecting a country stays on home');
+   await h.open();assert(h.pin('ZA').props['aria-pressed']);assert.equal(h.requests.length,1,'reopening reuses loaded geometry');h.key('Home');h.key(' ',h.pin('KR'));assert.equal(h.country,'KR');assert.equal(h.openState,false,'Space commits and closes');
+  }
+  const h=harness(lang);await h.open();assert(h.pin('TW'));h.surface.querySelector('[data-country="TW"]').focus();h.render();assert.equal(h.active,'TW');h.key('Home');assert.equal(h.active,'KR','same-orientation Home requests focus even when browsed country is unchanged');let korea=h.pin('KR');const before=JSON.stringify(korea.props.children[2].props);korea.props.onFocus();h.render();assert.equal(h.motion.visible,false,'focus pauses motion');assert.equal(JSON.stringify(h.pin('KR').props.children[2].props),before,'focus does not move the label');h.resize(320);assert(h.pin('KR'),'focused pin survives resize');
   h.svg().props.onBlur({currentTarget:h.surface,relatedTarget:'outside'});h.render();assert.equal(h.motion.visible,true);
-  const svg=h.svg();svg.props.onPointerDown(h.pointer(100));svg.props.onPointerMove(h.pointer(150));assert.equal(h.dragging,true);assert.equal(h.rotation,-104.5);svg.props.onPointerUp(h.pointer(150));svg.props.onLostPointerCapture();assert.equal(h.dragging,false);assert.deepEqual(h.click(korea),{prevented:true,stopped:true},'drag-release cannot follow a link');
-  assert.equal(h.click(korea,0).prevented,false,'keyboard Enter remains usable after a drag');assert.equal(global.location.pathname,'/kr');
-  svg.props.onPointerDown(h.pointer(100));svg.props.onPointerMove(h.pointer(102,130));svg.props.onPointerUp(h.pointer(102,130));assert.equal(h.click(korea).prevented,true,'vertical scrolling cannot accidentally navigate');
-  svg.props.onPointerDown(h.pointer(100));svg.props.onPointerCancel();assert.equal(h.click(korea).prevented,true,'cancelled touch cannot navigate');
-  svg.props.onPointerDown(h.pointer(100));svg.props.onPointerUp(h.pointer(101));assert.equal(h.click(korea).prevented,false,'a new deliberate tap works after cancellation');
-  svg.props.onPointerDown(h.pointer(100,100,{button:2}));assert.equal(h.dragging,false,'secondary mouse button cannot rotate');
-  for(const code of countryCodes){h.select(code);const label=h.byClass('globe-pin').find(n=>n.props['data-country']===code);assert(label,`${lang} ${code}: chosen country has a visible label`);assert.equal(label.props['data-selected'],true);assert.equal(label.props.href,'/'+countries[code].slug+'?lang='+lang);}
-  h.select('AE');const uae=h.byClass('globe-pin').find(n=>n.props['data-country']==='AE');assert.equal(uae.props['aria-label'],lang==='ko'?'아랍에미리트':'United Arab Emirates');h.rotate(180);assert(!h.byClass('globe-pin').some(n=>n.props['data-country']==='AE'),'backside selected country is not shown');
-  h.select('KR');const focused=h.byClass('globe-pin').find(n=>n.props['data-country']==='KR');focused.props.onFocus();h.render();assert.equal(h.motion.visible,false);
-  h.svg().props.onPointerDown(h.pointer(100));h.svg().props.onPointerMove(h.pointer(500));h.svg().props.onPointerUp(h.pointer(500));h.render();
-  assert(!h.byClass('globe-pin').some(n=>n.props['data-country']==='KR'));assert.equal(h.motion.visible,true,'removing the focused back-side label clears stale focus without relying on blur');
-  h.select('KR');h.byClass('globe-pin').find(n=>n.props['data-country']==='KR').props.onFocus();h.render();
-  h.close();assert.equal(h.motion.ready,false,'closing stops motion readiness');assert.equal(h.motion.visible,true,'closing clears stale SVG focus');
+  const initial=h.rotation,svg=h.svg();svg.props.onPointerDown(h.pointer(100));svg.props.onPointerMove(h.pointer(150));assert.equal(h.dragging,true);assert.equal(h.rotation,initial+22.5);svg.props.onPointerUp(h.pointer(150));svg.props.onLostPointerCapture();assert.equal(h.dragging,false);assert.deepEqual(h.click(korea),{prevented:true,stopped:true});assert.equal(h.openState,true,'drag release cannot select');
+  assert.equal(h.click(korea,0).prevented,false,'assistive click remains usable after drag');assert.equal(h.openState,false);await h.open();korea=h.pin('KR');
+  h.svg().props.onPointerDown(h.pointer(100));h.svg().props.onPointerMove(h.pointer(102,130));h.svg().props.onPointerUp(h.pointer(102,130));assert.equal(h.click(korea).prevented,true,'vertical scrolling cannot select');
+  h.svg().props.onPointerDown(h.pointer(100));h.svg().props.onPointerCancel();assert.equal(h.click(korea).prevented,true,'cancelled touch cannot select');
+  h.svg().props.onPointerDown(h.pointer(100));h.svg().props.onPointerUp(h.pointer(101));assert.equal(h.click(korea).prevented,false,'deliberate tap recovers');await h.open();
+  h.svg().props.onPointerDown(h.pointer(100,100,{button:2}));assert.equal(h.dragging,false);
+  h.key('End');assert.equal(h.country,'KR');h.key('Escape');assert.equal(h.openState,false);assert.equal(h.country,'KR','Escape cancels browsing');assert.equal(h.active,'summary');await h.open();assert(h.pin('KR').props['aria-pressed']);
+  h.toggleMotion();assert(h.paused);h.close();await h.open();assert(h.paused,'reopening does not reset manual pause');h.nav(1);assert.equal(h.active,'US');assert.equal(h.country,'KR');
+  h.key('Home');h.pin('KR').props.onFocus();h.render();h.rotate(180);assert(!h.pin('KR'));assert.equal(h.motion.visible,true,'backside removal clears stale focus');h.close();assert.equal(h.motion.ready,false);
+  const reduced=harness(lang,{reduced:true,last:'NZ'});await reduced.open();assert.equal(reduced.country,'NZ');assert(reduced.pin('NZ'));reduced.nav(1);assert.equal(reduced.active,'CA');assert.equal(reduced.turns.at(-1).immediate,true);assert.equal(reduced.byClass('world-motion-toggle')[0].props.disabled,true);
+  const failed=harness(lang,{failures:1});await failed.open();assert.equal(failed.motion.ready,false);failed.retry();await failed.settle();assert.equal(failed.motion.ready,true);assert.equal(failed.requests.length,2,'map error can retry without another country selector');
  }
- const css=fs.readFileSync(path.join(root,'app/warm-brand.css'),'utf8');assert(css.includes('.globe-pin:focus-visible .globe-focus-ring'));assert(css.includes('vector-effect:non-scaling-stroke'));
- console.log('PASS: actual KO/EN globe handlers, 30 country links, selected/backside labels, lazy load, focus pause, responsive focused target, drag/scroll/cancel suppression and deliberate tap/keyboard recovery.');
+ const css=fs.readFileSync(path.join(root,'app/warm-brand.css'),'utf8');assert(css.includes('.globe-pin:focus-visible .globe-focus-ring'));assert(css.includes('vector-effect:non-scaling-stroke'));assert(css.includes('.globe-load { z-index:2; }'),'retry overlay sits above the opaque globe');
+ const source=fs.readFileSync(path.join(root,'app/globe.tsx'),'utf8');assert(!source.includes('CountryDirectory'));assert(source.indexOf('id="home-world"')<source.indexOf('<HomeFinder'));assert(!source.includes('onCountryChange'));assert(!fs.readFileSync(path.join(root,'app/home-themes.tsx'),'utf8').includes('<select'));
+ console.log('PASS: real KO/EN globe country traversal reaches all 30 countries at four widths; focus never commits, Enter/Space/tap commits in place and advances focus; controlled collapse/reopen, no duplicate country selectors, retries, remembered country, manual/reduced motion and drag/scroll/cancel recovery.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
