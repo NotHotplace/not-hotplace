@@ -1,9 +1,6 @@
 import type {NextConfig} from 'next';
 
-const config: NextConfig = {
-  // Our metadata comes from the local catalog. Render it in the initial head
-  // for browsers and crawlers, rather than deferring it into the streamed body.
-  htmlLimitedBots: /.*/,
-};
+// Diagnostic preview only: isolate metadata streaming from the release changes.
+const config: NextConfig = {};
 
 export default config;
