@@ -1,0 +1,36 @@
+{
+  "id": "world-gb-royal-botanic-gardens-kew",
+  "checked": "2026-10-07",
+  "originalTitle": "Kew Gardens Greenhouse Exterior.jpg",
+  "author": "SkyRose18",
+  "captureDate": "2019-06-28",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Kew_Gardens_Greenhouse_Exterior.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Kew_Gardens_Greenhouse_Exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "rightsNotice": "CC0 1.0 public-domain dedication by SkyRose18. No endorsement implied. Credit retained voluntarily; source and rights links should remain visible for provenance.",
+  "sourceHtmlSha256": "705a5804412144bdd7442f198a291932546588cd6d3137f0e01fcaa9a9e78877",
+  "originalSha256": "8a129e8075ec82cea3fc6377b1e5f38b36d60744b836fb46e626a22608345e5a",
+  "originalSha1": "b680c5e9cdda724d7c6762c6b11511e2a196ed92",
+  "originalDimensions": [
+    4032,
+    3024
+  ],
+  "readySha256": "f89f10f1f2e5caed28225a642fe856467780d76fbde7a2d2802642942cb9f49c",
+  "readyDimensions": [
+    1200,
+    900
+  ],
+  "readyBytes": 149380,
+  "modifications": "Proportional resize to width 1200, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Original files and their metadata preserved separately; derivative embeds creator, title, attribution/source/license and applicable rights notices.",
+  "visualReview": "Original and final 1200px WebP pixels both inspected on 2026-10-07. Scene, framing, detail and color retained; no watermark or overlaid logo removed. No content retouching.",
+  "matchingConfidence": "high",
+  "matchingEvidence": "Own-work file description explicitly identifies Royal Botanic Gardens, Kew; file category specifies Kew Gardens Temperate House. Visual review shows its distinctive white glasshouse architecture.",
+  "cropConstraints": "Keep the central glasshouse roof and facade. Center 16:9 crop acceptable. Two incidental visitors at the far lower-left are not the subject; do not isolate or enlarge them.",
+  "altEn": "The white glasshouse exterior of Temperate House at Kew Gardens.",
+  "altKo": "큐 가든 템퍼레이트 하우스의 흰색 유리온실 외관.",
+  "metadataNotes": "Original source linked above; hashes record the verified original bytes and description page. Derivative has fresh legal/source metadata and retains the applicable original copyright notice. Source software metadata is not used as photographer attribution.",
+  "venueReference": "https://www.kew.org/kew-gardens/whats-in-the-gardens/temperate-house",
+  "asset": "/places/world-gb-royal-botanic-gardens-kew-commons.webp",
+  "status": "published-with-place-record"
+}

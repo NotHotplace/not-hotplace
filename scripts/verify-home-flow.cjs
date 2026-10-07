@@ -1,0 +1,36 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),ts=require('typescript');
+const root=path.resolve(__dirname,'..'),cache=new Map();
+function compile(file,imports){const m={exports:{}};new Function('require','module','exports',ts.transpileModule(fs.readFileSync(path.join(root,file),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText)(imports,m,m.exports);return m.exports;}
+function load(file){if(cache.has(file))return cache.get(file);const out=compile(file,n=>n.startsWith('.')?load(path.join(path.dirname(file),n)+'.ts'):require(n));cache.set(file,out);return out;}
+function nodes(node,out=[]){if(Array.isArray(node))node.forEach(n=>nodes(n,out));else if(node&&typeof node==='object'){out.push(node);nodes(node.props?.children,out);}return out;}
+function text(node){return Array.isArray(node)?node.map(text).join(''):node&&typeof node==='object'?text(node.props?.children):typeof node==='string'||typeof node==='number'?String(node):'';}
+const {countries,countryCodes}=load('lib/countries.ts'),flush=()=>new Promise(r=>setImmediate(r));
+function harness(lang){let country='KR',tree,dirty=false,si=0,ei=0;const states=[],effects=[],pending=[],requests=[];
+ const react={useState(initial){const i=si++;if(!(i in states))states[i]=typeof initial==='function'?initial():initial;return[states[i],value=>{const next=typeof value==='function'?value(states[i]):value;if(!Object.is(next,states[i])){states[i]=next;dirty=true;}}];},useEffect(fn,deps){const i=ei++,old=effects[i];if(!old||deps.some((v,n)=>v!==old.deps[n]))pending.push(()=>{old?.cleanup?.();effects[i]={deps,cleanup:fn()};});}};
+ global.fetch=(url,options)=>new Promise((resolve,reject)=>requests.push({url,options,resolve,reject}));
+ const component=compile('app/home-finder.tsx',n=>n==='react'?react:n==='react/jsx-runtime'?require(n):n==='./locale'?{useLocale:()=>({lang,text:(en,ko)=>lang==='en'?en:ko,t:v=>v})}:n==='@/lib/countries'?{countries}:n==='@/lib/place-presentation'?{candidateReasons:()=>[],conciseText:v=>v,placeIdentity:p=>p.name}:n==='@/lib/place-links'?{sharePlacePath:(p,l)=>'/places/'+p.id+'/'+l}:n==='@/lib/engagement-client'?{trackEngagement:()=>{}}:{__esModule:true,default:'place-reasons'}).default;
+ function render(){let rounds=0;do{assert(++rounds<20);dirty=false;si=ei=0;tree=component({country});while(pending.length)pending.shift()();}while(dirty);return tree;}
+ const selects=()=>nodes(tree).filter(n=>n.type==='select');render();return {requests,render,selects,nodes:()=>nodes(tree),text:()=>text(tree),setCountry(value){country=value;render();},purpose(value){selects()[0].props.onChange({target:{value}});render();},region(value){selects()[1].props.onChange({target:{value}});render();},async resolve(index,matches=[],ok=true){requests[index].resolve({ok,json:async()=>({matches})});await flush();render();},async reject(index){requests[index].reject(Error('offline'));await flush();render();},unmount(){effects.forEach(e=>e.cleanup?.());}};
+}
+const row=id=>({place:{id,name:id,area:'Area',image:'/image.webp'},reviewed:false});
+(async()=>{
+ for(const lang of ['ko','en']){
+  const h=harness(lang);assert.equal(h.selects().length,2);assert.equal(h.selects()[0].props.id,'home-pause-choice');assert.equal(h.selects()[1].props.value,'전국');
+  const headings=h.nodes().filter(n=>n.type==='h2').map(text);assert.deepEqual(headings,lang==='ko'?['어떤 쉼이 필요한가요?','추천 장소']:['What kind of pause?','Recommended places']);
+  assert(!h.nodes().some(n=>n.type==='optgroup'),'country choices do not return through a city dropdown');
+  assert(h.requests[0].url.includes('country=KR'));assert(new URL(h.requests[0].url,'https://example.test').searchParams.get('region')==='전국');
+  await h.resolve(0,[row('initial')]);assert(h.text().includes('initial'));h.region('서울');assert(!h.text().includes('initial'),'region change clears stale cards');assert.equal(h.requests[0].options.signal.aborted,true);
+  const koreanRequest=h.requests.length-1;h.purpose('cafe');assert(h.requests[koreanRequest].options.signal.aborted);const oldRequest=h.requests.length-1;h.setCountry('US');const newRequest=h.requests.length-1;
+  assert.equal(h.selects()[0].props.value,'cafe','country change preserves pause');assert.equal(h.selects()[1].props.value,'전국','country change resets optional city');assert(h.requests[oldRequest].options.signal.aborted);
+  const query=new URL(h.requests[newRequest].url,'https://example.test').searchParams;assert.equal(query.get('country'),'US');assert.equal(query.get('region'),'전국');assert.equal(query.get('purpose'),'cafe');
+  await h.resolve(oldRequest,[row('stale-korea')]);assert(!h.text().includes('stale-korea'),'late previous-country response is ignored');await h.resolve(newRequest,[row('current-us')]);assert(h.text().includes('current-us'));
+  const explore=h.nodes().find(n=>n.type==='a'&&n.props.href==='/us?lang='+lang);assert(explore,'explicit country explore link remains separate from selection');
+  for(const code of countryCodes){h.setCountry(code);const options=nodes(h.selects()[1]).filter(n=>n.type==='option').map(n=>n.props.value);assert.deepEqual(options,['전국',...countries[code].regions],code+' city choices belong only to selected country');}
+  h.unmount();assert(h.requests.at(-1).options.signal.aborted,'unmount aborts the current request');
+  const fallback=harness(lang);await fallback.reject(0);assert.equal(fallback.requests.length,2);assert(fallback.requests[1].url.startsWith('/api/catalog?'));assert.equal(fallback.requests[1].options.credentials,'omit');await fallback.resolve(1,[row('public')]);assert(fallback.text().includes('public'));assert(fallback.text().includes(lang==='ko'?'최신 후기를 불러오지 못해':'Live feedback could not load'));
+  fallback.purpose('food');await fallback.resolve(2,[]);assert(fallback.text().includes(lang==='ko'?'후보를 아직 모으지 못했어요':'No candidates match'));
+  fallback.purpose('drive');await fallback.reject(3);await fallback.reject(4);assert(fallback.text().includes(lang==='ko'?'후보를 불러오지 못했어요':'Unable to load candidates'));fallback.unmount();
+  const stale=harness(lang);stale.setCountry('JP');await stale.reject(0);assert.equal(stale.requests.length,2,'obsolete failures never start a fallback');stale.unmount();
+ }
+ console.log('PASS: actual KO/EN home finder has pause→recommendation order, optional country-scoped cities, explicit explore links, stale/aborted response safety, preserved pause and public fallback/empty/error behavior.');
+})().catch(e=>{console.error(e);process.exitCode=1;});

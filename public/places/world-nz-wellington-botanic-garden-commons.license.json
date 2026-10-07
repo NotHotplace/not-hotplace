@@ -1,0 +1,35 @@
+{
+  "id": "world-nz-wellington-botanic-garden",
+  "checked": "2026-10-07",
+  "originalTitle": "General view - Wellington Botanic Garden - Wellington, NZ - DSC09491.jpg",
+  "author": "Daderot",
+  "captureDate": "2024-10-11",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:General_view_-_Wellington_Botanic_Garden_-_Wellington,_NZ_-_DSC09491.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/General_view_-_Wellington_Botanic_Garden_-_Wellington%2C_NZ_-_DSC09491.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "rightsNotice": "CC0 1.0 public-domain dedication by Daderot. No endorsement implied. Credit retained voluntarily; source and rights links should remain visible for provenance.",
+  "sourceHtmlSha256": "03d44e618950d10cd8367b4ca7de519249f0a023ce44fe54694d9ed772e4a771",
+  "originalSha256": "5c887c20b924063be5864b225adced04b43751180a942398c22a4f29cfe3cf37",
+  "originalSha1": "471f6d50e7b27f20538f3509bfa384a2e6c7fef7",
+  "originalDimensions": [
+    5472,
+    3648
+  ],
+  "readySha256": "69f91ef2b7f9c909e8845a816422aaba0e07882030651511222c5914cb433490",
+  "readyDimensions": [
+    1200,
+    800
+  ],
+  "readyBytes": 389550,
+  "modifications": "Proportional resize to width 1200, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Original files and their metadata preserved separately; derivative embeds creator, title, attribution/source/license and applicable rights notices.",
+  "visualReview": "Original and final 1200px WebP pixels both inspected on 2026-10-07. Scene, framing, detail and color retained; no watermark or overlaid logo removed. No content retouching.",
+  "matchingConfidence": "high",
+  "matchingEvidence": "Uploader’s own-work description and file title explicitly name Wellington Botanic Garden, Wellington, New Zealand. Visual review confirms a landscaped garden slope and paths, not an unrelated city image. No exact path sublocation is asserted.",
+  "cropConstraints": "Keep some of the lower path and the sloping garden setting; center 16:9 crop acceptable. Do not relabel this as the rose garden, Begonia House or a specific trail.",
+  "altEn": "Green slopes, cabbage trees and winding paths in Wellington Botanic Garden.",
+  "altKo": "웰링턴 식물원의 푸른 비탈, 나무와 구불구불한 산책로.",
+  "metadataNotes": "Original source linked above; hashes record the verified original bytes and description page. Derivative has fresh legal/source metadata and retains the applicable original copyright notice. Source software metadata is not used as photographer attribution.",
+  "asset": "/places/world-nz-wellington-botanic-garden-commons.webp",
+  "status": "published-with-place-record"
+}

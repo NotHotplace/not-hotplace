@@ -1,0 +1,36 @@
+{
+  "id": "jp-kyoto-ryoanji-temple",
+  "checked": "2026-10-07",
+  "originalTitle": "JP-kyoto-ryoanji.jpg",
+  "author": "User: Bgabel at wikivoyage shared",
+  "captureDate": "2008-08-02",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:JP-kyoto-ryoanji.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/JP-kyoto-ryoanji.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "rightsNotice": "Copyright User: Bgabel at wikivoyage shared. Selected the explicitly offered CC BY-SA 3.0 license (not GFDL). The original photograph and this resized copy remain CC BY-SA 3.0. Retain the supplied title, attribution, source and license. No endorsement implied.",
+  "sourceHtmlSha256": "7b308a1bb2bdfea0ddc8e6251585ac59037ba5fc2cfe7b121483d7b0a4cb9de1",
+  "originalSha256": "b3f8a727f99383ec8cc9d867fdca733d9190abed05d13cdc9c171cef75128828",
+  "originalSha1": "5ce3f5cae6042f8764dc71ecc67c0f402ec46c11",
+  "originalDimensions": [
+    1600,
+    1063
+  ],
+  "readySha256": "b6f81c4dae678097224cd836cc62ae51f1f88f81a07753f9209adf6a6a455b17",
+  "readyDimensions": [
+    1200,
+    797
+  ],
+  "readyBytes": 248718,
+  "modifications": "Proportional resize to width 1200, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Original files and their metadata preserved separately; derivative embeds creator, title, attribution/source/license and applicable rights notices.",
+  "visualReview": "Original and final 1200px WebP pixels both inspected on 2026-10-07. Scene, framing, detail and color retained; no watermark or overlaid logo removed. No content retouching.",
+  "matchingConfidence": "high",
+  "matchingEvidence": "Own-work file description identifies the Ryoan-ji Zen garden in Kyoto; Commons category and Wikivoyage transfer history agree. Pixels show the iconic raked gravel, rock groupings and earthen perimeter wall.",
+  "cropConstraints": "Prefer full native aspect ratio for the garden composition. If a 16:9 card crop is needed, keep the rock groups and perimeter wall; do not describe a crop as the full garden.",
+  "altEn": "Raked gravel, moss-covered rock groups and the earthen wall of Ryoan-ji’s rock garden in Kyoto.",
+  "altKo": "교토 료안지 석정의 갈퀴질한 자갈, 이끼 낀 바위와 담장.",
+  "metadataNotes": "Original source linked above; hashes record the verified original bytes and description page. Derivative has fresh legal/source metadata and retains the applicable original copyright notice. Source software metadata is not used as photographer attribution.",
+  "commonsSha1Verified": true,
+  "asset": "/places/jp-kyoto-ryoanji-temple-commons.webp",
+  "status": "published-with-place-record"
+}
