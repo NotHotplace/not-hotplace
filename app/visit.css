@@ -31,3 +31,7 @@
 .photo-note{display:block;color:var(--muted-foreground);font-size:12px;margin-top:3px}
 .official-photo-link{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px;border:1px solid var(--border);background:var(--card);border-radius:9px;font-size:16px;color:var(--brand-olive)}
 @media(max-width:600px){.us-workspace .quiet-thumb{width:96px;height:112px}.us-workspace .quiet-place-main{gap:11px}.us-workspace .quiet-save{width:32px;margin-left:0}.visit-details{padding:16px}.filter-actions .primary{padding-inline:15px}.us-workspace .quiet-results-scroll{max-height:none;overflow:visible}.us-workspace .quiet-results{min-height:0}.us-workspace .quiet-place-copy>strong{font-size:16px}.us-workspace .quiet-place-meta{font-size:12px}}
+
+/* Keep the garden paths and lakeside bench visible in wide photo cards. */
+img[src="/places/world-nl-hortus-botanicus-amsterdam-commons.webp"],
+img[src="/places/world-sg-jurong-lake-gardens-commons.webp"]{object-position:center bottom}

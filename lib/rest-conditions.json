@@ -381,5 +381,14 @@
       "source": "https://polle.com/place/5yFbuE/소연재",
       "checked": "2026-10-01"
     }
+  ],
+  "world-sg-jurong-lake-gardens": [
+    {
+      "kind": "parking",
+      "textKo": "NParks가 North·South Carpark를 안내해요. 실시간 빈자리는 미확인입니다.",
+      "textEn": "NParks lists North and South Carparks; live space availability is unverified.",
+      "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
+      "checked": "2026-10-07"
+    }
   ]
 }

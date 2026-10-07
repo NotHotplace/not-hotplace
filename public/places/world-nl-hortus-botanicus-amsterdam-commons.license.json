@@ -1,0 +1,31 @@
+{
+  "id": "world-nl-hortus-botanicus-amsterdam",
+  "checked": "2026-10-07",
+  "originalTitle": "Green house of Hortus Botanicus in Amsterdam.jpg",
+  "author": "Faust002",
+  "captureDate": "2024-04-30",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Green_house_of_Hortus_Botanicus_in_Amsterdam.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Green_house_of_Hortus_Botanicus_in_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "rightsNotice": "CC0 1.0 public-domain dedication by Faust002. No endorsement implied. Credit retained voluntarily; source and rights links preserve provenance.",
+  "originalSha256": "479060f4a87f2c6e3698b259f9681be3190b65cfb6bf4bd50e0e4c4f721a33e6",
+  "originalDimensions": [
+    4032,
+    3024
+  ],
+  "readySha256": "e5f6e54f93ce095c7007ed583fe9746e529ac4ce69d83e1363e338cd570e1225",
+  "readyDimensions": [
+    1200,
+    900
+  ],
+  "readyBytes": 298474,
+  "modifications": "Proportional resize to 1200 × 900, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Derivative embeds creator, title, capture date, source, license and rights/change notices.",
+  "cropConstraints": "Bottom-aligned display crops retain the lower planted paths and small greenhouse. Original image is not cropped. Do not identify this as the renovated Climate House or isolate incidental visitors.",
+  "altEn": "Outdoor paths, planted beds and a small greenhouse at Hortus Botanicus Amsterdam, photographed in April 2024.",
+  "altKo": "2024년 4월 촬영한 암스테르담 호르투스 식물원의 야외 길, 화단과 작은 온실.",
+  "metadataNotes": "Original source title, author, license and applicable notices are retained in the public sidecar and embedded EXIF/XMP. The visible photo caption links the original source and license; original capture dates do not establish current conditions.",
+  "asset": "/places/world-nl-hortus-botanicus-amsterdam-commons.webp",
+  "status": "verified-optimized-derivative",
+  "visualReview": "Original and derivative pixels inspected on October 7, 2026. Recovered original and regenerated derivative bytes match those verified SHA-256 hashes exactly; no content substitution."
+}

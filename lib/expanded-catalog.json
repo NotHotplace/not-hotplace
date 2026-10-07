@@ -681,32 +681,128 @@
     "city": "Paris",
     "category": "walk",
     "name": "Jardin du Luxembourg",
-    "area": "Paris",
-    "address": "Jardin du Luxembourg · Paris area, FR (street address not verified)",
-    "description": "Paris에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "Paris에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in Paris. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Jardin_du_Luxembourg",
-    "checked": "2026-10-02",
+    "area": "6th arrondissement · Paris",
+    "address": "Rue de Médicis - Rue de Vaugirard, 75006 Paris, France",
+    "description": "무료로 입장하는 파리의 정원입니다. 이동식 의자와 고정 벤치에서 산책 중 쉬어갈 수 있으며, 출입 시간은 계절마다 달라집니다.",
+    "descriptionKo": "무료로 입장하는 파리의 정원입니다. 이동식 의자와 고정 벤치에서 산책 중 쉬어갈 수 있으며, 출입 시간은 계절마다 달라집니다.",
+    "descriptionEn": "A free-entry Paris garden with movable chairs and fixed benches for a break during a walk. Gate hours change with the season.",
+    "source": "https://jardin.senat.fr/infos-pratiques.html",
+    "checked": "2026-10-07",
     "tags": [
-      "정원·녹지 공간"
+      "무료 정원 입장",
+      "의자·벤치",
+      "계절별 출입 시간"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "무료 정원 입장",
+      "의자·벤치",
+      "계절별 출입 시간"
     ],
     "tagsEn": [
-      "garden setting"
+      "Free garden entry",
+      "Chairs and benches",
+      "Seasonal gate hours"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "프랑스 상원 공식 안내·파리 관광청·주차장 운영사 확인 · 현장 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Jardin_du_Luxembourg",
-        "checked": "2026-10-02"
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "Garden entry is free. The playground, swings, model sailboats, carousel and puppet shows are separately paid activities.",
+        "textKo": "정원 입장은 무료입니다. 놀이터·그네·모형 돛단배·회전목마·인형극은 별도 유료 활동입니다.",
+        "source": "https://jardin.senat.fr/en/practical-information.html",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Sénat: paid and free activities",
+            "url": "https://jardin.senat.fr/en/activities.html"
+          },
+          {
+            "label": "Paris tourist office",
+            "url": "https://parisjetaime.com/eng/culture/jardin-du-luxembourg-p1063"
+          }
+        ]
+      },
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Seasonal schedule: opens 07:30–08:15 and closes 16:30–21:30. October 1–15: 07:45–18:45, Paris local time. Check the date-specific table and gate notices.",
+        "textKo": "계절에 따라 07:30~08:15 개장, 16:30~21:30 폐장합니다. 10월 1~15일은 파리 현지 시각 07:45~18:45입니다. 방문 날짜의 공식 시간표와 출입문 안내를 확인하세요.",
+        "source": "https://jardin.senat.fr/en/practical-information/opening-hours.html",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Sénat French timetable",
+            "url": "https://jardin.senat.fr/infos-pratiques/horaires-douverture.html"
+          },
+          {
+            "label": "Sénat garden rules: temporary closures",
+            "url": "https://jardin.senat.fr/fileadmin/cru-1790229872/Jardin/Infos_pratiques/Reglement_Jardin-A3.pdf"
+          }
+        ]
+      },
+      {
+        "labelEn": "Entrances",
+        "labelKo": "출입구",
+        "textEn": "The operator lists Médicis, Odéon, Fleurus, Vavin and Observatoire among the public gates. Use the official gate links and garden map to choose an entrance.",
+        "textKo": "공식 안내에는 Médicis·Odéon·Fleurus·Vavin·Observatoire 등의 출입문이 나옵니다. 공식 출입문 링크와 정원 지도로 동선을 확인하세요.",
+        "source": "https://jardin.senat.fr/infos-pratiques.html",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Médicis gate map linked by the operator",
+            "url": "https://goo.gl/maps/WNsaWbA9SbVKT2ay8"
+          },
+          {
+            "label": "Official garden map (2022)",
+            "url": "https://jardin.senat.fr/fileadmin/Jardin/Accueil_Jardin/Brochure_Jardin_maj2022.pdf"
+          }
+        ]
+      },
+      {
+        "labelEn": "Seating",
+        "labelKo": "앉아서 쉬기",
+        "textEn": "The operator documents about 4,500 movable chairs, armchairs and recliners, free to use; fixed benches are also provided. Seat availability is not verified.",
+        "textKo": "운영 기관은 무료로 이용하는 이동식 의자·팔걸이 의자·등받이가 기울어진 의자 약 4,500개를 안내합니다. 고정 벤치도 있으며 빈자리 여부는 확인되지 않았습니다.",
+        "source": "https://jardin.senat.fr/histoire-patrimoine/patrimoine/les-sieges.html",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Sénat seating and bench figures",
+            "url": "https://jardin.senat.fr/infos-pratiques/le-jardin-en-chiffres.html"
+          }
+        ]
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "접근성",
+        "textEn": "The tourist office lists accessible approaches from Boulevard Saint-Michel, Rue de Vaugirard, Rue Guynemer, Rue Auguste-Comte and Rue de Médicis. Specific step-free routes, slopes and surfaces remain unverified.",
+        "textKo": "관광청은 Boulevard Saint-Michel·Rue de Vaugirard·Rue Guynemer·Rue Auguste-Comte·Rue de Médicis 쪽 접근을 안내합니다. 구체적인 무단차 동선·경사·노면 상태는 확인되지 않았습니다.",
+        "source": "https://parisjetaime.com/eng/culture/jardin-du-luxembourg-p1063",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Official garden map (2022)",
+            "url": "https://jardin.senat.fr/fileadmin/Jardin/Accueil_Jardin/Brochure_Jardin_maj2022.pdf"
+          }
+        ]
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Nearby paid public parking: INDIGO Soufflot-Panthéon, 22 Rue Soufflot, 75005 Paris. Check the operator for rates and availability.",
+        "textKo": "인근 유료 주차장으로 INDIGO Soufflot-Panthéon(22 Rue Soufflot, 75005 Paris)이 있습니다. 요금과 이용 가능 여부는 주차장 운영사에서 확인하세요.",
+        "source": "https://www.indigoneo.fr/fr/parkings/351/parking-soufflot-pantheon",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Toilets",
+        "labelKo": "화장실",
+        "textEn": "The operator lists free public toilets in the garden. Consult the official map and on-site signs for locations.",
+        "textKo": "운영 기관은 정원 내 공중화장실을 무료로 안내합니다. 위치는 공식 지도와 현장 표지판을 확인하세요.",
+        "source": "https://jardin.senat.fr/infos-pratiques.html",
+        "checked": "2026-10-07"
       },
       {
         "labelEn": "Location reference",
@@ -723,7 +819,33 @@
       "source": "https://en.wikipedia.org/wiki/Jardin_du_Luxembourg",
       "checked": "2026-10-02",
       "kind": "reference"
-    }
+    },
+    "visitFacts": {
+      "price": {
+        "amount": 0,
+        "currency": "EUR",
+        "basis": "admission",
+        "textKo": "정원 일반 입장 무료; 일부 활동은 별도 유료",
+        "textEn": "Free general garden admission; some activities cost extra",
+        "source": "https://jardin.senat.fr/en/practical-information.html",
+        "checked": "2026-10-07"
+      },
+      "parking": {
+        "status": "nearby",
+        "textKo": "인근 유료 주차: INDIGO Soufflot-Panthéon, 22 Rue Soufflot. 빈자리 미확인.",
+        "textEn": "Nearby paid parking: INDIGO Soufflot-Panthéon, 22 Rue Soufflot. Spaces unverified.",
+        "source": "https://www.indigoneo.fr/fr/parkings/351/parking-soufflot-pantheon",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/world-fr-jardin-du-luxembourg-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Chairs_at_Jardin_du_Luxembourg.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Chairs_at_Jardin_du_Luxembourg.jpg",
+    "imageCredit": "Chairs at Jardin du Luxembourg.jpg · Eutouring / Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "imageNote": "Chairs at Jardin du Luxembourg, photographed June 5, 2015. Produced by EUtouring.com. Resized and converted to WebP; display may crop. This copy remains CC BY-SA 4.0. No endorsement implied. Historical photo; current conditions and seat availability are unverified.",
+    "imageNoteKo": "2015년 6월 5일 촬영한 뤽상부르 정원의 의자. Produced by EUtouring.com. 크기 조정 및 WebP 변환을 거쳤으며 화면에 따라 일부가 잘릴 수 있습니다. 이 사본에도 CC BY-SA 4.0 라이선스가 적용됩니다. 사진가나 장소의 보증·추천을 의미하지 않습니다. 과거 사진으로 현재 상태·빈자리는 확인되지 않았습니다."
   },
   {
     "id": "world-fr-jardin-des-plantes",
@@ -1887,31 +2009,127 @@
     "category": "walk",
     "name": "Hortus Botanicus Amsterdam",
     "area": "Amsterdam",
-    "address": "Hortus Botanicus Amsterdam · Amsterdam area, NL (street address not verified)",
-    "description": "Amsterdam에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "Amsterdam에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in Amsterdam. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Hortus_Botanicus_(Amsterdam)",
-    "checked": "2026-10-02",
+    "address": "Plantage Middenlaan 2A, 1018 DD Amsterdam, Netherlands",
+    "description": "야외 정원과 온실을 둘러보고 Oranjerie 카페에서 쉬어갈 수 있는 암스테르담의 유료 식물원이에요. 카페는 음악을 틀지 않지만 대화·기기 소음이 있고, 자갈길과 일부 온실의 접근 제한을 확인해야 해요.",
+    "descriptionKo": "야외 정원과 온실을 둘러보고 Oranjerie 카페에서 쉬어갈 수 있는 암스테르담의 유료 식물원이에요. 카페는 음악을 틀지 않지만 대화·기기 소음이 있고, 자갈길과 일부 온실의 접근 제한을 확인해야 해요.",
+    "descriptionEn": "A ticketed Amsterdam botanical garden with outdoor paths, greenhouses and an Oranjerie café. The café plays no music, but conversation and equipment remain audible; gravel paths and some greenhouse access need planning.",
+    "source": "https://www.dehortus.nl/en/plan-your-visit/",
+    "checked": "2026-10-07",
     "tags": [
-      "정원·녹지 공간"
+      "식물원 산책",
+      "온실",
+      "실내·테라스 카페"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "식물원 산책",
+      "온실",
+      "실내·테라스 카페"
     ],
     "tagsEn": [
-      "garden setting"
+      "Botanical walks",
+      "Greenhouses",
+      "Indoor and terrace café"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "운영기관·관광기관 공개 안내 확인 · 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Hortus_Botanicus_(Amsterdam)",
-        "checked": "2026-10-02"
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Daily 10:00–17:00; closed December 25 and January 1. Check the programme for special events.",
+        "textKo": "매일 10:00~17:00, 12월 25일과 1월 1일은 휴원해요. 특별 행사는 별도 일정을 확인하세요.",
+        "source": "https://www.dehortus.nl/en/plan-your-visit/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "Adult EUR 14.75; students with ID EUR 8.50. Card payment only; Museumkaart is not valid. Published prices may change.",
+        "textKo": "성인 EUR 14.75, 학생증 제시 시 EUR 8.50. 카드 결제만 가능하고 Museumkaart는 사용할 수 없어요. 공시 요금은 변경될 수 있어요.",
+        "source": "https://www.dehortus.nl/en/plan-your-visit/",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Dutch visit page: concession change from October 1, 2026",
+            "url": "https://www.dehortus.nl/Bezoek/"
+          }
+        ]
+      },
+      {
+        "labelEn": "Entrance and transit",
+        "labelKo": "입구·대중교통",
+        "textEn": "Entrance: Plantage Middenlaan 2A, 1018 DD Amsterdam. Waterlooplein metro station is wheelchair-accessible; Mr. Visserplein tram stop is not.",
+        "textKo": "입구 주소는 Plantage Middenlaan 2A, 1018 DD Amsterdam이에요. Waterlooplein 지하철역은 휠체어 접근이 가능하지만 가까운 Mr. Visserplein 트램 정류장은 그렇지 않아요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Operator contact and address",
+            "url": "https://www.dehortus.nl/contact/"
+          }
+        ]
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Nearby parking: Stopera (Stadhuis) and Markenhoven garages. These are off-site facilities; check their current fees and space availability.",
+        "textKo": "인근 Stopera(Stadhuis)·Markenhoven 주차장을 이용할 수 있어요. 원외 시설이므로 현재 요금과 빈자리는 각 주차장에서 확인하세요.",
+        "source": "https://www.dehortus.nl/Bezoek/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Café break",
+        "labelKo": "카페에서 쉬기",
+        "textEn": "The Oranjerie serves vegetarian food and drinks to garden visitors. The operator asks visitors not to use phones or laptops. Tables may be reserved for groups of six or more.",
+        "textKo": "Oranjerie는 정원 입장객을 위한 채식 메뉴·음료를 제공해요. 운영자는 휴대전화·노트북 사용을 삼가 달라고 안내하며, 6명 이상은 테이블 예약이 가능해요.",
+        "source": "https://www.dehortus.nl/en/cafe-and-shop/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Seating and sound",
+        "labelKo": "좌석·소리",
+        "textEn": "The café has indoor and terrace seating and plays no music. The operator warns that lunchtime can be busy; this is not a promise of silence.",
+        "textKo": "카페에는 실내·테라스 좌석이 있고 음악을 틀지 않아요. 운영자는 점심시간에 붐빌 수 있다고 안내해요. 무음을 보장하는 공간은 아니에요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Mobility access",
+        "labelKo": "이동 접근성",
+        "textEn": "Garden paths are gravel. The Climate House has accessible powered doors; other greenhouses have manual doors and thresholds. A free loan wheelchair can be reserved.",
+        "textKo": "정원 길은 자갈길이에요. Climate House에는 접근성을 갖춘 자동·버튼식 문이 있고 다른 온실은 수동문·문턱이 있어요. 무료 대여 휠체어를 예약할 수 있어요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Route limitations",
+        "labelKo": "구역별 접근 제한",
+        "textEn": "The detailed visitor guide says the Butterfly House is not wheelchair-accessible. Wheelchair users must leave by the main gate, not the narrow shop exit. Ask staff about a suitable route.",
+        "textKo": "상세 방문 안내서는 나비 온실에 휠체어로 들어갈 수 없다고 명시해요. 휠체어 이용자는 좁은 상점 출구 대신 정문으로 나가야 해요. 적합한 동선을 직원에게 확인하세요.",
+        "source": "https://www.dehortus.nl/wp-content/uploads/2025/11/Voorbereiding-bezoek-Hortus-Amsterdam_algemeen.pdf",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Sensory conditions",
+        "labelKo": "감각 환경",
+        "textEn": "The visitor guide notes city sounds outdoors, café conversation and coffee-machine noise, and heat, humidity and occasional misting in the greenhouses.",
+        "textKo": "방문 안내서는 야외의 도시 소음, 카페의 대화·커피머신 소리, 온실의 열기·습도·간헐적 분무를 안내해요.",
+        "source": "https://www.dehortus.nl/wp-content/uploads/2025/11/Voorbereiding-bezoek-Hortus-Amsterdam_algemeen.pdf",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Garden and greenhouses",
+        "labelKo": "정원·온실",
+        "textEn": "Outdoor garden walks connect with the Climate House, renovated in 2025, whose three zones present tropical, desert and South African plants.",
+        "textKo": "야외 정원과 2025년 새롭게 단장한 Climate House를 함께 둘러볼 수 있어요. 온실의 세 구역은 열대·사막·남아프리카 식물을 소개해요.",
+        "source": "https://www.dehortus.nl/en/garden-and-greenhouses/climate-house/",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "Amsterdam tourism: Hortus outdoor garden, café and greenhouses",
+            "url": "https://www.iamsterdam.com/en/explore/neighbourhoods/de-plantage/nature-and-active"
+          }
+        ]
       },
       {
         "labelEn": "Location reference",
@@ -1928,7 +2146,33 @@
       "source": "https://en.wikipedia.org/wiki/Hortus_Botanicus_(Amsterdam)",
       "checked": "2026-10-02",
       "kind": "reference"
-    }
+    },
+    "visitFacts": {
+      "price": {
+        "amount": 14.75,
+        "currency": "EUR",
+        "basis": "admission",
+        "textEn": "Adult general admission EUR 14.75; card only. Published rate checked October 7, 2026.",
+        "textKo": "성인 일반 입장 EUR 14.75·카드 결제만 가능. 2026년 10월 7일 공시 요금 확인.",
+        "source": "https://www.dehortus.nl/en/plan-your-visit/",
+        "checked": "2026-10-07"
+      },
+      "parking": {
+        "status": "nearby",
+        "textEn": "Off-site Stopera and Markenhoven garages; fees and spaces need a separate check.",
+        "textKo": "원외 Stopera·Markenhoven 주차장. 요금·빈자리 별도 확인.",
+        "source": "https://www.dehortus.nl/Bezoek/",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/world-nl-hortus-botanicus-amsterdam-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Green_house_of_Hortus_Botanicus_in_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Green_house_of_Hortus_Botanicus_in_Amsterdam.jpg",
+    "imageCredit": "Green house of Hortus Botanicus in Amsterdam.jpg · Faust002 / Wikimedia Commons",
+    "imageLicense": "CC0 1.0",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageNote": "Outdoor garden and small greenhouse at Hortus Botanicus Amsterdam, photographed April 30, 2024. Resized and converted to WebP; display may crop. No endorsement implied. Historical photo; it does not depict the renovated Climate House or verify current conditions.",
+    "imageNoteKo": "2024년 4월 30일 촬영한 암스테르담 호르투스 식물원의 야외 정원과 작은 온실. 크기를 조정한 WebP이며 화면에 따라 일부가 잘릴 수 있습니다. 사진가나 장소의 보증·추천을 의미하지 않습니다. 개보수된 Climate House의 사진이 아니며 현재 상태를 확인한 사진도 아닙니다."
   },
   {
     "id": "world-nl-amsterdamse-bos",
@@ -3327,31 +3571,133 @@
     "category": "walk",
     "name": "Jurong Lake Gardens",
     "area": "Singapore",
-    "address": "Jurong Lake Gardens · Singapore area, SG (street address not verified)",
-    "description": "Singapore에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "Singapore에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in Singapore. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Jurong_Lake_Gardens",
-    "checked": "2026-10-02",
+    "address": "104 Yuan Ching Road, Singapore 618665 (North Carpark / Entrance Pavilion access)",
+    "description": "주롱호를 따라 산책하고, ABC Waters 옆 야외 관람석에서 물가를 바라보며 쉬어갈 수 있는 정원입니다. 구역별 출입 시간과 시설 안내를 확인하세요.",
+    "descriptionKo": "주롱호를 따라 산책하고, ABC Waters 옆 야외 관람석에서 물가를 바라보며 쉬어갈 수 있는 정원입니다. 구역별 출입 시간과 시설 안내를 확인하세요.",
+    "descriptionEn": "Walk beside Jurong Lake and pause at the amphitheatre next to the ABC Waters boardwalk. Check the separate hours and notices for each garden and attraction.",
+    "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
+    "checked": "2026-10-08",
     "tags": [
-      "정원·녹지 공간"
+      "호숫가 산책",
+      "야외 관람석",
+      "정원"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "호숫가 산책",
+      "야외 관람석",
+      "정원"
     ],
     "tagsEn": [
-      "garden setting"
+      "lakeside walk",
+      "amphitheatre rest stop",
+      "gardens"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "NParks 공식 방문 안내와 출처 사진 확인 · 현장 방문·실시간 상태 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Jurong_Lake_Gardens",
-        "checked": "2026-10-02"
+        "labelEn": "Admission",
+        "labelKo": "일반 입장",
+        "textEn": "Free admission to the garden grounds. This does not establish prices for sports facilities, activities, dining or venue hire.",
+        "textKo": "정원 일반 입장은 무료예요. 스포츠 시설·체험·식음료·대관 요금까지 무료라는 뜻은 아닙니다.",
+        "source": "https://isomer-user-content.by.gov.sg/318/42430a02-b4a6-4e74-889f-61a1ec732968/Jurong%20Lake%20Gardens%20Brochure.pdf",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Hours",
+        "labelKo": "구역별 출입 시간",
+        "textEn": "Published grounds hours: Lakeside Garden 24 hours; Chinese and Japanese Gardens 05:30–24:00 daily.",
+        "textKo": "공개 안내 기준, Lakeside Garden 부지는 24시간, Chinese Garden·Japanese Garden은 매일 05:30–24:00예요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/operating-hours-and-services/",
+        "checked": "2026-10-08"
+      },
+      {
+        "labelEn": "Entrances",
+        "labelKo": "출입구",
+        "textEn": "North Carpark / Entrance Pavilion access: 104 Yuan Ching Road, Singapore 618665. Other entrances include Lakeside Plaza, Chinese Garden Bridge and Japanese Garden Bridge.",
+        "textKo": "North Carpark·Entrance Pavilion 접근 주소는 104 Yuan Ching Road, Singapore 618665예요. Lakeside Plaza, Chinese Garden Bridge, Japanese Garden Bridge에도 출입구가 있어요.",
+        "source": "https://lightsbythelake.nparks.gov.sg/by-private-transport/",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "NParks entrances and directions",
+            "url": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/"
+          },
+          {
+            "label": "Map corroboration: Entrance Pavilion",
+            "url": "https://www.waze.com/live-map/directions/jurong-lake-gardens-west-%28entrance-pavilion%29-yuan-ching-rd-104-taman-jurong?to=place.w.67960845.679739526.17681908"
+          }
+        ]
+      },
+      {
+        "labelEn": "Public transport",
+        "labelKo": "대중교통 접근",
+        "textEn": "NParks estimates 3 minutes on foot from Lakeside MRT to Lakeside Plaza, 5 minutes from Chinese Garden MRT to Chinese Garden Bridge, and 20 minutes from Jurong East MRT to Japanese Garden Bridge.",
+        "textKo": "NParks 안내 도보 시간은 Lakeside MRT→Lakeside Plaza 약 3분, Chinese Garden MRT→Chinese Garden Bridge 약 5분, Jurong East MRT→Japanese Garden Bridge 약 20분이에요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Rest stop",
+        "labelKo": "쉬어갈 곳",
+        "textEn": "NParks identifies the amphitheatre beside the ABC Waters boardwalk, next to Clusia Cove, as a place to rest and look across Jurong Lake.",
+        "textKo": "NParks는 Clusia Cove 옆 ABC Waters 산책로에 인접한 야외 관람석을 호수를 바라보며 쉴 수 있는 장소로 안내해요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/discover/lakeside-garden/abc-waters/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Benches",
+        "labelKo": "벤치 확인",
+        "textEn": "NParks’ Heron Island photographs show curved wooden benches beside the water. These are published-photo observations, not a guarantee of current condition or availability.",
+        "textKo": "NParks의 Heron Island 안내 사진에서 물가의 곡선형 목재 벤치를 확인했어요. 현재 상태나 빈자리 여부를 보장하는 정보는 아닙니다.",
+        "source": "https://juronglakegardens.nparks.gov.sg/discover/lakeside-garden/heron-island/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Shelter and accessibility",
+        "labelKo": "쉼터·휠체어 접근",
+        "textEn": "The adult Therapeutic Garden has a shelter with a trellis. NParks states that both the adult and children’s sections are wheelchair-accessible; this does not verify every route across the gardens.",
+        "textKo": "성인용 Therapeutic Garden에는 트렐리스가 이어진 쉼터가 있어요. NParks는 성인·어린이 구역 모두 휠체어 접근이 가능하다고 안내하며, 정원 전체의 모든 경로를 검증한 정보는 아닙니다.",
+        "source": "https://juronglakegardens.nparks.gov.sg/discover/lakeside-garden/therapeutic-garden/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Wheelchair loan",
+        "labelKo": "휠체어 대여",
+        "textEn": "Complimentary, first-come wheelchair loans: daily 08:30–18:30 at Entrance Pavilion, Pagoda Plaza and Water Lily Pavilion information counters.",
+        "textKo": "Entrance Pavilion·Pagoda Plaza·Water Lily Pavilion 안내소에서 매일 08:30–18:30에 휠체어를 무료로 선착순 대여해요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/operating-hours-and-services/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "North and South Carparks are available. NParks lists 2 accessible bays at North and 4 at South. Published charge: SGD 0.60 per 30 minutes during chargeable periods; check free periods and overnight terms before travel.",
+        "textKo": "North·South Carpark를 이용할 수 있어요. NParks는 장애인 주차면을 북쪽 2면·남쪽 4면으로 안내해요. 유료 시간의 공시 요금은 30분당 SGD 0.60이며, 무료 시간과 야간 조건은 방문 전 확인하세요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Selected attraction hours",
+        "labelKo": "주요 시설 시간",
+        "textEn": "Butterfly Maze and Cascading Creek 07:00–19:00; Twin Pagoda 07:00–22:00. Bonsai Gallery 09:00–19:00, Tue–Sun/public holidays; Monday maintenance moves to Tuesday after a Monday public holiday.",
+        "textKo": "Butterfly Maze·Cascading Creek 07:00–19:00, Twin Pagoda 07:00–22:00. Bonsai Gallery는 화~일·공휴일 09:00–19:00이며 월요일 정비 휴무예요. 월요일이 공휴일이면 화요일에 쉽니다.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/operating-hours-and-services/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Safety and notices",
+        "labelKo": "안전·통제 안내",
+        "textEn": "Do not enter Grasslands or Neram Streams after dark: they are unlit. As checked on 2026-10-08, Clusia Cove, Waterwall Court and the Sunken Garden toilet are closed for maintenance until further notice. Dog Run maintenance is scheduled for 14 October 2026. Recheck notices before visiting.",
+        "textKo": "조명이 없는 Grasslands·Neram Streams에는 어두워진 뒤 들어가지 마세요. 2026-10-08 확인한 공지에 따르면 Clusia Cove·Waterwall Court·Sunken Garden 화장실은 별도 공지 시까지 정비로 폐쇄돼 있어요. Dog Run 정비는 2026년 10월 14일로 안내돼 있습니다. 방문 전에 공지를 다시 확인하세요.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/operating-hours-and-services/",
+        "checked": "2026-10-08",
+        "additionalSources": [
+          {
+            "label": "NParks current garden notices",
+            "url": "https://juronglakegardens.nparks.gov.sg/"
+          }
+        ]
       },
       {
         "labelEn": "Location reference",
@@ -3368,7 +3714,33 @@
       "source": "https://en.wikipedia.org/wiki/Jurong_Lake_Gardens",
       "checked": "2026-10-02",
       "kind": "reference"
-    }
+    },
+    "visitFacts": {
+      "price": {
+        "amount": 0,
+        "currency": "SGD",
+        "basis": "admission",
+        "textKo": "정원 일반 입장 무료",
+        "textEn": "Free general admission to the garden grounds",
+        "source": "https://isomer-user-content.by.gov.sg/318/42430a02-b4a6-4e74-889f-61a1ec732968/Jurong%20Lake%20Gardens%20Brochure.pdf",
+        "checked": "2026-10-07"
+      },
+      "parking": {
+        "status": "available",
+        "textKo": "North·South Carpark 운영 안내 있음. 빈자리 보장 아님.",
+        "textEn": "NParks lists North and South Carparks; space availability is not guaranteed.",
+        "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/world-sg-jurong-lake-gardens-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Jurong_Lake_Gardens_10-11-2023%2838%29.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jurong_Lake_Gardens_10-11-2023(38).jpg",
+    "imageCredit": "Jurong Lake Gardens 10-11-2023(38).jpg · LN9267 / Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "imageNote": "Jurong Lake Gardens, photographed November 10, 2023. Resized and converted to WebP; display may crop. This copy remains CC BY-SA 4.0. No endorsement implied. Historical photo; current path and bench conditions or availability are unverified.",
+    "imageNoteKo": "2023년 11월 10일 촬영한 주롱 레이크 가든스. 크기 조정 및 WebP 변환을 거쳤으며 화면에 따라 일부가 잘릴 수 있습니다. 이 사본에도 CC BY-SA 4.0 라이선스가 적용됩니다. 사진가나 장소의 보증·추천을 의미하지 않습니다. 과거 사진으로 현재 산책로·벤치 상태나 빈자리는 확인되지 않았습니다."
   },
   {
     "id": "world-th-lumphini-park",

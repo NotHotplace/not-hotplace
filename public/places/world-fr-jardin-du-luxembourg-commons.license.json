@@ -1,0 +1,34 @@
+{
+  "id": "world-fr-jardin-du-luxembourg",
+  "checked": "2026-10-07",
+  "originalTitle": "Chairs at Jardin du Luxembourg.jpg",
+  "author": "Eutouring",
+  "captureDate": "2015-06-05",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Chairs_at_Jardin_du_Luxembourg.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Chairs_at_Jardin_du_Luxembourg.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rightsNotice": "Produced by EUtouring.com. The original photograph and this resized copy remain CC BY-SA 4.0. No endorsement implied.",
+  "originalSha256": "73a0202121b7193cc94afa32b9a42c8c153b4044b897e1f2f51d865554cce883",
+  "originalDimensions": [
+    3000,
+    2250
+  ],
+  "readySha256": "dc139ff05b25854a96aaf8dbb4746cc7b53a3b958adb7d76c202c61e24065862",
+  "readyDimensions": [
+    1200,
+    900
+  ],
+  "readyBytes": 272976,
+  "modifications": "Proportional resize to 1200 × 900, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Derivative embeds creator, title, capture date, source, license and rights/change notices.",
+  "cropConstraints": "Preserve rows of green chairs and surrounding flowerbeds; avoid isolating incidental visitors. Centered cover crops keep the rest-place context.",
+  "altEn": "Green chairs beside flowerbeds and a lawn in Jardin du Luxembourg, photographed in June 2015.",
+  "altKo": "2015년 6월 촬영한 뤽상부르 정원의 화단과 잔디 옆 초록색 의자.",
+  "metadataNotes": "Original source title, author, license and applicable notices are retained in the public sidecar and embedded EXIF/XMP. The visible photo caption links the original source and license; original capture dates do not establish current conditions.",
+  "asset": "/places/world-fr-jardin-du-luxembourg-commons.webp",
+  "status": "verified-optimized-derivative",
+  "visualReview": "Original and derivative pixels inspected on October 7, 2026. Recovered original and regenerated derivative bytes match those verified SHA-256 hashes exactly; no content substitution.",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:Eutouring",
+  "originalComment": "Produced by EUtouring.com",
+  "captureDateBasis": "Commons Summary Date; no camera DateTimeOriginal found in downloaded JPEG"
+}

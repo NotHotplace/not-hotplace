@@ -34,6 +34,9 @@ const files = {
   'world-nz-wellington-botanic-garden': 'lib/expanded-catalog.json',
   'jp-kyoto-ryoanji-temple': 'lib/jp-catalog.json',
   'world-gb-royal-botanic-gardens-kew': 'lib/expanded-catalog.json',
+  'world-fr-jardin-du-luxembourg': 'lib/expanded-catalog.json',
+  'world-nl-hortus-botanicus-amsterdam': 'lib/expanded-catalog.json',
+  'world-sg-jurong-lake-gardens': 'lib/expanded-catalog.json',
 };
 const ids = Object.keys(files), find = id => catalog.find(place => place.id === id);
 const detail = (place, label) => place.visitDetails.find(item => item.labelEn === label);
@@ -46,7 +49,7 @@ for (const id of ids) {
   const place = find(id), source = read(files[id]).find(record => record.id === id);
   assert(place, id);
   assert.equal(place.detailLevel, 'enriched');
-  assert.equal(place.checked, '2026-10-07');
+  assert.equal(place.checked, id === 'world-sg-jurong-lake-gardens' ? '2026-10-08' : '2026-10-07');
   assert.deepEqual(place.visitDetails, source.visitDetails, id + ' final merged details');
   assert.deepEqual(place.visitFacts, source.visitFacts, id + ' final structured facts');
   assert.deepEqual(place.recommendationReasons, reasons[id], id + ' recommendation overlay');
@@ -54,7 +57,7 @@ for (const id of ids) {
   for (const row of place.visitDetails) {
     assert(row.textKo && row.textEn && row.labelKo && row.labelEn);
     https(row.source);
-    assert.equal(row.checked, row.labelEn === 'Location reference' ? '2026-10-02' : '2026-10-07');
+    assert.equal(row.checked, row.labelEn === 'Location reference' ? '2026-10-02' : id === 'world-sg-jurong-lake-gardens' && ['Hours', 'Safety and notices'].includes(row.labelEn) ? '2026-10-08' : '2026-10-07');
     for (const source of row.additionalSources || []) https(source.url);
     row.labelEn === 'Location reference' ? coordinateRows++ : rows++;
   }
@@ -66,14 +69,14 @@ for (const id of ids) {
   for (const reason of candidateReasons(place)) {
     https(reason.source);
     assert.equal(reason.checked, '2026-10-07');
-    assert(['operator', 'tourism'].includes(reason.sourceKind));
+    assert(['operator', 'tourism', 'official'].includes(reason.sourceKind));
     reasonCount++;
   }
   assert.equal(visitFacts(place).seating, undefined, 'generic seating must not infer individual seats');
   for (const kind of ['soloSeats', 'privateRoom', 'quietMusic', 'partitions']) assert(!matchesCondition(place, kind), id + ' unsupported condition ' + kind);
   assert(essentialDetails(place).some(row => /price|admission/i.test(row.labelEn)), id + ' real cost detail, not a fallback');
 }
-assert.equal(rows, 40); assert.equal(coordinateRows, 3); assert.equal(reasonCount, 9);
+assert.equal(rows, 68); assert.equal(coordinateRows, 6); assert.equal(reasonCount, 15);
 const sayuwon = find(ids[0]), osulloc = find(ids[1]), sydney = find(ids[2]), wellington = find(ids[3]), ryoanji = find(ids[4]), kew = find(ids[5]);
 assert.equal(visitFacts(sayuwon).price.amount, undefined, 'KTO amount varies by date and booking');
 assert(detail(sayuwon, 'Admission').textEn.includes('KTO') && detail(sayuwon, 'Admission').textEn.includes('69,000'));
@@ -111,7 +114,45 @@ for (const [place, lat, lon] of [[sydney, -33.86388889, 151.21694444], [wellingt
 }
 for (const place of [sayuwon, osulloc, ryoanji]) assert(place.lat == null && place.lon == null, 'do not invent unverified coordinates');
 for (const place of [sayuwon, osulloc]) assert(!place.image && !place.photos?.length, 'unlicensed photographs remain unadded');
+const luxembourg = find(ids[6]), hortus = find(ids[7]), jurong = find(ids[8]);
+for (const [place, lat, lon] of [[luxembourg, 48.84694444, 2.33722222], [hortus, 52.3668, 4.9079], [jurong, 1.33805556, 103.72833333]]) {
+  assert.equal(place.lat, lat); assert.equal(place.lon, lon);
+  assert.equal(place.locationInfo.kind, 'reference');
+  assert.equal(place.locationInfo.checked, '2026-10-02');
+  assert.equal(detail(place, 'Location reference').source, place.locationInfo.source);
+  assert(detail(place, 'Location reference').textEn.includes('not a verified entrance'));
+}
+assert.equal(visitFacts(luxembourg).price.amount, 0);
+assert.equal(visitFacts(hortus).price.amount, 14.75);
+assert.equal(visitFacts(jurong).price.amount, 0);
+for (const place of [luxembourg, hortus, jurong]) assert.equal(visitFacts(place).price.basis, 'admission');
+for (const place of [luxembourg, hortus]) {
+  assert.equal(visitFacts(place).parking.status, 'nearby');
+  assert(!matchesCondition(place, 'parking'), place.id + ' nearby parking does not imply on-site');
+}
+assert.equal(visitFacts(jurong).parking.status, 'available');
+assert(matchesCondition(jurong, 'parking'));
+assert.deepEqual(jurong.conditions.map(fact => fact.kind), ['parking'], 'only the supported parking condition');
+assert(detail(luxembourg, 'Hours').textEn.includes('October 1–15: 07:45–18:45'));
+assert(detail(luxembourg, 'Seating').textEn.includes('Seat availability is not verified'));
+assert(detail(luxembourg, 'Accessibility').textEn.includes('remain unverified'));
+assert(detail(hortus, 'Admission').textEn.includes('EUR 8.50'));
+assert(detail(hortus, 'Admission').textEn.includes('Card payment only'));
+assert(detail(hortus, 'Seating and sound').textEn.includes('not a promise of silence'));
+assert(hortus.visitDetails.some(row => row.textEn.includes('Butterfly House')));
+assert(detail(jurong, 'Hours').textEn.includes('Chinese and Japanese Gardens 05:30–24:00'));
+assert(detail(jurong, 'Safety and notices').textEn.includes('2026-10-08'));
+assert(detail(jurong, 'Safety and notices').textEn.includes('14 October 2026'));
+assert(detail(jurong, 'Safety and notices').textEn.includes('Sunken Garden toilet'));
+assert(detail(jurong, 'Safety and notices').textEn.includes('until further notice'));
+assert(detail(jurong, 'Benches').textEn.includes('published-photo observations'));
+assert(luxembourg.imageNote.includes('Produced by EUtouring.com'));
+assert(luxembourg.imageNoteKo.includes('Produced by EUtouring.com'));
+assert(hortus.imageNote.includes('does not depict the renovated Climate House'));
 const photoHashes = {
+  [luxembourg.id]: 'dc139ff05b25854a96aaf8dbb4746cc7b53a3b958adb7d76c202c61e24065862',
+  [hortus.id]: 'e5f6e54f93ce095c7007ed583fe9746e529ac4ce69d83e1363e338cd570e1225',
+  [jurong.id]: '41b2013c78e14a9f555604401546d8081993af0b1539c4e422978f3d01027ed5',
   [sydney.id]: 'cc4c8c7a5e8865ba91c953fc387aeb4d8a7dc5ad32b21bc162d281092cd2a871',
   [wellington.id]: '69f91ef2b7f9c909e8845a816422aaba0e07882030651511222c5914cb433490',
   [ryoanji.id]: 'b6f81c4dae678097224cd836cc62ae51f1f88f81a07753f9209adf6a6a455b17',
@@ -120,7 +161,14 @@ const photoHashes = {
 for (const [id, expectedHash] of Object.entries(photoHashes)) {
   const place = find(id), file = path.join(root, 'public', place.image);
   const photo = read('public' + place.image.replace(/\.webp$/, '.license.json'));
-  const actualHash = crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+  const bytes = fs.readFileSync(file);
+  const actualHash = crypto.createHash('sha256').update(bytes).digest('hex');
+  if ([luxembourg, hortus, jurong].includes(place)) {
+    assert.equal(bytes.length, photo.readyBytes);
+    assert.deepEqual(photo.readyDimensions, [1200, 900]);
+    for (const value of [photo.author, photo.originalTitle, photo.captureDate, photo.sourcePage, photo.licenseUrl]) assert(bytes.includes(Buffer.from(value)), id + ' embedded XMP: ' + value);
+    assert(photo.visualReview && photo.modifications.includes('no crop'));
+  }
   assert.equal(actualHash, expectedHash); assert.equal(photo.readySha256, expectedHash);
   assert.equal(photo.sourcePage, place.imageSource); assert.equal(photo.licenseUrl, place.imageLicenseUrl);
   assert.equal(photo.asset, place.image); assert(photo.author && photo.originalTitle && photo.rightsNotice && photo.modifications);
@@ -132,7 +180,9 @@ for (const [id, expectedHash] of Object.entries(photoHashes)) {
   const journal = read('lib/journal-places.json').find(record => record.id === id);
   assert.equal(journal.image, place.image); assert.equal(journal.imageCredit, place.imageCredit); assert.equal(journal.imageLicense, place.imageLicense);
 }
-for (const place of [sydney, ryoanji]) {
+const photoCropStyle = fs.readFileSync(path.join(root, 'app/visit.css'), 'utf8');
+assert(photoCropStyle.includes('img[src="' + hortus.image + '"],\nimg[src="' + jurong.image + '"]{object-position:center bottom}'), 'lower paths and bench survive wide-card crops');
+for (const place of [sydney, ryoanji, luxembourg, jurong]) {
   assert(place.imageNote.includes('This copy remains ' + place.imageLicense));
   assert(place.imageNoteKo.includes(place.imageLicense + ' 라이선스가 적용'));
 }
@@ -164,12 +214,13 @@ const pictograms = compile(path.join(root, 'app/visit-pictograms.tsx'), requireP
       for (const source of row.additionalSources || []) assert(html.includes('href="' + escaped(source.url) + '"'));
     }
     for (const reason of candidateReasons(place)) assert(html.includes(escaped(localized(reason, language))), id + ' localized reason');
-    assert(!html.includes('data-confirmed="true"'), id + ' unknown condition stays unconfirmed');
+    assert.equal((html.match(/data-confirmed="true"/g) || []).length, place === jurong ? 1 : 0, id + ' only sourced parking may be confirmed');
     const facts = renderToStaticMarkup(pictograms({place, language}));
     assert(facts.includes(escaped(localized(visitFacts(place).price, language))), id + ' localized price');
     assert(!facts.includes('Individual seats') && !facts.includes('1인석'));
     if (place === osulloc) assert(facts.includes('parking-unknown'));
-    if (place === sydney) assert(facts.includes('parking-nearby') && !facts.includes('parking-available'));
+    if ([sydney, luxembourg, hortus].includes(place)) assert(facts.includes('parking-nearby') && !facts.includes('parking-available'));
+    if (place === jurong) assert(facts.includes('parking-available'));
     if (place.image) {
       assert(html.includes('src="' + place.image + '"'));
       assert(html.includes(escaped(place.imageCredit)));
@@ -180,5 +231,5 @@ const pictograms = compile(path.join(root, 'app/visit-pictograms.tsx'), requireP
       assert.equal(metadata.openGraph.images[0].url, place.image);
     } else assert(html.includes(language === 'ko' ? '아직 등록된 장소 사진이 없어요.' : 'A photo of this place has not been added yet.'));
   }
-  console.log('PASS: six merged place records, 40 substantive sourced details plus 3 preserved coordinate notes, 9 reasons, four exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1007 IDs.');
+  console.log('PASS: nine merged place records, 68 substantive sourced details plus 6 preserved coordinate notes, 15 reasons, seven exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1007 IDs.');
 })().catch(error => {console.error(error); process.exitCode = 1;});
