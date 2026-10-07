@@ -78,5 +78,80 @@
       "checked": "2026-10-05",
       "sourceKind": "official"
     }
+  ],
+  "kr-sayuwon": [
+    {
+      "textEn": "A roughly one-hour route links woodland and architectural viewpoints.",
+      "textKo": "숲과 건축물을 잇는 약 1시간 산책 코스가 있어요.",
+      "source": "https://www.sayuwon.com/tour/01",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    },
+    {
+      "textEn": "A book café and a library offer indoor places to pause.",
+      "textKo": "북카페와 라이브러리에서 실내 휴식을 곁들일 수 있어요.",
+      "source": "https://www.sayuwon.com/guide/02",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
+  ],
+  "kr-osulloc-tea-stone": [
+    {
+      "textEn": "A set tea course combines a garden walk with brewing and tasting.",
+      "textKo": "정원 산책과 차 우리기·테이스팅이 한 코스로 이어져요.",
+      "source": "https://www.osulloc.com/kr/ko/store-introduction/2",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
+  ],
+  "world-au-royal-botanic-garden-sydney": [
+    {
+      "textEn": "Benches in themed gardens and pond-side lawns provide specific places to pause.",
+      "textKo": "주제 정원의 벤치와 연못 옆 잔디밭에서 쉬어갈 수 있어요.",
+      "source": "https://www.botanicgardens.org.au/five-best-picnic-spots-royal-botanic-garden-sydney-has-offer",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    },
+    {
+      "textEn": "Most areas are accessible by wheelchair, with a dedicated route map.",
+      "textKo": "휠체어 접근 가능한 구간이 많고 별도 동선 지도가 있어요.",
+      "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit/accessibility",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
+  ],
+  "world-nz-wellington-botanic-garden": [
+    {
+      "textEn": "Native forest, plant collections and city views support a varied outdoor walk.",
+      "textKo": "원생림·식물 컬렉션·도시 전망을 잇는 산책을 할 수 있어요.",
+      "source": "https://www.wellingtonnz.com/visit/see-and-do/best-things-to-do-for-free-in-the-city",
+      "checked": "2026-10-07",
+      "sourceKind": "tourism"
+    }
+  ],
+  "jp-kyoto-ryoanji-temple": [
+    {
+      "textEn": "The rock-garden viewing area can be combined with a pond-side walk.",
+      "textKo": "돌정원을 바라보는 시간과 연못 주변 산책을 함께 할 수 있어요.",
+      "source": "https://kyoto.travel/en/destinations/ryoanji-temple/",
+      "checked": "2026-10-07",
+      "sourceKind": "tourism"
+    }
+  ],
+  "world-gb-royal-botanic-gardens-kew": [
+    {
+      "textEn": "Benches and lawns offer places to pause between garden walks.",
+      "textKo": "정원 산책 사이 벤치와 잔디밭에서 쉬어갈 수 있어요.",
+      "source": "https://www.kew.org/sites/default/files/2026-05/RBG-Kew-Community-Open-Week-2026-Visual-Guide-Final-Version.pdf",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    },
+    {
+      "textEn": "Mostly flat paths support choosing a less strenuous route; noise can vary.",
+      "textKo": "대체로 평탄한 길에서 이동 부담을 조절할 수 있어요. 소음은 달라질 수 있어요.",
+      "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/accessibility",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
   ]
 }

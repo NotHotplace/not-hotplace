@@ -1,0 +1,36 @@
+{
+  "id": "world-au-royal-botanic-garden-sydney",
+  "checked": "2026-10-07",
+  "originalTitle": "Sydney (AU), Royal Botanic Gardens -- 2019 -- 3081.jpg",
+  "author": "Dietmar Rabich",
+  "captureDate": "2019-10-25",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Royal_Botanic_Gardens_--_2019_--_3081.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Sydney_%28AU%29%2C_Royal_Botanic_Gardens_--_2019_--_3081.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rightsNotice": "Copyright Dietmar Rabich, Dülmen. The original photograph and this resized copy remain CC BY-SA 4.0. No endorsement implied. Photographer gives no warranty concerning rights in depicted objects or persons; original disclaimer retained through the source and source metadata.",
+  "sourceHtmlSha256": "29e7ee9a3197c59d6d1feb397cf615c01f6876e1a38cb7d6a003c18a91c72a15",
+  "originalSha256": "258d195668fd4a631b4ef3585206b646dbec6b576cc820de98affae8aac287d1",
+  "originalSha1": "121184b0de400af3950da1956d3bfd58b3239115",
+  "originalDimensions": [
+    6087,
+    4058
+  ],
+  "readySha256": "cc4c8c7a5e8865ba91c953fc387aeb4d8a7dc5ad32b21bc162d281092cd2a871",
+  "readyDimensions": [
+    1200,
+    800
+  ],
+  "readyBytes": 382112,
+  "modifications": "Proportional resize to width 1200, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Original files and their metadata preserved separately; derivative embeds creator, title, attribution/source/license and applicable rights notices.",
+  "visualReview": "Original and final 1200px WebP pixels both inspected on 2026-10-07. Scene, framing, detail and color retained; no watermark or overlaid logo removed. No content retouching.",
+  "matchingConfidence": "high",
+  "matchingEvidence": "Original file page specifies the exact garden name and Mrs Macquaries Road address, with camera coordinates -33.862592, 151.216352. Pixels show the garden tree, harbourside path and lawn. The file description and coordinates match the catalog venue.",
+  "cropConstraints": "Keep the trunk and lower lawn/harbour context. A centered 16:9 display crop is acceptable; do not crop tightly onto a generic canopy or any distant visitor.",
+  "altEn": "A large spreading tree beside the harbour in the Royal Botanic Garden Sydney.",
+  "altKo": "시드니 왕립식물원 항만 옆에 넓게 가지를 펼친 큰 나무.",
+  "metadataNotes": "Original source linked above; hashes record the verified original bytes and description page. Derivative has fresh legal/source metadata and retains the applicable original copyright notice. Source software metadata is not used as photographer attribution.",
+  "commonsSha1Verified": true,
+  "asset": "/places/world-au-royal-botanic-garden-sydney-commons.webp",
+  "status": "published-with-place-record"
+}

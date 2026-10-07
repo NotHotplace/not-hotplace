@@ -468,31 +468,85 @@
     "category": "walk",
     "name": "Royal Botanic Gardens, Kew",
     "area": "London",
-    "address": "Royal Botanic Gardens, Kew · London area, GB (street address not verified)",
-    "description": "London에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "London에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in London. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Kew_Gardens",
-    "checked": "2026-10-02",
+    "address": "Victoria Gate, Kew Gardens, Richmond, TW9 3JR, United Kingdom",
+    "description": "넓은 식물 컬렉션과 온실을 걸어 둘러보고 벤치나 잔디밭에서 쉬어갈 수 있는 런던의 유료 식물원입니다. 대체로 평탄하지만 항공기·관리 작업 소음이 있을 수 있어요.",
+    "descriptionKo": "넓은 식물 컬렉션과 온실을 걸어 둘러보고 벤치나 잔디밭에서 쉬어갈 수 있는 런던의 유료 식물원입니다. 대체로 평탄하지만 항공기·관리 작업 소음이 있을 수 있어요.",
+    "descriptionEn": "A ticketed London garden with plant collections, glasshouses, benches and lawns. Most paths are fairly flat, but aircraft and maintenance work can be noisy.",
+    "source": "https://www.kew.org/kew-gardens",
+    "checked": "2026-10-07",
     "tags": [
-      "정원·녹지 공간"
+      "식물원 산책",
+      "온실",
+      "벤치·잔디밭"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "식물원 산책",
+      "온실",
+      "벤치·잔디밭"
     ],
     "tagsEn": [
-      "garden setting"
+      "Botanical walks",
+      "Glasshouses",
+      "Benches and lawns"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "운영기관·관광기관 공개 안내 확인 · 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Kew_Gardens",
-        "checked": "2026-10-02"
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "Adult standard entry, 2 Sep–31 Oct 2026: GBP 25 online / GBP 28 at the gate, excluding optional donations. Tuesday promotion: GBP 10 through 29 Dec 2026. Other dates vary.",
+        "textKo": "2026년 9월 2일~10월 31일 성인 일반권은 1인 온라인 GBP 25·현장 GBP 28(선택 기부금 제외). 12월 29일까지 화요일 할인권은 GBP 10이며 다른 날짜는 요금이 달라요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/tickets",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "1–24 Oct 2026: 10:00–18:00, last entry 17:00. 25 Oct–11 Nov: 10:00–16:00, last entry 15:00. Glasshouses can close earlier.",
+        "textKo": "2026년 10월 1~24일 10:00~18:00(입장 마감 17:00), 10월 25일~11월 11일 10:00~16:00(입장 마감 15:00). 온실은 더 일찍 닫을 수 있어요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/opening-and-closing-times",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Entrance and transit",
+        "labelKo": "입구·대중교통",
+        "textEn": "Victoria Gate (TW9 3JR) is about 500 m from Kew Gardens Station. Brentford Gate (TW9 3AF) serves the car park.",
+        "textKo": "Victoria Gate(TW9 3JR)는 Kew Gardens 역에서 약 500m, Brentford Gate(TW9 3AF)는 주차장 쪽 입구예요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/getting-here",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Limited first-come parking at Brentford Gate/Ferry Lane costs GBP 10 per day; card/app payment. Blue Badge parking is free.",
+        "textKo": "Brentford Gate/Ferry Lane 주차장은 선착순·공간 제한이 있으며 하루 GBP 10, 카드·앱 결제예요. Blue Badge 소지자는 무료예요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/getting-here",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Accessibility and noise",
+        "labelKo": "접근성·소음",
+        "textEn": "The grounds are mostly flat, with tarmac paths in many areas. The operator warns of aircraft, vehicles and machinery noise.",
+        "textKo": "대체로 평탄하고 포장된 길이 많아요. 운영기관은 항공기와 작업 차량·기계 소음이 있을 수 있다고 안내해요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/accessibility",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Seating",
+        "labelKo": "쉬어갈 공간",
+        "textEn": "The operator’s 2026 visual guide describes benches and places for picnic blankets around the gardens. These are shared public spaces.",
+        "textKo": "운영기관의 2026년 안내서는 원내 벤치와 피크닉 담요를 펼칠 공간을 소개해요. 다른 방문객과 함께 쓰는 공간이에요.",
+        "source": "https://www.kew.org/sites/default/files/2026-05/RBG-Kew-Community-Open-Week-2026-Visual-Guide-Final-Version.pdf",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Closures",
+        "labelKo": "공사·휴관",
+        "textEn": "Waterlily House is closed until spring 2027; the Natural Area boardwalk and Ice House are also closed. Check current notices for your visit.",
+        "textKo": "워터릴리 하우스는 2027년 봄까지, Natural Area의 보드워크와 Ice House도 휴관·폐쇄 안내 중이에요. 방문일 공지를 확인하세요.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/planned-closures",
+        "checked": "2026-10-07"
       },
       {
         "labelEn": "Location reference",
@@ -509,7 +563,32 @@
       "source": "https://en.wikipedia.org/wiki/Kew_Gardens",
       "checked": "2026-10-02",
       "kind": "reference"
-    }
+    },
+    "visitFacts": {
+      "price": {
+        "currency": "GBP",
+        "basis": "admission",
+        "textEn": "Adult 2 Sep–31 Oct 2026: GBP 25 online / GBP 28 gate; date-specific promotions and prices.",
+        "textKo": "2026년 9월 2일~10월 31일 성인 1인 온라인 GBP 25·현장 GBP 28. 날짜별 할인·요금 확인.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/tickets",
+        "checked": "2026-10-07"
+      },
+      "parking": {
+        "status": "available",
+        "textEn": "Limited first-come car park, GBP 10/day; Blue Badge free.",
+        "textKo": "선착순 주차장·하루 GBP 10. Blue Badge 무료.",
+        "source": "https://www.kew.org/kew-gardens/visit-kew-gardens/getting-here",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/world-gb-royal-botanic-gardens-kew-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Kew_Gardens_Greenhouse_Exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kew_Gardens_Greenhouse_Exterior.jpg",
+    "imageCredit": "SkyRose18 / Wikimedia Commons",
+    "imageLicense": "CC0 1.0",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "imageNote": "Temperate House at Kew Gardens, photographed in June 2019. Resized and converted to WebP; display may crop. No endorsement implied.",
+    "imageNoteKo": "2019년 6월 촬영한 큐 가든 템퍼레이트 하우스. 크기를 조정한 WebP이며 화면에 따라 일부가 잘릴 수 있습니다. 사진가나 장소의 보증·추천을 의미하지 않습니다."
   },
   {
     "id": "world-gb-royal-botanic-garden-edinburgh",
@@ -4469,46 +4548,76 @@
     "name": "Royal Botanic Garden Sydney",
     "area": "Sydney",
     "address": "Mrs Macquaries Road, Sydney NSW 2000, Australia",
-    "description": "시드니 항만 주변에서 녹지와 정원 공간을 둘러보는 왕립식물원입니다. 일반 정원 방문은 무료이며, 행사·프로그램 예약과 출입·주차 안내는 방문 전 따로 살펴보세요.",
-    "descriptionKo": "시드니 항만 주변에서 녹지와 정원 공간을 둘러보는 왕립식물원입니다. 일반 정원 방문은 무료이며, 행사·프로그램 예약과 출입·주차 안내는 방문 전 따로 살펴보세요.",
-    "descriptionEn": "Explore the Royal Botanic Garden beside Sydney Harbour. General garden visits are free; event bookings, entry and parking arrangements are separate.",
-    "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
-    "checked": "2026-10-02",
+    "description": "시드니 항만 곁에서 주제 정원과 잔디밭을 걷는 무료 식물원입니다. 고사리원 벤치나 메인 연못 주변 잔디밭에서 잠시 쉬어갈 수 있어요. 일몰에 따라 문 닫는 시간이 달라져요.",
+    "descriptionKo": "시드니 항만 곁에서 주제 정원과 잔디밭을 걷는 무료 식물원입니다. 고사리원 벤치나 메인 연못 주변 잔디밭에서 잠시 쉬어갈 수 있어요. 일몰에 따라 문 닫는 시간이 달라져요.",
+    "descriptionEn": "A free garden beside Sydney Harbour with themed planting and lawns. Pause on a Fernery bench or by the Main Pond lawns; closing times change with the season.",
+    "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+    "checked": "2026-10-07",
     "tags": [
-      "정원·녹지 공간"
+      "무료 정원",
+      "항만 산책",
+      "벤치·잔디밭"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "무료 정원",
+      "항만 산책",
+      "벤치·잔디밭"
     ],
     "tagsEn": [
-      "garden setting"
+      "Free garden",
+      "Harbour walks",
+      "Benches and lawns"
     ],
     "detailLevel": "enriched",
-    "sourceHint": "운영기관 공개 안내 확인 · 방문 검증 아님",
+    "sourceHint": "운영기관·관광기관 공개 안내 확인 · 방문 검증 아님",
     "visitDetails": [
       {
         "labelEn": "Admission",
         "labelKo": "입장료",
-        "textEn": "General garden visits are free. Programs and events may have separate conditions.",
-        "textKo": "일반 정원 방문 무료. 프로그램과 행사는 별도 이용 조건이 있을 수 있어요.",
-        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
-        "checked": "2026-10-02"
+        "textEn": "General garden admission is free. Special ticketed events have separate fees.",
+        "textKo": "일반 정원 입장 무료. 별도 티켓을 받는 행사는 요금이 달라요.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+        "checked": "2026-10-07"
       },
       {
-        "labelEn": "Access",
-        "labelKo": "위치",
-        "textEn": "Mrs Macquaries Road, Sydney NSW 2000, Australia.",
-        "textKo": "Mrs Macquaries Road, Sydney NSW 2000, Australia.",
-        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
-        "checked": "2026-10-02"
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Opens daily at 07:00. Closing: Oct 19:30; Nov–Feb 20:00; Mar 18:30; Apr/Sep 18:00; May/Aug 17:30; Jun–Jul 17:00.",
+        "textKo": "매일 07:00 개장. 마감은 10월 19:30, 11~2월 20:00, 3월 18:30, 4·9월 18:00, 5·8월 17:30, 6~7월 17:00예요.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+        "checked": "2026-10-07"
       },
       {
-        "labelEn": "Visit planning",
-        "labelKo": "방문 안내",
-        "textEn": "Use the garden’s visitor information for current access, parking and accessibility.",
-        "textKo": "방문할 출입구·주차·접근성은 식물원 방문 안내에서 확인해 주세요.",
-        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
-        "checked": "2026-10-02"
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Nearby metered parking on Mrs Macquaries Road and Hospital Road costs AUD 9/hour, 08:00–20:00; AUD 5/hour overnight. Payment is cashless.",
+        "textKo": "인근 Mrs Macquaries Road·Hospital Road 노상주차는 08:00~20:00 시간당 AUD 9, 야간 시간당 AUD 5예요. 현금 결제는 받지 않아요.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit/getting-here",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "이동 접근성",
+        "textEn": "Most areas allow walker or wheelchair access. A wheelchair can be pre-booked free through reception; use the accessible-path map to choose a route.",
+        "textKo": "대부분의 구역은 보행 보조기·휠체어 접근이 가능해요. 안내실에서 휠체어 무료 대여를 사전 예약할 수 있으며, 무장애 동선 지도를 보고 코스를 고르세요.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit/accessibility",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Places to pause",
+        "labelKo": "쉬어갈 지점",
+        "textEn": "The operator describes benches in the Fernery and Succulent Garden, and picnic lawns near the Main Pond. These are shared public areas.",
+        "textKo": "운영기관은 고사리원·다육식물원의 벤치와 메인 연못 근처 피크닉 잔디밭을 소개해요. 다른 방문객과 함께 쓰는 공간입니다.",
+        "source": "https://www.botanicgardens.org.au/five-best-picnic-spots-royal-botanic-garden-sydney-has-offer",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Weather and closures",
+        "labelKo": "날씨·출입",
+        "textEn": "Extreme weather can cause early closure. Cafés and special attractions operate their own hours.",
+        "textKo": "기상 악화 시 조기 폐원할 수 있어요. 카페·별도 시설은 정원과 운영시간이 다를 수 있습니다.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+        "checked": "2026-10-07"
       },
       {
         "labelEn": "Location reference",
@@ -4528,15 +4637,30 @@
     },
     "visitFacts": {
       "price": {
-        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
-        "checked": "2026-10-02",
-        "amount": 0,
         "currency": "AUD",
         "basis": "admission",
-        "textKo": "일반 정원 입장 무료",
-        "textEn": "Free general garden admission"
+        "textEn": "Free general garden admission; ticketed events separate.",
+        "textKo": "일반 정원 입장 무료. 유료 행사는 별도.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+        "checked": "2026-10-07",
+        "amount": 0
+      },
+      "parking": {
+        "status": "nearby",
+        "textEn": "Nearby metered street parking: AUD 9/hour by day; cashless.",
+        "textKo": "인근 유료 노상주차. 주간 시간당 AUD 9·현금 불가.",
+        "source": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit/getting-here",
+        "checked": "2026-10-07"
       }
-    }
+    },
+    "image": "/places/world-au-royal-botanic-garden-sydney-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/03/Sydney_%28AU%29%2C_Royal_Botanic_Gardens_--_2019_--_3081.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Royal_Botanic_Gardens_--_2019_--_3081.jpg",
+    "imageCredit": "Dietmar Rabich / Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "imageNote": "Royal Botanic Garden Sydney, photographed in October 2019. Resized and converted to WebP; display may crop. This copy remains CC BY-SA 4.0. No endorsement implied. Copyright Dietmar Rabich, Dülmen. The photographer gives no warranty about rights in depicted objects or people.",
+    "imageNoteKo": "2019년 10월 촬영한 시드니 왕립식물원. 크기를 조정한 WebP이며 화면에 따라 일부가 잘릴 수 있습니다. 이 사본에도 CC BY-SA 4.0 라이선스가 적용됩니다. 사진가나 장소의 보증·추천을 의미하지 않습니다. 저작권: Dietmar Rabich, Dülmen. 사진가는 사진 속 사물이나 사람에 관한 권리를 보증하지 않습니다."
   },
   {
     "id": "world-au-centennial-park",
@@ -4695,31 +4819,91 @@
     "category": "walk",
     "name": "Wellington Botanic Garden",
     "area": "Wellington",
-    "address": "Wellington Botanic Garden · Wellington area, NZ (street address not verified)",
-    "description": "Wellington에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionKo": "Wellington에서 둘러볼 수 있는 정원·녹지 공간입니다. 장소 소개와 위치 참고자료를 모았으며, 조용함은 방문 후기로 확인해요.",
-    "descriptionEn": "A garden setting to explore in Wellington. This entry identifies the place; visitor feedback is needed to assess quietness.",
-    "source": "https://en.wikipedia.org/wiki/Wellington_Botanic_Garden",
-    "checked": "2026-10-02",
+    "address": "Glenmore Street main entrance, Wellington, New Zealand",
+    "description": "원생림과 장미정원, 전망 지점을 걸으며 둘러보는 무료 식물원입니다. 케이블카 쪽에서 내려오는 산책로를 고를 수 있지만 언덕이 많아요. 베고니아 하우스는 보수 공사로 닫혀 있어요.",
+    "descriptionKo": "원생림과 장미정원, 전망 지점을 걸으며 둘러보는 무료 식물원입니다. 케이블카 쪽에서 내려오는 산책로를 고를 수 있지만 언덕이 많아요. 베고니아 하우스는 보수 공사로 닫혀 있어요.",
+    "descriptionEn": "A free garden with native forest, roses and viewpoints. A downhill route from the Cable Car is one option, but the grounds are hilly. Begonia House is closed for renovation.",
+    "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+    "checked": "2026-10-07",
     "tags": [
-      "정원·녹지 공간"
+      "무료 정원",
+      "내리막 산책",
+      "장미정원"
     ],
     "tagsKo": [
-      "정원·녹지 공간"
+      "무료 정원",
+      "내리막 산책",
+      "장미정원"
     ],
     "tagsEn": [
-      "garden setting"
+      "Free garden",
+      "Downhill walk",
+      "Rose garden"
     ],
-    "detailLevel": "basic",
-    "sourceHint": "위키백과 장소 참고자료 · 운영 안내와 방문 검증은 별도",
+    "detailLevel": "enriched",
+    "sourceHint": "운영기관·관광기관 공개 안내 확인 · 방문 검증 아님",
     "visitDetails": [
       {
-        "labelEn": "Setting",
-        "labelKo": "공간 종류",
-        "textEn": "Garden setting. Identified in the reference article.",
-        "textKo": "정원·녹지 공간 · 장소 소개 자료 기준",
-        "source": "https://en.wikipedia.org/wiki/Wellington_Botanic_Garden",
-        "checked": "2026-10-02"
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "General garden entry is free; the Cable Car is separate.",
+        "textKo": "일반 정원 입장은 무료예요. 케이블카 이용은 별도입니다.",
+        "source": "https://wellingtongardens.nz/assets/botanic-garden-map-brochure-WEB.pdf",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "WellingtonNZ",
+            "url": "https://www.wellingtonnz.com/visit/see-and-do/best-things-to-do-for-free-in-the-city"
+          }
+        ]
+      },
+      {
+        "labelEn": "Hours",
+        "labelKo": "운영 시간",
+        "textEn": "Garden grounds open year-round from dawn to dusk.",
+        "textKo": "정원은 연중 새벽부터 해 질 때까지 개방해요.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "The public car park beside Lady Norwood Rose Garden is paid, with a two-hour limit. Vehicle access is through Centennial Entrance on Glenmore Street.",
+        "textKo": "Lady Norwood Rose Garden 옆 공용주차장은 유료·최대 2시간이에요. 차량은 Glenmore Street의 Centennial Entrance로 들어가세요.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "이동 접근성",
+        "textEn": "The garden is hilly. The Cable Car top, Lady Norwood Rose Garden and Glenmore Street main entrance are wheelchair-friendly areas.",
+        "textKo": "언덕이 많은 정원이에요. 케이블카 상부, Lady Norwood Rose Garden, Glenmore Street 정문 구역이 휠체어 친화 구간으로 안내돼요.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Visitor centre",
+        "labelKo": "방문자 안내소",
+        "textEn": "Treehouse: weekdays 09:00–16:00; Sep–Apr weekends/public holidays 10:00–16:00. Closed Christmas and ANZAC Day; winter weekends closed.",
+        "textKo": "Treehouse는 평일 09:00~16:00, 9~4월 주말·공휴일 10:00~16:00예요. 크리스마스·ANZAC Day와 5~8월 주말은 쉬어요.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Closures",
+        "labelKo": "공사·휴관",
+        "textEn": "Begonia House is closed for renovations; Picnic Café remains open.",
+        "textKo": "베고니아 하우스는 보수 공사로 휴관 중이며 Picnic Café는 운영 중이에요.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Walking route",
+        "labelKo": "산책 동선",
+        "textEn": "A self-guided downhill walk connects the Cable Car to the city. Maps are available at Treehouse Visitor Centre.",
+        "textKo": "케이블카에서 도심으로 내려가는 자율 산책로가 있어요. Treehouse 안내소에서 지도를 받을 수 있어요.",
+        "source": "https://wellingtongardens.nz/assets/botanic-garden-map-brochure-WEB.pdf",
+        "checked": "2026-10-07"
       },
       {
         "labelEn": "Location reference",
@@ -4736,7 +4920,33 @@
       "source": "https://en.wikipedia.org/wiki/Wellington_Botanic_Garden",
       "checked": "2026-10-02",
       "kind": "reference"
-    }
+    },
+    "visitFacts": {
+      "price": {
+        "currency": "NZD",
+        "basis": "admission",
+        "textEn": "Free general garden admission.",
+        "textKo": "일반 정원 입장 무료.",
+        "source": "https://wellingtongardens.nz/assets/botanic-garden-map-brochure-WEB.pdf",
+        "checked": "2026-10-07",
+        "amount": 0
+      },
+      "parking": {
+        "status": "available",
+        "textEn": "Paid Rose Garden car park; two-hour limit, via Centennial Entrance.",
+        "textKo": "장미정원 옆 유료주차장·최대 2시간, Centennial Entrance 진입.",
+        "source": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/world-nz-wellington-botanic-garden-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/ec/General_view_-_Wellington_Botanic_Garden_-_Wellington%2C_NZ_-_DSC09491.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:General_view_-_Wellington_Botanic_Garden_-_Wellington,_NZ_-_DSC09491.jpg",
+    "imageCredit": "Daderot / Wikimedia Commons",
+    "imageLicense": "CC0 1.0",
+    "imageLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "imageNote": "Wellington Botanic Garden, photographed in October 2024. Resized and converted to WebP; display may crop. No endorsement implied.",
+    "imageNoteKo": "2024년 10월 촬영한 웰링턴 식물원. 크기를 조정한 WebP이며 화면에 따라 일부가 잘릴 수 있습니다. 사진가나 장소의 보증·추천을 의미하지 않습니다."
   },
   {
     "id": "world-nz-auckland-botanic-gardens",

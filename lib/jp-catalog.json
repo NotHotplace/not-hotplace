@@ -780,42 +780,114 @@
     "category": "walk",
     "name": "Ryoan-ji · 료안지",
     "area": "Kyoto",
-    "address": "13 Ryoanji-Goryo-no-Sita-cho, Ukyo-ku, Kyoto City",
-    "description": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit.",
-    "descriptionKo": "돌과 모래로 구성된 정원으로 알려진 사찰입니다. 관람 동선과 입장 조건을 확인하고 방문해요.",
-    "descriptionEn": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit.",
+    "address": "13 Ryoanji Goryonoshita-cho, Ukyo-ku, Kyoto 616-8001, Japan",
+    "description": "View the rock garden, then walk through moss and trees around Kyoyo-chi Pond. This Kyoto temple has shared visitor areas and seasonal opening hours.",
+    "descriptionKo": "돌정원을 바라보며 앉아 있다가 이끼·나무 정원과 교요치 연못 주변을 걸을 수 있는 교토의 사찰입니다. 일반 관람 공간을 다른 방문객과 함께 이용하며, 계절별 관람시간이 달라요.",
+    "descriptionEn": "View the rock garden, then walk through moss and trees around Kyoyo-chi Pond. This Kyoto temple has shared visitor areas and seasonal opening hours.",
     "source": "https://kyoto.travel/en/destinations/ryoanji-temple/",
-    "checked": "2026-10-01",
-    "sourceHint": "공식 자료 확인 · 방문 검증 아님",
+    "checked": "2026-10-07",
+    "sourceHint": "운영기관·관광기관 공개 안내 확인 · 방문 검증 아님",
     "tags": [
-      "Garden / walk"
+      "Rock garden",
+      "Pond walk"
     ],
     "tagsKo": [
-      "정원·산책"
+      "돌정원",
+      "연못 산책"
     ],
     "tagsEn": [
-      "Garden / walk"
+      "Rock garden",
+      "Pond walk"
     ],
     "visitDetails": [
       {
-        "labelKo": "공간 특징",
-        "labelEn": "Setting",
-        "textKo": "돌과 모래로 구성된 정원으로 알려진 사찰입니다. 관람 동선과 입장 조건을 확인하고 방문해요.",
-        "textEn": "A temple known for its rock-and-gravel garden. Check visitor routes and admission before your visit."
+        "labelEn": "Admission",
+        "labelKo": "입장료",
+        "textEn": "JPY 600 per adult; high-school students JPY 500; elementary/junior-high students JPY 300.",
+        "textKo": "1인 성인 JPY 600, 고등학생 JPY 500, 초·중학생 JPY 300이에요.",
+        "source": "https://www.kyoto-kankou.or.jp/info_search/3455",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "사찰 안내",
+            "url": "https://www.ryoanji.jp/smph/rode/index.html"
+          }
+        ]
       },
       {
-        "labelKo": "운영·관람",
-        "labelEn": "Hours & access",
-        "textKo": "정원·건물·프로그램별 운영 시간과 휴원일을 공식 안내에서 확인해 주세요.",
-        "textEn": "Confirm opening hours and closures for each garden, building or program."
+        "labelEn": "Hours",
+        "labelKo": "관람 시간",
+        "textEn": "March–November 08:00–17:00; December–February 08:30–16:30. Open year-round.",
+        "textKo": "3~11월 08:00~17:00, 12~2월 08:30~16:30. 연중무휴로 안내돼요.",
+        "source": "https://ja.kyoto.travel/tourism/single01.php?category_id=7&tourism_id=482",
+        "checked": "2026-10-07",
+        "additionalSources": [
+          {
+            "label": "교토부 관광연맹",
+            "url": "https://www.kyoto-kankou.or.jp/info_search/3455"
+          }
+        ]
       },
       {
-        "labelKo": "가격·예약",
-        "labelEn": "Price & booking",
-        "textKo": "유료 관람 구역과 예약 체험 조건을 각각 확인해 주세요.",
-        "textEn": "Check separate ticketed areas and booked experiences."
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "Parking is available; one hour is free for rock-garden visitors. Ask attendants about spaces closer to the garden if mobility is limited.",
+        "textKo": "주차 가능. 돌정원 관람객은 1시간 무료예요. 이동이 불편하다면 정원 가까운 주차 구역을 직원에게 문의하세요.",
+        "source": "https://www.kyoto-kankou.or.jp/info_search/3455",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "이동 접근성",
+        "textEn": "Staff guide wheelchair users to view the rock garden. An accessible toilet is listed; ask about the appropriate route on arrival.",
+        "textKo": "휠체어 관람객의 돌정원 관람은 직원이 안내하며, 장애인 화장실이 안내돼 있어요. 도착하면 이용 동선을 문의하세요.",
+        "source": "https://www.kyoto-kankou.or.jp/info_search/3455",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Places to pause",
+        "labelKo": "머무는 방식",
+        "textEn": "The viewing platform overlooks the rock garden; a walk around the tree-filled grounds and Kyoyo-chi Pond adds a second part to the visit.",
+        "textKo": "돌정원을 바라보는 관람 공간에서 머물고, 나무가 있는 경내와 교요치 연못 주변 산책을 이어갈 수 있어요.",
+        "source": "https://kyoto.travel/en/destinations/ryoanji-temple/",
+        "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Public transport",
+        "labelKo": "대중교통",
+        "textEn": "Ryoanji-mae bus stop is about a one-minute walk away; Randen Ryoanji Station is about an eight-minute walk.",
+        "textKo": "료안지마에 버스 정류장에서 도보 약 1분, 란덴 료안지역에서 도보 약 8분이에요.",
+        "source": "https://ja.kyoto.travel/tourism/single01.php?category_id=7&tourism_id=482",
+        "checked": "2026-10-07"
       }
-    ]
+    ],
+    "detailLevel": "enriched",
+    "visitFacts": {
+      "price": {
+        "currency": "JPY",
+        "basis": "admission",
+        "textEn": "JPY 600 per adult.",
+        "textKo": "성인 1인 JPY 600.",
+        "source": "https://www.kyoto-kankou.or.jp/info_search/3455",
+        "checked": "2026-10-07",
+        "amount": 600
+      },
+      "parking": {
+        "status": "available",
+        "textEn": "One hour free for rock-garden visitors.",
+        "textKo": "돌정원 관람객 1시간 무료주차.",
+        "source": "https://www.kyoto-kankou.or.jp/info_search/3455",
+        "checked": "2026-10-07"
+      }
+    },
+    "image": "/places/jp-kyoto-ryoanji-temple-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/07/JP-kyoto-ryoanji.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:JP-kyoto-ryoanji.jpg",
+    "imageCredit": "Bgabel (Wikivoyage Shared), “JP-kyoto-ryoanji.jpg” / Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "imageNote": "Ryoan-ji rock garden in Kyoto, photographed in August 2008. Resized and converted to WebP; display may crop. This copy remains CC BY-SA 3.0. No endorsement implied.",
+    "imageNoteKo": "2008년 8월 촬영한 교토 료안지 석정. 크기를 조정한 WebP이며 화면에 따라 일부가 잘릴 수 있습니다. 이 사본에도 CC BY-SA 3.0 라이선스가 적용됩니다. 사진가나 장소의 보증·추천을 의미하지 않습니다."
   },
   {
     "id": "jp-kyoto-ninnaji-temple",
