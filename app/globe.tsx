@@ -23,7 +23,7 @@ export default function GlobeHome() {
   const [globeWidth, setGlobeWidth] = useState(600);
   const [focusedCountry, setFocusedCountry] = useState<CountryCode|null>(null);
   const drag = useRef<{x:number; y:number; rotation:number; moved:boolean; rotating:boolean} | null>(null);
-  const suppressClick = useRef(false), focusedCode = useRef<CountryCode|null>(null);
+  const suppressClick = useRef(false), focusedCode = useRef<CountryCode|null>(null), browsedCode = useRef<CountryCode>('KR');
   // Keep keyboard targets stationary until focus leaves the globe.
   const motion = useGlobeMotion(globeOpen && !!geo && !!data, visible && !focusedCountry);
 
@@ -69,18 +69,20 @@ export default function GlobeHome() {
     motion.turnTo(-countryConfig[value].center[0],true);
   }
   function chooseCountry(value: CountryCode) {
-    setCountry(value);setBrowsedCountry(value);orientCountry(value);
+    setCountry(value);browsedCode.current=value;setBrowsedCountry(value);orientCountry(value);
     pendingPauseFocus.current=true;setGlobeOpen(false);
   }
-  function browseCountry(value: CountryCode) {
-    setBrowsedCountry(value);pendingCountryFocus.current=value;setFocusRequest(request=>request+1);orientCountry(value);
+  function browseCountry(value: CountryCode, focusPin = true) {
+    // Pointer navigation stays on its button, avoiding scroll jumps under repeated taps.
+    if(!focusPin){focusedCode.current=null;setFocusedCountry(null);}
+    browsedCode.current=value;setBrowsedCountry(value);pendingCountryFocus.current=focusPin?value:null;setFocusRequest(request=>request+1);orientCountry(value);
   }
-  function stepCountry(direction: number) {
-    const index=countryCodes.indexOf(focusedCountry??browsedCountry??country);
-    browseCountry(countryCodes[(index+direction+countryCodes.length)%countryCodes.length]);
+  function stepCountry(direction: number, focusPin = true) {
+    const index=countryCodes.indexOf(browsedCode.current);
+    browseCountry(countryCodes[(index+direction+countryCodes.length)%countryCodes.length],focusPin);
   }
   function toggleGlobe(open: boolean) {
-    if(open&&!globeOpen){setBrowsedCountry(country);orientCountry(country);}
+    if(open&&!globeOpen){browsedCode.current=country;setBrowsedCountry(country);orientCountry(country);}
     setGlobeOpen(open);
   }
   const projection = useMemo(() => geo?.geoOrthographic().scale(246).translate([300, 300]).rotate([motion.rotation, -22]), [geo,motion.rotation]);
@@ -97,7 +99,7 @@ export default function GlobeHome() {
   useEffect(() => {
     if(globeOpen && pendingCountryFocus.current){
       const pin=globeSvg.current?.querySelector<SVGElement>('[data-country="'+pendingCountryFocus.current+'"]');
-      if(pin){pendingCountryFocus.current=null;pin.focus();}
+      if(pin){pendingCountryFocus.current=null;pin.focus({preventScroll:true});pin.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});}
     }
     if(!globeOpen && pendingPauseFocus.current){
       pendingPauseFocus.current=false;document.getElementById('home-pause-choice')?.focus();
@@ -171,7 +173,7 @@ export default function GlobeHome() {
                     aria-label={text('Select '+value.name,value.name+' 선택')} aria-pressed={value.selected} data-country={value.code} data-selected={value.selected||undefined}
                     onClick={()=>chooseCountry(value.code)}
                     onKeyDown={event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();chooseCountry(value.code);}}}
-                    onFocus={()=>{focusedCode.current=value.code;setFocusedCountry(value.code);}}>
+                    onFocus={()=>{focusedCode.current=value.code;browsedCode.current=value.code;setFocusedCountry(value.code);}}>
 
                     <g pointerEvents="none" aria-hidden="true">
                       <path d={`M${leader.x1} ${leader.y1}L${leader.x2} ${leader.y2}`} fill="none" stroke="#fff7e9" strokeWidth="3.5" strokeLinecap="round"/>
@@ -196,9 +198,9 @@ export default function GlobeHome() {
           <div className="globe-rotation"><button type="button" onClick={() => motion.turnTo(motion.rotation + 60)} aria-label={text('Rotate west', '서쪽으로 회전')}><ChevronLeft size={20}/></button>
             <span>{text('Drag to explore', '드래그해서 둘러보기')}</span><button type="button" onClick={() => motion.turnTo(motion.rotation - 60)} aria-label={text('Rotate east', '동쪽으로 회전')}><ChevronRight size={20}/></button></div>
           <div className="globe-country-navigation" role="group" aria-label={text('Browse all countries','모든 나라 둘러보기')}>
-            <button type="button" disabled={!geo||!data} onClick={()=>stepCountry(-1)} aria-label={text('Previous country','이전 나라')}><ChevronLeft size={18}/><span>{text('Previous','이전 나라')}</span></button>
-            <span aria-live="polite">{text(countryConfig[focusedCountry??browsedCountry??country].nameEn,countryConfig[focusedCountry??browsedCountry??country].nameKo)}<small>{countryCodes.indexOf(focusedCountry??browsedCountry??country)+1} / {countryCodes.length}</small></span>
-            <button type="button" disabled={!geo||!data} onClick={()=>stepCountry(1)} aria-label={text('Next country','다음 나라')}><span>{text('Next','다음 나라')}</span><ChevronRight size={18}/></button>
+            <button type="button" disabled={!geo||!data} onClick={event=>{if(event.detail>0)event.currentTarget.focus({preventScroll:true});stepCountry(-1,event.detail===0);}} aria-label={text('Previous country','이전 나라')}><ChevronLeft size={18}/><span>{text('Previous','이전 나라')}</span></button>
+            <span aria-live="polite">{text(countryConfig[browsedCode.current].nameEn,countryConfig[browsedCode.current].nameKo)}<small>{countryCodes.indexOf(browsedCode.current)+1} / {countryCodes.length}</small></span>
+            <button type="button" disabled={!geo||!data} onClick={event=>{if(event.detail>0)event.currentTarget.focus({preventScroll:true});stepCountry(1,event.detail===0);}} aria-label={text('Next country','다음 나라')}><span>{text('Next','다음 나라')}</span><ChevronRight size={18}/></button>
           </div>
           <p className="globe-label-hint">{text('Browse with the arrows, then select a pin. You can also drag the globe.','화살표로 둘러본 뒤 핀을 눌러 선택하세요. 지구본을 직접 돌려도 좋아요.')}</p>
         </section></details>

@@ -34,3 +34,7 @@ Home-finder tests cover stage order, optional country-scoped regions, preservati
 Rendered browser QA was attempted against the local Vite server, but Chromium could not start because this executor denies its required socket operation. One approved elevated retry produced the same OS failure. No new screenshots or browser-pass claim are included. Verify the actual preview on mobile 320/375/390 and desktop in both languages before release, including country browsing/selection, long labels, focus visibility, page overflow, and source disclosures.
 
 This change was prepared locally. It does not itself authorize pushing, opening a PR, merging, or deploying.
+
+## Preview interaction correction
+
+The first actual Chromium preview check found that auto-scrolling a pointer-selected browse target moved the country navigation beneath the viewport. Repeated clicks could then land on a pin. Pointer next/previous navigation now keeps focus on the stationary control and does not scroll; keyboard traversal explicitly focuses and instantly reveals its target. The globe is also bounded by viewport height on short laptop windows. Regression tests cover 60 consecutive pointer browse actions in each locale without selection, focus transfer, or scroll, plus keyboard focus visibility.

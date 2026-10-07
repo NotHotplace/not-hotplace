@@ -139,3 +139,6 @@
  .home-recommendations-title { margin-top:28px; }
  .home-recommendations-title h2 { font-size:1.375rem; }
 }
+
+/* Keep the globe and navigation together on shorter laptop windows. */
+.home-globe-disclosure .globe-panel { max-width:min(650px,max(240px,calc(100svh - 280px))); }
