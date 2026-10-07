@@ -1,14 +1,22 @@
 # Search metadata checks
 
-`next.config.ts` uses `htmlLimitedBots: /.*/` to render metadata in the initial
-HEAD for browsers and crawlers. Our generators only read local catalog data.
-This avoids canonical/hreflang tags in the streamed BODY and the associated
-Vinext pathname/hash icon markers. Those markers are internal metadata keys,
-not route destinations; no redirects have been added for them.
+Dynamic pages render canonical/hreflang links through `components/seo-links.tsx`.
+These are native React metadata elements, which React hoists into the initial
+HEAD. Basic-place robots metadata follows the same path. Generated titles,
+descriptions and social metadata retain Vinext's normal streaming behavior.
+There is no global `htmlLimitedBots` override.
 
-The installed Vinext beta still streams metadata when a request completely
-omits User-Agent. Normal browser, Googlebot and Bingbot requests are covered.
-Recheck that upstream behavior before changing or removing this setting.
+The root layout owns the fixed icon links directly. This avoids Vinext's
+pathname/hash streamed-icon markers. Those markers are internal metadata
+keys, not route destinations; no redirects have been added for them.
+
+Native elements are emitted only after route parameters are validated. The
+corresponding `alternates` and basic-place `robots` fields are omitted from
+`generateMetadata` to avoid duplicates. This covers browsers, crawlers and
+requests with an empty User-Agent, without relying on a client-side relocation.
+
+References: [React link placement](https://react.dev/reference/react-dom/components/link#special-rendering-behavior)
+and [React meta placement](https://react.dev/reference/react-dom/components/meta#special-rendering-behavior).
 
 Country pages share one metadata helper, including the explicit KR/US/JP
 routes. Query parameters do not become part of their canonicals. Language
@@ -32,7 +40,7 @@ pnpm run test:seo
 temporary local persistence, and the installed workerd's supported date. It
 does not alter production configuration or data. CI runs it after every build.
 It covers 30 countries, 23 bilingual regional guides, representative place
-and purpose-guide pages, three User-Agents, query canonicals, icons, 404s,
+and purpose-guide pages, five User-Agent cases, query canonicals, icons, 404s,
 indexing exclusions, and every sitemap place's indexing policy. Regional
 guides include places with empty visitDetails arrays, which must render
 without dereferencing a missing first detail.

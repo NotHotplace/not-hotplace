@@ -5,6 +5,7 @@ import {notFound} from 'next/navigation';
 import {findGuide,guidePlaces,guides} from '@/lib/guides';
 import {catalog} from '@/lib/catalog';
 import {SITE_URL} from '@/lib/seo';
+import SeoLinks from '@/components/seo-links';
 import {placePath} from '@/lib/place-pages';
 import {placeDescription} from '@/lib/place-copy';
 import {privateBookingFacts} from '@/lib/place-themes';
@@ -18,14 +19,14 @@ import GuideEngagement from '@/app/guides/guide-engagement';
 type Props={params:Promise<{slug:string;language:string}>};
 function resolve(slug:string,language:string){const guide=findGuide(slug);if(!guide||!['ko','en'].includes(language))return null;return {guide,language:language as 'ko'|'en'};}
 export async function generateMetadata({params}:Props):Promise<Metadata>{const p=await params,item=resolve(p.slug,p.language);if(!item)return {robots:{index:false,follow:false}};const {guide,language}=item,ko=language==='ko',title=ko?guide.titleKo:guide.titleEn,description=ko?guide.descriptionKo:guide.descriptionEn,path=`/guides/${guide.slug}/${language}`;
- return {title:`${title} | NotHotplace`,description,alternates:{canonical:SITE_URL+path,languages:{ko:`${SITE_URL}/guides/${guide.slug}/ko`,en:`${SITE_URL}/guides/${guide.slug}/en`,'x-default':`${SITE_URL}/guides/${guide.slug}/en`}},openGraph:{title,description,url:SITE_URL+path,locale:ko?'ko_KR':'en_US'},twitter:{title,description}};
+ return {title:`${title} | NotHotplace`,description,openGraph:{title,description,url:SITE_URL+path,locale:ko?'ko_KR':'en_US'},twitter:{title,description}};
 }
 export function generateStaticParams(){return guides.flatMap(guide=>['ko','en'].map(language=>({slug:guide.slug,language})));}
 export default async function GuidePage({params}:Props){const p=await params,item=resolve(p.slug,p.language);if(!item)notFound();const {guide,language}=item,ko=language==='ko',places=guidePlaces(guide,catalog),label=(kr:string,en:string)=>ko?kr:en;
  const translate=(value:string)=>ko?value:(english as Record<string,string>)[value]||value;
  const title=ko?guide.titleKo:guide.titleEn,description=ko?guide.descriptionKo:guide.descriptionEn;
  const jsonLd={'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`${SITE_URL}/guides/${guide.slug}/${language}`,inLanguage:language,mainEntity:{'@type':'ItemList',itemListElement:places.map((place,index)=>({'@type':'ListItem',position:index+1,url:SITE_URL+placePath(place.id,language),name:place.name,description:placeDescription(place,language)}))}};
- return <LanguageProvider initialLanguage={language}><main className="guide-page"><GuideEngagement country={guide.country}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
+ return <LanguageProvider initialLanguage={language}><SeoLinks canonical={`${SITE_URL}/guides/${guide.slug}/${language}`} languages={{ko:`${SITE_URL}/guides/${guide.slug}/ko`,en:`${SITE_URL}/guides/${guide.slug}/en`,'x-default':`${SITE_URL}/guides/${guide.slug}/en`}}/><main className="guide-page"><GuideEngagement country={guide.country}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
   <header className="guide-nav"><a className="brand" href={`/?lang=${language}`}>Not<span>_</span>Hotplace</a><a href={`/guides/${guide.slug}/${ko?'en':'ko'}`}>{ko?'EN':'한국어'}</a></header>
   <nav className="guide-breadcrumb" aria-label={label('현재 위치','Breadcrumb')}><a href={`/guides?lang=${language}`}>{label('휴식 가이드','Pause guides')}</a><span>/</span><span>{title}</span></nav>
   <div className="guide-heading"><span className="world-kicker">MAKE ROOM FOR A SLOWER DAY.</span><h1>{title}</h1><p>{description}</p><a className="place-primary" href={`/${guide.country.toLowerCase()}?lang=${language}`}>{label('지도에서 더 찾아보기','Explore more on the map')}</a></div>

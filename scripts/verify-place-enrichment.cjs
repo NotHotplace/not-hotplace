@@ -196,6 +196,7 @@ assert.equal(read('wrangler.json').vars.PAYMENTS_LIVE_ENABLED, 'false');
 // Render real server-page, source, reason, condition and pricing markup in KO/EN.
 // Only interactive client children are stubbed; no assertions rely on the spec.
 function requirePage(name) {
+  if (name === '@/components/seo-links') return compile(path.join(root, 'components/seo-links.tsx'), requirePage);
   if (name.startsWith('@/lib/')) return lib(name.slice('@/lib/'.length));
   if (name === 'next/navigation') return {notFound() { throw new Error('Unexpected missing place'); }};
   if (name.endsWith('/place-reasons')) return compile(path.join(root, 'app/place-reasons.tsx'), requirePage);

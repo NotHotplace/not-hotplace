@@ -12,6 +12,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {ArrowLeft, ArrowUpRight, MapPin, Leaf} from 'lucide-react';
 import {SITE_URL} from '@/lib/seo';
+import SeoLinks from '@/components/seo-links';
 import {findCatalogPlace, isPlaceLanguage, mapPath, placeDescription, placePath, relatedPlaces} from '@/lib/place-pages';
 import PlaceInteractions from '../../place-interactions';
 import PlaceGallery from '../../place-gallery';
@@ -28,11 +29,6 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const url = SITE_URL + placePath(id, language);
   return {
     title, description,
-    ...(place.detailLevel==='basic'?{robots:{index:false,follow:true}}:{}),
-    alternates: {canonical: url, languages: {
-      en: SITE_URL + placePath(id, 'en'), ko: SITE_URL + placePath(id, 'ko'),
-      'x-default': SITE_URL + placePath(id, 'en'),
-    }},
     openGraph: {title, description, url, type: 'website', siteName: 'NotHotplace',
       locale: language === 'ko' ? 'ko_KR' : 'en_US',
       images: [{url: place.image || '/og.png', alt: place.name}]},
@@ -61,7 +57,7 @@ export default async function PlacePage({params}: Props) {
     ...(typeof place.lat === 'number' && typeof place.lon === 'number'
       ? {geo: {'@type': 'GeoCoordinates', latitude: place.lat, longitude: place.lon}} : {}),
   };
-  return <main className="place-page" lang={language}><DisclosureNavigation/>
+  return <main className="place-page" lang={language}><SeoLinks canonical={SITE_URL+placePath(id,language)} languages={{en:SITE_URL+placePath(id,'en'),ko:SITE_URL+placePath(id,'ko'),'x-default':SITE_URL+placePath(id,'en')}} noindex={place.detailLevel==='basic'}/><DisclosureNavigation/>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structured).replace(/</g, '\\u003c')}}/>
     <header className="place-topbar">
       <a className="brand" href={`/?lang=${language}`}>Not<span>_</span>Hotplace</a>

@@ -33,6 +33,8 @@ const agents = {
   browser: 'Mozilla/5.0 Chrome/134.0.0.0 Safari/537.36',
   googlebot: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
   bingbot: 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)',
+  facebook: 'facebookexternalhit/1.1',
+  empty: '',
 };
 
 // Inspect actual elements, not the duplicate strings inside RSC/JSON scripts.
@@ -44,6 +46,8 @@ function tags(html, name) {
 function inspect(html, route, label, {language, noindex = false, title} = {}) {
   const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];
   assert(head, label + ': complete head');
+  for (const element of ['html', 'head', 'body']) assert.equal(tags(html, element).length, 1, label + ': one ' + element + ' element');
+  assert(html.indexOf('<head') < html.indexOf('</head>') && html.indexOf('</head>') < html.indexOf('<body'), label + ': valid document order');
   const links = tags(html, 'link'), headLinks = tags(head, 'link');
   const canonical = links.filter(link => link.rel === 'canonical');
   assert.equal(canonical.length, 1, label + ': exactly one canonical element');
@@ -68,6 +72,7 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
   if (noindex) assert(/(?:^|,\s*)follow(?:,|$)/.test(robots), label + ': basic pages retain follow');
   assert(!links.some(link => link['data-vinext-streamed-icon']), label + ': no streamed icon markers');
   for (const rel of ['icon', 'shortcut icon', 'apple-touch-icon']) {
+    assert.equal(links.filter(link => link.rel === rel).length, 1, label + ': single icon: ' + rel);
     assert(headLinks.some(link => link.rel === rel), label + ': icon stays in HEAD: ' + rel);
   }
   for (const link of [...links, ...tags(html, 'a')]) {
@@ -143,7 +148,7 @@ async function freePort() {
         await page(`/guides/korea-reading-cafes/${language}`, agent, {language});
         await page(`/regions/seoul/${language}`, agent, {language});
       }
-      for (const route of ['/places/not-a-real-place/ko', '/places/cj-daechung/fr', '/not-a-country']) {
+      for (const route of ['/places/not-a-real-place/ko', '/places/cj-daechung/fr', '/not-a-country', '/guides/not-a-guide/ko', '/guides/korea-reading-cafes/fr', '/regions/not-a-region/ko', '/regions/seoul/fr']) {
         const result = await get(route, agents[agent]);
         assert.equal(result.status, 404, agent + ' ' + route + ': HTTP 404 remains');
         assert(tags(result.html, 'meta').some(meta => meta.name === 'robots' && /\bnoindex\b/.test(meta.content)), route + ': 404 is noindex');
@@ -181,7 +186,7 @@ async function freePort() {
       const location = url.match(/<loc>(.*?)<\/loc>/)[1], prefix = location.slice(0, location.lastIndexOf('/'));
       for (const language of ['en', 'ko']) assert(url.includes(`hreflang="${language}" href="${prefix}/${language}"`), location + ': sitemap reciprocal ' + language);
     }
-    console.log(`PASS: ${count} real HTML responses across 30 countries and browser/Googlebot/Bingbot; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
+    console.log(`PASS: ${count} real HTML responses across 30 countries and browser/Googlebot/Bingbot/Facebook/empty-UA; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
   } catch (error) {
     if (server) console.error(logs);
     throw error;
