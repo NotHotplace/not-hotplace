@@ -1,0 +1,34 @@
+{
+  "id": "world-sg-jurong-lake-gardens",
+  "checked": "2026-10-07",
+  "originalTitle": "Jurong Lake Gardens 10-11-2023(38).jpg",
+  "author": "LN9267",
+  "captureDate": "2023-11-10T13:44:39",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Jurong_Lake_Gardens_10-11-2023(38).jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Jurong_Lake_Gardens_10-11-2023%2838%29.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rightsNotice": "Photo by LN9267. The original photograph and this resized copy remain CC BY-SA 4.0. No endorsement implied.",
+  "originalSha256": "da8d0b7418b4aab85207187281b64be49af67989e760edc94da43b203e5f97d6",
+  "originalDimensions": [
+    4032,
+    3024
+  ],
+  "readySha256": "41b2013c78e14a9f555604401546d8081993af0b1539c4e422978f3d01027ed5",
+  "readyDimensions": [
+    1200,
+    900
+  ],
+  "readyBytes": 292162,
+  "modifications": "Proportional resize to 1200 × 900, WebP compression (quality 80); no crop, retouching, recoloring or generative alteration. Derivative embeds creator, title, capture date, source, license and rights/change notices.",
+  "cropConstraints": "Bottom-aligned display crops retain the lakeside path, foreground concrete bench and water. Original image is not cropped. Do not represent the pictured bench as the ABC Waters amphitheatre.",
+  "altEn": "A lakeside path and concrete bench at Jurong Lake Gardens, photographed in November 2023.",
+  "altKo": "2023년 11월 촬영한 주롱 레이크 가든스의 호숫가 산책로와 콘크리트 벤치.",
+  "metadataNotes": "Original source title, author, license and applicable notices are retained in the public sidecar and embedded EXIF/XMP. The visible photo caption links the original source and license; original capture dates do not establish current conditions.",
+  "asset": "/places/world-sg-jurong-lake-gardens-commons.webp",
+  "status": "verified-optimized-derivative",
+  "visualReview": "Original and derivative pixels inspected on October 7, 2026. Recovered original and regenerated derivative bytes match those verified SHA-256 hashes exactly; no content substitution.",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:LN9267",
+  "captureTimezone": null,
+  "captureDateBasis": "Commons Summary and JPEG EXIF DateTime match; author-reported metadata, not independent clock verification."
+}

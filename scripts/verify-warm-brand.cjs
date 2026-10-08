@@ -4,6 +4,14 @@ const css=read('app/globals.css'),warm=read('app/warm-brand.css'),layout=read('a
 function luminance(hex){const rgb=hex.replace('#','').match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];}
 function contrast(a,b){const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);}
 for(const [fg,bg,label] of [['#302A23','#F7F1E5','body'],['#6B665B','#F7F1E5','secondary text'],['#5C6742','#ECEEDF','olive on sage'],['#FFFFFF','#B84A24','primary action'],['#FFFFFF','#5C6742','selected language']])assert(contrast(fg,bg)>=4.5,`${label} must meet normal-text WCAG AA`);
+assert(contrast('#302A23','#ECEEDE')>=4.5,'more-pauses title contrasts with its distinct sage panel');
+assert(contrast('#FFFCF5','#5C6742')>=3,'more-pauses disclosure chevron has non-text contrast');
+assert(/<details className="home-more-pauses"><summary><span>/.test(globe),'more-pauses remains a native keyboard-accessible disclosure');
+assert(globe.includes('<ChevronDown size={24} aria-hidden="true"/>'),'visual expansion cue is decorative');
+assert(/\.home-more-pauses>summary \{[^}]*min-height:72px;[^}]*border:1px solid var\(--brand-olive\);[^}]*background:var\(--secondary\);[^}]*font-size:1\.125rem; font-weight:700;/.test(warm),'secondary exploration has its own outlined, bold full-width panel');
+assert(warm.includes('.home-more-pauses>summary:focus-visible { outline:3px solid var(--brand-olive); outline-offset:4px; }'),'summary has a visible keyboard focus ring');
+assert(warm.includes('.home-more-pauses[open]>summary>svg { transform:rotate(180deg); }'),'disclosure cue reflects open state without animation');
+assert(warm.includes('.home-more-pauses>summary>span { min-width:0; overflow-wrap:anywhere; }'),'long bilingual labels wrap on narrow screens');
 assert(/--background:\s*#f7f1e5/i.test(css),'cream background token');
 assert(/--foreground:\s*#302a23/i.test(css),'ink foreground token');
 assert(!layout.includes('className="dark"'));assert(layout.includes('"./warm-brand.css"'));

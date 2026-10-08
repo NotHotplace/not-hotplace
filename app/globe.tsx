@@ -3,7 +3,7 @@ import {countries as countryConfig,countryCodes,type CountryCode} from '@/lib/co
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {layoutGlobeLabels, projectVisibleGlobePoints} from '@/lib/globe-labels';
 import {GlobeDecoration, GlobeSurface} from './globe-decoration';
-import {ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
+import {ChevronDown, ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
 import {loadGeo} from '@/lib/geo-client';
 import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
@@ -205,7 +205,7 @@ export default function GlobeHome() {
           <p className="globe-label-hint">{text('Browse with the arrows, then select a pin. You can also drag the globe.','화살표로 둘러본 뒤 핀을 눌러 선택하세요. 지구본을 직접 돌려도 좋아요.')}</p>
         </section></details>
       <HomeFinder country={country}/>
-      <details className="home-more-pauses"><summary>{text('More ways to pause','다른 쉼도 둘러보기')}</summary><HomeThemes country={country}/></details>
+      <details className="home-more-pauses"><summary><span>{text('More ways to pause','다른 쉼도 둘러보기')}</span><ChevronDown size={24} aria-hidden="true"/></summary><HomeThemes country={country}/></details>
       <section className="home-themes"><h2>{text('Guides for your next pause.','쉼을 위한 가이드.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>
     <footer className="world-footer"><span><Globe2 size={15}/>{text(countryCodes.length+' countries · A pause, at your pace.',countryCodes.length+'개국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>

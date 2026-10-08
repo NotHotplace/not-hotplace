@@ -153,5 +153,53 @@
       "checked": "2026-10-07",
       "sourceKind": "operator"
     }
+  ],
+  "world-fr-jardin-du-luxembourg": [
+    {
+      "textKo": "이동식 의자는 무료로 이용할 수 있고 고정 벤치도 있어 산책 중 쉬어갈 수 있어요.",
+      "textEn": "Movable chairs are free to use, and fixed benches also provide places to pause.",
+      "source": "https://jardin.senat.fr/infos-pratiques/le-jardin-en-chiffres.html",
+      "checked": "2026-10-07",
+      "sourceKind": "official"
+    },
+    {
+      "textKo": "프랑스식·영국식 정원과 메디치 분수를 둘러볼 수 있어요.",
+      "textEn": "French- and English-style gardens and the Medici Fountain provide scenery to explore.",
+      "source": "https://jardin.senat.fr/infos-pratiques/le-jardin-en-chiffres.html",
+      "checked": "2026-10-07",
+      "sourceKind": "official"
+    }
+  ],
+  "world-nl-hortus-botanicus-amsterdam": [
+    {
+      "textEn": "Indoor and terrace café seating offers a break between plant collections; lunchtime can be busy.",
+      "textKo": "식물 컬렉션을 둘러보다 실내·테라스 카페에서 쉬어갈 수 있어요. 점심시간에는 붐빌 수 있어요.",
+      "source": "https://www.dehortus.nl/en/accessibility/",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    },
+    {
+      "textEn": "The Oranjerie asks visitors to put away phones and laptops for an offline break.",
+      "textKo": "Oranjerie는 휴대전화·노트북 사용을 삼가 달라고 안내해 잠시 화면을 내려놓고 쉬기 좋아요.",
+      "source": "https://www.dehortus.nl/en/cafe-and-shop/",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
+  ],
+  "world-sg-jurong-lake-gardens": [
+    {
+      "textKo": "ABC Waters 산책로 옆 야외 관람석에서 호수를 바라보며 쉬어갈 수 있어요.",
+      "textEn": "The amphitheatre beside the ABC Waters boardwalk provides a documented lakeside rest stop.",
+      "source": "https://juronglakegardens.nparks.gov.sg/discover/lakeside-garden/abc-waters/",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    },
+    {
+      "textKo": "Therapeutic Garden에는 트렐리스 쉼터가 있고 성인·어린이 구역 모두 휠체어 접근 안내가 있어요.",
+      "textEn": "The Therapeutic Garden has a trellis shelter and documented wheelchair access in both sections.",
+      "source": "https://juronglakegardens.nparks.gov.sg/discover/lakeside-garden/therapeutic-garden/",
+      "checked": "2026-10-07",
+      "sourceKind": "operator"
+    }
   ]
 }
