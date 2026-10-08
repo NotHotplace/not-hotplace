@@ -1,3 +1,4 @@
+import {detailReturn,placePathWithReturn} from '@/lib/place-return';
 import PlaceSave from '../../place-save';
 import DisclosureNavigation from '../../disclosure-navigation';
 import PlaceReasons from '../../../place-reasons';
@@ -7,7 +8,6 @@ import PlaceContribution from '../../../place-contribution';
 import ExternalReviewMemo from '../../../external-review-memo';
 import RestEvidence from '../../../rest-evidence';
 import ReportPlace from '../../../report-place';
-import {countries} from '@/lib/countries';
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {ArrowLeft, ArrowUpRight, MapPin, Leaf} from 'lucide-react';
@@ -19,7 +19,7 @@ import PlaceGallery from '../../place-gallery';
 import PhotoCredit from '../../../photo-credit';
 import PrivateExperiences from '../../../private-experiences';
 
-type Props = {params: Promise<{id: string; language: string}>};
+type Props = {params: Promise<{id: string; language: string}>; searchParams: Promise<{returnTo?:string|string[]}>};
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {id, language} = await params;
@@ -37,13 +37,14 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   };
 }
 
-export default async function PlacePage({params}: Props) {
+export default async function PlacePage({params,searchParams}: Props) {
   const {id, language} = await params;
   const place = findCatalogPlace(id);
   if (!place || !isPlaceLanguage(language)) notFound();
+  const back=detailReturn((await searchParams)?.returnTo,language,place.country||'KR');
+  const returnTo=back.kind==='direct'?null:back.href;
   const ko = language === 'ko';
   const label = (en: string, kr: string) => ko ? kr : en;
-  const country = countries[place.country||'KR'].slug;
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
     : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : place.category === 'walk' ? label('WALKS & GARDENS', '산책 · 정원') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
@@ -63,11 +64,11 @@ export default async function PlacePage({params}: Props) {
     <header className="place-topbar">
       <a className="brand" href={`/?lang=${language}`}>Not<span>_</span>Hotplace</a>
       <nav className="place-languages" aria-label="Language / 언어">
-        <a href={placePath(id, 'ko')} hrefLang="ko" lang="ko" aria-current={ko ? 'page' : undefined}>한국어</a>
-        <a href={placePath(id, 'en')} hrefLang="en" lang="en" aria-current={!ko ? 'page' : undefined}>EN</a>
+        <a href={placePathWithReturn(id, 'ko',returnTo)} hrefLang="ko" lang="ko" aria-current={ko ? 'page' : undefined}>한국어</a>
+        <a href={placePathWithReturn(id, 'en',returnTo)} hrefLang="en" lang="en" aria-current={!ko ? 'page' : undefined}>EN</a>
       </nav>
     </header>
-    <a className="place-back" href={`/${country}?lang=${language}&resume=1`}><ArrowLeft size={16}/>{label('Back to the map', '지도로 돌아가기')}</a>
+    <a className="place-back" href={back.href}><ArrowLeft size={16}/>{back.kind==='home'?label('Back to home recommendations','홈 추천으로 돌아가기'):back.kind==='region'?label('Back to the region list','지역 목록으로 돌아가기'):back.kind==='map'?label('Back to the map','지도로 돌아가기'):label('Explore the map','지도에서 더 찾아보기')}</a>
     <div className="place-heading"><span className="place-eyebrow">{category} <span> / {place.area}</span></span>
       <h1>{place.name}</h1><p><MapPin size={16}/>{place.address}</p>
     </div>
@@ -95,7 +96,7 @@ export default async function PlacePage({params}: Props) {
 
     </div>
     {nearby.length > 0 && <section className="place-related"><div><span className="place-eyebrow">{label('KEEP EXPLORING', '함께 둘러봐요')}</span><h2>{label('More places in the region', '같은 지역의 다른 장소')}</h2></div>
-      <div className="place-related-grid">{nearby.map(other => <article className="place-related-entry" key={other.id}><a href={placePath(other.id, language)}>
+      <div className="place-related-grid">{nearby.map(other => <article className="place-related-entry" key={other.id}><a href={placePathWithReturn(other.id, language,returnTo)}>
         {other.image ? <img src={other.image} alt="" loading="lazy"/> : <div className="place-related-placeholder"><Leaf size={28}/></div>}
         <div><span>{other.area}</span><h3>{other.name}</h3><ArrowUpRight size={18}/></div>
       </a>{other.image&&<details className="related-photo-credit"><summary>{label('Photo credits','사진 출처·이용 허락')}</summary><PhotoCredit place={other} language={language}/></details>}</article>)}</div>

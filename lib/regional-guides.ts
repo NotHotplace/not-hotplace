@@ -1,6 +1,7 @@
 import type {CountryCode} from './countries';
 import {regionKeys,inRegion} from './regions';
 import type {Place} from './catalog';
+import {compareRegionalEvidence} from './regional-browsing';
 export type RegionalGuide={slug:string;country:CountryCode;region:string;nameKo:string;nameEn:string;introKo:string;introEn:string;notesKo:string[];notesEn:string[];area?:string};
 const names=['Seoul','Busan','Daegu','Incheon','Gwangju','Daejeon','Ulsan','Sejong','Gyeonggi','Gangwon','Chungbuk','Chungnam','Jeonbuk','Jeonnam','Gyeongbuk','Gyeongnam','Jeju'];
 const local:Record<string,[string,string]>={
@@ -26,4 +27,4 @@ export const regionalGuides:RegionalGuide[]=[...regionKeys.map((region,i)=>({slu
  ][i],notesKo:['공식 운영 시간·휴원일·마지막 입장 확인','정원·시설별 입장료와 예약 조건 확인','벚꽃·단풍·행사 기간에는 혼잡할 수 있어요'],notesEn:['Check official hours, closure days and last entry','Confirm garden tickets and reservations','Blossom, autumn-leaf and event seasons can be crowded']})),
 ];
 export function findRegionalGuide(slug:string){return regionalGuides.find(g=>g.slug===slug);}
-export function regionalPlaces(guide:RegionalGuide,places:Place[]){return places.filter(p=>(p.country||'KR')===guide.country&&inRegion(p,guide.region)&&(!guide.area||p.area.includes(guide.area)||guide.area==='New York City'&&['Brooklyn','Manhattan','Queens','New York City'].some(s=>p.area.includes(s)))).sort((a,b)=>Number(!!b.photos?.length)-Number(!!a.photos?.length)||Number(!!b.visitDetails?.length)-Number(!!a.visitDetails?.length)||a.name.localeCompare(b.name));}
+export function regionalPlaces(guide:RegionalGuide,places:Place[]){return places.filter(p=>(p.country||'KR')===guide.country&&inRegion(p,guide.region)&&(!guide.area||p.area.includes(guide.area)||guide.area==='New York City'&&['Brooklyn','Manhattan','Queens','New York City'].some(s=>p.area.includes(s)))).sort(compareRegionalEvidence);}

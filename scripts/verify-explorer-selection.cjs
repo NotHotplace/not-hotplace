@@ -38,14 +38,14 @@ const flush = () => new Promise(resolve => setImmediate(resolve));
 // Exercise the actual Explorer/CountryDirectory component bodies and handlers,
 // actual locale translation and actual filtering libraries. Only React lifecycle,
 // child presentation components and browser/network boundaries are substituted.
-function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = 'device', saved = [cafe.id], places = [cafe, food], resume = {}}) {
+function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = 'device', saved = [cafe.id], places = [cafe, food], resume = {}, urlQuery}) {
   let tree, dirty = false, si = 0, ri = 0, ei = 0, ci = 0;
   const states = [], refs = [], effects = [], callbacks = [], pending = [], requests = [];
   const memory = new Map([[bookmarkKey, JSON.stringify(scope === 'device' ? saved : [food.id])], ['nhp-rest-journal-v1', 'unchanged visit history']]);
   const session = new Map([['nhp-browse-' + country, JSON.stringify({city: '전국', category: 'all', theme: 'all', term: '', view: 'saved', savedScope: scope, filters: {...emptyFilters}, limit: 24, ...resume})]]);
   const storage = map => ({getItem: key => map.get(key) ?? null, setItem: (key, value) => map.set(key, String(value))});
   const events = new EventTarget();
-  global.location = new URL(`https://nothotplace.com/${country.toLowerCase()}?lang=${language}&resume=1`);
+  global.location = new URL(`https://nothotplace.com/${country.toLowerCase()}?${urlQuery||'lang='+language+'&resume=1'}`);
   global.window = {get location() {return global.location;}, addEventListener: (...args) => events.addEventListener(...args), removeEventListener: (...args) => events.removeEventListener(...args), dispatchEvent: event => events.dispatchEvent(event)};
   global.history = {state: null, replaceState(_state, _title, url) {global.location = new URL(url, global.location);}};
   global.document = {getElementById: () => null};
@@ -69,6 +69,7 @@ function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = '
       assert(++rounds < 50, 'component effects must settle');
       dirty = false; si = ri = ei = ci = 0;
       tree = component({signedIn: scope === 'account', signInPath: '/login', country});
+      for(const node of nodes(tree))if(node.props?.className==='quiet-results-scroll'&&node.props.ref&&!node.props.ref.current)node.props.ref.current={scrollTop:0};
       while (pending.length) pending.shift()();
     } while (dirty);
     return tree;
@@ -79,6 +80,9 @@ function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = '
     empty: () => nodes(tree).find(node => node.props?.className === 'quiet-empty'),
     search(value) {nodes(tree).find(node => node.type === 'input' && node.props.placeholder === locale.translate('장소·동네 검색', language)).props.onChange({target: {value}}); render();},
     category(value) {nodes(tree).find(node => node.type === 'mock:Tabs').props.onValueChange(value); render();},
+    pop(query){global.location=new URL(global.location.pathname+'?'+query,global.location);events.dispatchEvent(new Event('popstate'));render();},
+    session:()=>JSON.parse(session.get('nhp-browse-'+country)),
+    scroll(value){const ref=nodes(tree).find(node=>node.props?.className==='quiet-results-scroll').props.ref;if(value!==undefined)ref.current.scrollTop=value;return ref.current.scrollTop;},
     bookmarks: () => memory.get(bookmarkKey), journal: () => memory.get('nhp-rest-journal-v1'), requests,
     unmount() {effects.forEach(effect => effect.cleanup?.());},
   };
@@ -121,6 +125,17 @@ function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = '
       assert(text(h.empty()).includes(copy.trulyEmpty), `${language}: genuinely empty saved scope keeps the onboarding message`);
       assert(!text(h.empty()).includes(copy.recovery)); h.unmount();
     }
+
+    // A different URL beats a stale snapshot. Exact URL returns restore choices and inner scrolling.
+    let navigation=harness({language,urlQuery:'lang='+language+'&category=cafe',resume:{category:'food',view:'explore',scroll:777}});await navigation.ready();
+    assert.equal(navigation.byClass('quiet-place').length,1);assert(text(navigation.byClass('quiet-place')[0]).includes(cafe.name));assert.equal(navigation.scroll(),0,'fresh search does not reuse stale scroll');
+    navigation.scroll(420);const detail=navigation.byClass('quiet-place-main')[0];detail.props.onClick({});
+    const back=new URL(detail.props.href,'https://example.test').searchParams.get('returnTo');assert(back.includes('category=cafe'));assert(back.includes('resume=1'));const snapshot=navigation.session();navigation.unmount();
+    for(const query of [new URL(back,'https://example.test').searchParams.toString(),'lang='+language+'&category=cafe']){
+      navigation=harness({language,urlQuery:query,resume:snapshot});await navigation.ready();assert.equal(navigation.scroll(),420,'explicit return and native Back restore the matching list scroll');assert.equal(navigation.byClass('quiet-place').length,1);navigation.scroll(0);navigation.pop(query);assert.equal(navigation.scroll(),420,'same component popstate restores matching scroll');navigation.category('food');assert.equal(navigation.scroll(),0,'changing filters after Back consumes the old scroll snapshot');navigation.unmount();
+    }
+
+    const defaults=harness({language,urlQuery:'lang='+language+'&view=explore&resume=1',resume:{category:'food',view:'explore',urlKey:'newer-incompatible-state',scroll:777}});await defaults.ready();assert.equal(defaults.byClass('quiet-place').length,2,'explicit default context cannot use unrelated newer session filters');assert.equal(defaults.scroll(),0);defaults.unmount();
 
     // Recommendations are cross-category, but every winner must match the search.
     const candidates = [{...cafe, name: 'Search Match Café', tags: ['공통추천 commonmatch']}, {...food, name: 'Search Match Food', tags: ['공통추천 commonmatch']}];

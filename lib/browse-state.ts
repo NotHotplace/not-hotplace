@@ -34,3 +34,6 @@ export function writeBrowseState(url: URL, state: BrowseState, language: 'ko' | 
   }
   return next;
 }
+
+// Stable public-choice key prevents stale session state from overriding a new URL.
+export function browseStateKey(state:BrowseState){return JSON.stringify([state.city,state.category,state.theme,state.term.trim().slice(0,180),state.view,...Object.keys(emptyFilters).map(key=>state.filters[key as keyof ExploreFilters])]);}
