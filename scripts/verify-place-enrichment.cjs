@@ -39,6 +39,7 @@ const files = {
   'world-sg-jurong-lake-gardens': 'lib/expanded-catalog.json',
 };
 const ids = Object.keys(files), find = id => catalog.find(place => place.id === id);
+const hortusRecheckedLabels = new Set(['Hours', 'Admission', 'Quieter visit times', 'Companion admission', 'Accessible toilet', 'Luggage storage']);
 const detail = (place, label) => place.visitDetails.find(item => item.labelEn === label);
 const localized = (item, language) => item[language === 'ko' ? 'textKo' : 'textEn'];
 const escaped = value => renderToStaticMarkup(React.createElement('span', null, value)).slice(6, -7);
@@ -49,7 +50,7 @@ for (const id of ids) {
   const place = find(id), source = read(files[id]).find(record => record.id === id);
   assert(place, id);
   assert.equal(place.detailLevel, 'enriched');
-  assert.equal(place.checked, id === 'world-sg-jurong-lake-gardens' ? '2026-10-08' : '2026-10-07');
+  assert.equal(place.checked, ['world-sg-jurong-lake-gardens', 'world-nl-hortus-botanicus-amsterdam'].includes(id) ? '2026-10-08' : '2026-10-07');
   assert.deepEqual(place.visitDetails, source.visitDetails, id + ' final merged details');
   assert.deepEqual(place.visitFacts, source.visitFacts, id + ' final structured facts');
   assert.deepEqual(place.recommendationReasons, reasons[id], id + ' recommendation overlay');
@@ -57,7 +58,9 @@ for (const id of ids) {
   for (const row of place.visitDetails) {
     assert(row.textKo && row.textEn && row.labelKo && row.labelEn);
     https(row.source);
-    assert.equal(row.checked, row.labelEn === 'Location reference' ? '2026-10-02' : id === 'world-sg-jurong-lake-gardens' && ['Hours', 'Safety and notices'].includes(row.labelEn) ? '2026-10-08' : '2026-10-07');
+    const rechecked = (id === 'world-sg-jurong-lake-gardens' && ['Hours', 'Safety and notices'].includes(row.labelEn))
+      || (id === 'world-nl-hortus-botanicus-amsterdam' && hortusRecheckedLabels.has(row.labelEn));
+    assert.equal(row.checked, row.labelEn === 'Location reference' ? '2026-10-02' : rechecked ? '2026-10-08' : '2026-10-07');
     for (const source of row.additionalSources || []) https(source.url);
     row.labelEn === 'Location reference' ? coordinateRows++ : rows++;
   }
@@ -76,7 +79,7 @@ for (const id of ids) {
   for (const kind of ['soloSeats', 'privateRoom', 'quietMusic', 'partitions']) assert(!matchesCondition(place, kind), id + ' unsupported condition ' + kind);
   assert(essentialDetails(place).some(row => /price|admission/i.test(row.labelEn)), id + ' real cost detail, not a fallback');
 }
-assert.equal(rows, 68); assert.equal(coordinateRows, 6); assert.equal(reasonCount, 15);
+assert.equal(rows, 72); assert.equal(coordinateRows, 6); assert.equal(reasonCount, 15);
 const sayuwon = find(ids[0]), osulloc = find(ids[1]), sydney = find(ids[2]), wellington = find(ids[3]), ryoanji = find(ids[4]), kew = find(ids[5]);
 assert.equal(visitFacts(sayuwon).price.amount, undefined, 'KTO amount varies by date and booking');
 assert(detail(sayuwon, 'Admission').textEn.includes('KTO') && detail(sayuwon, 'Admission').textEn.includes('69,000'));
@@ -140,6 +143,28 @@ assert(detail(hortus, 'Admission').textEn.includes('EUR 8.50'));
 assert(detail(hortus, 'Admission').textEn.includes('Card payment only'));
 assert(detail(hortus, 'Seating and sound').textEn.includes('not a promise of silence'));
 assert(hortus.visitDetails.some(row => row.textEn.includes('Butterfly House')));
+assert(detail(hortus, 'Route limitations').textEn.includes('main gate'));
+assert.equal(hortus.visitDetails.length, 15, 'four new rows, existing rows retained');
+assert.equal(detail(hortus, 'Hours').textEn, 'Daily 10:00–17:00; closed December 25 and January 1. Check the programme for special events.');
+const quietTimes = detail(hortus, 'Quieter visit times');
+assert.equal(quietTimes.source, 'https://www.dehortus.nl/en/accessibility/');
+for (const value of ['weekends and school holidays', '10:00–11:00', '16:00–17:00', 'usually less busy', 'Events', 'not a live crowd report or a quietness guarantee']) assert(quietTimes.textEn.includes(value));
+for (const value of ['주말·학교 방학', '10:00~11:00', '16:00~17:00', '보통', '행사', '실시간', '보장']) assert(quietTimes.textKo.includes(value));
+const companion = detail(hortus, 'Companion admission');
+assert.equal(companion.source, quietTimes.source);
+for (const value of ['unable to visit independently', 'health or similar reasons', 'companion free of charge', 'check in together with entrance staff']) assert(companion.textEn.includes(value));
+for (const value of ['건강 등의 이유', '독립적인 관람이 어려운', '동반자는 무료', '함께 입구 직원']) assert(companion.textKo.includes(value));
+const toilet = detail(hortus, 'Accessible toilet');
+assert.equal(toilet.source, quietTimes.source);
+assert(toilet.textEn.includes('Hortus Café') && toilet.textEn.includes('separate wheelchair ramp behind the terrace'));
+assert(toilet.textKo.includes('테라스 뒤쪽의 별도 휠체어 경사로'));
+const luggage = detail(hortus, 'Luggage storage');
+assert.equal(luggage.source, hortus.source);
+assert(luggage.textEn.includes('No storage space or lockers') && luggage.textEn.includes('suitcases or backpacks'));
+assert(luggage.textKo.includes('여행 가방이나 배낭') && luggage.textKo.includes('보관 공간·사물함이 없어요'));
+assert.deepEqual(detail(hortus, 'Admission').additionalSources, [{label: 'Dutch operator visit and admission guidance', url: 'https://www.dehortus.nl/Bezoek/'}]);
+assert.equal(hortus.address, 'Plantage Middenlaan 2A, 1018 DD Amsterdam, Netherlands');
+assert.equal(hortus.conditions?.length || 0, 0, 'planning guidance creates no condition or availability claim');
 assert(detail(jurong, 'Hours').textEn.includes('Chinese and Japanese Gardens 05:30–24:00'));
 assert(detail(jurong, 'Safety and notices').textEn.includes('2026-10-08'));
 assert(detail(jurong, 'Safety and notices').textEn.includes('14 October 2026'));
@@ -232,5 +257,5 @@ const pictograms = compile(path.join(root, 'app/visit-pictograms.tsx'), requireP
       assert.equal(metadata.openGraph.images[0].url, place.image);
     } else assert(html.includes(language === 'ko' ? '아직 등록된 장소 사진이 없어요.' : 'A photo of this place has not been added yet.'));
   }
-  console.log('PASS: nine merged place records, 68 substantive sourced details plus 6 preserved coordinate notes, 15 reasons, seven exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1007 IDs.');
+  console.log('PASS: nine merged place records, 72 substantive sourced details plus 6 preserved coordinate notes, 15 reasons, seven exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1007 IDs.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

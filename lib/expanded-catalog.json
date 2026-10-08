@@ -2014,7 +2014,7 @@
     "descriptionKo": "야외 정원과 온실을 둘러보고 Oranjerie 카페에서 쉬어갈 수 있는 암스테르담의 유료 식물원이에요. 카페는 음악을 틀지 않지만 대화·기기 소음이 있고, 자갈길과 일부 온실의 접근 제한을 확인해야 해요.",
     "descriptionEn": "A ticketed Amsterdam botanical garden with outdoor paths, greenhouses and an Oranjerie café. The café plays no music, but conversation and equipment remain audible; gravel paths and some greenhouse access need planning.",
     "source": "https://www.dehortus.nl/en/plan-your-visit/",
-    "checked": "2026-10-07",
+    "checked": "2026-10-08",
     "tags": [
       "식물원 산책",
       "온실",
@@ -2039,7 +2039,15 @@
         "textEn": "Daily 10:00–17:00; closed December 25 and January 1. Check the programme for special events.",
         "textKo": "매일 10:00~17:00, 12월 25일과 1월 1일은 휴원해요. 특별 행사는 별도 일정을 확인하세요.",
         "source": "https://www.dehortus.nl/en/plan-your-visit/",
-        "checked": "2026-10-07"
+        "checked": "2026-10-08"
+      },
+      {
+        "labelEn": "Quieter visit times",
+        "labelKo": "덜 붐비는 방문 시간",
+        "textEn": "Outside weekends and school holidays, the operator says 10:00–11:00 and 16:00–17:00 are usually less busy. Events can increase crowds; check the event calendar. This is general planning guidance, not a live crowd report or a quietness guarantee.",
+        "textKo": "운영자는 주말·학교 방학을 피하고, 보통 덜 붐비는 10:00~11:00 또는 16:00~17:00 방문을 권해요. 행사 때는 붐빌 수 있으니 행사 일정을 확인하세요. 일반적인 방문 팁이며 실시간 혼잡 정보나 조용함을 보장하는 안내는 아니에요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-08"
       },
       {
         "labelEn": "Admission",
@@ -2047,13 +2055,21 @@
         "textEn": "Adult EUR 14.75; students with ID EUR 8.50. Card payment only; Museumkaart is not valid. Published prices may change.",
         "textKo": "성인 EUR 14.75, 학생증 제시 시 EUR 8.50. 카드 결제만 가능하고 Museumkaart는 사용할 수 없어요. 공시 요금은 변경될 수 있어요.",
         "source": "https://www.dehortus.nl/en/plan-your-visit/",
-        "checked": "2026-10-07",
+        "checked": "2026-10-08",
         "additionalSources": [
           {
-            "label": "Dutch visit page: concession change from October 1, 2026",
+            "label": "Dutch operator visit and admission guidance",
             "url": "https://www.dehortus.nl/Bezoek/"
           }
         ]
+      },
+      {
+        "labelEn": "Companion admission",
+        "labelKo": "동반자 입장 조건",
+        "textEn": "Visitors unable to visit independently for health or similar reasons may bring a companion free of charge. Visitor and companion check in together with entrance staff.",
+        "textKo": "건강 등의 이유로 독립적인 관람이 어려운 방문객은 동반자와 함께 올 수 있으며 동반자는 무료로 입장해요. 방문객과 동반자가 함께 입구 직원에게 확인받아야 해요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-08"
       },
       {
         "labelEn": "Entrance and transit",
@@ -2102,6 +2118,14 @@
         "checked": "2026-10-07"
       },
       {
+        "labelEn": "Accessible toilet",
+        "labelKo": "접근 가능한 화장실",
+        "textEn": "The accessible toilet is in the Hortus Café, reached using the separate wheelchair ramp behind the terrace.",
+        "textKo": "Hortus Café 안에 접근 가능한 화장실이 있어요. 테라스 뒤쪽의 별도 휠체어 경사로를 통해 갈 수 있어요.",
+        "source": "https://www.dehortus.nl/en/accessibility/",
+        "checked": "2026-10-08"
+      },
+      {
         "labelEn": "Route limitations",
         "labelKo": "구역별 접근 제한",
         "textEn": "The detailed visitor guide says the Butterfly House is not wheelchair-accessible. Wheelchair users must leave by the main gate, not the narrow shop exit. Ask staff about a suitable route.",
@@ -2116,6 +2140,14 @@
         "textKo": "방문 안내서는 야외의 도시 소음, 카페의 대화·커피머신 소리, 온실의 열기·습도·간헐적 분무를 안내해요.",
         "source": "https://www.dehortus.nl/wp-content/uploads/2025/11/Voorbereiding-bezoek-Hortus-Amsterdam_algemeen.pdf",
         "checked": "2026-10-07"
+      },
+      {
+        "labelEn": "Luggage storage",
+        "labelKo": "짐 보관",
+        "textEn": "No storage space or lockers are provided for suitcases or backpacks.",
+        "textKo": "여행 가방이나 배낭을 맡길 보관 공간·사물함이 없어요.",
+        "source": "https://www.dehortus.nl/en/plan-your-visit/",
+        "checked": "2026-10-08"
       },
       {
         "labelEn": "Garden and greenhouses",

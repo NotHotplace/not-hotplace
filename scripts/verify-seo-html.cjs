@@ -81,6 +81,11 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
   }
   const escape = value => value.replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;'}[char]));
   if (title) assert(html.includes(`<h1>${escape(title)}</h1>`), label + ': correct place identity');
+  if (language && route === `/places/world-nl-hortus-botanicus-amsterdam/${language}`) {
+    const place = gardenPlaces.find(place => place.id === 'world-nl-hortus-botanicus-amsterdam');
+    const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+    for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
+  }
 }
 
 async function freePort() {
