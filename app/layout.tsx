@@ -18,6 +18,7 @@ import "./community.css";
 import "./upgrade.css";
 import "./growth.css";
 import "./warm-brand.css";
+import "./photo-led.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
