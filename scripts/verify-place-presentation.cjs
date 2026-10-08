@@ -10,6 +10,6 @@ const basic={...cafe,detailLevel:'basic',conditions:[],recommendationReasons:[],
 const page=fs.readFileSync(path.join(root,'app/places/[id]/[language]/page.tsx'),'utf8');assert(page.includes('place-first-look'));assert(page.includes('<details className="place-disclosure" id="visit-info"'));assert(!page.includes('<VisitReadiness'));assert(!page.includes('<VisitPictograms'));assert(page.includes('<PlaceReasons'));assert(page.includes('application/ld+json'));const interaction=fs.readFileSync(path.join(root,'app/places/place-interactions.tsx'),'utf8');assert(interaction.includes('reviewValue(Number(value),summary.count,language)'));assert(interaction.includes('visitor-disclosure'));assert(interaction.includes('place={{id,category,conditions'),'category reaches live condition evidence');
 console.log('PASS: concise sourced reasons, category relevance, small-sample counts, full expandable details, stale1984 claims removed, five-place provenance and 1007-entry preservation.');
 
-assert(fs.readFileSync(path.join(root,'app/home-finder.tsx'),'utf8').includes('href={sharePlacePath(place,lang)}'),'home finder supports approved community routes');
+assert(fs.readFileSync(path.join(root,'app/home-finder.tsx'),'utf8').includes(':sharePlacePath(place,lang)}'),'home finder supports approved community routes');
 
 assert(fs.readFileSync(path.join(root,'app/place-reasons.tsx'),'utf8').includes('.slice(0,compact?1:2)'),'compact cards show one reason; detail keeps two');

@@ -149,3 +149,15 @@
 
 /* Keep the globe and navigation together on shorter laptop windows. */
 .home-globe-disclosure .globe-panel { max-width:min(650px,max(240px,calc(100svh - 280px))); }
+
+/* Keep app-install guidance discoverable without crowding compact headers. */
+.world-install-link { display:inline-flex; flex-wrap:wrap; align-items:center; gap:8px; min-height:44px; max-width:100%; margin-top:20px; padding:10px 14px; border:1px solid var(--brand-olive); border-radius:10px; color:var(--brand-olive); font-size:.875rem; font-weight:650; }
+.world-install-link span { color:var(--muted-foreground); font-size:.75rem; font-weight:400; }
+.world-install-link svg,.quiet-mobile-install-link svg { flex:none; }
+.world-install-link:focus-visible,.quiet-mobile-install-link:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
+.world-footer { flex-wrap:wrap; }
+.quiet-mobile-install-link { display:none; }
+.install-steps { scroll-margin-top:24px; }
+@media(max-width:640px) {
+ .quiet-mobile-install-link { display:inline-flex; align-items:center; gap:8px; min-height:44px; margin:0 0 8px; padding:8px 12px; border:1px solid var(--border); border-radius:9px; color:var(--brand-olive); font-size:.875rem; }
+}

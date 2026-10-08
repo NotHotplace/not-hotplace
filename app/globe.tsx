@@ -1,9 +1,10 @@
 'use client';
+import {readHomeChoices,type HomePurpose} from '@/lib/place-return';
 import {countries as countryConfig,countryCodes,type CountryCode} from '@/lib/countries';
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {layoutGlobeLabels, projectVisibleGlobePoints} from '@/lib/globe-labels';
 import {GlobeDecoration, GlobeSurface} from './globe-decoration';
-import {ChevronDown, ChevronLeft, ChevronRight, Globe2, Pause, Play} from 'lucide-react';
+import {ChevronDown, ChevronLeft, ChevronRight, Globe2, Pause, Play, Smartphone} from 'lucide-react';
 import {loadGeo} from '@/lib/geo-client';
 import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
@@ -11,11 +12,13 @@ import HomeThemes from './home-themes';
 import HomeFinder from './home-finder';
 import GuideLinks from './guide-links';
 
-export default function GlobeHome() {
+export default function GlobeHome({initialChoices}:{initialChoices?:ReturnType<typeof readHomeChoices>}={}) {
   const {lang, text} = useLocale();
   const [geo, setGeo] = useState<any>(null), [data, setData] = useState<any>(null);
   const [failed, setFailed] = useState(false), [visible, setVisible] = useState(true), [globeOpen,setGlobeOpen]=useState(false), [globeRetry,setGlobeRetry]=useState(0);
-  const [country, setCountry] = useState<CountryCode>('KR');
+  const [homeReady,setHomeReady]=useState(false);
+  const [homeRegion,setHomeRegion]=useState(initialChoices?.region||'전국'),[homePurpose,setHomePurpose]=useState<HomePurpose>(initialChoices?.purpose||'all'),[homeTheme,setHomeTheme]=useState(initialChoices?.theme||'all');
+  const [country, setCountry] = useState<CountryCode>(initialChoices?.country||'KR');
   const [lastCountry,setLastCountry]=useState<CountryCode|null>(null);
   const panel = useRef<HTMLElement>(null), globeSvg = useRef<SVGSVGElement>(null), globeDisclosure = useRef<HTMLDetailsElement>(null);
   const pendingCountryFocus = useRef<CountryCode|null>(null), pendingPauseFocus = useRef(false);
@@ -32,7 +35,8 @@ export default function GlobeHome() {
     if (query.has('place') || query.has('category') || query.has('q') || location.hash.startsWith('#setup=')) {
       location.replace('/kr' + location.search + location.hash); return;
     }
-    try {const last=localStorage.getItem('nhp-last-country');if(countryCodes.includes(last as CountryCode)){setLastCountry(last as CountryCode);setCountry(last as CountryCode);}}catch{}
+    try {const last=localStorage.getItem('nhp-last-country');if(countryCodes.includes(last as CountryCode)){setLastCountry(last as CountryCode);if(!initialChoices?.country)setCountry(last as CountryCode);}}catch{}
+    setHomeReady(true);
   }, []);
 
   useEffect(() => {
@@ -127,6 +131,7 @@ export default function GlobeHome() {
               <p>{text('Choose a country on the globe, then your kind of pause.', '지구본에서 나라를 고르고, 어떤 쉼이 필요한지 알려주세요.')}</p>
             </figcaption>
           </figure>
+          <a className="world-install-link" href={'/install?lang='+lang}><Smartphone size={18} aria-hidden="true"/>{text('Install app','앱 설치')}<span>{text('Add to your home screen','홈 화면에 추가')}</span></a>
           <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#home-world">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
           {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
         </section>
@@ -204,10 +209,10 @@ export default function GlobeHome() {
           </div>
           <p className="globe-label-hint">{text('Browse with the arrows, then select a pin. You can also drag the globe.','화살표로 둘러본 뒤 핀을 눌러 선택하세요. 지구본을 직접 돌려도 좋아요.')}</p>
         </section></details>
-      <HomeFinder country={country}/>
-      <details className="home-more-pauses"><summary><span>{text('More ways to pause','다른 쉼도 둘러보기')}</span><ChevronDown size={24} aria-hidden="true"/></summary><HomeThemes country={country}/></details>
+      <HomeFinder country={country} initialRegion={initialChoices?.region} initialPurpose={initialChoices?.purpose} ready={homeReady} homeTheme={homeTheme} onRegionChange={setHomeRegion} onPurposeChange={setHomePurpose}/>
+      <details className="home-more-pauses"><summary><span>{text('More ways to pause','다른 쉼도 둘러보기')}</span><ChevronDown size={24} aria-hidden="true"/></summary><HomeThemes country={country} initialTheme={initialChoices?.theme} ready={homeReady} homeRegion={homeRegion} homePurpose={homePurpose} onThemeChange={setHomeTheme}/></details>
       <section className="home-themes"><h2>{text('Guides for your next pause.','쉼을 위한 가이드.')}</h2><GuideLinks language={lang} country={country}/></section>
     </main>
-    <footer className="world-footer"><span><Globe2 size={15}/>{text(countryCodes.length+' countries · A pause, at your pace.',countryCodes.length+'개국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
+    <footer className="world-footer"><span><Globe2 size={15}/>{text(countryCodes.length+' countries · A pause, at your pace.',countryCodes.length+'개국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/install?lang='+lang}>{text('Install app','앱 설치')}</a><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
   </div>;
 }

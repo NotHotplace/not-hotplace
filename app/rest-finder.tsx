@@ -1,20 +1,25 @@
 'use client';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import PlaceReasons from './place-reasons';
 import {placeIdentity,candidateReasons} from '@/lib/place-presentation';
 import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from '@/components/ui/select';
 import {restMatches,defaultRestPreferences,visitingTimeLabel,type FinderPlace,type RestPreferences} from '@/lib/rest-finder';
-import {placePath,isCatalogPlace,explorerPath} from '@/lib/place-links';
+import {placePathWithReturn} from '@/lib/place-return';
+import {isCatalogPlace,explorerPath} from '@/lib/place-links';
 import {placeDescription} from '@/lib/place-copy';
 import {trackEngagement} from '@/lib/engagement-client';
 
-export default function RestFinder({places,language,position,radiusKm=10,onVisit}: {places:FinderPlace[];language:'ko'|'en';position?:{lat:number;lon:number}|null;radiusKm?:number;onVisit?:()=>void}) {
+export default function RestFinder({places,language,position,radiusKm=10,onVisit,returnTo}: {places:FinderPlace[];language:'ko'|'en';position?:{lat:number;lon:number}|null;radiusKm?:number;onVisit?:()=>void;returnTo?:string}) {
   const [preferences,setPreferences]=useState<RestPreferences>({...defaultRestPreferences});
   const [expanded,setExpanded]=useState(false);
+  useEffect(()=>{const q=new URLSearchParams(location.search);setPreferences(current=>({...current,purpose:['all','cafe','food','drive','private-room','premium-spa'].includes(q.get('finderPurpose')||'')?q.get('finderPurpose') as RestPreferences['purpose']:current.purpose,party:['any','solo','together'].includes(q.get('finderParty')||'')?q.get('finderParty') as RestPreferences['party']:current.party,day:['any','평일','주말·공휴일'].includes(q.get('finderDay')||'')?q.get('finderDay') as RestPreferences['day']:current.day,time:['any','오전','오후','저녁'].includes(q.get('finderTime')||'')?q.get('finderTime') as RestPreferences['time']:current.time,budget:q.get('finderBudget')==='0'?0:null}));setExpanded(q.get('finderExpanded')==='1');},[]);
+  const finderReturn=new URL(returnTo||'/?lang='+language,'https://return.invalid');
+  for(const [key,value]of Object.entries({finderPurpose:preferences.purpose,finderParty:preferences.party,finderDay:preferences.day,finderTime:preferences.time,finderBudget:preferences.budget===0?'0':'any',finderExpanded:expanded?'1':'0'}))finderReturn.searchParams.set(key,value);
+  const finderPath=finderReturn.pathname+finderReturn.search;
   const ko=language==='ko',label=(kr:string,en:string)=>ko?kr:en;
   const results=restMatches(places,{...preferences,position,radiusKm});
   const visit=(place:FinderPlace)=>{trackEngagement('recommendation_open',place.country||'KR');onVisit?.();};
-  const href=(place:FinderPlace)=>isCatalogPlace(place.id)?placePath(place.id,language):explorerPath(place,language);
+  const href=(place:FinderPlace)=>isCatalogPlace(place.id)?placePathWithReturn(place.id,language,finderPath):explorerPath(place,language);
   function choice<K extends keyof RestPreferences>(key:K,title:string,options:[string,string][]) {
     return <label className="finder-field">{title}<Select value={String(preferences[key]??'any')} onValueChange={value=>setPreferences(current=>({...current,[key]:key==='budget'?(value==='any'?null:Number(value)):value}))}><SelectTrigger aria-label={title}><SelectValue/></SelectTrigger><SelectContent>{options.map(([value,text])=><SelectItem key={value} value={value}>{text}</SelectItem>)}</SelectContent></Select></label>;
   }
