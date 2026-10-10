@@ -92,6 +92,38 @@ for (const language of ['ko', 'en']) {
   assert(conciseText(language === 'ko' ? hours.textKo : hours.textEn, language === 'ko' ? 100 : 180).includes(expectedDate), 'first-look summary retains the date');
 }
 
+// A dated construction announcement is not a verified current parking status.
+const bugak = find('seoul-bugak');
+const construction = detail(bugak, 'Parking and closures');
+assert.equal(bugak.checked, '2026-10-11');
+assert.equal(construction.checked, '2026-10-11');
+assert.equal(construction.source, 'https://www.ijongno.co.kr/www/139?action=read&action-value=03c466b9a93a003efb3a8145c4ff83cf');
+assert.equal(bugak.source, construction.source);
+assert.match(construction.textKo, /2026-06-04.*6월 8일.*공사 기간/);
+assert.match(construction.textKo, /야외정원.*공용화장실/);
+assert.match(construction.textKo, /재개방 공지는 확인하지 못/);
+assert.match(construction.textEn, /June 4, 2026.*June 8.*works/);
+assert.match(construction.textEn, /outdoor gardens and public toilets would remain open/);
+assert.match(construction.textEn, /As of October 11, 2026.*reopening notice has not been verified/);
+assert.match(construction.textEn, /before driving there/);
+assert.doesNotMatch(JSON.stringify(bugak), /24[ -]?(?:hour|시간)|24\/7|always open/i);
+assert.equal(bugak.visitFacts?.parking, undefined);
+assert.equal(visitFacts(bugak).parking, undefined, 'dated partial closure does not imply current parking availability');
+assert(!matchesCondition(bugak, 'parking'));
+assert.equal(bugak.address, '서울 종로구 북악산로 267 · 북악팔각정 기준');
+for (const key of ['lat', 'lon', 'locationInfo', 'image', 'imageRemote', 'photos']) assert.equal(bugak[key], undefined, 'preserve existing ' + key);
+assert.deepEqual(bugak.tags, ['드라이브', '전망']);
+assert.match(bugak.description, /교통·주차 혼잡은 시간대에 따라/);
+assert.match(bugak.descriptionEn, /traffic and parking congestion vary by time/);
+for (const language of ['ko', 'en']) {
+  const date = language === 'ko' ? '2026-06-04' : 'June 4, 2026';
+  const text = language === 'ko' ? construction.textKo : construction.textEn;
+  assert(placeVisitHint(bugak, language).includes(date), 'card hint retains the dated warning');
+  assert(essentialDetails(bugak).includes(construction), 'construction warning is visible at first look');
+  assert(conciseText(text, language === 'ko' ? 100 : 180).includes(date));
+  assert.equal(conditionEvidence(bugak, 'parking', language), null);
+}
+
 const reyes = find('us-point-reyes');
 const expectedImage = '/places/us-point-reyes.jpeg';
 const imageHash = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'public', expectedImage))).digest('hex');
@@ -148,6 +180,14 @@ assert(explorerSource.includes('focused.imageNoteKo||'), 'legacy detail modal re
       assert(html.includes('href="' + fact.source + '"'));
       for (const source of fact.additionalSources) assert(html.includes('href="' + source.url + '"'), id + ' exposes both sources');
     }
+    const bugakHtml = renderToStaticMarkup(await pageModule.default({params: Promise.resolve({id: bugak.id, language})}));
+    const constructionHtml = renderToStaticMarkup(require('react').createElement('span', null, language === 'ko' ? construction.textKo : construction.textEn)).slice(6, -7);
+    assert(bugakHtml.includes(constructionHtml), language + ' renders the complete dated construction warning');
+    assert(bugakHtml.includes('href="' + construction.source.replace(/&/g, '&amp;') + '"'));
+    assert(bugakHtml.includes('2026-10-11'));
+    const bugakPictograms = renderToStaticMarkup(pictograms({place: bugak, language}));
+    assert(bugakPictograms.includes('parking-unknown'));
+    assert(!bugakPictograms.includes('parking-unavailable') && !bugakPictograms.includes('parking-available'));
     const html = renderToStaticMarkup(await pageModule.default({params: Promise.resolve({id: reyes.id, language})}));
     assert(html.includes('src="' + expectedImage + '"'));
     assert(html.includes('href="' + reyes.imageSource + '"'));
@@ -162,5 +202,5 @@ assert(explorerSource.includes('focused.imageNoteKo||'), 'legacy detail modal re
     const metadata = await pageModule.generateMetadata({params: Promise.resolve({id: reyes.id, language})});
     assert.equal(metadata.openGraph.images[0].url, expectedImage);
   }
-  console.log('PASS: four source-backed corrections, merged/guide consistency, KO/EN server pages and photo notes, unknown parking filters, dated dinner warning, exact restored asset, preserved Holland hold and 1008 entries.');
+  console.log('PASS: dated Bugak construction notice and four source-backed corrections, merged/guide consistency, KO/EN server pages and photo notes, unknown parking filters, dated dinner warning, exact restored asset, preserved Holland hold and 1008 entries.');
 })().catch(error => {console.error(error); process.exitCode = 1;});
