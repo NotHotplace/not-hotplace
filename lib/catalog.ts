@@ -29,7 +29,19 @@ const original:Place[]=[
 {id:'seoul-sueno',descriptionEn:"A cultural space with exhibitions and a caf\u00e9. Performances and events can change the atmosphere.",city:'서울',category:'cafe',name:'수애뇨339',area:'종로구 · 평창동',address:'서울 종로구 평창길 339',description:'전시와 카페가 함께 있는 복합예술공간. 공연·행사에 따라 분위기가 달라질 수 있습니다.',source:'https://sueno339.com/',checked:'2026-09-10',tags:['전시 공간','카페']},
 {id:'seoul-san',descriptionEn:"A hillside caf\u00e9 candidate in Buam-dong. Check opening status and crowds before visiting.",city:'서울',category:'cafe',name:'산모퉁이',area:'종로구 · 부암동',address:'서울 종로구 백석동길 153',description:'부암동 언덕에 자리한 카페 후보. 방문 전 운영 여부와 혼잡도를 확인해 주세요.',source:'https://www.touringwiki.com/',checked:'2026-09-10',tags:['부암동','카페']},
 {id:'seoul-jaha',descriptionEn:"A dumpling restaurant candidate in Buam-dong. Mealtime crowds and comfort are recorded separately.",city:'서울',category:'food',name:'자하손만두',area:'종로구 · 부암동',address:'서울 종로구 백석동길 12',description:'부암동의 만두 식당 후보. 식사 시간대의 혼잡도와 편안함을 따로 기록합니다.',source:'https://www.instagram.com/reel/DRjaBBbErJM/',checked:'2026-09-10',tags:['만두','부암동']},
-{id:'seoul-bugak',descriptionEn:"A drive candidate around Bugak Palgakjeong. Traffic and parking congestion vary by time.",city:'서울',category:'drive',name:'북악스카이웨이',area:'종로구 · 북악산로',address:'서울 종로구 북악산로 267 · 북악팔각정 기준',description:'북악팔각정 주변의 드라이브 후보. 교통·주차 혼잡은 시간대에 따라 달라집니다.',source:'https://www.instagram.com/reel/DWNmnjICZuE/',checked:'2026-09-10',tags:['드라이브','전망']},
+{
+ id:'seoul-bugak',
+ descriptionEn:'A June 4, 2026 notice announced parking and partial facility closures at Bugak Palgakjeong from June 8 during works. A drive candidate around Bugak Palgakjeong; traffic and parking congestion vary by time. Reconfirm current access before driving there.',
+ city:'서울',category:'drive',name:'북악스카이웨이',area:'종로구 · 북악산로',address:'서울 종로구 북악산로 267 · 북악팔각정 기준',
+ description:'2026-06-04 공지에서 6월 8일부터 공사 기간 북악팔각정 주차장 등 일부 시설 미운영을 안내했습니다. 북악팔각정 주변의 드라이브 후보로, 교통·주차 혼잡은 시간대에 따라 달라집니다. 차량 방문 전 최신 운영 안내를 확인해 주세요.',
+ source:'https://www.ijongno.co.kr/www/139?action=read&action-value=03c466b9a93a003efb3a8145c4ff83cf',checked:'2026-10-11',tags:['드라이브','전망'],
+ visitDetails:[{
+  labelKo:'주차·공사 안내',labelEn:'Parking and closures',
+  textKo:'2026-06-04 공지는 6월 8일부터 공사 기간 주차장 등 일부 시설 미운영을 안내합니다. 같은 공지에서 야외정원과 공용화장실은 정상 운영한다고 설명하며, 공사 종료일은 적혀 있지 않습니다. 2026-10-11 확인 기준, 해당 공지 이후의 재개방 공지는 확인하지 못했으므로, 현재 주차·시설 이용 가능 여부는 차량 방문 전 종로구시설관리공단의 최신 안내로 다시 확인해 주세요.',
+  textEn:'The June 4, 2026 notice announced parking and partial facility closures from June 8 during works. It said outdoor gardens and public toilets would remain open, and gave no end date. As of October 11, 2026, a later reopening notice has not been verified. Check the latest Jongno-gu Facilities Management Corporation guidance for current parking and facility access before driving there.',
+  source:'https://www.ijongno.co.kr/www/139?action=read&action-value=03c466b9a93a003efb3a8145c4ff83cf',checked:'2026-10-11',
+ }],
+},
 ];
 export {labels} from './place-labels';
 
