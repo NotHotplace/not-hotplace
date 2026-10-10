@@ -16,7 +16,7 @@ function scan(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
 (async()=>{
  scan(path.join(root,'app'));scan(path.join(root,'components'));scan(path.join(root,'hooks'));
  const {catalog}=load(path.join(root,'lib/catalog.ts')),{countryCodes}=load(path.join(root,'lib/countries.ts')),links=load(path.join(root,'lib/place-links.ts'));
- assert.equal(catalog.length,1007);assert(catalog.every(p=>links.isCatalogPlace(p.id)));assert(!links.isCatalogPlace(fixture.id));assert.equal(links.sharePlacePath(fixture,'en'),'/kr?lang=en&place='+fixture.id);
+ assert.equal(catalog.length,1008);assert(catalog.every(p=>links.isCatalogPlace(p.id)));assert(!links.isCatalogPlace(fixture.id));assert.equal(links.sharePlacePath(fixture,'en'),'/kr?lang=en&place='+fixture.id);
  const api=load(path.join(root,'app/api/catalog/route.ts')),data=load(path.join(root,'app/api/data/route.ts'));
  async function publicGet(query){return api.GET(new Request('https://example.test/api/catalog?'+query,{headers:{cookie:'private-session=ignored'}}));}
  for(const country of countryCodes){const response=await publicGet('country='+country),body=await response.json();assert.equal(response.status,200);assert(body.places.every(p=>(p.country||'KR')===country));assert.equal(body.places.length,catalog.filter(p=>(p.country||'KR')===country).length);assert.deepEqual(Object.keys(body),['places']);assert(response.headers.get('Cache-Control').startsWith('public'));}
@@ -29,5 +29,5 @@ function scan(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
  const themes=await (await publicGet('country=KR&view=themes&theme=private-room')).json();assert(themes.places.length<=4);assert(themes.places.every(p=>p.experiences?.some(e=>['private-room','private-suite'].includes(e.kind))));
  user={userId:'private-user'};const privateResponse=await data.GET(new Request('https://example.test/api/data?country=KR&view=finder&region=서울'));assert.equal(privateResponse.headers.get('Cache-Control'),'private, no-store');const privateFinder=await privateResponse.json();assert.deepEqual(Object.keys(privateFinder),['matches']);assert(privateFinder.matches.length<=3);
  const collection=await data.GET(new Request('https://example.test/api/data?country=KR&view=collection'));assert.equal(collection.headers.get('Cache-Control'),'private, no-store');const body=await collection.json();assert(body.places.some(p=>p.id===fixture.id));assert(body.places.every(p=>Object.keys(p).every(k=>['id','country','name','city','address','states'].includes(k))));
- console.log('PASS: no full catalog in client import graph; all 1,007 source IDs/country scopes, bounded public projections, device-only journal selections, invalid-query rejection, community links and private/no-store finder isolation.');
+ console.log('PASS: no full catalog in client import graph; all 1,008 source IDs/country scopes, bounded public projections, device-only journal selections, invalid-query rejection, community links and private/no-store finder isolation.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

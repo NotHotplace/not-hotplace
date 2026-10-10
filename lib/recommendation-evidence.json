@@ -201,5 +201,21 @@
       "checked": "2026-10-07",
       "sourceKind": "operator"
     }
+  ],
+  "world-pt-jardim-gulbenkian": [
+    {
+      "textKo": "리스본 관광기관이 나무·연못 사이 산책과 앉아서 책 읽기를 소개해, 정원에서 쉬어갈 후보로 골랐어요.",
+      "textEn": "Visit Lisboa describes walks among trees and ponds and places to sit and read, supporting a garden reading break.",
+      "source": "https://www.visitlisboa.com/en/places/garden-of-the-gulbenkian-foundation",
+      "checked": "2026-10-10",
+      "sourceKind": "tourism-listing"
+    },
+    {
+      "textKo": "운영기관이 확장 정원의 벤치를 안내해요. 현재 빈자리와 주변 소음은 별도로 확인해야 해요.",
+      "textEn": "The operator documents benches in the garden extension. Current seat availability and surrounding noise still need checking.",
+      "source": "https://gulbenkian.pt/cam/en/news/gulbenkian-garden-extension-wins-international-landscape-architecture-award/",
+      "checked": "2026-10-10",
+      "sourceKind": "operator"
+    }
   ]
 }

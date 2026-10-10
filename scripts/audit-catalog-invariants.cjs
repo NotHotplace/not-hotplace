@@ -9,7 +9,7 @@ assert.equal(catalogDay(new Date('2026-10-07T15:00:00Z')),'2026-10-08','after Ko
 const tomorrow=new Date(Date.parse(today+'T00:00:00Z')+86400000).toISOString().slice(0,10);
 assert.throws(()=>date(tomorrow,'regression'),/future date/,'real future dates remain rejected');
 function url(value,context){const u=new URL(value);assert.equal(u.protocol,'https:',context+' non-HTTPS source');urls++;}
-assert.equal(catalog.length,1007);assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length);
+assert.equal(catalog.length,1008);assert.equal(new Set(catalog.map(p=>p.id)).size,catalog.length);
 for(const p of catalog){assert(countryCodes.includes(p.country));assert(['cafe','food','drive','walk','spa'].includes(p.category));assert(p.name&&p.address&&p.description);url(p.source,p.id);date(p.checked,p.id);if(p.lat!=null||p.lon!=null)assert(Number.isFinite(p.lat)&&Math.abs(p.lat)<=90&&Number.isFinite(p.lon)&&Math.abs(p.lon)<=180,p.id+' coordinate pair');
  if(p.image?.startsWith('/')){assert(fs.existsSync(path.join(root,'public',p.image)),p.id+' missing image');photos++;}
  for(const d of p.visitDetails||[]){assert(d.textKo&&d.textEn&&d.labelEn&&d.labelKo,p.id+' empty detail');if(d.source)url(d.source,p.id);if(d.checked)date(d.checked,p.id);for(const s of d.additionalSources||[])url(s.url,p.id);if(!/menu/i.test(d.labelEn)&&/[가-힣]/.test(d.textEn))operationalFlags++;}

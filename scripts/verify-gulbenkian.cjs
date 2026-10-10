@@ -1,0 +1,44 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),ts=require('typescript'),{renderToStaticMarkup}=require('react-dom/server');
+const root=path.resolve(__dirname,'..'),cache=new Map(),read=f=>JSON.parse(fs.readFileSync(path.join(root,f)));
+function compile(file,imports){const m={exports:{}};new Function('require','module','exports',ts.transpileModule(fs.readFileSync(path.join(root,file),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText)(imports,m,m.exports);return m.exports;}
+function load(file){if(file.endsWith('.json'))return read(file);if(cache.has(file))return cache.get(file);const m=compile(file,n=>n.startsWith('.')?load(path.join(path.dirname(file),n)+(n.endsWith('.json')?'':'.ts')):require(n));cache.set(file,m);return m;}
+const {catalog}=load('lib/catalog.ts'),id='world-pt-jardim-gulbenkian',place=catalog.find(p=>p.id===id),source=read('lib/expanded-catalog.json').find(p=>p.id===id);
+assert(place);assert.equal(catalog.length,1008);assert.equal(new Set(catalog.map(p=>p.id)).size,1008);
+assert.equal(catalog.filter(p=>/gulbenkian|굴벤키안|santa gertrudes/i.test(p.name+' '+p.address+' '+p.source)).length,1,'one deduplicated garden listing');
+for(const [key,value] of Object.entries({country:'PT',city:'Lisbon',category:'walk',name:'Jardim Gulbenkian',address:'Av. de Berna 45A, 1067-001 Lisboa, Portugal',detailLevel:'enriched',checked:'2026-10-10'}))assert.equal(place[key],value,key);
+assert.equal(place.lat,38.737474);assert.equal(place.lon,-9.154679);assert.equal(place.locationInfo.kind,'reference');
+assert.equal(place.locationInfo.source,'https://gulbenkian.pt/en/useful-information/how-to-get-here/');
+const byLabel=Object.fromEntries(place.visitDetails.map(d=>[d.labelEn,d]));assert(place.visitDetails.length>=8);
+for(const detail of place.visitDetails){assert(detail.textKo&&detail.textEn&&detail.labelKo);assert.equal(detail.checked,'2026-10-10');assert(detail.source.startsWith('https://'));assert(!/[가-힣]/.test(detail.textEn));}
+assert.match(byLabel.Hours.textEn,/sunrise.*sunset/i);assert.match(byLabel.Hours.textEn,/daily|every day/i);assert.doesNotMatch(byLabel.Hours.textEn,/closed on Tuesday|10:00|18:00|24.hour/i,'museum hours do not become garden hours');
+assert.match(byLabel.Admission.textEn,/free.*garden|garden.*free/i);
+assert.match(byLabel['Garden rules'].textEn,/picnics.*(?:prohibited|not allowed)/i);assert.match(byLabel['Garden rules'].textEn,/snacks.*tables/i);
+assert.match(byLabel.Accessibility.textEn,/parts|some/i);assert.match(byLabel.Accessibility.textEn,/not (?:been )?verified|unverified|not established/i);
+assert.match(byLabel.Parking.textEn,/Avenida de Berna/);assert.match(byLabel.Parking.textEn,/Via Verde/);assert.match(byLabel.Parking.textEn,/unverified|not (?:been )?verified/i);assert.doesNotMatch(byLabel.Parking.textEn,/[€$]\s*\d|\d\s*EUR/);
+assert.match(byLabel['Rest stops and reading'].textEn,/unverified|not (?:been )?verified/i);
+const {visitFacts}=load('lib/visit-facts.ts'),facts=visitFacts(place),{matchesCondition}=load('lib/rest-conditions.ts');
+assert.equal(facts.price.amount,0);assert.equal(facts.price.currency,'EUR');assert.equal(facts.price.basis,'admission');assert.equal(facts.parking.status,'available');assert.equal(facts.seating,undefined,'no invented solo/group seat sizes');
+assert.deepEqual(place.conditions.map(c=>c.kind),['parking']);for(const kind of ['privateRoom','soloSeats','quietMusic','partitions'])assert(!matchesCondition(place,kind));
+assert.equal(load('lib/rest-finder.ts').publishedCost(place).amount,0);
+assert(place.recommendationReasons.length>=2);assert(place.recommendationReasons.every(r=>r.checked==='2026-10-10'&&/^https:/.test(r.source)));
+assert(place.externalMemo);assert.match(place.externalMemo.periodEn,/2026/);assert.match(place.externalMemo.cautionEn,/subjective|not.*(?:verify|guarantee)|unverified/i);
+assert.doesNotMatch(place.externalMemo.summaryEn,/our visit|guaranteed quiet|always quiet/i);
+assert(place.tagsKo.includes('굴벤키안 정원'));assert(load('lib/place-search.ts').matchesPlaceSearch(place,'굴벤키안'));
+const manifest=read('lib/catalog-source-manifest.json').filter(p=>p.id===id);assert.equal(manifest.length,1);assert.equal(manifest[0].country,'PT');assert.equal(manifest[0].detailLevel,'enriched');
+const {guidePlaces,findGuide}=load('lib/guides.ts');assert(guidePlaces(findGuide('europe-garden-pause'),catalog).some(p=>p.id===id),'Europe guide discovers source-verified garden');
+const dir=read('lib/catalog-directory.json');assert.equal(dir.PT.count,3);assert(read('lib/catalog-ids.json').includes(id));
+const journal=read('lib/journal-places.json').find(p=>p.id===id);assert(journal);assert.equal(journal.image,place.image);assert.equal(journal.imageLicense,'CC BY 2.0');
+const license=read('public'+place.image.replace(/\.webp$/,'.license.json')),bytes=fs.readFileSync(path.join(root,'public',place.image));
+assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),'f13d6b39d37909b4c414ab26d9aed9c4ad8b1d81f44e3d15fe42c1f2ecfd5dac');assert.equal(license.readySha256,crypto.createHash('sha256').update(bytes).digest('hex'));assert.equal(bytes.length,license.readyBytes);assert.deepEqual(license.readyDimensions,[1200,800]);assert.equal(license.sourcePage,place.imageSource);assert.equal(license.licenseUrl,place.imageLicenseUrl);assert.equal(place.imageLicense,'CC BY 2.0');assert.equal(license.captureDate,'2024-09-01');
+for(const value of [license.author,license.originalTitle,license.captureDate,license.sourcePage,license.licenseUrl])assert(bytes.includes(Buffer.from(value)),'embedded photo provenance '+value);
+assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WEBP');let dimensions;
+for(let i=12;i+8<=bytes.length;){const name=bytes.toString('ascii',i,i+4),size=bytes.readUInt32LE(i+4);if(name==='VP8X')dimensions=[1+bytes.readUIntLE(i+12,3),1+bytes.readUIntLE(i+15,3)];i+=8+size+(size%2);}assert.deepEqual(dimensions,[1200,800]);
+assert(license.modifications.includes('No crop'));assert(!JSON.stringify(license).includes('/tmp/'));assert(!JSON.stringify(license).includes('/workspace/'));
+const stub=()=>null,imports=n=>n==='react/jsx-runtime'?require(n):n==='next/navigation'?{notFound(){throw Error('404');}}:n.startsWith('@/lib/')?load(n.slice(2)+(n.endsWith('.json')?'':'.ts')):n==='lucide-react'?new Proxy({},{get:()=>stub}):n==='@/components/seo-links'?compile('components/seo-links.tsx',imports):{default:stub,__esModule:true};
+const Page=compile('app/places/[id]/[language]/page.tsx',imports).default;
+const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;'}[c]));
+(async()=>{for(const language of ['ko','en']){const html=renderToStaticMarkup(await Page({params:Promise.resolve({id,language}),searchParams:Promise.resolve({returnTo:`/guides/europe-garden-pause/${language}#guide-place-${id}`})}));
+ for(const detail of place.visitDetails)assert(html.includes(escape(detail[language==='ko'?'textKo':'textEn'])),'visible bilingual visit fact '+detail.labelEn);
+ for(const value of [place.image,place.imageCredit,place.imageSource,place.imageLicenseUrl,language==='ko'?place.imageNoteKo:place.imageNote])assert(html.includes(escape(value)),'visible photo and attribution');
+ assert(html.includes('href="https://nothotplace.com/places/'+id+'/'+language+'"'));assert(!html.includes('content="noindex, follow"'));assert(html.includes(language==='ko'?'가이드로 돌아가기':'Back to the guide'));
+}assert.deepEqual(source.visitFacts,place.visitFacts);console.log('PASS: one Gulbenkian addition, sourced KO/EN facts, garden-specific free entry/hours, no invented seats/privacy/noise/full access or parking rates, reference-only pin, CC BY 2.0 photo/hash/embedded rights, indexes, discoverability and actual bilingual detail markup.');})().catch(e=>{console.error(e);process.exitCode=1;});

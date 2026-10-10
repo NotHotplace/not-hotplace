@@ -390,5 +390,14 @@
       "source": "https://juronglakegardens.nparks.gov.sg/plan-your-visit/getting-here/",
       "checked": "2026-10-07"
     }
+  ],
+  "world-pt-jardim-gulbenkian": [
+    {
+      "kind": "parking",
+      "textKo": "Avenida de Berna 진입 부지 내 주차장 안내 있음. 현재 요금·운영 시간·빈자리는 확인되지 않았어요.",
+      "textEn": "The operator lists an on-site carpark with access from Avenida de Berna. Current rates, hours and available spaces are unverified.",
+      "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+      "checked": "2026-10-10"
+    }
   ]
 }

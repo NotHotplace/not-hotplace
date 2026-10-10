@@ -1,3 +1,4 @@
+import {placeArea} from '@/lib/place-area';
 import {detailReturn,placePathWithReturn} from '@/lib/place-return';
 import PlaceSave from '../../place-save';
 import DisclosureNavigation from '../../disclosure-navigation';
@@ -25,7 +26,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {id, language} = await params;
   const place = findCatalogPlace(id);
   if (!place || !isPlaceLanguage(language)) return {title: 'Place not found | NotHotplace', robots: {index: false}};
-  const title = `${place.name} · ${place.area} | NotHotplace`;
+  const title = `${place.name} · ${placeArea(place.area,language)} | NotHotplace`;
   const description = placeDescription(place, language);
   const url = SITE_URL + placePath(id, language);
   return {
@@ -68,8 +69,8 @@ export default async function PlacePage({params,searchParams}: Props) {
         <a href={placePathWithReturn(id, 'en',returnTo)} hrefLang="en" lang="en" aria-current={!ko ? 'page' : undefined}>EN</a>
       </nav>
     </header>
-    <a className="place-back" href={back.href}><ArrowLeft size={16}/>{back.kind==='home'?label('Back to home recommendations','홈 추천으로 돌아가기'):back.kind==='region'?label('Back to the region list','지역 목록으로 돌아가기'):back.kind==='map'?label('Back to the map','지도로 돌아가기'):label('Explore the map','지도에서 더 찾아보기')}</a>
-    <div className="place-heading"><span className="place-eyebrow">{category} <span> / {place.area}</span></span>
+    <a className="place-back" href={back.href}><ArrowLeft size={16}/>{back.kind==='home'?label('Back to home recommendations','홈 추천으로 돌아가기'):back.kind==='guide'?label('Back to the guide','가이드로 돌아가기'):back.kind==='region'?label('Back to the region list','지역 목록으로 돌아가기'):back.kind==='map'?label('Back to the map','지도로 돌아가기'):label('Explore the map','지도에서 더 찾아보기')}</a>
+    <div className="place-heading"><span className="place-eyebrow">{category} <span> / {placeArea(place.area,language)}</span></span>
       <h1>{place.name}</h1><p><MapPin size={16}/>{place.address}</p>
     </div>
     <div className="place-layout">
@@ -98,7 +99,7 @@ export default async function PlacePage({params,searchParams}: Props) {
     {nearby.length > 0 && <section className="place-related"><div><span className="place-eyebrow">{label('KEEP EXPLORING', '함께 둘러봐요')}</span><h2>{label('More places in the region', '같은 지역의 다른 장소')}</h2></div>
       <div className="place-related-grid">{nearby.map(other => <article className="place-related-entry" key={other.id}><a href={placePathWithReturn(other.id, language,returnTo)}>
         {other.image ? <img src={other.image} alt="" loading="lazy"/> : <div className="place-related-placeholder"><Leaf size={28}/></div>}
-        <div><span>{other.area}</span><h3>{other.name}</h3><ArrowUpRight size={18}/></div>
+        <div><span>{placeArea(other.area,language)}</span><h3>{other.name}</h3><ArrowUpRight size={18}/></div>
       </a>{other.image&&<details className="related-photo-credit"><summary>{label('Photo credits','사진 출처·이용 허락')}</summary><PhotoCredit place={other} language={language}/></details>}</article>)}</div>
     </section>}
     <footer className="place-footer"><span>WE WANT REST.</span><a href={`/privacy?lang=${language}`}>{label('Privacy', '개인정보처리방침')}</a></footer>

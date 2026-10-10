@@ -332,5 +332,20 @@
         "url": "https://wanderlog.com/place/details/3312/kirstenbosch-national-botanical-garden"
       }
     ]
+  },
+  "world-pt-jardim-gulbenkian": {
+    "checked": "2026-10-10",
+    "periodKo": "2026년 5월·6월 방문 후기 각 1건 · 각각 2026년 5월 30일·6월 12일 작성",
+    "periodEn": "One review each of May and June 2026 visits, published May 30 and June 12, 2026 respectively",
+    "summaryKo": "5월에 혼자 방문한 작성자는 나무와 그늘, 앉을 곳을 긍정적으로 언급했어요. 6월 방문자는 쾌적하지만 이곳만을 위한 별도 방문까지 권할 정도는 아니라는 의견을 남겼어요.",
+    "summaryEn": "A reviewer visiting alone in May appreciated the trees, shade and places to sit. A June visitor found the gardens pleasant but did not consider them worth a special trip.",
+    "cautionKo": "서로 다른 방문자의 개별 경험이며 현장 검증이나 전체 후기의 대표 평가는 아니에요. 현재 소음·혼잡도·좌석 빈자리는 확인되지 않았어요. 정원 이용 규칙은 운영기관의 최신 안내를 따르세요.",
+    "cautionEn": "These are individual visitor impressions, not field verification or a representative review survey. Current noise, crowds and seat availability are unverified. Follow the operator’s current garden rules.",
+    "sources": [
+      {
+        "provider": "Tripadvisor · dated visitor reviews",
+        "url": "https://www.tripadvisor.in/Attraction_Review-g189158-d9861448-Reviews-Jardim_Gulbenkian-Lisbon_Lisbon_District_Central_Portugal.html"
+      }
+    ]
   }
 }

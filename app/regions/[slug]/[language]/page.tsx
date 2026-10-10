@@ -1,3 +1,4 @@
+import {placeArea} from '@/lib/place-area';
 import {placePathWithReturn} from '@/lib/place-return';
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
@@ -44,7 +45,7 @@ export default async function Page({params,searchParams}:Props){
     <p id="regional-results">{total?(ko?`전체 ${total}곳 중 ${offset+1}–${offset+places.length}곳`:`${offset+1}–${offset+places.length} of ${total} places`):(ko?'아직 이 지역의 후보가 없어요.':'No candidates in this region yet.')}</p>
     <div className="journal-grid">{places.map(p=>{const evidence=regionalEvidence(p),rich=evidence.reasonCount+evidence.detailCount+evidence.conditionCount>0;return <article key={p.id} data-region-place={p.id} id={'region-place-'+p.id}>
       {p.image&&<a href={placePathWithReturn(p.id,language,path+'#region-place-'+p.id)}><img className="regional-photo" src={p.image} alt={p.name} loading="lazy"/></a>}
-      <div><small>{p.area} · {p.image?(ko?'사진 있음':'Photos available'):(ko?'사진 확인 전':'No photo yet')}</small><h2><a href={placePathWithReturn(p.id,language,path+'#region-place-'+p.id)}>{p.name} ↗</a></h2>
+      <div><small>{placeArea(p.area,language)} · {p.image?(ko?'사진 있음':'Photos available'):(ko?'사진 확인 전':'No photo yet')}</small><h2><a href={placePathWithReturn(p.id,language,path+'#region-place-'+p.id)}>{p.name} ↗</a></h2>
         <p className="regional-evidence">{rich?(ko?`출처 있는 추천 이유 ${evidence.reasonCount} · 방문 정보·조건 ${evidence.detailCount+evidence.conditionCount}`:`Sourced reasons: ${evidence.reasonCount} · Visit details & conditions: ${evidence.detailCount+evidence.conditionCount}`):(ko?'위치·공간 기초 정보 · 방문 조건 확인 전':'Basic location & setting · Visit conditions pending')}</p>
         <p>{conciseText(evidence.reason?(ko?evidence.reason.textKo:evidence.reason.textEn):placeDescription(p,language),ko?140:230)}</p>
         {evidence.detail&&<p className="regional-fact">{ko?evidence.detail.labelKo+': '+evidence.detail.textKo:evidence.detail.labelEn+': '+evidence.detail.textEn}</p>}
