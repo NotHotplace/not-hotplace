@@ -33997,5 +33997,159 @@
         "checked": "2026-10-05"
       }
     ]
+  },
+  {
+    "id": "world-pt-jardim-gulbenkian",
+    "country": "PT",
+    "city": "Lisbon",
+    "category": "walk",
+    "name": "Jardim Gulbenkian",
+    "area": "Lisbon",
+    "address": "Av. de Berna 45A, 1067-001 Lisboa, Portugal",
+    "description": "나무와 연못 사이를 걷고 벤치에서 쉬어갈 수 있는 리스본의 무료 정원이에요. 일출부터 일몰까지 개방하며, 실제 조용함·혼잡도와 벤치 빈자리는 확인되지 않았어요.",
+    "descriptionKo": "나무와 연못 사이를 걷고 벤치에서 쉬어갈 수 있는 리스본의 무료 정원이에요. 일출부터 일몰까지 개방하며, 실제 조용함·혼잡도와 벤치 빈자리는 확인되지 않았어요.",
+    "descriptionEn": "A free Lisbon garden with paths among trees and ponds, plus benches for a rest. Open from sunrise to sunset; actual quietness, crowds and available benches are unverified.",
+    "source": "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/",
+    "checked": "2026-10-10",
+    "tags": [
+      "굴벤키안 정원",
+      "나무·연못 산책",
+      "정원 벤치"
+    ],
+    "tagsKo": [
+      "굴벤키안 정원",
+      "나무·연못 산책",
+      "정원 벤치"
+    ],
+    "tagsEn": [
+      "Garden walks",
+      "Trees and ponds",
+      "Garden benches"
+    ],
+    "detailLevel": "enriched",
+    "sourceHint": "운영기관·관광기관 공개 안내와 출처 사진 확인 · 현장 방문·실시간 상태 검증 아님",
+    "visitDetails": [
+      {
+        "labelEn": "Hours",
+        "labelKo": "정원 개방 시간",
+        "textEn": "Daily from sunrise to sunset. Museum and CAM opening schedules are separate; their Tuesday closures do not establish a garden closure.",
+        "textKo": "정원은 매일 일출부터 일몰까지 개방해요. 미술관·CAM 운영 시간은 별도이며, 해당 시설의 화요일 휴관을 정원 휴원으로 적용하지 않습니다.",
+        "source": "https://gulbenkian.pt/en/useful-information/opening-hours/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Admission",
+        "labelKo": "정원 입장료",
+        "textEn": "General entry to the garden is free. This does not establish free admission to museums, exhibitions or events, or free food and drink.",
+        "textKo": "정원 일반 입장은 무료예요. 미술관·전시·행사 입장이나 식음료까지 무료라는 뜻은 아닙니다.",
+        "source": "https://gulbenkian.pt/en/useful-information/opening-hours/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Approaches and public transport",
+        "labelKo": "접근 방향·대중교통",
+        "textEn": "Approaches are listed from Avenida de Berna, Rua Nicolau Bettencourt, Rua Marquês de Fronteira and Rua Marquês Sá da Bandeira. Nearby metro stations include São Sebastião and Praça de Espanha; check the route for your chosen approach.",
+        "textKo": "Avenida de Berna, Rua Nicolau Bettencourt, Rua Marquês de Fronteira, Rua Marquês Sá da Bandeira 방향 접근이 안내돼 있어요. 가까운 지하철역은 São Sebastião·Praça de Espanha이며, 선택한 접근 방향에 맞춰 경로를 확인하세요.",
+        "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Rest stops and reading",
+        "labelKo": "벤치·독서 휴식",
+        "textEn": "Visit Lisboa describes paths, ponds and trees, with places to sit and read. The operator also documents benches in the garden extension. Bench counts, current condition, available seats and actual quietness are unverified.",
+        "textKo": "리스본 관광기관은 산책로·연못·나무와 앉아서 책을 읽을 수 있는 공간을 소개해요. 운영기관은 확장 정원의 벤치도 안내합니다. 벤치 수·현재 상태·빈자리와 실제 조용함은 확인되지 않았어요.",
+        "source": "https://www.visitlisboa.com/en/places/garden-of-the-gulbenkian-foundation",
+        "checked": "2026-10-10",
+        "additionalSources": [
+          {
+            "label": "Operator description of benches in the garden extension",
+            "url": "https://gulbenkian.pt/cam/en/news/gulbenkian-garden-extension-wins-international-landscape-architecture-award/"
+          }
+        ]
+      },
+      {
+        "labelEn": "Garden trails",
+        "labelKo": "정원 산책 경로",
+        "textEn": "Official self-guided trail suggestions explore light and shade, ponds and the garden rim. Choose a route for your available time; a fixed walking duration has not been verified.",
+        "textKo": "공식 자율 산책 안내에는 빛과 그늘, 연못, 정원 가장자리를 살펴보는 경로가 있어요. 머무를 시간에 맞게 경로를 고르세요. 고정 소요 시간은 확인되지 않았어요.",
+        "source": "https://gulbenkian.pt/jardim/en/garden-trails/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Garden rules",
+        "labelKo": "정원 이용 규칙",
+        "textEn": "Picnics are prohibited. Snacks are permitted only at the designated tables between the lake and cafeteria; do not treat the lawns or benches as picnic areas.",
+        "textKo": "피크닉은 금지돼 있어요. 간식은 호수와 카페테리아 사이의 지정 테이블에서만 허용되며, 잔디밭이나 벤치를 피크닉 장소로 이용하지 마세요.",
+        "source": "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Accessibility",
+        "labelKo": "이동 접근성",
+        "textEn": "The operator states that parts of the garden are accessible. Full step-free access across the garden is not established; confirm a suitable route and any assistance before visiting.",
+        "textKo": "운영기관은 정원의 일부 구역에 접근이 가능하다고 안내해요. 정원 전체의 무단차 이동이 확인된 것은 아니므로 방문 전 이용할 경로와 필요한 지원을 확인하세요.",
+        "source": "https://gulbenkian.pt/en/useful-information/accessibility/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Parking",
+        "labelKo": "주차",
+        "textEn": "The on-site carpark entrance is on Avenida de Berna; the operator also lists Via Verde. Current rates, opening hours and space availability have not been verified.",
+        "textKo": "Avenida de Berna 진입과 Via Verde 이용이 안내된 부지 내 주차장이 있어요. 현재 요금·운영 시간·빈자리는 확인되지 않았어요.",
+        "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+        "checked": "2026-10-10"
+      },
+      {
+        "labelEn": "Location reference",
+        "labelKo": "위치 참고",
+        "textEn": "Published address: Av. de Berna 45A, 1067-001 Lisboa. Coordinates from the official embedded map identify the Gulbenkian campus only; they are not a surveyed garden entrance or carpark location.",
+        "textKo": "공식 주소는 Av. de Berna 45A, 1067-001 Lisboa예요. 공식 페이지 내 지도에서 얻은 좌표는 굴벤키안 부지의 기준 위치이며, 현장 검증한 정원 입구나 주차장 좌표가 아닙니다.",
+        "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+        "checked": "2026-10-10",
+        "additionalSources": [
+          {
+            "label": "Official garden address",
+            "url": "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/"
+          },
+          {
+            "label": "Officially embedded campus map reference",
+            "url": "https://www.google.com/maps?ll=38.737474,-9.154679&z=16&t=m&hl=en-US&gl=PT&mapclient=embed&cid=566985792386140131"
+          }
+        ]
+      }
+    ],
+    "lat": 38.737474,
+    "lon": -9.154679,
+    "locationInfo": {
+      "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+      "checked": "2026-10-10",
+      "kind": "reference"
+    },
+    "visitFacts": {
+      "price": {
+        "amount": 0,
+        "currency": "EUR",
+        "basis": "admission",
+        "textKo": "정원 일반 입장 무료",
+        "textEn": "Free general admission to the garden",
+        "source": "https://gulbenkian.pt/en/useful-information/opening-hours/",
+        "checked": "2026-10-10"
+      },
+      "parking": {
+        "status": "available",
+        "textKo": "Avenida de Berna 진입 부지 내 주차장 안내 있음. 요금·시간·빈자리 미확인.",
+        "textEn": "On-site carpark listed with Avenida de Berna access; rates, hours and available spaces unverified.",
+        "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+        "checked": "2026-10-10"
+      }
+    },
+    "image": "/places/world-pt-jardim-gulbenkian-commons.webp",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Clareira_%2854034631981%29.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Clareira_(54034631981).jpg",
+    "imageCredit": "Clareira · Pedro (caixa de luz) / Wikimedia Commons",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "imageNote": "Gulbenkian garden clearing with paths, a pond and seated visitors, photographed September 1, 2024. Proportionally resized and converted to WebP; display may crop. No endorsement implied. Historical photo; current conditions and seat availability are unverified.",
+    "imageNoteKo": "2024년 9월 1일 촬영한 굴벤키안 정원의 산책로·연못·앉아 있는 방문객이 보이는 공간. 비율을 유지해 크기를 조정하고 WebP로 변환했으며 화면에 따라 일부가 잘릴 수 있습니다. 사진가나 장소의 보증·추천을 의미하지 않습니다. 과거 사진으로 현재 상태와 빈자리는 확인되지 않았습니다."
   }
 ]

@@ -1,4 +1,5 @@
 'use client';
+import {placeArea} from '@/lib/place-area';
 import {homeReturnPath,placePathWithReturn,type HomePurpose} from '@/lib/place-return';
 import {type CountryCode} from '@/lib/countries';
 import type {Place} from '@/lib/catalog';
@@ -28,7 +29,7 @@ export default function HomeThemes({country,initialTheme='all',ready=false,homeR
     <ThemePicker value={theme} onChange={setTheme} language={lang}/>
     {state==='loading'&&<p role="status">{text('Loading places…','장소를 불러오는 중…')}</p>}{state==='error'&&<p role="status">{text('Places could not load. Try exploring this country below.','장소를 불러오지 못했어요. 아래에서 이 나라를 둘러보세요.')}</p>}
     <div className="home-space-grid" aria-live="polite">{places.slice(0,4).map(place => <article className="home-space-card" key={place.id}>{place.image&&<a href={placePathWithReturn(place.id,lang,returnPath)} className="home-space-image"><img src={place.image} alt="" loading="lazy"/></a>}
-      <span className="home-space-meta">{t(place.city)} · {place.area}</span>
+      <span className="home-space-meta">{t(place.city)} · {placeArea(place.area,lang)}</span>
       <h3><a href={placePathWithReturn(place.id,lang,returnPath)}>{place.name}<ArrowUpRight size={20}/></a></h3>
       <PlaceSummary place={place} language={lang}/><PlaceReasons place={place} language={lang} compact/>
       <a className="home-space-details" href={placePathWithReturn(place.id,lang,returnPath)}>{text('Details & visitor reviews', '상세 정보와 방문 후기')}<ArrowUpRight size={16}/></a>

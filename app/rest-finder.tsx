@@ -1,4 +1,5 @@
 'use client';
+import {placeArea} from '@/lib/place-area';
 import {useState,useEffect} from 'react';
 import PlaceReasons from './place-reasons';
 import {placeIdentity,candidateReasons} from '@/lib/place-presentation';
@@ -34,7 +35,7 @@ export default function RestFinder({places,language,position,radiusKm=10,onVisit
     </div>}
     {!expanded&&<div className="finder-shortlist" aria-live="polite">{results.map(({place},index)=><a key={place.id} href={href(place)} onClick={()=>visit(place)}><span>0{index+1}</span><span>{place.name}<small>{candidateReasons(place)[0]?.[ko?'textKo':'textEn']||label('기본 소개 · 조건 확인 중','Basic listing · details pending')}</small></span></a>)}</div>}
     {expanded&&<div className="finder-results" aria-live="polite">{results.map(({place,reviewed,time,distance},index)=><article key={place.id} className="finder-result">
-      <span className="finder-number">0{index+1}</span>{place.image&&<img src={place.image} alt="" loading="lazy"/>}<div><span className="finder-area">{place.area}{distance!==null&&` · ${distance.toFixed(1)}km`}</span><h3><a href={href(place)} onClick={()=>visit(place)}>{place.name}</a></h3><p>{placeIdentity(place,language)}</p>
+      <span className="finder-number">0{index+1}</span>{place.image&&<img src={place.image} alt="" loading="lazy"/>}<div><span className="finder-area">{placeArea(place.area,language)}{distance!==null&&` · ${distance.toFixed(1)}km`}</span><h3><a href={href(place)} onClick={()=>visit(place)}>{place.name}</a></h3><p>{placeIdentity(place,language)}</p>
       <span className="finder-reason">{time?label(`${visitingTimeLabel(time,language)} · ${time.n}명 후기 참고`,`${visitingTimeLabel(time,language)} · ${time.n} responses`):reviewed?label(`최근 후기 ${place.count}명 참고`,`Recent feedback from ${place.count} visitors`):label('공개 정보로 고른 탐색 후보 · 조용함 후기 대기','A match from published information · quietness unrated')}</span>
       {(preferences.day!=='any'||preferences.time!=='any')&&!time&&<span className="finder-note">{label('선택한 시간대의 충분한 후기가 아직 없어요.','Not enough feedback for your selected visiting time yet.')}</span>}
       {preferences.party==='solo'&&<span className="finder-note">{label('1인 이용·좌석 조건은 상세 정보에서 확인하세요.','Check solo-visit and seating conditions in the details.')}</span>}

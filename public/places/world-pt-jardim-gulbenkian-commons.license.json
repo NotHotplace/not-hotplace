@@ -1,0 +1,34 @@
+{
+  "id": "world-pt-jardim-gulbenkian",
+  "checked": "2026-10-10",
+  "originalTitle": "Clareira",
+  "author": "Pedro (caixa de luz)",
+  "authorUrl": "https://www.flickr.com/photos/caixadeluz/54034631981",
+  "captureDate": "2024-09-01",
+  "captureDateBasis": "Commons Summary Date; original timezone unspecified",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Clareira_(54034631981).jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Clareira_%2854034631981%29.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+  "rightsNotice": "Clareira by Pedro (caixa de luz), CC BY 2.0. Proportional resize and WebP conversion; no crop, retouching, recoloring or generative alteration. No endorsement implied.",
+  "originalSha256": "ffd19763c7b5016f01511c5b9c6ddcc2b09fd5f319f668bf3a94788c17709626",
+  "originalDimensions": [
+    6000,
+    4000
+  ],
+  "originalBytes": 4708010,
+  "readySha256": "f13d6b39d37909b4c414ab26d9aed9c4ad8b1d81f44e3d15fe42c1f2ecfd5dac",
+  "readyDimensions": [
+    1200,
+    800
+  ],
+  "readyBytes": 306136,
+  "modifications": "Proportional resize to 1200 × 800 and WebP compression (quality 80, method 6). No crop, retouching, recoloring or generative alteration. Creator/title/date/source/license/change notice embedded in EXIF/XMP; source ICC retained when present.",
+  "cropConstraints": "Keep the garden clearing, pond edge, trees and shared visitor setting; do not isolate incidental visitors or suggest exclusive access.",
+  "altEn": "Trees, paths and visitors resting near a pond in Gulbenkian Garden, photographed in September 2024.",
+  "altKo": "2024년 9월 촬영한 굴벤키안 정원의 나무와 산책길, 연못 주변에서 쉬는 방문객.",
+  "asset": "/places/world-pt-jardim-gulbenkian-commons.webp",
+  "status": "verified-optimized-derivative",
+  "visualReview": "Original pixels inspected on 2026-10-10: garden clearing, trees, pond edge and incidental visitors; historical setting, not current crowd or availability evidence. Optimized derivative and 480×170, 400×225, 358×269 centered-cover crops also inspected; garden/pond context and shared use remain visible.",
+  "licenseVerification": "Image-specific Commons CC BY 2.0; Flickr license reviewed by FlickreviewR 2 on 2024-10-04. Not the Commons page-footer CC BY-SA license."
+}

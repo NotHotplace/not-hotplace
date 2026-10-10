@@ -29,7 +29,7 @@ const {countryCodes, countryPath} = lib('countries');
 const {regionalGuides,findRegionalGuide,regionalPlaces} = lib('regional-guides');
 const {paginateRegion,regionPagePath}=lib('regional-browsing');
 const basicPlace = catalog.find(place => place.detailLevel === 'basic');
-const gardenPlaces = ['world-fr-jardin-du-luxembourg', 'world-nl-hortus-botanicus-amsterdam', 'world-sg-jurong-lake-gardens'].map(id => catalog.find(place => place.id === id));
+const gardenPlaces = ['world-fr-jardin-du-luxembourg', 'world-nl-hortus-botanicus-amsterdam', 'world-sg-jurong-lake-gardens', 'world-pt-jardim-gulbenkian'].map(id => catalog.find(place => place.id === id));
 const agents = {
   browser: 'Mozilla/5.0 Chrome/134.0.0.0 Safari/537.36',
   googlebot: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
@@ -81,8 +81,8 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
   }
   const escape = value => value.replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;'}[char]));
   if (title) assert(html.includes(`<h1>${escape(title)}</h1>`), label + ': correct place identity');
-  if (language && route === `/places/world-nl-hortus-botanicus-amsterdam/${language}`) {
-    const place = gardenPlaces.find(place => place.id === 'world-nl-hortus-botanicus-amsterdam');
+  if (language && ['world-nl-hortus-botanicus-amsterdam','world-pt-jardim-gulbenkian'].some(id=>route===`/places/${id}/${language}`)) {
+    const place = gardenPlaces.find(place => route===`/places/${place.id}/${language}`);
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
   }
@@ -162,6 +162,7 @@ async function freePort() {
     }
     for(const language of ['ko','en'])for(const [target,label]of [
       [`/?lang=${language}&country=US&region=New+York&purpose=cafe#home-finder`,language==='ko'?'홈 추천으로 돌아가기':'Back to home recommendations'],
+      [`/guides/waterside-pause/${language}#guide-place-cj-drive`,language==='ko'?'가이드로 돌아가기':'Back to the guide'],
       [`/regions/new-york/${language}?page=2#region-place-nyc-park-b544`,language==='ko'?'지역 목록으로 돌아가기':'Back to the region list'],
       [`/us?lang=${language}&region=New+York&category=cafe&q=coffee&photos=1&resume=1`,language==='ko'?'지도로 돌아가기':'Back to the map'],
       ['https://evil.test',language==='ko'?'지도에서 더 찾아보기':'Explore the map'],
@@ -171,6 +172,28 @@ async function freePort() {
       assert.equal(back.href,lib('place-return').detailReturn(target,language,'US').href);assert(result.html.includes(label));
       assert.equal(tags(result.html,'link').find(l=>l.rel==='canonical').href,SITE_URL+route,'return choices never leak into canonical');
       assert(!tags(result.html,'meta').some(m=>m.name==='robots'&&/noindex/.test(m.content)));
+    }
+    // Follow the actual thematic links from the built Worker, including the
+    // selected card and language switch. JSON-LD/canonicals stay query-free.
+    for(const language of ['ko','en']){
+      const route=`/guides/waterside-pause/${language}`,result=await get(route);assert.equal(result.status,200);count++;
+      inspect(result.html,route,'waterside '+language,{language});
+      const cards=tags(result.html,'article').filter(a=>a.id?.startsWith('guide-place-'));
+      assert.equal(cards.length,12,'waterside retains all 12 cards');
+      const links=tags(result.html,'a').filter(a=>a.href?.startsWith('/places/'));
+      for(const a of links){const url=new URL(a.href,base),id=url.pathname.split('/')[2];assert.equal(url.searchParams.get('returnTo'),route+'#guide-place-'+id);}
+      const next=await get(links[0].href);assert.equal(next.status,200);count++;
+      const target=new URL(links[0].href,base).searchParams.get('returnTo');
+      assert.equal(tags(next.html,'a').find(a=>a.class==='place-back').href,target);
+      const other=language==='ko'?'en':'ko',switcher=tags(next.html,'a').find(a=>a.hreflang===other);
+      assert.equal(new URL(switcher.href,base).searchParams.get('returnTo'),target.replace('/'+language+'#','/'+other+'#'));
+    }
+    for(const area of ['전남광주통합특별시 담양군','전북특별자치도 무주군']){
+      const place=catalog.find(p=>p.area===area),result=await get(`/places/${place.id}/en`);assert.equal(result.status,200);count++;
+      const visible=result.html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'');
+      assert(visible.includes(lib('place-area').placeArea(area,'en')),'built English detail uses exact administrative alias');
+      assert(!visible.includes('JeonnamGwangju통합특별시')&&!visible.includes('Jeonbuk특별자치도'));
+      assert(visible.includes(place.address),'original address remains visible');
     }
     // Real response bounds, not a client-side show/hide or an all-catalog RSC prop.
     const newYork = regionalPlaces(findRegionalGuide('new-york'), catalog);

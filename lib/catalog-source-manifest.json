@@ -6199,5 +6199,30 @@
       "https://maps.apple.com/place?place-id=I7B743DD636045308",
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2360434441684!2d-0.12527692352999717!3d51.508885371813555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605491d59a18d:0x34aacb93a25151c7!2sAIRE+Ancient+Baths+London!5e0!3m2!1ses!2ses!4v1781619600413!5m2!1ses!2ses"
     ]
+  },
+  {
+    "id": "world-pt-jardim-gulbenkian",
+    "country": "PT",
+    "provider": "Official operator and Lisbon tourism websites",
+    "source": "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/",
+    "checked": "2026-10-10",
+    "level": "official",
+    "officialCandidate": "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/",
+    "coordinateKind": "campus reference from official embedded map, not entrance",
+    "originalImage": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Clareira_%2854034631981%29.jpg",
+    "detailLevel": "enriched",
+    "visitSources": [
+      "https://gulbenkian.pt/jardim/en/informacoes-contactos-2/",
+      "https://gulbenkian.pt/en/useful-information/opening-hours/",
+      "https://www.visitlisboa.com/en/places/garden-of-the-gulbenkian-foundation",
+      "https://gulbenkian.pt/cam/en/news/gulbenkian-garden-extension-wins-international-landscape-architecture-award/",
+      "https://gulbenkian.pt/en/useful-information/accessibility/",
+      "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
+      "https://gulbenkian.pt/jardim/en/garden-trails/",
+      "https://www.google.com/maps?ll=38.737474,-9.154679&z=16&t=m&hl=en-US&gl=PT&mapclient=embed&cid=566985792386140131"
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Clareira_(54034631981).jpg",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ]

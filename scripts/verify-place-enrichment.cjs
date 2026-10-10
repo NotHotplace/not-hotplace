@@ -216,7 +216,7 @@ assert(sydney.imageNote.includes('Copyright Dietmar Rabich, Dülmen'));
 const holland = find('world-gb-holland-park');
 assert(!holland.image && !holland.imageRemote && !holland.photos?.length);
 assert.equal(read('docs/held-photo-provenance.json').find(record => record.id === holland.id).checked, '2026-10-05');
-assert.equal(catalog.length, 1007); assert.equal(new Set(catalog.map(place => place.id)).size, 1007);
+assert.equal(catalog.length, 1008); assert.equal(new Set(catalog.map(place => place.id)).size, 1008);
 assert.equal(read('wrangler.json').vars.PAYMENTS_LIVE_ENABLED, 'false');
 // Render real server-page, source, reason, condition and pricing markup in KO/EN.
 // Only interactive client children are stubbed; no assertions rely on the spec.
@@ -257,5 +257,5 @@ const pictograms = compile(path.join(root, 'app/visit-pictograms.tsx'), requireP
       assert.equal(metadata.openGraph.images[0].url, place.image);
     } else assert(html.includes(language === 'ko' ? '아직 등록된 장소 사진이 없어요.' : 'A photo of this place has not been added yet.'));
   }
-  console.log('PASS: nine merged place records, 72 substantive sourced details plus 6 preserved coordinate notes, 15 reasons, seven exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1007 IDs.');
+  console.log('PASS: nine merged place records, 72 substantive sourced details plus 6 preserved coordinate notes, 15 reasons, seven exact licensed images, actual KO/EN visit/price/condition/photo markup, unknown privacy/seating, Holland hold and 1008 IDs.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

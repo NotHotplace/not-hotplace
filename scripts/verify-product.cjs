@@ -1,7 +1,11 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),ts=require('typescript');
 const {DatabaseSync}=require('node:sqlite');const {createHash}=require('node:crypto');
+const {ownerEmail,freshTestValue,installOfflineFetch}=require('./test-fixtures.cjs');
+const network=installOfflineFetch();
 const root=path.resolve(__dirname,'..');const sql=new DatabaseSync(':memory:');for(const file of fs.readdirSync(path.join(root,'drizzle')).filter(x=>x.endsWith('.sql')).sort())sql.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
-let user=null;const secret='test-owner-setup-secret-at-least-32-characters';
+let user=null;const secret=freshTestValue(),wrongOwnerToken=freshTestValue();
+const paymentKey=freshTestValue(),differentPaymentKey=freshTestValue(),latePaymentKey=freshTestValue();
+const userInfoUrl=new URL('https://example.test/');userInfoUrl.username='fixture-user';userInfoUrl.password=freshTestValue();
 const env={OWNER_SETUP_HASH:createHash('sha256').update(secret).digest('hex'),DB:{prepare(query){let params=[];const stmt=sql.prepare(query);return{bind(...x){params=x;return this;},async first(){return stmt.get(...params)||null;},async all(){return{results:stmt.all(...params)};},async run(){const r=stmt.run(...params);return {success:true,meta:{changes:r.changes}};}};}}};
 env.DB.batch=async statements=>{sql.exec('BEGIN');try{const results=[];for(const statement of statements)results.push(await statement.run());sql.exec('COMMIT');return results;}catch(error){sql.exec('ROLLBACK');throw error;}};
 const cache={};function load(file){file=path.resolve(file);if(file.endsWith('.json'))return JSON.parse(fs.readFileSync(file,'utf8'));if(cache[file])return cache[file].exports;const mod={exports:{}};cache[file]=mod;const source=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const req=name=>{if(name==='cloudflare:workers')return {env};if(name==='@/lib/site-auth'||name==='./site-auth')return {getSiteUser:async()=>user,googleReady:()=>false,launchEnv:()=>env,siteOrigin:()=>"https://example.test"};if(name==='@/app/chatgpt-auth')return{getChatGPTUser:async()=>user};if(name.startsWith('@/'))return load(path.join(root,name.slice(2)+(name.endsWith('.json')?'':'.ts')));if(name.startsWith('.'))return load(path.resolve(path.dirname(file),name)+(name.endsWith('.json')?'':'.ts'));return require(name);};new Function('require','module','exports',source)(req,mod,mod.exports);return mod.exports;}
@@ -101,15 +105,15 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  for(const p of usData.places.filter(p=>p.image))assert(fs.existsSync(path.join(root,'public',p.image)),'listed photo exists: '+p.id);
  const krData=await (await data.GET()).json();assert(krData.places.length>=324,'existing production Korea catalog preserved');assert(krData.places.every(p=>p.country==='KR'),'Korea response excludes US');
  assert.equal((await post('suggest',proposal)).status,401,'anonymous cannot write');
- env.OWNER_GOOGLE_EMAIL='mythdriveofficial@gmail.com';
- user={userId:'supabase:owner-google',email:'mythdriveofficial@gmail.com',provider:'google',googleEmailVerified:true};
+ env.OWNER_GOOGLE_EMAIL=ownerEmail;
+ user={userId:'supabase:owner-google',email:ownerEmail,provider:'google',googleEmailVerified:true};
  assert.equal((await admin.GET()).status,200,'configured verified Google owner can access review queue');
  assert.equal((await (await data.GET()).json()).isOwner,true);
- user={userId:'supabase:spoof',email:'mythdriveofficial@gmail.com',provider:'google',googleEmailVerified:false};
+ user={userId:'supabase:spoof',email:ownerEmail,provider:'google',googleEmailVerified:false};
  assert.equal((await admin.GET()).status,403,'unverified owner email rejected');
  user={userId:'another-google',email:'someone@example.test',provider:'google',googleEmailVerified:true};
  assert.equal((await admin.GET()).status,403,'other Google users have no owner role');
- user={userId:'header-only',email:'mythdriveofficial@gmail.com',provider:'chatgpt',googleEmailVerified:true};
+ user={userId:'header-only',email:ownerEmail,provider:'chatgpt',googleEmailVerified:true};
  assert.equal((await admin.GET()).status,403,'matching non-Google email does not grant new owner access');
  user=null;
 
@@ -129,7 +133,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  result=await (await data.GET()).json();assert.equal(result.places.find(p=>p.id===review.placeId).count,1,'repeat review updates');assert.equal(result.places.find(p=>p.id===review.placeId).positive,0);
  user={userId:'other',email:'other@example.test'};result=await (await data.GET()).json();assert.equal(result.reviews.length,0);assert.equal(result.suggestions.length,0,'private records not leaked');
  assert.equal((await post('deleteReview',{placeId:review.placeId})).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM reviews').get().n,1,'cannot delete another user review');
- assert.equal((await post('claimOwner',{token:'x'.repeat(40)})).status,403);
+ assert.equal((await post('claimOwner',{token:wrongOwnerToken})).status,403);
  user={userId:'owner',email:'owner@example.test'};assert.equal((await post('claimOwner',{token:secret})).status,200);
  assert.equal((await post('decide',{id:submitted.id,status:'approved',reason:'ok',notChildTarget:false})).status,400,'approval requires child-target check');
  assert.equal((await post('decide',{id:submitted.id,status:'approved',reason:'ok',notChildTarget:true})).status,200);
@@ -147,12 +151,16 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const payOrder=load(path.join(root,'app/api/payments/order/route.ts')),payConfirm=load(path.join(root,'app/api/payments/confirm/route.ts'));
  const paymentRequest=(route,payload)=>route.POST(new Request('https://example.test/api/payments/test',{method:'POST',headers:{origin:'https://example.test','Content-Type':'application/json'},body:JSON.stringify(payload)}));
  assert.equal((await paymentRequest(payOrder,{planId:'month',consent:true})).status,503,'unconfigured payments disabled');
- env.TOSS_CLIENT_KEY='test_ck_mock';env.TOSS_SECRET_KEY='test_sk_mock';
+ env.TOSS_CLIENT_KEY='test_'+freshTestValue();env.TOSS_SECRET_KEY='test_'+freshTestValue();
  const concurrent=await Promise.all([paymentRequest(payOrder,{planId:'half',consent:true,amount:1}),paymentRequest(payOrder,{planId:'half',consent:true,amount:1})]);const orders=await Promise.all(concurrent.map(x=>x.json()));const order=orders[0];assert.equal(order.amount.value,26460,'server owns pricing');assert.equal(order.orderId,orders[1].orderId,'concurrent purchase requests reuse one pending order');
- let fetches=0;const originalFetch=global.fetch;global.fetch=async()=>{fetches++;return Response.json({orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});};
- assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'mock-payment-key',amount:1})).status,400);assert.equal(fetches,0,'tampered amount never reaches payment provider');
- user={userId:'foreign-user',email:'f@example.test'};assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'mock-payment-key',amount:26460})).status,404);
- user={userId:'trial-user',email:'trial@example.test'};const paid=await (await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'mock-payment-key',amount:26460})).json();assert(paid.ok);const repeated=await (await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'mock-payment-key',amount:26460})).json();assert.equal(paid.until,repeated.until);assert.equal(fetches,1,'confirmation idempotent');global.fetch=originalFetch;
+ let fetches=0;await network.withMock({url:'https://api.tosspayments.com/v1/payments/confirm',method:'POST',response:{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey,status:'DONE'},async inspect(request){
+  fetches++;assert(request.headers.get('Authorization')==='Basic '+btoa(env.TOSS_SECRET_KEY+':'),'provider auth uses only the disposable fixture');
+  assert.equal(request.headers.get('Idempotency-Key'),order.orderId);assert.equal(request.headers.get('Content-Type'),'application/json');
+  const body=await request.json();assert(body.orderId===order.orderId&&body.paymentKey===paymentKey&&body.amount===26460,'provider request matches the server-owned order');
+ }},async()=>{
+ assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey,amount:1})).status,400);assert.equal(fetches,0,'tampered amount never reaches payment provider');
+ user={userId:'foreign-user',email:'f@example.test'};assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey,amount:26460})).status,404);
+ user={userId:'trial-user',email:'trial@example.test'};const paid=await (await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey,amount:26460})).json();assert(paid.ok);const repeated=await (await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey,amount:26460})).json();assert.equal(paid.until,repeated.until);assert.equal(fetches,1,'confirmation idempotent');});
  result=await (await data.GET()).json();assert.equal(result.membership.kind,'paid');
  user={userId:'quality-user',email:'q@example.test'};const now=Date.now();for(let i=0;i<8;i++)sql.prepare('INSERT INTO reviews(user_id,place_id,satisfied,noise,crowd,comfort,day,time,tags,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?)').run('quality-'+i,'seoul-san',1,'시끄러움','붐빔','보통','평일','오후','[]',now-i*86400000);
  const {refreshQuality}=load(path.join(root,'lib/quality.ts'));await refreshQuality('seoul-san');result=await (await data.GET()).json();assert(result.places.find(p=>p.id==='seoul-san').resting);assert(!ranked(result.places).some(p=>p.id==='seoul-san'),'crowded places leave recommendation');
@@ -261,17 +269,17 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'public/manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,'public',icon.src)));
  // Payment replay must remain bound to the payment originally verified for this user.
  user={userId:'trial-user',email:'trial@example.test'};
- assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:'different-payment-key',amount:26460})).status,400);
+ assert.equal((await paymentRequest(payConfirm,{orderId:order.orderId,paymentKey:differentPaymentKey,amount:26460})).status,400);
  const {reconcilePayment}=load(path.join(root,'lib/payment-service.ts'));
  const stored=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(order.orderId);
- await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'CANCELED'});
+ await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey,status:'CANCELED'});
  assert(!(await (await data.GET()).json()).membership.active,'refunded pass stops access after trial expiry');
- const staleRefundResult=await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey:'mock-payment-key',status:'DONE'});assert.equal(staleRefundResult.status,'CANCELED');assert.equal(staleRefundResult.orderStatus,'refunded');assert.equal(staleRefundResult.requiresReview,false);
+ const staleRefundResult=await reconcilePayment(stored,{orderId:order.orderId,totalAmount:26460,currency:'KRW',paymentKey,status:'DONE'});assert.equal(staleRefundResult.status,'CANCELED');assert.equal(staleRefundResult.orderStatus,'refunded');assert.equal(staleRefundResult.requiresReview,false);
  assert(!(await (await data.GET()).json()).membership.active,'stale completion cannot restore refunded access');
  const lateId='nhp_expired_regression';sql.prepare("INSERT INTO payment_orders(id,user_id,customer_key,plan_id,amount,months,status,created_at,access_until) VALUES(?,?,?,?,?,?,'expired',?,?)").run(lateId,'late-user','late-customer','month',4900,1,Date.now()-3600000,Date.now()+86400000);
- const lateOrder=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(lateId),lateProvider={orderId:lateId,totalAmount:4900,currency:'KRW',paymentKey:'late-mock-key',status:'DONE'};
+ const lateOrder=sql.prepare('SELECT * FROM payment_orders WHERE id=?').get(lateId),lateProvider={orderId:lateId,totalAmount:4900,currency:'KRW',paymentKey:latePaymentKey,status:'DONE'};
  const lateResult=await reconcilePayment(lateOrder,lateProvider);assert.equal(lateResult.status,'EXPIRED');assert.equal(lateResult.orderStatus,'expired');assert.equal(lateResult.requiresReview,true);assert.equal(sql.prepare('SELECT status FROM payment_orders WHERE id=?').get(lateId).status,'expired','late settlement does not silently grant access');
- const webhook=load(path.join(root,'app/api/payments/webhook/route.ts'));global.fetch=async()=>Response.json(lateProvider);assert.equal((await webhook.POST(new Request('https://example.test/api/payments/webhook',{method:'POST',body:JSON.stringify({data:{orderId:lateId,paymentKey:'late-mock-key'}})}))).status,409,'verified settled/expired disagreement is not acknowledged as success');global.fetch=originalFetch;
+ const webhook=load(path.join(root,'app/api/payments/webhook/route.ts'));await network.withMock({url:'https://api.tosspayments.com/v1/payments/'+encodeURIComponent(latePaymentKey),method:'GET',response:lateProvider,async inspect(request){assert(request.headers.get('Authorization')==='Basic '+btoa(env.TOSS_SECRET_KEY+':'),'webhook verification uses only the disposable fixture');assert.equal(await request.text(),'');}},async()=>{assert.equal((await webhook.POST(new Request('https://example.test/api/payments/webhook',{method:'POST',body:JSON.stringify({data:{orderId:lateId,paymentKey:latePaymentKey}})}))).status,409,'verified settled/expired disagreement is not acknowledged as success');});
  console.log('PASS: persisted payment truth, late settlement manual-review boundary and refunded terminality (mock provider only).');
  console.log('PASS: aggregate visits, Korean date boundary, stats permissions, sitemap, travel themes, install assets and payment replay/refund handling.');
 
@@ -326,7 +334,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal(readBrowseState(conditionUrl.searchParams,regionKeys).filters.soloOrder,true);
  assert(!readBrowseState(new URLSearchParams('books=yes&quietMusic=1&actor=private'),regionKeys).filters.books);
  const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,4);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
- const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,22);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
+ const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,23);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
  const {externalReviewLinks}=load(path.join(root,'lib/external-reviews.ts'));
  assert.equal(externalReviewLinks(catalog.find(p=>p.id==='cj-daechung')).length,3);
  assert(externalReviewLinks(catalog.find(p=>p.id==='us-stumptown-division')).some(s=>s.name==='Yelp'));
@@ -372,7 +380,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal((await community.POST(communityRequest(profile,'https://evil.test'))).status,403);
  assert.equal((await community.POST(communityRequest({...profile,consent:false}))).status,400);
  assert.equal((await community.POST(communityRequest({...profile,link:'javascript:alert(1)'}))).status,400);
- assert.equal((await community.POST(communityRequest({...profile,link:'https://name:password@example.test/'}))).status,400);
+ assert.equal((await community.POST(communityRequest({...profile,link:userInfoUrl.href}))).status,400);
  assert.equal((await community.POST(communityRequest({...profile,region:'missing'}))).status,400);
  assert.equal((await community.POST(communityRequest(profile))).status,200);
  let communityData=await (await community.GET()).json();const profileId=communityData.profile.id;assert.equal(communityData.profiles.length,0);assert.equal(communityData.profile.status,'pending');assert(!('user_id' in communityData.profile));
@@ -403,8 +411,8 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {countryCodes,countries}=load(path.join(root,'lib/countries.ts'));
  const expanded=load(path.join(root,'lib/expanded-catalog.json'));
  const manifest=load(path.join(root,'lib/catalog-source-manifest.json'));
- assert.equal(countryCodes.length,30);assert.equal(catalog.length,1007);assert.equal(expanded.length,606);
- assert.equal(new Set(manifest.map(p=>p.id)).size,606);
+ assert.equal(countryCodes.length,30);assert.equal(catalog.length,1008);assert.equal(expanded.length,607);
+ assert.equal(new Set(manifest.map(p=>p.id)).size,607);
  assert(expanded.every(p=>manifest.some(m=>m.id===p.id&&m.country===p.country)),'every new record has source provenance');
  for(const country of countryCodes){const response=await (await data.GET(new Request('https://example.test/api/data?country='+country))).json();assert(response.places.length>0);assert(response.places.every(p=>p.country===country),'all 30 API views are country scoped');assert(countries[country].regions.includes(countries[country].defaultRegion));}
  for(const p of expanded){assert(p.visitDetails.length>=1&&p.source.startsWith('https://'),'source information exists even when access facts remain unknown');if(p.lat!=null)assert(Number.isFinite(p.lat)&&Math.abs(p.lat)<=90&&Number.isFinite(p.lon)&&Math.abs(p.lon)<=180&&p.locationInfo.kind==='reference','new coordinates are bounded reference points, not verified entrances');}
@@ -434,7 +442,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  assert.equal((await contribution.POST(req({...input,actor:'spoof'}))).status,400);
  assert.equal((await contribution.POST(req('broken json'))).status,400);
  assert.equal((await contribution.POST(req('x'.repeat(3501)))).status,413);
- for(const url of ['http://example.test','https://name:password@example.test','https://localhost','https://127.0.0.1','https://10.0.0.1','https://[::1]','https://2130706433','https://169.254.169.254'])assert.equal((await contribution.POST(req({...input,sourceUrl:url}))).status,400,'unsafe contribution URL: '+url);
+ for(const url of ['http://example.test',userInfoUrl.href,'https://localhost','https://127.0.0.1','https://10.0.0.1','https://[::1]','https://2130706433','https://169.254.169.254'])assert.equal((await contribution.POST(req({...input,sourceUrl:url}))).status,400,'unsafe contribution URL rejected without exposing URL userinfo');
  assert.equal((await contribution.POST(req({...input,photoUrl:'https://example.test/my-photo.webp'}))).status,400,'photo publication requires explicit rights consent');
  const submittedPhoto=await contribution.POST(req({...input,photoUrl:'https://example.test/my-photo.webp',rightsConsent:true},'',{'cf-connecting-ip':'192.0.2.33'}));assert.equal(submittedPhoto.status,200);
  const photoCookie=submittedPhoto.headers.get('set-cookie').split(';')[0];assert(submittedPhoto.headers.get('set-cookie').includes('HttpOnly; Secure; SameSite=Strict'));
@@ -464,7 +472,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  for(const file of migrations.filter(x=>x>='0008'))legacy.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
  tables.forEach((table,i)=>assert.deepEqual(legacy.prepare('SELECT * FROM '+table).all(),snapshots[i],'world migration retains '+table));
  legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','SG','direct',1)");assert.throws(()=>legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','sg','direct',1)"),/CHECK/);legacy.close();
- console.log('PASS: 30 country scopes, 1,007 unique places, source/reference integrity, unknown parking, seat sizes, admission semantics, private consent-based contributions, actor/IP limits, withdrawal, moderation, expiry and migration data preservation.');
+ console.log('PASS: 30 country scopes, 1,008 unique places, source/reference integrity, unknown parking, seat sizes, admission semantics, private consent-based contributions, actor/IP limits, withdrawal, moderation, expiry and migration data preservation.');
  }
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
-})().catch(e=>{console.error(e);process.exitCode=1;});
+})().finally(()=>{try{network.assertClean();}finally{network.restore();sql.close();}}).catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,4 +1,5 @@
 import {findRegionalGuide} from './regional-guides';
+import {findGuide} from './guides';
 import {countries,countryCodes,type CountryCode} from './countries';
 import {emptyFilters} from './explore-filters';
 import {isPlaceTheme} from './place-themes';
@@ -29,19 +30,20 @@ export function safeReturnTarget(value:unknown):string|null{
   const url=new URL(value,'https://return.invalid');
   if(url.origin!=='https://return.invalid'||/%/.test(url.pathname))return null;
   const region=url.pathname.match(/^\/regions\/([a-z][a-z-]*)\/(ko|en)$/);
+  const guide=url.pathname.match(/^\/guides\/([a-z][a-z-]*)\/(ko|en)$/);
   const home=url.pathname==='/',map=countryCodes.some(code=>'/'+countries[code].slug===url.pathname);
-  if(!home&&!map&&!region||region&&!findRegionalGuide(region[1]))return null;
+  if(!home&&!map&&!region&&!guide||region&&!findRegionalGuide(region[1])||guide&&!findGuide(guide[1]))return null;
   const query=new URLSearchParams();
   if(region){const page=url.searchParams.get('page');if(page!==null&&(!/^[1-9]\d*$/.test(page)||!Number.isSafeInteger(Number(page))))return null;if(page&&page!=='1')query.set('page',page);}
-  else for(const [key,val]of url.searchParams){if(publicKeys.has(key)&&val.length<=180&&!query.has(key))query.set(key,val);}
+  else if(!guide)for(const [key,val]of url.searchParams){if(publicKeys.has(key)&&val.length<=180&&!query.has(key))query.set(key,val);}
   let hash='';
-  if(home&&['#home-finder','#home-themes'].includes(url.hash)||region&&/^#region-place-[a-zA-Z0-9_-]+$/.test(url.hash))hash=url.hash;
+  if(home&&['#home-finder','#home-themes'].includes(url.hash)||region&&/^#region-place-[a-zA-Z0-9_-]+$/.test(url.hash)||guide&&/^#guide-place-[a-zA-Z0-9_-]+$/.test(url.hash))hash=url.hash;
   return url.pathname+(query.size?'?'+query:'')+hash;
 }
 export function localizedReturnTarget(value:unknown,language:PlaceLanguage):string|null{
   const safe=safeReturnTarget(value);if(!safe)return null;
   const url=new URL(safe,'https://return.invalid');
-  if(url.pathname.startsWith('/regions/'))url.pathname=url.pathname.replace(/\/(ko|en)$/,'/'+language);
+  if(/^\/(regions|guides)\//.test(url.pathname))url.pathname=url.pathname.replace(/\/(ko|en)$/,'/'+language);
   else url.searchParams.set('lang',language);
   return url.pathname+url.search+url.hash;
 }
@@ -51,5 +53,5 @@ export function placePathWithReturn(id:string,language:PlaceLanguage,returnTo?:s
 }
 export function detailReturn(value:unknown,language:PlaceLanguage,country:CountryCode){
   const target=localizedReturnTarget(value,language);
-  return {href:target||'/'+countries[country].slug+'?lang='+language,kind:!target?'direct':target.startsWith('/regions/')?'region':target.startsWith('/?')||target==='/'?'home':'map'} as const;
+  return {href:target||'/'+countries[country].slug+'?lang='+language,kind:!target?'direct':target.startsWith('/guides/')?'guide':target.startsWith('/regions/')?'region':target.startsWith('/?')||target==='/'?'home':'map'} as const;
 }
