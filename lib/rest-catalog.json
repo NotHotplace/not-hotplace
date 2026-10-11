@@ -224,5 +224,276 @@
       "건축 산책",
       "예약 관람"
     ]
+  },
+  {
+    "id": "kr-seoul-seonyudo-park",
+    "name": "선유도공원",
+    "country": "KR",
+    "city": "서울",
+    "category": "walk",
+    "area": "영등포구 · 선유도",
+    "address": "서울특별시 영등포구 선유로 343",
+    "descriptionKo": "옛 정수장의 정원길과 한강 전망 쉼터를 잇는 무료 산책 공원입니다. 앉을 자리는 함께 쓰며, 그늘 좌석의 여유와 조용함은 보장되지 않아요.",
+    "descriptionEn": "A free park linking former waterworks gardens with river-view rest areas. Seating is shared; available shaded seats and quiet are not guaranteed.",
+    "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+    "checked": "2026-10-11",
+    "detailLevel": "enriched",
+    "tagsKo": [
+      "정원 산책",
+      "한강 전망",
+      "무료 입장"
+    ],
+    "tagsEn": [
+      "Seonyudo Park",
+      "Garden walk",
+      "River views",
+      "Free entry"
+    ],
+    "lat": 37.543418,
+    "lon": 126.90014,
+    "locationInfo": {
+      "kind": "reference",
+      "source": "https://parks.seoul.go.kr/park/detailView.do?key=2604070019&pIdx=119",
+      "checked": "2026-10-11"
+    },
+    "visitDetails": [
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장 무료. 체험 프로그램에는 별도 요금이 있을 수 있어요.",
+        "textEn": "General entry is free; programs may charge separately.",
+        "source": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=175826",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "공원·전시관 시간",
+        "labelEn": "Hours",
+        "textKo": "공원은 매일 06:00~24:00. 이야기관은 09:00~18:00, 동절기 09:00~17:00이며 월요일에 쉬어요.",
+        "textEn": "Park: daily 06:00–24:00. Story Hall: 09:00–18:00, 09:00–17:00 in winter; closed Mondays.",
+        "source": "https://english.visitseoul.net/yongsan%26yeouido-area/SeonyudoPark/ENP000378",
+        "checked": "2026-10-11",
+        "additionalSources": [
+          {
+            "label": "공원 운영기관",
+            "url": "https://parks.seoul.go.kr/park/detailView.do?key=2604070019&pIdx=119"
+          }
+        ]
+      },
+      {
+        "labelKo": "쉼터·공용 이용",
+        "labelEn": "Rest areas and shared space",
+        "textKo": "공식 안내는 녹색기둥의 정원과 선유교 전망대를 휴식·사색 공간으로 소개해요. 공용 야외 공간이며, 전용 좌석이나 빈자리 확보는 확인되지 않았어요.",
+        "textEn": "The operator identifies the Garden of Green Columns and Seonyugyo Observatory as places to pause. These are shared outdoor spaces; no exclusive or guaranteed seating is verified.",
+        "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "공원 안은 장애인 전용 주차만 가능해요. 일반 차량은 양화한강공원 3주차장을 이용하라는 공식 안내가 있어요. 인근 주차 요금은 별도 확인이 필요해요.",
+        "textEn": "On-site parking is restricted to eligible accessible vehicles. The operator directs other cars to Yanghwa Hangang Park Car Park 3; its current charges need separate checking.",
+        "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "찾아가기",
+        "labelEn": "Access and entrance",
+        "textKo": "선유도역에서 도보 약 10분, 당산역에서 약 15분으로 안내돼요. 지도 핀은 공원 기준점이며 출입구·무장애 동선은 안내지도로 확인하세요.",
+        "textEn": "The operator estimates about 10 minutes on foot from Seonyudo Station and 15 from Dangsan. The pin marks the park, not a verified entrance or step-free route.",
+        "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+        "checked": "2026-10-11",
+        "additionalSources": [
+          {
+            "label": "공식 공원 지도",
+            "url": "https://parks.seoul.go.kr/resource/www/leaflet/seonyudo_map_KR.pdf"
+          }
+        ]
+      },
+      {
+        "labelKo": "이용 규칙",
+        "labelEn": "Park rules",
+        "textKo": "운영기관은 음식물 반입, 야영·취사·불 피우기, 음주·가무·소란행위를 금지한다고 안내해요. 음식 피크닉을 목적으로 고르기 전 규칙을 확인하세요.",
+        "textEn": "The operator prohibits bringing food, camping, cooking, fires, drinking and disruptive noise. Check these rules before planning a food picnic.",
+        "source": "https://parks.seoul.go.kr/park/detailView.do?key=2604070019&pIdx=119",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "맞지 않을 수 있는 경우",
+        "labelEn": "May not suit",
+        "textKo": "바로 앉을 그늘 자리나 확실한 정적이 필요하다면 신중히 골라주세요. 2023-10-16 방문 후기는 혼잡과 그늘 좌석 부족을 언급해요. 한 방문자의 과거 경험이며 현재 혼잡도는 아니에요.",
+        "textEn": "Be cautious if you need an immediately available shaded seat or assured silence. A visitor review dated 16 October 2023 reported crowds and too few shaded seats; this is one past visit, not live crowd data.",
+        "source": "https://english.visitseoul.net/yongsan%26yeouido-area/SeonyudoPark/ENP000378",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "지도 기준점",
+        "labelEn": "Location reference",
+        "textKo": "지도 좌표는 운영기관이 연결한 길찾기 지도의 공원 기준점입니다. 특정 출입구나 무장애 진입점은 검증하지 않았어요.",
+        "textEn": "Coordinates are the park reference in the operator-linked directions map, not a surveyed gate or verified step-free entrance.",
+        "source": "https://parks.seoul.go.kr/park/detailView.do?key=2604070019&pIdx=119",
+        "checked": "2026-10-11"
+      }
+    ],
+    "visitFacts": {
+      "price": {
+        "amount": 0,
+        "currency": "KRW",
+        "basis": "admission",
+        "textKo": "일반 입장 무료 · 프로그램 별도",
+        "textEn": "Free general entry; programs separate",
+        "source": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=175826",
+        "checked": "2026-10-11"
+      },
+      "parking": {
+        "status": "nearby",
+        "textKo": "장애인 전용 주차 외에는 양화한강공원 3주차장 이용 안내",
+        "textEn": "Accessible-only on site; other cars directed to Yanghwa Hangang Car Park 3",
+        "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+        "checked": "2026-10-11"
+      }
+    },
+    "description": "옛 정수장의 정원길과 한강 전망 쉼터를 잇는 무료 산책 공원입니다. 앉을 자리는 함께 쓰며, 그늘 좌석의 여유와 조용함은 보장되지 않아요.",
+    "tags": [
+      "정원 산책",
+      "한강 전망",
+      "무료 입장"
+    ],
+    "image": "/places/kr-seoul-seonyudo-park-verified.webp",
+    "imageCredit": "서울관광재단 서울관광 아카이브 / 선유도공원 ARP0082v1 / 공공누리 제1유형",
+    "imageSource": "https://archive.visitseoul.net/ko/contents/ARP0082v1",
+    "imageRemote": "https://archive.visitseoul.net/upload/encoding/image/2025/06//cc1befaf4c88407eba13a574616c7d50.jpg",
+    "imageLicense": "KOGL Type 1",
+    "imageLicenseUrl": "https://archive.visitseoul.net/ko/page/copyright?_ID=200100",
+    "imageNoteKo": "촬영일 미상의 서울관광 아카이브 자료사진. 852×567 미리보기 이미지를 WebP로 변환했으며 화면에 따라 일부가 잘릴 수 있어요. 현재 풍경·조용함·빈자리나 서울관광재단의 추천을 뜻하지 않습니다.",
+    "imageNote": "Seoul Tourism Archive photo; capture date unknown. The 852×567 preview was converted to WebP; display may crop it. It does not establish current appearance, quietness, available seats or Seoul Tourism Organization endorsement."
+  },
+  {
+    "id": "kr-seoul-forest",
+    "name": "서울숲",
+    "country": "KR",
+    "city": "서울",
+    "category": "walk",
+    "area": "성동구 · 성수동",
+    "address": "서울특별시 성동구 뚝섬로 273",
+    "descriptionKo": "정원길을 걷다가 벤치와 호숫가 쉼터를 찾을 수 있는 무료 공원입니다. 2026년 10월 27일까지 정원박람회가 열려, 한산함보다 정원 산책을 원할 때 살펴보세요.",
+    "descriptionEn": "A free park with garden walks, benches and lakeside rest areas. The Garden Expo runs through 27 October 2026, so consider it for a garden outing rather than assured solitude.",
+    "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+    "checked": "2026-10-11",
+    "detailLevel": "enriched",
+    "tagsKo": [
+      "정원 산책",
+      "벤치 쉼터",
+      "무료 입장"
+    ],
+    "tagsEn": [
+      "Seoul Forest",
+      "Garden walks",
+      "Bench rest areas",
+      "Free entry"
+    ],
+    "visitDetails": [
+      {
+        "labelKo": "입장료",
+        "labelEn": "Admission",
+        "textKo": "일반 입장은 무료예요. 별도 프로그램·시설의 요금과 예약 조건은 따로 확인하세요.",
+        "textEn": "General park entry is free. Check separate programs or facilities for charges and booking conditions.",
+        "source": "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "개방 시간",
+        "labelEn": "Hours",
+        "textKo": "공원은 연중무휴 24시간 개방하되 시설별 시간이 달라요. 생태숲·보행가교는 05:30~21:30으로 안내돼요.",
+        "textEn": "The park is open 24 hours year-round, with separate facility hours. Eco Forest and its footbridge: 05:30–21:30.",
+        "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+        "checked": "2026-10-11",
+        "additionalSources": [
+          {
+            "label": "현재 운영기관 이용시간",
+            "url": "https://parks.seoul.go.kr/mini/content.do?key=2605260009"
+          }
+        ]
+      },
+      {
+        "labelKo": "벤치·공용 쉼터",
+        "labelEn": "Benches and shared rest areas",
+        "textKo": "공식 안내에 사과나무길 앞 벤치가든과 무지개언덕 벤치가든, 중앙호수 옆 휴게 산책로가 있어요. 공용 좌석이며 빈자리나 개인 전용 이용을 보장하지 않아요.",
+        "textEn": "The operator lists bench gardens by Apple Tree Road and Rainbow Hill, plus a lakeside rest path. These are shared seats with no availability or exclusive-use guarantee.",
+        "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "주차",
+        "labelEn": "Parking",
+        "textKo": "공원 주차장은 24시간 운영, 소형 5분당 200원·대형 5분당 400원이에요. 운영기관은 주차장이 협소하고 만차 시 이용이 제한된다고 안내해요.",
+        "textEn": "The car park operates 24 hours: KRW 200 per 5 minutes for small vehicles, KRW 400 for large vehicles. The operator warns of limited capacity and restrictions when full.",
+        "source": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "현재 행사·맞지 않는 경우",
+        "labelEn": "Current event and may not suit",
+        "textKo": "2026 서울국제정원박람회가 5월 1일~10월 27일 서울숲 일대에서 열려요. 조용하고 비어 있는 공원이 꼭 필요하다면 행사 일정과 현장을 먼저 확인하세요.",
+        "textEn": "The 2026 Seoul International Garden Expo runs around Seoul Forest from 1 May to 27 October. If you need a quiet, uncrowded park, check the event schedule and conditions first.",
+        "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=456708",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "이용 규칙",
+        "labelEn": "Park rules",
+        "textKo": "텐트·그늘막 설치는 금지돼요. 반려동물은 2m 이내 목줄과 배설물 처리가 필요하며 사람용 벤치·평상에 올라가지 않게 해주세요.",
+        "textEn": "Tents and shade shelters are prohibited. Keep pets on a leash within 2 metres, clean up after them, and keep them off human-use benches and platforms.",
+        "source": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "찾아가기",
+        "labelEn": "Access and entrance",
+        "textKo": "서울숲역 3·4번 출구와 뚝섬역 8번 출구 접근이 안내돼요. 공원은 넓으며 지도 핀을 특정 정원 입구나 무장애 진입점으로 보지 마세요.",
+        "textEn": "Official visitor information lists Seoul Forest Station exits 3/4 and Ttukseom Station exit 8. A park reference pin does not identify a particular garden entrance or step-free route.",
+        "source": "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+        "checked": "2026-10-11"
+      },
+      {
+        "labelKo": "지도 기준점",
+        "labelEn": "Location reference",
+        "textKo": "공식 공원 지도와 주소로 길을 확인하세요. 이 자료에서는 출입구 좌표를 검증하지 않아 주변 거리 추천용 위치를 표시하지 않습니다.",
+        "textEn": "Use the official park map and street address for directions. An entrance coordinate has not been verified here, so no location is supplied for nearby-distance recommendations.",
+        "source": "https://parks.seoul.go.kr/mini/seoulforest/main.do",
+        "checked": "2026-10-11"
+      }
+    ],
+    "visitFacts": {
+      "price": {
+        "amount": 0,
+        "currency": "KRW",
+        "basis": "admission",
+        "textKo": "일반 입장 무료",
+        "textEn": "Free general admission",
+        "source": "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+        "checked": "2026-10-11"
+      },
+      "parking": {
+        "status": "available",
+        "textKo": "유료 주차 · 소형 5분 200원 · 만차 시 제한",
+        "textEn": "Paid parking: small vehicles KRW 200/5 min; limited when full",
+        "source": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+        "checked": "2026-10-11"
+      }
+    },
+    "description": "정원길을 걷다가 벤치와 호숫가 쉼터를 찾을 수 있는 무료 공원입니다. 2026년 10월 27일까지 정원박람회가 열려, 한산함보다 정원 산책을 원할 때 살펴보세요.",
+    "tags": [
+      "정원 산책",
+      "벤치 쉼터",
+      "무료 입장"
+    ],
+    "image": "/places/kr-seoul-forest-verified.webp",
+    "imageCredit": "Qhairy / Wikimedia Commons / CC BY 4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg",
+    "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Seoul_Forest_Walk_Path.jpg",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "imageNoteKo": "2026-06-21 촬영 자료사진. EXIF 방향 보정·비율 유지 축소·WebP 변환. 화면에 따라 일부가 잘릴 수 있어요. 현재 풍경·혼잡도·빈자리나 촬영자의 추천을 뜻하지 않습니다.",
+    "imageNote": "Archive photo captured 2026-06-21. EXIF orientation corrected, proportionally resized and converted to WebP; display may crop it. It does not establish current appearance, crowds, available seats or photographer endorsement."
   }
 ]

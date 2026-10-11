@@ -1,11 +1,15 @@
 {
   "tour-4108662": [
     {
-      "textKo": "관광정보에 1인석과 서가가 안내돼 있어 혼자 책을 읽는 후보로 골랐어요.",
-      "textEn": "The tourism listing describes individual seats and bookshelves, making this a candidate for a solo reading break.",
-      "source": "https://www.ktriptips.com/kor/food/4108662",
-      "checked": "2026-10-05",
-      "sourceKind": "tourism-listing"
+      "textKo": "2026년 9월 관광공사 기사에 소개된 긴 공용 책상과 서가에서 책을 펼치고 머물 후보예요.",
+      "textEn": "A September 2026 KTO article describes a long shared desk and bookshelves, giving a concrete place to stop with a book.",
+      "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606",
+      "checked": "2026-10-11",
+      "sourceKind": "official-tourism",
+      "purposes": [
+        "all",
+        "cafe"
+      ]
     },
     {
       "textKo": "방문 후기에는 독서·작업 이용이 언급돼요. 좌석 간격이 좁다는 의견도 있어요.",
@@ -21,7 +25,11 @@
       "textEn": "Officially listed private dining rooms make this a candidate for a meal with your own party.",
       "source": "https://www.fourseasons.com/seoul/dining/restaurants/yu_yuan/",
       "checked": "2026-10-05",
-      "sourceKind": "official"
+      "sourceKind": "official",
+      "purposes": [
+        "food",
+        "private-room"
+      ]
     },
     {
       "textKo": "룸 종류에 따라 최소 이용금액이 적용돼요. 일반 좌석과 구분해 예약 조건을 확인하세요.",
@@ -37,14 +45,21 @@
       "textEn": "The official introduction lists VIP and couples rooms, giving you specific treatment spaces to ask about.",
       "source": "https://sulwhasoo.com/spa/introduction/introduction.html",
       "checked": "2026-10-05",
-      "sourceKind": "official"
+      "sourceKind": "official",
+      "purposes": [
+        "premium-spa",
+        "private-room"
+      ]
     },
     {
       "textKo": "4층 밸런스 스파에는 자연 채광의 트리트먼트 룸과 도산공원 전망 룸이 안내돼요.",
       "textEn": "The fourth-floor Balance Spa lists daylit treatment rooms and a room overlooking Dosan Park.",
       "source": "https://int.sulwhasoo.com/pages/flagship-dosan",
       "checked": "2026-10-05",
-      "sourceKind": "official"
+      "sourceKind": "official",
+      "purposes": [
+        "premium-spa"
+      ]
     }
   ],
   "world-gb-aire-ancient-baths-london": [
@@ -216,6 +231,52 @@
       "source": "https://gulbenkian.pt/cam/en/news/gulbenkian-garden-extension-wins-international-landscape-architecture-award/",
       "checked": "2026-10-10",
       "sourceKind": "operator"
+    }
+  ],
+  "kr-seoul-seonyudo-park": [
+    {
+      "textKo": "담쟁이 기둥이 남은 정원과 한강을 바라보는 전망 쉼터가 있어, 식물과 강 풍경을 번갈아 보며 걷고 싶을 때 골랐어요.",
+      "textEn": "The ivy-column garden and river-view rest area suit a walk that alternates between greenery and the Han River.",
+      "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+      "checked": "2026-10-11",
+      "sourceKind": "official",
+      "purposes": [
+        "all",
+        "drive"
+      ]
+    },
+    {
+      "textKo": "일반 입장은 무료이고 06:00~24:00 열려 있어, 음료 주문 없이 야외에서 잠시 쉬고 싶을 때 살펴볼 수 있어요.",
+      "textEn": "Free general entry and 06:00–24:00 park hours make it an option for an outdoor break without a café order.",
+      "source": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=175826",
+      "checked": "2026-10-11",
+      "sourceKind": "official-tourism"
+    }
+  ],
+  "kr-seoul-forest": [
+    {
+      "textKo": "벤치가든과 호숫가 산책로에서 걷다 쉴 수 있어요. 2026-10-27까지 정원박람회가 열려요.",
+      "textEn": "Bench gardens and a lakeside rest path let you pause during a walk. The Garden Expo runs through 27 Oct 2026.",
+      "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+      "checked": "2026-10-11",
+      "sourceKind": "official",
+      "purposes": [
+        "all",
+        "drive"
+      ],
+      "additionalSources": [
+        {
+          "label": "2026 서울국제정원박람회 · Garden Expo",
+          "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=456708"
+        }
+      ]
+    },
+    {
+      "textKo": "여러 테마정원과 숲길을 무료로 둘러볼 수 있어요. 박람회·공연이 있는 날은 조용함보다 정원 구경을 위한 후보예요.",
+      "textEn": "Free entry and varied gardens make this a garden-walk candidate; expo and performance days are a poor basis for promising quiet.",
+      "source": "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+      "checked": "2026-10-11",
+      "sourceKind": "official-tourism"
     }
   ]
 }

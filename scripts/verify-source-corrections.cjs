@@ -153,8 +153,8 @@ assert.deepEqual(held.find(record => record.id === 'world-gb-holland-park'), {
 const holland = find('world-gb-holland-park');
 assert(!holland.image && !holland.imageRemote && !holland.photos?.length);
 assert.equal(read('lib/journal-places.json').find(place => place.id === reyes.id).image, expectedImage);
-assert.equal(catalog.length, 1008);
-assert.equal(new Set(catalog.map(place => place.id)).size, 1008);
+assert.equal(catalog.length, 1010);
+assert.equal(new Set(catalog.map(place => place.id)).size, 1010);
 assert.equal(read('wrangler.json').vars.PAYMENTS_LIVE_ENABLED, 'false');
 
 // Render the actual server page in both languages. Only interactive child
@@ -202,5 +202,5 @@ assert(explorerSource.includes('focused.imageNoteKo||'), 'legacy detail modal re
     const metadata = await pageModule.generateMetadata({params: Promise.resolve({id: reyes.id, language})});
     assert.equal(metadata.openGraph.images[0].url, expectedImage);
   }
-  console.log('PASS: dated Bugak construction notice and four source-backed corrections, merged/guide consistency, KO/EN server pages and photo notes, unknown parking filters, dated dinner warning, exact restored asset, preserved Holland hold and 1008 entries.');
+  console.log('PASS: dated Bugak construction notice and four source-backed corrections, merged/guide consistency, KO/EN server pages and photo notes, unknown parking filters, dated dinner warning, exact restored asset, preserved Holland hold and 1010 entries.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

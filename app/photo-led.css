@@ -167,3 +167,7 @@
 @media(prefers-reduced-motion:reduce) {
  .photo-led-place *,.photo-led-place *:before,.photo-led-place *:after,.photo-led-guide *,.photo-led-guide *:before,.photo-led-guide *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
+
+/* Purpose evidence can include a dated access/event caveat. Keep it visible on
+   the Seoul shortlist at every width instead of inheriting the teaser clamp. */
+.home-evidence-shortlist .home-finder-grid>article>a>div>p { display:block; -webkit-line-clamp:unset; overflow:visible; }
