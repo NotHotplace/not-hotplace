@@ -1,0 +1,35 @@
+{
+  "source": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg",
+  "original": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Seoul_Forest_Walk_Path.jpg",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "credit": "Qhairy / Wikimedia Commons / CC BY 4.0",
+  "captured": "2026-06-21",
+  "checked": "2026-10-11",
+  "sha256": "4138f0a448bef24c0706f395e094a69f3a370e7fdfb3081800b7558bb0645c00",
+  "id": "kr-seoul-forest",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Seoul_Forest_Walk_Path.jpg",
+  "license": "CC BY 4.0",
+  "captureDate": "2026-06-21",
+  "originalSha256": "4138f0a448bef24c0706f395e094a69f3a370e7fdfb3081800b7558bb0645c00",
+  "originalDimensions": [
+    3000,
+    4000
+  ],
+  "rawDimensions": [
+    4000,
+    3000
+  ],
+  "originalOrientation": 6,
+  "originalAccessNote": "Original file downloaded from its image-specific Commons URL.",
+  "modifications": "EXIF orientation correction; proportional resizing; WebP conversion. No crop in the file; display may crop.",
+  "noteKo": "2026-06-21 촬영 자료사진. EXIF 방향 보정·비율 유지 축소·WebP 변환. 화면에 따라 일부가 잘릴 수 있어요. 현재 풍경·혼잡도·빈자리나 촬영자의 추천을 뜻하지 않습니다.",
+  "noteEn": "Archive photo captured 2026-06-21. EXIF orientation corrected, proportionally resized and converted to WebP; display may crop it. It does not establish current appearance, crowds, available seats or photographer endorsement.",
+  "readySha256": "ba4a18e324ab7325b27d45b6e6485da2a590777dbfde175fe31f3d269e28c6ba",
+  "readyBytes": 278850,
+  "readyDimensions": [
+    900,
+    1200
+  ],
+  "asset": "/places/kr-seoul-forest-verified.webp"
+}

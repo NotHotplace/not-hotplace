@@ -6224,5 +6224,46 @@
     "imageSource": "https://commons.wikimedia.org/wiki/File:Clareira_(54034631981).jpg",
     "imageLicense": "CC BY 2.0",
     "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "id": "kr-seoul-seonyudo-park",
+    "country": "KR",
+    "provider": "Seoul Metropolitan Government and official tourism visitor information",
+    "source": "https://parks.seoul.go.kr/content.do?key=2604300019",
+    "checked": "2026-10-11",
+    "level": "official",
+    "detailLevel": "enriched",
+    "enrichmentChecked": "2026-10-11",
+    "enrichmentSources": [
+      "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=175826",
+      "https://english.visitseoul.net/yongsan%26yeouido-area/SeonyudoPark/ENP000378",
+      "https://parks.seoul.go.kr/content.do?key=2604300019",
+      "https://parks.seoul.go.kr/park/detailView.do?key=2604070019&pIdx=119"
+    ],
+    "photoSource": "https://archive.visitseoul.net/ko/contents/ARP0082v1",
+    "photoLicense": "KOGL Type 1",
+    "photoLicenseUrl": "https://archive.visitseoul.net/ko/page/copyright?_ID=200100",
+    "originalImage": "https://archive.visitseoul.net/upload/encoding/image/2025/06//cc1befaf4c88407eba13a574616c7d50.jpg"
+  },
+  {
+    "id": "kr-seoul-forest",
+    "country": "KR",
+    "provider": "Seoul Metropolitan Government and official tourism visitor information",
+    "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+    "checked": "2026-10-11",
+    "level": "official",
+    "detailLevel": "enriched",
+    "enrichmentChecked": "2026-10-11",
+    "enrichmentSources": [
+      "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+      "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+      "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=456708",
+      "https://parks.seoul.go.kr/mini/seoulforest/main.do"
+    ],
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "originalImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Seoul_Forest_Walk_Path.jpg"
   }
 ]

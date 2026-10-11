@@ -1,7 +1,10 @@
 import type {Place,VisitDetail} from './catalog';
 import {conditionLabels,type RestCondition} from './rest-conditions';
 import {placeDescription} from './place-copy';
-export type RecommendationReason={textKo:string;textEn:string;source:string;checked:string;sourceKind?:string};
+export type RestPurpose='all'|'cafe'|'food'|'drive'|'private-room'|'premium-spa';
+// Explicit editorial applicability, not a confidence score. Omit on caveats and
+// general operating information; `all` means the general pause, not a wildcard.
+export type RecommendationReason={textKo:string;textEn:string;source:string;checked:string;sourceKind?:string;purposes?:RestPurpose[];additionalSources?:{label:string;url:string}[]};
 export function categoryConditions(category?:string):RestCondition[]{
  if(category==='spa')return ['privateRoom','parking','quietMusic'];
  if(category==='walk'||category==='drive')return ['parking'];

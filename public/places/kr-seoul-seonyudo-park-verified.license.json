@@ -1,0 +1,35 @@
+{
+  "source": "https://archive.visitseoul.net/ko/contents/ARP0082v1",
+  "original": "https://archive.visitseoul.net/upload/encoding/image/2025/06//cc1befaf4c88407eba13a574616c7d50.jpg",
+  "licenseUrl": "https://archive.visitseoul.net/ko/page/copyright?_ID=200100",
+  "credit": "서울관광재단 서울관광 아카이브 / 선유도공원 ARP0082v1 / 공공누리 제1유형",
+  "captured": null,
+  "checked": "2026-10-11",
+  "sha256": "c4c8787086bc7cbf43400b8d0a7605a36387339c034bee4d9d97ca49179d4587",
+  "id": "kr-seoul-seonyudo-park",
+  "sourcePage": "https://archive.visitseoul.net/ko/contents/ARP0082v1",
+  "originalUrl": "https://archive.visitseoul.net/upload/encoding/image/2025/06//cc1befaf4c88407eba13a574616c7d50.jpg",
+  "license": "KOGL Type 1",
+  "captureDate": null,
+  "originalSha256": "c4c8787086bc7cbf43400b8d0a7605a36387339c034bee4d9d97ca49179d4587",
+  "originalDimensions": [
+    852,
+    567
+  ],
+  "rawDimensions": [
+    852,
+    567
+  ],
+  "originalOrientation": 1,
+  "originalAccessNote": "The source page lists a 6683×4455, 15.65 MB original, but gives no capture date or individual photographer. Only the verified 852×567 preview was used; the larger original was not downloaded.",
+  "modifications": "Converted the verified 852×567 preview to WebP. No resizing or crop in the file; display may crop.",
+  "noteKo": "촬영일 미상의 서울관광 아카이브 자료사진. 852×567 미리보기 이미지를 WebP로 변환했으며 화면에 따라 일부가 잘릴 수 있어요. 현재 풍경·조용함·빈자리나 서울관광재단의 추천을 뜻하지 않습니다.",
+  "noteEn": "Seoul Tourism Archive photo; capture date unknown. The 852×567 preview was converted to WebP; display may crop it. It does not establish current appearance, quietness, available seats or Seoul Tourism Organization endorsement.",
+  "readySha256": "922c6c8ead98bd9a891845877469b004cec7bf19fbe3bb1bdf7764293ed6b55a",
+  "readyBytes": 154602,
+  "readyDimensions": [
+    852,
+    567
+  ],
+  "asset": "/places/kr-seoul-seonyudo-park-verified.webp"
+}

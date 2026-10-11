@@ -399,5 +399,14 @@
       "source": "https://gulbenkian.pt/en/useful-information/how-to-get-here/",
       "checked": "2026-10-10"
     }
+  ],
+  "kr-seoul-forest": [
+    {
+      "kind": "parking",
+      "textKo": "유료 주차 · 소형 5분 200원 · 만차 시 제한",
+      "textEn": "Paid parking: small vehicles KRW 200/5 min; limited when full",
+      "source": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+      "checked": "2026-10-11"
+    }
   ]
 }

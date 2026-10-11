@@ -28,10 +28,16 @@
       {
         "labelKo": "운영·이용 시간",
         "labelEn": "Hours",
-        "textKo": "자료별 영업시간이 달라 최신 시간은 매장(02-325-1984)에 확인해 주세요.",
-        "textEn": "Published hours differ across sources. Confirm current hours with the cafe at +82 2-325-1984.",
-        "source": "https://www.ktriptips.com/kor/food/4108662",
-        "checked": "2026-10-05"
+        "textKo": "2026년 9월 한국관광공사 기사는 09:00~24:00을 안내해요. 다른 자료와 시간 차이가 있었으며 실시간 매장 공지는 아니므로, 방문 전 매장(02-325-1984)에 최신 시간을 확인하세요.",
+        "textEn": "A September 2026 KTO article lists 09:00–24:00. Other sources have differed, and this is not a live operator notice; confirm current hours with the cafe at +82 2-325-1984.",
+        "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606",
+        "checked": "2026-10-11",
+        "additionalSources": [
+          {
+            "label": "기존 관광 목록 · Earlier tourism listing",
+            "url": "https://www.ktriptips.com/kor/food/4108662"
+          }
+        ]
       },
       {
         "labelKo": "주차",
@@ -40,6 +46,14 @@
         "textEn": "Tourism and visitor platforms disagree on parking; confirm directly with the cafe.",
         "source": "https://polle.com/place/125jaa/1984",
         "checked": "2026-10-05"
+      },
+      {
+        "labelKo": "독서·공용 좌석",
+        "labelEn": "Reading and shared seating",
+        "textKo": "2026년 9월 한국관광공사 기사에는 독서·작업용 긴 공용 나무 책상, 책·LP 진열, 뒤쪽 소파 좌석과 야외 테라스가 소개돼요. 공용 문화공간이며 전용 좌석이나 정적을 보장하지 않아요.",
+        "textEn": "A September 2026 KTO article describes a long shared wooden desk for reading/work, books and LP displays, rear sofa seating and an outdoor terrace. This is a shared cultural space, with no exclusive-seat or silence guarantee.",
+        "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606",
+        "checked": "2026-10-11"
       }
     ],
     "visitFacts": {

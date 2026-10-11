@@ -29,7 +29,7 @@ const {countryCodes, countryPath} = lib('countries');
 const {regionalGuides,findRegionalGuide,regionalPlaces} = lib('regional-guides');
 const {paginateRegion,regionPagePath}=lib('regional-browsing');
 const basicPlace = catalog.find(place => place.detailLevel === 'basic');
-const gardenPlaces = ['world-fr-jardin-du-luxembourg', 'world-nl-hortus-botanicus-amsterdam', 'world-sg-jurong-lake-gardens', 'world-pt-jardim-gulbenkian'].map(id => catalog.find(place => place.id === id));
+const gardenPlaces = ['world-fr-jardin-du-luxembourg', 'world-nl-hortus-botanicus-amsterdam', 'world-sg-jurong-lake-gardens', 'world-pt-jardim-gulbenkian', 'kr-seoul-forest', 'kr-seoul-seonyudo-park'].map(id => catalog.find(place => place.id === id));
 const agents = {
   browser: 'Mozilla/5.0 Chrome/134.0.0.0 Safari/537.36',
   googlebot: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
@@ -81,7 +81,7 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
   }
   const escape = value => value.replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;'}[char]));
   if (title) assert(html.includes(`<h1>${escape(title)}</h1>`), label + ': correct place identity');
-  if (language && ['world-nl-hortus-botanicus-amsterdam','world-pt-jardim-gulbenkian'].some(id=>route===`/places/${id}/${language}`)) {
+  if (language && ['world-nl-hortus-botanicus-amsterdam','world-pt-jardim-gulbenkian','kr-seoul-forest','kr-seoul-seonyudo-park'].some(id=>route===`/places/${id}/${language}`)) {
     const place = gardenPlaces.find(place => route===`/places/${place.id}/${language}`);
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
