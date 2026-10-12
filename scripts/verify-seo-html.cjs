@@ -87,6 +87,14 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
   }
+  if (language && route === `/guides/korea-reading-cafes/${language}`) {
+    const {findGuide, guidePlaces} = lib('guides'), guide = findGuide('korea-reading-cafes');
+    const expected = guidePlaces(guide, catalog).map(place => 'guide-place-' + place.id);
+    const cards = tags(html, 'article').filter(row => row.id?.startsWith('guide-place-')).map(row => row.id);
+    assert.deepEqual(cards, expected, label + ': reading guide includes all five supported candidates');
+    assert(html.includes('<h1>' + escape(guide[language === 'ko' ? 'titleKo' : 'titleEn']) + '</h1>'), label + ': guide headline does not retain a stale count');
+    assert(expected.includes('guide-place-' + bensReadingPlace.id), label + ': Ben remains discoverable through reading guidance');
+  }
   if (language && route === `/places/${bensReadingPlace.id}/${language}`) {
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of bensReadingPlace.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible Ben’s visit detail ' + row.labelEn);

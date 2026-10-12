@@ -97,3 +97,11 @@ failed against the original copy, then passed after the copy change. It checks
 the actual first paragraph of Ben’s card in Korean and English through café →
 general → café selection, with no filler or duplicate source paragraph. It
 does not mistake text inside a disclosure or serialized data for the teaser.
+
+## Reading-guide count consistency
+
+The books condition also adds Ben to the existing reading guide, giving it five
+candidates. Preview QA found its Korean/English title and English introduction
+still hard-coded four. Only that count wording was removed; guide membership,
+ordering and all other guide copy remain unchanged. Unit and built-Worker
+checks now cover the five cards, Ben’s membership and the count-neutral title.

@@ -133,6 +133,16 @@ assert(!home('food').some(row => row.place.id === id), 'Ben’s reading evidence
 assert(home('cafe').every(row => !row.reviewed), 'no visitor-verified badge from external publications');
 assert.equal(home('cafe')[0].reason, reason, 'initial card keeps the caveat and both source links');
 
+const {findGuide, guidePlaces} = load('lib/guides.ts');
+const readingGuide = findGuide('korea-reading-cafes');
+const readingPlaces = guidePlaces(readingGuide, catalog);
+assert.equal(readingPlaces.length, 5, 'Ben’s books evidence adds the fifth reading-guide candidate');
+assert(readingPlaces.some(row => row.id === id));
+assert.equal(readingGuide.titleKo, '책과 함께 쉬는 카페: 독서 공간 안내');
+assert.equal(readingGuide.titleEn, 'Cafés with published reading-space details');
+assert(readingGuide.descriptionEn.startsWith('These candidates explicitly'));
+assert(!/4곳|four|\bfive\b|5곳/i.test(readingGuide.titleKo + readingGuide.titleEn + readingGuide.descriptionEn), 'guide copy does not hard-code a changing candidate count');
+
 const stub = () => null;
 const imports = name => name === 'react/jsx-runtime' ? require(name)
   : name === 'next/navigation' ? {notFound() { throw Error('404'); }}
