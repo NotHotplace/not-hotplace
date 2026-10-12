@@ -333,8 +333,8 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const conditionUrl=writeBrowseState(new URL('https://example.test/kr'),{...browsing,filters:{...emptyFilters,books:true,soloOrder:true,quiet:true}},'ko');
  assert.equal(readBrowseState(conditionUrl.searchParams,regionKeys).filters.soloOrder,true);
  assert(!readBrowseState(new URLSearchParams('books=yes&quietMusic=1&actor=private'),regionKeys).filters.books);
- const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,4);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
- const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,23);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
+ const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,5);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
+ const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,24);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
  const {externalReviewLinks}=load(path.join(root,'lib/external-reviews.ts'));
  assert.equal(externalReviewLinks(catalog.find(p=>p.id==='cj-daechung')).length,3);
  assert(externalReviewLinks(catalog.find(p=>p.id==='us-stumptown-division')).some(s=>s.name==='Yelp'));
