@@ -8,7 +8,7 @@ const {countries,countryCodes}=load('lib/countries.ts'),flush=()=>new Promise(r=
 function harness(lang,initial={}){let country=initial.country||'KR',tree,dirty=false,si=0,ei=0,ri=0;const states=[],effects=[],pending=[],requests=[],refs=[];global.location=new URL('https://nothotplace.com/?lang='+lang);global.history={state:null,replaceState(state,title,url){global.location=new URL(url,global.location);}};
  const react={useRef(value){const i=ri++;return refs[i]||(refs[i]={current:value});},useState(initial){const i=si++;if(!(i in states))states[i]=typeof initial==='function'?initial():initial;return[states[i],value=>{const next=typeof value==='function'?value(states[i]):value;if(!Object.is(next,states[i])){states[i]=next;dirty=true;}}];},useEffect(fn,deps){const i=ei++,old=effects[i];if(!old||deps.some((v,n)=>v!==old.deps[n]))pending.push(()=>{old?.cleanup?.();effects[i]={deps,cleanup:fn()};});}};
  global.fetch=(url,options)=>new Promise((resolve,reject)=>requests.push({url,options,resolve,reject}));
- const component=compile('app/home-finder.tsx',n=>n==='react'?react:n==='react/jsx-runtime'?require(n):n==='./locale'?{useLocale:()=>({lang,text:(en,ko)=>lang==='en'?en:ko,t:v=>v})}:n==='@/lib/place-area'?load('lib/place-area.ts'):n==='@/lib/place-return'?load('lib/place-return.ts'):n==='@/lib/countries'?{countries}:n==='@/lib/place-presentation'?{candidateReasons:()=>[],conciseText:v=>v,placeIdentity:p=>p.name}:n==='@/lib/place-links'?{sharePlacePath:(p,l)=>'/places/'+p.id+'/'+l,isCatalogPlace:()=>true}:n==='@/lib/engagement-client'?{trackEngagement:()=>{}}:{__esModule:true,default:'place-reasons'}).default;
+ const component=compile('app/home-finder.tsx',n=>n==='react'?react:n==='react/jsx-runtime'?require(n):n==='./locale'?{useLocale:()=>({lang,text:(en,ko)=>lang==='en'?en:ko,t:v=>v})}:n==='@/lib/place-area'?load('lib/place-area.ts'):n==='@/lib/place-return'?load('lib/place-return.ts'):n==='@/lib/countries'?{countries}:n==='@/lib/place-presentation'?{candidateReasons:()=>[],conciseText:load('lib/place-presentation.ts').conciseText,placeIdentity:p=>p.name}:n==='@/lib/place-links'?{sharePlacePath:(p,l)=>'/places/'+p.id+'/'+l,isCatalogPlace:()=>true}:n==='@/lib/engagement-client'?{trackEngagement:()=>{}}:{__esModule:true,default:'place-reasons'}).default;
  function render(){let rounds=0;do{assert(++rounds<20);dirty=false;si=ei=ri=0;tree=component({country,initialRegion:initial.region,initialPurpose:initial.purpose,homeTheme:initial.theme,ready:initial.ready!==false});while(pending.length)pending.shift()();}while(dirty);return tree;}
  const selects=()=>nodes(tree).filter(n=>n.type==='select');render();return {requests,render,selects,nodes:()=>nodes(tree),text:()=>text(tree),setCountry(value){country=value;render();},purpose(value){selects()[0].props.onChange({target:{value}});render();},region(value){selects()[1].props.onChange({target:{value}});render();},async resolve(index,matches=[],ok=true){requests[index].resolve({ok,json:async()=>({matches})});await flush();render();},async reject(index){requests[index].reject(Error('offline'));await flush();render();},unmount(){effects.forEach(e=>e.cleanup?.());}};
 }
@@ -39,8 +39,28 @@ const row=id=>({place:{id,name:id,area:'Area',image:'/image.webp'},reviewed:fals
   quality.purpose('food');await quality.resolve(2,[row('one'),row('two'),row('three')]);assert(!quality.text().includes(lang==='ko'?'후보는 2곳':'Only 2 supported'));assert.equal(quality.nodes().filter(n=>n.type==='article').length,3);
   quality.purpose('drive');await quality.resolve(3,[]);assert.equal(quality.nodes().filter(n=>n.type==='article').length,0);assert(quality.nodes().some(n=>n.type==='a'&&n.props.href==='/kr?lang='+lang),'all-candidate browse stays available when nothing qualifies');
   quality.purpose('all');const reviewed={place:{id:'reviewed-only',name:'Visitor evidence',area:'Area',count:3,quiet:2,positive:3},reviewed:true};await quality.resolve(4,[reviewed]);assert(quality.text().includes(lang==='ko'?'조용함 2명':'2 reported quietness'));assert(!quality.nodes().some(n=>n.props?.place===reviewed.place&&n.props?.compact),'visitor-only result never fabricates a published reason');quality.unmount();
+  // Use the actual catalog, selected reason, HomeFinder JSX and shortener.
+  // Inspect the link's initial paragraph, not a source disclosure or JSON prop.
+  const {catalog}=load('lib/catalog.ts'),{finderMatches}=load('lib/catalog-views.ts');
+  const bens=harness(lang,{region:'서울',purpose:'cafe'});
+  const matches=purpose=>finderMatches(catalog,new URLSearchParams({country:'KR',region:'서울',purpose}),'KR');
+  for(const [index,purpose] of ['cafe','all','cafe'].entries()){
+   if(index){bens.purpose(purpose);assert.equal(bens.nodes().filter(n=>n.type==='article').length,0,'old cards clear before the new result');}
+   const selected=matches(purpose);await bens.resolve(index,selected);
+   const ben=selected.find(row=>row.place.id==='tour-3443228'),copy=ben.reason[lang==='ko'?'textKo':'textEn'];
+   const article=bens.nodes().find(n=>n.type==='article'&&nodes(n).some(child=>child.type==='a'&&child.props.href?.startsWith('/places/tour-3443228/')));
+   assert(article,'Ben is present in the actual Seoul '+purpose+' shortlist');
+   const link=nodes(article).find(n=>n.type==='a'),intro=nodes(link).find(n=>n.type==='p');
+   assert.equal(text(intro),copy,'Ben’s initial card must retain the complete sound qualification');
+   assert(copy.length<=(lang==='ko'?90:150),'concise first impression fits the existing teaser limit');
+   for(const phrase of lang==='ko'?['제법 컸지만','거슬리지 않았','보장하지 않아요']:['fairly loud but unobtrusive','No quietness guarantee'])assert(text(intro).includes(phrase),'initial teaser includes '+phrase);
+   assert.equal(nodes(link).filter(n=>n.type==='p').length,1,'no duplicate full source paragraph in the card');
+   assert.equal(bens.nodes().filter(n=>n.type==='article').length,purpose==='cafe'?2:3,'no filler candidate');
+   assert(bens.nodes().some(n=>n.props?.selectedReason===ben.reason),'source disclosure keeps the same complete evidence');
+  }
+  bens.unmount();
   const legacy=harness(lang,{country:'US',region:'New York'}),legacyReason={textKo:'기존 공개 안내의 독서 공간',textEn:'The existing published reading space',source:'https://example.test/legacy',checked:'2026-10-11'};await legacy.resolve(0,[{place:{id:'legacy-reviewed',name:'Existing place',area:'Area',count:3,quiet:3,positive:3,recommendationReasons:[legacyReason]},reviewed:true}]);assert(!legacy.text().includes(lang==='ko'?'최근 방문 후기 3명':'Of 3 recent visitors'),'non-Seoul visitor card copy is not changed by the rollout');legacy.unmount();
   const stale=harness(lang);stale.setCountry('JP');await stale.reject(0);assert.equal(stale.requests.length,2,'obsolete failures never start a fallback');stale.unmount();
  }
- console.log('PASS: actual KO/EN home finder has pause→recommendation order, optional country-scoped cities, explicit explore links, stale/aborted response safety, preserved pause and public fallback/empty/error behavior.');
+ console.log('PASS: actual KO/EN home finder has pause→recommendation order, optional country-scoped cities, explicit explore links, stale/aborted response safety, preserved pause, public fallback/empty/error behavior, and concise Ben’s first-card music caveats through repeated Seoul selections.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

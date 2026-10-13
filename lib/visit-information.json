@@ -15311,18 +15311,48 @@
   "tour-3443228": {
     "visitDetails": [
       {
-        "labelEn": "Hours",
-        "labelKo": "운영 시간",
-        "textKo": "평일 14:00-21:00 주말 13:00-21:00",
-        "textEn": "Weekdays 14:00–21:00; weekends 13:00–21:00",
+        "labelKo": "현재 운영 시간·휴무 확인",
+        "labelEn": "Current hours and closures",
+        "textKo": "운영 시간·휴무 안내가 출처마다 달라 현재 일정은 확정하지 않았습니다. 아래의 이전 관광정보 대신 방문 전 매장의 최신 공지를 확인해 주세요.",
+        "textEn": "Current hours and closure days are unverified because the listings disagree. Check the venue’s latest notice before visiting; the earlier tourism details below are historical listing information.",
+        "source": "https://www.koreatriptips.com/dining/3443228.html",
+        "checked": "2026-10-12",
+        "additionalSources": [
+          {
+            "label": "Tabling listing",
+            "url": "https://www.tabling.co.kr/place/67eb74c703740c14d39930fd"
+          }
+        ]
+      },
+      {
+        "labelKo": "독서와 이용 규칙",
+        "labelEn": "Reading and visit rules",
+        "textKo": "2025-05-29 운영자 글은 비치 도서를 매장에서 읽을 수 있다고 안내하며 대화와 노트북 작업을 금합니다. 소리가 나는 키보드·마우스 사용도 제한합니다. 대화나 작업보다 책을 읽으며 머물 때 살펴볼 후보입니다. 방문 전 최신 이용 규칙을 다시 확인해 주세요.",
+        "textEn": "In a May 29, 2025 post, the operator says the books can be read on site and prohibits conversation and laptop work, including noisy keyboards and mice. Consider it for a reading break. Recheck the latest rules before visiting.",
+        "source": "https://brunch.co.kr/@dd96de9407e7419/21",
+        "checked": "2026-10-12"
+      },
+      {
+        "labelKo": "음악·정숙함의 한계",
+        "labelEn": "Music and quietness",
+        "textKo": "2026-08-22 방문한 Rachel Jane은 8월 24일 글에서 음악이 제법 컸지만 본인에게는 거슬리지 않았다고 적었습니다. 한 사람의 당시 느낌이며 소음 측정이나 현재 정숙함을 보장하는 자료가 아닙니다.",
+        "textEn": "Rachel Jane, who visited on August 22, 2026, wrote on August 24 that the music felt fairly loud but did not bother them. This is one visitor’s impression, not a sound measurement or a guarantee of current quietness.",
+        "source": "https://brunch.co.kr/@racheljane/86",
+        "checked": "2026-10-12"
+      },
+      {
+        "labelEn": "Earlier tourism hours",
+        "labelKo": "이전 관광정보의 운영 시간",
+        "textKo": "2026-10-02 확인한 관광정보에는 평일 14:00–21:00, 주말 13:00–21:00로 적혀 있었습니다. 현재 시간으로 확정한 안내가 아닙니다.",
+        "textEn": "The tourism listing checked on October 2, 2026 gave weekdays 14:00–21:00 and weekends 13:00–21:00. These are not confirmed current hours.",
         "source": "https://www.ktriptips.com/kor/food/3443228",
         "checked": "2026-10-02"
       },
       {
-        "labelEn": "Closures",
-        "labelKo": "휴무",
-        "textKo": "매주 수요일 , 달마다 휴무일이 다르므로 네이버 공지 참고",
-        "textEn": "Closed every Wednesday; closure dates vary by month, so check Naver notices.",
+        "labelEn": "Earlier tourism closures",
+        "labelKo": "이전 관광정보의 휴무",
+        "textKo": "2026-10-02 확인한 관광정보에는 매주 수요일 휴무이며 월별 휴무일은 네이버 공지를 보라고 적혀 있었습니다. 현재 휴무일은 미확인입니다.",
+        "textEn": "The tourism listing checked on October 2, 2026 gave Wednesday closures and referred to Naver notices for monthly changes. The current closure day is unverified.",
         "source": "https://www.ktriptips.com/kor/food/3443228",
         "checked": "2026-10-02"
       },
@@ -15336,7 +15366,15 @@
       }
     ],
     "visitFacts": {},
-    "conditions": []
+    "conditions": [
+      {
+        "kind": "books",
+        "textKo": "2025-05-29 운영자 글은 비치 도서를 매장에서 읽을 수 있다고 안내합니다.",
+        "textEn": "The operator’s May 29, 2025 post says the books can be read on site.",
+        "source": "https://brunch.co.kr/@dd96de9407e7419/21",
+        "checked": "2026-10-12"
+      }
+    ]
   },
   "tour-2853976": {
     "visitDetails": [

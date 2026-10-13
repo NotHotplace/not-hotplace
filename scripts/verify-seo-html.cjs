@@ -30,6 +30,7 @@ const {regionalGuides,findRegionalGuide,regionalPlaces} = lib('regional-guides')
 const {paginateRegion,regionPagePath}=lib('regional-browsing');
 const basicPlace = catalog.find(place => place.detailLevel === 'basic');
 const gardenPlaces = ['world-fr-jardin-du-luxembourg', 'world-nl-hortus-botanicus-amsterdam', 'world-sg-jurong-lake-gardens', 'world-pt-jardim-gulbenkian', 'kr-seoul-forest', 'kr-seoul-seonyudo-park'].map(id => catalog.find(place => place.id === id));
+const bensReadingPlace = catalog.find(place => place.id === 'tour-3443228');
 const agents = {
   browser: 'Mozilla/5.0 Chrome/134.0.0.0 Safari/537.36',
   googlebot: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
@@ -85,6 +86,22 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
     const place = gardenPlaces.find(place => route===`/places/${place.id}/${language}`);
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
+  }
+  if (language && route === `/guides/korea-reading-cafes/${language}`) {
+    const {findGuide, guidePlaces} = lib('guides'), guide = findGuide('korea-reading-cafes');
+    const expected = guidePlaces(guide, catalog).map(place => 'guide-place-' + place.id);
+    const cards = tags(html, 'article').filter(row => row.id?.startsWith('guide-place-')).map(row => row.id);
+    assert.deepEqual(cards, expected, label + ': reading guide includes all five supported candidates');
+    assert(html.includes('<h1>' + escape(guide[language === 'ko' ? 'titleKo' : 'titleEn']) + '</h1>'), label + ': guide headline does not retain a stale count');
+    assert(expected.includes('guide-place-' + bensReadingPlace.id), label + ': Ben remains discoverable through reading guidance');
+  }
+  if (language && route === `/places/${bensReadingPlace.id}/${language}`) {
+    const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+    for (const row of bensReadingPlace.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible Ben’s visit detail ' + row.labelEn);
+    const suffix = language === 'ko' ? 'Ko' : 'En';
+    for (const key of ['summary', 'caution', 'period']) assert(visible.includes(escape(bensReadingPlace.externalMemo[key + suffix])), label + ': dated visitor attribution and limits');
+    assert(visible.includes(escape(bensReadingPlace.recommendationReasons[0]['text' + suffix])), label + ': complete initial reading and sound reason');
+    for (const source of ['https://brunch.co.kr/@dd96de9407e7419/21', 'https://brunch.co.kr/@racheljane/86']) assert(tags(visible, 'a').some(link => link.href === source), label + ': evidence source link');
   }
 }
 
@@ -148,7 +165,7 @@ async function freePort() {
     for (const agent of Object.keys(agents)) {
       for (const route of ['/mx', '/kr?lang=ko&region=서울', '/us?lang=en&category=cafe', '/jp?lang=ko', '/regions?lang=en']) await page(route, agent);
       for (const language of ['ko', 'en']) {
-        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', '수연산방'], [basicPlace.id, basicPlace.name], ...gardenPlaces.map(place => [place.id, place.name])]) {
+        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', '수연산방'], [basicPlace.id, basicPlace.name], ...[...gardenPlaces, bensReadingPlace].map(place => [place.id, place.name])]) {
           await page(`/places/${id}/${language}`, agent, {language, title, noindex: id === basicPlace.id});
         }
         await page(`/guides/korea-reading-cafes/${language}`, agent, {language});
@@ -217,6 +234,19 @@ async function freePort() {
     for(const query of ['page=0','page=-1','page=abc','page=1.5','page=01','page=22','page=1&page=2']){
       const result=await get('/regions/new-york/ko?'+query);assert.equal(result.status,404,query+': invalid or out-of-range page');assert(tags(result.html,'meta').some(m=>m.name==='robots'&&/noindex/.test(m.content)));
     }
+    for (const [purpose, expected] of [
+      ['all', ['kr-seoul-forest', 'kr-seoul-seonyudo-park', bensReadingPlace.id]],
+      ['cafe', [bensReadingPlace.id, 'tour-4108662']],
+    ]) {
+      const response = await fetch(new URL('/api/catalog?' + new URLSearchParams({view: 'finder', country: 'KR', region: '서울', purpose}), base), {signal: AbortSignal.timeout(30000)});
+      assert.equal(response.status, 200); count++;
+      const {matches} = await response.json();
+      assert.deepEqual(matches.map(row => row.place.id), expected, 'built Seoul ' + purpose + ' shortlist has no filler');
+      const ben = matches.find(row => row.place.id === bensReadingPlace.id);
+      assert.equal(ben.reviewed, false, 'external reading evidence is not first-party review verification');
+      assert.deepEqual(ben.reason, bensReadingPlace.recommendationReasons[0], 'built API retains full bilingual reason and dated sources');
+      assert.deepEqual(ben.place.conditions.map(row => row.kind), ['books'], 'built API has no unsupported quiet-music condition');
+    }
     const robots = await get('/robots.txt');
     assert.equal(robots.status, 200);
     assert(robots.html.includes('Disallow: /login\n'), 'login remains excluded in robots.txt');
@@ -250,7 +280,7 @@ async function freePort() {
       const location = url.match(/<loc>(.*?)<\/loc>/)[1], prefix = location.slice(0, location.lastIndexOf('/'));
       for (const language of ['en', 'ko']) assert(url.includes(`hreflang="${language}" href="${prefix}/${language}"`), location + ': sitemap reciprocal ' + language);
     }
-    console.log(`PASS: ${count} real HTML responses across 30 countries and browser/Googlebot/Bingbot/Facebook/empty-UA; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
+    console.log(`PASS: ${count} real HTML/API responses across 30 countries and browser/Googlebot/Bingbot/Facebook/empty-UA; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
   } catch (error) {
     if (server) console.error(logs);
     throw error;

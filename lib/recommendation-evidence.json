@@ -278,5 +278,24 @@
       "checked": "2026-10-11",
       "sourceKind": "official-tourism"
     }
+  ],
+  "tour-3443228": [
+    {
+      "textKo": "비치 책 열람 가능, 대화·노트북 작업 금지(2025 운영자). 2026-08-22 한 방문자는 음악이 제법 컸지만 거슬리지 않았대요. 조용함은 보장하지 않아요.",
+      "textEn": "Read books; no talking or laptop work (operator, 2025-05-29). One 2026-08-22 visitor found music fairly loud but unobtrusive. No quietness guarantee.",
+      "source": "https://brunch.co.kr/@dd96de9407e7419/21",
+      "sourceKind": "operator",
+      "checked": "2026-10-12",
+      "purposes": [
+        "all",
+        "cafe"
+      ],
+      "additionalSources": [
+        {
+          "label": "Rachel Jane · visit 2026-08-22, published 2026-08-24",
+          "url": "https://brunch.co.kr/@racheljane/86"
+        }
+      ]
+    }
   ]
 }
