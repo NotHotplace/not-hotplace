@@ -40,6 +40,17 @@ for(const language of ['ko','en']){
  assert(html.includes(language==='ko'?'음식물 반입 금지':'No food allowed'));
  assert(html.includes(language==='ko'?'일반 주차 불가':'No general on-site parking'));
  assert(html.includes(language==='ko'?'자료사진':'Archive photo')||html.includes(language==='ko'?'촬영일':'capture date'));
+ const caption=html.match(/<p class="editorial-photo-credit">[\s\S]*?<\/p>/)?.[0],photoDetails=html.match(/<details class="editorial-photo-details">([\s\S]*?)<\/details>/)?.[1];
+ assert(caption&&photoDetails,'lead photo retains a visible caption and native collapsed details');
+ for(const value of ['archive.visitseoul.net/ko/contents/ARP0082v1','copyright?_ID=200100',language==='ko'?'촬영일 미상':'capture date unknown'])assert(caption.includes(value),'visible photo attribution/capture context: '+value);
+ assert(!caption.includes('WebP'),'technical processing is not repeated in the initial photo caption');
+ for(const value of ['852×567','WebP',language==='ko'?'서울관광재단의 추천':'Seoul Tourism Organization endorsement'])assert(photoDetails.includes(value),'complete reuse/processing note remains in photo details');
+ assert(photoDetails.includes(language==='ko'?'사진 상세 정보':'Photo details'));
+ assert.equal(walkNodes.filter(node=>node.props?.className==='finder-note').length,1,'one candidate count/status line');
+ assert(!text(walk).includes(language==='ko'?'후보를 최대 세 곳':'Up to three candidates'),'generic quietness disclaimer is not repeated under the hero');
+ const forest=home('KR','서울','all',matches('KR','서울','all')),forestHtml=renderToStaticMarkup(forest);
+ const forestCaption=forestHtml.match(/<p class="editorial-photo-credit">[\s\S]*?<\/p>/)?.[0];assert(forestCaption.includes('2026-06-21'),'known archival capture date stays visible');
+
  assert(nodes(walk).findIndex(node=>node.props?.id==='home-region-choice')<nodes(walk).findIndex(node=>node.props?.id==='home-pause-choice'),'country/city come before purpose');
  const city=walkNodes.find(node=>node.props?.id==='home-region-choice');assert.equal(nodes(city).filter(node=>node.type==='option').length,countries.KR.regions.length+1);
  const cafeMatches=matches('KR','서울','cafe'),cafe=home('KR','서울','cafe',cafeMatches);assert.equal(nodes(cafe).filter(node=>node.type==='article').length,2);assert(!text(cafe).includes(language==='ko'?'선유도공원':'Seonyudo Park'));

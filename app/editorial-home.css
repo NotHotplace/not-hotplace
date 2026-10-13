@@ -51,6 +51,9 @@
 .editorial-feature-photo figcaption { margin-top:12px; }
 .editorial-feature-photo .editorial-photo-credit { color:var(--editorial-muted); margin:0; font-size:.75rem; line-height:1.6; }
 .editorial-feature-photo .editorial-photo-credit>span { display:block; margin-top:4px; font-size:inherit; }
+.editorial-photo-details { color:var(--editorial-muted); font-size:.75rem; line-height:1.6; }
+.editorial-photo-details>summary { width:fit-content; min-height:44px; padding:12px 0; cursor:pointer; color:#4f6340; }
+.editorial-photo-details>p { margin:0 0 12px; }
 .editorial-feature-photo a:not(:has(img)) { text-decoration:underline; text-underline-offset:3px; }
 .editorial-feature-info { grid-column:1; min-width:0; }
 .editorial-facts { display:grid; grid-template-columns:1fr 1fr; gap:26px; padding:0; margin:0 0 24px; }
