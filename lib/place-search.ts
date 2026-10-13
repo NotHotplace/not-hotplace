@@ -1,5 +1,6 @@
 import type {Place} from './catalog';
 import english from './en.json';
+import {placeSearchNames} from './place-names';
 import koreanRegions from './ko-regions.json';
 
 const translations = english as Record<string, string>;
@@ -12,7 +13,7 @@ const categoryTerms: Record<string, string[]> = {
   walk: ['산책', '정원', 'walk', 'garden', 'park'],
   spa: ['스파', 'spa'],
 };
-const normalize = (value: string) => value.normalize('NFKC').toLowerCase();
+const normalize = (value: string) => value.normalize('NFKC').toLowerCase().replace(/['’‘ʼ]/g, '');
 
 // Search both languages regardless of the current interface language.
 export function matchesSearchText(values: (string | undefined)[], term: string) {
@@ -25,7 +26,7 @@ export function matchesSearchText(values: (string | undefined)[], term: string) 
 
 export function matchesPlaceSearch(place: Place, term: string) {
   return matchesSearchText([
-    place.name, place.city, place.area, place.address,
+    ...placeSearchNames(place), place.city, place.area, place.address,
     ...place.states || [], ...place.tags || [], ...place.tagsKo || [], ...place.tagsEn || [],
     ...categoryTerms[place.category] || [],
   ], term);
