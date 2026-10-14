@@ -94,10 +94,28 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
     assert.deepEqual(cards, expected, label + ': reading guide includes all five supported candidates');
     assert(html.includes('<h1>' + escape(guide[language === 'ko' ? 'titleKo' : 'titleEn']) + '</h1>'), label + ': guide headline does not retain a stale count');
     assert(expected.includes('guide-place-' + bensReadingPlace.id), label + ': Ben remains discoverable through reading guidance');
+    const card = html.match(/<article\b[^>]*id="guide-place-tour-3443228"[^>]*>([\s\S]*?)<\/article>/)?.[1];
+    assert(card && card.includes(escape(lib('place-names').placeName(bensReadingPlace,language))), label + ': localized Ben name');
+    assert(card.includes('dateTime="2026-10-12"') || card.includes('datetime="2026-10-12"'));
+    assert(card.includes('This source checked: ') || card.includes('이 출처 확인: '));
+    assert(card.includes('dateTime="2026-10-02"') || card.includes('datetime="2026-10-02"'));
+    const structured=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1])).find(j=>j['@type']==='CollectionPage');
+    assert.equal(structured.mainEntity.itemListElement.find(p=>p.url.endsWith('/'+bensReadingPlace.id+'/'+language)).name,lib('place-names').placeName(bensReadingPlace,language));
+  }
+  if (language && route === `/places/world-gb-hyde-park/${language}`) {
+    const visible=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'');
+    const hyde=catalog.find(p=>p.id==='world-gb-hyde-park');
+    for(const row of hyde.visitDetails) assert(visible.includes(escape(row[language==='ko'?'textKo':'textEn'])));
+    assert(!/October 11, 2026|10월 11일|Allow extra travel time/.test(visible),'expired event removed from live visitor guidance');
+    assert(visible.includes(language==='ko'?'현재 운영 상태는 미확인':'Current operation of the Diana Memorial Fountain is unverified'));
   }
   if (language && route === `/places/${bensReadingPlace.id}/${language}`) {
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of bensReadingPlace.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible Ben’s visit detail ' + row.labelEn);
+    assert(visible.includes(language==='ko'?'방문 정보 갱신: ':'Visit information updated: '));
+    assert(visible.includes(language==='ko'?'이 출처 확인: ':'This source checked: '));
+    const ogTitle=tags(html,'meta').find(m=>m.property==='og:title')?.content;
+    assert(ogTitle?.startsWith(lib('place-names').placeName(bensReadingPlace,language)),label+': localized metadata (including streamed metadata)');
     const suffix = language === 'ko' ? 'Ko' : 'En';
     for (const key of ['summary', 'caution', 'period']) assert(visible.includes(escape(bensReadingPlace.externalMemo[key + suffix])), label + ': dated visitor attribution and limits');
     assert(visible.includes(escape(bensReadingPlace.recommendationReasons[0]['text' + suffix])), label + ': complete initial reading and sound reason');
@@ -165,7 +183,7 @@ async function freePort() {
     for (const agent of Object.keys(agents)) {
       for (const route of ['/mx', '/kr?lang=ko&region=서울', '/us?lang=en&category=cafe', '/jp?lang=ko', '/regions?lang=en']) await page(route, agent);
       for (const language of ['ko', 'en']) {
-        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', '수연산방'], [basicPlace.id, basicPlace.name], ...[...gardenPlaces, bensReadingPlace].map(place => [place.id, place.name])]) {
+        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', '수연산방'], [basicPlace.id, basicPlace.name], ...[...gardenPlaces, bensReadingPlace, catalog.find(p=>p.id==='world-gb-hyde-park')].map(place => [place.id, lib('place-names').placeName(place, language)])]) {
           await page(`/places/${id}/${language}`, agent, {language, title, noindex: id === basicPlace.id});
         }
         await page(`/guides/korea-reading-cafes/${language}`, agent, {language});

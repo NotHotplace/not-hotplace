@@ -1,0 +1,22 @@
+{
+  "tour-3443228": {
+    "nameEn": "Ben’s Library",
+    "aliases": [
+      "벤의서재"
+    ],
+    "source": "https://marieclairejapon.com/culture/234406/",
+    "checked": "2026-10-13"
+  },
+  "kr-seoul-seonyudo-park": {
+    "nameEn": "Seonyudo Park",
+    "aliases": [],
+    "source": "https://english.visitseoul.net/yongsan%26yeouido-area/SeonyudoPark/ENP000378",
+    "checked": "2026-10-13"
+  },
+  "kr-seoul-forest": {
+    "nameEn": "Seoul Forest",
+    "aliases": [],
+    "source": "https://english.visitseoul.net/nature/seoul-forest/ENP001838",
+    "checked": "2026-10-13"
+  }
+}

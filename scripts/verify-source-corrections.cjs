@@ -160,6 +160,7 @@ assert.equal(read('wrangler.json').vars.PAYMENTS_LIVE_ENABLED, 'false');
 // Render the actual server page in both languages. Only interactive child
 // components are stubbed; catalog merge, page copy, sources and photo UI are real.
 function requirePage(name) {
+  if (name === '@/app/place-source-summary') return compile(path.join(root, 'app/place-source-summary.tsx'), requirePage);
   if (name === '@/components/seo-links') return compile(path.join(root, 'components/seo-links.tsx'), requirePage);
   if (name.startsWith('@/lib/')) return lib(name.slice('@/lib/'.length));
   if (name === 'next/navigation') return {notFound() { throw new Error('Unexpected missing place'); }};

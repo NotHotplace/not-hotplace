@@ -137,6 +137,24 @@ function harness({language, country = 'KR', file = 'app/explorer.tsx', scope = '
 
     const defaults=harness({language,urlQuery:'lang='+language+'&view=explore&resume=1',resume:{category:'food',view:'explore',urlKey:'newer-incompatible-state',scroll:777}});await defaults.ready();assert.equal(defaults.byClass('quiet-place').length,2,'explicit default context cannot use unrelated newer session filters');assert.equal(defaults.scroll(),0);defaults.unmount();
 
+    // Verified alternate names work through the actual KO/EN input handler and
+    // preserve the query, interface language and return context on detail links.
+    const ben = catalog.find(place => place.id === 'tour-3443228');
+    const named = harness({language, places: catalog.filter(place=>place.country==='KR').map(row), resume:{view:'explore'}});
+    await named.ready();
+    for(const term of ['Ben’s Library', "Ben's Library", 'Bens Library', '벤의 서재']) {
+      named.search(term);
+      assert.equal(named.byClass('quiet-place').length,1,language+': one Ben search result');
+      assert(text(named.byClass('quiet-place')[0]).includes(language==='ko'?'벤의 서재':'Ben’s Library'));
+      const link=named.byClass('quiet-place-main')[0],url=new URL(link.props.href,'https://nothotplace.com');
+      assert.equal(url.pathname,'/places/'+ben.id+'/'+language);
+      const back=new URL(url.searchParams.get('returnTo'),'https://nothotplace.com');
+      assert.equal(back.searchParams.get('q'),term);assert.equal(back.searchParams.get('lang'),language);
+      assert.equal(global.location.searchParams.get('q'),term);
+    }
+    named.search('Benjamin Library');assert(named.empty());assert.equal(named.byClass('quiet-picks').length,0);
+    named.search('');assert(named.byClass('quiet-place').length>1,'clearing restores the list');named.unmount();
+
     // Recommendations are cross-category, but every winner must match the search.
     const candidates = [{...cafe, name: 'Search Match Café', tags: ['공통추천 commonmatch']}, {...food, name: 'Search Match Food', tags: ['공통추천 commonmatch']}];
     let h = harness({language, places: candidates, resume: {view: 'explore'}}); await h.ready();

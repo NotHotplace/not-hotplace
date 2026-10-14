@@ -10,7 +10,7 @@ import {useGlobeMotion} from '@/hooks/use-globe-motion';
 import {LanguageToggle, useLocale} from './locale';
 import HomeThemes from './home-themes';
 import HomeFinder from './home-finder';
-import GuideLinks from './guide-links';
+import HomeGuides from './home-guides';
 
 export default function GlobeHome({initialChoices}:{initialChoices?:ReturnType<typeof readHomeChoices>}={}) {
   const {lang, text} = useLocale();
@@ -112,31 +112,7 @@ export default function GlobeHome({initialChoices}:{initialChoices?:ReturnType<t
   function finishDrag() {if(drag.current)suppressClick.current=drag.current.moved;drag.current=null;motion.dragging.current=false;}
 
 
-  return <div className="world-app" data-motion={motion.enabled ? 'on' : 'off'}>
-    <header className="world-header"><a className="brand" href={'/?lang=' + lang}>Not<span>_</span>Hotplace</a>
-      <div className="world-header-tools"><button className="world-motion-toggle" type="button" onClick={motion.toggle}
-        disabled={motion.reduced} aria-pressed={motion.enabled}
-        aria-label={motion.reduced ? text('Reduced motion enabled', '모션 감소 설정 적용 중') : motion.enabled ? text('Pause animation', '애니메이션 멈추기') : text('Play animation', '애니메이션 재생하기')}>
-        {motion.enabled ? <Pause size={16}/> : <Play size={16}/>}<span>{motion.reduced ? text('Reduced motion', '모션 감소') : motion.enabled ? text('Pause motion', '모션 끄기') : text('Play motion', '모션 켜기')}</span>
-      </button><LanguageToggle/></div>
-    </header>
-    <main>
-      <div className="world-main">
-        <section className="world-heading"><span className="world-kicker">WE WANT REST.</span>
-          <h1>{text('Find your', '어디에서')}<br/><em>{text('room to breathe.', '쉬어갈까요?')}</em></h1>
-          <figure className="world-guide">
-            <span className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async"/></span>
-            <figcaption>
-              <p className="world-guide-introduction">{text('Yeonaon, your rest guide.', '쉬어갈 곳을 함께 찾는 여나온')}</p>
-              <p>{text('Choose a country on the globe, then your kind of pause.', '지구본에서 나라를 고르고, 어떤 쉼이 필요한지 알려주세요.')}</p>
-            </figcaption>
-          </figure>
-          <a className="world-install-link" href={'/install?lang='+lang}><Smartphone size={18} aria-hidden="true"/>{text('Install app','앱 설치')}<span>{text('Add to your home screen','홈 화면에 추가')}</span></a>
-          <nav className="world-quick-actions" aria-label={text('Start exploring','바로 탐색하기')}><a href="#home-world">{text('Explore the world','세계 장소 찾아보기')}</a><a href="#home-finder">{text('Find my kind of pause','내 조건으로 찾기')}</a></nav>
-          {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
-        </section>
-      </div>
-      <details className="home-globe-disclosure" id="home-world" ref={globeDisclosure} open={globeOpen} onToggle={event=>toggleGlobe(event.currentTarget.open)}><summary><Globe2 size={21} aria-hidden="true"/><span><strong>{text('Choose on the globe','세계에서 고르기')}</strong><small>{text(countryConfig[country].nameEn,countryConfig[country].nameKo)} · {globeOpen?text('Close globe','지구본 접기'):text('Change country','나라 바꾸기')}</small></span></summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
+  const globeChooser = <details className="home-globe-disclosure" id="home-world" ref={globeDisclosure} open={globeOpen} onToggle={event=>toggleGlobe(event.currentTarget.open)}><summary><img className="editorial-mini-globe" src="/assets/home-globe.webp" width="104" height="104" alt=""/><span><span className="editorial-kicker">{text('EXPLORE THE WORLD','세계에서 고르기')}</span><strong>{text('Where shall we go?','어디에서 쉴까요?')}</strong><small>{globeOpen?text('Close globe','지구본 접기'):text('Open the globe ↗','지구본 펼치기 ↗')}</small></span></summary>        <section className="globe-panel" ref={panel} aria-label={text('Choose a country on the globe', '지구본에서 국가 선택')}>
           <div className="globe-display">
             <svg ref={globeSvg} viewBox="0 0 600 600" role="group" aria-label={text('World globe. Drag to rotate. Use arrow keys to browse countries, then Enter to select.', '세계 지구본. 드래그하여 회전하세요. 방향키로 나라를 둘러보고 Enter로 선택하세요.')}
               onKeyDown={event=>{if(['ArrowLeft','ArrowUp','ArrowRight','ArrowDown','Home','End'].includes(event.key)){event.preventDefault();if(event.key==='Home')browseCountry(countryCodes[0]);else if(event.key==='End')browseCountry(countryCodes[countryCodes.length-1]);else stepCountry(event.key==='ArrowLeft'||event.key==='ArrowUp'?-1:1);}else if(event.key==='Escape'){event.preventDefault();setGlobeOpen(false);globeDisclosure.current?.querySelector('summary')?.focus();}}}
@@ -208,10 +184,22 @@ export default function GlobeHome({initialChoices}:{initialChoices?:ReturnType<t
             <button type="button" disabled={!geo||!data} onClick={event=>{if(event.detail>0)event.currentTarget.focus({preventScroll:true});stepCountry(1,event.detail===0);}} aria-label={text('Next country','다음 나라')}><span>{text('Next','다음 나라')}</span><ChevronRight size={18}/></button>
           </div>
           <p className="globe-label-hint">{text('Browse with the arrows, then select a pin. You can also drag the globe.','화살표로 둘러본 뒤 핀을 눌러 선택하세요. 지구본을 직접 돌려도 좋아요.')}</p>
-        </section></details>
-      <HomeFinder country={country} initialRegion={initialChoices?.region} initialPurpose={initialChoices?.purpose} ready={homeReady} homeTheme={homeTheme} onRegionChange={setHomeRegion} onPurposeChange={setHomePurpose}/>
+        </section></details>;
+
+  return <div className="world-app editorial-home" data-motion={motion.enabled ? 'on' : 'off'}>
+    <header className="world-header"><a className="brand" href={'/?lang=' + lang}>Not<span>_</span>Hotplace</a>
+      <div className="world-header-tools"><a className="world-install-link" href={'/install?lang='+lang}><Smartphone size={16} aria-hidden="true"/>{text('Install app','앱 설치')}</a><a className="editorial-header-guides" href="#home-guides">{text('Guides','가이드')}</a><button className="world-motion-toggle" type="button" onClick={motion.toggle}
+        disabled={motion.reduced} aria-pressed={motion.enabled}
+        aria-label={motion.reduced ? text('Reduced motion enabled', '모션 감소 설정 적용 중') : motion.enabled ? text('Pause animation', '애니메이션 멈추기') : text('Play animation', '애니메이션 재생하기')}>
+        {motion.enabled ? <Pause size={16}/> : <Play size={16}/>}<span>{motion.reduced ? text('Reduced motion', '모션 감소') : motion.enabled ? text('Pause motion', '모션 끄기') : text('Play motion', '모션 켜기')}</span>
+      </button><LanguageToggle/></div>
+    </header>
+    <main>
+      <HomeFinder country={country} initialRegion={initialChoices?.region} initialPurpose={initialChoices?.purpose} ready={homeReady} homeTheme={homeTheme} onRegionChange={setHomeRegion} onPurposeChange={setHomePurpose}>{globeChooser}</HomeFinder>
+      <figure className="world-guide"><span className="world-pause-illustration" aria-hidden="true"><img src="/assets/brand-tea-guide.webp" alt="" width="480" height="600" decoding="async" loading="lazy"/></span><figcaption><strong>{text('Yeonaon, your rest guide.', '쉬어갈 곳을 함께 찾는 여나온')}</strong><p>{text('A walk or a longer sit? Start with the details that matter to your visit.', '걷는 날인지, 오래 앉아 있을 날인지. 필요한 조건부터 살펴보세요.')}</p></figcaption><a href="#home-guides">{text('Find a different pause ↓','다른 쉼 찾아보기 ↓')}</a></figure>
+      <HomeGuides language={lang} country={country}/>
       <details className="home-more-pauses"><summary><span>{text('More ways to pause','다른 쉼도 둘러보기')}</span><ChevronDown size={24} aria-hidden="true"/></summary><HomeThemes country={country} initialTheme={initialChoices?.theme} ready={homeReady} homeRegion={homeRegion} homePurpose={homePurpose} onThemeChange={setHomeTheme}/></details>
-      <section className="home-themes"><h2>{text('Guides for your next pause.','쉼을 위한 가이드.')}</h2><GuideLinks language={lang} country={country}/></section>
+      {lastCountry&&<a className="world-continue" href={'/'+lastCountry.toLowerCase()+'?lang='+lang+'&resume=1'}>{text('Continue exploring '+countryConfig[lastCountry].nameEn,countryConfig[lastCountry].nameKo+'에서 이어서 찾기')}</a>}
     </main>
     <footer className="world-footer"><span><Globe2 size={15}/>{text(countryCodes.length+' countries · A pause, at your pace.',countryCodes.length+'개국 · 나만의 속도로 찾는 쉼.')}</span><a href={'/install?lang='+lang}>{text('Install app','앱 설치')}</a><a href={'/contributors?lang='+lang}>{text('Regional contributors','우리 동네 발견자')}</a><a href={'/privacy?lang=' + lang}>{text('Privacy', '개인정보처리방침')}</a></footer>
   </div>;

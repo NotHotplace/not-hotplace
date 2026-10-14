@@ -7,11 +7,11 @@
     "name": "Hyde Park",
     "area": "London",
     "address": "Hyde Park · London area, GB (street address not verified)",
-    "description": "런던 하이드파크의 산책 공간입니다. 보행자 출입 시간과 분수 폐쇄 안내를 함께 확인하세요. 2026년 10월 11일 하프마라톤으로 일부 도로·자전거 경로가 통제됩니다.",
-    "descriptionKo": "런던 하이드파크의 산책 공간입니다. 보행자 출입 시간과 분수 폐쇄 안내를 함께 확인하세요. 2026년 10월 11일 하프마라톤으로 일부 도로·자전거 경로가 통제됩니다.",
-    "descriptionEn": "A park walk in London. Check pedestrian access and the fountain closure notice. A half marathon on October 11, 2026 brings road and cycle-route closures.",
+    "description": "런던의 공원 산책 후보로, 보행자 출입과 최신 시설 안내를 확인하세요. 다이애나 기념 분수의 현재 운영 상태는 미확인입니다.",
+    "descriptionKo": "런던의 공원 산책 후보로, 보행자 출입과 최신 시설 안내를 확인하세요. 다이애나 기념 분수의 현재 운영 상태는 미확인입니다.",
+    "descriptionEn": "A park walk in London; check pedestrian access and the latest facility notices. Current operation of the Diana Memorial Fountain is unverified.",
     "source": "https://www.royalparks.org.uk/visit/parks/hyde-park",
-    "checked": "2026-10-02",
+    "checked": "2026-10-13",
     "tags": [
       "정원·녹지 공간"
     ],
@@ -33,20 +33,26 @@
         "checked": "2026-10-02"
       },
       {
-        "labelEn": "Closures",
-        "labelKo": "현재 안내",
-        "textEn": "Diana Memorial Fountain is closed following a water-system fault, according to the July 1, 2026 notice.",
-        "textKo": "2026년 7월 1일 안내 기준, 급수 시설 고장으로 다이애나 기념 분수가 폐쇄돼 있어요.",
-        "source": "https://www.royalparks.org.uk/visit/parks/hyde-park",
-        "checked": "2026-10-02"
+        "labelEn": "Fountain operation",
+        "labelKo": "분수 운영 확인",
+        "textEn": "Current operation of the Diana Memorial Fountain is unverified as of October 13, 2026. The July 1 closure notice is no longer displayed on the current park page, but no reopening confirmation was verified. Check the latest Royal Parks notice before visiting.",
+        "textKo": "2026-10-13 기준 다이애나 기념 분수의 현재 운영 상태는 미확인입니다. 7월 1일 폐쇄 안내가 현재 공원 페이지에서 보이지 않지만, 재개방을 확인한 것은 아닙니다. 방문 전 Royal Parks의 최신 안내를 확인해 주세요.",
+        "source": "https://www.royalparks.org.uk/visit/parks/hyde-park/diana-memorial-fountain",
+        "checked": "2026-10-13",
+        "additionalSources": [
+          {
+            "label": "Hyde Park notices",
+            "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+          }
+        ]
       },
       {
         "labelEn": "Visit planning",
         "labelKo": "행사·접근",
-        "textEn": "The Royal Parks Half Marathon on October 11, 2026 requires some road and cycle-route closures. Allow extra travel time.",
-        "textKo": "2026년 10월 11일 하프마라톤으로 일부 도로·자전거 경로가 통제됩니다. 이동 시간을 여유 있게 잡으세요.",
+        "textEn": "Check the current Hyde Park notices for temporary access changes before visiting.",
+        "textKo": "방문 전 하이드파크의 최신 공지에서 임시 출입 변경 사항을 확인해 주세요.",
         "source": "https://www.royalparks.org.uk/visit/parks/hyde-park",
-        "checked": "2026-10-02"
+        "checked": "2026-10-13"
       },
       {
         "labelEn": "Location reference",
@@ -54,6 +60,14 @@
         "textEn": "Coordinates identify the place or area, not a verified entrance or parking location.",
         "textKo": "장소 또는 구역의 기준 좌표예요. 입구·주차장 좌표를 뜻하지 않습니다.",
         "source": "https://en.wikipedia.org/wiki/Hyde_Park%2C_London",
+        "checked": "2026-10-02"
+      },
+      {
+        "labelEn": "Earlier fountain notice",
+        "labelKo": "이전 분수 폐쇄 안내",
+        "textEn": "The July 1, 2026 notice, checked on October 2, reported a fountain closure due to a water-system fault. This historical notice does not establish current operation.",
+        "textKo": "2026-10-02 확인한 2026년 7월 1일 공지는 급수 시설 고장에 따른 분수 폐쇄를 안내했습니다. 이전 안내이며 현재 운영 상태를 뜻하지 않습니다.",
+        "source": "https://www.royalparks.org.uk/visit/parks/hyde-park",
         "checked": "2026-10-02"
       }
     ],
