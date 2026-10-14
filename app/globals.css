@@ -116,3 +116,13 @@
 .regional-checks{padding:24px;border:1px solid var(--border);background:var(--secondary);border-radius:18px;margin:30px 0}.regional-checks h2{font-size:22px}.regional-checks ul{margin:18px 0;padding-left:20px;line-height:1.85;color:var(--muted-foreground)}.regional-checks p,.regional-page article p{line-height:1.8;color:var(--muted-foreground)}.regional-photo{width:100%;height:220px;object-fit:cover}.regional-page article h2{font-size:23px;line-height:1.4}.regional-fact{border-top:1px solid var(--border);padding-top:12px;font-size:14px}
 
 .regional-order{margin:32px 0 16px;max-width:800px}.regional-order h2{font-size:23px}.regional-order p{font-size:14px;line-height:1.8;color:var(--muted-foreground)}.regional-evidence{font-size:12px;font-weight:650;color:var(--primary)!important}.regional-pagination{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:36px 0}.regional-pagination a,.regional-pagination>span[aria-disabled]{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px 12px;border:1px solid var(--border);border-radius:12px}.regional-pagination a[aria-current=page]{background:var(--primary);color:var(--primary-foreground)}.regional-pagination [aria-disabled]{opacity:.45}.regional-page-number{display:inline-flex;align-items:center;gap:8px}.regional-pagination a:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+
+/* Keep the default review to one tap; extra questions are opt-in. */
+.quick-more{border-top:1px solid var(--border);margin-top:16px;padding-top:4px}
+.quick-more>summary::after{content:'+';margin-left:auto;font-size:20px}
+.quick-more[open]>summary::after{content:'−'}
+.quick-detailed{margin-top:18px;padding-top:4px;border-top:1px solid var(--border)}
+.quick-extra-title{font-weight:500;color:var(--foreground)!important}
+.quick-feedback .quick-choices button{white-space:nowrap}
+.quick-feedback [role=status]:empty{display:none}
+@media(max-width:380px){.quick-feedback .quick-choices{gap:5px}.quick-feedback .quick-choices button{font-size:12px;padding-inline:4px}}

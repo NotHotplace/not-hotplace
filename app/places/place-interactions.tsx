@@ -38,7 +38,7 @@ export default function PlaceInteractions({id, name, category, conditions, langu
   if(lifecycle.current.id!==id){lifecycle.current.controller?.abort();lifecycle.current.id=id;lifecycle.current.read++;lifecycle.current.operation++;}
   function invalidateRead(){lifecycle.current.read++;lifecycle.current.controller?.abort();}
   function currentOperation(operation:number){return lifecycle.current.alive&&lifecycle.current.id===id&&lifecycle.current.operation===operation;}
-  const login = `/login?lang=${language}&next=${encodeURIComponent(path + '#reviews')}`;
+  const login = `/login?lang=${language}&next=${encodeURIComponent(path + '#review-more-' + id)}`;
   const load = useCallback(async () => {
     const state=lifecycle.current,version=++state.read,operation=state.operation,controller=new AbortController();state.controller?.abort();state.controller=controller;
     const response = await fetch(`/api/places/${encodeURIComponent(id)}`, {cache: 'no-store',signal:controller.signal});
@@ -81,13 +81,19 @@ export default function PlaceInteractions({id, name, category, conditions, langu
   return <aside className="place-action-card place-interactions" id="reviews">
     <span className="place-eyebrow">{label('YOUR NEXT PAUSE', '다음 쉼을 담아두세요')}</span>
     <h2>{label('Save it for later.', '다음에 다시 찾아요.')}</h2>
-    <PlaceSave id={id} country={country} language={language}/><a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => {trackEngagement('map_open',country);recordPause({placeId:id,state:'planned',at:Date.now()});}}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a><SharePlace name={name} path={path} language={language} country={country}/><details className="place-disclosure visitor-disclosure" data-anchor-disclosure><summary>{label('Visitor feedback and your experience','방문 후기·내 경험 남기기')}{summary&&<> · {summary.count}</>}</summary><div className="place-disclosure-body"><QuickFeedback id={id} country={country} language={language}/>
+    <PlaceSave id={id} country={country} language={language}/><a className="place-secondary" href={mapUrl} target="_blank" rel="noopener noreferrer" onClick={() => {trackEngagement('map_open',country);recordPause({placeId:id,state:'planned',at:Date.now()});}}><MapPin size={18}/>{label('Open in maps', '지도에서 위치 확인')}<ArrowUpRight size={16}/></a><SharePlace name={name} path={path} language={language} country={country}/><QuickFeedback id={id} country={country} language={language}>
+    {data?.signedIn ? <><button className="place-primary" disabled={busy || !!error} aria-pressed={data.saved} onClick={() => void mutate('save',{saved: !data.saved})}>{data.saved ? <Check size={18}/> : <Bookmark size={18}/>} {data.saved ? label('Saved · tap to remove', '저장됨 · 누르면 취소') : label('Save this place', '이 장소 저장')}</button>
+      <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a detailed review', '자세한 평가 남기기')}</button></> : !loading && <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}><Bookmark size={18}/>{label('Sign in for a detailed review', '로그인하고 자세히 남기기')}</a>}
+    {loading&&<p role="status">{label('Loading detailed review…','상세 평가를 불러오는 중…')}</p>}
+    </QuickFeedback>
+    <p className="place-feedback" role="status" aria-live="polite">{notice}</p>
+    <details className="place-disclosure visitor-disclosure" data-anchor-disclosure><summary>{label('Read detailed reviews','상세 후기 보기')}{summary&&<> · {summary.count}</>}</summary><div className="place-disclosure-body">
     {loading && <p role="status">{label('Loading recent reviews…', '최근 후기를 불러오는 중…')}</p>}
     {error && <div className="place-feedback" role="alert"><p>{error}</p><button className="place-secondary" disabled={busy} onClick={() => void reloadReviews()}>{label('Reload reviews', '후기 다시 불러오기')}</button></div>}
     {!error && summary && <>
       {summary.count ? <div className="place-review-metrics">{[
         [label('Quiet', '조용했다'), summary.quiet], [label('Uncrowded', '여유로웠다'), summary.relaxed], [label('Satisfied', '만족했다'), summary.positive],
-      ].map(([title, value]) => <div key={title}><strong>{reviewValue(Number(value),summary.count,language)}</strong><span>{title}</span></div>)}</div> : <p className="place-review-empty">{label('Be the first to share how it felt. Quietness has not been rated yet.', '아직 조용함을 평가한 후기가 없어요. 방문 경험을 첫 번째로 남겨주세요.')}</p>}
+      ].map(([title, value]) => <div key={title}><strong>{reviewValue(Number(value),summary.count,language)}</strong><span>{title}</span></div>)}</div> : <p className="place-review-empty">{label('No detailed reviews yet. Quick responses are shown above.', '아직 상세 후기가 없어요. 간단 응답은 위에서 확인할 수 있어요.')}</p>}
       <p className="place-review-context">{label(`Last 90 days · ${summary.count} reviewers`, `최근 90일 · ${summary.count}명 평가`)}{summary.count > 0 && summary.count < 3 && <strong>{label('Small sample', '표본이 적어요')}</strong>}
         {summary.latest && <span>{label('Latest response: ', '최근 평가: ')}{new Date(summary.latest).toLocaleDateString(ko ? 'ko-KR':'en-US',{timeZone:'Asia/Seoul'})}</span>}
       </p>
@@ -95,9 +101,7 @@ export default function PlaceInteractions({id, name, category, conditions, langu
     </>}
     {Object.values(data?.restFeedback||{}).some(n=>n>=3)&&<RestEvidence place={{id,category,conditions,restFeedback:data?.restFeedback,resting:data?.resting}} language={language}/>}
     {data?.bestTime&&<p className="place-best-time">{label('A time to consider: ','참고할 방문 시간: ')}<strong>{visitingTimeLabel(data.bestTime,language)}</strong><br/>{label(`${data.bestTime.n} responses · ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% quiet · last 90 days`,`${data.bestTime.n}명 후기 · 조용했다 ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% · 최근 90일`)}</p>}
-    {data?.signedIn ? <><button className="place-primary" disabled={busy || !!error} aria-pressed={data.saved} onClick={() => void mutate('save',{saved: !data.saved})}>{data.saved ? <Check size={18}/> : <Bookmark size={18}/>} {data.saved ? label('Saved · tap to remove', '저장됨 · 누르면 취소') : label('Save this place', '이 장소 저장')}</button>
-      <button className="place-secondary" disabled={busy || !!error} onClick={editReview}><MessageCircle size={18}/>{data.review ? label('Edit my review', '내 후기 수정') : label('Leave a quick review', '체크로 후기 남기기')}</button></> : !loading && <a className="place-primary" href={login} onClick={()=>trackEngagement('review_login',country)}><Bookmark size={18}/>{label('Sign in to save or review', '로그인하고 저장·후기 남기기')}</a>}
-    <p className="place-feedback" role="status" aria-live="polite">{notice}</p>
+
     <p className="place-review-context">{label('Visitor reports are not live crowd measurements. Each person’s latest review counts once.', '실시간 혼잡도가 아닌 방문 후기입니다. 한 사람의 최신 후기 1건만 집계해요.')}</p>
     {data?.plus && data.insights.length > 0 && <details className="place-time-details"><summary>{label('Quietness by visiting time', '시간대별 조용함')}</summary>{data.insights.map(bucket => <p key={bucket.day + bucket.time}><strong>{ko ? bucket.day + ' ' + bucket.time : (bucket.day==='평일'?'Weekday':'Weekend / holiday') + ' · ' + ({오전:'Morning',오후:'Afternoon',저녁:'Evening'} as Record<string,string>)[bucket.time]}</strong><span>{bucket.n >= 3 ? label(`${Math.round(bucket.quiet / bucket.n * 100)}% quiet · ${bucket.n} responses`, `${Math.round(bucket.quiet / bucket.n * 100)}% 조용함 · ${bucket.n}명`) : label(`More reviews needed · ${bucket.n} responses`, `후기 부족 · ${bucket.n}명`)}</span></p>)}</details>}
     </div></details>
