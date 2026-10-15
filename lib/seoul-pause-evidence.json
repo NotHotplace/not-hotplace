@@ -1,0 +1,149 @@
+[
+  {
+    "id": "kr-seoul-seonyudo-park",
+    "hookKo": "정수장 기둥 사이를 걷고, 한강 쪽으로 시선을 옮겨요.",
+    "hookEn": "Walk between old waterworks columns, then turn toward the Han River.",
+    "fitKo": "음료 주문 없이 정원과 강 풍경을 번갈아 보고 싶은 날의 야외 쉼 후보예요.",
+    "fitEn": "For an outdoor pause among gardens and river views without a café order.",
+    "cautionKo": "공용 야외 공간이라 날씨와 빈자리를 살피고, 돌아갈 다리와 역을 먼저 확인하세요.",
+    "cautionEn": "Check weather, available seats and your bridge-and-station route back.",
+    "checked": "2026-10-14",
+    "sources": [
+      {
+        "labelKo": "서울시 공원 안내",
+        "labelEn": "Seoul Parks operator guide",
+        "url": "https://parks.seoul.go.kr/content.do?key=2604300019",
+        "kind": "operator",
+        "factsKo": "선유로 343. 녹색기둥의 정원과 선유교 전망대 안내. 선유도역 도보 약 10분, 당산역 약 15분은 운영기관의 참고치예요. 일반차량은 양화한강공원 3주차장으로 안내합니다.",
+        "factsEn": "343 Seonyu-ro. The operator describes the column garden and Seonyugyo viewpoint; approximate walks are 10 minutes from Seonyudo Station and 15 from Dangsan. Ordinary vehicles are directed to Yanghwa Hangang Car Park 3."
+      },
+      {
+        "labelKo": "서울관광재단 공원 안내",
+        "labelEn": "Visit Seoul park guide",
+        "url": "https://korean.visitseoul.net/yongsan-yeouido/선유도공원/KOP000378",
+        "kind": "official-tourism",
+        "factsKo": "공원 06:00~24:00·연중무휴. 전시관은 월요일 휴관이며 공원과 운영시간이 달라요.",
+        "factsEn": "Park hours: 06:00–24:00 daily. Exhibition spaces have separate hours and close Mondays."
+      }
+    ],
+    "unknownKo": "현재 소음·빈자리·그늘 좌석 수, 막차와 실시간 보행 경로는 확인되지 않았어요.",
+    "unknownEn": "Current noise, empty shaded seats, seat counts, last trains and live walking routes are unverified.",
+    "readiness": "source-photo-ready"
+  },
+  {
+    "id": "kr-seoul-forest",
+    "hookKo": "정원길을 걷다가 벤치와 호숫가에서 쉬어가요.",
+    "hookEn": "Pause by a bench or the lake between garden walks.",
+    "fitKo": "숲과 여러 정원을 구경하며 걷고 싶은 날 살펴볼 무료 공원이에요.",
+    "fitEn": "A free-park option for a day of woodland and garden walking.",
+    "cautionKo": "2026년 10월 27일까지 정원박람회가 열리며, 한산함과 좌석은 보장되지 않아요.",
+    "cautionEn": "The Garden Expo runs through 27 October 2026; quiet and seating are not guaranteed.",
+    "checked": "2026-10-14",
+    "sources": [
+      {
+        "labelKo": "서울숲 운영 안내",
+        "labelEn": "Seoul Forest operator guide",
+        "url": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
+        "kind": "operator",
+        "factsKo": "뚝섬로 273. 일반 공원은 24시간, 생태숲은 05:30~21:30 안내. 곤충식물원은 월요일 휴관이며 계절별 시간이 달라요.",
+        "factsEn": "273 Ttukseom-ro. The general park is open 24 hours; the ecological forest is listed as 05:30–21:30. The insect house closes Mondays and has seasonal hours."
+      },
+      {
+        "labelKo": "서울숲 주차 안내",
+        "labelEn": "Seoul Forest parking guidance",
+        "url": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
+        "kind": "operator",
+        "factsKo": "소형차 주차료 5분 200원, 전체 211면이며 만차 시 이용이 제한돼요.",
+        "factsEn": "Small-car parking costs KRW 200 per five minutes; the 211-space car park restricts access when full."
+      },
+      {
+        "labelKo": "2026 서울국제정원박람회",
+        "labelEn": "2026 Seoul International Garden Expo",
+        "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=456708",
+        "kind": "operator",
+        "factsKo": "2026-04-22 서울시 발표: 서울숲 일대 개최 기간은 5월 1일~10월 27일이에요.",
+        "factsEn": "Seoul’s 22 April 2026 announcement sets the Seoul Forest-area expo for 1 May–27 October."
+      }
+    ],
+    "unknownKo": "현장 소음·빈자리, 당일 행사 동선과 방문 시간별 혼잡도는 미확인이에요.",
+    "unknownEn": "On-site noise, free seats, same-day event routes and crowds by time are unverified.",
+    "readiness": "source-photo-ready"
+  },
+  {
+    "id": "tour-4108662",
+    "hookKo": "서가를 둘러본 뒤, 커피와 함께 책을 펼쳐요.",
+    "hookEn": "Browse the shelves, then open a book over coffee.",
+    "fitKo": "공용 책상과 소파가 있는 홍대 인근 문화 카페를 찾는 사람에게 살펴볼 후보예요.",
+    "fitEn": "For someone considering a cultural café near Hongdae with a shared desk and sofas.",
+    "cautionKo": "음악과 대화가 있는 공용 공간이며, 최신 영업시간·가격·주차는 매장에 확인하세요.",
+    "cautionEn": "This is shared space with music and conversation; confirm current hours, prices and parking.",
+    "checked": "2026-10-14",
+    "sources": [
+      {
+        "labelKo": "한국관광공사 2026년 9월 기사",
+        "labelEn": "KTO article, September 2026",
+        "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606",
+        "kind": "official-tourism",
+        "factsKo": "동교로 194 혜원빌딩 1층. 서가·긴 원목 공용 책상·소파·테라스를 소개하며 09:00~24:00을 기재해요. 현재 운영자 공지는 아니며 문의는 02-325-1984예요.",
+        "factsEn": "Ground floor, Hyewon Building, 194 Donggyo-ro. The article describes bookshelves, a long shared wooden desk, sofas and a terrace, and lists 09:00–24:00. It is not a live operator notice; contact +82 2-325-1984."
+      }
+    ],
+    "unknownKo": "최신 메뉴 가격과 주차 안내가 확정되지 않았으며, 조용한 시간대·독립룸·자리 확보는 검증되지 않았어요.",
+    "unknownEn": "Current menu prices and parking are unresolved; quiet hours, exclusive rooms and seat availability are unverified.",
+    "readiness": "further-checks"
+  },
+  {
+    "id": "tour-3443228",
+    "hookKo": "대화와 노트북을 잠시 내려놓고, 책 한 권에 머물러요.",
+    "hookEn": "Set conversation and laptop work aside for a reading break.",
+    "fitKo": "2025년 운영자가 안내한 대화·노트북 제한을 받아들이고 책을 읽고 싶은 사람을 위한 확인 중 후보예요.",
+    "fitEn": "A candidate under review for readers comfortable with the operator’s 2025 no-conversation, no-laptop rules.",
+    "cautionKo": "현재 영업시간·휴무와 사용 가능한 실사진은 미확인이라 방문 전 최신 공지를 확인하세요.",
+    "cautionEn": "Current hours, closure days and a reusable venue photo remain unverified; check the latest notice before visiting.",
+    "checked": "2026-10-14",
+    "sources": [
+      {
+        "labelKo": "벤의 서재 운영자 글 · 2025-05-29",
+        "labelEn": "Ben’s Study operator post · 29 May 2025",
+        "url": "https://brunch.co.kr/@dd96de9407e7419/21",
+        "kind": "operator",
+        "factsKo": "비치 도서는 매장에서 열람할 수 있으며 대화·노트북 작업과 소리 나는 키보드·마우스를 제한한다고 설명해요. 이는 당시 운영 규칙이며 현재 소음 수준의 측정은 아니에요.",
+        "factsEn": "The operator says the books are available to read on site and restricts conversation, laptop work and noisy keyboards or mice. These are dated rules, not measurements of current noise."
+      }
+    ],
+    "unknownKo": "영업시간·휴무가 출처별로 다르며 최신 가격·좌석 수·주차·귀가 동선·사진 사용권은 확인 중이에요.",
+    "unknownEn": "Sources disagree on hours and closures; current prices, capacity, parking, return routes and photo rights remain under review.",
+    "readiness": "further-checks"
+  },
+  {
+    "id": "seoul-suyeon",
+    "hookKo": "성북동 한옥에서 전통차를 마시며 쉬어가요.",
+    "hookEn": "Take a traditional-tea break in a Seongbuk-dong hanok.",
+    "fitKo": "정원과 옛집의 분위기를 차와 함께 즐기고 싶은 날의 확인 중 후보예요.",
+    "fitEn": "A candidate under review for a tea break with a garden and historic-house setting.",
+    "cautionKo": "주말 마감시간이 자료마다 달라 최신 운영 안내를 확인하고, 원하는 자리는 보장되지 않아요.",
+    "cautionEn": "Weekend closing times differ between listings; check current hours and do not count on a particular seat.",
+    "checked": "2026-10-14",
+    "sources": [
+      {
+        "labelKo": "서울관광재단 · 2026-05-13 수정",
+        "labelEn": "Visit Seoul · updated 13 May 2026",
+        "url": "https://english.visitseoul.net/restaurants/Suyeon-Sanbang-EN/ENP000979",
+        "kind": "official-tourism",
+        "factsKo": "성북로26길 8. 수~금 11:30~17:50, 토·일 11:30~19:50, 월·화 휴무로 안내하지만 다른 관광자료와 주말 마감시간이 달라요. 문의 02-764-1736.",
+        "factsEn": "8 Seongbuk-ro 26-gil. Lists Wed–Fri 11:30–17:50, weekends 11:30–19:50, closed Mon–Tue; weekend closing times conflict with other tourism information. Contact +82 2-764-1736."
+      },
+      {
+        "labelKo": "한국관광공사 장소 소개",
+        "labelEn": "KTO venue description",
+        "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d1272b00-18df-4d40-aa03-4fc6aed85db3",
+        "kind": "official-tourism",
+        "factsKo": "본채에 차탁 약 6개, 마당에도 테이블이 있다는 소개예요. 테이블 수는 현재 좌석 수나 빈자리 확인이 아니며, 주출입구 단차도 안내돼요.",
+        "factsEn": "Describes about six tea tables in the main house and additional garden tables. This does not establish current capacity or free seats; an entrance step is also listed."
+      }
+    ],
+    "unknownKo": "운영자 최신 공지, 현재 가격·주차 조건·독립 이용·실사진 사용권·귀가 경로는 미확인이에요.",
+    "unknownEn": "Latest operator notices, prices, parking conditions, exclusive use, reusable photo rights and return routes are unverified.",
+    "readiness": "further-checks"
+  }
+]
