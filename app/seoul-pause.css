@@ -1,0 +1,17 @@
+.seoul-pause-notes{display:grid;gap:10px}
+.seoul-pause-notes p{margin:0;line-height:1.7}
+.seoul-pause-hook{font-size:18px;color:var(--foreground);font-weight:600}
+.seoul-pause-fit{font-size:15px;line-height:1.7;color:var(--muted-foreground)}
+.seoul-pause-caution{font-size:13px;padding-left:12px;border-left:2px solid var(--border);color:var(--muted-foreground)}
+.seoul-pause-notes details>p{margin:14px 0}
+.seoul-evidence-list{display:grid;gap:18px;margin:16px 0}
+.seoul-evidence-list dt{font-size:12px;font-weight:650;color:var(--primary);margin-bottom:5px}
+.seoul-evidence-list dd{font-size:14px;line-height:1.75;margin:0;overflow-wrap:anywhere}
+.seoul-evidence-list a{text-decoration:underline;text-underline-offset:3px}
+
+.place-history{margin:18px 0;padding-top:14px;border-top:1px solid var(--border)}
+.place-history-hook{font-size:14px;line-height:1.7;color:var(--muted-foreground);margin:0 0 8px}
+.place-history ul{padding-left:20px;display:grid;gap:10px;font-size:14px;line-height:1.75}
+.place-history .guide-source{overflow-wrap:anywhere}
+.place-history summary{min-height:44px;display:list-item;padding-block:12px;cursor:pointer}
+.place-history summary:focus-visible{outline:2px solid var(--primary);outline-offset:3px}

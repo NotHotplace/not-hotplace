@@ -87,6 +87,11 @@ function inspect(html, route, label, {language, noindex = false, title} = {}) {
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const row of place.visitDetails) assert(visible.includes(escape(row[language === 'ko' ? 'textKo' : 'textEn'])), label + ': visible visit detail ' + row.labelEn);
   }
+  if (language && (route === `/guides/seoul-pauses/${language}` || ['kr-seoul-seonyudo-park','kr-seoul-forest'].some(id=>route===`/places/${id}/${language}`))) {
+    const ids=route.startsWith('/guides/')?['kr-seoul-seonyudo-park','kr-seoul-forest']:[route.split('/')[2]],visible=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'');
+    for(const id of ids){const history=lib('place-history').historyForPlace(id);assert(visible.includes(escape(history[language==='ko'?'hookKo':'hookEn'])),label+': visible history hook');for(const fact of history.facts)assert(visible.includes(escape(fact[language])),label+': history facts in disclosure');assert(tags(html,'a').some(a=>a.href===history.source),label+': official history source');}
+    const histories=[...visible.matchAll(/<section class="place-history"[^>]*>([\s\S]*?)<\/section>/g)];assert.equal(histories.length,ids.length);for(const h of histories){assert(!/<details[^>]*\bopen/.test(h[1]),label+': history starts closed');assert.equal((h[1].match(/<li>/g)||[]).length,3);}
+  }
   if (language && route === `/guides/korea-reading-cafes/${language}`) {
     const {findGuide, guidePlaces} = lib('guides'), guide = findGuide('korea-reading-cafes');
     const expected = guidePlaces(guide, catalog).map(place => 'guide-place-' + place.id);
@@ -187,6 +192,7 @@ async function freePort() {
           await page(`/places/${id}/${language}`, agent, {language, title, noindex: id === basicPlace.id});
         }
         await page(`/guides/korea-reading-cafes/${language}`, agent, {language});
+        await page(`/guides/seoul-pauses/${language}`, agent, {language});
         await page(`/regions/seoul/${language}`, agent, {language});
       }
       for (const route of ['/places/not-a-real-place/ko', '/places/cj-daechung/fr', '/not-a-country', '/guides/not-a-guide/ko', '/guides/korea-reading-cafes/fr', '/regions/not-a-region/ko', '/regions/seoul/fr']) {

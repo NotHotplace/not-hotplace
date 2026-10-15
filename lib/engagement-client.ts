@@ -4,6 +4,7 @@ import {engagementSources, sourceCategory, type EngagementEvent, type Engagement
 import {campaignCategory,type CampaignCode} from './campaigns';
 
 export function rememberCampaign():CampaignCode {
+  if (typeof window === 'undefined' || navigator.doNotTrack === '1' || (navigator as Navigator & {globalPrivacyControl?: boolean}).globalPrivacyControl) return 'none';
   try {const query=new URLSearchParams(location.search);const value=query.has('utm_source')||query.has('utm_content')?campaignCategory(query.get('utm_content')):campaignCategory(sessionStorage.getItem('nhp-campaign-category'));sessionStorage.setItem('nhp-campaign-category',value);return value;}catch{return 'none';}
 }
 export function rememberSource(): EngagementSource {

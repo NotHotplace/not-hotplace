@@ -20,6 +20,7 @@ import "./growth.css";
 import "./warm-brand.css";
 import "./photo-led.css";
 import "./editorial-home.css";
+import "./seoul-pause.css";
 import {LanguageProvider} from "./locale";
 
 export const metadata: Metadata = {
