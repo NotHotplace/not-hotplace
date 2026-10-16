@@ -4,7 +4,6 @@ import {useEffect,useState} from 'react';
 type InstallEvent=Event & {prompt:()=>Promise<void>;userChoice:Promise<{outcome:'accepted'|'dismissed'}>};
 export default function InstallGuide(){
  const {ui,lang,text}=useLocale();
- useEffect(()=>{document.title=(lang==='ko'?'앱 설치':'Install the app')+' | NotHotplace';},[lang]);
  const [prompt,setPrompt]=useState<InstallEvent|null>(null),[installed,setInstalled]=useState(false),[message,setMessage]=useState('');
  useEffect(()=>{
   const media=matchMedia('(display-mode: standalone)');

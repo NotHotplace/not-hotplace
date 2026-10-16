@@ -1,6 +1,6 @@
 import {usRegions} from './us-regions';
 import {regionKeys} from './regions';
-export const countryCodes=['KR','US','JP','GB','FR','DE','ES','IT','PT','NL','AT','CZ','HU','KZ','UZ','KG','SG','TH','TW','MY','VN','ID','IN','AU','NZ','CA','MX','TR','AE','ZA','DK'] as const;
+export const countryCodes=['KR','US','JP','GB','FR','DE','ES','IT','PT','NL','AT','CZ','HU','KZ','UZ','KG','SG','TH','TW','MY','VN','ID','IN','AU','NZ','CA','MX','TR','AE','ZA'] as const;
 export type CountryCode=typeof countryCodes[number];
 export const japanRegions=['Tokyo','Kyoto','Osaka'] as const;
 export const countries={
@@ -34,7 +34,6 @@ export const countries={
  TR:{slug:'tr',nameKo:'튀르키예',nameEn:'Türkiye',regions:['Istanbul'],defaultRegion:'Istanbul',continent:'Europe',iso3:'TUR',center:[35,39],currency:'TRY'},
  AE:{slug:'ae',nameKo:'아랍에미리트',nameEn:'United Arab Emirates',regions:['Dubai','Abu Dhabi'],defaultRegion:'Dubai',continent:'Asia',iso3:'ARE',center:[54,24],currency:'AED'},
  ZA:{slug:'za',nameKo:'남아프리카공화국',nameEn:'South Africa',regions:['Cape Town','Johannesburg','Pretoria'],defaultRegion:'Cape Town',continent:'Africa',iso3:'ZAF',center:[25,-29],currency:'ZAR'},
- DK:{slug:'dk',nameKo:'덴마크',nameEn:'Denmark',regions:['Aarhus'],defaultRegion:'Aarhus',continent:'Europe',iso3:'DNK',center:[10,56],currency:'DKK'},
 } as const;
 export function countryCode(value:unknown):CountryCode{return countryCodes.includes(value as CountryCode)?value as CountryCode:'KR';}
 export function countryForRegion(region:string):CountryCode{return countryCodes.find(code=>(countries[code].regions as readonly string[]).includes(region))||'KR';}
