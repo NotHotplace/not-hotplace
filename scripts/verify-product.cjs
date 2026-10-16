@@ -333,7 +333,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const conditionUrl=writeBrowseState(new URL('https://example.test/kr'),{...browsing,filters:{...emptyFilters,books:true,soloOrder:true,quiet:true}},'ko');
  assert.equal(readBrowseState(conditionUrl.searchParams,regionKeys).filters.soloOrder,true);
  assert(!readBrowseState(new URLSearchParams('books=yes&quietMusic=1&actor=private'),regionKeys).filters.books);
- const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,5);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
+ const conditionsBook=catalog.filter(p=>matchesCondition(p,'books'));assert.equal(conditionsBook.length,6);assert(conditionsBook.every(p=>p.conditions.find(f=>f.kind==='books').source.startsWith('https://')));
  const memos=catalog.filter(p=>p.externalMemo);assert.equal(memos.length,24);assert(memos.every(p=>p.externalMemo.periodKo&&p.externalMemo.periodEn&&p.externalMemo.sources.every(s=>s.url.startsWith('https://'))));
  const {externalReviewLinks}=load(path.join(root,'lib/external-reviews.ts'));
  assert.equal(externalReviewLinks(catalog.find(p=>p.id==='cj-daechung')).length,3);
@@ -411,10 +411,10 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  const {countryCodes,countries}=load(path.join(root,'lib/countries.ts'));
  const expanded=load(path.join(root,'lib/expanded-catalog.json'));
  const manifest=load(path.join(root,'lib/catalog-source-manifest.json'));
- assert.equal(countryCodes.length,30);assert.equal(catalog.length,1010);assert.equal(expanded.length,607);
- assert.equal(new Set(manifest.map(p=>p.id)).size,609);
+ assert.equal(countryCodes.length,31);assert.equal(catalog.length,1011);assert.equal(expanded.length,608);
+ assert.equal(new Set(manifest.map(p=>p.id)).size,610);
  assert(expanded.every(p=>manifest.some(m=>m.id===p.id&&m.country===p.country)),'every new record has source provenance');
- for(const country of countryCodes){const response=await (await data.GET(new Request('https://example.test/api/data?country='+country))).json();assert(response.places.length>0);assert(response.places.every(p=>p.country===country),'all 30 API views are country scoped');assert(countries[country].regions.includes(countries[country].defaultRegion));}
+ for(const country of countryCodes){const response=await (await data.GET(new Request('https://example.test/api/data?country='+country))).json();assert(response.places.length>0);assert(response.places.every(p=>p.country===country),'all 31 API views are country scoped');assert(countries[country].regions.includes(countries[country].defaultRegion));}
  for(const p of expanded){assert(p.visitDetails.length>=1&&p.source.startsWith('https://'),'source information exists even when access facts remain unknown');if(p.lat!=null)assert(Number.isFinite(p.lat)&&Math.abs(p.lat)<=90&&Number.isFinite(p.lon)&&Math.abs(p.lon)<=180&&p.locationInfo.kind==='reference','new coordinates are bounded reference points, not verified entrances');}
  const {visitFacts}=load(path.join(root,'lib/visit-facts.ts'));
  const fixture={...catalog[0],visitFacts:undefined,conditions:[],visitDetails:[]};
@@ -472,7 +472,7 @@ const review={placeId:'cj-daechung',satisfied:1,noise:'조용함',crowd:'여유�
  for(const file of migrations.filter(x=>x>='0008'))legacy.exec(fs.readFileSync(path.join(root,'drizzle',file),'utf8'));
  tables.forEach((table,i)=>assert.deepEqual(legacy.prepare('SELECT * FROM '+table).all(),snapshots[i],'world migration retains '+table));
  legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','SG','direct',1)");assert.throws(()=>legacy.exec("INSERT INTO engagement_totals VALUES('2026-10-02','save','sg','direct',1)"),/CHECK/);legacy.close();
- console.log('PASS: 30 country scopes, 1,010 unique places, source/reference integrity, unknown parking, seat sizes, admission semantics, private consent-based contributions, actor/IP limits, withdrawal, moderation, expiry and migration data preservation.');
+ console.log('PASS: 31 country scopes, 1,011 unique places, source/reference integrity, unknown parking, seat sizes, admission semantics, private consent-based contributions, actor/IP limits, withdrawal, moderation, expiry and migration data preservation.');
  }
  console.log('PASS: trial expiry, premium gating, distance, prices, payment integrity/idempotency, automatic recommendation hold,  nationwide catalog, regional filtering, authorization, owner binding, approval visibility, persistence, input validation, review deduplication, 90-day aggregation, recommendation eligibility.');
 })().finally(()=>{try{network.assertClean();}finally{network.restore();sql.close();}}).catch(e=>{console.error(e);process.exitCode=1;});

@@ -6265,5 +6265,22 @@
     "photoLicense": "CC BY 4.0",
     "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "originalImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Seoul_Forest_Walk_Path.jpg"
+  },
+  {
+    "id": "world-dk-dokk1",
+    "country": "DK",
+    "provider": "Dokk1 official visitor information and VisitDenmark",
+    "source": "https://dokk1.dk/planlaeg-dit-besoeg",
+    "checked": "2026-10-16",
+    "level": "reference",
+    "officialCandidate": "https://dokk1.dk/planlaeg-dit-besoeg",
+    "detailLevel": "enriched",
+    "visitSources": [
+      "https://dokk1.dk/planlaeg-dit-besoeg",
+      "https://dokk1.dk/aabningstider-i-dokk1",
+      "https://www.dokk1.dk/sites/default/files/file_upload/studiepladsfolder.pdf",
+      "https://www.visitdenmark.com/denmark/plan-your-trip/the-culture-house-dokk1-gdk1077504",
+      "https://dokk1.dk/parkering"
+    ]
   }
 ]

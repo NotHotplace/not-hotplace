@@ -50,7 +50,7 @@ export default async function PlacePage({params,searchParams}: Props) {
   const ko = language === 'ko';
   const label = (en: string, kr: string) => ko ? kr : en;
   const category = place.category === 'cafe' ? label('CAFÉ & TEA', '카페 · 찻집')
-    : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : place.category === 'walk' ? label('WALKS & GARDENS', '산책 · 정원') : label('SCENIC STOP', '풍경 · 드라이브');
+    : place.category === 'library' ? label('LIBRARY & READING', '도서관 · 독서') : place.category === 'food' ? label('FOOD & A PAUSE', '음식점') : place.category === 'spa' ? label('SPA & WELLNESS', '스파 · 웰니스') : place.category === 'walk' ? label('WALKS & GARDENS', '산책 · 정원') : label('SCENIC STOP', '풍경 · 드라이브');
   const nearby = relatedPlaces(place);
   const essentials=essentialDetails(place);
   const photoSource = place.imageSource || place.imageRemote || place.source;
@@ -80,7 +80,7 @@ export default async function PlacePage({params,searchParams}: Props) {
       <div className="place-photo-section">
         {place.photos?.length ? <PlaceGallery photos={place.photos} name={placeName(place,language)} language={language}/> : place.image ? <figure className="place-cover">
           <img src={place.image} alt={placeName(place,language)} fetchPriority="high"/>
-          <figcaption>{place.imageCredit}{license && <> · {place.imageLicenseUrl
+          <figcaption>{place.imageCreditUrl?<a href={place.imageCreditUrl} target="_blank" rel="noopener noreferrer">{place.imageCredit}</a>:place.imageCredit}{license && <> · {place.imageLicenseUrl
             ? <a href={place.imageLicenseUrl} target="_blank" rel="noopener noreferrer">{license}</a> : license}</>}
             {' · '}<a href={photoSource} target="_blank" rel="noopener noreferrer">{label('Photo source', '사진 출처')}</a>
             {place.imageNote && <span>{label(place.imageNote, place.imageNoteKo || '크기 조정 및 형식 변환 · 화면에 따라 사진 일부가 잘릴 수 있습니다.')}</span>}

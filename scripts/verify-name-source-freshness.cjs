@@ -47,7 +47,7 @@ assert.equal(old.checked,'2026-10-02');assert.match(old.textEn,/July 1, 2026.*hi
 assert.equal(hyde.visitDetails.find(d=>d.labelEn==='Hours').checked,'2026-10-02');
 assert.equal(hyde.locationInfo.checked,'2026-10-02');
 assert(!/October 11, 2026|10월 11일|Allow extra travel time|is closed following/.test(JSON.stringify(hyde)));
-assert.equal(catalog.length,1010);assert.equal(new Set(catalog.map(p=>p.id)).size,1010);
+assert.equal(catalog.length,1011);assert.equal(new Set(catalog.map(p=>p.id)).size,1011);
 assert.equal(catalog.filter(p=>p.country==='KR'&&p.city==='서울').length,36);
 assert(!catalog.some(p=>/de.?krook/i.test(p.id+' '+p.name)));
 const stub=()=>null;
@@ -90,5 +90,5 @@ function jsonLd(html,type){return [...html.matchAll(/<script type="application\/
   assert(!/October 11, 2026|10월 11일|is closed following/.test(fountain));
  }
  assert.equal(JSON.stringify(catalog),original,'search/localization/rendering do not mutate canonical identities');
- console.log('PASS: exact bilingual Ben search and apostrophes, three sourced EN labels, unknown-name fallbacks, split record/source dates, KO/EN guide/detail/metadata/JSON-LD/return links, expired Hyde warning removed with historical closure preserved, 1,010/36 counts unchanged.');
+ console.log('PASS: exact bilingual Ben search and apostrophes, three sourced EN labels, unknown-name fallbacks, split record/source dates, KO/EN guide/detail/metadata/JSON-LD/return links, expired Hyde warning removed with historical closure preserved, 1,011/36 counts unchanged.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

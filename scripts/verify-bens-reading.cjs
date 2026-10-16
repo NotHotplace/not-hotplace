@@ -36,8 +36,8 @@ const detail = label => place.visitDetails.find(row => row.labelEn === label);
 const has = (text, values) => values.forEach(value => assert(text.includes(value), value));
 const https = url => assert.equal(new URL(url).protocol, 'https:');
 
-assert.equal(catalog.length, 1010);
-assert.equal(new Set(catalog.map(row => row.id)).size, 1010);
+assert.equal(catalog.length, 1011);
+assert.equal(new Set(catalog.map(row => row.id)).size, 1011);
 assert.equal(catalog.filter(row => row.country === 'KR' && row.city === '서울').length, 36);
 assert.equal(catalog.filter(row => row.name === '벤의 서재').length, 1, 'enrich the existing place');
 assert.equal(place.category, 'cafe');
@@ -169,5 +169,5 @@ const escape = text => renderToStaticMarkup(React.createElement('span', null, te
     assert(card.includes(escape(reason['text' + suffix])), 'complete reason includes the dated sound limitation');
     assert(card.includes(owner) && card.includes(visitor), 'first card retains both evidence links');
   }
-  console.log('PASS: existing Ben’s Library identity, unchanged 1,010/36 counts, dated operator reading rules, only the books condition, attributed one-visitor music/stay limits, old schedule provenance, current-hours caveat, bilingual visible facts/memo/sources and two-café/no-filler Seoul shortlist.');
+  console.log('PASS: existing Ben’s Library identity, unchanged 1,011/36 counts, dated operator reading rules, only the books condition, attributed one-visitor music/stay limits, old schedule provenance, current-hours caveat, bilingual visible facts/memo/sources and two-café/no-filler Seoul shortlist.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

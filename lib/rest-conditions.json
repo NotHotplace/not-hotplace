@@ -408,5 +408,21 @@
       "source": "https://parks.seoul.go.kr/mini/content.do?key=2605260022",
       "checked": "2026-10-11"
     }
+  ],
+  "world-dk-dokk1": [
+    {
+      "kind": "books",
+      "textKo": "레벨 1에 공용 정숙 열람실이 있어요. 현재 소음·빈자리는 미확인입니다.",
+      "textEn": "A shared quiet reading room is on level 1; current noise and seat availability are unverified.",
+      "source": "https://dokk1.dk/planlaeg-dit-besoeg",
+      "checked": "2026-10-16"
+    },
+    {
+      "kind": "parking",
+      "textKo": "지하 자동 주차장 안내 있음 · 요금·빈자리 미확인",
+      "textEn": "Automated parking beneath Dokk1; rates and spaces unverified",
+      "source": "https://dokk1.dk/parkering",
+      "checked": "2026-10-16"
+    }
   ]
 }

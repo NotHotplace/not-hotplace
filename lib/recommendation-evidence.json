@@ -297,5 +297,17 @@
         }
       ]
     }
+  ],
+  "world-dk-dokk1": [
+    {
+      "textKo": "레벨 1의 지정 정숙 열람실에서 독서를 계획할 수 있어요. 공용 공간이며 현재 소음과 빈자리는 미확인입니다.",
+      "textEn": "The designated level 1 quiet reading room supports a reading break. It is shared; current noise and seats are unverified.",
+      "source": "https://dokk1.dk/planlaeg-dit-besoeg",
+      "checked": "2026-10-16",
+      "sourceKind": "official",
+      "purposes": [
+        "all"
+      ]
+    }
   ]
 }

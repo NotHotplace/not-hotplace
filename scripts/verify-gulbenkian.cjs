@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'..'),cache=new Map(),read=f=>JSON.parse(fs.re
 function compile(file,imports){const m={exports:{}};new Function('require','module','exports',ts.transpileModule(fs.readFileSync(path.join(root,file),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText)(imports,m,m.exports);return m.exports;}
 function load(file){if(file.endsWith('.json'))return read(file);if(cache.has(file))return cache.get(file);const m=compile(file,n=>n.startsWith('.')?load(path.join(path.dirname(file),n)+(n.endsWith('.json')?'':'.ts')):require(n));cache.set(file,m);return m;}
 const {catalog}=load('lib/catalog.ts'),id='world-pt-jardim-gulbenkian',place=catalog.find(p=>p.id===id),source=read('lib/expanded-catalog.json').find(p=>p.id===id);
-assert(place);assert.equal(catalog.length,1010);assert.equal(new Set(catalog.map(p=>p.id)).size,1010);
+assert(place);assert.equal(catalog.length,1011);assert.equal(new Set(catalog.map(p=>p.id)).size,1011);
 assert.equal(catalog.filter(p=>/gulbenkian|굴벤키안|santa gertrudes/i.test(p.name+' '+p.address+' '+p.source)).length,1,'one deduplicated garden listing');
 for(const [key,value] of Object.entries({country:'PT',city:'Lisbon',category:'walk',name:'Jardim Gulbenkian',address:'Av. de Berna 45A, 1067-001 Lisboa, Portugal',detailLevel:'enriched',checked:'2026-10-10'}))assert.equal(place[key],value,key);
 assert.equal(place.lat,38.737474);assert.equal(place.lon,-9.154679);assert.equal(place.locationInfo.kind,'reference');
