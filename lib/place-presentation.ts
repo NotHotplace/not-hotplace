@@ -6,6 +6,7 @@ export type RestPurpose='all'|'cafe'|'food'|'drive'|'private-room'|'premium-spa'
 // general operating information; `all` means the general pause, not a wildcard.
 export type RecommendationReason={textKo:string;textEn:string;source:string;checked:string;sourceKind?:string;purposes?:RestPurpose[];additionalSources?:{label:string;url:string}[]};
 export function categoryConditions(category?:string):RestCondition[]{
+ if(category==='library')return ['books','parking'];
  if(category==='spa')return ['privateRoom','parking','quietMusic'];
  if(category==='walk'||category==='drive')return ['parking'];
  if(category==='food')return ['soloSeats','privateRoom','parking','quietMusic','partitions','soloOrder','selfOrder'];
@@ -22,7 +23,7 @@ export function candidateReasons(place:Place):RecommendationReason[]{
  return reasons.slice(0,2);
 }
 export function essentialDetails(place:Place):VisitDetail[]{
- const details=place.visitDetails||[],patterns=place.category==='spa'?[/price|admission|fee/i,/shared|privacy|room|age|who|adults/i,/booking|reservation|duration|session/i]:place.category==='cafe'||place.category==='food'?[/price|minimum.spend|admission/i,/seating|solo|ordering/i,/hours|booking|reservation/i]:[/price|admission|fee/i,/hours|access|entrance/i,/parking|route|closure/i];
+ const details=place.visitDetails||[],patterns=place.category==='library'?[/admission|fee/i,/quiet reading/i,/hours/i]:place.category==='spa'?[/price|admission|fee/i,/shared|privacy|room|age|who|adults/i,/booking|reservation|duration|session/i]:place.category==='cafe'||place.category==='food'?[/price|minimum.spend|admission/i,/seating|solo|ordering/i,/hours|booking|reservation/i]:[/price|admission|fee/i,/hours|access|entrance/i,/parking|route|closure/i];
  const result:VisitDetail[]=[];
  for(const pattern of patterns){const fact=details.find(d=>pattern.test(d.labelEn)&&!result.includes(d));if(fact)result.push(fact);}
  if(!result.some(d=>/price|minimum.spend|admission|fee/i.test(d.labelEn)))result.unshift({labelKo:'비용',labelEn:'Cost',textKo:'최신 요금은 공식 안내에서 확인',textEn:'Check current prices with the official source',source:place.source,checked:place.checked});
@@ -39,6 +40,7 @@ export function reviewValue(positive:number,count:number,language:'ko'|'en'){
  return n<3?(language==='ko'?`${n}명 중 ${p}명`:`${p} of ${n}`):`${Math.round(p/n*100)}%`;
 }
 export function reviewTags(category?:string):[string,string][]{
+ if(category==='library')return [];
  if(category==='spa')return [['작은 음악','Low music']];
  if(category==='drive'||category==='walk')return [['풍경','Scenery'],['짧은 산책','Short walks']];
  return [['작은 음악','Low music'],['1인석','Individual seats'],['칸막이 좌석','Partitioned seats'],['혼자 주문','Solo ordering'],['셀프 주문','Self ordering']];

@@ -5,14 +5,23 @@ type NamedPlace = Pick<Place, 'id' | 'name'>;
 type NameEvidence = {nameEn: string; aliases: string[]; source: string; checked: string};
 const verifiedNames = names as Record<string, NameEvidence>;
 
-// Explicitly sourced names only. Never infer a translation from a Korean name.
+// Verified English names take precedence. These limited reading aids are
+// editorial romanizations of stored Korean names, not official English names.
+const romanizedNames: Record<string, string> = {
+  'seoul-suyeon': 'Suyeonsanbang',
+  'seoul-sueno': 'Suaenyo 339',
+  'seoul-san': 'Sanmotungi',
+};
+function romanizedName(place: NamedPlace) {
+  return Object.hasOwn(romanizedNames, place.id) ? romanizedNames[place.id] : undefined;
+}
 export function placeName(place: NamedPlace, language: 'ko' | 'en') {
-  return language === 'en' ? placeNameEvidence(place)?.nameEn || place.name : place.name;
+  return language === 'en' ? placeNameEvidence(place)?.nameEn || romanizedName(place) || place.name : place.name;
 }
 export function placeNameEvidence(place: NamedPlace) {
   return Object.hasOwn(verifiedNames, place.id) ? verifiedNames[place.id] : undefined;
 }
 export function placeSearchNames(place: NamedPlace) {
   const evidence = placeNameEvidence(place);
-  return evidence ? [place.name, evidence.nameEn, ...evidence.aliases] : [place.name];
+  return evidence ? [place.name, evidence.nameEn, ...evidence.aliases] : [place.name, ...(romanizedName(place) ? [romanizedName(place)!] : [])];
 }

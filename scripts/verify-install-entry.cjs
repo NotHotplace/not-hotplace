@@ -6,6 +6,7 @@ function text(n){return Array.isArray(n)?n.map(text).join(''):n&&typeof n==='obj
 const dictionary=JSON.parse(fs.readFileSync(path.join(root,'lib/en.json'),'utf8'));
 function translate(n,lang){if(typeof n==='string')return lang==='en'?(dictionary[n]||n):n;if(Array.isArray(n))return n.map(v=>translate(v,lang));if(n&&typeof n==='object'&&n.props)return {...n,props:{...n.props,children:translate(n.props.children,lang)}};return n;}
 function harness(lang,standalone=false,ios=false){let si=0,ei=0,tree,dirty=false;const states=[],effects=[],pending=[],events=new EventTarget(),media=new EventTarget();media.matches=standalone;
+ global.document={title:''};
  global.window={addEventListener:(...a)=>events.addEventListener(...a),removeEventListener:(...a)=>events.removeEventListener(...a)};global.matchMedia=()=>media;Object.defineProperty(global,'navigator',{value:{standalone:ios},configurable:true});
  const react={useState(initial){const i=si++;if(!(i in states))states[i]=initial;return[states[i],value=>{states[i]=value;dirty=true;}];},useEffect(fn,deps){const i=ei++;if(!effects[i])pending.push(()=>effects[i]={cleanup:fn()});}};
  const Guide=compile('app/install/install-guide.tsx',n=>n==='react'?react:n==='react/jsx-runtime'?require(n):{useLocale:()=>({lang,ui:n=>translate(n,lang),text:(en,ko)=>lang==='en'?en:ko})}).default;
@@ -14,7 +15,7 @@ function harness(lang,standalone=false,ios=false){let si=0,ei=0,tree,dirty=false
 }
 (async()=>{
  for(const lang of ['ko','en']){
-  const h=harness(lang);const fallback=()=>h.nodes().find(n=>n.type==='a'&&n.props.href==='#install-steps');
+  const h=harness(lang);assert.equal(document.title,(lang==='ko'?'앱 설치':'Install the app')+' | NotHotplace');const fallback=()=>h.nodes().find(n=>n.type==='a'&&n.props.href==='#install-steps');
   assert(fallback());assert.equal(text(fallback()),lang==='ko'?'설치 방법 보기':'How to install');assert(h.text().includes('Android'));assert(h.text().includes('iPhone'));
   assert(h.nodes().some(n=>n.props?.id==='install-steps'));assert(!h.nodes().some(n=>n.type==='button'));
   for(const outcome of ['dismissed','accepted','error']){let calls=0;const event=new Event('beforeinstallprompt',{cancelable:true});event.prompt=async()=>{calls++;if(outcome==='error')throw Error('unavailable');};event.userChoice=Promise.resolve({outcome});h.events.dispatchEvent(event);h.render();assert(event.defaultPrevented);const button=h.nodes().find(n=>n.type==='button');assert(button);await button.props.onClick();h.render();assert.equal(calls,1);assert(fallback(),'guidance remains actionable after the one-use prompt');}

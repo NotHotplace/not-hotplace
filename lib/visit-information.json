@@ -26,16 +26,20 @@
         "checked": "2026-10-02"
       },
       {
-        "labelKo": "운영·이용 시간",
+        "labelKo": "영업시간·주차 확인",
         "labelEn": "Hours",
-        "textKo": "2026년 9월 한국관광공사 기사는 09:00~24:00을 안내해요. 다른 자료와 시간 차이가 있었으며 실시간 매장 공지는 아니므로, 방문 전 매장(02-325-1984)에 최신 시간을 확인하세요.",
-        "textEn": "A September 2026 KTO article lists 09:00–24:00. Other sources have differed, and this is not a live operator notice; confirm current hours with the cafe at +82 2-325-1984.",
+        "textKo": "영업시간·주차 안내가 자료마다 달라 매장 확인이 필요해요. 2026년 9월 한국관광공사 기사는 09:00~24:00을 안내해요. 다른 자료와 시간 차이가 있었으며 실시간 매장 공지는 아니므로, 방문 전 매장(02-325-1984)에 최신 시간을 확인하세요.",
+        "textEn": "Hours and parking differ between sources; confirm with the cafe before visiting. A September 2026 KTO article lists 09:00–24:00. Other sources have differed, and this is not a live operator notice; confirm current hours with the cafe at +82 2-325-1984.",
         "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606",
         "checked": "2026-10-11",
         "additionalSources": [
           {
             "label": "기존 관광 목록 · Earlier tourism listing",
             "url": "https://www.ktriptips.com/kor/food/4108662"
+          },
+          {
+            "label": "주차 안내 차이 · Parking reports",
+            "url": "https://polle.com/place/125jaa/1984"
           }
         ]
       },

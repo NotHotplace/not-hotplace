@@ -46,6 +46,7 @@ function tags(html, name) {
     Object.fromEntries([...match[0].matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [key.toLowerCase(), value.replace(/&amp;/g, '&')])));
 }
 function inspect(html, route, label, {language, noindex = false, title} = {}) {
+  if(route==='/install') assert(html.includes('<title>'+(label.includes('lang=ko')?'앱 설치':'Install the app')+' | NotHotplace</title>'),label+': localized install title');
   const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];
   assert(head, label + ': complete head');
   for (const element of ['html', 'head', 'body']) assert.equal(tags(html, element).length, 1, label + ': one ' + element + ' element');
@@ -179,7 +180,7 @@ async function freePort() {
       count++;
     }
     for (const code of countryCodes) await page(countryPath(code), 'browser');
-    for (const route of ['/', '/regions', '/trips', '/install', '/plus', '/guides', '/contributors']) await page(route, 'browser');
+    for (const route of ['/', '/regions', '/trips', '/install', '/install?lang=en', '/install?lang=ko', '/plus', '/guides', '/contributors']) await page(route, 'browser');
     // Empty visitDetails arrays previously crashed four regional guides. Cover
     // every region in both languages against the real merged catalog.
     for (const guide of regionalGuides) for (const language of ['ko', 'en']) {
@@ -188,7 +189,7 @@ async function freePort() {
     for (const agent of Object.keys(agents)) {
       for (const route of ['/mx', '/kr?lang=ko&region=서울', '/us?lang=en&category=cafe', '/jp?lang=ko', '/regions?lang=en']) await page(route, agent);
       for (const language of ['ko', 'en']) {
-        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', '수연산방'], [basicPlace.id, basicPlace.name], ...[...gardenPlaces, bensReadingPlace, catalog.find(p=>p.id==='world-gb-hyde-park')].map(place => [place.id, lib('place-names').placeName(place, language)])]) {
+        for (const [id, title] of [['cj-daechung', '더 대청호'], ['seoul-suyeon', lib('place-names').placeName(catalog.find(p=>p.id==='seoul-suyeon'),language)], [basicPlace.id, basicPlace.name], ...[...gardenPlaces, bensReadingPlace, catalog.find(p=>p.id==='world-gb-hyde-park'),catalog.find(p=>p.id==='world-dk-dokk1')].map(place => [place.id, lib('place-names').placeName(place, language)])]) {
           await page(`/places/${id}/${language}`, agent, {language, title, noindex: id === basicPlace.id});
         }
         await page(`/guides/korea-reading-cafes/${language}`, agent, {language});
@@ -304,7 +305,7 @@ async function freePort() {
       const location = url.match(/<loc>(.*?)<\/loc>/)[1], prefix = location.slice(0, location.lastIndexOf('/'));
       for (const language of ['en', 'ko']) assert(url.includes(`hreflang="${language}" href="${prefix}/${language}"`), location + ': sitemap reciprocal ' + language);
     }
-    console.log(`PASS: ${count} real HTML/API responses across 30 countries and browser/Googlebot/Bingbot/Facebook/empty-UA; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
+    console.log(`PASS: ${count} real HTML/API responses across 31 countries and browser/Googlebot/Bingbot/Facebook/empty-UA; HEAD canonicals, KO/EN alternates, icons, clean queries, place identity/return links, basic noindex, 404s, login exclusion and ${locations.length} sitemap URLs (${base}).`);
   } catch (error) {
     if (server) console.error(logs);
     throw error;
