@@ -126,3 +126,12 @@
 .quick-feedback .quick-choices button{white-space:nowrap}
 .quick-feedback [role=status]:empty{display:none}
 @media(max-width:380px){.quick-feedback .quick-choices{gap:5px}.quick-feedback .quick-choices button{font-size:12px;padding-inline:4px}}
+
+/* Destination-only external map handoff; native disclosure avoids nested dialogs. */
+.place-directions{grid-column:1/-1;border:1px solid var(--border);border-radius:16px;background:var(--card);margin:12px 0;scroll-margin-top:24px}
+.place-directions>summary{padding:16px;font-weight:650;cursor:pointer;min-height:48px}
+.directions-body{padding:0 16px 16px}.directions-body p{font-size:13px;line-height:1.65;margin:12px 0;color:var(--muted-foreground)}
+.directions-body fieldset{border:0;padding:0;margin:0;min-width:0}.directions-body legend{font-size:14px;margin-bottom:10px}
+.directions-modes{display:flex;flex-wrap:wrap;gap:8px}.directions-modes label{display:flex;align-items:center;gap:7px;border:1px solid var(--border);border-radius:12px;padding:11px 14px;min-height:44px;cursor:pointer;font-size:14px}.directions-modes label:has(input:checked){background:var(--primary);color:var(--primary-foreground)}.directions-modes input{accent-color:currentColor}
+.directions-links{display:flex;flex-wrap:wrap;gap:8px}.directions-links a,.directions-close{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-size:13px;background:var(--background)}
+.directions-fallback{margin-top:14px}.directions-fallback>summary{cursor:pointer;padding:8px 0;font-size:13px}.directions-close{cursor:pointer}.place-directions :focus-visible{outline:2px solid var(--primary);outline-offset:3px}.directions-location-note{border-left:3px solid var(--border);padding-left:10px}

@@ -27,8 +27,10 @@ export function publishedCost(place:Place) {
   if(detail && /^(무료|free)\.?$/i.test(detail.textKo.trim())) return {amount:0,basis:'admission' as const};
   return null;
 }
+// Attendance is independent of sound; preserve crowd answers without
+// requiring low attendance for a quiet visiting time.
 export function bestQuietTime(buckets:TimeBucket[], preferences?:Pick<RestPreferences,'day'|'time'>) {
-  return buckets.filter(bucket=>bucket.n>=3 && bucket.quiet/bucket.n>=.6 && bucket.relaxed/bucket.n>=.6
+  return buckets.filter(bucket=>bucket.n>=3 && bucket.quiet/bucket.n>=.6
     && (!preferences||preferences.day==='any'||bucket.day===preferences.day)
     && (!preferences||preferences.time==='any'||bucket.time===preferences.time))
     .sort((a,b)=>wilson(b.quiet,b.n)-wilson(a.quiet,a.n)||b.n-a.n||a.day.localeCompare(b.day)||a.time.localeCompare(b.time))[0]||null;
