@@ -13,7 +13,7 @@ export async function GET(request:Request){try{
  const membership=user?await membershipFor(user.userId):{active:false,trialUsed:false,until:null,kind:'free'};
  const [places,stats,recent,paused,held,own,saves,proposals,admin,buckets,conditionRows]=await Promise.all([
   allPlaces(),d.prepare("SELECT place_id,COUNT(*) count,SUM(satisfied) positive,SUM(CASE WHEN noise='조용함' THEN 1 ELSE 0 END) quiet,MAX(updated_at) latest FROM reviews WHERE updated_at>=? GROUP BY place_id").bind(cutoff).all<any>(),
-  d.prepare("SELECT place_id,COUNT(*) n,SUM(CASE WHEN noise='시끄러움' OR crowd='붐빔' THEN 1 ELSE 0 END) bad,COUNT(DISTINCT date(updated_at/1000,'unixepoch')) days,MIN(updated_at) first,MAX(updated_at) last FROM reviews WHERE updated_at>=? GROUP BY place_id").bind(Date.now()-30*86400000).all<any>(),
+  d.prepare("SELECT place_id,COUNT(*) n,SUM(CASE WHEN noise='시끄러움' THEN 1 ELSE 0 END) bad,COUNT(DISTINCT date(updated_at/1000,'unixepoch')) days,MIN(updated_at) first,MAX(updated_at) last FROM reviews WHERE updated_at>=? GROUP BY place_id").bind(Date.now()-30*86400000).all<any>(),
   d.prepare("SELECT place_id FROM place_moderation WHERE mode='paused'").all<any>(),d.prepare('SELECT place_id FROM place_quality WHERE paused=1').all<any>(),
   user?d.prepare('SELECT * FROM reviews WHERE user_id=?').bind(user.userId).all<any>():null,
   user?d.prepare('SELECT place_id FROM saved WHERE user_id=?').bind(user.userId).all<any>():null,

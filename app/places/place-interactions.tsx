@@ -97,7 +97,7 @@ export default function PlaceInteractions({id, name, category, conditions, langu
       <p className="place-review-context">{label(`Last 90 days · ${summary.count} reviewers`, `최근 90일 · ${summary.count}명 평가`)}{summary.count > 0 && summary.count < 3 && <strong>{label('Small sample', '표본이 적어요')}</strong>}
         {summary.latest && <span>{label('Latest response: ', '최근 평가: ')}{new Date(summary.latest).toLocaleDateString(ko ? 'ko-KR':'en-US',{timeZone:'Asia/Seoul'})}</span>}
       </p>
-      {data?.resting && <p className="place-feedback">{label('Recent crowding or noise reports have paused this place in recommendations.', '최근 혼잡·소음 등으로 추천을 잠시 쉬고 있어요.')}</p>}
+      {data?.resting && <p className="place-feedback">{label('This place is currently taking a break from recommendations.', '현재 추천을 잠시 쉬고 있어요.')}</p>}
     </>}
     {Object.values(data?.restFeedback||{}).some(n=>n>=3)&&<RestEvidence place={{id,category,conditions,restFeedback:data?.restFeedback,resting:data?.resting}} language={language}/>}
     {data?.bestTime&&<p className="place-best-time">{label('A time to consider: ','참고할 방문 시간: ')}<strong>{visitingTimeLabel(data.bestTime,language)}</strong><br/>{label(`${data.bestTime.n} responses · ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% quiet · last 90 days`,`${data.bestTime.n}명 후기 · 조용했다 ${Math.round(data.bestTime.quiet/data.bestTime.n*100)}% · 최근 90일`)}</p>}

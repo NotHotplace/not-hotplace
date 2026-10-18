@@ -7,7 +7,7 @@ import PlaceSave from '../../place-save';
 import DisclosureNavigation from '../../disclosure-navigation';
 import PlaceReasons from '../../../place-reasons';
 import {placeIdentity,essentialDetails,conciseText} from '@/lib/place-presentation';
-import TrackedMapLink from '../../tracked-map-link';
+import PlaceDirections from '../../../place-directions';
 import PlaceContribution from '../../../place-contribution';
 import ExternalReviewMemo from '../../../external-review-memo';
 import RestEvidence from '../../../rest-evidence';
@@ -89,6 +89,7 @@ export default async function PlacePage({params,searchParams}: Props) {
         </div>
       <section className="place-first-look" aria-label={label('At a glance','한눈에 보기')}><p className="place-identity">{placeIdentity(place,language)}</p><PlaceReasons place={place} language={language}/><dl className="place-essential-facts">{essentials.map(fact=><div key={fact.labelEn}><dt>{ko?fact.labelKo:fact.labelEn}</dt><dd>{conciseText(ko?fact.textKo:fact.textEn,ko?100:180)}</dd></div>)}</dl><p className="place-summary-note">{label('A sourced candidate, not a guarantee of quietness. Full conditions below.','자료로 고른 후보예요. 조용함을 보장하지 않으며 자세한 이용 조건은 아래에서 확인하세요.')}</p></section>
       <PlaceInteractions id={place.id} name={placeName(place,language)} category={place.category} conditions={place.conditions} language={language} country={place.country || 'KR'} path={placePath(id, language)} mapUrl={mapPath(place)}/>
+      <PlaceDirections place={place} language={language} id="directions"/>
       <article className="place-story">
         <nav className="place-section-nav" aria-label={label('Place information sections','장소 정보 바로가기')}><a href="#visit-info">{label('Visit details','자세한 방문 정보')}</a><a href="#reviews">{label('Visitor feedback','방문 후기')}</a><a href="#place-source">{label('Sources','출처')}</a></nav>
 
@@ -107,6 +108,6 @@ export default async function PlacePage({params,searchParams}: Props) {
       </a>{other.image&&<details className="related-photo-credit"><summary>{label('Photo credits','사진 출처·이용 허락')}</summary><PhotoCredit place={other} language={language}/></details>}</article>)}</div>
     </section>}
     <footer className="place-footer"><span>WE WANT REST.</span><a href={`/privacy?lang=${language}`}>{label('Privacy', '개인정보처리방침')}</a></footer>
-    <div className="place-sticky-actions"><PlaceSave id={place.id} country={place.country||'KR'} language={language} compact/><TrackedMapLink id={place.id} country={place.country||'KR'} href={mapPath(place)}>{label('Directions','길 찾기')}</TrackedMapLink></div>
+    <div className="place-sticky-actions"><PlaceSave id={place.id} country={place.country||'KR'} language={language} compact/><a href="#directions">{label('Directions','길 찾기')}</a></div>
   </main>;
 }
