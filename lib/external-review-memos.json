@@ -75,17 +75,21 @@
     ]
   },
   "seoul-suyeon": {
-    "checked": "2026-10-01",
-    "summaryKo": "한옥의 경치와 차·빙수, 차분한 분위기가 언급됩니다. 자리가 적거나 이미 방문객이 많았다는 경험도 함께 있어요.",
-    "summaryEn": "Reviews discuss the traditional house, tea and desserts, with some describing a calm setting. Others mention limited seats or a busy visit.",
-    "cautionKo": "1인 1메뉴·2시간 이용 조건을 적은 후기가 있습니다. 현재 좌석·이용시간·주차 규정은 출발 전 확인하세요.",
-    "cautionEn": "Some reviews mention one menu item per person and a two-hour limit. Recheck seating, visit limits and parking before leaving.",
-    "periodKo": "과거 후기 포함 · 개별 작성일은 원문 확인",
-    "periodEn": "Includes older reviews · see sources for individual dates",
+    "checked": "2026-10-18",
+    "summaryKo": "2026-10-18 다이닝코드 공개 화면은 4.2점·20명 평가를 표시해요. 2025-09-10·09-25 작성자는 조용한 분위기 키워드를 선택했어요. 9월 25일 글은 방문객이 많았다고도 적습니다. 혼잡과 소음은 별개이며, 키워드는 소음 측정값이 아닙니다.",
+    "summaryEn": "On 2026-10-18, DiningCode displayed 4.2 from 20 ratings. Posts dated 2025-09-10 and 2025-09-25 select a quiet-atmosphere keyword; the latter also reports many visitors. Crowding and noise are separate, and keywords are not acoustic measurements.",
+    "cautionKo": "자리가 적다는 경험과 가격 만족도가 낮은 의견도 있어요. 2025-09-10 글의 1인 1메뉴·2시간 제한은 현재 규정으로 확정하지 않습니다. 서울관광재단 운영 안내를 참고하되, 최신 시간·가격·주차 가능 여부와 좌석·이용 제한은 매장에 확인하세요.",
+    "cautionEn": "Reports also mention limited seating and concerns about value. The one-item-per-person and two-hour limit reported on 2025-09-10 are not confirmed current rules. Consult Visit Seoul and confirm current hours, prices, parking, seats and visit limits with the venue.",
+    "periodKo": "2025-09-10·09-25 작성글 포함 · 서울관광재단 안내 수정 2026-05-13",
+    "periodEn": "Includes posts dated 2025-09-10 and 2025-09-25; Visit Seoul listing edited 2026-05-13",
     "sources": [
       {
         "provider": "다이닝코드",
         "url": "https://www.diningcode.com/profile.php?rid=TVWIp1a660R9"
+      },
+      {
+        "provider": "서울관광재단 · 운영 안내",
+        "url": "https://english.visitseoul.net/restaurants/Suyeon-Sanbang-EN/ENP000979"
       }
     ]
   },
@@ -120,28 +124,32 @@
     ]
   },
   "seoul-jaha": {
-    "checked": "2026-10-01",
-    "summaryKo": "차분한 실내와 창가 풍경을 언급한 방문글이 있습니다. 주말 대기와 평일 늦은 점심의 이용 경험은 서로 달랐어요.",
-    "summaryEn": "Visit reports mention a calm interior and window views. Weekend waiting and late weekday lunch experiences differ.",
-    "cautionKo": "식사 시간·대기 현황·주차와 계단 접근을 확인하세요. 과거 방문 시간의 경험은 방문일 보장이 아닙니다.",
-    "cautionEn": "Check meal-time waiting, parking and stair access. A past visit time is not a guarantee for your visit.",
-    "periodKo": "과거 후기 포함 · 개별 작성일은 원문 확인",
-    "periodEn": "Includes older reviews · see sources for individual dates",
+    "checked": "2026-10-18",
+    "summaryKo": "미쉐린 가이드에 소개된 만두 식당이에요. 2026-10-18 다이닝코드 공개 화면은 4.0점·81명 평가, 조용한 분위기 키워드 25건과 시끌벅적한 키워드 2건을 표시해요. 키워드는 방문자 인상이며 소음 측정값이나 조용함의 보장이 아닙니다.",
+    "summaryEn": "A dumpling restaurant listed in the Michelin Guide. On 2026-10-18, DiningCode displayed 4.0 from 81 ratings, with 25 quiet-atmosphere and two bustling-atmosphere keyword selections. Keywords reflect visitor impressions, not acoustic measurements or a quietness guarantee.",
+    "cautionKo": "차분한 실내·창가 풍경과 대기 경험이 함께 언급됩니다. 2025-10-13 글은 방문객이 많았다고 적지만, 혼잡만으로 소음을 판단하지 않습니다. 미쉐린 운영 안내를 참고하되 최신 시간·메뉴 가격·주차 비용·계단 접근·대기는 별도 확인하세요.",
+    "cautionEn": "Reports mention a calm interior and window views alongside waits. A 2025-10-13 post reports many visitors; crowding alone does not establish noise. Consult Michelin and separately confirm current hours, menu prices, parking charges, stair access and waiting.",
+    "periodKo": "2025-10-13 작성글 등 과거 후기 포함 · 미쉐린 목록 확인 2026-10-18",
+    "periodEn": "Includes older reports such as a post dated 2025-10-13; Michelin listing checked 2026-10-18",
     "sources": [
       {
         "provider": "다이닝코드 · 공개 방문글",
         "url": "https://www.diningcode.com/profile.php?rid=ksKEt3HtDLvz"
+      },
+      {
+        "provider": "미쉐린 가이드 · 식당 소개 및 운영 안내",
+        "url": "https://guide.michelin.com/kr/ko/seoul-capital-area/kr-seoul/restaurant/jaha-son-mandu"
       }
     ]
   },
   "tour-4108662": {
-    "checked": "2026-10-01",
-    "summaryKo": "독서·작업을 하며 머물렀다는 방문글과 책·굿즈를 구경했다는 후기가 있습니다. 저녁 분위기를 차분하게 느꼈다는 경험도 있어요.",
-    "summaryEn": "Visit reports describe reading or working, browsing books and goods, and a calm evening experience.",
-    "cautionKo": "1인석·콘센트·음악은 방문한 자리와 시간에 따라 확인하세요. 현재 이용 규칙은 매장에 문의하세요.",
-    "cautionEn": "Check the seat, outlets and music for your chosen time. Confirm current use rules with the venue.",
-    "periodKo": "2026-01-22·2024-01-18 방문글 참고",
-    "periodEn": "Visit reports dated 2026-01-22 and 2024-01-18",
+    "checked": "2026-10-18",
+    "summaryKo": "2026-10-18 뽈레 공개 화면은 3.9점과 작성 리뷰 40개를 표시해요. 평점의 평가 수와 작성 리뷰 수는 같다고 보지 않습니다. 독서·작업과 차분한 저녁 분위기를 언급한 방문글이 있으며, 테이블 간격과 의자 상태에 대한 아쉬움도 있어요.",
+    "summaryEn": "On 2026-10-18, Polle displayed 3.9 and 40 written reviews; the rating denominator is not established by that written-review count. Reports describe reading, working and calm evenings, alongside concerns about table spacing and worn chairs.",
+    "cautionKo": "사람 수와 소음은 따로 살펴보세요. 음악·콘센트·편안함은 자리와 시간에 따라 달라요. 영업시간과 주차 안내는 자료마다 달라 최신 조건·가격·자리 확보는 매장 확인이 필요해요. 관광공사 기사의 공용 좌석 소개는 정적이나 독립룸 보장이 아닙니다.",
+    "cautionEn": "Assess crowding and noise separately. Music, outlets and comfort vary by seat and time. Sources disagree on hours and parking; confirm current rules, prices and seating. KTO describes shared seating, without establishing silence or an exclusive room.",
+    "periodKo": "2026-01-22·2024-01-18 작성글 및 상대 날짜로 표시된 뽈레 후기 · 관광공사 기사 2026년 9월",
+    "periodEn": "Posts published 2026-01-22 and 2024-01-18, plus relative-dated Polle reports; KTO article September 2026",
     "sources": [
       {
         "provider": "티스토리 방문글",
@@ -150,6 +158,14 @@
       {
         "provider": "뽈레 방문글",
         "url": "https://polle.com/chanyeonglee/posts/33"
+      },
+      {
+        "provider": "뽈레 · 2026-10-18 공개 화면",
+        "url": "https://polle.com/place/125jaa/1984"
+      },
+      {
+        "provider": "한국관광공사 · 2026년 9월 기사",
+        "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ca39280b-bb63-454f-b204-9dc2afbef606"
       }
     ]
   },

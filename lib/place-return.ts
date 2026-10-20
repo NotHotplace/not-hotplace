@@ -22,6 +22,14 @@ export function homeReturnPath(language:PlaceLanguage,country:CountryCode,region
   if(theme!=='all'&&isPlaceTheme(theme))query.set('homeTheme',theme);
   return '/?'+query+'#'+section;
 }
+// Continue a home choice in the broad catalog without inventing a category for
+// compound purposes such as a walk/view, private room or spa experience.
+export function homeExplorePath(language:PlaceLanguage,country:CountryCode,region='전국',purpose:HomePurpose='all'){
+  const query=new URLSearchParams({lang:language});
+  if((countries[country].regions as readonly string[]).includes(region))query.set('region',region);
+  if(purpose==='cafe'||purpose==='food')query.set('category',purpose);
+  return '/'+countries[country].slug+'?'+query;
+}
 const publicKeys=new Set(['lang','country','region','purpose','homeTheme','category','theme','q','view','scope','resume',...Object.keys(emptyFilters),'finderPurpose','finderParty','finderDay','finderTime','finderBudget','finderExpanded']);
 // Never accept schemes, protocol-relative URLs, credentials, encoded paths or
 // arbitrary same-origin routes. Reconstruct only known browsing destinations.

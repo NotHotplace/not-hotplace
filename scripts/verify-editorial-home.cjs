@@ -29,6 +29,36 @@ for(const language of ['ko','en']){
   const Finder=compile('app/home-finder.tsx',name=>name==='react'?react:name==='./locale'?locale:name==='./photo-credit'?{default:PhotoCredit,__esModule:true}:name==='./place-reasons'?{default:Reasons,__esModule:true}:name==='@/lib/engagement-client'?{trackEngagement(){}}:name.startsWith('@/')?load(name.slice(2)+'.ts'):require(name)).default;
   return Finder({country,initialRegion:region,initialPurpose:purpose,ready:true});
  }
+ // The search/map transition preserves explicit home scope, including when
+ // no shortlist exists. The broad catalog must not substitute a new default.
+ const {homeExplorePath,homeReturnPath,readHomeChoices,placePathWithReturn,detailReturn}=load('lib/place-return.ts');
+ const {readBrowseState,writeBrowseState}=load('lib/browse-state.ts');
+ for(const [country,region] of [['KR','서울'],['US','New York'],['JP','전국']])for(const purpose of ['all','cafe','food','drive','private-room','premium-spa']){
+  const tree=home(country,region,purpose,[]);
+  const scope=nodes(tree).find(node=>node.props?.className==='editorial-scope');
+  const link=nodes(scope).find(node=>node.type==='a');
+  const expected=homeExplorePath(language,country,region,purpose);
+  assert.equal(link.props.href,expected,'rendered map link preserves chosen scope');
+  assert.equal(link.props.onClick,undefined,'native anchor preserves browser history');
+  assert(text(link).includes(language==='ko'?'검색·지도':'search & map'));
+  let current=new URL(link.props.href,'https://example.test');
+  assert.equal(current.pathname,'/'+countries[country].slug);
+  assert.equal(current.searchParams.get('lang'),language);
+  const category=['cafe','food'].includes(purpose)?purpose:'all';
+  for(let step=0;step<4;step++){
+   const state=readBrowseState(current.searchParams,countries[country].regions);
+   assert.equal(state.city,region);assert.equal(state.category,category);
+   assert.equal(state.theme,'all','do not infer new theme filters');
+   const written=writeBrowseState(current,state,language);
+   assert.equal(written.pathname+written.search,expected,'repeated restore remains stable');
+   const detail=new URL(placePathWithReturn('kr-yu-yuan',language,expected),'https://example.test');
+   assert.equal(detailReturn(detail.searchParams.get('returnTo'),language,country).href,expected,'detail back link retains explicit map filters');
+   current=new URL(detailReturn(detail.searchParams.get('returnTo'),language,country).href,'https://example.test');
+   const backHome=new URL(homeReturnPath(language,country,region,purpose),'https://example.test');
+   assert.deepEqual(readHomeChoices(backHome.searchParams),{country,region,purpose,theme:'all'},'home Back/Forward URL replay retains original purpose');
+  }
+ }
+ assert.equal(homeExplorePath(language,'KR','New York','cafe'),'/kr?lang='+language+'&category=cafe','invalid other-country region is not leaked');
  const matches=(country,region,purpose)=>finderMatches(catalog,new URLSearchParams({country,region,purpose}),country);
  const walk=home('KR','서울','drive',matches('KR','서울','drive')),walkNodes=nodes(walk),feature=walkNodes.find(node=>node.type==='article');
  assert.equal(walkNodes.filter(node=>node.type==='article').length,2,'exactly two supported walking places; no filler');
