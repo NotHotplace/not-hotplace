@@ -255,8 +255,8 @@
   ],
   "kr-seoul-forest": [
     {
-      "textKo": "벤치가든과 호숫가 산책로에서 걷다 쉴 수 있어요. 2026-10-27까지 정원박람회가 열려요.",
-      "textEn": "Bench gardens and a lakeside rest path let you pause during a walk. The Garden Expo runs through 27 Oct 2026.",
+      "textKo": "벤치가든과 호숫가 산책로에서 걷다 쉴 수 있어요. 정원박람회의 공지된 일정은 2026-10-27까지였어요. 현재 행사는 별도 확인하세요.",
+      "textEn": "Bench gardens and a lakeside rest path let you pause during a walk. The announced Garden Expo schedule was through 27 Oct 2026. Check current events separately.",
       "source": "https://parks.seoul.go.kr/park/detailView.do?pIdx=5",
       "checked": "2026-10-11",
       "sourceKind": "official",
